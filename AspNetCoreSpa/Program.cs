@@ -7,7 +7,7 @@ namespace AspNetCoreSpa
 {
     public class Program                                                 
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args)   
         {
             var config = new ConfigurationBuilder()
                         .SetBasePath(Directory.GetCurrentDirectory())
