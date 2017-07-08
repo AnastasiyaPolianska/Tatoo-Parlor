@@ -1,0 +1,73 @@
+/* For width smaller than 800px: */
+body {
+    background-image: url(./Client/app/assets/images/mainBackMin.jpg);
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.footer-link {
+    width: 4% !important;
+    height: 4% !important;
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
+    margin-left: 0.5%;
+}
+
+/* For width 800px and larger: */
+@media only screen and (min-width: 800px) {
+    body {
+        background-image: url(./Client/app/assets/images/mainBack.jpeg);
+        background-size: 100%;
+        background-attachment: fixed;
+    }
+
+    .footer-link {
+        width: 1.7% !important;
+        height: 1.7% !important;
+        margin-top: 0.5%;
+        margin-bottom: 0.5%;
+        margin-left: 0.5%;
+    }
+}
+
+.footerstyle {
+    background-color: #222 !important;
+    border-color: #080808 !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    font-family: 'consolas';
+    color: #ffffff;
+    font-size: 2.5vmin;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-image {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.containerimage {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+.texter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1%;
+}
+
+.margins {
+    margin-top: 70px !important;
+    margin-bottom: 3% !important;
+}
+
+.ui-growl{
+    margin-top:50px;
+}

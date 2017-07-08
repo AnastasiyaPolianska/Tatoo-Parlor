@@ -1,0 +1,1206 @@
+2017-05-04 22:31:25.601 +03:00 [Information] 
+[at-loader] Using typescript@2.2.2 from typescript and "tsconfig.json" from G:\Універ, 2 курс\LabaMaker\AspNetCoreSpa/tsconfig.json (in a forked process).
+
+2017-05-04 22:32:14.911 +03:00 [Information] Executed DbCommand (323ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 22:32:14.949 +03:00 [Information] Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 22:32:15.137 +03:00 [Information] Executed DbCommand (139ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 22:32:16.337 +03:00 [Information] User profile is available. Using '"C:\Users\Nastya\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-05-04 22:32:18.929 +03:00 [Information] 
+2017-05-04 22:32:18.933 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 22:32:19.018 +03:00 [Information] 
+2017-05-04 22:32:19.022 +03:00 [Information] [at-loader] Ok, 0.114 sec.
+2017-05-04 22:32:19.128 +03:00 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 22:32:19.185 +03:00 [Information] Executed DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 22:32:19.205 +03:00 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 22:32:19.232 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 22:32:19.238 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 22:32:19.446 +03:00 [Information] webpack built 52b1bc79a814b9774fc3 in 57292ms
+2017-05-04 22:32:25.531 +03:00 [Information] Executed DbCommand (1,116ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 22:32:25.868 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 22:32:26.095 +03:00 [Information] Executed DbCommand (63ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 22:32:26.429 +03:00 [Information] Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Languages] AS [l])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 22:32:26.498 +03:00 [Information] Executed DbCommand (59ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Content] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 22:32:26.600 +03:00 [Information] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContentText] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 22:32:31.498 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:5000/  0
+2017-05-04 22:32:31.499 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-05-04 22:32:32.079 +03:00 [Information] Request finished in 504.9822ms 200 
+2017-05-04 22:32:39.715 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 22:33:36.275 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 22:33:40.900 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 61343.2801ms
+2017-05-04 22:33:40.943 +03:00 [Information] Request finished in 69579.2693ms 200 text/html; charset=utf-8
+2017-05-04 22:33:41.358 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.css?v=ZbF5IRdw8d6zzLNkH9-VAOQtg1tEvAaEGWCpsXOxOtA  
+2017-05-04 22:33:41.383 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/polyfills.dll.js?v=LHgQiLsoey-37df5fU8pnGLF-zyOCYx534TgDoes-bY  
+2017-05-04 22:33:41.455 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=DS1Ubf4vgyXntsW1vi6D4QUf6CpRkfJWHASJAhRBsZw  
+2017-05-04 22:33:41.458 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.dll.js?v=JzRAwEXPiGPhsDA7v7EokISDjkW6lNBGB-OnF0bjIjY  
+2017-05-04 22:33:41.473 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/styles.css  
+2017-05-04 22:33:41.549 +03:00 [Information] The file "/styles.css" was not modified
+2017-05-04 22:33:41.564 +03:00 [Information] Request finished in 88.8264ms 304 text/css
+2017-05-04 22:33:41.765 +03:00 [Information] The file "/dist/vendor.css" was not modified
+2017-05-04 22:33:41.863 +03:00 [Information] Request finished in 420.9532ms 304 text/css
+2017-05-04 22:33:41.890 +03:00 [Information] The file "/dist/polyfills.dll.js" was not modified
+2017-05-04 22:33:41.911 +03:00 [Information] Request finished in 512.2116ms 304 application/javascript
+2017-05-04 22:33:41.916 +03:00 [Information] The file "/dist/vendor.dll.js" was not modified
+2017-05-04 22:33:41.920 +03:00 [Information] Request finished in 465.3378ms 304 application/javascript
+2017-05-04 22:33:41.980 +03:00 [Information] Request finished in 524.7231ms 200 application/javascript; charset=UTF-8
+2017-05-04 22:33:43.081 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/af7ae505a9eed503f8b8e6982036873e.woff2  
+2017-05-04 22:33:43.089 +03:00 [Information] The file "/dist/af7ae505a9eed503f8b8e6982036873e.woff2" was not modified
+2017-05-04 22:33:43.094 +03:00 [Information] Request finished in 11.6439ms 304 application/font-woff2
+2017-05-04 22:33:48.426 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 22:33:48.432 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 22:33:48.498 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 22:33:48.587 +03:00 [Information] Request finished in 161.1743ms 200 image/jpeg; charset=UTF-8
+2017-05-04 22:33:48.621 +03:00 [Information] Request finished in 161.1743ms 200 image/jpeg; charset=UTF-8
+2017-05-04 22:33:48.649 +03:00 [Information] Request finished in 216.0949ms 200 image/jpeg; charset=UTF-8
+2017-05-04 22:33:48.992 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 22:33:49.784 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/Client/app/assets/images/mainBack.jpeg  
+2017-05-04 22:33:49.787 +03:00 [Information] The file "/Client/app/assets/images/mainBack.jpeg" was not modified
+2017-05-04 22:33:49.793 +03:00 [Information] Request finished in 7.2947ms 304 image/jpeg
+2017-05-04 23:02:53.546 +03:00 [Information] DLL: Checking if DLLs are valid.
+2017-05-04 23:02:55.258 +03:00 [Information] DLL: All DLLs are valid.
+2017-05-04 23:02:55.401 +03:00 [Information] webpack building...
+2017-05-04 23:02:56.712 +03:00 [Information] 
+2017-05-04 23:02:56.716 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:02:56.788 +03:00 [Information] 
+2017-05-04 23:02:56.791 +03:00 [Information] [at-loader] Ok, 0.077 sec.
+2017-05-04 23:02:58.857 +03:00 [Information] webpack built 763cfac0a6750a846533 in 3234ms
+2017-05-04 23:02:59.011 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/52b1bc79a814b9774fc3.hot-update.json  
+2017-05-04 23:02:59.069 +03:00 [Information] Request finished in 58.8089ms 200 application/json; charset=UTF-8
+2017-05-04 23:02:59.392 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.52b1bc79a814b9774fc3.hot-update.js  
+2017-05-04 23:02:59.413 +03:00 [Information] Request finished in 26.0439ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:02:59.443 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.52b1bc79a814b9774fc3.hot-update.js.map  
+2017-05-04 23:02:59.450 +03:00 [Information] Request finished in 6.377ms 200 application/json; charset=UTF-8
+2017-05-04 23:02:59.454 +03:00 [Information] Request starting HTTP/1.1 HEAD http://localhost:5000/dist/webpack.config.js  
+2017-05-04 23:02:59.475 +03:00 [Information] Request finished in 21.0541ms 404 
+2017-05-04 23:02:59.922 +03:00 [Information] Request starting HTTP/1.1 HEAD http://localhost:5000/webpack.config.js  
+2017-05-04 23:02:59.931 +03:00 [Information] Request finished in 7.9008ms 404 
+2017-05-04 23:03:17.290 +03:00 [Information] DLL: Checking if DLLs are valid.
+2017-05-04 23:03:17.294 +03:00 [Information] DLL: All DLLs are valid.
+2017-05-04 23:03:17.312 +03:00 [Information] webpack building...
+2017-05-04 23:03:17.559 +03:00 [Information] 
+2017-05-04 23:03:17.562 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:03:17.563 +03:00 [Information] 
+2017-05-04 23:03:17.566 +03:00 [Information] [at-loader] Ok, 0.001 sec.
+2017-05-04 23:03:17.715 +03:00 [Information] webpack built fbdc7309492cccbe2419 in 295ms
+2017-05-04 23:03:19.544 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/welcome  
+2017-05-04 23:03:19.565 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:03:19.599 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:03:19.641 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 81.415ms
+2017-05-04 23:03:19.653 +03:00 [Information] Request finished in 104.2587ms 200 text/html; charset=utf-8
+2017-05-04 23:03:20.022 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=ZISNn4EpJNNLdFVsDXTmTH3QR9a3JrsXPNyzLYZtVHQ  
+2017-05-04 23:03:20.231 +03:00 [Information] Request finished in 160.3256ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:03:22.932 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:03:23.093 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:03:23.094 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:03:23.133 +03:00 [Information] Request finished in 183.9964ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:03:23.172 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:03:23.209 +03:00 [Information] Request finished in 239.3897ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:03:23.225 +03:00 [Information] Request finished in 285.0449ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:03:23.609 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-05-04 23:03:23.626 +03:00 [Information] Sending file. Request path: '"/favicon.ico"'. Physical path: '"G:\Універ, 2 курс\LabaMaker\AspNetCoreSpa\wwwroot\favicon.ico"'
+2017-05-04 23:03:23.704 +03:00 [Information] Request finished in 96.8759ms 200 image/x-icon
+2017-05-04 23:03:35.333 +03:00 [Information] Connection id ""0HL4J4H6TGJRM"" communication error.
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4081 ECANCELED operation canceled
+2017-05-04 23:04:09.381 +03:00 [Information] DLL: Checking if DLLs are valid.
+2017-05-04 23:04:09.393 +03:00 [Information] DLL: All DLLs are valid.
+2017-05-04 23:04:09.410 +03:00 [Information] webpack building...
+2017-05-04 23:04:09.766 +03:00 [Information] 
+2017-05-04 23:04:09.774 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:04:09.775 +03:00 [Information] 
+2017-05-04 23:04:09.781 +03:00 [Information] [at-loader] Ok, 0.001 sec.
+2017-05-04 23:04:10.102 +03:00 [Information] webpack built 1ba29fe2c7f3ef1fc090 in 428ms
+2017-05-04 23:04:15.321 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/fbdc7309492cccbe2419.hot-update.json  
+2017-05-04 23:04:15.331 +03:00 [Information] Request finished in 8.9688ms 200 application/json; charset=UTF-8
+2017-05-04 23:04:15.337 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.fbdc7309492cccbe2419.hot-update.js  
+2017-05-04 23:04:15.347 +03:00 [Information] Request finished in 9.3226ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:04:15.368 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.fbdc7309492cccbe2419.hot-update.js.map  
+2017-05-04 23:04:15.378 +03:00 [Information] Request finished in 6.4845ms 200 application/json; charset=UTF-8
+2017-05-04 23:04:15.379 +03:00 [Information] Request starting HTTP/1.1 HEAD http://localhost:5000/dist/webpack.config.js  
+2017-05-04 23:04:15.389 +03:00 [Information] Request finished in 7.8339ms 404 
+2017-05-04 23:04:15.390 +03:00 [Information] Request starting HTTP/1.1 HEAD http://localhost:5000/webpack.config.js  
+2017-05-04 23:04:15.397 +03:00 [Information] Request finished in 4.4636ms 404 
+2017-05-04 23:04:57.987 +03:00 [Information] DLL: Checking if DLLs are valid.
+2017-05-04 23:04:57.999 +03:00 [Information] DLL: All DLLs are valid.
+2017-05-04 23:04:58.010 +03:00 [Information] webpack building...
+2017-05-04 23:04:58.253 +03:00 [Information] 
+2017-05-04 23:04:58.259 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:04:58.261 +03:00 [Information] 
+2017-05-04 23:04:58.265 +03:00 [Information] [at-loader] Ok, 0.001 sec.
+2017-05-04 23:04:58.452 +03:00 [Information] webpack built 5a00e3be9ecb9f03279e in 303ms
+2017-05-04 23:04:58.486 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/1ba29fe2c7f3ef1fc090.hot-update.json  
+2017-05-04 23:04:58.519 +03:00 [Information] Request finished in 31.9914ms 200 application/json; charset=UTF-8
+2017-05-04 23:04:58.541 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.1ba29fe2c7f3ef1fc090.hot-update.js  
+2017-05-04 23:04:58.565 +03:00 [Information] Request finished in 19.2217ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:04:58.609 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.1ba29fe2c7f3ef1fc090.hot-update.js.map  
+2017-05-04 23:04:58.626 +03:00 [Information] Request finished in 11.6552ms 200 application/json; charset=UTF-8
+2017-05-04 23:04:58.629 +03:00 [Information] Request starting HTTP/1.1 HEAD http://localhost:5000/dist/webpack.config.js  
+2017-05-04 23:04:58.645 +03:00 [Information] Request finished in 9.7164ms 404 
+2017-05-04 23:04:58.646 +03:00 [Information] Request starting HTTP/1.1 HEAD http://localhost:5000/webpack.config.js  
+2017-05-04 23:04:58.665 +03:00 [Information] Request finished in 7.9705ms 404 
+2017-05-04 23:05:00.211 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/welcome  
+2017-05-04 23:05:00.222 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:05:00.234 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:05:00.270 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 48.0179ms
+2017-05-04 23:05:00.316 +03:00 [Information] Request finished in 101.0792ms 200 text/html; charset=utf-8
+2017-05-04 23:05:00.322 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=-MFv4ITtYRWM_o_j8Iy5L9Gmh_2B7H2MUffAHIGHwD4  
+2017-05-04 23:05:00.804 +03:00 [Information] Request finished in 480.1645ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:05:02.482 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:05:02.513 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:05:02.665 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:05:02.721 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:05:02.931 +03:00 [Information] Request finished in 405.4393ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:05:03.058 +03:00 [Information] Request finished in 481.952ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:05:03.205 +03:00 [Information] Request finished in 663.8812ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:05:03.344 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-05-04 23:05:03.372 +03:00 [Information] Sending file. Request path: '"/favicon.ico"'. Physical path: '"G:\Універ, 2 курс\LabaMaker\AspNetCoreSpa\wwwroot\favicon.ico"'
+2017-05-04 23:05:03.421 +03:00 [Information] Request finished in 93.9443ms 200 image/x-icon
+2017-05-04 23:05:11.716 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/Client/app/assets/images/mainBackMin.jpg  
+2017-05-04 23:05:11.725 +03:00 [Information] The file "/Client/app/assets/images/mainBackMin.jpg" was not modified
+2017-05-04 23:05:11.737 +03:00 [Information] Request finished in 70.9017ms 304 image/jpeg
+2017-05-04 23:07:18.236 +03:00 [Information] DLL: Checking if DLLs are valid.
+2017-05-04 23:07:18.252 +03:00 [Information] DLL: All DLLs are valid.
+2017-05-04 23:07:18.266 +03:00 [Information] webpack building...
+2017-05-04 23:07:18.557 +03:00 [Information] 
+2017-05-04 23:07:18.571 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:07:18.718 +03:00 [Information] 
+2017-05-04 23:07:18.778 +03:00 [Information] [at-loader] Ok, 0.142 sec.
+2017-05-04 23:07:18.859 +03:00 [Information] webpack built 3e570b3575936ec589aa in 336ms
+2017-05-04 23:07:18.948 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/5a00e3be9ecb9f03279e.hot-update.json  
+2017-05-04 23:07:19.018 +03:00 [Information] Request finished in 68.8846ms 200 application/json; charset=UTF-8
+2017-05-04 23:07:19.032 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.5a00e3be9ecb9f03279e.hot-update.js  
+2017-05-04 23:07:19.072 +03:00 [Information] Request finished in 32.6823ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:07:19.193 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/0.5a00e3be9ecb9f03279e.hot-update.js.map  
+2017-05-04 23:07:19.261 +03:00 [Information] Request finished in 45.8744ms 200 application/json; charset=UTF-8
+2017-05-04 23:07:19.271 +03:00 [Information] Request starting HTTP/1.1 HEAD http://localhost:5000/dist/webpack.config.js  
+2017-05-04 23:07:19.312 +03:00 [Information] Request finished in 39.9523ms 404 
+2017-05-04 23:07:19.316 +03:00 [Information] Request starting HTTP/1.1 HEAD http://localhost:5000/webpack.config.js  
+2017-05-04 23:07:19.324 +03:00 [Information] Request finished in 4.8304ms 404 
+2017-05-04 23:07:21.084 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/welcome  
+2017-05-04 23:07:21.100 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:07:21.110 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:07:21.150 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 56.8442ms
+2017-05-04 23:07:21.156 +03:00 [Information] Request finished in 79.4216ms 200 text/html; charset=utf-8
+2017-05-04 23:07:21.200 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=loNCh5_0ANCvO6gsCaOElhKX6SQ5-ZUAbWAwES5lgGI  
+2017-05-04 23:07:21.254 +03:00 [Information] Request finished in 57.4757ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:07:23.006 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:07:23.010 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:07:23.020 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:07:23.128 +03:00 [Information] Request finished in 128.5432ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:23.255 +03:00 [Information] Request finished in 206.4059ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:23.271 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:07:23.378 +03:00 [Information] Request finished in 277.5729ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:23.515 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico  
+2017-05-04 23:07:23.525 +03:00 [Information] Sending file. Request path: '"/favicon.ico"'. Physical path: '"G:\Універ, 2 курс\LabaMaker\AspNetCoreSpa\wwwroot\favicon.ico"'
+2017-05-04 23:07:23.580 +03:00 [Information] Request finished in 58.3578ms 200 image/x-icon
+2017-05-04 23:07:31.891 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ad7df5eaf1366bb0506c7e138adfc840.jpg  
+2017-05-04 23:07:31.943 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/94ca305e6edb85007dacfe900b5ff4c4.jpg  
+2017-05-04 23:07:32.212 +03:00 [Information] Request finished in 200.9586ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:32.225 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c7febc266698ef500a7a949aa48f51d0.jpg  
+2017-05-04 23:07:32.263 +03:00 [Information] Request finished in 318.0184ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:32.271 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/3adaca6a649df6522b11be6d03b8d80b.jpg  
+2017-05-04 23:07:32.369 +03:00 [Information] Request finished in 134.5745ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:32.374 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/aec8fe3d27076bfe480b150efc8a9a59.jpg  
+2017-05-04 23:07:32.507 +03:00 [Information] Request finished in 190.4664ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:32.513 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/91f7078c9b239f4f6192467df07cab90.jpg  
+2017-05-04 23:07:32.517 +03:00 [Information] Request finished in 138.4461ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:32.529 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/93ad8489895d992e6dbf4e3f824d6171.jpg  
+2017-05-04 23:07:32.646 +03:00 [Information] Request finished in 122.3115ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:32.704 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ae96ee403b301359c44e3c1f51a0f7c4.jpg  
+2017-05-04 23:07:32.751 +03:00 [Information] Request finished in 188.6351ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:32.772 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/160658c4fbfe2e3df300c4a8a438cb1b.jpg  
+2017-05-04 23:07:32.857 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ac1f72d741dfee22d68bc9d4c47a7c93.jpg  
+2017-05-04 23:07:32.866 +03:00 [Information] Request finished in 95.7123ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:32.923 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2192e7ff89fd8bc18355edae312b34fd.jpg  
+2017-05-04 23:07:32.927 +03:00 [Information] Request finished in 148.2993ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:32.984 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/f9e059cc1458a5b75b123e38e2978b07.jpg  
+2017-05-04 23:07:32.993 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/176bbf4713b59f05c5ab272b9c73eef2.jpg  
+2017-05-04 23:07:33.128 +03:00 [Information] Request finished in 474.2532ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:33.156 +03:00 [Information] Request finished in 189.5102ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:33.162 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:07:33.192 +03:00 [Information] Request finished in 182.9463ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:33.217 +03:00 [Information] Request finished in 327.4032ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:07:33.532 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:07:35.367 +03:00 [Information] Connection id ""0HL4J4H6TGJRT"" communication error.
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4081 ECANCELED operation canceled
+2017-05-04 23:07:53.319 +03:00 [Error] An exception occurred in the database while iterating the results of a query.
+
+System.Data.SqlClient.SqlException: Connection Timeout Expired.  The timeout period elapsed while attempting to consume the pre-login handshake acknowledgement.  This could be because the pre-login handshake failed or the server was unable to respond back in time.  The duration spent while attempting to connect to this server was - [Pre-Login] initialization=17320; handshake=661;  ---> System.ComponentModel.Win32Exception: Время ожидания операции истекло
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open()
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](Func`2 operation, Func`2 verifySucceeded, TState state)
+   at Microsoft.EntityFrameworkCore.Query.QueryMethodProvider.<_ShapedQuery>d__3`1.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__15`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:89ba2f41-9909-4205-a557-855c46f92dd6
+Error Number:-2,State:0,Class:11
+2017-05-04 23:09:42.171 +03:00 [Information] 
+[at-loader] Using typescript@2.2.2 from typescript and "tsconfig.json" from G:\Універ, 2 курс\LabaMaker\AspNetCoreSpa/tsconfig.json (in a forked process).
+
+2017-05-04 23:09:53.179 +03:00 [Information] Executed DbCommand (182ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:09:53.190 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:09:53.210 +03:00 [Information] Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:09:53.342 +03:00 [Information] User profile is available. Using '"C:\Users\Nastya\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-05-04 23:09:54.875 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:09:54.906 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:09:54.939 +03:00 [Information] Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:09:54.974 +03:00 [Information] Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:09:54.982 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:09:56.853 +03:00 [Information] Executed DbCommand (431ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:09:57.049 +03:00 [Information] Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:09:57.180 +03:00 [Information] Executed DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:09:57.214 +03:00 [Information] Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Languages] AS [l])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:09:57.225 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Content] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:09:57.247 +03:00 [Information] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContentText] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:09:57.919 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-05-04 23:09:57.919 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:5000/  0
+2017-05-04 23:09:58.161 +03:00 [Information] Request finished in 263.8816ms 200 
+2017-05-04 23:09:59.328 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:10:11.383 +03:00 [Information] 
+2017-05-04 23:10:11.387 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:10:11.493 +03:00 [Information] 
+2017-05-04 23:10:11.496 +03:00 [Information] [at-loader] Ok, 0.114 sec.
+2017-05-04 23:10:11.619 +03:00 [Information] webpack built 5fb3caa4e95cb8337587 in 30160ms
+2017-05-04 23:10:16.954 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:10:40.333 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 41078.526ms
+2017-05-04 23:10:40.380 +03:00 [Information] Request finished in 42507.7933ms 200 text/html; charset=utf-8
+2017-05-04 23:10:40.655 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=ANiatDxKoJ9_eZCxr0VRs3rXcrrTQNj21dTRGYl_u40  
+2017-05-04 23:10:40.905 +03:00 [Information] Request finished in 252.6029ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:10:48.604 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:10:48.635 +03:00 [Information] Request finished in 26.98ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:10:48.673 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:10:48.719 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:10:48.734 +03:00 [Information] Request finished in 73.3817ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:10:48.755 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:10:48.764 +03:00 [Information] Request finished in 54.2118ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:33.792 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:11:33.813 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:11:34.167 +03:00 [Information] Executed DbCommand (324ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:11:34.226 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-05-04 23:11:34.263 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:11:34.311 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 498.0245ms
+2017-05-04 23:11:34.314 +03:00 [Information] Request finished in 521.9983ms 200 application/json; charset=utf-8
+2017-05-04 23:11:35.504 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ad7df5eaf1366bb0506c7e138adfc840.jpg  
+2017-05-04 23:11:35.508 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ae96ee403b301359c44e3c1f51a0f7c4.jpg  
+2017-05-04 23:11:35.510 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/aec8fe3d27076bfe480b150efc8a9a59.jpg  
+2017-05-04 23:11:35.544 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/94ca305e6edb85007dacfe900b5ff4c4.jpg  
+2017-05-04 23:11:35.544 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/93ad8489895d992e6dbf4e3f824d6171.jpg  
+2017-05-04 23:11:35.748 +03:00 [Information] Request finished in 63.3222ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:35.767 +03:00 [Information] Request finished in 217.4805ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:35.772 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c7febc266698ef500a7a949aa48f51d0.jpg  
+2017-05-04 23:11:35.961 +03:00 [Information] Request finished in 334.4916ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.026 +03:00 [Information] Request finished in 185.167ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.038 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/3adaca6a649df6522b11be6d03b8d80b.jpg  
+2017-05-04 23:11:36.044 +03:00 [Information] Request finished in 418.9512ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.184 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/91f7078c9b239f4f6192467df07cab90.jpg  
+2017-05-04 23:11:36.211 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ac1f72d741dfee22d68bc9d4c47a7c93.jpg  
+2017-05-04 23:11:36.346 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2192e7ff89fd8bc18355edae312b34fd.jpg  
+2017-05-04 23:11:36.382 +03:00 [Information] Request finished in 781.6432ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.450 +03:00 [Information] Request finished in 350.9422ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.459 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/176bbf4713b59f05c5ab272b9c73eef2.jpg  
+2017-05-04 23:11:36.469 +03:00 [Information] Request finished in 315.3725ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.473 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/f9e059cc1458a5b75b123e38e2978b07.jpg  
+2017-05-04 23:11:36.482 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/160658c4fbfe2e3df300c4a8a438cb1b.jpg  
+2017-05-04 23:11:36.487 +03:00 [Information] Request finished in 432.7872ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.515 +03:00 [Information] Request finished in 535.0727ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.591 +03:00 [Information] Request finished in 188.8544ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.598 +03:00 [Information] Request finished in 123.0629ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:36.706 +03:00 [Information] Request finished in 226.4774ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:11:43.293 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:11:43.302 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:11:43.309 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:11:43.315 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-05-04 23:11:43.321 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:11:43.327 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 25.737ms
+2017-05-04 23:11:43.349 +03:00 [Information] Request finished in 40.6761ms 200 application/json; charset=utf-8
+2017-05-04 23:14:38.079 +03:00 [Information] 
+[at-loader] Using typescript@2.2.2 from typescript and "tsconfig.json" from G:\Універ, 2 курс\LabaMaker\AspNetCoreSpa/tsconfig.json (in a forked process).
+
+2017-05-04 23:15:13.778 +03:00 [Information] Executed DbCommand (1,366ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:15:13.797 +03:00 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:15:14.064 +03:00 [Information] Executed DbCommand (216ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:15:15.732 +03:00 [Information] User profile is available. Using '"C:\Users\Nastya\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-05-04 23:15:21.523 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:15:21.529 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:15:21.545 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:15:21.612 +03:00 [Information] Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:15:21.622 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:15:36.730 +03:00 [Information] Executed DbCommand (1,874ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:15:37.060 +03:00 [Information] Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:15:37.324 +03:00 [Information] Executed DbCommand (106ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:15:37.418 +03:00 [Information] Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Languages] AS [l])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:15:37.460 +03:00 [Information] Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Content] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:15:37.491 +03:00 [Information] Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContentText] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:15:40.092 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-05-04 23:15:40.092 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:5000/  0
+2017-05-04 23:15:40.510 +03:00 [Information] Request finished in 416.3712ms 200 
+2017-05-04 23:15:46.992 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:15:57.261 +03:00 [Information] 
+2017-05-04 23:15:57.267 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:15:57.418 +03:00 [Information] 
+2017-05-04 23:15:57.423 +03:00 [Information] [at-loader] Ok, 0.158 sec.
+2017-05-04 23:15:57.584 +03:00 [Information] webpack built ea70419cece809aca702 in 80218ms
+2017-05-04 23:16:25.494 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:16:26.681 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 39851.8271ms
+2017-05-04 23:16:26.714 +03:00 [Information] Request finished in 46730.8768ms 200 text/html; charset=utf-8
+2017-05-04 23:16:27.221 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=xpvpY2rJn9q0VAT9sc5LBRTlvnlGqHpriCJzQ-ItF74  
+2017-05-04 23:16:27.419 +03:00 [Information] Request finished in 198.5029ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:16:40.879 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:16:40.970 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:16:40.980 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:16:41.028 +03:00 [Information] Request finished in 123.4405ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:41.059 +03:00 [Information] Request finished in 84.0857ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:41.080 +03:00 [Information] Request finished in 104.7984ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:41.912 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:16:46.920 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/aec8fe3d27076bfe480b150efc8a9a59.jpg  
+2017-05-04 23:16:46.926 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ae96ee403b301359c44e3c1f51a0f7c4.jpg  
+2017-05-04 23:16:46.965 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/94ca305e6edb85007dacfe900b5ff4c4.jpg  
+2017-05-04 23:16:47.003 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/93ad8489895d992e6dbf4e3f824d6171.jpg  
+2017-05-04 23:16:47.040 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ad7df5eaf1366bb0506c7e138adfc840.jpg  
+2017-05-04 23:16:47.056 +03:00 [Information] Request finished in 144.8625ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:47.082 +03:00 [Information] Request finished in 159.2755ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:47.116 +03:00 [Information] Request finished in 188.9252ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:47.131 +03:00 [Information] Request finished in 206.4151ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:47.131 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c7febc266698ef500a7a949aa48f51d0.jpg  
+2017-05-04 23:16:47.201 +03:00 [Information] Request finished in 244.1051ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:47.212 +03:00 [Information] Request finished in 90.3228ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:49.190 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/3adaca6a649df6522b11be6d03b8d80b.jpg  
+2017-05-04 23:16:49.238 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/91f7078c9b239f4f6192467df07cab90.jpg  
+2017-05-04 23:16:49.256 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:16:49.264 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ac1f72d741dfee22d68bc9d4c47a7c93.jpg  
+2017-05-04 23:16:49.270 +03:00 [Information] Request finished in 87.1156ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:49.289 +03:00 [Information] Request finished in 113.2487ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:49.299 +03:00 [Information] Request finished in 131.6634ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:49.318 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:16:49.871 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2192e7ff89fd8bc18355edae312b34fd.jpg  
+2017-05-04 23:16:49.885 +03:00 [Information] Request finished in 13.9235ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:50.340 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/f9e059cc1458a5b75b123e38e2978b07.jpg  
+2017-05-04 23:16:50.362 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/160658c4fbfe2e3df300c4a8a438cb1b.jpg  
+2017-05-04 23:16:50.367 +03:00 [Information] Request finished in 164.1567ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:50.394 +03:00 [Information] Request finished in 189.2925ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:50.815 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/176bbf4713b59f05c5ab272b9c73eef2.jpg  
+2017-05-04 23:16:50.832 +03:00 [Information] Request finished in 17.0528ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:16:51.580 +03:00 [Information] Executed DbCommand (2,217ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:16:51.631 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-05-04 23:16:51.805 +03:00 [Information] Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:16:51.898 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 2563.2763ms
+2017-05-04 23:16:51.909 +03:00 [Information] Request finished in 2677.3785ms 200 application/json; charset=utf-8
+2017-05-04 23:16:55.427 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:16:55.435 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:16:55.444 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:16:55.449 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-05-04 23:16:55.453 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:16:55.458 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 24.507ms
+2017-05-04 23:16:55.463 +03:00 [Information] Request finished in 46.2779ms 200 application/json; charset=utf-8
+2017-05-04 23:17:01.548 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/28648c58ee5ad332db07d3552bef939f.jpg  
+2017-05-04 23:17:01.550 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/256003beed7be13f573dc1424fd53fd1.jpg  
+2017-05-04 23:17:01.554 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2700e1f4a531373e8e4cf64106110116.jpg  
+2017-05-04 23:17:01.591 +03:00 [Information] Request finished in 61.1641ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:01.599 +03:00 [Information] Request finished in 68.5929ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:01.628 +03:00 [Information] Request finished in 82.9491ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:05.605 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:17:05.632 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:17:05.642 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:17:05.648 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-05-04 23:17:05.655 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:17:05.668 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 48.3588ms
+2017-05-04 23:17:05.686 +03:00 [Information] Request finished in 73.627ms 200 application/json; charset=utf-8
+2017-05-04 23:17:06.686 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ad7df5eaf1366bb0506c7e138adfc840.jpg  
+2017-05-04 23:17:06.877 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ae96ee403b301359c44e3c1f51a0f7c4.jpg  
+2017-05-04 23:17:06.929 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/aec8fe3d27076bfe480b150efc8a9a59.jpg  
+2017-05-04 23:17:07.014 +03:00 [Information] Request finished in 260.3023ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.075 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/3adaca6a649df6522b11be6d03b8d80b.jpg  
+2017-05-04 23:17:07.170 +03:00 [Information] Request finished in 316.8424ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.191 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/94ca305e6edb85007dacfe900b5ff4c4.jpg  
+2017-05-04 23:17:07.253 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ac1f72d741dfee22d68bc9d4c47a7c93.jpg  
+2017-05-04 23:17:07.451 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/93ad8489895d992e6dbf4e3f824d6171.jpg  
+2017-05-04 23:17:07.459 +03:00 [Information] Request finished in 428.0837ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.485 +03:00 [Information] Request finished in 551.0581ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.502 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/91f7078c9b239f4f6192467df07cab90.jpg  
+2017-05-04 23:17:07.511 +03:00 [Information] Request finished in 265.6432ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.513 +03:00 [Information] Request finished in 556.922ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.517 +03:00 [Information] Request finished in 212.2476ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.523 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c7febc266698ef500a7a949aa48f51d0.jpg  
+2017-05-04 23:17:07.532 +03:00 [Information] Request finished in 46.1867ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.549 +03:00 [Information] Request finished in 26.6364ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.748 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/f9e059cc1458a5b75b123e38e2978b07.jpg  
+2017-05-04 23:17:07.807 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/160658c4fbfe2e3df300c4a8a438cb1b.jpg  
+2017-05-04 23:17:07.836 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/176bbf4713b59f05c5ab272b9c73eef2.jpg  
+2017-05-04 23:17:07.843 +03:00 [Information] Request finished in 141.1698ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.860 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2192e7ff89fd8bc18355edae312b34fd.jpg  
+2017-05-04 23:17:07.945 +03:00 [Information] Request finished in 125.3793ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.973 +03:00 [Information] Request finished in 154.0145ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:07.977 +03:00 [Information] Request finished in 196.65ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:12.131 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:17:12.240 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:17:12.253 +03:00 [Information] Request finished in 119.3264ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:12.260 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:17:12.389 +03:00 [Information] Request finished in 225.759ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:17:12.404 +03:00 [Information] Request finished in 280.0621ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:20:04.900 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:20:04.904 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:20:04.911 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:20:04.917 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-05-04 23:20:04.922 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:20:04.935 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 21.6915ms
+2017-05-04 23:20:04.947 +03:00 [Information] Request finished in 42.6608ms 200 application/json; charset=utf-8
+2017-05-04 23:24:23.080 +03:00 [Information] 
+[at-loader] Using typescript@2.2.2 from typescript and "tsconfig.json" from G:\Універ, 2 курс\LabaMaker\AspNetCoreSpa/tsconfig.json (in a forked process).
+
+2017-05-04 23:25:13.701 +03:00 [Information] Executed DbCommand (1,342ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:25:13.712 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:25:13.846 +03:00 [Information] Executed DbCommand (97ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:25:15.263 +03:00 [Information] User profile is available. Using '"C:\Users\Nastya\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-05-04 23:25:20.461 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:25:20.487 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:25:20.521 +03:00 [Information] Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:25:20.529 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:25:20.534 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:25:20.818 +03:00 [Information] 
+2017-05-04 23:25:20.864 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:25:20.905 +03:00 [Information] 
+2017-05-04 23:25:20.928 +03:00 [Information] [at-loader] Ok, 0.126 sec.
+2017-05-04 23:25:21.357 +03:00 [Information] webpack built ea70419cece809aca702 in 60758ms
+2017-05-04 23:25:28.506 +03:00 [Information] Executed DbCommand (798ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:25:28.944 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:25:29.359 +03:00 [Information] Executed DbCommand (211ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:25:29.698 +03:00 [Information] Executed DbCommand (113ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Languages] AS [l])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:25:29.823 +03:00 [Information] Executed DbCommand (109ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Content] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:25:30.043 +03:00 [Information] Executed DbCommand (208ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContentText] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:25:33.140 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:5000/  0
+2017-05-04 23:25:33.140 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-05-04 23:25:33.744 +03:00 [Information] Request finished in 628.4168ms 200 
+2017-05-04 23:25:39.197 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:25:59.315 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:26:01.384 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 22378.631ms
+2017-05-04 23:26:01.423 +03:00 [Information] Request finished in 28410.8007ms 200 text/html; charset=utf-8
+2017-05-04 23:26:01.765 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=xpvpY2rJn9q0VAT9sc5LBRTlvnlGqHpriCJzQ-ItF74  
+2017-05-04 23:26:02.120 +03:00 [Information] Request finished in 190.8542ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:26:07.374 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:26:07.406 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:26:07.429 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:26:07.471 +03:00 [Information] Request finished in 88.3543ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:26:07.539 +03:00 [Information] Request finished in 132.7784ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:26:07.564 +03:00 [Information] Request finished in 180.3577ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:26:07.621 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:26:41.110 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:26:41.158 +03:00 [Information] Authorization failed for user: null.
+2017-05-04 23:26:41.162 +03:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2017-05-04 23:26:41.170 +03:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2017-05-04 23:26:41.201 +03:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2017-05-04 23:26:41.206 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 70.4879ms
+2017-05-04 23:26:41.209 +03:00 [Information] Request finished in 98.5256ms 401 
+2017-05-04 23:28:58.303 +03:00 [Information] 
+[at-loader] Using typescript@2.2.2 from typescript and "tsconfig.json" from G:\Універ, 2 курс\LabaMaker\AspNetCoreSpa/tsconfig.json (in a forked process).
+
+2017-05-04 23:29:08.906 +03:00 [Information] Executed DbCommand (412ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:29:08.917 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:29:09.107 +03:00 [Information] Executed DbCommand (177ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:29:09.211 +03:00 [Information] User profile is available. Using '"C:\Users\Nastya\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-05-04 23:29:09.873 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:29:09.879 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:29:09.884 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:29:09.899 +03:00 [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:29:09.951 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:29:11.441 +03:00 [Information] Executed DbCommand (221ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:29:11.564 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:29:11.687 +03:00 [Information] Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:29:11.767 +03:00 [Information] Executed DbCommand (60ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Languages] AS [l])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:29:11.801 +03:00 [Information] Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Content] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:29:11.859 +03:00 [Information] Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContentText] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:29:12.685 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:5000/  0
+2017-05-04 23:29:12.685 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-05-04 23:29:12.904 +03:00 [Information] Request finished in 247.8178ms 200 
+2017-05-04 23:29:14.126 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:29:46.604 +03:00 [Information] 
+2017-05-04 23:29:46.610 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:29:46.610 +03:00 [Information] 
+2017-05-04 23:29:46.617 +03:00 [Information] [at-loader] Ok, 0.094 sec.
+2017-05-04 23:29:46.640 +03:00 [Information] webpack built ea70419cece809aca702 in 52584ms
+2017-05-04 23:29:46.874 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:29:50.876 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 36966.9994ms
+2017-05-04 23:29:50.920 +03:00 [Information] Request finished in 38280.954ms 200 text/html; charset=utf-8
+2017-05-04 23:29:51.317 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=xpvpY2rJn9q0VAT9sc5LBRTlvnlGqHpriCJzQ-ItF74  
+2017-05-04 23:29:51.593 +03:00 [Information] Request finished in 275.3694ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:29:56.348 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:29:56.356 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:29:56.392 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:29:56.448 +03:00 [Information] Request finished in 100.9295ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:29:56.506 +03:00 [Information] Request finished in 99.2101ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:29:56.525 +03:00 [Information] Request finished in 179.6565ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:29:56.624 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:30:08.153 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2700e1f4a531373e8e4cf64106110116.jpg  
+2017-05-04 23:30:08.174 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/28648c58ee5ad332db07d3552bef939f.jpg  
+2017-05-04 23:30:08.178 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/256003beed7be13f573dc1424fd53fd1.jpg  
+2017-05-04 23:30:08.241 +03:00 [Information] Request finished in 78.2013ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:30:08.369 +03:00 [Information] Request finished in 193.0096ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:30:08.448 +03:00 [Information] Request finished in 245.7629ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:30:09.079 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:30:09.132 +03:00 [Information] Authorization failed for user: null.
+2017-05-04 23:30:09.136 +03:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2017-05-04 23:30:09.145 +03:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2017-05-04 23:30:09.208 +03:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2017-05-04 23:30:09.218 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 108.2837ms
+2017-05-04 23:30:09.223 +03:00 [Information] Request finished in 143.1809ms 401 
+2017-05-04 23:30:14.604 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-05-04 23:30:14.612 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:30:14.622 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:30:14.630 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 18.2996ms
+2017-05-04 23:30:14.634 +03:00 [Information] Request finished in 33.1485ms 200 text/html; charset=utf-8
+2017-05-04 23:30:14.750 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=xpvpY2rJn9q0VAT9sc5LBRTlvnlGqHpriCJzQ-ItF74  
+2017-05-04 23:30:14.789 +03:00 [Information] Request finished in 41.2903ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:30:16.527 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:30:16.606 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:30:16.671 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:30:16.722 +03:00 [Information] Request finished in 168.0893ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:30:16.725 +03:00 [Information] Request finished in 116.1068ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:30:16.735 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:30:16.908 +03:00 [Information] Request finished in 259.122ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:30:29.389 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.dll.js.map  
+2017-05-04 23:30:29.396 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js.map  
+2017-05-04 23:30:29.404 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/polyfills.dll.js.map  
+2017-05-04 23:30:29.938 +03:00 [Information] Request finished in 545.0679ms 200 application/json; charset=UTF-8
+2017-05-04 23:30:29.989 +03:00 [Information] The file "/dist/vendor.dll.js.map" was not modified
+2017-05-04 23:30:29.990 +03:00 [Information] The file "/dist/polyfills.dll.js.map" was not modified
+2017-05-04 23:30:30.002 +03:00 [Information] Request finished in 615.0783ms 304 text/plain
+2017-05-04 23:30:30.006 +03:00 [Information] Request finished in 596.3152ms 304 text/plain
+2017-05-04 23:30:31.208 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.css.map  
+2017-05-04 23:30:31.215 +03:00 [Information] The file "/dist/vendor.css.map" was not modified
+2017-05-04 23:30:31.222 +03:00 [Information] Request finished in 10.8665ms 304 text/plain
+2017-05-04 23:30:33.106 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2017-05-04 23:30:33.132 +03:00 [Information] Sending file. Request path: '"/index.html"'. Physical path: '"N/A"'
+2017-05-04 23:30:33.146 +03:00 [Information] Request finished in 40.3353ms 200 text/html
+2017-05-04 23:30:33.441 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/css/typography.css  
+2017-05-04 23:30:33.500 +03:00 [Information] The file "/css/typography.css" was not modified
+2017-05-04 23:30:33.505 +03:00 [Information] Request finished in 65.9243ms 304 text/css
+2017-05-04 23:30:33.524 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/css/reset.css  
+2017-05-04 23:30:33.583 +03:00 [Information] The file "/css/reset.css" was not modified
+2017-05-04 23:30:33.596 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jquery-1.8.0.min.js  
+2017-05-04 23:30:33.605 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/object-assign-pollyfill.js  
+2017-05-04 23:30:33.605 +03:00 [Information] Request finished in 72.9847ms 304 text/css
+2017-05-04 23:30:33.608 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/css/screen.css  
+2017-05-04 23:30:33.611 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jquery.slideto.min.js  
+2017-05-04 23:30:33.636 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jquery.ba-bbq.min.js  
+2017-05-04 23:30:33.639 +03:00 [Information] The file "/lib/object-assign-pollyfill.js" was not modified
+2017-05-04 23:30:33.653 +03:00 [Information] The file "/lib/jquery.ba-bbq.min.js" was not modified
+2017-05-04 23:30:33.657 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jquery.wiggle.min.js  
+2017-05-04 23:30:33.674 +03:00 [Information] The file "/lib/jquery.wiggle.min.js" was not modified
+2017-05-04 23:30:33.689 +03:00 [Information] Request finished in 80.6711ms 304 application/javascript
+2017-05-04 23:30:33.691 +03:00 [Information] The file "/lib/jquery-1.8.0.min.js" was not modified
+2017-05-04 23:30:33.700 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/backbone-min.js  
+2017-05-04 23:30:33.704 +03:00 [Information] The file "/lib/jquery.slideto.min.js" was not modified
+2017-05-04 23:30:33.710 +03:00 [Information] Request finished in 60.7941ms 304 application/javascript
+2017-05-04 23:30:33.733 +03:00 [Information] Request finished in 96.6663ms 304 application/javascript
+2017-05-04 23:30:33.737 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/lodash.min.js  
+2017-05-04 23:30:33.738 +03:00 [Information] The file "/css/screen.css" was not modified
+2017-05-04 23:30:33.745 +03:00 [Information] Request finished in 157.9823ms 304 text/css
+2017-05-04 23:30:33.749 +03:00 [Information] Request finished in 110.33ms 304 application/javascript
+2017-05-04 23:30:33.753 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.min.js  
+2017-05-04 23:30:33.758 +03:00 [Information] Request finished in 58.7273ms 304 application/javascript
+2017-05-04 23:30:33.761 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/handlebars-4.0.5.js  
+2017-05-04 23:30:33.866 +03:00 [Information] The file "/lib/backbone-min.js" was not modified
+2017-05-04 23:30:33.877 +03:00 [Information] Request finished in 176.3846ms 304 application/javascript
+2017-05-04 23:30:33.884 +03:00 [Information] The file "/lib/lodash.min.js" was not modified
+2017-05-04 23:30:33.901 +03:00 [Information] Request finished in 173.9191ms 304 application/javascript
+2017-05-04 23:30:33.905 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jsoneditor.min.js  
+2017-05-04 23:30:33.911 +03:00 [Information] The file "/lib/handlebars-4.0.5.js" was not modified
+2017-05-04 23:30:33.920 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/marked.js  
+2017-05-04 23:30:33.924 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/highlight.9.1.0.pack_extended.js  
+2017-05-04 23:30:33.938 +03:00 [Information] Request finished in 157.3648ms 304 application/javascript
+2017-05-04 23:30:33.943 +03:00 [Information] The file "/swagger-ui.min.js" was not modified
+2017-05-04 23:30:33.949 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/highlight.9.1.0.pack.js  
+2017-05-04 23:30:33.984 +03:00 [Information] The file "/lib/marked.js" was not modified
+2017-05-04 23:30:33.988 +03:00 [Information] The file "/lib/highlight.9.1.0.pack_extended.js" was not modified
+2017-05-04 23:30:33.994 +03:00 [Information] Request finished in 195.0926ms 304 application/javascript
+2017-05-04 23:30:33.996 +03:00 [Information] The file "/lib/jsoneditor.min.js" was not modified
+2017-05-04 23:30:34.000 +03:00 [Information] Request finished in 83.109ms 304 application/javascript
+2017-05-04 23:30:34.004 +03:00 [Information] Request finished in 117.5918ms 304 application/javascript
+2017-05-04 23:30:34.009 +03:00 [Information] Request finished in 123.7474ms 304 application/javascript
+2017-05-04 23:30:34.022 +03:00 [Information] The file "/lib/highlight.9.1.0.pack.js" was not modified
+2017-05-04 23:30:34.027 +03:00 [Information] Request finished in 158.1411ms 304 application/javascript
+2017-05-04 23:30:34.031 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/swagger-oauth.js  
+2017-05-04 23:30:34.034 +03:00 [Information] The file "/lib/swagger-oauth.js" was not modified
+2017-05-04 23:30:34.039 +03:00 [Information] Request finished in 96.7511ms 304 application/javascript
+2017-05-04 23:30:34.345 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/logo_small.png  
+2017-05-04 23:30:34.512 +03:00 [Information] The file "/images/logo_small.png" was not modified
+2017-05-04 23:30:34.526 +03:00 [Information] Request finished in 205.3471ms 304 image/png
+2017-05-04 23:30:34.559 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/css/print.css  
+2017-05-04 23:30:34.667 +03:00 [Information] The file "/css/print.css" was not modified
+2017-05-04 23:30:34.672 +03:00 [Information] Request finished in 116.4175ms 304 text/css
+2017-05-04 23:30:35.376 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2017-05-04 23:30:35.639 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/favicon-16x16.png  
+2017-05-04 23:30:35.664 +03:00 [Information] The file "/images/favicon-16x16.png" was not modified
+2017-05-04 23:30:35.670 +03:00 [Information] Request finished in 40.7723ms 304 image/png
+2017-05-04 23:30:35.980 +03:00 [Information] Request finished in 604.4203ms 200 application/json
+2017-05-04 23:30:56.557 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/throbber.gif  
+2017-05-04 23:30:56.560 +03:00 [Information] The file "/images/throbber.gif" was not modified
+2017-05-04 23:30:56.564 +03:00 [Information] Request finished in 7.815ms 304 image/gif
+2017-05-04 23:30:56.751 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/favicon-16x16.png  
+2017-05-04 23:30:56.758 +03:00 [Information] The file "/images/favicon-16x16.png" was not modified
+2017-05-04 23:30:56.768 +03:00 [Information] Request finished in 16.8184ms 304 image/png
+2017-05-04 23:31:07.160 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/favicon-16x16.png  
+2017-05-04 23:31:07.168 +03:00 [Information] The file "/images/favicon-16x16.png" was not modified
+2017-05-04 23:31:07.181 +03:00 [Information] Request finished in 20.1908ms 304 image/png
+2017-05-04 23:31:54.362 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/login application/json 71
+2017-05-04 23:31:54.684 +03:00 [Information] Executing ContentResult with HTTP Response ContentType of "application/json"
+2017-05-04 23:31:54.695 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.AccountController.Login (AspNetCoreSpa)" in 313.5213ms
+2017-05-04 23:31:54.700 +03:00 [Information] Request finished in 343.2406ms 400 application/json
+2017-05-04 23:37:58.943 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/register application/json 124
+2017-05-04 23:37:59.072 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.AccountController.Register (AspNetCoreSpa)" with arguments (["AspNetCoreSpa.Server.ViewModels.AccountViewModels.RegisterViewModel", ""]) - ModelState is Valid
+2017-05-04 23:37:59.861 +03:00 [Information] Executed DbCommand (136ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2017-05-04 23:38:00.870 +03:00 [Information] Executed DbCommand (594ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 256), @p4='?', @p5='?' (Size = 250), @p6='?', @p7='?' (Size = 250), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?', @p17='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [ConcurrencyStamp], [CreatedDate], [Email], [EmailConfirmed], [FirstName], [IsEnabled], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2017-05-04 23:38:01.020 +03:00 [Information] Executed DbCommand (25ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2017-05-04 23:38:01.086 +03:00 [Information] Executed DbCommand (12ms) [Parameters=[@__get_Item_0='?', @__get_Item_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)
+2017-05-04 23:38:01.099 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2017-05-04 23:38:01.175 +03:00 [Information] Executed DbCommand (26ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2017-05-04 23:38:01.357 +03:00 [Information] Executed DbCommand (127ms) [Parameters=[@p0='?', @p1='?', @p20='?', @p2='?', @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?', @p5='?' (Size = 256), @p6='?', @p7='?' (Size = 250), @p8='?', @p9='?' (Size = 250), @p10='?', @p11='?', @p12='?' (Size = 256), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?', @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [CreatedDate] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [FirstName] = @p7, [IsEnabled] = @p8, [LastName] = @p9, [LockoutEnabled] = @p10, [LockoutEnd] = @p11, [NormalizedEmail] = @p12, [NormalizedUserName] = @p13, [PasswordHash] = @p14, [PhoneNumber] = @p15, [PhoneNumberConfirmed] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+2017-05-04 23:38:01.395 +03:00 [Information] User created a new account with password.
+2017-05-04 23:38:01.414 +03:00 [Information] Executing JsonResult, writing value "{ }".
+2017-05-04 23:38:01.424 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.AccountController.Register (AspNetCoreSpa)" in 2461.5224ms
+2017-05-04 23:38:01.433 +03:00 [Information] Request finished in 2494.2631ms 200 application/json; charset=utf-8
+2017-05-04 23:39:59.356 +03:00 [Information] 
+[at-loader] Using typescript@2.2.2 from typescript and "tsconfig.json" from G:\Універ, 2 курс\LabaMaker\AspNetCoreSpa/tsconfig.json (in a forked process).
+
+2017-05-04 23:40:11.203 +03:00 [Information] Executed DbCommand (402ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:40:11.218 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:40:11.352 +03:00 [Information] Executed DbCommand (116ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:40:11.532 +03:00 [Information] User profile is available. Using '"C:\Users\Nastya\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-05-04 23:40:13.574 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:40:13.579 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:40:13.584 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:40:13.593 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-05-04 23:40:13.603 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-05-04 23:40:15.359 +03:00 [Information] Executed DbCommand (134ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:40:15.503 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:40:15.586 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:40:15.664 +03:00 [Information] Executed DbCommand (57ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Languages] AS [l])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:40:15.679 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Content] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:40:15.724 +03:00 [Information] Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContentText] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-05-04 23:40:16.419 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-05-04 23:40:16.419 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:5000/  0
+2017-05-04 23:40:16.735 +03:00 [Information] Request finished in 302.7325ms 200 
+2017-05-04 23:40:18.509 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:40:36.331 +03:00 [Information] 
+2017-05-04 23:40:36.337 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-05-04 23:40:36.471 +03:00 [Information] 
+2017-05-04 23:40:36.495 +03:00 [Information] [at-loader] Ok, 0.144 sec.
+2017-05-04 23:40:36.668 +03:00 [Information] webpack built ea70419cece809aca702 in 39484ms
+2017-05-04 23:40:41.972 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:41:08.128 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 49792.4887ms
+2017-05-04 23:41:08.180 +03:00 [Information] Request finished in 51840.8503ms 200 text/html; charset=utf-8
+2017-05-04 23:41:09.238 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=xpvpY2rJn9q0VAT9sc5LBRTlvnlGqHpriCJzQ-ItF74  
+2017-05-04 23:41:09.457 +03:00 [Information] Request finished in 219.5251ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:41:23.145 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-05-04 23:41:23.151 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-05-04 23:41:23.157 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-05-04 23:41:23.304 +03:00 [Information] Request finished in 47.797ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:41:23.463 +03:00 [Information] Request finished in 312.638ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:41:23.520 +03:00 [Information] Request finished in 369.3661ms 200 image/jpeg; charset=UTF-8
+2017-05-04 23:41:24.013 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:42:53.147 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/  
+2017-05-04 23:42:53.210 +03:00 [Information] Sending file. Request path: '"/index.html"'. Physical path: '"N/A"'
+2017-05-04 23:42:53.236 +03:00 [Information] Request finished in 91.1336ms 200 text/html
+2017-05-04 23:42:53.402 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/css/typography.css  
+2017-05-04 23:42:53.477 +03:00 [Information] The file "/css/typography.css" was not modified
+2017-05-04 23:42:53.485 +03:00 [Information] Request finished in 81.5862ms 304 text/css
+2017-05-04 23:42:53.557 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/css/reset.css  
+2017-05-04 23:42:53.560 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/object-assign-pollyfill.js  
+2017-05-04 23:42:53.616 +03:00 [Information] The file "/lib/object-assign-pollyfill.js" was not modified
+2017-05-04 23:42:53.642 +03:00 [Information] The file "/css/reset.css" was not modified
+2017-05-04 23:42:53.652 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jquery.ba-bbq.min.js  
+2017-05-04 23:42:53.693 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jquery.slideto.min.js  
+2017-05-04 23:42:53.701 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jquery.wiggle.min.js  
+2017-05-04 23:42:53.709 +03:00 [Information] The file "/lib/jquery.wiggle.min.js" was not modified
+2017-05-04 23:42:53.713 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jquery-1.8.0.min.js  
+2017-05-04 23:42:53.723 +03:00 [Information] The file "/lib/jquery.slideto.min.js" was not modified
+2017-05-04 23:42:53.729 +03:00 [Information] Request finished in 88.686ms 304 text/css
+2017-05-04 23:42:53.740 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/css/screen.css  
+2017-05-04 23:42:53.749 +03:00 [Information] Request finished in 84.7501ms 304 application/javascript
+2017-05-04 23:42:53.759 +03:00 [Information] Request finished in 51.7226ms 304 application/javascript
+2017-05-04 23:42:53.763 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/handlebars-4.0.5.js  
+2017-05-04 23:42:53.764 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/lodash.min.js  
+2017-05-04 23:42:53.769 +03:00 [Information] The file "/lib/jquery.ba-bbq.min.js" was not modified
+2017-05-04 23:42:53.772 +03:00 [Information] The file "/lib/jquery-1.8.0.min.js" was not modified
+2017-05-04 23:42:53.794 +03:00 [Information] Request finished in 82.2555ms 304 application/javascript
+2017-05-04 23:42:53.807 +03:00 [Information] The file "/lib/handlebars-4.0.5.js" was not modified
+2017-05-04 23:42:53.808 +03:00 [Information] The file "/lib/lodash.min.js" was not modified
+2017-05-04 23:42:53.815 +03:00 [Information] Request finished in 56.6875ms 304 application/javascript
+2017-05-04 23:42:53.824 +03:00 [Information] Request finished in 50.7772ms 304 application/javascript
+2017-05-04 23:42:53.830 +03:00 [Information] The file "/css/screen.css" was not modified
+2017-05-04 23:42:53.841 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/backbone-min.js  
+2017-05-04 23:42:53.843 +03:00 [Information] Request finished in 147.248ms 304 application/javascript
+2017-05-04 23:42:53.851 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/highlight.9.1.0.pack_extended.js  
+2017-05-04 23:42:53.861 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/jsoneditor.min.js  
+2017-05-04 23:42:53.866 +03:00 [Information] Request finished in 128.9257ms 304 application/javascript
+2017-05-04 23:42:53.871 +03:00 [Information] The file "/lib/highlight.9.1.0.pack_extended.js" was not modified
+2017-05-04 23:42:53.875 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.min.js  
+2017-05-04 23:42:53.883 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/highlight.9.1.0.pack.js  
+2017-05-04 23:42:53.886 +03:00 [Information] The file "/lib/backbone-min.js" was not modified
+2017-05-04 23:42:53.890 +03:00 [Information] Request finished in 99.6817ms 304 text/css
+2017-05-04 23:42:53.900 +03:00 [Information] Request finished in 89.2629ms 304 application/javascript
+2017-05-04 23:42:53.906 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/marked.js  
+2017-05-04 23:42:53.922 +03:00 [Information] Request finished in 47.6409ms 304 application/javascript
+2017-05-04 23:42:53.925 +03:00 [Information] The file "/lib/highlight.9.1.0.pack.js" was not modified
+2017-05-04 23:42:53.928 +03:00 [Information] The file "/lib/jsoneditor.min.js" was not modified
+2017-05-04 23:42:53.944 +03:00 [Information] Request finished in 101.6766ms 304 application/javascript
+2017-05-04 23:42:53.951 +03:00 [Information] Request finished in 81.9006ms 304 application/javascript
+2017-05-04 23:42:53.955 +03:00 [Information] The file "/lib/marked.js" was not modified
+2017-05-04 23:42:54.019 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/lib/swagger-oauth.js  
+2017-05-04 23:42:54.034 +03:00 [Information] The file "/lib/swagger-oauth.js" was not modified
+2017-05-04 23:42:54.049 +03:00 [Information] The file "/swagger-ui.min.js" was not modified
+2017-05-04 23:42:54.059 +03:00 [Information] Request finished in 182.4817ms 304 application/javascript
+2017-05-04 23:42:54.063 +03:00 [Information] Request finished in 67.4498ms 304 application/javascript
+2017-05-04 23:42:54.067 +03:00 [Information] Request finished in 109.006ms 304 application/javascript
+2017-05-04 23:42:54.100 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/logo_small.png  
+2017-05-04 23:42:54.118 +03:00 [Information] The file "/images/logo_small.png" was not modified
+2017-05-04 23:42:54.121 +03:00 [Information] Request finished in 21.8649ms 304 image/png
+2017-05-04 23:42:54.156 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/css/print.css  
+2017-05-04 23:42:54.353 +03:00 [Information] The file "/css/print.css" was not modified
+2017-05-04 23:42:54.357 +03:00 [Information] Request finished in 200.1499ms 304 text/css
+2017-05-04 23:42:54.994 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json  
+2017-05-04 23:42:55.207 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/favicon-16x16.png  
+2017-05-04 23:42:55.248 +03:00 [Information] The file "/images/favicon-16x16.png" was not modified
+2017-05-04 23:42:55.256 +03:00 [Information] Request finished in 45.2175ms 304 image/png
+2017-05-04 23:42:55.667 +03:00 [Information] Request finished in 666.7107ms 200 application/json
+2017-05-04 23:43:00.649 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/throbber.gif  
+2017-05-04 23:43:00.653 +03:00 [Information] The file "/images/throbber.gif" was not modified
+2017-05-04 23:43:00.656 +03:00 [Information] Request finished in 7.3531ms 304 image/gif
+2017-05-04 23:43:00.875 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/favicon-16x16.png  
+2017-05-04 23:43:00.883 +03:00 [Information] The file "/images/favicon-16x16.png" was not modified
+2017-05-04 23:43:00.891 +03:00 [Information] Request finished in 17.0366ms 304 image/png
+2017-05-04 23:43:03.008 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/swagger/images/favicon-16x16.png  
+2017-05-04 23:43:03.020 +03:00 [Information] The file "/images/favicon-16x16.png" was not modified
+2017-05-04 23:43:03.029 +03:00 [Information] Request finished in 18.3272ms 304 image/png
+2017-05-04 23:43:32.056 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/register application/json 130
+2017-05-04 23:43:32.364 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.AccountController.Register (AspNetCoreSpa)" with arguments (["AspNetCoreSpa.Server.ViewModels.AccountViewModels.RegisterViewModel", ""]) - ModelState is Valid
+2017-05-04 23:43:32.677 +03:00 [Information] Executed DbCommand (142ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2017-05-04 23:43:33.817 +03:00 [Information] Executed DbCommand (619ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?', @p3='?' (Size = 256), @p4='?', @p5='?' (Size = 250), @p6='?', @p7='?' (Size = 250), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?', @p17='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([AccessFailedCount], [ConcurrencyStamp], [CreatedDate], [Email], [EmailConfirmed], [FirstName], [IsEnabled], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+SELECT [Id]
+FROM [AspNetUsers]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2017-05-04 23:43:33.976 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2017-05-04 23:43:34.024 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?', @__get_Item_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[UserId], [e].[RoleId]
+FROM [AspNetUserRoles] AS [e]
+WHERE ([e].[UserId] = @__get_Item_0) AND ([e].[RoleId] = @__get_Item_1)
+2017-05-04 23:43:34.037 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedRoleName_0
+2017-05-04 23:43:34.121 +03:00 [Information] Executed DbCommand (30ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2017-05-04 23:43:34.284 +03:00 [Information] Executed DbCommand (116ms) [Parameters=[@p0='?', @p1='?', @p20='?', @p2='?', @p3='?' (Size = 4000), @p21='?' (Size = 4000), @p4='?', @p5='?' (Size = 256), @p6='?', @p7='?' (Size = 250), @p8='?', @p9='?' (Size = 250), @p10='?', @p11='?', @p12='?' (Size = 256), @p13='?' (Size = 256), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?', @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([UserId], [RoleId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [CreatedDate] = @p4, [Email] = @p5, [EmailConfirmed] = @p6, [FirstName] = @p7, [IsEnabled] = @p8, [LastName] = @p9, [LockoutEnabled] = @p10, [LockoutEnd] = @p11, [NormalizedEmail] = @p12, [NormalizedUserName] = @p13, [PasswordHash] = @p14, [PhoneNumber] = @p15, [PhoneNumberConfirmed] = @p16, [SecurityStamp] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+2017-05-04 23:43:34.308 +03:00 [Information] User created a new account with password.
+2017-05-04 23:43:34.328 +03:00 [Information] Executing JsonResult, writing value "{ }".
+2017-05-04 23:43:34.337 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.AccountController.Register (AspNetCoreSpa)" in 2254.3515ms
+2017-05-04 23:43:34.343 +03:00 [Information] Request finished in 2287.6119ms 200 application/json; charset=utf-8
+2017-05-04 23:44:30.407 +03:00 [Information] Request starting HTTP/1.1 POST http://localhost:5000/api/Account/login application/json 79
+2017-05-04 23:44:30.426 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.AccountController.Login (AspNetCoreSpa)" with arguments (["AspNetCoreSpa.Server.ViewModels.AccountViewModels.LoginViewModel"]) - ModelState is Valid
+2017-05-04 23:44:30.448 +03:00 [Information] Executed DbCommand (5ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2017-05-04 23:44:31.153 +03:00 [Information] Executed DbCommand (291ms) [Parameters=[@__userId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2017-05-04 23:44:31.166 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-05-04 23:44:31.236 +03:00 [Information] Executed DbCommand (12ms) [Parameters=[@__role_Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2017-05-04 23:44:31.285 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2017-05-04 23:44:31.375 +03:00 [Information] AuthenticationScheme: "Identity.Application" signed in.
+2017-05-04 23:44:31.456 +03:00 [Information] Executed DbCommand (63ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2017-05-04 23:44:31.463 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[@__userId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2017-05-04 23:44:31.467 +03:00 [Information] User logged in.
+2017-05-04 23:44:31.497 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-05-04 23:44:31.521 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.AccountController.Login (AspNetCoreSpa)" in 1109.0605ms
+2017-05-04 23:44:31.525 +03:00 [Information] Request finished in 1122.3969ms 200 application/json; charset=utf-8
+2017-05-04 23:44:49.263 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/products  
+2017-05-04 23:44:49.282 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-05-04 23:44:49.287 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:44:49.295 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2017-05-04 23:44:49.302 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[@__userId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2017-05-04 23:44:49.321 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-05-04 23:44:49.388 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 100.6211ms
+2017-05-04 23:44:49.393 +03:00 [Information] Request finished in 132.4289ms 200 text/html; charset=utf-8
+2017-05-04 23:44:49.488 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=xpvpY2rJn9q0VAT9sc5LBRTlvnlGqHpriCJzQ-ItF74  
+2017-05-04 23:44:49.547 +03:00 [Information] Request finished in 51.7328ms 200 application/javascript; charset=UTF-8
+2017-05-04 23:44:51.077 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-05-04 23:44:51.084 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-05-04 23:44:51.116 +03:00 [Information] Authorization was successful for user: "vasya@mail.ru".
+2017-05-04 23:44:51.121 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-05-04 23:44:51.172 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-05-04 23:44:51.221 +03:00 [Information] Executed DbCommand (65ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:44:51.262 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-05-04 23:44:51.283 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[description], [p].[imageUrl], [p].[price], [p].[productCode], [p].[productName], [p].[releaseDate], [p].[starRating]
+FROM [Product] AS [p]
+2017-05-04 23:44:51.309 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 216.0781ms
+2017-05-04 23:44:51.313 +03:00 [Information] Request finished in 237.028ms 200 application/json; charset=utf-8

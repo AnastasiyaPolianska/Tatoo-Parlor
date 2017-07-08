@@ -1,0 +1,44 @@
+thead {
+    color: #000000;
+    font-family: 'comic sans ms';
+}
+
+.tatoobutton{
+    background-color: #000000;
+    border-color: #FFFFFF;
+    font-family: 'comic sans ms';
+}
+
+.tatoobutton:hover{
+    background-color: #464451;
+    border-color: #D5D5D5;
+    font-family: 'comic sans ms';
+}
+
+.tatoopanel{
+    background-color: #000000 !important;
+    border-color: #FFFFFF;
+    font-family: 'comic sans ms';
+    border-color: #000000;
+}
+
+.tatootable{
+    font-family: 'comic sans ms';
+    color: #000000;
+}
+
+a {color: #464441;}
+a:visited {color:  #464441; }
+a:hover {color:  #442D25; font-weight: bold;}
+
+.tatoodiv{
+    border-color: #000000;
+}
+
+tatootable:focus {
+    border-color: #000000;
+}
+
+tatootable:hover {
+    border-color: #000000;
+}

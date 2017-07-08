@@ -1,0 +1,55 @@
+/*text styles*/
+.bolder{
+    font-weight: bold;
+}
+
+/*styles*/
+.tatoobutton{
+    background-color: #000000;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+.tatoobutton:hover{
+    background-color: #464451;
+    border-color: #D5D5D5;
+    color: #FFFFFF;
+}
+
+#tatoopanel {
+    background-color: #000000;
+    border-color: #FFFFFF;
+    border-color: #000000;
+    font-size: 3vmin;
+}
+
+.tatootable{
+    color: #000000;
+}
+
+#tatoodiv {
+    border-color: #000000;
+    font-family: 'comic sans ms';
+    color: #000000 !important;
+    margin: 1%;
+}
+
+/*stars*/
+.star {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    color: white;
+    border-color: black;
+}
+
+.full {
+    color: black;
+}
+
+.half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: black;
+}

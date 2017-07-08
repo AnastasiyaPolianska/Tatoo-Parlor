@@ -1,0 +1,57 @@
+/*text styles*/
+.text{
+    font-family: 'TEMPUS SANS ITC';
+}
+
+.whitetext{
+    color: #FFFFFF;
+}
+
+.arcticleheading {
+    font-size: 6vmin;
+    color: rgba(41, 43, 41, 0.9);
+}
+
+.arcticletext {
+    font-size: 4vmin;
+    color: rgba(41, 43, 41, 0.7);
+}
+
+/*styles*/
+.tatooback{   
+    font-weight: bold;
+    font-size: 12vmin;  
+}
+
+.margin2{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.margin1 {
+    margin-left: 3%;
+}
+
+.tatooarticle{
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+    font-weight: bold;
+}
+
+.circles{
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin:2%;
+}
+
+.examplesofwork{
+    width: 25%;
+    height: 25%; 
+    border-radius: 50%; 
+}
+
+/*links*/
+a {color: rgba(41, 43, 41, 0.9); text-decoration: underline; }
+a:hover {color: rgba(41, 43, 41, 0.5); text-decoration: underline; }

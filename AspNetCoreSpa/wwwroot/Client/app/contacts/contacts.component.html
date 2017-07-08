@@ -1,0 +1,34 @@
+<div class="tatooarticle text">
+    <p class="margin2 heading"> {{ArticleTitle}} </p>
+    <p class="text plaintext margin2"> {{ArticleText}} </p>
+</div> 
+
+<br />
+
+<div class="tatooarticle text plaintext">
+    <p class="margin2 paragraphhead">{{EmailLabel}}
+        <label class="paragraphtext"> {{Email}}</label>
+    </p>
+    <p class="margin2 paragraphhead">
+        {{PhoneLabel}}
+        <label class="paragraphtext"> {{Phone}}</label>
+    </p>
+    <p class="margin2 paragraphhead">
+        {{InstagramLabel}}
+        <a href="https://www.instagram.com/martha_bocharova/" class="paragraphtext"> {{Instagram}}</a>
+    </p>
+    <p class="margin2 paragraphhead">
+        {{TwitterLabel}}
+        <a href="https://www.pinterest.com/pin/542754192577200718/" class="paragraphtext"> {{Twitter}}</a>
+    </p>
+    <p class="margin2 paragraphhead">
+        {{VkLabel}}
+        <a href="https://vk.com/id20028415" class="paragraphtext"> {{Vk}}</a>
+    </p>
+</div>
+
+<br />
+
+<agm-map [zoom]="15" [latitude]="Lat" [longitude]="Lng">
+    <agm-marker [latitude]="Lat" [longitude]="Lng"></agm-marker>
+</agm-map>

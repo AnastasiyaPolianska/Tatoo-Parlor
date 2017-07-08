@@ -1,0 +1,45 @@
+li {
+    font-size: large;
+}
+
+div.panel-heading {
+   font-size: x-large; 
+}
+
+
+
+.navbar-nav {
+    display: inline;
+}
+
+.container-fluid {
+    width: 100%;
+    border-radius: 0px;
+}
+
+.heading {
+    margin-left: 0;
+}
+
+/*links*/
+a.foot {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+
+a.foot:hover {
+     color: rgb(128, 128, 128);
+     text-decoration: underline;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.horizontal-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

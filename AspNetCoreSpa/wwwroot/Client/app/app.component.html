@@ -1,0 +1,50 @@
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="border-radius:0px">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/welcome']">Home</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/products']">Online Shop</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/scretches']">Scretches</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/contacts']">Contacts</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/aboutus']">About Us</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/help']">FAQ</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/cart']" *ngIf="isLoggedIn()"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/cabinet']" *ngIf="isLoggedIn()">Hello, {{loggedUserName()}}</a></li>
+                    <li (click)="logOut()"><a *ngIf="isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/signup']" *ngIf="!isLoggedIn()"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/login']" *ngIf="!isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class='container heading margins' style='width:100%; padding:0%;'>
+        <router-outlet class="margins"></router-outlet>
+        <p></p>
+    </div>
+    <footer class="footerstyle">
+        <div class="containerimage">
+            <div class="texter">
+                <a class="foot" [routerLink]="['/questions']">Extra questions?</a>
+            </div>
+            <a style="display: inline" href="https://www.instagram.com/martha_bocharova/" class="footer-link">
+                <img class="footer-image" src='assets/images/Footer/instagram.png' />
+            </a>
+            <a href="https://www.pinterest.com/pin/542754192577200718/" class="footer-link">
+                <img class="footer-image" src='assets/images/Footer/twitter-logo-silhouette.png' />
+            </a>
+            <a href="https://vk.com/id20028415" class="footer-link" style="margin-right:1%">
+                <img class="footer-image" src='assets/images/Footer/vk.png' />
+            </a>
+        </div>
+    </footer>

@@ -1,0 +1,30 @@
+﻿<style>
+    .ui-growl-item-container{
+        margin-top:50px !important;
+    }
+    #growl {
+        margin-top: 50px;
+    }
+</style>
+
+<p-growl [value]="Msgs" id="growl"></p-growl>
+
+<div class='panel panel-primary tatoodiv'>
+    <div class='panel-heading' id="tatoopanel">
+        {{PageTitle}}
+    </div>
+
+    <!-- Filter the Products   -->
+    <div class='panel-body'>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>
+            <input type='email' class='tatooinput marginbottom' placeholder="{{PlaceHolderEmail}}" [(ngModel)]='Email' />
+        </div>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderPassword}}" [(ngModel)]='Password' />
+        </div>
+
+        <button class=' btn btn-primary tatoobutton' (click)= 'logIn()'> {{ButtonText}} </button>
+    </div>
+</div>

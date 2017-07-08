@@ -1,0 +1,62 @@
+<!--Template for stars-->
+<ng-template #t let-fill="fill">
+    <span *ngIf="fill === 100" class="star full">&#9733;</span>
+    <span *ngIf="fill === 0" class="star">&#9733;</span>
+    <span *ngIf="fill < 100 && fill > 0" class="star">
+        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+    </span>
+</ng-template>
+
+<!--Page-->
+<div class='panel panel-primary ' id="tatoodiv" *ngIf='Product'>
+    <div class='panel-heading'id="tatoopanel"  style='font-size:large'>
+        {{PageTitle + ': ' + Product.productName}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3 bolder'>{{Name}}</div>
+                    <div class='col-md-6'>{{Product.productName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3 bolder'>{{Code}}</div>
+                    <div class='col-md-6'>{{Product.productCode}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3 bolder'>{{Description}}</div>
+                    <div class='col-md-6'>{{Product.description}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3 bolder'>{{Availability}}</div>
+                    <div class='col-md-6'>{{Product.releaseDate | date:longDate}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3 bolder'>{{Price}}</div>
+                    <div class='col-md-6'>{{Product.price|currency:'USD':true}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3 bolder'>{{StarRating}}</div>
+                    <div class='col-md-6'>
+                        <ngb-rating title={{Product.starRating}} [(rate)]="Product.starRating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                    </div>
+                </div>
+            </div>
+
+            <div class='col-md-6'>
+                <img class='center-block img-responsive' 
+                     [style.width.px]='200' 
+                     [style.margin.px]='2' 
+                     [src]='Product.imageUrl'
+                     [title]='Product.productName'>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}
+        </a>
+    </div>
+</div>

@@ -1,0 +1,295 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <DebugType>portable</DebugType>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>AspNetCoreSpa</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>AspNetCoreSpa</PackageId>
+    <UserSecretsId>aspnetcorespa-c23d27a4-eb88-4b18-9b77-2a93f3b15119</UserSecretsId>
+    <RuntimeFrameworkVersion>1.1.1</RuntimeFrameworkVersion>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="node_modules\**\*;wwwroot\Client\**\*" />
+    <Compile Remove="wwwroot\Client\styles\trontastic\**" />
+    <Content Remove="wwwroot\Client\styles\trontastic\**" />
+    <EmbeddedResource Remove="wwwroot\Client\styles\trontastic\**" />
+    <None Remove="wwwroot\Client\styles\trontastic\**" />
+  </ItemGroup>
+
+  <Target Name="RunWebpack" BeforeTargets="BeforePublish">
+    <Exec Command="npm run clean:dist" />
+    <Exec Command="npm run build:prod" />
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**\*" />
+      <Content Include="@(DistFiles)" CopytoPublishDirectory="Always" />
+      <Content Include="app.yaml" CopyToOutputDirectory="Always" />
+      <ContentWithTargetPath Include="@(DistFiles)" TargetPath="%(Identity)" CopyToPublishDirectory="Always" />
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <Content Include="wwwroot\Client\app\assets\images\Footer\instagram.png" />
+    <Content Include="wwwroot\Client\app\assets\images\Footer\twitter-logo-silhouette.png" />
+    <Content Include="wwwroot\Client\app\assets\images\Footer\vk.png" />
+    <Content Include="wwwroot\Client\app\assets\images\images\star-rating.icons.svg" />
+    <Content Include="wwwroot\Client\app\assets\images\star-rating.icons.svg" />
+    <Content Include="wwwroot\Client\app\cabinet\cabinet.component.css" />
+    <Content Include="wwwroot\Client\app\cabinet\cabinet.component.html" />
+    <Content Include="wwwroot\Client\app\cabinet\cabinet.component.ts" />
+    <Content Include="wwwroot\Client\app\cart\cart.component.css" />
+    <Content Include="wwwroot\Client\app\cart\cart.component.html" />
+    <Content Include="wwwroot\Client\app\cart\cart.component.js" />
+    <Content Include="wwwroot\Client\app\cart\cart.component.js.map" />
+    <Content Include="wwwroot\Client\app\cart\cart.component.ts" />
+    <Content Include="wwwroot\Client\app\cart\product-detail.component.css" />
+    <Content Include="wwwroot\Client\app\cart\product-detail.component.html" />
+    <Content Include="wwwroot\Client\app\cart\product-detail.component.js" />
+    <Content Include="wwwroot\Client\app\cart\product-detail.component.js.map" />
+    <Content Include="wwwroot\Client\app\cart\product-detail.component.ts" />
+    <Content Include="wwwroot\Client\app\cart\product-filter.pipe.js" />
+    <Content Include="wwwroot\Client\app\cart\product-filter.pipe.js.map" />
+    <Content Include="wwwroot\Client\app\cart\product-filter.pipe.ts" />
+    <Content Include="wwwroot\Client\app\cart\product-guard.service.js" />
+    <Content Include="wwwroot\Client\app\cart\product-guard.service.js.map" />
+    <Content Include="wwwroot\Client\app\cart\product-guard.service.ts" />
+    <Content Include="wwwroot\Client\app\cart\product-list.component.css" />
+    <Content Include="wwwroot\Client\app\cart\product-list.component.html" />
+    <Content Include="wwwroot\Client\app\cart\product-list.component.js" />
+    <Content Include="wwwroot\Client\app\cart\product-list.component.js.map" />
+    <Content Include="wwwroot\Client\app\cart\product-list.component.ts" />
+    <Content Include="wwwroot\Client\app\cart\product.js" />
+    <Content Include="wwwroot\Client\app\cart\product.js.map" />
+    <Content Include="wwwroot\Client\app\cart\product.module.js" />
+    <Content Include="wwwroot\Client\app\cart\product.module.js.map" />
+    <Content Include="wwwroot\Client\app\cart\product.module.ts" />
+    <Content Include="wwwroot\Client\app\cart\product.service.js" />
+    <Content Include="wwwroot\Client\app\cart\product.service.js.map" />
+    <Content Include="wwwroot\Client\app\cart\product.service.ts" />
+    <Content Include="wwwroot\Client\app\cart\product.ts" />
+    <Content Include="wwwroot\Client\app\contacts\contacts.component.css" />
+    <Content Include="wwwroot\Client\app\contacts\contacts.component.html" />
+    <Content Include="wwwroot\Client\app\contacts\contacts.component.js" />
+    <Content Include="wwwroot\Client\app\contacts\contacts.component.js.map" />
+    <Content Include="wwwroot\Client\app\contacts\contacts.component.ts" />
+    <Content Include="wwwroot\Client\app\questions\question.js" />
+    <Content Include="wwwroot\Client\app\questions\question.js.map" />
+    <Content Include="wwwroot\Client\app\questions\question.module.js" />
+    <Content Include="wwwroot\Client\app\questions\question.module.js.map" />
+    <Content Include="wwwroot\Client\app\questions\question.service.js" />
+    <Content Include="wwwroot\Client\app\questions\question.service.js.map" />
+    <Content Include="wwwroot\Client\app\questions\question.ts" />
+    <Content Include="wwwroot\Client\app\registration\singup.component.css">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\Client\app\registration\singup.component.html" />
+    <Content Include="wwwroot\Client\app\registration\singup.component.js" />
+    <Content Include="wwwroot\Client\app\registration\singup.component.ts" />
+    <Content Include="wwwroot\Client\app\registration\login.component.css">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\Client\app\registration\login.component.html" />
+    <Content Include="wwwroot\Client\app\registration\login.component.js" />
+    <Content Include="wwwroot\Client\app\registration\login.component.js.map" />
+    <Content Include="wwwroot\Client\app\registration\login.component.ts" />
+    <Content Include="wwwroot\Client\app\shared\allProducts - Copy.component.css" />
+    <Content Include="wwwroot\Client\app\shared\spinner.component.css" />
+    <Content Include="wwwroot\Client\app\shared\spinner.component.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\Client\app\shared\allProducts - Copy.component.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\Client\app\shared\allProducts - Copy.component.js.map" />
+    <Content Include="wwwroot\Client\app\shared\allProducts - Copy.component.ts">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\Client\app\shared\allProducts.component.css" />
+    <Content Include="wwwroot\Client\app\shared\allProducts.component.html" />
+    <Content Include="wwwroot\Client\app\shared\allProducts.component.js" />
+    <Content Include="wwwroot\Client\app\shared\allProducts.component.js.map" />
+    <Content Include="wwwroot\Client\app\shared\allProducts.component.ts" />
+    <Content Include="wwwroot\Client\app\shared\question.service.js" />
+    <Content Include="wwwroot\Client\app\shared\question.service.js.map" />
+    <Content Include="wwwroot\Client\app\shared\question.service.ts" />
+    <Content Include="wwwroot\Client\app\shared\auth.service.js" />
+    <Content Include="wwwroot\Client\app\shared\auth.service.js.map" />
+    <Content Include="wwwroot\Client\app\shared\auth.service.ts" />
+    <Content Include="wwwroot\Client\app\shared\logInModel.ts" />
+    <Content Include="wwwroot\Client\app\shared\questionModel.ts" />
+    <Content Include="wwwroot\Client\app\shared\singUpModel.ts" />
+    <Content Include="wwwroot\Client\app\shared\spinner.component.js" />
+    <Content Include="wwwroot\Client\app\shared\spinner.component.js.map" />
+    <Content Include="wwwroot\Client\app\shared\spinner.component.ts" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="AspNet.Security.OAuth.Introspection" Version="1.0.0-beta1-final" />
+    <PackageReference Include="AspNet.Security.OAuth.Validation" Version="1.0.0-beta1-final" />
+    <PackageReference Include="Microsoft.AspNetCore.AzureAppServicesIntegration" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Antiforgery" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.MicrosoftAccount" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Https" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.ResponseCompression" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.WebSockets" Version="1.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.AngularServices" Version="1.1.0-beta-000002" />
+    <PackageReference Include="AspNet.Security.OAuth.GitHub" Version="1.0.0-beta3-final" />
+    <PackageReference Include="AspNet.Security.OAuth.LinkedIn" Version="1.0.0-beta3-final" />
+    <PackageReference Include="OpenIddict" Version="1.0.0-*" />
+    <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="1.0.0-*" />
+    <PackageReference Include="OpenIddict.Mvc" Version="1.0.0-*" />
+    <PackageReference Include="SendGrid.NetCore" Version="1.0.0-rtm-00002" />
+    <PackageReference Include="MailKit" Version="1.14.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0-rc3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="1.0.0-rc3" />
+    <PackageReference Include="Twilio" Version="5.3.0" />
+    <PackageReference Include="Stripe.net" Version="8.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+    <PackageReference Include="Webpack" Version="4.0.0" />
+    <PackageReference Include="Serilog" Version="2.4.1-dev-00801" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="1.4.1-dev-10147" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="3.2.0" />
+    <PackageReference Include="Bogus" Version="15.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Client\app\about_us\aboutus.component.css" />
+    <None Include="wwwroot\Client\app\about_us\aboutus.component.html" />
+    <None Include="wwwroot\Client\app\about_us\aboutus.component.js" />
+    <None Include="wwwroot\Client\app\about_us\aboutus.component.js.map" />
+    <None Include="wwwroot\Client\app\about_us\aboutus.component.ts" />
+    <None Include="wwwroot\Client\app\app.component.css" />
+    <None Include="wwwroot\Client\app\app.component.html" />
+    <None Include="wwwroot\Client\app\app.component.js" />
+    <None Include="wwwroot\Client\app\app.component.js.map" />
+    <None Include="wwwroot\Client\app\app.component.ts" />
+    <None Include="wwwroot\Client\app\app.module.js" />
+    <None Include="wwwroot\Client\app\app.module.js.map" />
+    <None Include="wwwroot\Client\app\app.module.ts" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\1st.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\2nd.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\3rd.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\A1.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\A2.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\A3.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\A4.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\Asya.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\M1.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\M2.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\M3.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\M4.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\AboutUs\Martha.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\Home\1st.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\Home\2nd.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\Home\3rd.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\mainBack.jpeg" />
+    <None Include="wwwroot\Client\app\assets\images\mainBackMin.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\Scretches\Scretch1.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\Scretches\Scretch2.jpg" />
+    <None Include="wwwroot\Client\app\assets\images\Scretches\Scretch3.jpg" />
+    <None Include="wwwroot\Client\app\home\welcome.component.css" />
+    <None Include="wwwroot\Client\app\home\welcome.component.html" />
+    <None Include="wwwroot\Client\app\home\welcome.component.js" />
+    <None Include="wwwroot\Client\app\home\welcome.component.js.map" />
+    <None Include="wwwroot\Client\app\home\welcome.component.ts" />
+    <None Include="wwwroot\Client\app\main.js" />
+    <None Include="wwwroot\Client\app\main.js.map" />
+    <None Include="wwwroot\Client\app\main.ts" />
+    <None Include="wwwroot\Client\app\products\product-detail.component.css" />
+    <None Include="wwwroot\Client\app\products\product-detail.component.html" />
+    <None Include="wwwroot\Client\app\products\product-detail.component.js" />
+    <None Include="wwwroot\Client\app\products\product-detail.component.js.map" />
+    <None Include="wwwroot\Client\app\products\product-detail.component.ts" />
+    <None Include="wwwroot\Client\app\products\product-filter.pipe.js" />
+    <None Include="wwwroot\Client\app\products\product-filter.pipe.js.map" />
+    <None Include="wwwroot\Client\app\products\product-filter.pipe.ts" />
+    <None Include="wwwroot\Client\app\products\product-guard.service.js" />
+    <None Include="wwwroot\Client\app\products\product-guard.service.js.map" />
+    <None Include="wwwroot\Client\app\products\product-guard.service.ts" />
+    <None Include="wwwroot\Client\app\products\product-list.component.css" />
+    <None Include="wwwroot\Client\app\products\product-list.component.html" />
+    <None Include="wwwroot\Client\app\products\product-list.component.js" />
+    <None Include="wwwroot\Client\app\products\product-list.component.js.map" />
+    <None Include="wwwroot\Client\app\products\product-list.component.ts" />
+    <None Include="wwwroot\Client\app\products\product.js" />
+    <None Include="wwwroot\Client\app\products\product.js.map" />
+    <None Include="wwwroot\Client\app\products\product.module.js" />
+    <None Include="wwwroot\Client\app\products\product.module.js.map" />
+    <None Include="wwwroot\Client\app\products\product.module.ts" />
+    <None Include="wwwroot\Client\app\products\product.service.js" />
+    <None Include="wwwroot\Client\app\products\product.service.js.map" />
+    <None Include="wwwroot\Client\app\products\product.service.ts" />
+    <None Include="wwwroot\Client\app\products\product.ts" />
+    <None Include="wwwroot\Client\app\scretches\scretches.component.css" />
+    <None Include="wwwroot\Client\app\scretches\scretches.component.html" />
+    <None Include="wwwroot\Client\app\scretches\scretches.component.js" />
+    <None Include="wwwroot\Client\app\scretches\scretches.component.js.map" />
+    <None Include="wwwroot\Client\app\scretches\scretches.component.ts" />
+    <None Include="wwwroot\Client\app\scretches\scretches.module.js" />
+    <None Include="wwwroot\Client\app\scretches\scretches.module.js.map" />
+    <None Include="wwwroot\Client\app\scretches\scretches.module.ts" />
+    <None Include="wwwroot\Client\app\shared\shared.module.js" />
+    <None Include="wwwroot\Client\app\shared\shared.module.js.map" />
+    <None Include="wwwroot\Client\app\shared\shared.module.ts" />
+    <None Include="wwwroot\Client\app\shared\star.component.css" />
+    <None Include="wwwroot\Client\app\shared\star.component.html" />
+    <None Include="wwwroot\Client\app\shared\star.component.js" />
+    <None Include="wwwroot\Client\app\shared\star.component.js.map" />
+    <None Include="wwwroot\Client\app\shared\star.component.ts" />
+    <None Include="wwwroot\Client\environment.ts" />
+    <None Include="wwwroot\Client\main.aot.ts" />
+    <None Include="wwwroot\Client\main.ts" />
+    <None Include="wwwroot\Client\polyfills.ts" />
+    <None Include="wwwroot\Client\styles\heading.css" />
+    <None Include="wwwroot\Client\styles\vendor.css" />
+    <None Include="wwwroot\Client\styles\_variables.scss" />
+    <None Include="wwwroot\product-list.component.css" />
+    <None Include="wwwroot\styles.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+  </ItemGroup>
+
+</Project>

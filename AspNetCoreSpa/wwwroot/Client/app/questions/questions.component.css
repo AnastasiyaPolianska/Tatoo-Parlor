@@ -1,0 +1,124 @@
+﻿/*text styles*/
+.text {
+    font-family: 'TEMPUS SANS ITC';
+    font-weight: bold;
+    color: rgba(41, 43, 41, 0.7);
+}
+
+.plaintext {
+    font-size: 4vmin;
+}
+
+.heading {
+    font-size: 7vmin;
+    color: rgba(41, 43, 41, 0.9);
+}
+
+.bolder {
+    font-weight: bold;
+}
+
+/*styles*/
+.tatooarticle {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.margin2 {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.tatoobutton {
+    background-color: #000000;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    float: right;
+}
+
+.tatoobutton:hover {
+    background-color: #464451;
+    border-color: #D5D5D5;
+    color: #FFFFFF;
+}
+
+#tatoopanel {
+    background-color: #000000;
+    border-color: #FFFFFF;
+    border-color: #000000;
+    font-size: 3vmin;
+}
+
+.tatootable {
+    color: #000000;
+}
+
+.tatoodiv {
+    border-color: #000000;
+    font-family: 'comic sans ms';
+    color: #000000;
+    margin: 1%;
+}
+
+@media only screen and (min-width: 800px) {
+    .tatoodiv {
+        width: 40%;
+    }
+}
+
+.margin2 {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.tatoolable {
+    font-family: 'comic sans ms';
+    color: #000000;
+    min-width: 39%;
+    max-width: 39%;
+}
+
+.tatooinput {
+    font-family: 'comic sans ms';
+    color: #000000;
+    min-width: 58%;
+    max-width: 58%;
+    margin-right: 1%;
+}
+
+.marginbottom {
+    margin-bottom: 1%;
+}
+
+/*links*/
+a {
+    color: rgba(41, 43, 41, 0.9);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: rgba(41, 43, 41, 0.5);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: rgba(41, 43, 41, 0.9) !important;
+    text-decoration: underline;
+}
+
+/*placeholders*/
+::-webkit-input-placeholder {
+    color: #808080;
+}
+
+::-moz-placeholder {
+    color: #808080;
+}
+/* Firefox 19+ */
+:-moz-placeholder {
+    color: #808080;
+}
+/* Firefox 18- */
+:-ms-input-placeholder {
+    color: #808080;
+}

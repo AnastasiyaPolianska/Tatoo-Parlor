@@ -1,0 +1,80 @@
+<!--Template for stars-->
+<ng-template #t let-fill="fill">
+    <span *ngIf="fill === 100" class="star full">&#9733;</span>
+    <span *ngIf="fill === 0" class="star">&#9733;</span>
+    <span *ngIf="fill < 100 && fill > 0" class="star">
+        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+    </span>
+</ng-template>
+
+<!--Page-->
+<div class='tatoodiv panel panel-primary'>
+    <div class='tatoopanel panel-heading ' id="tatoopanel">
+        {{PageTitle}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-2 tatootable'>{{Filter}}</div>
+            <div class='col-md-2 tatootable'>
+                <input type='text' class='tatootable' [(ngModel)]='ListFilter' />
+            </div>
+        </div>
+
+        <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>
+
+        <div class='table-responsive'>
+            <table class='table tatootable'
+                   *ngIf='AllProducts && AllProducts.length'>
+                <thead>
+                    <tr>
+                        <th>{{Image}}</th>
+                        <th>{{Name}}</th>
+                        <th>{{Code}}</th>
+                        <th>{{Availability}}</th>
+                        <th>{{Price}}</th>
+                        <th>{{StarRating}}</th>
+                        <th *ngIf="IsCart">{{Quantity}}</th>
+                        <th *ngIf="IsCart"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let product of AllProducts | productFilter:ListFilter'>
+                        <td>
+                            <img
+                                 [src]='product.imageUrl'
+                                 [title]='product.productName | uppercase'
+                                 [style.width.px]='ImageWidth' 
+                                 [style.margin.px]='ImageMargin'>
+                        </td>
+                        <td><a [routerLink]="['/product', product.id]">
+                            {{product.productName}}
+                            </a>
+                        </td>
+                        <td>{{ product.productCode }}</td>
+                        <td>{{ product.releaseDate | date:longDate}}</td>
+                        <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
+                        <td >
+                            <ngb-rating title = {{product.starRating}} [(rate)]="product.starRating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                        </td>
+                        <td *ngIf="IsCart">
+                            <spinnerNum [IncomeVal]="1"></spinnerNum>
+                        </td>
+                        <td *ngIf="IsCart"> 
+                        <a class='btn btn-default tatoobutton' (click)='RemoveProduct()'>
+                            <i class='glyphicon glyphicon-remove'></i> {{Remove}}
+                        </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div *ngIf="IsCart" class='panel-footer'>
+                <a class='btn btn-default tatoobutton' (click)='BuyAll()'>
+                    {{Buy}}
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>

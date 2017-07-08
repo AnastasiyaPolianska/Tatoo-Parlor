@@ -1,0 +1,34 @@
+﻿<div class='panel panel-primary tatoodiv'>
+    <div class='panel-heading' id="tatoopanel">
+        {{PageTitle}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <label class='col-md-2 tatoolable' >{{LableFirstName}}</label>
+            <input type='text' class='tatooinput marginbottom' placeholder="{{PlaceHoldeFirstName}}" [(ngModel)]='FirstName'/>
+        </div>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableLastName}}</label>
+            <input type='text' class='tatooinput marginbottom' placeholder="{{PlaceHoldeLastName}}" [(ngModel)]='LastName' />
+        </div>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>
+            <input type='email' class='tatooinput marginbottom' placeholder="{{PlaceHolderEmail}}" [(ngModel)]='Email' />
+        </div>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderPassword}}" [(ngModel)]='Password' />
+        </div>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderRepeatPassword}}" />
+        </div>
+
+        <button class=' btn btn-primary tatoobutton' (click)='signUp()'> {{ButtonText}} </button>
+    </div>
+</div>
+
+
+
+

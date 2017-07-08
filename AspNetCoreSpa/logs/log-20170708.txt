@@ -1,0 +1,223 @@
+2017-07-08 00:50:25.530 +03:00 [Information] 
+[at-loader] Using typescript@2.2.2 from typescript and "tsconfig.json" from C:\Users\User\Downloads\TatooedYouth\AspNetCoreSpa/tsconfig.json (in a forked process).
+
+2017-07-08 00:51:05.458 +03:00 [Information] 
+2017-07-08 00:51:05.461 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-07-08 00:51:05.573 +03:00 [Error] 
+2017-07-08 00:51:05.576 +03:00 [Error] [at-loader] Checking finished with 4 errors
+2017-07-08 00:51:06.428 +03:00 [Information] webpack built 2473aa3b51daf60412b0 in 43254ms
+2017-07-08 00:51:08.956 +03:00 [Information] [at-loader] ./wwwroot/Client/app/app.component.ts:10:25 
+    TS6138: Property 'localStorage' is declared but never used. 
+
+2017-07-08 00:51:08.967 +03:00 [Information] [at-loader] ./wwwroot/Client/app/app.component.ts:10:61 
+    TS6138: Property 'sessionStorage' is declared but never used. 
+
+2017-07-08 00:51:08.970 +03:00 [Information] [at-loader] ./wwwroot/Client/app/shared/question.service.ts:15:46 
+    TS6138: Property 'localStorage' is declared but never used. 
+
+2017-07-08 00:51:08.972 +03:00 [Information] [at-loader] ./wwwroot/Client/app/shared/question.service.ts:15:82 
+    TS6138: Property 'sessionStorage' is declared but never used. 
+
+2017-07-08 00:51:16.936 +03:00 [Information] Executed DbCommand (527ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-08 00:51:16.945 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-08 00:51:19.075 +03:00 [Information] Executed DbCommand (2,100ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-07-08 00:51:19.362 +03:00 [Information] User profile is available. Using '"C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-07-08 00:51:23.051 +03:00 [Information] Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-08 00:51:23.055 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-08 00:51:23.058 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-07-08 00:51:23.062 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-08 00:51:23.065 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-07-08 00:51:38.466 +03:00 [Information] Executed DbCommand (3,871ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-07-08 00:51:38.659 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-07-08 00:51:39.127 +03:00 [Information] Executed DbCommand (416ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-08 00:51:39.234 +03:00 [Information] Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Languages] AS [l])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-08 00:51:39.242 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Content] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-08 00:51:39.357 +03:00 [Information] Executed DbCommand (108ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContentText] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-08 00:51:42.299 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-08 00:51:42.299 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:5000/  0
+2017-07-08 00:51:43.758 +03:00 [Information] Request finished in 1440.0845ms 200 
+2017-07-08 00:51:44.129 +03:00 [Information] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed"
+2017-07-08 00:51:45.087 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-08 00:51:54.260 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-07-08 00:51:54.949 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 9945.9776ms
+2017-07-08 00:51:54.990 +03:00 [Information] Request finished in 12752.8039ms 200 text/html; charset=utf-8
+2017-07-08 00:51:55.161 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.css  
+2017-07-08 00:51:55.230 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/polyfills.dll.js?v=jFLJMe4Q5pDE-XMQUfljdvkQ2GRVSh4L4JndgcVON6M  
+2017-07-08 00:51:55.257 +03:00 [Information] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed"
+2017-07-08 00:51:55.264 +03:00 [Information] Request finished in 104.4254ms 404 
+2017-07-08 00:51:55.274 +03:00 [Information] Sending file. Request path: '"/dist/polyfills.dll.js"'. Physical path: '"C:\Users\User\Downloads\TatooedYouth\AspNetCoreSpa\wwwroot\dist\polyfills.dll.js"'
+2017-07-08 00:51:55.294 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.dll.js?v=OnJxLVa33-H66tLZT0UFzEbFIYW9hWACnsxA2QEtvoE  
+2017-07-08 00:51:55.298 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=5rCit_JGs19ipxsMC7gw5OLdB8D_QyivH2JHgRlhLDA  
+2017-07-08 00:51:55.304 +03:00 [Information] Sending file. Request path: '"/dist/vendor.dll.js"'. Physical path: '"C:\Users\User\Downloads\TatooedYouth\AspNetCoreSpa\wwwroot\dist\vendor.dll.js"'
+2017-07-08 00:51:55.308 +03:00 [Information] Request finished in 78.5058ms 200 application/javascript
+2017-07-08 00:51:56.160 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/styles.css  
+2017-07-08 00:51:56.260 +03:00 [Information] Sending file. Request path: '"/styles.css"'. Physical path: '"C:\Users\User\Downloads\TatooedYouth\AspNetCoreSpa\wwwroot\styles.css"'
+2017-07-08 00:51:56.295 +03:00 [Information] Request finished in 997.118ms 200 application/javascript; charset=UTF-8
+2017-07-08 00:51:56.489 +03:00 [Information] Request finished in 339.3426ms 200 text/css
+2017-07-08 00:51:57.893 +03:00 [Information] Request finished in 2592.4618ms 200 application/javascript
+2017-07-08 00:52:01.234 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/dc29b0114d182e08147ffa25617ae933.png  
+2017-07-08 00:52:01.237 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-07-08 00:52:01.248 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-07-08 00:52:01.285 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/92633415125abb91103d2c6243d41ba1.png  
+2017-07-08 00:52:01.290 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/79f9fc41a9ae597d2d7de37276a249b1.png  
+2017-07-08 00:52:01.297 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-07-08 00:52:01.339 +03:00 [Information] Request finished in 65.562ms 200 image/png; charset=UTF-8
+2017-07-08 00:52:01.376 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-07-08 00:52:01.399 +03:00 [Information] Request finished in 41.1867ms 200 image/png; charset=UTF-8
+2017-07-08 00:52:01.401 +03:00 [Information] Request finished in 125.4937ms 200 image/png; charset=UTF-8
+2017-07-08 00:52:01.426 +03:00 [Information] Request finished in 111.6914ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:52:01.435 +03:00 [Information] Request finished in 88.3484ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:52:01.439 +03:00 [Information] Request finished in 125.5648ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:25.349 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/94ca305e6edb85007dacfe900b5ff4c4.jpg  
+2017-07-08 00:53:25.356 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/aec8fe3d27076bfe480b150efc8a9a59.jpg  
+2017-07-08 00:53:25.359 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ad7df5eaf1366bb0506c7e138adfc840.jpg  
+2017-07-08 00:53:25.364 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ae96ee403b301359c44e3c1f51a0f7c4.jpg  
+2017-07-08 00:53:25.370 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/93ad8489895d992e6dbf4e3f824d6171.jpg  
+2017-07-08 00:53:25.384 +03:00 [Information] Request finished in 56.7221ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:25.399 +03:00 [Information] Request finished in 29.037ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:25.469 +03:00 [Information] Request finished in 72.1244ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:25.470 +03:00 [Information] Request finished in 30.2806ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:25.483 +03:00 [Information] Request finished in 193.5225ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:26.029 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c7febc266698ef500a7a949aa48f51d0.jpg  
+2017-07-08 00:53:26.043 +03:00 [Information] Request finished in 15.0581ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:26.098 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/3adaca6a649df6522b11be6d03b8d80b.jpg  
+2017-07-08 00:53:26.263 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/91f7078c9b239f4f6192467df07cab90.jpg  
+2017-07-08 00:53:26.307 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ac1f72d741dfee22d68bc9d4c47a7c93.jpg  
+2017-07-08 00:53:26.311 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/f9e059cc1458a5b75b123e38e2978b07.jpg  
+2017-07-08 00:53:26.336 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2192e7ff89fd8bc18355edae312b34fd.jpg  
+2017-07-08 00:53:26.407 +03:00 [Information] Request finished in 332.8865ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:26.415 +03:00 [Information] Request finished in 146.9289ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:26.418 +03:00 [Information] Request finished in 151.9806ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:26.423 +03:00 [Information] Request finished in 111.0253ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:26.429 +03:00 [Information] Request finished in 356.3417ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:27.155 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/160658c4fbfe2e3df300c4a8a438cb1b.jpg  
+2017-07-08 00:53:27.180 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/176bbf4713b59f05c5ab272b9c73eef2.jpg  
+2017-07-08 00:53:27.185 +03:00 [Information] Request finished in 29.2333ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:27.198 +03:00 [Information] Request finished in 21.8002ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:53:30.065 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Profile/id  
+2017-07-08 00:53:30.068 +03:00 [Information] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed"
+2017-07-08 00:53:30.104 +03:00 [Information] Authorization failed for user: null.
+2017-07-08 00:53:30.107 +03:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2017-07-08 00:53:30.115 +03:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2017-07-08 00:53:30.142 +03:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2017-07-08 00:53:30.146 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProfileController.MyId (AspNetCoreSpa)" in 63.6815ms
+2017-07-08 00:53:30.149 +03:00 [Information] Request finished in 90.8037ms 401 
+2017-07-08 00:57:49.108 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.css  
+2017-07-08 00:57:49.117 +03:00 [Information] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed"
+2017-07-08 00:57:49.122 +03:00 [Information] Request finished in 11.6776ms 404 
+2017-07-08 00:57:49.426 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.dll.js.map  
+2017-07-08 00:57:49.437 +03:00 [Information] The file "/dist/vendor.dll.js.map" was not modified
+2017-07-08 00:57:49.440 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/polyfills.dll.js.map  
+2017-07-08 00:57:49.442 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js.map  
+2017-07-08 00:57:49.457 +03:00 [Information] Request finished in 25.8054ms 304 text/plain
+2017-07-08 00:57:49.468 +03:00 [Information] The file "/dist/polyfills.dll.js.map" was not modified
+2017-07-08 00:57:49.478 +03:00 [Information] Request finished in 35.8376ms 304 text/plain
+2017-07-08 00:57:49.770 +03:00 [Information] Request finished in 205.112ms 200 application/json; charset=UTF-8
+2017-07-08 00:58:03.962 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/28648c58ee5ad332db07d3552bef939f.jpg  
+2017-07-08 00:58:04.004 +03:00 [Information] Request finished in 34.5023ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:04.031 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2700e1f4a531373e8e4cf64106110116.jpg  
+2017-07-08 00:58:04.031 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/256003beed7be13f573dc1424fd53fd1.jpg  
+2017-07-08 00:58:04.048 +03:00 [Information] Request finished in 37.0883ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:04.076 +03:00 [Information] Request finished in 65.0745ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:05.305 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-08 00:58:05.309 +03:00 [Information] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed"
+2017-07-08 00:58:05.315 +03:00 [Information] Authorization failed for user: null.
+2017-07-08 00:58:05.319 +03:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2017-07-08 00:58:05.321 +03:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2017-07-08 00:58:05.324 +03:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2017-07-08 00:58:05.327 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 12.2603ms
+2017-07-08 00:58:05.329 +03:00 [Information] Request finished in 35.4773ms 401 
+2017-07-08 00:58:08.096 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Profile/username  
+2017-07-08 00:58:08.110 +03:00 [Information] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed"
+2017-07-08 00:58:08.115 +03:00 [Information] Authorization failed for user: null.
+2017-07-08 00:58:08.118 +03:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2017-07-08 00:58:08.121 +03:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2017-07-08 00:58:08.124 +03:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2017-07-08 00:58:08.126 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProfileController.MeGet (AspNetCoreSpa)" in 12.0363ms
+2017-07-08 00:58:08.130 +03:00 [Information] Request finished in 34.138ms 401 
+2017-07-08 00:58:09.022 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-08 00:58:09.027 +03:00 [Information] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed"
+2017-07-08 00:58:09.032 +03:00 [Information] Authorization failed for user: null.
+2017-07-08 00:58:09.036 +03:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2017-07-08 00:58:09.039 +03:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2017-07-08 00:58:09.042 +03:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2017-07-08 00:58:09.044 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 12.8715ms
+2017-07-08 00:58:09.049 +03:00 [Information] Request finished in 36.3812ms 401 
+2017-07-08 00:58:15.400 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ad7df5eaf1366bb0506c7e138adfc840.jpg  
+2017-07-08 00:58:15.412 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/aec8fe3d27076bfe480b150efc8a9a59.jpg  
+2017-07-08 00:58:15.449 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ae96ee403b301359c44e3c1f51a0f7c4.jpg  
+2017-07-08 00:58:15.486 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/93ad8489895d992e6dbf4e3f824d6171.jpg  
+2017-07-08 00:58:15.503 +03:00 [Information] Request finished in 147.1194ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.524 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c7febc266698ef500a7a949aa48f51d0.jpg  
+2017-07-08 00:58:15.532 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/94ca305e6edb85007dacfe900b5ff4c4.jpg  
+2017-07-08 00:58:15.539 +03:00 [Information] Request finished in 163.2655ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.596 +03:00 [Information] Request finished in 194.6876ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.622 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/ac1f72d741dfee22d68bc9d4c47a7c93.jpg  
+2017-07-08 00:58:15.627 +03:00 [Information] Request finished in 105.786ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.637 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/91f7078c9b239f4f6192467df07cab90.jpg  
+2017-07-08 00:58:15.644 +03:00 [Information] Request finished in 44.6309ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.651 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/3adaca6a649df6522b11be6d03b8d80b.jpg  
+2017-07-08 00:58:15.661 +03:00 [Information] Request finished in 27.6788ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.690 +03:00 [Information] Request finished in 298.2704ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.693 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/f9e059cc1458a5b75b123e38e2978b07.jpg  
+2017-07-08 00:58:15.706 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2192e7ff89fd8bc18355edae312b34fd.jpg  
+2017-07-08 00:58:15.709 +03:00 [Information] Request finished in 199.1774ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.724 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/160658c4fbfe2e3df300c4a8a438cb1b.jpg  
+2017-07-08 00:58:15.732 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/176bbf4713b59f05c5ab272b9c73eef2.jpg  
+2017-07-08 00:58:15.760 +03:00 [Information] Request finished in 53.3009ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.785 +03:00 [Information] Request finished in 69.643ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.804 +03:00 [Information] Request finished in 99.6373ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.825 +03:00 [Information] Request finished in 82.5019ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:15.836 +03:00 [Information] Request finished in 177.7769ms 200 image/jpeg; charset=UTF-8
+2017-07-08 00:58:17.146 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Profile/id  
+2017-07-08 00:58:17.150 +03:00 [Information] "Identity.Application" was not authenticated. Failure message: "Unprotect ticket failed"
+2017-07-08 00:58:17.154 +03:00 [Information] Authorization failed for user: null.
+2017-07-08 00:58:17.157 +03:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2017-07-08 00:58:17.161 +03:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2017-07-08 00:58:17.167 +03:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2017-07-08 00:58:17.170 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProfileController.MyId (AspNetCoreSpa)" in 16.9596ms
+2017-07-08 00:58:17.174 +03:00 [Information] Request finished in 27.0917ms 401 
