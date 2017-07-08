@@ -14,6 +14,7 @@ namespace AspNetCoreSpa.DAL
         public DbSet<Product> Product { get; set; }
         public DbSet<ArtistInfo> ArtistInfo { get; set; }
         public DbSet<Question> Questions { get; set; }
+        public DbSet<UserProduct> UserProducts { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }
@@ -21,6 +22,11 @@ namespace AspNetCoreSpa.DAL
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<UserProduct>().HasOne(x => x.User).WithMany(y => y.ProductsInCart).HasForeignKey(k => k.UserId);
+            modelBuilder.Entity<UserProduct>().HasOne(x => x.ProductInCart).WithMany(y => y.Clients).HasForeignKey(k => k.ProductId);
+
+            modelBuilder.Entity<UserProduct>().HasKey(x => new { x.ProductId, x.UserId });
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);

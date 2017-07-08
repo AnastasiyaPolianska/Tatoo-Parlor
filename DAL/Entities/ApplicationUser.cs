@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace AspNetCoreSpa.DAL.Entities
 {
@@ -23,6 +24,6 @@ namespace AspNetCoreSpa.DAL.Entities
                 return this.FirstName + " " + this.LastName;
             }
         }
-
+        public List<UserProduct> ProductsInCart { get; set; }
     }
 }
