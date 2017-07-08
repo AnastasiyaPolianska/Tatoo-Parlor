@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 namespace AspNetCoreSpa
 {
 
-    public class Program
+    public class Program      
     {
         public static void Main(string[] args)
         {
