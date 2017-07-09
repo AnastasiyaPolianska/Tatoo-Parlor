@@ -15,12 +15,12 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     public Product: IProduct;
     public ErrorMessage: string;
     public Back = "Back";
+    public AddToCart = "Add to cart"
 
     public Name = "Name:";
-    public Code = "Code:";
     public Description = "Description:";
-    public Availability = "Available till:";
     public Price = "Price:";
+    public AmountLeft = "Amount Left:";
     public StarRating = "5 Star Rating:";
 
     private sub: Subscription;

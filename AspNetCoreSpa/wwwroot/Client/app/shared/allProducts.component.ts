@@ -17,11 +17,11 @@ export class AllProductsComponent{
     @Input() public IsCart: boolean; 
 
     public Image = "Image";
-    public Name = "Name";
-    public Code = "Code";
-    public Availability = "Available till";
-    public Price = "Price";
-    public StarRating = "5 Star Rating";
+    public Name = "Name:";
+    public Description = "Description:";
+    public Price = "Price:";
+    public AmountLeft = "Amount Left:";
+    public StarRating = "5 Star Rating:";
     public Quantity = "Quantity";
     public Filter = "Filter products by:";
     public Buy = "Buy all";

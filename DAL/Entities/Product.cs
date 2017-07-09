@@ -11,11 +11,17 @@ namespace AspNetCoreSpa.DAL.Entities
     {
         [Required, MaxLength(100)]
         public string ProductName { get; set; }
+
         public double Price { get; set; }
+
         public string Description { get; set; }
+
         public double StarRating { get; set; }
+
         public string ImageUrl { get; set; }
+
         public int AmountLeft { get; set; }
+
         public List<UserProduct> Clients { get; set; }
 
         [Key]

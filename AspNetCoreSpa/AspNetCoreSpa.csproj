@@ -46,36 +46,17 @@
     <Content Include="wwwroot\Client\app\cart\cart.component.js" />
     <Content Include="wwwroot\Client\app\cart\cart.component.js.map" />
     <Content Include="wwwroot\Client\app\cart\cart.component.ts" />
-    <Content Include="wwwroot\Client\app\cart\product-detail.component.css" />
-    <Content Include="wwwroot\Client\app\cart\product-detail.component.html" />
-    <Content Include="wwwroot\Client\app\cart\product-detail.component.js" />
-    <Content Include="wwwroot\Client\app\cart\product-detail.component.js.map" />
-    <Content Include="wwwroot\Client\app\cart\product-detail.component.ts" />
-    <Content Include="wwwroot\Client\app\cart\product-filter.pipe.js" />
-    <Content Include="wwwroot\Client\app\cart\product-filter.pipe.js.map" />
-    <Content Include="wwwroot\Client\app\cart\product-filter.pipe.ts" />
-    <Content Include="wwwroot\Client\app\cart\product-guard.service.js" />
-    <Content Include="wwwroot\Client\app\cart\product-guard.service.js.map" />
-    <Content Include="wwwroot\Client\app\cart\product-guard.service.ts" />
-    <Content Include="wwwroot\Client\app\cart\product-list.component.css" />
-    <Content Include="wwwroot\Client\app\cart\product-list.component.html" />
-    <Content Include="wwwroot\Client\app\cart\product-list.component.js" />
-    <Content Include="wwwroot\Client\app\cart\product-list.component.js.map" />
-    <Content Include="wwwroot\Client\app\cart\product-list.component.ts" />
-    <Content Include="wwwroot\Client\app\cart\product.js" />
-    <Content Include="wwwroot\Client\app\cart\product.js.map" />
-    <Content Include="wwwroot\Client\app\cart\product.module.js" />
-    <Content Include="wwwroot\Client\app\cart\product.module.js.map" />
-    <Content Include="wwwroot\Client\app\cart\product.module.ts" />
-    <Content Include="wwwroot\Client\app\cart\product.service.js" />
-    <Content Include="wwwroot\Client\app\cart\product.service.js.map" />
-    <Content Include="wwwroot\Client\app\cart\product.service.ts" />
-    <Content Include="wwwroot\Client\app\cart\product.ts" />
     <Content Include="wwwroot\Client\app\contacts\contacts.component.css" />
     <Content Include="wwwroot\Client\app\contacts\contacts.component.html" />
     <Content Include="wwwroot\Client\app\contacts\contacts.component.js" />
     <Content Include="wwwroot\Client\app\contacts\contacts.component.js.map" />
     <Content Include="wwwroot\Client\app\contacts\contacts.component.ts" />
+    <Content Include="wwwroot\Client\app\help\help.component.css" />
+    <Content Include="wwwroot\Client\app\help\help.component.html" />
+    <Content Include="wwwroot\Client\app\help\help.component.ts" />
+    <Content Include="wwwroot\Client\app\home\help.component.css" />
+    <Content Include="wwwroot\Client\app\home\help.component.html" />
+    <Content Include="wwwroot\Client\app\home\help.component.ts" />
     <Content Include="wwwroot\Client\app\questions\question.js" />
     <Content Include="wwwroot\Client\app\questions\question.js.map" />
     <Content Include="wwwroot\Client\app\questions\question.module.js" />
@@ -96,16 +77,8 @@
     <Content Include="wwwroot\Client\app\registration\login.component.js" />
     <Content Include="wwwroot\Client\app\registration\login.component.js.map" />
     <Content Include="wwwroot\Client\app\registration\login.component.ts" />
-    <Content Include="wwwroot\Client\app\shared\allProducts - Copy.component.css" />
     <Content Include="wwwroot\Client\app\shared\spinner.component.css" />
     <Content Include="wwwroot\Client\app\shared\spinner.component.html">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\Client\app\shared\allProducts - Copy.component.js">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\Client\app\shared\allProducts - Copy.component.js.map" />
-    <Content Include="wwwroot\Client\app\shared\allProducts - Copy.component.ts">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
     <Content Include="wwwroot\Client\app\shared\allProducts.component.css" />
@@ -272,11 +245,6 @@
     <None Include="wwwroot\Client\app\shared\shared.module.js" />
     <None Include="wwwroot\Client\app\shared\shared.module.js.map" />
     <None Include="wwwroot\Client\app\shared\shared.module.ts" />
-    <None Include="wwwroot\Client\app\shared\star.component.css" />
-    <None Include="wwwroot\Client\app\shared\star.component.html" />
-    <None Include="wwwroot\Client\app\shared\star.component.js" />
-    <None Include="wwwroot\Client\app\shared\star.component.js.map" />
-    <None Include="wwwroot\Client\app\shared\star.component.ts" />
     <None Include="wwwroot\Client\environment.ts" />
     <None Include="wwwroot\Client\main.aot.ts" />
     <None Include="wwwroot\Client\main.ts" />

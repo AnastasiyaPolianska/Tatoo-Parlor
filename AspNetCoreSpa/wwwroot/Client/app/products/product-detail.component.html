@@ -21,16 +21,12 @@
                     <div class='col-md-6'>{{Product.productName}}</div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-3 bolder'>{{Code}}</div>
-                    <div class='col-md-6'>{{Product.productCode}}</div>
-                </div>
-                <div class='row'>
                     <div class='col-md-3 bolder'>{{Description}}</div>
                     <div class='col-md-6'>{{Product.description}}</div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-3 bolder'>{{Availability}}</div>
-                    <div class='col-md-6'>{{Product.releaseDate | date:longDate}}</div>
+                    <div class='col-md-3 bolder'>{{AmountLeft}}</div>
+                    <div class='col-md-6'>{{Product.amountLeft}}</div>
                 </div>
                 <div class='row'>
                     <div class='col-md-3 bolder'>{{Price}}</div>
@@ -58,5 +54,8 @@
         <a class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px'>
             <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}
         </a>
-    </div>
+        <a class='btn btn-default tatoobutton' (click)='onBack()' style='float: right'>
+            <i class='glyphicon glyphicon-shopping-cart'></i> {{AddToCart}}
+        </a>
+    </div>      
 </div>

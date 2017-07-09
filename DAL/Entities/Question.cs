@@ -9,10 +9,13 @@ namespace AspNetCoreSpa.DAL.Entities
     {
         [Required]
         public string Category { get; set; }
+
         [Required]
         public string Theme { get; set; }
+
         [Required]
         public string QuestionName { get; set; }
+
         [Required]
         public long CreatedBy { get; set; }
 

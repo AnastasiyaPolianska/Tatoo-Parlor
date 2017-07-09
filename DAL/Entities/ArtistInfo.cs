@@ -9,6 +9,7 @@ namespace AspNetCoreSpa.DAL.Entities
     {
         [Required]
         public string Name { get; set; }
+
         public string Works { get; set; }
 
         [Key]

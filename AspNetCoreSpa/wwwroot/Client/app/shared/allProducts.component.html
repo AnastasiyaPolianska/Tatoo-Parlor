@@ -30,8 +30,7 @@
                     <tr>
                         <th>{{Image}}</th>
                         <th>{{Name}}</th>
-                        <th>{{Code}}</th>
-                        <th>{{Availability}}</th>
+                        <th>{{AmountLeft}}</th>
                         <th>{{Price}}</th>
                         <th>{{StarRating}}</th>
                         <th *ngIf="IsCart">{{Quantity}}</th>
@@ -51,8 +50,7 @@
                             {{product.productName}}
                             </a>
                         </td>
-                        <td>{{ product.productCode }}</td>
-                        <td>{{ product.releaseDate | date:longDate}}</td>
+                        <td>{{ product.amountLeft}}</td>
                         <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
                         <td >
                             <ngb-rating title = {{product.starRating}} [(rate)]="product.starRating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>

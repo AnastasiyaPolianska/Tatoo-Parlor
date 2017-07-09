@@ -2,8 +2,7 @@
 export interface IProduct {
     Id: number;
     productName: string;
-    productCode: number;
-    releaseDate: string;
+    amountLeft: string;
     price: number;
     description: string;
     starRating: number;

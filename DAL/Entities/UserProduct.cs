@@ -9,12 +9,16 @@ namespace AspNetCoreSpa.DAL.Entities
     {
         [Required]
         public ApplicationUser User { get; set; }
+
         [Required]
         public Product ProductInCart { get; set; }
+
         [Required]
         public int UserId { get; set; }
+
         [Required]
         public int ProductId { get; set; }
+
         [Required]
         public long Amount { get; set; }
     }
