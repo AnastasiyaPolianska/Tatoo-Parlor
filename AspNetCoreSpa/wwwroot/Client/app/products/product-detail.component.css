@@ -11,9 +11,9 @@
 }
 
 .tatoobutton:hover{
-    background-color: #464451;
-    border-color: #D5D5D5;
-    color: #FFFFFF;
+    background-color: #464451 !important;
+    border-color: #D5D5D5 !important;
+    color: #FFFFFF !important;
 }
 
 #tatoopanel {

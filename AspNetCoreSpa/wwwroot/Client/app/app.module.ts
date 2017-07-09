@@ -20,12 +20,12 @@ import { HelpComponent } from './help/help.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { QuestionService } from './shared/question.service';
 import { CabinetComponent } from './cabinet/cabinet.component';
-import { CartComponent } from './cart/cart.component';
 
 /* Feature Modules */
 import { ProductModule } from './products/product.module';
 import { ScretchesModule } from './scretches/scretches.module';
 import { SharedModule } from './shared/shared.module';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   imports: [
@@ -49,13 +49,13 @@ import { SharedModule } from './shared/shared.module';
       { path: 'help', component: HelpComponent },
       { path: 'contacts', component: ContactsComponent },
       { path: 'cabinet', component: CabinetComponent },
-      { path: 'cart', component: CartComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ]),
     ProductModule,
       ScretchesModule,
-      SharedModule
+      SharedModule,
+      CartModule
     ],
   providers: [BROWSER_STORAGE_PROVIDERS, QuestionService],
   declarations: [
@@ -68,7 +68,6 @@ import { SharedModule } from './shared/shared.module';
       HelpComponent,
       ContactsComponent,
       CabinetComponent,
-      CartComponent,
   ],
   bootstrap: [ AppComponent ]
 })

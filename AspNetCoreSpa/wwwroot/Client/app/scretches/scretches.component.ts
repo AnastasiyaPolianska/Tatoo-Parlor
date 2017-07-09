@@ -10,4 +10,9 @@ export class ScretchesComponent {
     public FormTitle: string = 'Fill in the form to make an appointment';
     public LabelChoose: string = 'Choose one of the scretches:';
     public ButtonName: string = 'Confirm';
+
+    public Choosed: string = 'Choosed: ';
+    public Option: string = 'Scretch from gallery';
+    public Scretch: string = 'Scretch from gallery';
+    public Picture: string = 'Your own picture';
 }

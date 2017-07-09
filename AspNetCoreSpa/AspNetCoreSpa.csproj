@@ -46,6 +46,10 @@
     <Content Include="wwwroot\Client\app\cart\cart.component.js" />
     <Content Include="wwwroot\Client\app\cart\cart.component.js.map" />
     <Content Include="wwwroot\Client\app\cart\cart.component.ts" />
+    <Content Include="wwwroot\Client\app\cart\cart.service.ts" />
+    <Content Include="wwwroot\Client\app\cart\cart.module.ts">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="wwwroot\Client\app\contacts\contacts.component.css" />
     <Content Include="wwwroot\Client\app\contacts\contacts.component.html" />
     <Content Include="wwwroot\Client\app\contacts\contacts.component.js" />
