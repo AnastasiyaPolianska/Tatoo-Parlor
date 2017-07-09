@@ -54,8 +54,12 @@
         <a class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px'>
             <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}
         </a>
-        <a class='btn btn-default tatoobutton' (click)='onBack()' style='float: right'>
+        <button [disabled]='!IsInCart' class='btn btn-default tatoobutton' (click)='RemoveProduct()' style='float: right'>
+            <i class='glyphicon glyphicon-remove'></i> {{Remove}}
+        </button>
+
+        <button [disabled]='IsInCart' class='btn btn-default tatoobutton' (click)='addToCart()' style='float: right; margin-right: 1%'>
             <i class='glyphicon glyphicon-shopping-cart'></i> {{AddToCart}}
-        </a>
+        </button>        
     </div>      
 </div>

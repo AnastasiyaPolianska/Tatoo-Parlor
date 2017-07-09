@@ -7,10 +7,8 @@ namespace AspNetCoreSpa.DAL.Entities
 {
     public class UserProduct
     {
-        [Required]
         public ApplicationUser User { get; set; }
 
-        [Required]
         public Product ProductInCart { get; set; }
 
         [Required]
