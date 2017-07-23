@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Message } from 'primeng/primeng';
 
 import { Subscription }   from 'rxjs/Subscription';
 
@@ -28,7 +29,11 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     public IsInCart: boolean;
     public Remove = "Remove from cart";
 
+    public isCart: number;
+
     private sub: Subscription;
+
+    public Msgs: Message[] = [];
 
     constructor(private _route: ActivatedRoute,
                 private _router: Router,
@@ -43,6 +48,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
                 let id = +params['id'];
                 this.getProduct(id);
                 this.Id = id;
+                this.isCart = params['cartToSend'];
             });
 
         this._cartService.productIsInCart(this.Id).subscribe(
@@ -63,7 +69,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
      /*Executes on pressing the 'back' button*/
     onBack(): void {
-        this._router.navigate(['/products']);
+        if (this.isCart == 0) this._router.navigate(['/products']);
+        if (this.isCart == 1) this._router.navigate(['/cart']);
     }
 
      /*Executes on clicking the 'rating'*/
@@ -74,10 +81,14 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     /*Adding product to your cart*/
     addToCart(): void {
         this._cartService.addProductToCart(this.Id).subscribe();
+        this.IsInCart = true;
+        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Added to cart." });
     }
 
     /*Removing product from your cart*/
     RemoveProduct(): void {
-    
+        this._cartService.deleteProduct(this.Id).subscribe();
+        this.IsInCart = false;
+        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Removed from cart." });
     }
 }

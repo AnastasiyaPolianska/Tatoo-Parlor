@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { GrowlModule } from 'primeng/primeng';
 
 import { ProductListComponent } from './product-list.component';
 import { ProductDetailComponent } from './product-detail.component';
@@ -11,12 +12,13 @@ import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
-    SharedModule,
+      SharedModule,
+      GrowlModule,
     RouterModule.forChild([
       { path: 'products', component: ProductListComponent },
-      { path: 'product/:id',
+      { path: 'product/:id/:cartToSend',
         canActivate: [ ProductDetailGuard],
-        component: ProductDetailComponent
+        component: ProductDetailComponent,
       }
     ])
   ],

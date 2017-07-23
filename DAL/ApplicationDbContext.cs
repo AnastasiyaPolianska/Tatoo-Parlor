@@ -15,6 +15,7 @@ namespace AspNetCoreSpa.DAL
         public DbSet<ArtistInfo> ArtistInfo { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<UserProduct> UserProducts { get; set; }
+        public DbSet<Scretch> Scretches { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }

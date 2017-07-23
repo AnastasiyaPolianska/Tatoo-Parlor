@@ -3,7 +3,6 @@
     background-color: #000000;
     border-color: #FFFFFF;
     color: #FFFFFF;
-    float: right;
     text-decoration: none;
 }
 
@@ -61,4 +60,16 @@ a:hover {
     display: inline-block;
     overflow: hidden;
     color: black;
+}
+
+@media only screen and (min-width: 800px) {
+    .remove-row {
+        padding-right: 0%;
+    }
+}
+
+.flexer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }

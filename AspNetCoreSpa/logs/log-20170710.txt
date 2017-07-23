@@ -1,0 +1,492 @@
+2017-07-10 00:09:03.133 +03:00 [Information] 
+[at-loader] Using typescript@2.2.2 from typescript and "tsconfig.json" from C:\Users\Nastya\Documents\GitHub\Tatoo-Parlor\AspNetCoreSpa/tsconfig.json (in a forked process).
+
+2017-07-10 00:09:22.313 +03:00 [Information] Executed DbCommand (1,550ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-10 00:09:22.331 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-10 00:09:22.431 +03:00 [Information] Executed DbCommand (82ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-07-10 00:09:22.629 +03:00 [Information] User profile is available. Using '"C:\Users\Nastya\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2017-07-10 00:09:24.466 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-10 00:09:24.537 +03:00 [Information] Executed DbCommand (64ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-10 00:09:24.561 +03:00 [Information] Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-07-10 00:09:24.570 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2017-07-10 00:09:24.576 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2017-07-10 00:09:26.012 +03:00 [Information] Executed DbCommand (186ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-07-10 00:09:26.183 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+2017-07-10 00:09:26.315 +03:00 [Information] Executed DbCommand (42ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetUsers] AS [a])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-10 00:09:26.484 +03:00 [Information] Executed DbCommand (150ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Languages] AS [l])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-10 00:09:26.529 +03:00 [Information] Executed DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Content] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-10 00:09:26.696 +03:00 [Information] Executed DbCommand (159ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [ContentText] AS [c])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-10 00:09:28.557 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/  
+2017-07-10 00:09:28.557 +03:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:5000/  0
+2017-07-10 00:09:28.904 +03:00 [Information] Request finished in 357.1794ms 200 
+2017-07-10 00:09:29.768 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:09:32.544 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:09:32.684 +03:00 [Information] Executed DbCommand (60ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+2017-07-10 00:09:33.475 +03:00 [Information] Executed DbCommand (92ms) [Parameters=[@__userId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2017-07-10 00:10:05.787 +03:00 [Information] 
+2017-07-10 00:10:05.795 +03:00 [Information] [at-loader] Checking started in a separate process...
+2017-07-10 00:10:05.988 +03:00 [Error] 
+2017-07-10 00:10:05.992 +03:00 [Error] [at-loader] Checking finished with 5 errors
+2017-07-10 00:10:06.444 +03:00 [Information] webpack built 684ad33edfdd7331393b in 64683ms
+2017-07-10 00:10:08.535 +03:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2017-07-10 00:10:15.002 +03:00 [Information] [at-loader] ./wwwroot/Client/app/app.component.ts:10:25 
+    TS6138: Property 'localStorage' is declared but never used. 
+
+2017-07-10 00:10:15.009 +03:00 [Information] [at-loader] ./wwwroot/Client/app/app.component.ts:10:61 
+    TS6138: Property 'sessionStorage' is declared but never used. 
+
+2017-07-10 00:10:15.013 +03:00 [Information] [at-loader] ./wwwroot/Client/app/cart/cart.service.ts:10:10 
+    TS6133: 'IProduct' is declared but never used. 
+
+2017-07-10 00:10:15.020 +03:00 [Information] [at-loader] ./wwwroot/Client/app/shared/question.service.ts:15:46 
+    TS6138: Property 'localStorage' is declared but never used. 
+
+2017-07-10 00:10:15.035 +03:00 [Information] [at-loader] ./wwwroot/Client/app/shared/question.service.ts:15:82 
+    TS6138: Property 'sessionStorage' is declared but never used. 
+
+2017-07-10 00:10:25.612 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.HomeController.Index (AspNetCoreSpa)" in 53272.4343ms
+2017-07-10 00:10:25.645 +03:00 [Information] Request finished in 57142.5523ms 200 text/html; charset=utf-8
+2017-07-10 00:10:26.274 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/vendor.css  
+2017-07-10 00:10:26.294 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/main.js?v=MaPqug1ItgbgSyfEARo9wvaXcMfExpUYYA4OFqJtOZ4  
+2017-07-10 00:10:26.813 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:10:26.824 +03:00 [Information] Request finished in 550.0946ms 404 
+2017-07-10 00:10:27.185 +03:00 [Information] Request finished in 889.7086ms 200 application/javascript; charset=UTF-8
+2017-07-10 00:10:35.762 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/c910b97a7b177419f57f4d3cd1180651.jpg  
+2017-07-10 00:10:35.769 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/2991b5a00b30526bab264b1153277602.jpg  
+2017-07-10 00:10:35.783 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/b373ef6d95b31ea31b838f1c7dd2ee92.jpg  
+2017-07-10 00:10:35.809 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/dc29b0114d182e08147ffa25617ae933.png  
+2017-07-10 00:10:36.025 +03:00 [Information] Request finished in 227.6755ms 200 image/jpeg; charset=UTF-8
+2017-07-10 00:10:36.301 +03:00 [Information] Request finished in 254.7057ms 200 image/jpeg; charset=UTF-8
+2017-07-10 00:10:36.463 +03:00 [Information] Request finished in 260.7802ms 200 image/jpeg; charset=UTF-8
+2017-07-10 00:10:36.466 +03:00 [Information] Request finished in 241.619ms 200 image/png; charset=UTF-8
+2017-07-10 00:10:36.474 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/79f9fc41a9ae597d2d7de37276a249b1.png  
+2017-07-10 00:10:36.474 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/dist/92633415125abb91103d2c6243d41ba1.png  
+2017-07-10 00:10:36.497 +03:00 [Information] Request finished in 739.0409ms 200 image/png; charset=UTF-8
+2017-07-10 00:10:36.503 +03:00 [Information] Request finished in 737.315ms 200 image/png; charset=UTF-8
+2017-07-10 00:10:38.558 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/__webpack_hmr  
+2017-07-10 00:17:06.967 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:17:06.977 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:07.062 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:17:07.073 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:17:07.906 +03:00 [Information] Executed DbCommand (101ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:07.974 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:08.037 +03:00 [Information] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:08.066 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 1046.8385ms
+2017-07-10 00:17:08.072 +03:00 [Information] Request finished in 1107.558ms 200 application/json; charset=utf-8
+2017-07-10 00:17:08.959 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:17:08.965 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:08.979 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:17:08.984 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:17:08.990 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:08.995 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:09.003 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:09.007 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 32.5169ms
+2017-07-10 00:17:09.012 +03:00 [Information] Request finished in 67.3638ms 200 application/json; charset=utf-8
+2017-07-10 00:17:11.117 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:17:11.121 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:11.125 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:17:11.130 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:17:11.134 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:11.138 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:11.143 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:11.147 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 21.4484ms
+2017-07-10 00:17:11.158 +03:00 [Information] Request finished in 34.6804ms 200 application/json; charset=utf-8
+2017-07-10 00:17:16.065 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/1  
+2017-07-10 00:17:16.068 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:16.095 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Cart/1/isInCart  
+2017-07-10 00:17:16.107 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:16.289 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" with arguments (["1"]) - ModelState is Valid
+2017-07-10 00:17:16.289 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (["1"]) - ModelState is Valid
+2017-07-10 00:17:16.397 +03:00 [Information] Executed DbCommand (39ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2017-07-10 00:17:16.527 +03:00 [Information] Executed DbCommand (94ms) [Parameters=[@__idProduct_0='?', @__user_Id_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserProducts] AS [x]
+        WHERE ([x].[ProductId] = @__idProduct_0) AND ([x].[UserId] = @__user_Id_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-10 00:17:16.528 +03:00 [Information] Executed DbCommand (65ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[AmountLeft], [m].[Description], [m].[ImageUrl], [m].[Price], [m].[ProductName], [m].[StarRating]
+FROM [Product] AS [m]
+WHERE [m].[Id] = @__id_0
+2017-07-10 00:17:16.532 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:16.541 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" in 425.1558ms
+2017-07-10 00:17:16.547 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:16.579 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 476.8718ms
+2017-07-10 00:17:16.584 +03:00 [Information] Request finished in 473.9207ms 200 application/json; charset=utf-8
+2017-07-10 00:17:16.592 +03:00 [Information] Request finished in 522.704ms 200 application/json; charset=utf-8
+2017-07-10 00:17:26.887 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:17:26.893 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:26.900 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:17:26.908 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:17:26.917 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:26.925 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:26.936 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:26.943 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 42.9167ms
+2017-07-10 00:17:26.953 +03:00 [Information] Request finished in 62.2778ms 200 application/json; charset=utf-8
+2017-07-10 00:17:28.985 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/4  
+2017-07-10 00:17:28.992 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Cart/4/isInCart  
+2017-07-10 00:17:29.009 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:29.013 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:29.041 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (["4"]) - ModelState is Valid
+2017-07-10 00:17:29.061 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" with arguments (["4"]) - ModelState is Valid
+2017-07-10 00:17:29.075 +03:00 [Information] Executed DbCommand (4ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[AmountLeft], [m].[Description], [m].[ImageUrl], [m].[Price], [m].[ProductName], [m].[StarRating]
+FROM [Product] AS [m]
+WHERE [m].[Id] = @__id_0
+2017-07-10 00:17:29.086 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:29.092 +03:00 [Information] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2017-07-10 00:17:29.097 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 75.7125ms
+2017-07-10 00:17:29.106 +03:00 [Information] Request finished in 117.0346ms 200 application/json; charset=utf-8
+2017-07-10 00:17:29.110 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[@__idProduct_0='?', @__user_Id_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserProducts] AS [x]
+        WHERE ([x].[ProductId] = @__idProduct_0) AND ([x].[UserId] = @__user_Id_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-10 00:17:29.115 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:29.119 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" in 101.9421ms
+2017-07-10 00:17:29.123 +03:00 [Information] Request finished in 133.7455ms 200 application/json; charset=utf-8
+2017-07-10 00:17:35.446 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:17:35.455 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:35.460 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:17:35.464 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:17:35.473 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:35.479 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:35.490 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:35.501 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 34.5356ms
+2017-07-10 00:17:35.526 +03:00 [Information] Request finished in 73.3918ms 200 application/json; charset=utf-8
+2017-07-10 00:17:36.537 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Cart/6/isInCart  
+2017-07-10 00:17:36.545 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:36.551 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" with arguments (["6"]) - ModelState is Valid
+2017-07-10 00:17:36.560 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/6  
+2017-07-10 00:17:36.587 +03:00 [Information] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2017-07-10 00:17:36.588 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:36.591 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (["6"]) - ModelState is Valid
+2017-07-10 00:17:36.595 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[@__idProduct_0='?', @__user_Id_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserProducts] AS [x]
+        WHERE ([x].[ProductId] = @__idProduct_0) AND ([x].[UserId] = @__user_Id_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-10 00:17:36.621 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:36.622 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[AmountLeft], [m].[Description], [m].[ImageUrl], [m].[Price], [m].[ProductName], [m].[StarRating]
+FROM [Product] AS [m]
+WHERE [m].[Id] = @__id_0
+2017-07-10 00:17:36.626 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" in 75.2506ms
+2017-07-10 00:17:36.649 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:36.653 +03:00 [Information] Request finished in 111.4144ms 200 application/json; charset=utf-8
+2017-07-10 00:17:36.656 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 64.2495ms
+2017-07-10 00:17:36.661 +03:00 [Information] Request finished in 138.2269ms 200 application/json; charset=utf-8
+2017-07-10 00:17:38.997 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:17:39.005 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:39.009 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:17:39.014 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:17:39.021 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:39.025 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:39.031 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:39.041 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 28.1019ms
+2017-07-10 00:17:39.047 +03:00 [Information] Request finished in 56.6242ms 200 application/json; charset=utf-8
+2017-07-10 00:17:40.988 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/6  
+2017-07-10 00:17:40.999 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:41.003 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Cart/6/isInCart  
+2017-07-10 00:17:41.011 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (["6"]) - ModelState is Valid
+2017-07-10 00:17:41.012 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:41.018 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" with arguments (["6"]) - ModelState is Valid
+2017-07-10 00:17:41.025 +03:00 [Information] Executed DbCommand (4ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[AmountLeft], [m].[Description], [m].[ImageUrl], [m].[Price], [m].[ProductName], [m].[StarRating]
+FROM [Product] AS [m]
+WHERE [m].[Id] = @__id_0
+2017-07-10 00:17:41.042 +03:00 [Information] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2017-07-10 00:17:41.047 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:41.054 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 45.931ms
+2017-07-10 00:17:41.062 +03:00 [Information] Request finished in 72.9386ms 200 application/json; charset=utf-8
+2017-07-10 00:17:41.066 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[@__idProduct_0='?', @__user_Id_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserProducts] AS [x]
+        WHERE ([x].[ProductId] = @__idProduct_0) AND ([x].[UserId] = @__user_Id_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-10 00:17:41.070 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:41.074 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" in 57.4809ms
+2017-07-10 00:17:41.089 +03:00 [Information] Request finished in 77.4632ms 200 application/json; charset=utf-8
+2017-07-10 00:17:44.060 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:17:44.070 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:17:44.076 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:17:44.080 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:17:44.088 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:44.093 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:17:44.100 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:17:44.109 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 33.7318ms
+2017-07-10 00:17:44.116 +03:00 [Information] Request finished in 58.1227ms 200 application/json; charset=utf-8
+2017-07-10 00:18:01.895 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:18:01.920 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:18:01.925 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:18:01.929 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:18:01.935 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:18:01.940 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:18:01.947 +03:00 [Information] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:18:01.953 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 26.4176ms
+2017-07-10 00:18:01.958 +03:00 [Information] Request finished in 62.3011ms 200 application/json; charset=utf-8
+2017-07-10 00:18:06.988 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/1  
+2017-07-10 00:18:06.997 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:18:07.008 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (["1"]) - ModelState is Valid
+2017-07-10 00:18:07.012 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Cart/1/isInCart  
+2017-07-10 00:18:07.017 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:18:07.026 +03:00 [Information] Executed DbCommand (3ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[AmountLeft], [m].[Description], [m].[ImageUrl], [m].[Price], [m].[ProductName], [m].[StarRating]
+FROM [Product] AS [m]
+WHERE [m].[Id] = @__id_0
+2017-07-10 00:18:07.027 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" with arguments (["1"]) - ModelState is Valid
+2017-07-10 00:18:07.034 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:18:07.038 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 35.2244ms
+2017-07-10 00:18:07.053 +03:00 [Information] Request finished in 57.0093ms 200 application/json; charset=utf-8
+2017-07-10 00:18:07.058 +03:00 [Information] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[CreatedDate], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[IsEnabled], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+2017-07-10 00:18:07.072 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[@__idProduct_0='?', @__user_Id_1='?'], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [UserProducts] AS [x]
+        WHERE ([x].[ProductId] = @__idProduct_0) AND ([x].[UserId] = @__user_Id_1))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2017-07-10 00:18:07.077 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:18:07.083 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.CartController.GetProduct (AspNetCoreSpa)" in 57.2092ms
+2017-07-10 00:18:07.087 +03:00 [Information] Request finished in 92.9414ms 200 application/json; charset=utf-8
+2017-07-10 00:18:08.107 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:18:08.116 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:18:08.121 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:18:08.126 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:18:08.135 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:18:08.138 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:18:08.142 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:18:08.146 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 25.1719ms
+2017-07-10 00:18:08.156 +03:00 [Information] Request finished in 53.0119ms 200 application/json; charset=utf-8
+2017-07-10 00:18:29.469 +03:00 [Information] Request starting HTTP/1.1 GET http://localhost:5000/api/Products/  
+2017-07-10 00:18:29.478 +03:00 [Information] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Identity.Application".
+2017-07-10 00:18:29.483 +03:00 [Information] Authorization was successful for user: "hahaha@mail.ru".
+2017-07-10 00:18:29.488 +03:00 [Information] Executing action method "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" with arguments (null) - ModelState is Valid
+2017-07-10 00:18:29.496 +03:00 [Information] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:18:29.502 +03:00 [Information] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext".
+2017-07-10 00:18:29.506 +03:00 [Information] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[AmountLeft], [p].[Description], [p].[ImageUrl], [p].[Price], [p].[ProductName], [p].[StarRating]
+FROM [Product] AS [p]
+2017-07-10 00:18:29.511 +03:00 [Information] Executed action "AspNetCoreSpa.Server.Controllers.api.ProductsController.GetProduct (AspNetCoreSpa)" in 26.7693ms
+2017-07-10 00:18:29.515 +03:00 [Information] Request finished in 66.1073ms 200 application/json; charset=utf-8
+2017-07-10 03:20:26.694 +03:00 [Error] An unhandled exception has occurred while executing the request
+System.Net.Http.HttpRequestException: Error while copying content to a stream. ---> System.IO.IOException: The read operation failed, see inner exception. ---> System.Net.Http.WinHttpException: Сервер вернул недопустимый или нераспознанный ответ
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Net.Http.StreamToStreamCopy.<CopyAsyncAnyStreamToAnyStreamCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.GetResult()
+   at System.Net.Http.HttpContent.<CopyToAsyncCore>d__44.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.<CopyToAsyncCore>d__44.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-10 03:20:26.704 +03:00 [Warning] The response has already started, the error page middleware will not be executed.
+2017-07-10 03:20:27.824 +03:00 [Error] Connection id ""0HL671R4A08LG"": An unhandled exception was thrown by the application.
+System.Net.Http.HttpRequestException: Error while copying content to a stream. ---> System.IO.IOException: The read operation failed, see inner exception. ---> System.Net.Http.WinHttpException: Сервер вернул недопустимый или нераспознанный ответ
+   --- End of inner exception stack trace ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+   at System.Net.Http.StreamToStreamCopy.<CopyAsyncAnyStreamToAnyStreamCore>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.GetResult()
+   at System.Net.Http.HttpContent.<CopyToAsyncCore>d__44.MoveNext()
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.<CopyToAsyncCore>d__44.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-07-10 03:20:27.835 +03:00 [Information] Request finished in 11389305.5326ms 200 text/event-stream; charset=utf-8

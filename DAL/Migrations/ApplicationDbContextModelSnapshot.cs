@@ -215,6 +215,30 @@ namespace DAL.Migrations
                     b.ToTable("Questions");
                 });
 
+            modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.Scretch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<double>("Height");
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<double>("Price");
+
+                    b.Property<string>("ScretchName")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<double>("Width");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Scretches");
+                });
+
             modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.UserProduct", b =>
                 {
                     b.Property<int>("ProductId");
