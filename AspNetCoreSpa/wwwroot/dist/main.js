@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "684ad33edfdd7331393b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "88590a588d4f2ea4c6ab"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -704,7 +704,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(242)(__webpack_require__.s = 242);
+/******/ 	return hotCreateRequire(243)(__webpack_require__.s = 243);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1776,7 +1776,7 @@ function toComment(sourceMap) {
   return '/*# ' + data + ' */';
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72).Buffer))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(76).Buffer))
 
 /***/ }),
 /* 8 */
@@ -1798,7 +1798,7 @@ module.exports = (__webpack_require__(8))(0)
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__maps_api_loader_maps_api_loader__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__maps_api_loader_maps_api_loader__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GoogleMapsAPIWrapper; });
 
 
@@ -2134,8 +2134,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var Observable_1 = __webpack_require__(9);
-var h5webstorage_1 = __webpack_require__(17);
-var http_1 = __webpack_require__(14);
+var h5webstorage_1 = __webpack_require__(18);
+var http_1 = __webpack_require__(15);
 var AuthService = (function () {
     function AuthService(_http, localStorage, sessionStorage) {
         this._http = _http;
@@ -2192,10 +2192,90 @@ exports.AuthService = AuthService;
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(8))(173)
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(59));
+__export(__webpack_require__(4));
+__export(__webpack_require__(154));
+__export(__webpack_require__(155));
+__export(__webpack_require__(156));
+__export(__webpack_require__(157));
+__export(__webpack_require__(11));
+__export(__webpack_require__(159));
+__export(__webpack_require__(158));
+__export(__webpack_require__(160));
+__export(__webpack_require__(161));
+__export(__webpack_require__(162));
+__export(__webpack_require__(163));
+__export(__webpack_require__(164));
+__export(__webpack_require__(166));
+__export(__webpack_require__(167));
+__export(__webpack_require__(168));
+__export(__webpack_require__(169));
+__export(__webpack_require__(170));
+__export(__webpack_require__(165));
+__export(__webpack_require__(171));
+__export(__webpack_require__(172));
+__export(__webpack_require__(173));
+__export(__webpack_require__(174));
+__export(__webpack_require__(175));
+__export(__webpack_require__(176));
+__export(__webpack_require__(177));
+__export(__webpack_require__(178));
+__export(__webpack_require__(179));
+__export(__webpack_require__(180));
+__export(__webpack_require__(181));
+__export(__webpack_require__(182));
+__export(__webpack_require__(12));
+__export(__webpack_require__(183));
+__export(__webpack_require__(184));
+__export(__webpack_require__(185));
+__export(__webpack_require__(186));
+__export(__webpack_require__(187));
+__export(__webpack_require__(188));
+__export(__webpack_require__(60));
+__export(__webpack_require__(189));
+__export(__webpack_require__(190));
+__export(__webpack_require__(191));
+__export(__webpack_require__(22));
+__export(__webpack_require__(192));
+__export(__webpack_require__(193));
+__export(__webpack_require__(194));
+__export(__webpack_require__(195));
+__export(__webpack_require__(61));
+__export(__webpack_require__(196));
+__export(__webpack_require__(197));
+__export(__webpack_require__(198));
+__export(__webpack_require__(199));
+__export(__webpack_require__(200));
+__export(__webpack_require__(201));
+__export(__webpack_require__(202));
+__export(__webpack_require__(203));
+__export(__webpack_require__(204));
+__export(__webpack_require__(206));
+__export(__webpack_require__(205));
+__export(__webpack_require__(207));
+__export(__webpack_require__(208));
+__export(__webpack_require__(209));
+__export(__webpack_require__(210));
+__export(__webpack_require__(211));
+__export(__webpack_require__(212));
+__export(__webpack_require__(213));
+__export(__webpack_require__(214));
+//# sourceMappingURL=primeng.js.map
 
 /***/ }),
 /* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(8))(173)
+
+/***/ }),
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2289,7 +2369,7 @@ MarkerManager.ctorParameters = function () { return [
 //# sourceMappingURL=marker-manager.js.map
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2310,7 +2390,7 @@ MapsAPILoader.ctorParameters = function () { return []; };
 //# sourceMappingURL=maps-api-loader.js.map
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2325,10 +2405,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var basestorage_1 = __webpack_require__(32);
-var localstorage_1 = __webpack_require__(46);
+var basestorage_1 = __webpack_require__(34);
+var localstorage_1 = __webpack_require__(51);
 exports.LocalStorage = localstorage_1.LocalStorage;
-var sessionstorage_1 = __webpack_require__(47);
+var sessionstorage_1 = __webpack_require__(52);
 exports.SessionStorage = sessionstorage_1.SessionStorage;
 /**
  * Makes the  LocalStorage and SessionStorage objects available throught the application. Should be
@@ -2355,7 +2435,7 @@ exports.BROWSER_STORAGE_PROVIDERS = [
     { provide: basestorage_1.SERDES_OBJECT, useValue: { stringify: JSON.stringify, parse: JSON.parse } },
     ConfigureStorage({ prefix: "" })
 ];
-var storageproperty_1 = __webpack_require__(110);
+var storageproperty_1 = __webpack_require__(111);
 exports.StorageProperty = storageproperty_1.StorageProperty;
 /**
  * Creates a provider for the StorageOptions
@@ -2368,7 +2448,7 @@ exports.ConfigureStorage = ConfigureStorage;
 
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2376,46 +2456,77 @@ exports.ConfigureStorage = ConfigureStorage;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(14);
+var http_1 = __webpack_require__(15);
 var Observable_1 = __webpack_require__(9);
-__webpack_require__(60);
-__webpack_require__(59);
-__webpack_require__(56);
-__webpack_require__(58);
-var ProductService = (function () {
-    function ProductService(_http) {
+__webpack_require__(41);
+__webpack_require__(40);
+__webpack_require__(38);
+__webpack_require__(39);
+var CartService = (function () {
+    function CartService(_http) {
         this._http = _http;
-        this._productUrl = 'api/Products/';
+        this._cartUrl = 'api/Cart/';
     }
-    ProductService.prototype.getProducts = function () {
-        return this._http.get(this._productUrl)
+    CartService.prototype.addProductToCart = function (idProduct) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post(this._cartUrl, idProduct, { headers: headers });
+    };
+    CartService.prototype.productIsInCart = function (idProduct) {
+        return this._http.get(this._cartUrl + idProduct + "/isInCart")
+            .map(function (response) { return response.json(); });
+    };
+    CartService.prototype.getProductsInCart = function () {
+        return this._http.get(this._cartUrl)
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
             .catch(this.handleError);
     };
-    ProductService.prototype.getProduct = function (id) {
-        return this._http.get(this._productUrl + id)
-            .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log(data); })
-            .catch(this.handleError);
+    CartService.prototype.deleteProduct = function (idProduct) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post(this._cartUrl + "delete", idProduct, { headers: headers });
     };
-    ProductService.prototype.handleError = function (error) {
+    CartService.prototype.deleteAll = function () {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post(this._cartUrl + "deleteall", { headers: headers });
+    };
+    CartService.prototype.buyAll = function () {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post(this._cartUrl + "buyall", { headers: headers });
+    };
+    CartService.prototype.changeAmount = function (id, amount) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post(this._cartUrl + id + "/changeamount", amount, { headers: headers });
+    };
+    CartService.prototype.totalSum = function () {
+        return this._http.get(this._cartUrl + "totalsum")
+            .map(function (response) { return response.json(); });
+    };
+    CartService.prototype.totalAmount = function () {
+        return this._http.get(this._cartUrl + "totalamount")
+            .map(function (response) { return response.json(); });
+    };
+    CartService.prototype.handleError = function (error) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console
         console.error(error);
         return Observable_1.Observable.throw(error.json().error || 'Server error');
     };
-    return ProductService;
+    return CartService;
 }());
-ProductService = tslib_1.__decorate([
+CartService = tslib_1.__decorate([
     core_1.Injectable(),
     tslib_1.__metadata("design:paramtypes", [http_1.Http])
-], ProductService);
-exports.ProductService = ProductService;
+], CartService);
+exports.CartService = CartService;
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2426,11 +2537,14 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var forms_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(6);
-var ng_bootstrap_1 = __webpack_require__(57);
+var ng_bootstrap_1 = __webpack_require__(62);
 var auth_service_1 = __webpack_require__(13);
-var product_filter_pipe_1 = __webpack_require__(141);
-var allProducts_component_1 = __webpack_require__(150);
-var spinner_component_1 = __webpack_require__(151);
+var product_filter_pipe_1 = __webpack_require__(142);
+var primeng_1 = __webpack_require__(14);
+var animations_1 = __webpack_require__(72);
+var primeng_2 = __webpack_require__(14);
+var allProducts_component_1 = __webpack_require__(151);
+var spinner_component_1 = __webpack_require__(152);
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -2438,14 +2552,14 @@ var SharedModule = (function () {
 }());
 SharedModule = tslib_1.__decorate([
     core_1.NgModule({
-        imports: [common_1.CommonModule, forms_1.FormsModule, router_1.RouterModule, ng_bootstrap_1.NgbModule.forRoot()],
+        imports: [common_1.CommonModule, forms_1.FormsModule, router_1.RouterModule, ng_bootstrap_1.NgbModule.forRoot(), primeng_1.DialogModule, animations_1.BrowserAnimationsModule, primeng_2.GrowlModule],
         exports: [
             common_1.CommonModule,
             forms_1.FormsModule,
             allProducts_component_1.AllProductsComponent,
             product_filter_pipe_1.ProductFilterPipe,
             router_1.RouterModule,
-            ng_bootstrap_1.NgbModule,
+            ng_bootstrap_1.NgbModule
         ],
         declarations: [allProducts_component_1.AllProductsComponent, spinner_component_1.SpinnerComponent, product_filter_pipe_1.ProductFilterPipe],
         providers: [auth_service_1.AuthService]
@@ -2455,7 +2569,7 @@ exports.SharedModule = SharedModule;
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2498,7 +2612,7 @@ var PageScrollUtilService = (function () {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2677,7 +2791,7 @@ exports.PaginatorModule = PaginatorModule;
 //# sourceMappingURL=paginator.js.map
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2766,12 +2880,18 @@ exports.ObjectUtils = ObjectUtils;
 //# sourceMappingURL=ObjectUtils.js.map
 
 /***/ }),
-/* 23 */
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(8))(70)
+
+/***/ }),
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_info_window_manager__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_info_window_manager__ = __webpack_require__(29);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmInfoWindow; });
 
 
@@ -2894,7 +3014,7 @@ AgmInfoWindow.ctorParameters = function () { return [
 //# sourceMappingURL=info-window.js.map
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2937,7 +3057,7 @@ AgmPolylinePoint.propDecorators = {
 //# sourceMappingURL=polyline-point.js.map
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3046,7 +3166,7 @@ CircleManager.ctorParameters = function () { return [
 //# sourceMappingURL=circle-manager.js.map
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3135,7 +3255,7 @@ DataLayerManager.ctorParameters = function () { return [
 //# sourceMappingURL=data-layer-manager.js.map
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3143,7 +3263,7 @@ DataLayerManager.ctorParameters = function () { return [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__marker_manager__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__marker_manager__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoWindowManager; });
 
 
@@ -3235,7 +3355,7 @@ InfoWindowManager.ctorParameters = function () { return [
 //# sourceMappingURL=info-window-manager.js.map
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3308,7 +3428,7 @@ KmlLayerManager.ctorParameters = function () { return [
 //# sourceMappingURL=kml-layer-manager.js.map
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3389,7 +3509,7 @@ PolygonManager.ctorParameters = function () { return [
 //# sourceMappingURL=polygon-manager.js.map
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3476,13 +3596,13 @@ PolylineManager.ctorParameters = function () { return [
 //# sourceMappingURL=polyline-manager.js.map
 
 /***/ }),
-/* 31 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_browser_globals__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__maps_api_loader__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_browser_globals__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__maps_api_loader__ = __webpack_require__(17);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return GoogleMapsScriptProtocol; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return LAZY_MAPS_API_CONFIG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LazyMapsAPILoader; });
@@ -3596,7 +3716,7 @@ LazyMapsAPILoader.ctorParameters = function () { return [
 //# sourceMappingURL=lazy-maps-api-loader.js.map
 
 /***/ }),
-/* 32 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3801,7 +3921,54 @@ exports.BaseStorage = BaseStorage;
 
 
 /***/ }),
-/* 33 */
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(3);
+var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(15);
+var Observable_1 = __webpack_require__(9);
+__webpack_require__(41);
+__webpack_require__(40);
+__webpack_require__(38);
+__webpack_require__(39);
+var ProductService = (function () {
+    function ProductService(_http) {
+        this._http = _http;
+        this._productUrl = 'api/Products/';
+    }
+    ProductService.prototype.getProducts = function () {
+        return this._http.get(this._productUrl)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+            .catch(this.handleError);
+    };
+    ProductService.prototype.getProduct = function (id) {
+        return this._http.get(this._productUrl + id)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log(data); })
+            .catch(this.handleError);
+    };
+    ProductService.prototype.handleError = function (error) {
+        // in a real world app, we may send the server to some remote logging infrastructure
+        // instead of just logging it to the console
+        console.error(error);
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
+    return ProductService;
+}());
+ProductService = tslib_1.__decorate([
+    core_1.Injectable(),
+    tslib_1.__metadata("design:paramtypes", [http_1.Http])
+], ProductService);
+exports.ProductService = ProductService;
+
+
+/***/ }),
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3917,13 +4084,13 @@ PageScrollConfig._easingLogic = {
 
 
 /***/ }),
-/* 34 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng2_page_scroll_config__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_util_service__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng2_page_scroll_config__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_util_service__ = __webpack_require__(21);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageScrollService; });
 
 
@@ -4138,104 +4305,42 @@ PageScrollService.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 35 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(53));
-__export(__webpack_require__(4));
-__export(__webpack_require__(154));
-__export(__webpack_require__(155));
-__export(__webpack_require__(156));
-__export(__webpack_require__(157));
-__export(__webpack_require__(11));
-__export(__webpack_require__(159));
-__export(__webpack_require__(158));
-__export(__webpack_require__(160));
-__export(__webpack_require__(161));
-__export(__webpack_require__(162));
-__export(__webpack_require__(163));
-__export(__webpack_require__(164));
-__export(__webpack_require__(166));
-__export(__webpack_require__(167));
-__export(__webpack_require__(168));
-__export(__webpack_require__(169));
-__export(__webpack_require__(170));
-__export(__webpack_require__(165));
-__export(__webpack_require__(171));
-__export(__webpack_require__(172));
-__export(__webpack_require__(173));
-__export(__webpack_require__(174));
-__export(__webpack_require__(175));
-__export(__webpack_require__(176));
-__export(__webpack_require__(177));
-__export(__webpack_require__(178));
-__export(__webpack_require__(179));
-__export(__webpack_require__(180));
-__export(__webpack_require__(181));
-__export(__webpack_require__(182));
-__export(__webpack_require__(12));
-__export(__webpack_require__(183));
-__export(__webpack_require__(184));
-__export(__webpack_require__(185));
-__export(__webpack_require__(186));
-__export(__webpack_require__(187));
-__export(__webpack_require__(188));
-__export(__webpack_require__(54));
-__export(__webpack_require__(189));
-__export(__webpack_require__(190));
-__export(__webpack_require__(191));
-__export(__webpack_require__(21));
-__export(__webpack_require__(192));
-__export(__webpack_require__(193));
-__export(__webpack_require__(194));
-__export(__webpack_require__(195));
-__export(__webpack_require__(55));
-__export(__webpack_require__(196));
-__export(__webpack_require__(197));
-__export(__webpack_require__(198));
-__export(__webpack_require__(199));
-__export(__webpack_require__(200));
-__export(__webpack_require__(201));
-__export(__webpack_require__(202));
-__export(__webpack_require__(203));
-__export(__webpack_require__(204));
-__export(__webpack_require__(206));
-__export(__webpack_require__(205));
-__export(__webpack_require__(207));
-__export(__webpack_require__(208));
-__export(__webpack_require__(209));
-__export(__webpack_require__(210));
-__export(__webpack_require__(211));
-__export(__webpack_require__(212));
-__export(__webpack_require__(213));
-__export(__webpack_require__(214));
-//# sourceMappingURL=primeng.js.map
+module.exports = (__webpack_require__(8))(266)
 
 /***/ }),
-/* 36 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(8))(70)
+module.exports = (__webpack_require__(8))(543)
 
 /***/ }),
-/* 37 */
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(8))(554)
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(8))(571)
+
+/***/ }),
+/* 42 */
 /***/ (function(module, exports) {
 
 module.exports = polyfills_lib;
 
 /***/ }),
-/* 38 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__ = __webpack_require__(27);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmCircle; });
 
 
@@ -4435,12 +4540,12 @@ AgmCircle.ctorParameters = function () { return [
 //# sourceMappingURL=circle.js.map
 
 /***/ }),
-/* 39 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_data_layer_manager__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_data_layer_manager__ = __webpack_require__(28);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmDataLayer; });
 
 
@@ -4710,12 +4815,12 @@ AgmDataLayer.ctorParameters = function () { return [
 //# sourceMappingURL=data-layer.js.map
 
 /***/ }),
-/* 40 */
+/* 45 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_kml_layer_manager__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_kml_layer_manager__ = __webpack_require__(30);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmKmlLayer; });
 
 
@@ -4833,19 +4938,19 @@ AgmKmlLayer.ctorParameters = function () { return [
 //# sourceMappingURL=kml-layer.js.map
 
 /***/ }),
-/* 41 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_google_maps_api_wrapper__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_circle_manager__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_managers_info_window_manager__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_managers_marker_manager__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_managers_polygon_manager__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_managers_polyline_manager__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_managers_kml_layer_manager__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_managers_data_layer_manager__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_circle_manager__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_managers_info_window_manager__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_managers_marker_manager__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_managers_polygon_manager__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_managers_polyline_manager__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_managers_kml_layer_manager__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_managers_data_layer_manager__ = __webpack_require__(28);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmMap; });
 
 
@@ -5224,13 +5329,13 @@ AgmMap.ctorParameters = function () { return [
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 42 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_marker_manager__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_window__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_marker_manager__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_window__ = __webpack_require__(25);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmMarker; });
 
 
@@ -5418,12 +5523,12 @@ AgmMarker.propDecorators = {
 //# sourceMappingURL=marker.js.map
 
 /***/ }),
-/* 43 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_polygon_manager__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_polygon_manager__ = __webpack_require__(31);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmPolygon; });
 
 
@@ -5652,13 +5757,13 @@ AgmPolygon.ctorParameters = function () { return [
 //# sourceMappingURL=polygon.js.map
 
 /***/ }),
-/* 44 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_polyline_manager__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__polyline_point__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_polyline_manager__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__polyline_point__ = __webpack_require__(26);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmPolyline; });
 
 
@@ -5863,7 +5968,7 @@ AgmPolyline.propDecorators = {
 //# sourceMappingURL=polyline.js.map
 
 /***/ }),
-/* 45 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5888,7 +5993,7 @@ var BROWSER_GLOBALS_PROVIDERS = [WindowRef, DocumentRef];
 //# sourceMappingURL=browser-globals.js.map
 
 /***/ }),
-/* 46 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5911,7 +6016,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = __webpack_require__(0);
-var basestorage_1 = __webpack_require__(32);
+var basestorage_1 = __webpack_require__(34);
 /**
  * Token used to inject an object as the storage backend of the SessionStorage object. By default, the storage
  * backend is the native localStorage object but can be substituted to allow for testing or customized storage
@@ -5941,7 +6046,7 @@ exports.LocalStorage = LocalStorage;
 
 
 /***/ }),
-/* 47 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5964,7 +6069,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = __webpack_require__(0);
-var basestorage_1 = __webpack_require__(32);
+var basestorage_1 = __webpack_require__(34);
 /**
  * Token used to inject an object as the storage backend of the SessionStorage object. By default, the storage
  * backend is the native sessionStorage object but can be substituted to allow for testing or customized storage
@@ -5994,7 +6099,7 @@ exports.SessionStorage = SessionStorage;
 
 
 /***/ }),
-/* 48 */
+/* 53 */
 /***/ (function(module, exports) {
 
 var ENTITIES = [['Aacute', [193]], ['aacute', [225]], ['Abreve', [258]], ['abreve', [259]], ['ac', [8766]], ['acd', [8767]], ['acE', [8766, 819]], ['Acirc', [194]], ['acirc', [226]], ['acute', [180]], ['Acy', [1040]], ['acy', [1072]], ['AElig', [198]], ['aelig', [230]], ['af', [8289]], ['Afr', [120068]], ['afr', [120094]], ['Agrave', [192]], ['agrave', [224]], ['alefsym', [8501]], ['aleph', [8501]], ['Alpha', [913]], ['alpha', [945]], ['Amacr', [256]], ['amacr', [257]], ['amalg', [10815]], ['amp', [38]], ['AMP', [38]], ['andand', [10837]], ['And', [10835]], ['and', [8743]], ['andd', [10844]], ['andslope', [10840]], ['andv', [10842]], ['ang', [8736]], ['ange', [10660]], ['angle', [8736]], ['angmsdaa', [10664]], ['angmsdab', [10665]], ['angmsdac', [10666]], ['angmsdad', [10667]], ['angmsdae', [10668]], ['angmsdaf', [10669]], ['angmsdag', [10670]], ['angmsdah', [10671]], ['angmsd', [8737]], ['angrt', [8735]], ['angrtvb', [8894]], ['angrtvbd', [10653]], ['angsph', [8738]], ['angst', [197]], ['angzarr', [9084]], ['Aogon', [260]], ['aogon', [261]], ['Aopf', [120120]], ['aopf', [120146]], ['apacir', [10863]], ['ap', [8776]], ['apE', [10864]], ['ape', [8778]], ['apid', [8779]], ['apos', [39]], ['ApplyFunction', [8289]], ['approx', [8776]], ['approxeq', [8778]], ['Aring', [197]], ['aring', [229]], ['Ascr', [119964]], ['ascr', [119990]], ['Assign', [8788]], ['ast', [42]], ['asymp', [8776]], ['asympeq', [8781]], ['Atilde', [195]], ['atilde', [227]], ['Auml', [196]], ['auml', [228]], ['awconint', [8755]], ['awint', [10769]], ['backcong', [8780]], ['backepsilon', [1014]], ['backprime', [8245]], ['backsim', [8765]], ['backsimeq', [8909]], ['Backslash', [8726]], ['Barv', [10983]], ['barvee', [8893]], ['barwed', [8965]], ['Barwed', [8966]], ['barwedge', [8965]], ['bbrk', [9141]], ['bbrktbrk', [9142]], ['bcong', [8780]], ['Bcy', [1041]], ['bcy', [1073]], ['bdquo', [8222]], ['becaus', [8757]], ['because', [8757]], ['Because', [8757]], ['bemptyv', [10672]], ['bepsi', [1014]], ['bernou', [8492]], ['Bernoullis', [8492]], ['Beta', [914]], ['beta', [946]], ['beth', [8502]], ['between', [8812]], ['Bfr', [120069]], ['bfr', [120095]], ['bigcap', [8898]], ['bigcirc', [9711]], ['bigcup', [8899]], ['bigodot', [10752]], ['bigoplus', [10753]], ['bigotimes', [10754]], ['bigsqcup', [10758]], ['bigstar', [9733]], ['bigtriangledown', [9661]], ['bigtriangleup', [9651]], ['biguplus', [10756]], ['bigvee', [8897]], ['bigwedge', [8896]], ['bkarow', [10509]], ['blacklozenge', [10731]], ['blacksquare', [9642]], ['blacktriangle', [9652]], ['blacktriangledown', [9662]], ['blacktriangleleft', [9666]], ['blacktriangleright', [9656]], ['blank', [9251]], ['blk12', [9618]], ['blk14', [9617]], ['blk34', [9619]], ['block', [9608]], ['bne', [61, 8421]], ['bnequiv', [8801, 8421]], ['bNot', [10989]], ['bnot', [8976]], ['Bopf', [120121]], ['bopf', [120147]], ['bot', [8869]], ['bottom', [8869]], ['bowtie', [8904]], ['boxbox', [10697]], ['boxdl', [9488]], ['boxdL', [9557]], ['boxDl', [9558]], ['boxDL', [9559]], ['boxdr', [9484]], ['boxdR', [9554]], ['boxDr', [9555]], ['boxDR', [9556]], ['boxh', [9472]], ['boxH', [9552]], ['boxhd', [9516]], ['boxHd', [9572]], ['boxhD', [9573]], ['boxHD', [9574]], ['boxhu', [9524]], ['boxHu', [9575]], ['boxhU', [9576]], ['boxHU', [9577]], ['boxminus', [8863]], ['boxplus', [8862]], ['boxtimes', [8864]], ['boxul', [9496]], ['boxuL', [9563]], ['boxUl', [9564]], ['boxUL', [9565]], ['boxur', [9492]], ['boxuR', [9560]], ['boxUr', [9561]], ['boxUR', [9562]], ['boxv', [9474]], ['boxV', [9553]], ['boxvh', [9532]], ['boxvH', [9578]], ['boxVh', [9579]], ['boxVH', [9580]], ['boxvl', [9508]], ['boxvL', [9569]], ['boxVl', [9570]], ['boxVL', [9571]], ['boxvr', [9500]], ['boxvR', [9566]], ['boxVr', [9567]], ['boxVR', [9568]], ['bprime', [8245]], ['breve', [728]], ['Breve', [728]], ['brvbar', [166]], ['bscr', [119991]], ['Bscr', [8492]], ['bsemi', [8271]], ['bsim', [8765]], ['bsime', [8909]], ['bsolb', [10693]], ['bsol', [92]], ['bsolhsub', [10184]], ['bull', [8226]], ['bullet', [8226]], ['bump', [8782]], ['bumpE', [10926]], ['bumpe', [8783]], ['Bumpeq', [8782]], ['bumpeq', [8783]], ['Cacute', [262]], ['cacute', [263]], ['capand', [10820]], ['capbrcup', [10825]], ['capcap', [10827]], ['cap', [8745]], ['Cap', [8914]], ['capcup', [10823]], ['capdot', [10816]], ['CapitalDifferentialD', [8517]], ['caps', [8745, 65024]], ['caret', [8257]], ['caron', [711]], ['Cayleys', [8493]], ['ccaps', [10829]], ['Ccaron', [268]], ['ccaron', [269]], ['Ccedil', [199]], ['ccedil', [231]], ['Ccirc', [264]], ['ccirc', [265]], ['Cconint', [8752]], ['ccups', [10828]], ['ccupssm', [10832]], ['Cdot', [266]], ['cdot', [267]], ['cedil', [184]], ['Cedilla', [184]], ['cemptyv', [10674]], ['cent', [162]], ['centerdot', [183]], ['CenterDot', [183]], ['cfr', [120096]], ['Cfr', [8493]], ['CHcy', [1063]], ['chcy', [1095]], ['check', [10003]], ['checkmark', [10003]], ['Chi', [935]], ['chi', [967]], ['circ', [710]], ['circeq', [8791]], ['circlearrowleft', [8634]], ['circlearrowright', [8635]], ['circledast', [8859]], ['circledcirc', [8858]], ['circleddash', [8861]], ['CircleDot', [8857]], ['circledR', [174]], ['circledS', [9416]], ['CircleMinus', [8854]], ['CirclePlus', [8853]], ['CircleTimes', [8855]], ['cir', [9675]], ['cirE', [10691]], ['cire', [8791]], ['cirfnint', [10768]], ['cirmid', [10991]], ['cirscir', [10690]], ['ClockwiseContourIntegral', [8754]], ['clubs', [9827]], ['clubsuit', [9827]], ['colon', [58]], ['Colon', [8759]], ['Colone', [10868]], ['colone', [8788]], ['coloneq', [8788]], ['comma', [44]], ['commat', [64]], ['comp', [8705]], ['compfn', [8728]], ['complement', [8705]], ['complexes', [8450]], ['cong', [8773]], ['congdot', [10861]], ['Congruent', [8801]], ['conint', [8750]], ['Conint', [8751]], ['ContourIntegral', [8750]], ['copf', [120148]], ['Copf', [8450]], ['coprod', [8720]], ['Coproduct', [8720]], ['copy', [169]], ['COPY', [169]], ['copysr', [8471]], ['CounterClockwiseContourIntegral', [8755]], ['crarr', [8629]], ['cross', [10007]], ['Cross', [10799]], ['Cscr', [119966]], ['cscr', [119992]], ['csub', [10959]], ['csube', [10961]], ['csup', [10960]], ['csupe', [10962]], ['ctdot', [8943]], ['cudarrl', [10552]], ['cudarrr', [10549]], ['cuepr', [8926]], ['cuesc', [8927]], ['cularr', [8630]], ['cularrp', [10557]], ['cupbrcap', [10824]], ['cupcap', [10822]], ['CupCap', [8781]], ['cup', [8746]], ['Cup', [8915]], ['cupcup', [10826]], ['cupdot', [8845]], ['cupor', [10821]], ['cups', [8746, 65024]], ['curarr', [8631]], ['curarrm', [10556]], ['curlyeqprec', [8926]], ['curlyeqsucc', [8927]], ['curlyvee', [8910]], ['curlywedge', [8911]], ['curren', [164]], ['curvearrowleft', [8630]], ['curvearrowright', [8631]], ['cuvee', [8910]], ['cuwed', [8911]], ['cwconint', [8754]], ['cwint', [8753]], ['cylcty', [9005]], ['dagger', [8224]], ['Dagger', [8225]], ['daleth', [8504]], ['darr', [8595]], ['Darr', [8609]], ['dArr', [8659]], ['dash', [8208]], ['Dashv', [10980]], ['dashv', [8867]], ['dbkarow', [10511]], ['dblac', [733]], ['Dcaron', [270]], ['dcaron', [271]], ['Dcy', [1044]], ['dcy', [1076]], ['ddagger', [8225]], ['ddarr', [8650]], ['DD', [8517]], ['dd', [8518]], ['DDotrahd', [10513]], ['ddotseq', [10871]], ['deg', [176]], ['Del', [8711]], ['Delta', [916]], ['delta', [948]], ['demptyv', [10673]], ['dfisht', [10623]], ['Dfr', [120071]], ['dfr', [120097]], ['dHar', [10597]], ['dharl', [8643]], ['dharr', [8642]], ['DiacriticalAcute', [180]], ['DiacriticalDot', [729]], ['DiacriticalDoubleAcute', [733]], ['DiacriticalGrave', [96]], ['DiacriticalTilde', [732]], ['diam', [8900]], ['diamond', [8900]], ['Diamond', [8900]], ['diamondsuit', [9830]], ['diams', [9830]], ['die', [168]], ['DifferentialD', [8518]], ['digamma', [989]], ['disin', [8946]], ['div', [247]], ['divide', [247]], ['divideontimes', [8903]], ['divonx', [8903]], ['DJcy', [1026]], ['djcy', [1106]], ['dlcorn', [8990]], ['dlcrop', [8973]], ['dollar', [36]], ['Dopf', [120123]], ['dopf', [120149]], ['Dot', [168]], ['dot', [729]], ['DotDot', [8412]], ['doteq', [8784]], ['doteqdot', [8785]], ['DotEqual', [8784]], ['dotminus', [8760]], ['dotplus', [8724]], ['dotsquare', [8865]], ['doublebarwedge', [8966]], ['DoubleContourIntegral', [8751]], ['DoubleDot', [168]], ['DoubleDownArrow', [8659]], ['DoubleLeftArrow', [8656]], ['DoubleLeftRightArrow', [8660]], ['DoubleLeftTee', [10980]], ['DoubleLongLeftArrow', [10232]], ['DoubleLongLeftRightArrow', [10234]], ['DoubleLongRightArrow', [10233]], ['DoubleRightArrow', [8658]], ['DoubleRightTee', [8872]], ['DoubleUpArrow', [8657]], ['DoubleUpDownArrow', [8661]], ['DoubleVerticalBar', [8741]], ['DownArrowBar', [10515]], ['downarrow', [8595]], ['DownArrow', [8595]], ['Downarrow', [8659]], ['DownArrowUpArrow', [8693]], ['DownBreve', [785]], ['downdownarrows', [8650]], ['downharpoonleft', [8643]], ['downharpoonright', [8642]], ['DownLeftRightVector', [10576]], ['DownLeftTeeVector', [10590]], ['DownLeftVectorBar', [10582]], ['DownLeftVector', [8637]], ['DownRightTeeVector', [10591]], ['DownRightVectorBar', [10583]], ['DownRightVector', [8641]], ['DownTeeArrow', [8615]], ['DownTee', [8868]], ['drbkarow', [10512]], ['drcorn', [8991]], ['drcrop', [8972]], ['Dscr', [119967]], ['dscr', [119993]], ['DScy', [1029]], ['dscy', [1109]], ['dsol', [10742]], ['Dstrok', [272]], ['dstrok', [273]], ['dtdot', [8945]], ['dtri', [9663]], ['dtrif', [9662]], ['duarr', [8693]], ['duhar', [10607]], ['dwangle', [10662]], ['DZcy', [1039]], ['dzcy', [1119]], ['dzigrarr', [10239]], ['Eacute', [201]], ['eacute', [233]], ['easter', [10862]], ['Ecaron', [282]], ['ecaron', [283]], ['Ecirc', [202]], ['ecirc', [234]], ['ecir', [8790]], ['ecolon', [8789]], ['Ecy', [1069]], ['ecy', [1101]], ['eDDot', [10871]], ['Edot', [278]], ['edot', [279]], ['eDot', [8785]], ['ee', [8519]], ['efDot', [8786]], ['Efr', [120072]], ['efr', [120098]], ['eg', [10906]], ['Egrave', [200]], ['egrave', [232]], ['egs', [10902]], ['egsdot', [10904]], ['el', [10905]], ['Element', [8712]], ['elinters', [9191]], ['ell', [8467]], ['els', [10901]], ['elsdot', [10903]], ['Emacr', [274]], ['emacr', [275]], ['empty', [8709]], ['emptyset', [8709]], ['EmptySmallSquare', [9723]], ['emptyv', [8709]], ['EmptyVerySmallSquare', [9643]], ['emsp13', [8196]], ['emsp14', [8197]], ['emsp', [8195]], ['ENG', [330]], ['eng', [331]], ['ensp', [8194]], ['Eogon', [280]], ['eogon', [281]], ['Eopf', [120124]], ['eopf', [120150]], ['epar', [8917]], ['eparsl', [10723]], ['eplus', [10865]], ['epsi', [949]], ['Epsilon', [917]], ['epsilon', [949]], ['epsiv', [1013]], ['eqcirc', [8790]], ['eqcolon', [8789]], ['eqsim', [8770]], ['eqslantgtr', [10902]], ['eqslantless', [10901]], ['Equal', [10869]], ['equals', [61]], ['EqualTilde', [8770]], ['equest', [8799]], ['Equilibrium', [8652]], ['equiv', [8801]], ['equivDD', [10872]], ['eqvparsl', [10725]], ['erarr', [10609]], ['erDot', [8787]], ['escr', [8495]], ['Escr', [8496]], ['esdot', [8784]], ['Esim', [10867]], ['esim', [8770]], ['Eta', [919]], ['eta', [951]], ['ETH', [208]], ['eth', [240]], ['Euml', [203]], ['euml', [235]], ['euro', [8364]], ['excl', [33]], ['exist', [8707]], ['Exists', [8707]], ['expectation', [8496]], ['exponentiale', [8519]], ['ExponentialE', [8519]], ['fallingdotseq', [8786]], ['Fcy', [1060]], ['fcy', [1092]], ['female', [9792]], ['ffilig', [64259]], ['fflig', [64256]], ['ffllig', [64260]], ['Ffr', [120073]], ['ffr', [120099]], ['filig', [64257]], ['FilledSmallSquare', [9724]], ['FilledVerySmallSquare', [9642]], ['fjlig', [102, 106]], ['flat', [9837]], ['fllig', [64258]], ['fltns', [9649]], ['fnof', [402]], ['Fopf', [120125]], ['fopf', [120151]], ['forall', [8704]], ['ForAll', [8704]], ['fork', [8916]], ['forkv', [10969]], ['Fouriertrf', [8497]], ['fpartint', [10765]], ['frac12', [189]], ['frac13', [8531]], ['frac14', [188]], ['frac15', [8533]], ['frac16', [8537]], ['frac18', [8539]], ['frac23', [8532]], ['frac25', [8534]], ['frac34', [190]], ['frac35', [8535]], ['frac38', [8540]], ['frac45', [8536]], ['frac56', [8538]], ['frac58', [8541]], ['frac78', [8542]], ['frasl', [8260]], ['frown', [8994]], ['fscr', [119995]], ['Fscr', [8497]], ['gacute', [501]], ['Gamma', [915]], ['gamma', [947]], ['Gammad', [988]], ['gammad', [989]], ['gap', [10886]], ['Gbreve', [286]], ['gbreve', [287]], ['Gcedil', [290]], ['Gcirc', [284]], ['gcirc', [285]], ['Gcy', [1043]], ['gcy', [1075]], ['Gdot', [288]], ['gdot', [289]], ['ge', [8805]], ['gE', [8807]], ['gEl', [10892]], ['gel', [8923]], ['geq', [8805]], ['geqq', [8807]], ['geqslant', [10878]], ['gescc', [10921]], ['ges', [10878]], ['gesdot', [10880]], ['gesdoto', [10882]], ['gesdotol', [10884]], ['gesl', [8923, 65024]], ['gesles', [10900]], ['Gfr', [120074]], ['gfr', [120100]], ['gg', [8811]], ['Gg', [8921]], ['ggg', [8921]], ['gimel', [8503]], ['GJcy', [1027]], ['gjcy', [1107]], ['gla', [10917]], ['gl', [8823]], ['glE', [10898]], ['glj', [10916]], ['gnap', [10890]], ['gnapprox', [10890]], ['gne', [10888]], ['gnE', [8809]], ['gneq', [10888]], ['gneqq', [8809]], ['gnsim', [8935]], ['Gopf', [120126]], ['gopf', [120152]], ['grave', [96]], ['GreaterEqual', [8805]], ['GreaterEqualLess', [8923]], ['GreaterFullEqual', [8807]], ['GreaterGreater', [10914]], ['GreaterLess', [8823]], ['GreaterSlantEqual', [10878]], ['GreaterTilde', [8819]], ['Gscr', [119970]], ['gscr', [8458]], ['gsim', [8819]], ['gsime', [10894]], ['gsiml', [10896]], ['gtcc', [10919]], ['gtcir', [10874]], ['gt', [62]], ['GT', [62]], ['Gt', [8811]], ['gtdot', [8919]], ['gtlPar', [10645]], ['gtquest', [10876]], ['gtrapprox', [10886]], ['gtrarr', [10616]], ['gtrdot', [8919]], ['gtreqless', [8923]], ['gtreqqless', [10892]], ['gtrless', [8823]], ['gtrsim', [8819]], ['gvertneqq', [8809, 65024]], ['gvnE', [8809, 65024]], ['Hacek', [711]], ['hairsp', [8202]], ['half', [189]], ['hamilt', [8459]], ['HARDcy', [1066]], ['hardcy', [1098]], ['harrcir', [10568]], ['harr', [8596]], ['hArr', [8660]], ['harrw', [8621]], ['Hat', [94]], ['hbar', [8463]], ['Hcirc', [292]], ['hcirc', [293]], ['hearts', [9829]], ['heartsuit', [9829]], ['hellip', [8230]], ['hercon', [8889]], ['hfr', [120101]], ['Hfr', [8460]], ['HilbertSpace', [8459]], ['hksearow', [10533]], ['hkswarow', [10534]], ['hoarr', [8703]], ['homtht', [8763]], ['hookleftarrow', [8617]], ['hookrightarrow', [8618]], ['hopf', [120153]], ['Hopf', [8461]], ['horbar', [8213]], ['HorizontalLine', [9472]], ['hscr', [119997]], ['Hscr', [8459]], ['hslash', [8463]], ['Hstrok', [294]], ['hstrok', [295]], ['HumpDownHump', [8782]], ['HumpEqual', [8783]], ['hybull', [8259]], ['hyphen', [8208]], ['Iacute', [205]], ['iacute', [237]], ['ic', [8291]], ['Icirc', [206]], ['icirc', [238]], ['Icy', [1048]], ['icy', [1080]], ['Idot', [304]], ['IEcy', [1045]], ['iecy', [1077]], ['iexcl', [161]], ['iff', [8660]], ['ifr', [120102]], ['Ifr', [8465]], ['Igrave', [204]], ['igrave', [236]], ['ii', [8520]], ['iiiint', [10764]], ['iiint', [8749]], ['iinfin', [10716]], ['iiota', [8489]], ['IJlig', [306]], ['ijlig', [307]], ['Imacr', [298]], ['imacr', [299]], ['image', [8465]], ['ImaginaryI', [8520]], ['imagline', [8464]], ['imagpart', [8465]], ['imath', [305]], ['Im', [8465]], ['imof', [8887]], ['imped', [437]], ['Implies', [8658]], ['incare', [8453]], ['in', [8712]], ['infin', [8734]], ['infintie', [10717]], ['inodot', [305]], ['intcal', [8890]], ['int', [8747]], ['Int', [8748]], ['integers', [8484]], ['Integral', [8747]], ['intercal', [8890]], ['Intersection', [8898]], ['intlarhk', [10775]], ['intprod', [10812]], ['InvisibleComma', [8291]], ['InvisibleTimes', [8290]], ['IOcy', [1025]], ['iocy', [1105]], ['Iogon', [302]], ['iogon', [303]], ['Iopf', [120128]], ['iopf', [120154]], ['Iota', [921]], ['iota', [953]], ['iprod', [10812]], ['iquest', [191]], ['iscr', [119998]], ['Iscr', [8464]], ['isin', [8712]], ['isindot', [8949]], ['isinE', [8953]], ['isins', [8948]], ['isinsv', [8947]], ['isinv', [8712]], ['it', [8290]], ['Itilde', [296]], ['itilde', [297]], ['Iukcy', [1030]], ['iukcy', [1110]], ['Iuml', [207]], ['iuml', [239]], ['Jcirc', [308]], ['jcirc', [309]], ['Jcy', [1049]], ['jcy', [1081]], ['Jfr', [120077]], ['jfr', [120103]], ['jmath', [567]], ['Jopf', [120129]], ['jopf', [120155]], ['Jscr', [119973]], ['jscr', [119999]], ['Jsercy', [1032]], ['jsercy', [1112]], ['Jukcy', [1028]], ['jukcy', [1108]], ['Kappa', [922]], ['kappa', [954]], ['kappav', [1008]], ['Kcedil', [310]], ['kcedil', [311]], ['Kcy', [1050]], ['kcy', [1082]], ['Kfr', [120078]], ['kfr', [120104]], ['kgreen', [312]], ['KHcy', [1061]], ['khcy', [1093]], ['KJcy', [1036]], ['kjcy', [1116]], ['Kopf', [120130]], ['kopf', [120156]], ['Kscr', [119974]], ['kscr', [120000]], ['lAarr', [8666]], ['Lacute', [313]], ['lacute', [314]], ['laemptyv', [10676]], ['lagran', [8466]], ['Lambda', [923]], ['lambda', [955]], ['lang', [10216]], ['Lang', [10218]], ['langd', [10641]], ['langle', [10216]], ['lap', [10885]], ['Laplacetrf', [8466]], ['laquo', [171]], ['larrb', [8676]], ['larrbfs', [10527]], ['larr', [8592]], ['Larr', [8606]], ['lArr', [8656]], ['larrfs', [10525]], ['larrhk', [8617]], ['larrlp', [8619]], ['larrpl', [10553]], ['larrsim', [10611]], ['larrtl', [8610]], ['latail', [10521]], ['lAtail', [10523]], ['lat', [10923]], ['late', [10925]], ['lates', [10925, 65024]], ['lbarr', [10508]], ['lBarr', [10510]], ['lbbrk', [10098]], ['lbrace', [123]], ['lbrack', [91]], ['lbrke', [10635]], ['lbrksld', [10639]], ['lbrkslu', [10637]], ['Lcaron', [317]], ['lcaron', [318]], ['Lcedil', [315]], ['lcedil', [316]], ['lceil', [8968]], ['lcub', [123]], ['Lcy', [1051]], ['lcy', [1083]], ['ldca', [10550]], ['ldquo', [8220]], ['ldquor', [8222]], ['ldrdhar', [10599]], ['ldrushar', [10571]], ['ldsh', [8626]], ['le', [8804]], ['lE', [8806]], ['LeftAngleBracket', [10216]], ['LeftArrowBar', [8676]], ['leftarrow', [8592]], ['LeftArrow', [8592]], ['Leftarrow', [8656]], ['LeftArrowRightArrow', [8646]], ['leftarrowtail', [8610]], ['LeftCeiling', [8968]], ['LeftDoubleBracket', [10214]], ['LeftDownTeeVector', [10593]], ['LeftDownVectorBar', [10585]], ['LeftDownVector', [8643]], ['LeftFloor', [8970]], ['leftharpoondown', [8637]], ['leftharpoonup', [8636]], ['leftleftarrows', [8647]], ['leftrightarrow', [8596]], ['LeftRightArrow', [8596]], ['Leftrightarrow', [8660]], ['leftrightarrows', [8646]], ['leftrightharpoons', [8651]], ['leftrightsquigarrow', [8621]], ['LeftRightVector', [10574]], ['LeftTeeArrow', [8612]], ['LeftTee', [8867]], ['LeftTeeVector', [10586]], ['leftthreetimes', [8907]], ['LeftTriangleBar', [10703]], ['LeftTriangle', [8882]], ['LeftTriangleEqual', [8884]], ['LeftUpDownVector', [10577]], ['LeftUpTeeVector', [10592]], ['LeftUpVectorBar', [10584]], ['LeftUpVector', [8639]], ['LeftVectorBar', [10578]], ['LeftVector', [8636]], ['lEg', [10891]], ['leg', [8922]], ['leq', [8804]], ['leqq', [8806]], ['leqslant', [10877]], ['lescc', [10920]], ['les', [10877]], ['lesdot', [10879]], ['lesdoto', [10881]], ['lesdotor', [10883]], ['lesg', [8922, 65024]], ['lesges', [10899]], ['lessapprox', [10885]], ['lessdot', [8918]], ['lesseqgtr', [8922]], ['lesseqqgtr', [10891]], ['LessEqualGreater', [8922]], ['LessFullEqual', [8806]], ['LessGreater', [8822]], ['lessgtr', [8822]], ['LessLess', [10913]], ['lesssim', [8818]], ['LessSlantEqual', [10877]], ['LessTilde', [8818]], ['lfisht', [10620]], ['lfloor', [8970]], ['Lfr', [120079]], ['lfr', [120105]], ['lg', [8822]], ['lgE', [10897]], ['lHar', [10594]], ['lhard', [8637]], ['lharu', [8636]], ['lharul', [10602]], ['lhblk', [9604]], ['LJcy', [1033]], ['ljcy', [1113]], ['llarr', [8647]], ['ll', [8810]], ['Ll', [8920]], ['llcorner', [8990]], ['Lleftarrow', [8666]], ['llhard', [10603]], ['lltri', [9722]], ['Lmidot', [319]], ['lmidot', [320]], ['lmoustache', [9136]], ['lmoust', [9136]], ['lnap', [10889]], ['lnapprox', [10889]], ['lne', [10887]], ['lnE', [8808]], ['lneq', [10887]], ['lneqq', [8808]], ['lnsim', [8934]], ['loang', [10220]], ['loarr', [8701]], ['lobrk', [10214]], ['longleftarrow', [10229]], ['LongLeftArrow', [10229]], ['Longleftarrow', [10232]], ['longleftrightarrow', [10231]], ['LongLeftRightArrow', [10231]], ['Longleftrightarrow', [10234]], ['longmapsto', [10236]], ['longrightarrow', [10230]], ['LongRightArrow', [10230]], ['Longrightarrow', [10233]], ['looparrowleft', [8619]], ['looparrowright', [8620]], ['lopar', [10629]], ['Lopf', [120131]], ['lopf', [120157]], ['loplus', [10797]], ['lotimes', [10804]], ['lowast', [8727]], ['lowbar', [95]], ['LowerLeftArrow', [8601]], ['LowerRightArrow', [8600]], ['loz', [9674]], ['lozenge', [9674]], ['lozf', [10731]], ['lpar', [40]], ['lparlt', [10643]], ['lrarr', [8646]], ['lrcorner', [8991]], ['lrhar', [8651]], ['lrhard', [10605]], ['lrm', [8206]], ['lrtri', [8895]], ['lsaquo', [8249]], ['lscr', [120001]], ['Lscr', [8466]], ['lsh', [8624]], ['Lsh', [8624]], ['lsim', [8818]], ['lsime', [10893]], ['lsimg', [10895]], ['lsqb', [91]], ['lsquo', [8216]], ['lsquor', [8218]], ['Lstrok', [321]], ['lstrok', [322]], ['ltcc', [10918]], ['ltcir', [10873]], ['lt', [60]], ['LT', [60]], ['Lt', [8810]], ['ltdot', [8918]], ['lthree', [8907]], ['ltimes', [8905]], ['ltlarr', [10614]], ['ltquest', [10875]], ['ltri', [9667]], ['ltrie', [8884]], ['ltrif', [9666]], ['ltrPar', [10646]], ['lurdshar', [10570]], ['luruhar', [10598]], ['lvertneqq', [8808, 65024]], ['lvnE', [8808, 65024]], ['macr', [175]], ['male', [9794]], ['malt', [10016]], ['maltese', [10016]], ['Map', [10501]], ['map', [8614]], ['mapsto', [8614]], ['mapstodown', [8615]], ['mapstoleft', [8612]], ['mapstoup', [8613]], ['marker', [9646]], ['mcomma', [10793]], ['Mcy', [1052]], ['mcy', [1084]], ['mdash', [8212]], ['mDDot', [8762]], ['measuredangle', [8737]], ['MediumSpace', [8287]], ['Mellintrf', [8499]], ['Mfr', [120080]], ['mfr', [120106]], ['mho', [8487]], ['micro', [181]], ['midast', [42]], ['midcir', [10992]], ['mid', [8739]], ['middot', [183]], ['minusb', [8863]], ['minus', [8722]], ['minusd', [8760]], ['minusdu', [10794]], ['MinusPlus', [8723]], ['mlcp', [10971]], ['mldr', [8230]], ['mnplus', [8723]], ['models', [8871]], ['Mopf', [120132]], ['mopf', [120158]], ['mp', [8723]], ['mscr', [120002]], ['Mscr', [8499]], ['mstpos', [8766]], ['Mu', [924]], ['mu', [956]], ['multimap', [8888]], ['mumap', [8888]], ['nabla', [8711]], ['Nacute', [323]], ['nacute', [324]], ['nang', [8736, 8402]], ['nap', [8777]], ['napE', [10864, 824]], ['napid', [8779, 824]], ['napos', [329]], ['napprox', [8777]], ['natural', [9838]], ['naturals', [8469]], ['natur', [9838]], ['nbsp', [160]], ['nbump', [8782, 824]], ['nbumpe', [8783, 824]], ['ncap', [10819]], ['Ncaron', [327]], ['ncaron', [328]], ['Ncedil', [325]], ['ncedil', [326]], ['ncong', [8775]], ['ncongdot', [10861, 824]], ['ncup', [10818]], ['Ncy', [1053]], ['ncy', [1085]], ['ndash', [8211]], ['nearhk', [10532]], ['nearr', [8599]], ['neArr', [8663]], ['nearrow', [8599]], ['ne', [8800]], ['nedot', [8784, 824]], ['NegativeMediumSpace', [8203]], ['NegativeThickSpace', [8203]], ['NegativeThinSpace', [8203]], ['NegativeVeryThinSpace', [8203]], ['nequiv', [8802]], ['nesear', [10536]], ['nesim', [8770, 824]], ['NestedGreaterGreater', [8811]], ['NestedLessLess', [8810]], ['nexist', [8708]], ['nexists', [8708]], ['Nfr', [120081]], ['nfr', [120107]], ['ngE', [8807, 824]], ['nge', [8817]], ['ngeq', [8817]], ['ngeqq', [8807, 824]], ['ngeqslant', [10878, 824]], ['nges', [10878, 824]], ['nGg', [8921, 824]], ['ngsim', [8821]], ['nGt', [8811, 8402]], ['ngt', [8815]], ['ngtr', [8815]], ['nGtv', [8811, 824]], ['nharr', [8622]], ['nhArr', [8654]], ['nhpar', [10994]], ['ni', [8715]], ['nis', [8956]], ['nisd', [8954]], ['niv', [8715]], ['NJcy', [1034]], ['njcy', [1114]], ['nlarr', [8602]], ['nlArr', [8653]], ['nldr', [8229]], ['nlE', [8806, 824]], ['nle', [8816]], ['nleftarrow', [8602]], ['nLeftarrow', [8653]], ['nleftrightarrow', [8622]], ['nLeftrightarrow', [8654]], ['nleq', [8816]], ['nleqq', [8806, 824]], ['nleqslant', [10877, 824]], ['nles', [10877, 824]], ['nless', [8814]], ['nLl', [8920, 824]], ['nlsim', [8820]], ['nLt', [8810, 8402]], ['nlt', [8814]], ['nltri', [8938]], ['nltrie', [8940]], ['nLtv', [8810, 824]], ['nmid', [8740]], ['NoBreak', [8288]], ['NonBreakingSpace', [160]], ['nopf', [120159]], ['Nopf', [8469]], ['Not', [10988]], ['not', [172]], ['NotCongruent', [8802]], ['NotCupCap', [8813]], ['NotDoubleVerticalBar', [8742]], ['NotElement', [8713]], ['NotEqual', [8800]], ['NotEqualTilde', [8770, 824]], ['NotExists', [8708]], ['NotGreater', [8815]], ['NotGreaterEqual', [8817]], ['NotGreaterFullEqual', [8807, 824]], ['NotGreaterGreater', [8811, 824]], ['NotGreaterLess', [8825]], ['NotGreaterSlantEqual', [10878, 824]], ['NotGreaterTilde', [8821]], ['NotHumpDownHump', [8782, 824]], ['NotHumpEqual', [8783, 824]], ['notin', [8713]], ['notindot', [8949, 824]], ['notinE', [8953, 824]], ['notinva', [8713]], ['notinvb', [8951]], ['notinvc', [8950]], ['NotLeftTriangleBar', [10703, 824]], ['NotLeftTriangle', [8938]], ['NotLeftTriangleEqual', [8940]], ['NotLess', [8814]], ['NotLessEqual', [8816]], ['NotLessGreater', [8824]], ['NotLessLess', [8810, 824]], ['NotLessSlantEqual', [10877, 824]], ['NotLessTilde', [8820]], ['NotNestedGreaterGreater', [10914, 824]], ['NotNestedLessLess', [10913, 824]], ['notni', [8716]], ['notniva', [8716]], ['notnivb', [8958]], ['notnivc', [8957]], ['NotPrecedes', [8832]], ['NotPrecedesEqual', [10927, 824]], ['NotPrecedesSlantEqual', [8928]], ['NotReverseElement', [8716]], ['NotRightTriangleBar', [10704, 824]], ['NotRightTriangle', [8939]], ['NotRightTriangleEqual', [8941]], ['NotSquareSubset', [8847, 824]], ['NotSquareSubsetEqual', [8930]], ['NotSquareSuperset', [8848, 824]], ['NotSquareSupersetEqual', [8931]], ['NotSubset', [8834, 8402]], ['NotSubsetEqual', [8840]], ['NotSucceeds', [8833]], ['NotSucceedsEqual', [10928, 824]], ['NotSucceedsSlantEqual', [8929]], ['NotSucceedsTilde', [8831, 824]], ['NotSuperset', [8835, 8402]], ['NotSupersetEqual', [8841]], ['NotTilde', [8769]], ['NotTildeEqual', [8772]], ['NotTildeFullEqual', [8775]], ['NotTildeTilde', [8777]], ['NotVerticalBar', [8740]], ['nparallel', [8742]], ['npar', [8742]], ['nparsl', [11005, 8421]], ['npart', [8706, 824]], ['npolint', [10772]], ['npr', [8832]], ['nprcue', [8928]], ['nprec', [8832]], ['npreceq', [10927, 824]], ['npre', [10927, 824]], ['nrarrc', [10547, 824]], ['nrarr', [8603]], ['nrArr', [8655]], ['nrarrw', [8605, 824]], ['nrightarrow', [8603]], ['nRightarrow', [8655]], ['nrtri', [8939]], ['nrtrie', [8941]], ['nsc', [8833]], ['nsccue', [8929]], ['nsce', [10928, 824]], ['Nscr', [119977]], ['nscr', [120003]], ['nshortmid', [8740]], ['nshortparallel', [8742]], ['nsim', [8769]], ['nsime', [8772]], ['nsimeq', [8772]], ['nsmid', [8740]], ['nspar', [8742]], ['nsqsube', [8930]], ['nsqsupe', [8931]], ['nsub', [8836]], ['nsubE', [10949, 824]], ['nsube', [8840]], ['nsubset', [8834, 8402]], ['nsubseteq', [8840]], ['nsubseteqq', [10949, 824]], ['nsucc', [8833]], ['nsucceq', [10928, 824]], ['nsup', [8837]], ['nsupE', [10950, 824]], ['nsupe', [8841]], ['nsupset', [8835, 8402]], ['nsupseteq', [8841]], ['nsupseteqq', [10950, 824]], ['ntgl', [8825]], ['Ntilde', [209]], ['ntilde', [241]], ['ntlg', [8824]], ['ntriangleleft', [8938]], ['ntrianglelefteq', [8940]], ['ntriangleright', [8939]], ['ntrianglerighteq', [8941]], ['Nu', [925]], ['nu', [957]], ['num', [35]], ['numero', [8470]], ['numsp', [8199]], ['nvap', [8781, 8402]], ['nvdash', [8876]], ['nvDash', [8877]], ['nVdash', [8878]], ['nVDash', [8879]], ['nvge', [8805, 8402]], ['nvgt', [62, 8402]], ['nvHarr', [10500]], ['nvinfin', [10718]], ['nvlArr', [10498]], ['nvle', [8804, 8402]], ['nvlt', [60, 8402]], ['nvltrie', [8884, 8402]], ['nvrArr', [10499]], ['nvrtrie', [8885, 8402]], ['nvsim', [8764, 8402]], ['nwarhk', [10531]], ['nwarr', [8598]], ['nwArr', [8662]], ['nwarrow', [8598]], ['nwnear', [10535]], ['Oacute', [211]], ['oacute', [243]], ['oast', [8859]], ['Ocirc', [212]], ['ocirc', [244]], ['ocir', [8858]], ['Ocy', [1054]], ['ocy', [1086]], ['odash', [8861]], ['Odblac', [336]], ['odblac', [337]], ['odiv', [10808]], ['odot', [8857]], ['odsold', [10684]], ['OElig', [338]], ['oelig', [339]], ['ofcir', [10687]], ['Ofr', [120082]], ['ofr', [120108]], ['ogon', [731]], ['Ograve', [210]], ['ograve', [242]], ['ogt', [10689]], ['ohbar', [10677]], ['ohm', [937]], ['oint', [8750]], ['olarr', [8634]], ['olcir', [10686]], ['olcross', [10683]], ['oline', [8254]], ['olt', [10688]], ['Omacr', [332]], ['omacr', [333]], ['Omega', [937]], ['omega', [969]], ['Omicron', [927]], ['omicron', [959]], ['omid', [10678]], ['ominus', [8854]], ['Oopf', [120134]], ['oopf', [120160]], ['opar', [10679]], ['OpenCurlyDoubleQuote', [8220]], ['OpenCurlyQuote', [8216]], ['operp', [10681]], ['oplus', [8853]], ['orarr', [8635]], ['Or', [10836]], ['or', [8744]], ['ord', [10845]], ['order', [8500]], ['orderof', [8500]], ['ordf', [170]], ['ordm', [186]], ['origof', [8886]], ['oror', [10838]], ['orslope', [10839]], ['orv', [10843]], ['oS', [9416]], ['Oscr', [119978]], ['oscr', [8500]], ['Oslash', [216]], ['oslash', [248]], ['osol', [8856]], ['Otilde', [213]], ['otilde', [245]], ['otimesas', [10806]], ['Otimes', [10807]], ['otimes', [8855]], ['Ouml', [214]], ['ouml', [246]], ['ovbar', [9021]], ['OverBar', [8254]], ['OverBrace', [9182]], ['OverBracket', [9140]], ['OverParenthesis', [9180]], ['para', [182]], ['parallel', [8741]], ['par', [8741]], ['parsim', [10995]], ['parsl', [11005]], ['part', [8706]], ['PartialD', [8706]], ['Pcy', [1055]], ['pcy', [1087]], ['percnt', [37]], ['period', [46]], ['permil', [8240]], ['perp', [8869]], ['pertenk', [8241]], ['Pfr', [120083]], ['pfr', [120109]], ['Phi', [934]], ['phi', [966]], ['phiv', [981]], ['phmmat', [8499]], ['phone', [9742]], ['Pi', [928]], ['pi', [960]], ['pitchfork', [8916]], ['piv', [982]], ['planck', [8463]], ['planckh', [8462]], ['plankv', [8463]], ['plusacir', [10787]], ['plusb', [8862]], ['pluscir', [10786]], ['plus', [43]], ['plusdo', [8724]], ['plusdu', [10789]], ['pluse', [10866]], ['PlusMinus', [177]], ['plusmn', [177]], ['plussim', [10790]], ['plustwo', [10791]], ['pm', [177]], ['Poincareplane', [8460]], ['pointint', [10773]], ['popf', [120161]], ['Popf', [8473]], ['pound', [163]], ['prap', [10935]], ['Pr', [10939]], ['pr', [8826]], ['prcue', [8828]], ['precapprox', [10935]], ['prec', [8826]], ['preccurlyeq', [8828]], ['Precedes', [8826]], ['PrecedesEqual', [10927]], ['PrecedesSlantEqual', [8828]], ['PrecedesTilde', [8830]], ['preceq', [10927]], ['precnapprox', [10937]], ['precneqq', [10933]], ['precnsim', [8936]], ['pre', [10927]], ['prE', [10931]], ['precsim', [8830]], ['prime', [8242]], ['Prime', [8243]], ['primes', [8473]], ['prnap', [10937]], ['prnE', [10933]], ['prnsim', [8936]], ['prod', [8719]], ['Product', [8719]], ['profalar', [9006]], ['profline', [8978]], ['profsurf', [8979]], ['prop', [8733]], ['Proportional', [8733]], ['Proportion', [8759]], ['propto', [8733]], ['prsim', [8830]], ['prurel', [8880]], ['Pscr', [119979]], ['pscr', [120005]], ['Psi', [936]], ['psi', [968]], ['puncsp', [8200]], ['Qfr', [120084]], ['qfr', [120110]], ['qint', [10764]], ['qopf', [120162]], ['Qopf', [8474]], ['qprime', [8279]], ['Qscr', [119980]], ['qscr', [120006]], ['quaternions', [8461]], ['quatint', [10774]], ['quest', [63]], ['questeq', [8799]], ['quot', [34]], ['QUOT', [34]], ['rAarr', [8667]], ['race', [8765, 817]], ['Racute', [340]], ['racute', [341]], ['radic', [8730]], ['raemptyv', [10675]], ['rang', [10217]], ['Rang', [10219]], ['rangd', [10642]], ['range', [10661]], ['rangle', [10217]], ['raquo', [187]], ['rarrap', [10613]], ['rarrb', [8677]], ['rarrbfs', [10528]], ['rarrc', [10547]], ['rarr', [8594]], ['Rarr', [8608]], ['rArr', [8658]], ['rarrfs', [10526]], ['rarrhk', [8618]], ['rarrlp', [8620]], ['rarrpl', [10565]], ['rarrsim', [10612]], ['Rarrtl', [10518]], ['rarrtl', [8611]], ['rarrw', [8605]], ['ratail', [10522]], ['rAtail', [10524]], ['ratio', [8758]], ['rationals', [8474]], ['rbarr', [10509]], ['rBarr', [10511]], ['RBarr', [10512]], ['rbbrk', [10099]], ['rbrace', [125]], ['rbrack', [93]], ['rbrke', [10636]], ['rbrksld', [10638]], ['rbrkslu', [10640]], ['Rcaron', [344]], ['rcaron', [345]], ['Rcedil', [342]], ['rcedil', [343]], ['rceil', [8969]], ['rcub', [125]], ['Rcy', [1056]], ['rcy', [1088]], ['rdca', [10551]], ['rdldhar', [10601]], ['rdquo', [8221]], ['rdquor', [8221]], ['CloseCurlyDoubleQuote', [8221]], ['rdsh', [8627]], ['real', [8476]], ['realine', [8475]], ['realpart', [8476]], ['reals', [8477]], ['Re', [8476]], ['rect', [9645]], ['reg', [174]], ['REG', [174]], ['ReverseElement', [8715]], ['ReverseEquilibrium', [8651]], ['ReverseUpEquilibrium', [10607]], ['rfisht', [10621]], ['rfloor', [8971]], ['rfr', [120111]], ['Rfr', [8476]], ['rHar', [10596]], ['rhard', [8641]], ['rharu', [8640]], ['rharul', [10604]], ['Rho', [929]], ['rho', [961]], ['rhov', [1009]], ['RightAngleBracket', [10217]], ['RightArrowBar', [8677]], ['rightarrow', [8594]], ['RightArrow', [8594]], ['Rightarrow', [8658]], ['RightArrowLeftArrow', [8644]], ['rightarrowtail', [8611]], ['RightCeiling', [8969]], ['RightDoubleBracket', [10215]], ['RightDownTeeVector', [10589]], ['RightDownVectorBar', [10581]], ['RightDownVector', [8642]], ['RightFloor', [8971]], ['rightharpoondown', [8641]], ['rightharpoonup', [8640]], ['rightleftarrows', [8644]], ['rightleftharpoons', [8652]], ['rightrightarrows', [8649]], ['rightsquigarrow', [8605]], ['RightTeeArrow', [8614]], ['RightTee', [8866]], ['RightTeeVector', [10587]], ['rightthreetimes', [8908]], ['RightTriangleBar', [10704]], ['RightTriangle', [8883]], ['RightTriangleEqual', [8885]], ['RightUpDownVector', [10575]], ['RightUpTeeVector', [10588]], ['RightUpVectorBar', [10580]], ['RightUpVector', [8638]], ['RightVectorBar', [10579]], ['RightVector', [8640]], ['ring', [730]], ['risingdotseq', [8787]], ['rlarr', [8644]], ['rlhar', [8652]], ['rlm', [8207]], ['rmoustache', [9137]], ['rmoust', [9137]], ['rnmid', [10990]], ['roang', [10221]], ['roarr', [8702]], ['robrk', [10215]], ['ropar', [10630]], ['ropf', [120163]], ['Ropf', [8477]], ['roplus', [10798]], ['rotimes', [10805]], ['RoundImplies', [10608]], ['rpar', [41]], ['rpargt', [10644]], ['rppolint', [10770]], ['rrarr', [8649]], ['Rrightarrow', [8667]], ['rsaquo', [8250]], ['rscr', [120007]], ['Rscr', [8475]], ['rsh', [8625]], ['Rsh', [8625]], ['rsqb', [93]], ['rsquo', [8217]], ['rsquor', [8217]], ['CloseCurlyQuote', [8217]], ['rthree', [8908]], ['rtimes', [8906]], ['rtri', [9657]], ['rtrie', [8885]], ['rtrif', [9656]], ['rtriltri', [10702]], ['RuleDelayed', [10740]], ['ruluhar', [10600]], ['rx', [8478]], ['Sacute', [346]], ['sacute', [347]], ['sbquo', [8218]], ['scap', [10936]], ['Scaron', [352]], ['scaron', [353]], ['Sc', [10940]], ['sc', [8827]], ['sccue', [8829]], ['sce', [10928]], ['scE', [10932]], ['Scedil', [350]], ['scedil', [351]], ['Scirc', [348]], ['scirc', [349]], ['scnap', [10938]], ['scnE', [10934]], ['scnsim', [8937]], ['scpolint', [10771]], ['scsim', [8831]], ['Scy', [1057]], ['scy', [1089]], ['sdotb', [8865]], ['sdot', [8901]], ['sdote', [10854]], ['searhk', [10533]], ['searr', [8600]], ['seArr', [8664]], ['searrow', [8600]], ['sect', [167]], ['semi', [59]], ['seswar', [10537]], ['setminus', [8726]], ['setmn', [8726]], ['sext', [10038]], ['Sfr', [120086]], ['sfr', [120112]], ['sfrown', [8994]], ['sharp', [9839]], ['SHCHcy', [1065]], ['shchcy', [1097]], ['SHcy', [1064]], ['shcy', [1096]], ['ShortDownArrow', [8595]], ['ShortLeftArrow', [8592]], ['shortmid', [8739]], ['shortparallel', [8741]], ['ShortRightArrow', [8594]], ['ShortUpArrow', [8593]], ['shy', [173]], ['Sigma', [931]], ['sigma', [963]], ['sigmaf', [962]], ['sigmav', [962]], ['sim', [8764]], ['simdot', [10858]], ['sime', [8771]], ['simeq', [8771]], ['simg', [10910]], ['simgE', [10912]], ['siml', [10909]], ['simlE', [10911]], ['simne', [8774]], ['simplus', [10788]], ['simrarr', [10610]], ['slarr', [8592]], ['SmallCircle', [8728]], ['smallsetminus', [8726]], ['smashp', [10803]], ['smeparsl', [10724]], ['smid', [8739]], ['smile', [8995]], ['smt', [10922]], ['smte', [10924]], ['smtes', [10924, 65024]], ['SOFTcy', [1068]], ['softcy', [1100]], ['solbar', [9023]], ['solb', [10692]], ['sol', [47]], ['Sopf', [120138]], ['sopf', [120164]], ['spades', [9824]], ['spadesuit', [9824]], ['spar', [8741]], ['sqcap', [8851]], ['sqcaps', [8851, 65024]], ['sqcup', [8852]], ['sqcups', [8852, 65024]], ['Sqrt', [8730]], ['sqsub', [8847]], ['sqsube', [8849]], ['sqsubset', [8847]], ['sqsubseteq', [8849]], ['sqsup', [8848]], ['sqsupe', [8850]], ['sqsupset', [8848]], ['sqsupseteq', [8850]], ['square', [9633]], ['Square', [9633]], ['SquareIntersection', [8851]], ['SquareSubset', [8847]], ['SquareSubsetEqual', [8849]], ['SquareSuperset', [8848]], ['SquareSupersetEqual', [8850]], ['SquareUnion', [8852]], ['squarf', [9642]], ['squ', [9633]], ['squf', [9642]], ['srarr', [8594]], ['Sscr', [119982]], ['sscr', [120008]], ['ssetmn', [8726]], ['ssmile', [8995]], ['sstarf', [8902]], ['Star', [8902]], ['star', [9734]], ['starf', [9733]], ['straightepsilon', [1013]], ['straightphi', [981]], ['strns', [175]], ['sub', [8834]], ['Sub', [8912]], ['subdot', [10941]], ['subE', [10949]], ['sube', [8838]], ['subedot', [10947]], ['submult', [10945]], ['subnE', [10955]], ['subne', [8842]], ['subplus', [10943]], ['subrarr', [10617]], ['subset', [8834]], ['Subset', [8912]], ['subseteq', [8838]], ['subseteqq', [10949]], ['SubsetEqual', [8838]], ['subsetneq', [8842]], ['subsetneqq', [10955]], ['subsim', [10951]], ['subsub', [10965]], ['subsup', [10963]], ['succapprox', [10936]], ['succ', [8827]], ['succcurlyeq', [8829]], ['Succeeds', [8827]], ['SucceedsEqual', [10928]], ['SucceedsSlantEqual', [8829]], ['SucceedsTilde', [8831]], ['succeq', [10928]], ['succnapprox', [10938]], ['succneqq', [10934]], ['succnsim', [8937]], ['succsim', [8831]], ['SuchThat', [8715]], ['sum', [8721]], ['Sum', [8721]], ['sung', [9834]], ['sup1', [185]], ['sup2', [178]], ['sup3', [179]], ['sup', [8835]], ['Sup', [8913]], ['supdot', [10942]], ['supdsub', [10968]], ['supE', [10950]], ['supe', [8839]], ['supedot', [10948]], ['Superset', [8835]], ['SupersetEqual', [8839]], ['suphsol', [10185]], ['suphsub', [10967]], ['suplarr', [10619]], ['supmult', [10946]], ['supnE', [10956]], ['supne', [8843]], ['supplus', [10944]], ['supset', [8835]], ['Supset', [8913]], ['supseteq', [8839]], ['supseteqq', [10950]], ['supsetneq', [8843]], ['supsetneqq', [10956]], ['supsim', [10952]], ['supsub', [10964]], ['supsup', [10966]], ['swarhk', [10534]], ['swarr', [8601]], ['swArr', [8665]], ['swarrow', [8601]], ['swnwar', [10538]], ['szlig', [223]], ['Tab', [9]], ['target', [8982]], ['Tau', [932]], ['tau', [964]], ['tbrk', [9140]], ['Tcaron', [356]], ['tcaron', [357]], ['Tcedil', [354]], ['tcedil', [355]], ['Tcy', [1058]], ['tcy', [1090]], ['tdot', [8411]], ['telrec', [8981]], ['Tfr', [120087]], ['tfr', [120113]], ['there4', [8756]], ['therefore', [8756]], ['Therefore', [8756]], ['Theta', [920]], ['theta', [952]], ['thetasym', [977]], ['thetav', [977]], ['thickapprox', [8776]], ['thicksim', [8764]], ['ThickSpace', [8287, 8202]], ['ThinSpace', [8201]], ['thinsp', [8201]], ['thkap', [8776]], ['thksim', [8764]], ['THORN', [222]], ['thorn', [254]], ['tilde', [732]], ['Tilde', [8764]], ['TildeEqual', [8771]], ['TildeFullEqual', [8773]], ['TildeTilde', [8776]], ['timesbar', [10801]], ['timesb', [8864]], ['times', [215]], ['timesd', [10800]], ['tint', [8749]], ['toea', [10536]], ['topbot', [9014]], ['topcir', [10993]], ['top', [8868]], ['Topf', [120139]], ['topf', [120165]], ['topfork', [10970]], ['tosa', [10537]], ['tprime', [8244]], ['trade', [8482]], ['TRADE', [8482]], ['triangle', [9653]], ['triangledown', [9663]], ['triangleleft', [9667]], ['trianglelefteq', [8884]], ['triangleq', [8796]], ['triangleright', [9657]], ['trianglerighteq', [8885]], ['tridot', [9708]], ['trie', [8796]], ['triminus', [10810]], ['TripleDot', [8411]], ['triplus', [10809]], ['trisb', [10701]], ['tritime', [10811]], ['trpezium', [9186]], ['Tscr', [119983]], ['tscr', [120009]], ['TScy', [1062]], ['tscy', [1094]], ['TSHcy', [1035]], ['tshcy', [1115]], ['Tstrok', [358]], ['tstrok', [359]], ['twixt', [8812]], ['twoheadleftarrow', [8606]], ['twoheadrightarrow', [8608]], ['Uacute', [218]], ['uacute', [250]], ['uarr', [8593]], ['Uarr', [8607]], ['uArr', [8657]], ['Uarrocir', [10569]], ['Ubrcy', [1038]], ['ubrcy', [1118]], ['Ubreve', [364]], ['ubreve', [365]], ['Ucirc', [219]], ['ucirc', [251]], ['Ucy', [1059]], ['ucy', [1091]], ['udarr', [8645]], ['Udblac', [368]], ['udblac', [369]], ['udhar', [10606]], ['ufisht', [10622]], ['Ufr', [120088]], ['ufr', [120114]], ['Ugrave', [217]], ['ugrave', [249]], ['uHar', [10595]], ['uharl', [8639]], ['uharr', [8638]], ['uhblk', [9600]], ['ulcorn', [8988]], ['ulcorner', [8988]], ['ulcrop', [8975]], ['ultri', [9720]], ['Umacr', [362]], ['umacr', [363]], ['uml', [168]], ['UnderBar', [95]], ['UnderBrace', [9183]], ['UnderBracket', [9141]], ['UnderParenthesis', [9181]], ['Union', [8899]], ['UnionPlus', [8846]], ['Uogon', [370]], ['uogon', [371]], ['Uopf', [120140]], ['uopf', [120166]], ['UpArrowBar', [10514]], ['uparrow', [8593]], ['UpArrow', [8593]], ['Uparrow', [8657]], ['UpArrowDownArrow', [8645]], ['updownarrow', [8597]], ['UpDownArrow', [8597]], ['Updownarrow', [8661]], ['UpEquilibrium', [10606]], ['upharpoonleft', [8639]], ['upharpoonright', [8638]], ['uplus', [8846]], ['UpperLeftArrow', [8598]], ['UpperRightArrow', [8599]], ['upsi', [965]], ['Upsi', [978]], ['upsih', [978]], ['Upsilon', [933]], ['upsilon', [965]], ['UpTeeArrow', [8613]], ['UpTee', [8869]], ['upuparrows', [8648]], ['urcorn', [8989]], ['urcorner', [8989]], ['urcrop', [8974]], ['Uring', [366]], ['uring', [367]], ['urtri', [9721]], ['Uscr', [119984]], ['uscr', [120010]], ['utdot', [8944]], ['Utilde', [360]], ['utilde', [361]], ['utri', [9653]], ['utrif', [9652]], ['uuarr', [8648]], ['Uuml', [220]], ['uuml', [252]], ['uwangle', [10663]], ['vangrt', [10652]], ['varepsilon', [1013]], ['varkappa', [1008]], ['varnothing', [8709]], ['varphi', [981]], ['varpi', [982]], ['varpropto', [8733]], ['varr', [8597]], ['vArr', [8661]], ['varrho', [1009]], ['varsigma', [962]], ['varsubsetneq', [8842, 65024]], ['varsubsetneqq', [10955, 65024]], ['varsupsetneq', [8843, 65024]], ['varsupsetneqq', [10956, 65024]], ['vartheta', [977]], ['vartriangleleft', [8882]], ['vartriangleright', [8883]], ['vBar', [10984]], ['Vbar', [10987]], ['vBarv', [10985]], ['Vcy', [1042]], ['vcy', [1074]], ['vdash', [8866]], ['vDash', [8872]], ['Vdash', [8873]], ['VDash', [8875]], ['Vdashl', [10982]], ['veebar', [8891]], ['vee', [8744]], ['Vee', [8897]], ['veeeq', [8794]], ['vellip', [8942]], ['verbar', [124]], ['Verbar', [8214]], ['vert', [124]], ['Vert', [8214]], ['VerticalBar', [8739]], ['VerticalLine', [124]], ['VerticalSeparator', [10072]], ['VerticalTilde', [8768]], ['VeryThinSpace', [8202]], ['Vfr', [120089]], ['vfr', [120115]], ['vltri', [8882]], ['vnsub', [8834, 8402]], ['vnsup', [8835, 8402]], ['Vopf', [120141]], ['vopf', [120167]], ['vprop', [8733]], ['vrtri', [8883]], ['Vscr', [119985]], ['vscr', [120011]], ['vsubnE', [10955, 65024]], ['vsubne', [8842, 65024]], ['vsupnE', [10956, 65024]], ['vsupne', [8843, 65024]], ['Vvdash', [8874]], ['vzigzag', [10650]], ['Wcirc', [372]], ['wcirc', [373]], ['wedbar', [10847]], ['wedge', [8743]], ['Wedge', [8896]], ['wedgeq', [8793]], ['weierp', [8472]], ['Wfr', [120090]], ['wfr', [120116]], ['Wopf', [120142]], ['wopf', [120168]], ['wp', [8472]], ['wr', [8768]], ['wreath', [8768]], ['Wscr', [119986]], ['wscr', [120012]], ['xcap', [8898]], ['xcirc', [9711]], ['xcup', [8899]], ['xdtri', [9661]], ['Xfr', [120091]], ['xfr', [120117]], ['xharr', [10231]], ['xhArr', [10234]], ['Xi', [926]], ['xi', [958]], ['xlarr', [10229]], ['xlArr', [10232]], ['xmap', [10236]], ['xnis', [8955]], ['xodot', [10752]], ['Xopf', [120143]], ['xopf', [120169]], ['xoplus', [10753]], ['xotime', [10754]], ['xrarr', [10230]], ['xrArr', [10233]], ['Xscr', [119987]], ['xscr', [120013]], ['xsqcup', [10758]], ['xuplus', [10756]], ['xutri', [9651]], ['xvee', [8897]], ['xwedge', [8896]], ['Yacute', [221]], ['yacute', [253]], ['YAcy', [1071]], ['yacy', [1103]], ['Ycirc', [374]], ['ycirc', [375]], ['Ycy', [1067]], ['ycy', [1099]], ['yen', [165]], ['Yfr', [120092]], ['yfr', [120118]], ['YIcy', [1031]], ['yicy', [1111]], ['Yopf', [120144]], ['yopf', [120170]], ['Yscr', [119988]], ['yscr', [120014]], ['YUcy', [1070]], ['yucy', [1102]], ['yuml', [255]], ['Yuml', [376]], ['Zacute', [377]], ['zacute', [378]], ['Zcaron', [381]], ['zcaron', [382]], ['Zcy', [1047]], ['zcy', [1079]], ['Zdot', [379]], ['zdot', [380]], ['zeetrf', [8488]], ['ZeroWidthSpace', [8203]], ['Zeta', [918]], ['zeta', [950]], ['zfr', [120119]], ['Zfr', [8488]], ['ZHcy', [1046]], ['zhcy', [1078]], ['zigrarr', [8669]], ['zopf', [120171]], ['Zopf', [8484]], ['Zscr', [119989]], ['zscr', [120015]], ['zwj', [8205]], ['zwnj', [8204]]];
@@ -6190,7 +6295,7 @@ module.exports = Html5Entities;
 
 
 /***/ }),
-/* 49 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6198,36 +6303,40 @@ module.exports = Html5Entities;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(14);
-__webpack_require__(60);
-__webpack_require__(59);
-__webpack_require__(56);
-__webpack_require__(58);
-var CartService = (function () {
-    function CartService(_http) {
+var http_1 = __webpack_require__(15);
+var Observable_1 = __webpack_require__(9);
+__webpack_require__(41);
+__webpack_require__(40);
+__webpack_require__(38);
+__webpack_require__(39);
+var ScretchService = (function () {
+    function ScretchService(_http) {
         this._http = _http;
-        this._cartUrl = 'api/Cart/';
+        this._scretchUrl = 'api/Scretches/';
     }
-    CartService.prototype.addProductToCart = function (idProduct) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        return this._http.post(this._cartUrl, idProduct, { headers: headers });
+    ScretchService.prototype.getScretches = function () {
+        return this._http.get(this._scretchUrl)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+            .catch(this.handleError);
     };
-    CartService.prototype.productIsInCart = function (idProduct) {
-        return this._http.get(this._cartUrl + idProduct + "/isInCart")
-            .map(function (response) { return response.json(); });
+    ScretchService.prototype.handleError = function (error) {
+        // in a real world app, we may send the server to some remote logging infrastructure
+        // instead of just logging it to the console
+        console.error(error);
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
     };
-    return CartService;
+    return ScretchService;
 }());
-CartService = tslib_1.__decorate([
+ScretchService = tslib_1.__decorate([
     core_1.Injectable(),
     tslib_1.__metadata("design:paramtypes", [http_1.Http])
-], CartService);
-exports.CartService = CartService;
+], ScretchService);
+exports.ScretchService = ScretchService;
 
 
 /***/ }),
-/* 50 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6235,8 +6344,8 @@ exports.CartService = CartService;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(14);
-var h5webstorage_1 = __webpack_require__(17);
+var http_1 = __webpack_require__(15);
+var h5webstorage_1 = __webpack_require__(18);
 var QuestionService = (function () {
     function QuestionService(_http, localStorage, sessionStorage) {
         this._http = _http;
@@ -6264,13 +6373,40 @@ exports.QuestionService = QuestionService;
 
 
 /***/ }),
-/* 51 */
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_ng2_page_scroll_directive__ = __webpack_require__(58);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScroll", function() { return __WEBPACK_IMPORTED_MODULE_0__src_ng2_page_scroll_directive__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_ng2_page_scroll_service__ = __webpack_require__(37);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollService", function() { return __WEBPACK_IMPORTED_MODULE_1__src_ng2_page_scroll_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_ng2_page_scroll_config__ = __webpack_require__(36);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "EasingLogic", function() { return __WEBPACK_IMPORTED_MODULE_2__src_ng2_page_scroll_config__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollConfig", function() { return __WEBPACK_IMPORTED_MODULE_2__src_ng2_page_scroll_config__["b"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_ng2_page_scroll_instance__ = __webpack_require__(57);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollInstance", function() { return __WEBPACK_IMPORTED_MODULE_3__src_ng2_page_scroll_instance__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_ng2_page_scroll_util_service__ = __webpack_require__(21);
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollUtilService", function() { return __WEBPACK_IMPORTED_MODULE_4__src_ng2_page_scroll_util_service__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_ng2_page_scroll_module__ = __webpack_require__(153);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Ng2PageScrollModule", function() { return __WEBPACK_IMPORTED_MODULE_5__src_ng2_page_scroll_module__["a"]; });
+
+
+
+
+
+
+
+
+/***/ }),
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng2_page_scroll_config__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_util_service__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng2_page_scroll_config__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_util_service__ = __webpack_require__(21);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageScrollInstance; });
 /**
  * Created by sebastianfuss on 29.08.16.
@@ -6759,16 +6895,16 @@ var PageScrollInstance = (function () {
 
 
 /***/ }),
-/* 52 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_page_scroll_service__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_page_scroll_instance__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ng2_page_scroll_util_service__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_page_scroll_service__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_page_scroll_instance__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ng2_page_scroll_util_service__ = __webpack_require__(21);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageScroll; });
 
 
@@ -6895,7 +7031,7 @@ PageScroll.propDecorators = {
 
 
 /***/ }),
-/* 53 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6934,7 +7070,7 @@ exports.ConfirmationService = ConfirmationService;
 //# sourceMappingURL=api.js.map
 
 /***/ }),
-/* 54 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7029,7 +7165,7 @@ exports.MessagesModule = MessagesModule;
 //# sourceMappingURL=messages.js.map
 
 /***/ }),
-/* 55 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7088,58 +7224,34 @@ exports.ProgressBarModule = ProgressBarModule;
 //# sourceMappingURL=progressbar.js.map
 
 /***/ }),
-/* 56 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(8))(266)
-
-/***/ }),
-/* 57 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(8))(315)
 
 /***/ }),
-/* 58 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(8))(543)
+module.exports = (__webpack_require__(42))(83)
 
 /***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(8))(554)
-
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(8))(571)
-
-/***/ }),
-/* 61 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(37))(83)
-
-/***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(241);
+__webpack_require__(242);
 __webpack_require__(218);
 // main entry point
-var platform_browser_dynamic_1 = __webpack_require__(240);
-var app_module_1 = __webpack_require__(133);
+var platform_browser_dynamic_1 = __webpack_require__(241);
+var app_module_1 = __webpack_require__(134);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__resourceQuery, module) {/*eslint-env browser*/
@@ -7400,23 +7512,23 @@ if (module) {
 /* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(237)(module)))
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_map__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_circle__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_info_window__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_marker__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_polygon__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_polyline__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_polyline_point__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_kml_layer__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_data_layer__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_lazy_maps_api_loader__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_maps_api_loader_maps_api_loader__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_browser_globals__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_map__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_circle__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_info_window__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_marker__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_polygon__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_polyline__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_polyline_point__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_kml_layer__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_data_layer__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_lazy_maps_api_loader__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_maps_api_loader_maps_api_loader__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_browser_globals__ = __webpack_require__(50);
 /* unused harmony export coreDirectives */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmCoreModule; });
 
@@ -7474,27 +7586,27 @@ AgmCoreModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=core.module.js.map
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives_map__ = __webpack_require__(46);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__directives_map__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_circle__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_circle__ = __webpack_require__(43);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__directives_circle__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_info_window__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_info_window__ = __webpack_require__(25);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__directives_info_window__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_kml_layer__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_kml_layer__ = __webpack_require__(45);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__directives_kml_layer__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_data_layer__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_data_layer__ = __webpack_require__(44);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__directives_data_layer__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_marker__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_marker__ = __webpack_require__(47);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_5__directives_marker__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_polygon__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_polygon__ = __webpack_require__(48);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_6__directives_polygon__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_polyline__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_polyline__ = __webpack_require__(49);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_7__directives_polyline__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_polyline_point__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_polyline_point__ = __webpack_require__(26);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_8__directives_polyline_point__["a"]; });
 
 
@@ -7508,12 +7620,12 @@ AgmCoreModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=directives.js.map
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__directives__ = __webpack_require__(67);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AgmMap", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AgmCircle", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AgmInfoWindow", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["c"]; });
@@ -7523,7 +7635,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AgmPolygon", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["g"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AgmPolyline", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["h"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "AgmPolylinePoint", function() { return __WEBPACK_IMPORTED_MODULE_0__directives__["i"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services__ = __webpack_require__(69);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "GoogleMapsAPIWrapper", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "CircleManager", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "InfoWindowManager", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["c"]; });
@@ -7537,7 +7649,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "LazyMapsAPILoader", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["k"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "MapsAPILoader", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["l"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "NoOpMapsAPILoader", function() { return __WEBPACK_IMPORTED_MODULE_1__services__["m"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_module__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_module__ = __webpack_require__(66);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "AgmCoreModule", function() { return __WEBPACK_IMPORTED_MODULE_2__core_module__["a"]; });
 // main modules
 
@@ -7549,33 +7661,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_google_maps_api_wrapper__ = __webpack_require__(10);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__services_google_maps_api_wrapper__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__ = __webpack_require__(27);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_info_window_manager__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_info_window_manager__ = __webpack_require__(29);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__services_managers_info_window_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_managers_marker_manager__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_managers_marker_manager__ = __webpack_require__(16);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__services_managers_marker_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_managers_polygon_manager__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_managers_polygon_manager__ = __webpack_require__(31);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__services_managers_polygon_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_managers_polyline_manager__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_managers_polyline_manager__ = __webpack_require__(32);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_5__services_managers_polyline_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_managers_kml_layer_manager__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_managers_kml_layer_manager__ = __webpack_require__(30);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_6__services_managers_kml_layer_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_managers_data_layer_manager__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_managers_data_layer_manager__ = __webpack_require__(28);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_7__services_managers_data_layer_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__ = __webpack_require__(33);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__["c"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_maps_api_loader_maps_api_loader__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_maps_api_loader_maps_api_loader__ = __webpack_require__(17);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_9__services_maps_api_loader_maps_api_loader__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_noop_maps_api_loader__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_noop_maps_api_loader__ = __webpack_require__(70);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_noop_maps_api_loader__["a"]; });
 
 
@@ -7591,7 +7703,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //# sourceMappingURL=services.js.map
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7617,7 +7729,3031 @@ var NoOpMapsAPILoader = (function () {
 //# sourceMappingURL=noop-maps-api-loader.js.map
 
 /***/ }),
-/* 69 */
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(240);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AnimationDriver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnimationEngine; });
+/* unused harmony export ɵAnimation */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return AnimationStyleNormalizer; });
+/* unused harmony export ɵNoopAnimationStyleNormalizer */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return WebAnimationsStyleNormalizer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return NoopAnimationDriver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DomAnimationEngine; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return NoopAnimationEngine; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return WebAnimationsDriver; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return supportsWebAnimations; });
+/* unused harmony export ɵWebAnimationsPlayer */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+/**
+ * @license Angular v4.1.0
+ * (c) 2010-2017 Google, Inc. https://angular.io/
+ * License: MIT
+ */
+
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @experimental
+ */
+var NoopAnimationDriver = (function () {
+    function NoopAnimationDriver() {
+    }
+    NoopAnimationDriver.prototype.animate = function (element, keyframes, duration, delay, easing, previousPlayers) {
+        if (previousPlayers === void 0) { previousPlayers = []; }
+        return new __WEBPACK_IMPORTED_MODULE_0__angular_animations__["NoopAnimationPlayer"]();
+    };
+    return NoopAnimationDriver;
+}());
+/**
+ * @experimental
+ */
+var AnimationDriver = (function () {
+    function AnimationDriver() {
+    }
+    return AnimationDriver;
+}());
+AnimationDriver.NOOP = new NoopAnimationDriver();
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @abstract
+ */
+var AnimationEngine = (function () {
+    function AnimationEngine() {
+    }
+    /**
+     * @abstract
+     * @param {?} trigger
+     * @param {?=} name
+     * @return {?}
+     */
+    AnimationEngine.prototype.registerTrigger = function (trigger, name) { };
+    /**
+     * @abstract
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    AnimationEngine.prototype.onInsert = function (element, domFn) { };
+    /**
+     * @abstract
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    AnimationEngine.prototype.onRemove = function (element, domFn) { };
+    /**
+     * @abstract
+     * @param {?} element
+     * @param {?} property
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationEngine.prototype.setProperty = function (element, property, value) { };
+    /**
+     * @abstract
+     * @param {?} element
+     * @param {?} eventName
+     * @param {?} eventPhase
+     * @param {?} callback
+     * @return {?}
+     */
+    AnimationEngine.prototype.listen = function (element, eventName, eventPhase, callback) { };
+    /**
+     * @abstract
+     * @return {?}
+     */
+    AnimationEngine.prototype.flush = function () { };
+    Object.defineProperty(AnimationEngine.prototype, "activePlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () { throw new Error('...'); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(AnimationEngine.prototype, "queuedPlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () { throw new Error('...'); },
+        enumerable: true,
+        configurable: true
+    });
+    return AnimationEngine;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var ONE_SECOND = 1000;
+/**
+ * @param {?} exp
+ * @param {?} errors
+ * @return {?}
+ */
+function parseTimeExpression(exp, errors) {
+    var /** @type {?} */ regex = /^([\.\d]+)(m?s)(?:\s+([\.\d]+)(m?s))?(?:\s+([-a-z]+(?:\(.+?\))?))?$/i;
+    var /** @type {?} */ duration;
+    var /** @type {?} */ delay = 0;
+    var /** @type {?} */ easing = null;
+    if (typeof exp === 'string') {
+        var /** @type {?} */ matches = exp.match(regex);
+        if (matches === null) {
+            errors.push("The provided timing value \"" + exp + "\" is invalid.");
+            return { duration: 0, delay: 0, easing: null };
+        }
+        var /** @type {?} */ durationMatch = parseFloat(matches[1]);
+        var /** @type {?} */ durationUnit = matches[2];
+        if (durationUnit == 's') {
+            durationMatch *= ONE_SECOND;
+        }
+        duration = Math.floor(durationMatch);
+        var /** @type {?} */ delayMatch = matches[3];
+        var /** @type {?} */ delayUnit = matches[4];
+        if (delayMatch != null) {
+            var /** @type {?} */ delayVal = parseFloat(delayMatch);
+            if (delayUnit != null && delayUnit == 's') {
+                delayVal *= ONE_SECOND;
+            }
+            delay = Math.floor(delayVal);
+        }
+        var /** @type {?} */ easingVal = matches[5];
+        if (easingVal) {
+            easing = easingVal;
+        }
+    }
+    else {
+        duration = (exp);
+    }
+    return { duration: duration, delay: delay, easing: easing };
+}
+/**
+ * @param {?} styles
+ * @return {?}
+ */
+function normalizeStyles(styles) {
+    var /** @type {?} */ normalizedStyles = {};
+    if (Array.isArray(styles)) {
+        styles.forEach(function (data) { return copyStyles(data, false, normalizedStyles); });
+    }
+    else {
+        copyStyles(styles, false, normalizedStyles);
+    }
+    return normalizedStyles;
+}
+/**
+ * @param {?} styles
+ * @param {?} readPrototype
+ * @param {?=} destination
+ * @return {?}
+ */
+function copyStyles(styles, readPrototype, destination) {
+    if (destination === void 0) { destination = {}; }
+    if (readPrototype) {
+        // we make use of a for-in loop so that the
+        // prototypically inherited properties are
+        // revealed from the backFill map
+        for (var /** @type {?} */ prop in styles) {
+            destination[prop] = styles[prop];
+        }
+    }
+    else {
+        Object.keys(styles).forEach(function (prop) { return destination[prop] = styles[prop]; });
+    }
+    return destination;
+}
+/**
+ * @param {?} element
+ * @param {?} styles
+ * @return {?}
+ */
+function setStyles(element, styles) {
+    if (element['style']) {
+        Object.keys(styles).forEach(function (prop) { return element.style[prop] = styles[prop]; });
+    }
+}
+/**
+ * @param {?} element
+ * @param {?} styles
+ * @return {?}
+ */
+function eraseStyles(element, styles) {
+    if (element['style']) {
+        Object.keys(styles).forEach(function (prop) {
+            // IE requires '' instead of null
+            // see https://github.com/angular/angular/issues/7916
+            element.style[prop] = '';
+        });
+    }
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} visitor
+ * @param {?} node
+ * @param {?} context
+ * @return {?}
+ */
+function visitAnimationNode(visitor, node, context) {
+    switch (node.type) {
+        case 0 /* State */:
+            return visitor.visitState(/** @type {?} */ (node), context);
+        case 1 /* Transition */:
+            return visitor.visitTransition(/** @type {?} */ (node), context);
+        case 2 /* Sequence */:
+            return visitor.visitSequence(/** @type {?} */ (node), context);
+        case 3 /* Group */:
+            return visitor.visitGroup(/** @type {?} */ (node), context);
+        case 4 /* Animate */:
+            return visitor.visitAnimate(/** @type {?} */ (node), context);
+        case 5 /* KeyframeSequence */:
+            return visitor.visitKeyframeSequence(/** @type {?} */ (node), context);
+        case 6 /* Style */:
+            return visitor.visitStyle(/** @type {?} */ (node), context);
+        default:
+            throw new Error("Unable to resolve animation metadata node #" + node.type);
+    }
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var ANY_STATE = '*';
+/**
+ * @param {?} transitionValue
+ * @param {?} errors
+ * @return {?}
+ */
+function parseTransitionExpr(transitionValue, errors) {
+    var /** @type {?} */ expressions = [];
+    if (typeof transitionValue == 'string') {
+        ((transitionValue))
+            .split(/\s*,\s*/)
+            .forEach(function (str) { return parseInnerTransitionStr(str, expressions, errors); });
+    }
+    else {
+        expressions.push(/** @type {?} */ (transitionValue));
+    }
+    return expressions;
+}
+/**
+ * @param {?} eventStr
+ * @param {?} expressions
+ * @param {?} errors
+ * @return {?}
+ */
+function parseInnerTransitionStr(eventStr, expressions, errors) {
+    if (eventStr[0] == ':') {
+        eventStr = parseAnimationAlias(eventStr, errors);
+    }
+    var /** @type {?} */ match = eventStr.match(/^(\*|[-\w]+)\s*(<?[=-]>)\s*(\*|[-\w]+)$/);
+    if (match == null || match.length < 4) {
+        errors.push("The provided transition expression \"" + eventStr + "\" is not supported");
+        return expressions;
+    }
+    var /** @type {?} */ fromState = match[1];
+    var /** @type {?} */ separator = match[2];
+    var /** @type {?} */ toState = match[3];
+    expressions.push(makeLambdaFromStates(fromState, toState));
+    var /** @type {?} */ isFullAnyStateExpr = fromState == ANY_STATE && toState == ANY_STATE;
+    if (separator[0] == '<' && !isFullAnyStateExpr) {
+        expressions.push(makeLambdaFromStates(toState, fromState));
+    }
+}
+/**
+ * @param {?} alias
+ * @param {?} errors
+ * @return {?}
+ */
+function parseAnimationAlias(alias, errors) {
+    switch (alias) {
+        case ':enter':
+            return 'void => *';
+        case ':leave':
+            return '* => void';
+        default:
+            errors.push("The transition alias value \"" + alias + "\" is not supported");
+            return '* => *';
+    }
+}
+/**
+ * @param {?} lhs
+ * @param {?} rhs
+ * @return {?}
+ */
+function makeLambdaFromStates(lhs, rhs) {
+    return function (fromState, toState) {
+        var /** @type {?} */ lhsMatch = lhs == ANY_STATE || lhs == fromState;
+        var /** @type {?} */ rhsMatch = rhs == ANY_STATE || rhs == toState;
+        return lhsMatch && rhsMatch;
+    };
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} keyframes
+ * @param {?} duration
+ * @param {?} delay
+ * @param {?} easing
+ * @return {?}
+ */
+function createTimelineInstruction(keyframes, duration, delay, easing) {
+    return {
+        type: 1 /* TimelineAnimation */,
+        keyframes: keyframes,
+        duration: duration,
+        delay: delay,
+        totalTime: duration + delay, easing: easing
+    };
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} ast
+ * @param {?=} startingStyles
+ * @param {?=} finalStyles
+ * @return {?}
+ */
+function buildAnimationKeyframes(ast, startingStyles, finalStyles) {
+    if (startingStyles === void 0) { startingStyles = {}; }
+    if (finalStyles === void 0) { finalStyles = {}; }
+    var /** @type {?} */ normalizedAst = Array.isArray(ast) ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["sequence"])(/** @type {?} */ (ast)) : (ast);
+    return new AnimationTimelineVisitor().buildKeyframes(normalizedAst, startingStyles, finalStyles);
+}
+var AnimationTimelineContext = (function () {
+    /**
+     * @param {?} errors
+     * @param {?} timelines
+     * @param {?=} initialTimeline
+     */
+    function AnimationTimelineContext(errors, timelines, initialTimeline) {
+        this.errors = errors;
+        this.timelines = timelines;
+        this.previousNode = ({});
+        this.subContextCount = 0;
+        this.currentTimeline = initialTimeline || new TimelineBuilder(0);
+        timelines.push(this.currentTimeline);
+    }
+    /**
+     * @return {?}
+     */
+    AnimationTimelineContext.prototype.createSubContext = function () {
+        var /** @type {?} */ context = new AnimationTimelineContext(this.errors, this.timelines, this.currentTimeline.fork());
+        context.previousNode = this.previousNode;
+        context.currentAnimateTimings = this.currentAnimateTimings;
+        this.subContextCount++;
+        return context;
+    };
+    /**
+     * @param {?=} newTime
+     * @return {?}
+     */
+    AnimationTimelineContext.prototype.transformIntoNewTimeline = function (newTime) {
+        if (newTime === void 0) { newTime = 0; }
+        this.currentTimeline = this.currentTimeline.fork(newTime);
+        this.timelines.push(this.currentTimeline);
+        return this.currentTimeline;
+    };
+    /**
+     * @param {?} time
+     * @return {?}
+     */
+    AnimationTimelineContext.prototype.incrementTime = function (time) {
+        this.currentTimeline.forwardTime(this.currentTimeline.duration + time);
+    };
+    return AnimationTimelineContext;
+}());
+var AnimationTimelineVisitor = (function () {
+    function AnimationTimelineVisitor() {
+    }
+    /**
+     * @param {?} ast
+     * @param {?} startingStyles
+     * @param {?} finalStyles
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.buildKeyframes = function (ast, startingStyles, finalStyles) {
+        var /** @type {?} */ context = new AnimationTimelineContext([], []);
+        context.currentTimeline.setStyles(startingStyles);
+        visitAnimationNode(this, ast, context);
+        // this checks to see if an actual animation happened
+        var /** @type {?} */ timelines = context.timelines.filter(function (timeline) { return timeline.hasStyling(); });
+        if (timelines.length && Object.keys(finalStyles).length) {
+            var /** @type {?} */ tl = timelines[timelines.length - 1];
+            if (!tl.allowOnlyTimelineStyles()) {
+                tl.setStyles(finalStyles);
+            }
+        }
+        return timelines.length ? timelines.map(function (timeline) { return timeline.buildKeyframes(); }) :
+            [createTimelineInstruction([], 0, 0, '')];
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitState = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitTransition = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitSequence = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ subContextCount = context.subContextCount;
+        if (context.previousNode.type == 6 /* Style */) {
+            context.currentTimeline.forwardFrame();
+            context.currentTimeline.snapshotCurrentStyles();
+        }
+        ast.steps.forEach(function (s) { return visitAnimationNode(_this, s, context); });
+        // this means that some animation function within the sequence
+        // ended up creating a sub timeline (which means the current
+        // timeline cannot overlap with the contents of the sequence)
+        if (context.subContextCount > subContextCount) {
+            context.transformIntoNewTimeline();
+        }
+        context.previousNode = ast;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitGroup = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ innerTimelines = [];
+        var /** @type {?} */ furthestTime = context.currentTimeline.currentTime;
+        ast.steps.forEach(function (s) {
+            var /** @type {?} */ innerContext = context.createSubContext();
+            visitAnimationNode(_this, s, innerContext);
+            furthestTime = Math.max(furthestTime, innerContext.currentTimeline.currentTime);
+            innerTimelines.push(innerContext.currentTimeline);
+        });
+        // this operation is run after the AST loop because otherwise
+        // if the parent timeline's collected styles were updated then
+        // it would pass in invalid data into the new-to-be forked items
+        innerTimelines.forEach(function (timeline) { return context.currentTimeline.mergeTimelineCollectedStyles(timeline); });
+        context.transformIntoNewTimeline(furthestTime);
+        context.previousNode = ast;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitAnimate = function (ast, context) {
+        var /** @type {?} */ timings = ast.timings.hasOwnProperty('duration') ? (ast.timings) :
+            parseTimeExpression(/** @type {?} */ (ast.timings), context.errors);
+        context.currentAnimateTimings = timings;
+        if (timings.delay) {
+            context.incrementTime(timings.delay);
+            context.currentTimeline.snapshotCurrentStyles();
+        }
+        var /** @type {?} */ astType = ast.styles ? ast.styles.type : -1;
+        if (astType == 5 /* KeyframeSequence */) {
+            this.visitKeyframeSequence(/** @type {?} */ (ast.styles), context);
+        }
+        else {
+            var /** @type {?} */ styleAst = (ast.styles);
+            if (!styleAst) {
+                var /** @type {?} */ newStyleData = {};
+                if (timings.easing) {
+                    newStyleData['easing'] = timings.easing;
+                }
+                styleAst = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["style"])(newStyleData);
+                ((styleAst))['treatAsEmptyStep'] = true;
+            }
+            context.incrementTime(timings.duration);
+            if (styleAst) {
+                this.visitStyle(styleAst, context);
+            }
+        }
+        context.currentAnimateTimings = null;
+        context.previousNode = ast;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitStyle = function (ast, context) {
+        // this is a special case when a style() call is issued directly after
+        // a call to animate(). If the clock is not forwarded by one frame then
+        // the style() calls will be merged into the previous animate() call
+        // which is incorrect.
+        if (!context.currentAnimateTimings &&
+            context.previousNode.type == 4 /* Animate */) {
+            context.currentTimeline.forwardFrame();
+        }
+        var /** @type {?} */ normalizedStyles = normalizeStyles(ast.styles);
+        var /** @type {?} */ easing = context.currentAnimateTimings && context.currentAnimateTimings.easing;
+        this._applyStyles(normalizedStyles, easing, ((ast))['treatAsEmptyStep'] ? true : false, context);
+        context.previousNode = ast;
+    };
+    /**
+     * @param {?} styles
+     * @param {?} easing
+     * @param {?} treatAsEmptyStep
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype._applyStyles = function (styles, easing, treatAsEmptyStep, context) {
+        if (styles.hasOwnProperty('easing')) {
+            easing = easing || (styles['easing']);
+            delete styles['easing'];
+        }
+        context.currentTimeline.setStyles(styles, easing, treatAsEmptyStep);
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTimelineVisitor.prototype.visitKeyframeSequence = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ MAX_KEYFRAME_OFFSET = 1;
+        var /** @type {?} */ limit = ast.steps.length - 1;
+        var /** @type {?} */ firstKeyframe = ast.steps[0];
+        var /** @type {?} */ offsetGap = 0;
+        var /** @type {?} */ containsOffsets = getOffset(firstKeyframe) != null;
+        if (!containsOffsets) {
+            offsetGap = MAX_KEYFRAME_OFFSET / limit;
+        }
+        var /** @type {?} */ startTime = context.currentTimeline.duration;
+        var /** @type {?} */ duration = ((context.currentAnimateTimings)).duration;
+        var /** @type {?} */ innerContext = context.createSubContext();
+        var /** @type {?} */ innerTimeline = innerContext.currentTimeline;
+        innerTimeline.easing = ((context.currentAnimateTimings)).easing;
+        ast.steps.forEach(function (step, i) {
+            var /** @type {?} */ normalizedStyles = normalizeStyles(step.styles);
+            var /** @type {?} */ offset = containsOffsets ?
+                (step.offset != null ? step.offset : parseFloat(/** @type {?} */ (normalizedStyles['offset']))) :
+                (i == limit ? MAX_KEYFRAME_OFFSET : i * offsetGap);
+            innerTimeline.forwardTime(offset * duration);
+            _this._applyStyles(normalizedStyles, null, false, innerContext);
+        });
+        // this will ensure that the parent timeline gets all the styles from
+        // the child even if the new timeline below is not used
+        context.currentTimeline.mergeTimelineCollectedStyles(innerTimeline);
+        // we do this because the window between this timeline and the sub timeline
+        // should ensure that the styles within are exactly the same as they were before
+        context.transformIntoNewTimeline(startTime + duration);
+        context.previousNode = ast;
+    };
+    return AnimationTimelineVisitor;
+}());
+var TimelineBuilder = (function () {
+    /**
+     * @param {?} startTime
+     * @param {?=} globalTimelineStyles
+     */
+    function TimelineBuilder(startTime, globalTimelineStyles) {
+        this.startTime = startTime;
+        this.duration = 0;
+        this.easing = '';
+        this._previousKeyframe = {};
+        this._keyframes = new Map();
+        this._styleSummary = {};
+        this._backFill = {};
+        this._currentEmptyStepKeyframe = null;
+        this._localTimelineStyles = Object.create(this._backFill, {});
+        this._globalTimelineStyles =
+            globalTimelineStyles ? globalTimelineStyles : this._localTimelineStyles;
+        this._loadKeyframe();
+    }
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.hasStyling = function () { return this._keyframes.size > 1; };
+    Object.defineProperty(TimelineBuilder.prototype, "currentTime", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.startTime + this.duration; },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @param {?=} currentTime
+     * @return {?}
+     */
+    TimelineBuilder.prototype.fork = function (currentTime) {
+        if (currentTime === void 0) { currentTime = 0; }
+        return new TimelineBuilder(currentTime || this.currentTime, this._globalTimelineStyles);
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype._loadKeyframe = function () {
+        if (this._currentKeyframe) {
+            this._previousKeyframe = this._currentKeyframe;
+        }
+        this._currentKeyframe = ((this._keyframes.get(this.duration)));
+        if (!this._currentKeyframe) {
+            this._currentKeyframe = Object.create(this._backFill, {});
+            this._keyframes.set(this.duration, this._currentKeyframe);
+        }
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.forwardFrame = function () {
+        this.duration++;
+        this._loadKeyframe();
+    };
+    /**
+     * @param {?} time
+     * @return {?}
+     */
+    TimelineBuilder.prototype.forwardTime = function (time) {
+        this.duration = time;
+        this._loadKeyframe();
+    };
+    /**
+     * @param {?} prop
+     * @param {?} value
+     * @return {?}
+     */
+    TimelineBuilder.prototype._updateStyle = function (prop, value) {
+        this._localTimelineStyles[prop] = value; /** @type {?} */
+        ((this._globalTimelineStyles))[prop] = value;
+        this._styleSummary[prop] = { time: this.currentTime, value: value };
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.allowOnlyTimelineStyles = function () { return this._currentEmptyStepKeyframe !== this._currentKeyframe; };
+    /**
+     * @param {?} styles
+     * @param {?=} easing
+     * @param {?=} treatAsEmptyStep
+     * @return {?}
+     */
+    TimelineBuilder.prototype.setStyles = function (styles, easing, treatAsEmptyStep) {
+        var _this = this;
+        if (easing === void 0) { easing = null; }
+        if (treatAsEmptyStep === void 0) { treatAsEmptyStep = false; }
+        if (easing) {
+            ((this._previousKeyframe))['easing'] = easing;
+        }
+        if (treatAsEmptyStep) {
+            // special case for animate(duration):
+            // all missing styles are filled with a `*` value then
+            // if any destination styles are filled in later on the same
+            // keyframe then they will override the overridden styles
+            // We use `_globalTimelineStyles` here because there may be
+            // styles in previous keyframes that are not present in this timeline
+            Object.keys(this._globalTimelineStyles).forEach(function (prop) {
+                _this._backFill[prop] = _this._globalTimelineStyles[prop] || __WEBPACK_IMPORTED_MODULE_0__angular_animations__["AUTO_STYLE"];
+                _this._currentKeyframe[prop] = __WEBPACK_IMPORTED_MODULE_0__angular_animations__["AUTO_STYLE"];
+            });
+            this._currentEmptyStepKeyframe = this._currentKeyframe;
+        }
+        else {
+            Object.keys(styles).forEach(function (prop) {
+                if (prop !== 'offset') {
+                    var /** @type {?} */ val = styles[prop];
+                    _this._currentKeyframe[prop] = val;
+                    if (!_this._localTimelineStyles[prop]) {
+                        _this._backFill[prop] = _this._globalTimelineStyles[prop] || __WEBPACK_IMPORTED_MODULE_0__angular_animations__["AUTO_STYLE"];
+                    }
+                    _this._updateStyle(prop, val);
+                }
+            });
+            Object.keys(this._localTimelineStyles).forEach(function (prop) {
+                if (!_this._currentKeyframe.hasOwnProperty(prop)) {
+                    _this._currentKeyframe[prop] = _this._localTimelineStyles[prop];
+                }
+            });
+        }
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.snapshotCurrentStyles = function () { copyStyles(this._localTimelineStyles, false, this._currentKeyframe); };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.getFinalKeyframe = function () { return ((this._keyframes.get(this.duration))); };
+    Object.defineProperty(TimelineBuilder.prototype, "properties", {
+        /**
+         * @return {?}
+         */
+        get: function () {
+            var /** @type {?} */ properties = [];
+            for (var /** @type {?} */ prop in this._currentKeyframe) {
+                properties.push(prop);
+            }
+            return properties;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @param {?} timeline
+     * @return {?}
+     */
+    TimelineBuilder.prototype.mergeTimelineCollectedStyles = function (timeline) {
+        var _this = this;
+        Object.keys(timeline._styleSummary).forEach(function (prop) {
+            var /** @type {?} */ details0 = _this._styleSummary[prop];
+            var /** @type {?} */ details1 = timeline._styleSummary[prop];
+            if (!details0 || details1.time > details0.time) {
+                _this._updateStyle(prop, details1.value);
+            }
+        });
+    };
+    /**
+     * @return {?}
+     */
+    TimelineBuilder.prototype.buildKeyframes = function () {
+        var _this = this;
+        var /** @type {?} */ finalKeyframes = [];
+        // special case for when there are only start/destination
+        // styles but no actual animation animate steps...
+        if (this.duration == 0) {
+            var /** @type {?} */ targetKeyframe = this.getFinalKeyframe();
+            var /** @type {?} */ firstKeyframe = copyStyles(targetKeyframe, true);
+            firstKeyframe['offset'] = 0;
+            finalKeyframes.push(firstKeyframe);
+            var /** @type {?} */ lastKeyframe = copyStyles(targetKeyframe, true);
+            lastKeyframe['offset'] = 1;
+            finalKeyframes.push(lastKeyframe);
+        }
+        else {
+            this._keyframes.forEach(function (keyframe, time) {
+                var /** @type {?} */ finalKeyframe = copyStyles(keyframe, true);
+                finalKeyframe['offset'] = time / _this.duration;
+                finalKeyframes.push(finalKeyframe);
+            });
+        }
+        return createTimelineInstruction(finalKeyframes, this.duration, this.startTime, this.easing);
+    };
+    return TimelineBuilder;
+}());
+/**
+ * @param {?} ast
+ * @return {?}
+ */
+function getOffset(ast) {
+    var /** @type {?} */ offset = ast.offset;
+    if (offset == null) {
+        var /** @type {?} */ styles = ast.styles;
+        if (Array.isArray(styles)) {
+            for (var /** @type {?} */ i = 0; i < styles.length; i++) {
+                var /** @type {?} */ o = (styles[i]['offset']);
+                if (o != null) {
+                    offset = o;
+                    break;
+                }
+            }
+        }
+        else {
+            offset = (styles['offset']);
+        }
+    }
+    return ((offset));
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} triggerName
+ * @param {?} fromState
+ * @param {?} toState
+ * @param {?} isRemovalTransition
+ * @param {?} fromStyles
+ * @param {?} toStyles
+ * @param {?} timelines
+ * @return {?}
+ */
+function createTransitionInstruction(triggerName, fromState, toState, isRemovalTransition, fromStyles, toStyles, timelines) {
+    return {
+        type: 0 /* TransitionAnimation */,
+        triggerName: triggerName,
+        isRemovalTransition: isRemovalTransition,
+        fromState: fromState,
+        fromStyles: fromStyles,
+        toState: toState,
+        toStyles: toStyles,
+        timelines: timelines
+    };
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var AnimationTransitionFactory = (function () {
+    /**
+     * @param {?} _triggerName
+     * @param {?} ast
+     * @param {?} matchFns
+     * @param {?} _stateStyles
+     */
+    function AnimationTransitionFactory(_triggerName, ast, matchFns, _stateStyles) {
+        this._triggerName = _triggerName;
+        this.matchFns = matchFns;
+        this._stateStyles = _stateStyles;
+        var normalizedAst = Array.isArray(ast.animation) ?
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["sequence"])(ast.animation) :
+            ast.animation;
+        this._animationAst = normalizedAst;
+    }
+    /**
+     * @param {?} currentState
+     * @param {?} nextState
+     * @return {?}
+     */
+    AnimationTransitionFactory.prototype.match = function (currentState, nextState) {
+        if (!oneOrMoreTransitionsMatch(this.matchFns, currentState, nextState))
+            return;
+        var /** @type {?} */ backupStateStyles = this._stateStyles['*'] || {};
+        var /** @type {?} */ currentStateStyles = this._stateStyles[currentState] || backupStateStyles;
+        var /** @type {?} */ nextStateStyles = this._stateStyles[nextState] || backupStateStyles;
+        var /** @type {?} */ timelines = buildAnimationKeyframes(this._animationAst, currentStateStyles, nextStateStyles);
+        return createTransitionInstruction(this._triggerName, currentState, nextState, nextState === 'void', currentStateStyles, nextStateStyles, timelines);
+    };
+    return AnimationTransitionFactory;
+}());
+/**
+ * @param {?} matchFns
+ * @param {?} currentState
+ * @param {?} nextState
+ * @return {?}
+ */
+function oneOrMoreTransitionsMatch(matchFns, currentState, nextState) {
+    return matchFns.some(function (fn) { return fn(currentState, nextState); });
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} ast
+ * @return {?}
+ */
+function validateAnimationSequence(ast) {
+    var /** @type {?} */ normalizedAst = Array.isArray(ast) ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["sequence"])(/** @type {?} */ (ast)) : (ast);
+    return new AnimationValidatorVisitor().validate(normalizedAst);
+}
+var AnimationValidatorVisitor = (function () {
+    function AnimationValidatorVisitor() {
+    }
+    /**
+     * @param {?} ast
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.validate = function (ast) {
+        var /** @type {?} */ context = new AnimationValidatorContext();
+        visitAnimationNode(this, ast, context);
+        return context.errors;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitState = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitTransition = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitSequence = function (ast, context) {
+        var _this = this;
+        ast.steps.forEach(function (step) { return visitAnimationNode(_this, step, context); });
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitGroup = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ currentTime = context.currentTime;
+        var /** @type {?} */ furthestTime = 0;
+        ast.steps.forEach(function (step) {
+            context.currentTime = currentTime;
+            visitAnimationNode(_this, step, context);
+            furthestTime = Math.max(furthestTime, context.currentTime);
+        });
+        context.currentTime = furthestTime;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitAnimate = function (ast, context) {
+        // we reassign the timings here so that they are not reparsed each
+        // time an animation occurs
+        context.currentAnimateTimings = ast.timings =
+            parseTimeExpression(/** @type {?} */ (ast.timings), context.errors);
+        var /** @type {?} */ astType = ast.styles && ast.styles.type;
+        if (astType == 5 /* KeyframeSequence */) {
+            this.visitKeyframeSequence(/** @type {?} */ (ast.styles), context);
+        }
+        else {
+            context.currentTime +=
+                context.currentAnimateTimings.duration + context.currentAnimateTimings.delay;
+            if (astType == 6 /* Style */) {
+                this.visitStyle(/** @type {?} */ (ast.styles), context);
+            }
+        }
+        context.currentAnimateTimings = null;
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitStyle = function (ast, context) {
+        var /** @type {?} */ styleData = normalizeStyles(ast.styles);
+        var /** @type {?} */ timings = context.currentAnimateTimings;
+        var /** @type {?} */ endTime = context.currentTime;
+        var /** @type {?} */ startTime = context.currentTime;
+        if (timings && startTime > 0) {
+            startTime -= timings.duration + timings.delay;
+        }
+        Object.keys(styleData).forEach(function (prop) {
+            var /** @type {?} */ collectedEntry = context.collectedStyles[prop];
+            var /** @type {?} */ updateCollectedStyle = true;
+            if (collectedEntry) {
+                if (startTime != endTime && startTime >= collectedEntry.startTime &&
+                    endTime <= collectedEntry.endTime) {
+                    context.errors.push("The CSS property \"" + prop + "\" that exists between the times of \"" + collectedEntry.startTime + "ms\" and \"" + collectedEntry.endTime + "ms\" is also being animated in a parallel animation between the times of \"" + startTime + "ms\" and \"" + endTime + "ms\"");
+                    updateCollectedStyle = false;
+                }
+                // we always choose the smaller start time value since we
+                // want to have a record of the entire animation window where
+                // the style property is being animated in between
+                startTime = collectedEntry.startTime;
+            }
+            if (updateCollectedStyle) {
+                context.collectedStyles[prop] = { startTime: startTime, endTime: endTime };
+            }
+        });
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationValidatorVisitor.prototype.visitKeyframeSequence = function (ast, context) {
+        var _this = this;
+        var /** @type {?} */ totalKeyframesWithOffsets = 0;
+        var /** @type {?} */ offsets = [];
+        var /** @type {?} */ offsetsOutOfOrder = false;
+        var /** @type {?} */ keyframesOutOfRange = false;
+        var /** @type {?} */ previousOffset = 0;
+        ast.steps.forEach(function (step) {
+            var /** @type {?} */ styleData = normalizeStyles(step.styles);
+            var /** @type {?} */ offset = 0;
+            if (styleData.hasOwnProperty('offset')) {
+                totalKeyframesWithOffsets++;
+                offset = (styleData['offset']);
+            }
+            keyframesOutOfRange = keyframesOutOfRange || offset < 0 || offset > 1;
+            offsetsOutOfOrder = offsetsOutOfOrder || offset < previousOffset;
+            previousOffset = offset;
+            offsets.push(offset);
+        });
+        if (keyframesOutOfRange) {
+            context.errors.push("Please ensure that all keyframe offsets are between 0 and 1");
+        }
+        if (offsetsOutOfOrder) {
+            context.errors.push("Please ensure that all keyframe offsets are in order");
+        }
+        var /** @type {?} */ length = ast.steps.length;
+        var /** @type {?} */ generatedOffset = 0;
+        if (totalKeyframesWithOffsets > 0 && totalKeyframesWithOffsets < length) {
+            context.errors.push("Not all style() steps within the declared keyframes() contain offsets");
+        }
+        else if (totalKeyframesWithOffsets == 0) {
+            generatedOffset = 1 / length;
+        }
+        var /** @type {?} */ limit = length - 1;
+        var /** @type {?} */ currentTime = context.currentTime;
+        var /** @type {?} */ animateDuration = ((context.currentAnimateTimings)).duration;
+        ast.steps.forEach(function (step, i) {
+            var /** @type {?} */ offset = generatedOffset > 0 ? (i == limit ? 1 : (generatedOffset * i)) : offsets[i];
+            var /** @type {?} */ durationUpToThisFrame = offset * animateDuration;
+            context.currentTime =
+                currentTime + ((context.currentAnimateTimings)).delay + durationUpToThisFrame; /** @type {?} */
+            ((context.currentAnimateTimings)).duration = durationUpToThisFrame;
+            _this.visitStyle(step, context);
+        });
+    };
+    return AnimationValidatorVisitor;
+}());
+var AnimationValidatorContext = (function () {
+    function AnimationValidatorContext() {
+        this.errors = [];
+        this.currentTime = 0;
+        this.collectedStyles = {};
+    }
+    return AnimationValidatorContext;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * \@experimental Animation support is experimental.
+ * @param {?} name
+ * @param {?} definitions
+ * @return {?}
+ */
+function buildTrigger(name, definitions) {
+    return new AnimationTriggerVisitor().buildTrigger(name, definitions);
+}
+/**
+ * \@experimental Animation support is experimental.
+ */
+var AnimationTrigger = (function () {
+    /**
+     * @param {?} name
+     * @param {?} states
+     * @param {?} _transitionAsts
+     */
+    function AnimationTrigger(name, states, _transitionAsts) {
+        var _this = this;
+        this.name = name;
+        this._transitionAsts = _transitionAsts;
+        this.transitionFactories = [];
+        this.states = {};
+        Object.keys(states).forEach(function (stateName) { _this.states[stateName] = copyStyles(states[stateName], false); });
+        var errors = [];
+        _transitionAsts.forEach(function (ast) {
+            var exprs = parseTransitionExpr(ast.expr, errors);
+            var sequenceErrors = validateAnimationSequence(ast);
+            if (sequenceErrors.length) {
+                errors.push.apply(errors, sequenceErrors);
+            }
+            else {
+                _this.transitionFactories.push(new AnimationTransitionFactory(_this.name, ast, exprs, states));
+            }
+        });
+        if (errors.length) {
+            var LINE_START = '\n - ';
+            throw new Error("Animation parsing for the " + name + " trigger have failed:" + LINE_START + errors.join(LINE_START));
+        }
+    }
+    /**
+     * @param {?} currentState
+     * @param {?} nextState
+     * @return {?}
+     */
+    AnimationTrigger.prototype.createFallbackInstruction = function (currentState, nextState) {
+        var /** @type {?} */ backupStateStyles = this.states['*'] || {};
+        var /** @type {?} */ currentStateStyles = this.states[currentState] || backupStateStyles;
+        var /** @type {?} */ nextStateStyles = this.states[nextState] || backupStateStyles;
+        return createTransitionInstruction(this.name, currentState, nextState, nextState == 'void', currentStateStyles, nextStateStyles, []);
+    };
+    /**
+     * @param {?} currentState
+     * @param {?} nextState
+     * @return {?}
+     */
+    AnimationTrigger.prototype.matchTransition = function (currentState, nextState) {
+        for (var /** @type {?} */ i = 0; i < this.transitionFactories.length; i++) {
+            var /** @type {?} */ result = this.transitionFactories[i].match(currentState, nextState);
+            if (result)
+                return result;
+        }
+        return null;
+    };
+    return AnimationTrigger;
+}());
+var AnimationTriggerContext = (function () {
+    function AnimationTriggerContext() {
+        this.errors = [];
+        this.states = {};
+        this.transitions = [];
+    }
+    return AnimationTriggerContext;
+}());
+var AnimationTriggerVisitor = (function () {
+    function AnimationTriggerVisitor() {
+    }
+    /**
+     * @param {?} name
+     * @param {?} definitions
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.buildTrigger = function (name, definitions) {
+        var _this = this;
+        var /** @type {?} */ context = new AnimationTriggerContext();
+        definitions.forEach(function (def) { return visitAnimationNode(_this, def, context); });
+        return new AnimationTrigger(name, context.states, context.transitions);
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitState = function (ast, context) {
+        var /** @type {?} */ styles = normalizeStyles(ast.styles.styles);
+        ast.name.split(/\s*,\s*/).forEach(function (name) { context.states[name] = styles; });
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitTransition = function (ast, context) {
+        context.transitions.push(ast);
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitSequence = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitGroup = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitAnimate = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitStyle = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    /**
+     * @param {?} ast
+     * @param {?} context
+     * @return {?}
+     */
+    AnimationTriggerVisitor.prototype.visitKeyframeSequence = function (ast, context) {
+        // these values are not visited in this AST
+    };
+    return AnimationTriggerVisitor;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var MARKED_FOR_ANIMATION_CLASSNAME = 'ng-animating';
+var MARKED_FOR_ANIMATION_SELECTOR = '.ng-animating';
+var MARKED_FOR_REMOVAL = '$$ngRemove';
+var VOID_STATE = 'void';
+var DomAnimationEngine = (function () {
+    /**
+     * @param {?} _driver
+     * @param {?} _normalizer
+     */
+    function DomAnimationEngine(_driver, _normalizer) {
+        this._driver = _driver;
+        this._normalizer = _normalizer;
+        this._flaggedInserts = new Set();
+        this._queuedRemovals = new Map();
+        this._queuedTransitionAnimations = [];
+        this._activeTransitionAnimations = new Map();
+        this._activeElementAnimations = new Map();
+        this._elementTriggerStates = new Map();
+        this._triggers = Object.create(null);
+        this._triggerListeners = new Map();
+        this._pendingListenerRemovals = new Map();
+    }
+    Object.defineProperty(DomAnimationEngine.prototype, "queuedPlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () {
+            return this._queuedTransitionAnimations.map(function (q) { return q.player; });
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(DomAnimationEngine.prototype, "activePlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () {
+            var /** @type {?} */ players = [];
+            this._activeElementAnimations.forEach(function (activePlayers) { return players.push.apply(players, activePlayers); });
+            return players;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @param {?} trigger
+     * @param {?=} name
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.registerTrigger = function (trigger, name) {
+        name = name || trigger.name;
+        if (this._triggers[name]) {
+            return;
+        }
+        this._triggers[name] = buildTrigger(name, trigger.definitions);
+    };
+    /**
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.onInsert = function (element, domFn) {
+        if (element['nodeType'] == 1) {
+            this._flaggedInserts.add(element);
+        }
+        domFn();
+    };
+    /**
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.onRemove = function (element, domFn) {
+        var _this = this;
+        if (element['nodeType'] != 1) {
+            domFn();
+            return;
+        }
+        var /** @type {?} */ lookupRef = this._elementTriggerStates.get(element);
+        if (lookupRef) {
+            var /** @type {?} */ possibleTriggers = Object.keys(lookupRef);
+            var /** @type {?} */ hasRemoval = possibleTriggers.some(function (triggerName) {
+                var /** @type {?} */ oldValue = ((lookupRef))[triggerName];
+                var /** @type {?} */ instruction = _this._triggers[triggerName].matchTransition(oldValue, VOID_STATE);
+                return !!instruction;
+            });
+            if (hasRemoval) {
+                element[MARKED_FOR_REMOVAL] = true;
+                this._queuedRemovals.set(element, domFn);
+                return;
+            }
+        }
+        // this means that there are no animations to take on this
+        // leave operation therefore we should fire the done|start callbacks
+        if (this._triggerListeners.has(element)) {
+            element[MARKED_FOR_REMOVAL] = true;
+            this._queuedRemovals.set(element, function () { });
+        }
+        this._onRemovalTransition(element).forEach(function (player) { return player.destroy(); });
+        domFn();
+    };
+    /**
+     * @param {?} element
+     * @param {?} property
+     * @param {?} value
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.setProperty = function (element, property, value) {
+        var /** @type {?} */ trigger = this._triggers[property];
+        if (!trigger) {
+            throw new Error("The provided animation trigger \"" + property + "\" has not been registered!");
+        }
+        var /** @type {?} */ lookupRef = this._elementTriggerStates.get(element);
+        if (!lookupRef) {
+            this._elementTriggerStates.set(element, lookupRef = {});
+        }
+        var /** @type {?} */ oldValue = lookupRef.hasOwnProperty(property) ? lookupRef[property] : VOID_STATE;
+        if (oldValue !== value) {
+            value = normalizeTriggerValue(value);
+            var /** @type {?} */ instruction = trigger.matchTransition(oldValue, value);
+            if (!instruction) {
+                // we do this to make sure we always have an animation player so
+                // that callback operations are properly called
+                instruction = trigger.createFallbackInstruction(oldValue, value);
+            }
+            this.animateTransition(element, instruction);
+            lookupRef[property] = value;
+        }
+    };
+    /**
+     * @param {?} element
+     * @param {?} eventName
+     * @param {?} eventPhase
+     * @param {?} callback
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.listen = function (element, eventName, eventPhase, callback) {
+        var _this = this;
+        if (!eventPhase) {
+            throw new Error("Unable to listen on the animation trigger \"" + eventName + "\" because the provided event is undefined!");
+        }
+        if (!this._triggers[eventName]) {
+            throw new Error("Unable to listen on the animation trigger event \"" + eventPhase + "\" because the animation trigger \"" + eventName + "\" doesn't exist!");
+        }
+        var /** @type {?} */ elementListeners = this._triggerListeners.get(element);
+        if (!elementListeners) {
+            this._triggerListeners.set(element, elementListeners = []);
+        }
+        validatePlayerEvent(eventName, eventPhase);
+        var /** @type {?} */ tuple = ({ triggerName: eventName, phase: eventPhase, callback: callback });
+        elementListeners.push(tuple);
+        return function () {
+            // this is queued up in the event that a removal animation is set
+            // to fire on the element (the listeners need to be set during flush)
+            getOrSetAsInMap(_this._pendingListenerRemovals, element, []).push(tuple);
+        };
+    };
+    /**
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._clearPendingListenerRemovals = function () {
+        var _this = this;
+        this._pendingListenerRemovals.forEach(function (tuples, element) {
+            var /** @type {?} */ elementListeners = _this._triggerListeners.get(element);
+            if (elementListeners) {
+                tuples.forEach(function (tuple) {
+                    var /** @type {?} */ index = elementListeners.indexOf(tuple);
+                    if (index >= 0) {
+                        elementListeners.splice(index, 1);
+                    }
+                });
+            }
+        });
+        this._pendingListenerRemovals.clear();
+    };
+    /**
+     * @param {?} element
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._onRemovalTransition = function (element) {
+        // when a parent animation is set to trigger a removal we want to
+        // find all of the children that are currently animating and clear
+        // them out by destroying each of them.
+        var /** @type {?} */ elms = element.querySelectorAll(MARKED_FOR_ANIMATION_SELECTOR);
+        var _loop_1 = function (i) {
+            var /** @type {?} */ elm = elms[i];
+            var /** @type {?} */ activePlayers = this_1._activeElementAnimations.get(elm);
+            if (activePlayers) {
+                activePlayers.forEach(function (player) { return player.destroy(); });
+            }
+            var /** @type {?} */ activeTransitions = this_1._activeTransitionAnimations.get(elm);
+            if (activeTransitions) {
+                Object.keys(activeTransitions).forEach(function (triggerName) {
+                    var /** @type {?} */ player = activeTransitions[triggerName];
+                    if (player) {
+                        player.destroy();
+                    }
+                });
+            }
+        };
+        var this_1 = this;
+        for (var /** @type {?} */ i = 0; i < elms.length; i++) {
+            _loop_1(/** @type {?} */ i);
+        }
+        // we make a copy of the array because the actual source array is modified
+        // each time a player is finished/destroyed (the forEach loop would fail otherwise)
+        return copyArray(/** @type {?} */ ((this._activeElementAnimations.get(element))));
+    };
+    /**
+     * @param {?} element
+     * @param {?} instruction
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.animateTransition = function (element, instruction) {
+        var _this = this;
+        var /** @type {?} */ triggerName = instruction.triggerName;
+        var /** @type {?} */ previousPlayers;
+        if (instruction.isRemovalTransition) {
+            previousPlayers = this._onRemovalTransition(element);
+        }
+        else {
+            previousPlayers = [];
+            var /** @type {?} */ existingTransitions = this._activeTransitionAnimations.get(element);
+            var /** @type {?} */ existingPlayer = existingTransitions ? existingTransitions[triggerName] : null;
+            if (existingPlayer) {
+                previousPlayers.push(existingPlayer);
+            }
+        }
+        // it's important to do this step before destroying the players
+        // so that the onDone callback below won't fire before this
+        eraseStyles(element, instruction.fromStyles);
+        // we first run this so that the previous animation player
+        // data can be passed into the successive animation players
+        var /** @type {?} */ totalTime = 0;
+        var /** @type {?} */ players = instruction.timelines.map(function (timelineInstruction, i) {
+            totalTime = Math.max(totalTime, timelineInstruction.totalTime);
+            return _this._buildPlayer(element, timelineInstruction, previousPlayers, i);
+        });
+        previousPlayers.forEach(function (previousPlayer) { return previousPlayer.destroy(); });
+        var /** @type {?} */ player = optimizeGroupPlayer(players);
+        player.onDone(function () {
+            player.destroy();
+            var /** @type {?} */ elmTransitionMap = _this._activeTransitionAnimations.get(element);
+            if (elmTransitionMap) {
+                delete elmTransitionMap[triggerName];
+                if (Object.keys(elmTransitionMap).length == 0) {
+                    _this._activeTransitionAnimations.delete(element);
+                }
+            }
+            deleteFromArrayMap(_this._activeElementAnimations, element, player);
+            setStyles(element, instruction.toStyles);
+        });
+        var /** @type {?} */ elmTransitionMap = getOrSetAsInMap(this._activeTransitionAnimations, element, {});
+        elmTransitionMap[triggerName] = player;
+        this._queuePlayer(element, triggerName, player, makeAnimationEvent(element, triggerName, instruction.fromState, instruction.toState, null, // this will be filled in during event creation
+        totalTime));
+        return player;
+    };
+    /**
+     * @param {?} element
+     * @param {?} instructions
+     * @param {?=} previousPlayers
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.animateTimeline = function (element, instructions, previousPlayers) {
+        var _this = this;
+        if (previousPlayers === void 0) { previousPlayers = []; }
+        var /** @type {?} */ players = instructions.map(function (instruction, i) {
+            var /** @type {?} */ player = _this._buildPlayer(element, instruction, previousPlayers, i);
+            player.onDestroy(function () { deleteFromArrayMap(_this._activeElementAnimations, element, player); });
+            _this._markPlayerAsActive(element, player);
+            return player;
+        });
+        return optimizeGroupPlayer(players);
+    };
+    /**
+     * @param {?} element
+     * @param {?} instruction
+     * @param {?} previousPlayers
+     * @param {?=} index
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._buildPlayer = function (element, instruction, previousPlayers, index) {
+        if (index === void 0) { index = 0; }
+        // only the very first animation can absorb the previous styles. This
+        // is here to prevent the an overlap situation where a group animation
+        // absorbs previous styles multiple times for the same element.
+        if (index && previousPlayers.length) {
+            previousPlayers = [];
+        }
+        return this._driver.animate(element, this._normalizeKeyframes(instruction.keyframes), instruction.duration, instruction.delay, instruction.easing, previousPlayers);
+    };
+    /**
+     * @param {?} keyframes
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._normalizeKeyframes = function (keyframes) {
+        var _this = this;
+        var /** @type {?} */ errors = [];
+        var /** @type {?} */ normalizedKeyframes = [];
+        keyframes.forEach(function (kf) {
+            var /** @type {?} */ normalizedKeyframe = {};
+            Object.keys(kf).forEach(function (prop) {
+                var /** @type {?} */ normalizedProp = prop;
+                var /** @type {?} */ normalizedValue = kf[prop];
+                if (prop != 'offset') {
+                    normalizedProp = _this._normalizer.normalizePropertyName(prop, errors);
+                    normalizedValue =
+                        _this._normalizer.normalizeStyleValue(prop, normalizedProp, kf[prop], errors);
+                }
+                normalizedKeyframe[normalizedProp] = normalizedValue;
+            });
+            normalizedKeyframes.push(normalizedKeyframe);
+        });
+        if (errors.length) {
+            var /** @type {?} */ LINE_START = '\n - ';
+            throw new Error("Unable to animate due to the following errors:" + LINE_START + errors.join(LINE_START));
+        }
+        return normalizedKeyframes;
+    };
+    /**
+     * @param {?} element
+     * @param {?} player
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._markPlayerAsActive = function (element, player) {
+        var /** @type {?} */ elementAnimations = getOrSetAsInMap(this._activeElementAnimations, element, []);
+        elementAnimations.push(player);
+    };
+    /**
+     * @param {?} element
+     * @param {?} triggerName
+     * @param {?} player
+     * @param {?} event
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._queuePlayer = function (element, triggerName, player, event) {
+        var /** @type {?} */ tuple = ({ element: element, player: player, triggerName: triggerName, event: event });
+        this._queuedTransitionAnimations.push(tuple);
+        player.init();
+        element.classList.add(MARKED_FOR_ANIMATION_CLASSNAME);
+        player.onDone(function () { element.classList.remove(MARKED_FOR_ANIMATION_CLASSNAME); });
+    };
+    /**
+     * @return {?}
+     */
+    DomAnimationEngine.prototype._flushQueuedAnimations = function () {
+        var _loop_2 = function () {
+            var _a = ((this_2._queuedTransitionAnimations.shift())), player = _a.player, element = _a.element, triggerName = _a.triggerName, event = _a.event;
+            var /** @type {?} */ parent = element;
+            while (parent = parent.parentNode) {
+                // this means that a parent element will or will not
+                // have its own animation operation which in this case
+                // there's no point in even trying to do an animation
+                if (parent[MARKED_FOR_REMOVAL])
+                    return "continue-parentLoop";
+            }
+            var /** @type {?} */ listeners = this_2._triggerListeners.get(element);
+            if (listeners) {
+                listeners.forEach(function (tuple) {
+                    if (tuple.triggerName == triggerName) {
+                        listenOnPlayer(player, tuple.phase, event, tuple.callback);
+                    }
+                });
+            }
+            // if a removal exists for the given element then we need cancel
+            // all the queued players so that a proper removal animation can go
+            if (this_2._queuedRemovals.has(element)) {
+                player.destroy();
+                return "continue";
+            }
+            this_2._markPlayerAsActive(element, player);
+            // in the event that an animation throws an error then we do
+            // not want to re-run animations on any previous animations
+            // if they have already been kicked off beforehand
+            player.init();
+            if (!player.hasStarted()) {
+                player.play();
+            }
+        };
+        var this_2 = this;
+        parentLoop: while (this._queuedTransitionAnimations.length) {
+            var state_1 = _loop_2();
+            switch (state_1) {
+                case "continue-parentLoop": continue parentLoop;
+            }
+        }
+    };
+    /**
+     * @return {?}
+     */
+    DomAnimationEngine.prototype.flush = function () {
+        var _this = this;
+        var /** @type {?} */ leaveListeners = new Map();
+        this._queuedRemovals.forEach(function (callback, element) {
+            var /** @type {?} */ tuple = _this._pendingListenerRemovals.get(element);
+            if (tuple) {
+                leaveListeners.set(element, tuple);
+                _this._pendingListenerRemovals.delete(element);
+            }
+        });
+        this._clearPendingListenerRemovals();
+        this._pendingListenerRemovals = leaveListeners;
+        this._flushQueuedAnimations();
+        var /** @type {?} */ flushAgain = false;
+        this._queuedRemovals.forEach(function (callback, element) {
+            // an item that was inserted/removed in the same flush means
+            // that an animation should not happen anyway
+            if (_this._flaggedInserts.has(element))
+                return;
+            var /** @type {?} */ parent = element;
+            var /** @type {?} */ players = [];
+            while (parent = parent.parentNode) {
+                // there is no reason to even try to
+                if (parent[MARKED_FOR_REMOVAL]) {
+                    callback();
+                    return;
+                }
+                var /** @type {?} */ match = _this._activeElementAnimations.get(parent);
+                if (match) {
+                    players.push.apply(players, match);
+                    break;
+                }
+            }
+            // the loop was unable to find an parent that is animating even
+            // though this element has set to be removed, so the algorithm
+            // should check to see if there are any triggers on the element
+            // that are present to handle a leave animation and then setup
+            // those players to facilitate the callback after done
+            if (players.length == 0) {
+                // this means that the element has valid state triggers
+                var /** @type {?} */ stateDetails_1 = _this._elementTriggerStates.get(element);
+                if (stateDetails_1) {
+                    Object.keys(stateDetails_1).forEach(function (triggerName) {
+                        flushAgain = true;
+                        var /** @type {?} */ oldValue = stateDetails_1[triggerName];
+                        var /** @type {?} */ instruction = _this._triggers[triggerName].matchTransition(oldValue, VOID_STATE);
+                        if (instruction) {
+                            players.push(_this.animateTransition(element, instruction));
+                        }
+                        else {
+                            var /** @type {?} */ event = makeAnimationEvent(element, triggerName, oldValue, VOID_STATE, '', 0);
+                            var /** @type {?} */ player = new __WEBPACK_IMPORTED_MODULE_0__angular_animations__["NoopAnimationPlayer"]();
+                            _this._queuePlayer(element, triggerName, player, event);
+                        }
+                    });
+                }
+            }
+            if (players.length) {
+                optimizeGroupPlayer(players).onDone(callback);
+            }
+            else {
+                callback();
+            }
+        });
+        this._queuedRemovals.clear();
+        this._flaggedInserts.clear();
+        // this means that one or more leave animations were detected
+        if (flushAgain) {
+            this._flushQueuedAnimations();
+            this._clearPendingListenerRemovals();
+        }
+    };
+    return DomAnimationEngine;
+}());
+/**
+ * @param {?} map
+ * @param {?} key
+ * @param {?} defaultValue
+ * @return {?}
+ */
+function getOrSetAsInMap(map, key, defaultValue) {
+    var /** @type {?} */ value = map.get(key);
+    if (!value) {
+        map.set(key, value = defaultValue);
+    }
+    return value;
+}
+/**
+ * @param {?} map
+ * @param {?} key
+ * @param {?} value
+ * @return {?}
+ */
+function deleteFromArrayMap(map, key, value) {
+    var /** @type {?} */ arr = map.get(key);
+    if (arr) {
+        var /** @type {?} */ index = arr.indexOf(value);
+        if (index >= 0) {
+            arr.splice(index, 1);
+            if (arr.length == 0) {
+                map.delete(key);
+            }
+        }
+    }
+}
+/**
+ * @param {?} players
+ * @return {?}
+ */
+function optimizeGroupPlayer(players) {
+    switch (players.length) {
+        case 0:
+            return new __WEBPACK_IMPORTED_MODULE_0__angular_animations__["NoopAnimationPlayer"]();
+        case 1:
+            return players[0];
+        default:
+            return new __WEBPACK_IMPORTED_MODULE_0__angular_animations__["ɵAnimationGroupPlayer"](players);
+    }
+}
+/**
+ * @param {?} source
+ * @return {?}
+ */
+function copyArray(source) {
+    return source ? source.splice(0) : [];
+}
+/**
+ * @param {?} triggerName
+ * @param {?} eventName
+ * @return {?}
+ */
+function validatePlayerEvent(triggerName, eventName) {
+    switch (eventName) {
+        case 'start':
+        case 'done':
+            return;
+        default:
+            throw new Error("The provided animation trigger event \"" + eventName + "\" for the animation trigger \"" + triggerName + "\" is not supported!");
+    }
+}
+/**
+ * @param {?} player
+ * @param {?} eventName
+ * @param {?} baseEvent
+ * @param {?} callback
+ * @return {?}
+ */
+function listenOnPlayer(player, eventName, baseEvent, callback) {
+    switch (eventName) {
+        case 'start':
+            player.onStart(function () {
+                var /** @type {?} */ event = copyAnimationEvent(baseEvent);
+                event.phaseName = 'start';
+                callback(event);
+            });
+            break;
+        case 'done':
+            player.onDone(function () {
+                var /** @type {?} */ event = copyAnimationEvent(baseEvent);
+                event.phaseName = 'done';
+                callback(event);
+            });
+            break;
+    }
+}
+/**
+ * @param {?} e
+ * @return {?}
+ */
+function copyAnimationEvent(e) {
+    return makeAnimationEvent(e.element, e.triggerName, e.fromState, e.toState, e.phaseName, e.totalTime);
+}
+/**
+ * @param {?} element
+ * @param {?} triggerName
+ * @param {?} fromState
+ * @param {?} toState
+ * @param {?} phaseName
+ * @param {?} totalTime
+ * @return {?}
+ */
+function makeAnimationEvent(element, triggerName, fromState, toState, phaseName, totalTime) {
+    return ({ element: element, triggerName: triggerName, fromState: fromState, toState: toState, phaseName: phaseName, totalTime: totalTime });
+}
+/**
+ * @param {?} value
+ * @return {?}
+ */
+function normalizeTriggerValue(value) {
+    switch (typeof value) {
+        case 'boolean':
+            return value ? '1' : '0';
+        default:
+            return value ? value.toString() : null;
+    }
+}
+/**
+ * \@experimental Animation support is experimental.
+ * @abstract
+ */
+var AnimationStyleNormalizer = (function () {
+    function AnimationStyleNormalizer() {
+    }
+    /**
+     * @abstract
+     * @param {?} propertyName
+     * @param {?} errors
+     * @return {?}
+     */
+    AnimationStyleNormalizer.prototype.normalizePropertyName = function (propertyName, errors) { };
+    /**
+     * @abstract
+     * @param {?} userProvidedProperty
+     * @param {?} normalizedProperty
+     * @param {?} value
+     * @param {?} errors
+     * @return {?}
+     */
+    AnimationStyleNormalizer.prototype.normalizeStyleValue = function (userProvidedProperty, normalizedProperty, value, errors) { };
+    return AnimationStyleNormalizer;
+}());
+/**
+ * \@experimental Animation support is experimental.
+ */
+var NoopAnimationStyleNormalizer = (function () {
+    function NoopAnimationStyleNormalizer() {
+    }
+    /**
+     * @param {?} propertyName
+     * @param {?} errors
+     * @return {?}
+     */
+    NoopAnimationStyleNormalizer.prototype.normalizePropertyName = function (propertyName, errors) { return propertyName; };
+    /**
+     * @param {?} userProvidedProperty
+     * @param {?} normalizedProperty
+     * @param {?} value
+     * @param {?} errors
+     * @return {?}
+     */
+    NoopAnimationStyleNormalizer.prototype.normalizeStyleValue = function (userProvidedProperty, normalizedProperty, value, errors) {
+        return (value);
+    };
+    return NoopAnimationStyleNormalizer;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var Animation = (function () {
+    /**
+     * @param {?} input
+     */
+    function Animation(input) {
+        var ast = Array.isArray(input) ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["sequence"])(input) : input;
+        var errors = validateAnimationSequence(ast);
+        if (errors.length) {
+            var errorMessage = "animation validation failed:\n" + errors.join("\n");
+            throw new Error(errorMessage);
+        }
+        this._animationAst = ast;
+    }
+    /**
+     * @param {?} startingStyles
+     * @param {?} destinationStyles
+     * @return {?}
+     */
+    Animation.prototype.buildTimelines = function (startingStyles, destinationStyles) {
+        var /** @type {?} */ start = Array.isArray(startingStyles) ? normalizeStyles(startingStyles) : (startingStyles);
+        var /** @type {?} */ dest = Array.isArray(destinationStyles) ? normalizeStyles(destinationStyles) : (destinationStyles);
+        return buildAnimationKeyframes(this._animationAst, start, dest);
+    };
+    /**
+     * @param {?} injector
+     * @param {?} element
+     * @param {?=} startingStyles
+     * @param {?=} destinationStyles
+     * @return {?}
+     */
+    Animation.prototype.create = function (injector, element, startingStyles, destinationStyles) {
+        if (startingStyles === void 0) { startingStyles = {}; }
+        if (destinationStyles === void 0) { destinationStyles = {}; }
+        var /** @type {?} */ instructions = this.buildTimelines(startingStyles, destinationStyles);
+        // note the code below is only here to make the tests happy (once the new renderer is
+        // within core then the code below will interact with Renderer.transition(...))
+        var /** @type {?} */ driver = injector.get(AnimationDriver);
+        var /** @type {?} */ normalizer = injector.get(AnimationStyleNormalizer);
+        var /** @type {?} */ engine = new DomAnimationEngine(driver, normalizer);
+        return engine.animateTimeline(element, instructions);
+    };
+    return Animation;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var WebAnimationsStyleNormalizer = (function (_super) {
+    __extends(WebAnimationsStyleNormalizer, _super);
+    function WebAnimationsStyleNormalizer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * @param {?} propertyName
+     * @param {?} errors
+     * @return {?}
+     */
+    WebAnimationsStyleNormalizer.prototype.normalizePropertyName = function (propertyName, errors) {
+        return dashCaseToCamelCase(propertyName);
+    };
+    /**
+     * @param {?} userProvidedProperty
+     * @param {?} normalizedProperty
+     * @param {?} value
+     * @param {?} errors
+     * @return {?}
+     */
+    WebAnimationsStyleNormalizer.prototype.normalizeStyleValue = function (userProvidedProperty, normalizedProperty, value, errors) {
+        var /** @type {?} */ unit = '';
+        var /** @type {?} */ strVal = value.toString().trim();
+        if (DIMENSIONAL_PROP_MAP[normalizedProperty] && value !== 0 && value !== '0') {
+            if (typeof value === 'number') {
+                unit = 'px';
+            }
+            else {
+                var /** @type {?} */ valAndSuffixMatch = value.match(/^[+-]?[\d\.]+([a-z]*)$/);
+                if (valAndSuffixMatch && valAndSuffixMatch[1].length == 0) {
+                    errors.push("Please provide a CSS unit value for " + userProvidedProperty + ":" + value);
+                }
+            }
+        }
+        return strVal + unit;
+    };
+    return WebAnimationsStyleNormalizer;
+}(AnimationStyleNormalizer));
+var DIMENSIONAL_PROP_MAP = makeBooleanMap('width,height,minWidth,minHeight,maxWidth,maxHeight,left,top,bottom,right,fontSize,outlineWidth,outlineOffset,paddingTop,paddingLeft,paddingBottom,paddingRight,marginTop,marginLeft,marginBottom,marginRight,borderRadius,borderWidth,borderTopWidth,borderLeftWidth,borderRightWidth,borderBottomWidth,textIndent'
+    .split(','));
+/**
+ * @param {?} keys
+ * @return {?}
+ */
+function makeBooleanMap(keys) {
+    var /** @type {?} */ map = {};
+    keys.forEach(function (key) { return map[key] = true; });
+    return map;
+}
+var DASH_CASE_REGEXP = /-+([a-z0-9])/g;
+/**
+ * @param {?} input
+ * @return {?}
+ */
+function dashCaseToCamelCase(input) {
+    return input.replace(DASH_CASE_REGEXP, function () {
+        var m = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            m[_i] = arguments[_i];
+        }
+        return m[1].toUpperCase();
+    });
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var DEFAULT_STATE_VALUE = 'void';
+var DEFAULT_STATE_STYLES = '*';
+var NoopAnimationEngine = (function (_super) {
+    __extends(NoopAnimationEngine, _super);
+    function NoopAnimationEngine() {
+        var _this = _super.apply(this, arguments) || this;
+        _this._listeners = new Map();
+        _this._changes = [];
+        _this._flaggedRemovals = new Set();
+        _this._onDoneFns = [];
+        _this._triggerStyles = Object.create(null);
+        return _this;
+    }
+    /**
+     * @param {?} trigger
+     * @param {?=} name
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.registerTrigger = function (trigger, name) {
+        name = name || trigger.name;
+        if (this._triggerStyles[name]) {
+            return;
+        }
+        var /** @type {?} */ stateMap = {};
+        trigger.definitions.forEach(function (def) {
+            if (def.type === 0 /* State */) {
+                var /** @type {?} */ stateDef = (def);
+                stateMap[stateDef.name] = normalizeStyles(stateDef.styles.styles);
+            }
+        });
+        this._triggerStyles[name] = stateMap;
+    };
+    /**
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.onInsert = function (element, domFn) { domFn(); };
+    /**
+     * @param {?} element
+     * @param {?} domFn
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.onRemove = function (element, domFn) {
+        domFn();
+        if (element['nodeType'] == 1) {
+            this._flaggedRemovals.add(element);
+        }
+    };
+    /**
+     * @param {?} element
+     * @param {?} property
+     * @param {?} value
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.setProperty = function (element, property, value) {
+        var /** @type {?} */ storageProp = makeStorageProp(property);
+        var /** @type {?} */ oldValue = element[storageProp] || DEFAULT_STATE_VALUE;
+        this._changes.push(/** @type {?} */ ({ element: element, oldValue: oldValue, newValue: value, triggerName: property }));
+        var /** @type {?} */ triggerStateStyles = this._triggerStyles[property] || {};
+        var /** @type {?} */ fromStateStyles = triggerStateStyles[oldValue] || triggerStateStyles[DEFAULT_STATE_STYLES];
+        if (fromStateStyles) {
+            eraseStyles(element, fromStateStyles);
+        }
+        element[storageProp] = value;
+        this._onDoneFns.push(function () {
+            var /** @type {?} */ toStateStyles = triggerStateStyles[value] || triggerStateStyles[DEFAULT_STATE_STYLES];
+            if (toStateStyles) {
+                setStyles(element, toStateStyles);
+            }
+        });
+    };
+    /**
+     * @param {?} element
+     * @param {?} eventName
+     * @param {?} eventPhase
+     * @param {?} callback
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.listen = function (element, eventName, eventPhase, callback) {
+        var /** @type {?} */ listeners = this._listeners.get(element);
+        if (!listeners) {
+            this._listeners.set(element, listeners = []);
+        }
+        var /** @type {?} */ tuple = ({ triggerName: eventName, eventPhase: eventPhase, callback: callback });
+        listeners.push(tuple);
+        return function () { return tuple.doRemove = true; };
+    };
+    /**
+     * @return {?}
+     */
+    NoopAnimationEngine.prototype.flush = function () {
+        var _this = this;
+        var /** @type {?} */ onStartCallbacks = [];
+        var /** @type {?} */ onDoneCallbacks = [];
+        /**
+         * @param {?} listener
+         * @param {?} data
+         * @return {?}
+         */
+        function handleListener(listener, data) {
+            var /** @type {?} */ phase = listener.eventPhase;
+            var /** @type {?} */ event = makeAnimationEvent$1(data.element, data.triggerName, data.oldValue, data.newValue, phase, 0);
+            if (phase == 'start') {
+                onStartCallbacks.push(function () { return listener.callback(event); });
+            }
+            else if (phase == 'done') {
+                onDoneCallbacks.push(function () { return listener.callback(event); });
+            }
+        }
+        this._changes.forEach(function (change) {
+            var /** @type {?} */ element = change.element;
+            var /** @type {?} */ listeners = _this._listeners.get(element);
+            if (listeners) {
+                listeners.forEach(function (listener) {
+                    if (listener.triggerName == change.triggerName) {
+                        handleListener(listener, change);
+                    }
+                });
+            }
+        });
+        // upon removal ALL the animation triggers need to get fired
+        this._flaggedRemovals.forEach(function (element) {
+            var /** @type {?} */ listeners = _this._listeners.get(element);
+            if (listeners) {
+                listeners.forEach(function (listener) {
+                    var /** @type {?} */ triggerName = listener.triggerName;
+                    var /** @type {?} */ storageProp = makeStorageProp(triggerName);
+                    handleListener(listener, /** @type {?} */ ({
+                        element: element,
+                        triggerName: triggerName,
+                        oldValue: element[storageProp] || DEFAULT_STATE_VALUE,
+                        newValue: DEFAULT_STATE_VALUE
+                    }));
+                });
+            }
+        });
+        // remove all the listeners after everything is complete
+        Array.from(this._listeners.keys()).forEach(function (element) {
+            var /** @type {?} */ listenersToKeep = ((_this._listeners.get(element))).filter(function (l) { return !l.doRemove; });
+            if (listenersToKeep.length) {
+                _this._listeners.set(element, listenersToKeep);
+            }
+            else {
+                _this._listeners.delete(element);
+            }
+        });
+        onStartCallbacks.forEach(function (fn) { return fn(); });
+        onDoneCallbacks.forEach(function (fn) { return fn(); });
+        this._flaggedRemovals.clear();
+        this._changes = [];
+        this._onDoneFns.forEach(function (doneFn) { return doneFn(); });
+        this._onDoneFns = [];
+    };
+    Object.defineProperty(NoopAnimationEngine.prototype, "activePlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () { return []; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NoopAnimationEngine.prototype, "queuedPlayers", {
+        /**
+         * @return {?}
+         */
+        get: function () { return []; },
+        enumerable: true,
+        configurable: true
+    });
+    return NoopAnimationEngine;
+}(AnimationEngine));
+/**
+ * @param {?} element
+ * @param {?} triggerName
+ * @param {?} fromState
+ * @param {?} toState
+ * @param {?} phaseName
+ * @param {?} totalTime
+ * @return {?}
+ */
+function makeAnimationEvent$1(element, triggerName, fromState, toState, phaseName, totalTime) {
+    return ({ element: element, triggerName: triggerName, fromState: fromState, toState: toState, phaseName: phaseName, totalTime: totalTime });
+}
+/**
+ * @param {?} property
+ * @return {?}
+ */
+function makeStorageProp(property) {
+    return '_@_' + property;
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var WebAnimationsPlayer = (function () {
+    /**
+     * @param {?} element
+     * @param {?} keyframes
+     * @param {?} options
+     * @param {?=} previousPlayers
+     */
+    function WebAnimationsPlayer(element, keyframes, options, previousPlayers) {
+        if (previousPlayers === void 0) { previousPlayers = []; }
+        var _this = this;
+        this.element = element;
+        this.keyframes = keyframes;
+        this.options = options;
+        this._onDoneFns = [];
+        this._onStartFns = [];
+        this._onDestroyFns = [];
+        this._initialized = false;
+        this._finished = false;
+        this._started = false;
+        this._destroyed = false;
+        this.time = 0;
+        this.parentPlayer = null;
+        this._duration = options['duration'];
+        this._delay = options['delay'] || 0;
+        this.time = this._duration + this._delay;
+        this.previousStyles = {};
+        previousPlayers.forEach(function (player) {
+            var styles = player._captureStyles();
+            Object.keys(styles).forEach(function (prop) { return _this.previousStyles[prop] = styles[prop]; });
+        });
+    }
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype._onFinish = function () {
+        if (!this._finished) {
+            this._finished = true;
+            this._onDoneFns.forEach(function (fn) { return fn(); });
+            this._onDoneFns = [];
+        }
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.init = function () {
+        var _this = this;
+        if (this._initialized)
+            return;
+        this._initialized = true;
+        var /** @type {?} */ keyframes = this.keyframes.map(function (styles) {
+            var /** @type {?} */ formattedKeyframe = {};
+            Object.keys(styles).forEach(function (prop, index) {
+                var /** @type {?} */ value = styles[prop];
+                if (value == __WEBPACK_IMPORTED_MODULE_0__angular_animations__["AUTO_STYLE"]) {
+                    value = _computeStyle(_this.element, prop);
+                }
+                if (value != undefined) {
+                    formattedKeyframe[prop] = value;
+                }
+            });
+            return formattedKeyframe;
+        });
+        var /** @type {?} */ previousStyleProps = Object.keys(this.previousStyles);
+        if (previousStyleProps.length) {
+            var /** @type {?} */ startingKeyframe_1 = keyframes[0];
+            var /** @type {?} */ missingStyleProps_1 = [];
+            previousStyleProps.forEach(function (prop) {
+                if (!startingKeyframe_1.hasOwnProperty(prop)) {
+                    missingStyleProps_1.push(prop);
+                }
+                startingKeyframe_1[prop] = _this.previousStyles[prop];
+            });
+            if (missingStyleProps_1.length) {
+                var /** @type {?} */ self_1 = this;
+                var _loop_3 = function () {
+                    var /** @type {?} */ kf = keyframes[i];
+                    missingStyleProps_1.forEach(function (prop) {
+                        kf[prop] = _computeStyle(self_1.element, prop);
+                    });
+                };
+                // tslint:disable-next-line
+                for (var /** @type {?} */ i = 1; i < keyframes.length; i++) {
+                    _loop_3();
+                }
+            }
+        }
+        this._player = this._triggerWebAnimation(this.element, keyframes, this.options);
+        this._finalKeyframe =
+            keyframes.length ? _copyKeyframeStyles(keyframes[keyframes.length - 1]) : {};
+        // this is required so that the player doesn't start to animate right away
+        this._resetDomPlayerState();
+        this._player.addEventListener('finish', function () { return _this._onFinish(); });
+    };
+    /**
+     * \@internal
+     * @param {?} element
+     * @param {?} keyframes
+     * @param {?} options
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype._triggerWebAnimation = function (element, keyframes, options) {
+        // jscompiler doesn't seem to know animate is a native property because it's not fully
+        // supported yet across common browsers (we polyfill it for Edge/Safari) [CL #143630929]
+        return (element['animate'](keyframes, options));
+    };
+    Object.defineProperty(WebAnimationsPlayer.prototype, "domPlayer", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this._player; },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.onStart = function (fn) { this._onStartFns.push(fn); };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.onDone = function (fn) { this._onDoneFns.push(fn); };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.onDestroy = function (fn) { this._onDestroyFns.push(fn); };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.play = function () {
+        this.init();
+        if (!this.hasStarted()) {
+            this._onStartFns.forEach(function (fn) { return fn(); });
+            this._onStartFns = [];
+            this._started = true;
+        }
+        this._player.play();
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.pause = function () {
+        this.init();
+        this._player.pause();
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.finish = function () {
+        this.init();
+        this._onFinish();
+        this._player.finish();
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.reset = function () {
+        this._resetDomPlayerState();
+        this._destroyed = false;
+        this._finished = false;
+        this._started = false;
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype._resetDomPlayerState = function () {
+        if (this._player) {
+            this._player.cancel();
+        }
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.restart = function () {
+        this.reset();
+        this.play();
+    };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.hasStarted = function () { return this._started; };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.destroy = function () {
+        if (!this._destroyed) {
+            this._resetDomPlayerState();
+            this._onFinish();
+            this._destroyed = true;
+            this._onDestroyFns.forEach(function (fn) { return fn(); });
+            this._onDestroyFns = [];
+        }
+    };
+    /**
+     * @param {?} p
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.setPosition = function (p) { this._player.currentTime = p * this.time; };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype.getPosition = function () { return this._player.currentTime / this.time; };
+    /**
+     * @return {?}
+     */
+    WebAnimationsPlayer.prototype._captureStyles = function () {
+        var _this = this;
+        var /** @type {?} */ styles = {};
+        if (this.hasStarted()) {
+            Object.keys(this._finalKeyframe).forEach(function (prop) {
+                if (prop != 'offset') {
+                    styles[prop] =
+                        _this._finished ? _this._finalKeyframe[prop] : _computeStyle(_this.element, prop);
+                }
+            });
+        }
+        return styles;
+    };
+    return WebAnimationsPlayer;
+}());
+/**
+ * @param {?} element
+ * @param {?} prop
+ * @return {?}
+ */
+function _computeStyle(element, prop) {
+    return ((window.getComputedStyle(element)))[prop];
+}
+/**
+ * @param {?} styles
+ * @return {?}
+ */
+function _copyKeyframeStyles(styles) {
+    var /** @type {?} */ newStyles = {};
+    Object.keys(styles).forEach(function (prop) {
+        if (prop != 'offset') {
+            newStyles[prop] = styles[prop];
+        }
+    });
+    return newStyles;
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var WebAnimationsDriver = (function () {
+    function WebAnimationsDriver() {
+    }
+    /**
+     * @param {?} element
+     * @param {?} keyframes
+     * @param {?} duration
+     * @param {?} delay
+     * @param {?} easing
+     * @param {?=} previousPlayers
+     * @return {?}
+     */
+    WebAnimationsDriver.prototype.animate = function (element, keyframes, duration, delay, easing, previousPlayers) {
+        if (previousPlayers === void 0) { previousPlayers = []; }
+        var /** @type {?} */ playerOptions = { 'duration': duration, 'delay': delay, 'fill': 'forwards' };
+        // we check for this to avoid having a null|undefined value be present
+        // for the easing (which results in an error for certain browsers #9752)
+        if (easing) {
+            playerOptions['easing'] = easing;
+        }
+        var /** @type {?} */ previousWebAnimationPlayers = (previousPlayers.filter(function (player) { return player instanceof WebAnimationsPlayer; }));
+        return new WebAnimationsPlayer(element, keyframes, playerOptions, previousWebAnimationPlayers);
+    };
+    return WebAnimationsDriver;
+}());
+/**
+ * @return {?}
+ */
+function supportsWebAnimations() {
+    return typeof Element !== 'undefined' && typeof ((Element)).prototype['animate'] === 'function';
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all animation APIs of the animation browser package.
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the animation package.
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+//# sourceMappingURL=browser.es5.js.map
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__ = __webpack_require__(71);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserAnimationsModule", function() { return BrowserAnimationsModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoopAnimationsModule", function() { return NoopAnimationsModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵAnimationRenderer", function() { return AnimationRenderer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵAnimationRendererFactory", function() { return AnimationRendererFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵe", function() { return BROWSER_ANIMATIONS_PROVIDERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵf", function() { return BROWSER_NOOP_ANIMATIONS_PROVIDERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return InjectableAnimationEngine; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return instantiateDefaultStyleNormalizer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return instantiateRendererFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return instantiateSupportedAnimationDriver; });
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+/**
+ * @license Angular v4.1.0
+ * (c) 2010-2017 Google, Inc. https://angular.io/
+ * License: MIT
+ */
+
+
+
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var AnimationRendererFactory = (function () {
+    /**
+     * @param {?} delegate
+     * @param {?} _engine
+     * @param {?} _zone
+     */
+    function AnimationRendererFactory(delegate, _engine, _zone) {
+        this.delegate = delegate;
+        this._engine = _engine;
+        this._zone = _zone;
+    }
+    /**
+     * @param {?} hostElement
+     * @param {?} type
+     * @return {?}
+     */
+    AnimationRendererFactory.prototype.createRenderer = function (hostElement, type) {
+        var _this = this;
+        var /** @type {?} */ delegate = this.delegate.createRenderer(hostElement, type);
+        if (!hostElement || !type || !type.data || !type.data['animation'])
+            return delegate;
+        var /** @type {?} */ namespaceId = type.id;
+        var /** @type {?} */ animationTriggers = (type.data['animation']);
+        animationTriggers.forEach(function (trigger) { return _this._engine.registerTrigger(trigger, namespaceify(namespaceId, trigger.name)); });
+        return new AnimationRenderer(delegate, this._engine, this._zone, namespaceId);
+    };
+    return AnimationRendererFactory;
+}());
+AnimationRendererFactory.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+AnimationRendererFactory.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["RendererFactory2"], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
+]; };
+var AnimationRenderer = (function () {
+    /**
+     * @param {?} delegate
+     * @param {?} _engine
+     * @param {?} _zone
+     * @param {?} _namespaceId
+     */
+    function AnimationRenderer(delegate, _engine, _zone, _namespaceId) {
+        this.delegate = delegate;
+        this._engine = _engine;
+        this._zone = _zone;
+        this._namespaceId = _namespaceId;
+        this.destroyNode = null;
+        this._flushPromise = null;
+        this.destroyNode = this.delegate.destroyNode ? function (n) { return delegate.destroyNode(n); } : null;
+    }
+    Object.defineProperty(AnimationRenderer.prototype, "data", {
+        /**
+         * @return {?}
+         */
+        get: function () { return this.delegate.data; },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * @return {?}
+     */
+    AnimationRenderer.prototype.destroy = function () { this.delegate.destroy(); };
+    /**
+     * @param {?} name
+     * @param {?=} namespace
+     * @return {?}
+     */
+    AnimationRenderer.prototype.createElement = function (name, namespace) {
+        return this.delegate.createElement(name, namespace);
+    };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationRenderer.prototype.createComment = function (value) { return this.delegate.createComment(value); };
+    /**
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationRenderer.prototype.createText = function (value) { return this.delegate.createText(value); };
+    /**
+     * @param {?} selectorOrNode
+     * @return {?}
+     */
+    AnimationRenderer.prototype.selectRootElement = function (selectorOrNode) {
+        return this.delegate.selectRootElement(selectorOrNode);
+    };
+    /**
+     * @param {?} node
+     * @return {?}
+     */
+    AnimationRenderer.prototype.parentNode = function (node) { return this.delegate.parentNode(node); };
+    /**
+     * @param {?} node
+     * @return {?}
+     */
+    AnimationRenderer.prototype.nextSibling = function (node) { return this.delegate.nextSibling(node); };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @param {?} value
+     * @param {?=} namespace
+     * @return {?}
+     */
+    AnimationRenderer.prototype.setAttribute = function (el, name, value, namespace) {
+        this.delegate.setAttribute(el, name, value, namespace);
+    };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @param {?=} namespace
+     * @return {?}
+     */
+    AnimationRenderer.prototype.removeAttribute = function (el, name, namespace) {
+        this.delegate.removeAttribute(el, name, namespace);
+    };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @return {?}
+     */
+    AnimationRenderer.prototype.addClass = function (el, name) { this.delegate.addClass(el, name); };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @return {?}
+     */
+    AnimationRenderer.prototype.removeClass = function (el, name) { this.delegate.removeClass(el, name); };
+    /**
+     * @param {?} el
+     * @param {?} style
+     * @param {?} value
+     * @param {?} flags
+     * @return {?}
+     */
+    AnimationRenderer.prototype.setStyle = function (el, style, value, flags) {
+        this.delegate.setStyle(el, style, value, flags);
+    };
+    /**
+     * @param {?} el
+     * @param {?} style
+     * @param {?} flags
+     * @return {?}
+     */
+    AnimationRenderer.prototype.removeStyle = function (el, style, flags) {
+        this.delegate.removeStyle(el, style, flags);
+    };
+    /**
+     * @param {?} node
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationRenderer.prototype.setValue = function (node, value) { this.delegate.setValue(node, value); };
+    /**
+     * @param {?} parent
+     * @param {?} newChild
+     * @return {?}
+     */
+    AnimationRenderer.prototype.appendChild = function (parent, newChild) {
+        var _this = this;
+        this._engine.onInsert(newChild, function () { return _this.delegate.appendChild(parent, newChild); });
+        this._queueFlush();
+    };
+    /**
+     * @param {?} parent
+     * @param {?} newChild
+     * @param {?} refChild
+     * @return {?}
+     */
+    AnimationRenderer.prototype.insertBefore = function (parent, newChild, refChild) {
+        var _this = this;
+        this._engine.onInsert(newChild, function () { return _this.delegate.insertBefore(parent, newChild, refChild); });
+        this._queueFlush();
+    };
+    /**
+     * @param {?} parent
+     * @param {?} oldChild
+     * @return {?}
+     */
+    AnimationRenderer.prototype.removeChild = function (parent, oldChild) {
+        var _this = this;
+        this._engine.onRemove(oldChild, function () {
+            // Note: if an component element has a leave animation, and the component
+            // a host leave animation, the view engine will call `removeChild` for the parent
+            // component renderer as well as for the child component renderer.
+            // Therefore, we need to check if we already removed the element.
+            if (_this.delegate.parentNode(oldChild)) {
+                _this.delegate.removeChild(parent, oldChild);
+            }
+        });
+        this._queueFlush();
+    };
+    /**
+     * @param {?} el
+     * @param {?} name
+     * @param {?} value
+     * @return {?}
+     */
+    AnimationRenderer.prototype.setProperty = function (el, name, value) {
+        if (name.charAt(0) == '@') {
+            this._engine.setProperty(el, namespaceify(this._namespaceId, name.substr(1)), value);
+            this._queueFlush();
+        }
+        else {
+            this.delegate.setProperty(el, name, value);
+        }
+    };
+    /**
+     * @param {?} target
+     * @param {?} eventName
+     * @param {?} callback
+     * @return {?}
+     */
+    AnimationRenderer.prototype.listen = function (target, eventName, callback) {
+        var _this = this;
+        if (eventName.charAt(0) == '@') {
+            var /** @type {?} */ element = resolveElementFromTarget(target);
+            var _a = parseTriggerCallbackName(eventName.substr(1)), name = _a[0], phase = _a[1];
+            return this._engine.listen(element, namespaceify(this._namespaceId, name), phase, function (event) {
+                var /** @type {?} */ e = (event);
+                if (e.triggerName) {
+                    e.triggerName = deNamespaceify(_this._namespaceId, e.triggerName);
+                }
+                _this._zone.run(function () { return callback(event); });
+            });
+        }
+        return this.delegate.listen(target, eventName, callback);
+    };
+    /**
+     * @return {?}
+     */
+    AnimationRenderer.prototype._queueFlush = function () {
+        var _this = this;
+        if (!this._flushPromise) {
+            this._zone.runOutsideAngular(function () {
+                _this._flushPromise = Promise.resolve(null).then(function () {
+                    _this._flushPromise = ((null));
+                    _this._engine.flush();
+                });
+            });
+        }
+    };
+    return AnimationRenderer;
+}());
+/**
+ * @param {?} target
+ * @return {?}
+ */
+function resolveElementFromTarget(target) {
+    switch (target) {
+        case 'body':
+            return document.body;
+        case 'document':
+            return document;
+        case 'window':
+            return window;
+        default:
+            return target;
+    }
+}
+/**
+ * @param {?} triggerName
+ * @return {?}
+ */
+function parseTriggerCallbackName(triggerName) {
+    var /** @type {?} */ dotIndex = triggerName.indexOf('.');
+    var /** @type {?} */ trigger = triggerName.substring(0, dotIndex);
+    var /** @type {?} */ phase = triggerName.substr(dotIndex + 1);
+    return [trigger, phase];
+}
+/**
+ * @param {?} namespaceId
+ * @param {?} value
+ * @return {?}
+ */
+function namespaceify(namespaceId, value) {
+    return namespaceId + "#" + value;
+}
+/**
+ * @param {?} namespaceId
+ * @param {?} value
+ * @return {?}
+ */
+function deNamespaceify(namespaceId, value) {
+    return value.replace(namespaceId + '#', '');
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var InjectableAnimationEngine = (function (_super) {
+    __extends(InjectableAnimationEngine, _super);
+    /**
+     * @param {?} driver
+     * @param {?} normalizer
+     */
+    function InjectableAnimationEngine(driver, normalizer) {
+        return _super.call(this, driver, normalizer) || this;
+    }
+    return InjectableAnimationEngine;
+}(__WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["b" /* ɵDomAnimationEngine */]));
+InjectableAnimationEngine.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+InjectableAnimationEngine.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["c" /* AnimationDriver */], },
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["d" /* ɵAnimationStyleNormalizer */], },
+]; };
+/**
+ * @return {?}
+ */
+function instantiateSupportedAnimationDriver() {
+    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["e" /* ɵsupportsWebAnimations */])()) {
+        return new __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["f" /* ɵWebAnimationsDriver */]();
+    }
+    return new __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["g" /* ɵNoopAnimationDriver */]();
+}
+/**
+ * @return {?}
+ */
+function instantiateDefaultStyleNormalizer() {
+    return new __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["h" /* ɵWebAnimationsStyleNormalizer */]();
+}
+/**
+ * @param {?} renderer
+ * @param {?} engine
+ * @param {?} zone
+ * @return {?}
+ */
+function instantiateRendererFactory(renderer, engine, zone) {
+    return new AnimationRendererFactory(renderer, engine, zone);
+}
+/**
+ * Separate providers from the actual module so that we can do a local modification in Google3 to
+ * include them in the BrowserModule.
+ */
+var BROWSER_ANIMATIONS_PROVIDERS = [
+    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["c" /* AnimationDriver */], useFactory: instantiateSupportedAnimationDriver },
+    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["d" /* ɵAnimationStyleNormalizer */], useFactory: instantiateDefaultStyleNormalizer },
+    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], useClass: InjectableAnimationEngine }, {
+        provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["RendererFactory2"],
+        useFactory: instantiateRendererFactory,
+        deps: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["ɵDomRendererFactory2"], __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]]
+    }
+];
+/**
+ * Separate providers from the actual module so that we can do a local modification in Google3 to
+ * include them in the BrowserTestingModule.
+ */
+var BROWSER_NOOP_ANIMATIONS_PROVIDERS = [
+    { provide: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], useClass: __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["i" /* ɵNoopAnimationEngine */] }, {
+        provide: __WEBPACK_IMPORTED_MODULE_0__angular_core__["RendererFactory2"],
+        useFactory: instantiateRendererFactory,
+        deps: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["ɵDomRendererFactory2"], __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__["a" /* ɵAnimationEngine */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]]
+    }
+];
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * \@experimental Animation support is experimental.
+ */
+var BrowserAnimationsModule = (function () {
+    function BrowserAnimationsModule() {
+    }
+    return BrowserAnimationsModule;
+}());
+BrowserAnimationsModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["BrowserModule"]],
+                providers: BROWSER_ANIMATIONS_PROVIDERS,
+            },] },
+];
+/**
+ * @nocollapse
+ */
+BrowserAnimationsModule.ctorParameters = function () { return []; };
+/**
+ * \@experimental Animation support is experimental.
+ */
+var NoopAnimationsModule = (function () {
+    function NoopAnimationsModule() {
+    }
+    return NoopAnimationsModule;
+}());
+NoopAnimationsModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["BrowserModule"]],
+                providers: BROWSER_NOOP_ANIMATIONS_PROVIDERS,
+            },] },
+];
+/**
+ * @nocollapse
+ */
+NoopAnimationsModule.ctorParameters = function () { return []; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all animation APIs of the animation browser package.
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the animation package.
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+//# sourceMappingURL=animations.es5.js.map
+
+
+/***/ }),
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7800,7 +10936,7 @@ ansiHTML.reset()
 
 
 /***/ }),
-/* 70 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7811,7 +10947,7 @@ module.exports = function () {
 
 
 /***/ }),
-/* 71 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7932,7 +11068,7 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 72 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7946,9 +11082,9 @@ function fromByteArray (uint8) {
 
 
 
-var base64 = __webpack_require__(71)
-var ieee754 = __webpack_require__(129)
-var isArray = __webpack_require__(130)
+var base64 = __webpack_require__(75)
+var ieee754 = __webpack_require__(130)
+var isArray = __webpack_require__(131)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -9726,10 +12862,10 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(61)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(63)))
 
 /***/ }),
-/* 73 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -9743,7 +12879,7 @@ exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS 
 
 
 /***/ }),
-/* 74 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -9757,7 +12893,7 @@ exports.push([module.i, "li {\r\n    font-size: large;\r\n}\r\n\r\ndiv.panel-hea
 
 
 /***/ }),
-/* 75 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(7)(undefined);
@@ -9771,62 +12907,6 @@ exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS 
 
 
 /***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.paragraphhead {\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.paragraphtext {\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\nagm-map {\r\n    height: 300px;\r\n}\r\n\r\n/*links*/\r\na {\r\n    color: rgba(41, 43, 41, 0.9);\r\n    text-decoration: underline;\r\n}\r\n\r\na:hover {\r\n    color: rgba(41, 43, 41, 0.5);\r\n    text-decoration: underline;\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 78 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.paragraphhead {\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\n/*links*/\r\na {\r\n    color: rgba(41, 43, 41, 0.9);\r\n    text-decoration: underline;\r\n}\r\n\r\na:hover {\r\n    color: rgba(41, 43, 41, 0.5);\r\n    text-decoration: underline;\r\n}", ""]);
-
-// exports
-
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "/*text styles*/\r\n.text{\r\n    font-family: 'TEMPUS SANS ITC';\r\n}\r\n\r\n.whitetext{\r\n    color: #FFFFFF;\r\n}\r\n\r\n.arcticleheading {\r\n    font-size: 6vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.arcticletext {\r\n    font-size: 4vmin;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n/*styles*/\r\n.tatooback{   \r\n    font-weight: bold;\r\n    font-size: 12vmin;  \r\n}\r\n\r\n.margin2{\r\n    margin-left: 5%;\r\n    margin-right: 5%;\r\n}\r\n\r\n.margin1 {\r\n    margin-left: 3%;\r\n}\r\n\r\n.tatooarticle{\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n    width: 100%;\r\n    font-weight: bold;\r\n}\r\n\r\n.circles{\r\n  align-self: center;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-around;\r\n  margin:2%;\r\n}\r\n\r\n.examplesofwork{\r\n    width: 25%;\r\n    height: 25%; \r\n    border-radius: 50%; \r\n}\r\n\r\n/*links*/\r\na {color: rgba(41, 43, 41, 0.9); text-decoration: underline; }\r\na:hover {color: rgba(41, 43, 41, 0.5); text-decoration: underline; }", ""]);
-
-// exports
-
-
-/***/ }),
 /* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9835,7 +12915,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\r\n.bolder{\r\n    font-weight: bold;\r\n}\r\n\r\n/*styles*/\r\n.tatoobutton{\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    color: #FFFFFF;\r\n}\r\n\r\n.tatoobutton:hover{\r\n    background-color: #464451 !important;\r\n    border-color: #D5D5D5 !important;\r\n    color: #FFFFFF !important;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatootable{\r\n    color: #000000;\r\n}\r\n\r\n#tatoodiv {\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n    color: #000000 !important;\r\n    margin: 1%;\r\n}\r\n\r\n/*stars*/\r\n.star {\r\n    position: relative;\r\n    display: inline-block;\r\n    font-size: 2rem;\r\n    color: white;\r\n    border-color: black;\r\n}\r\n\r\n.full {\r\n    color: black;\r\n}\r\n\r\n.half {\r\n    position: absolute;\r\n    display: inline-block;\r\n    overflow: hidden;\r\n    color: black;\r\n}", ""]);
+exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}", ""]);
 
 // exports
 
@@ -9849,7 +12929,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}", ""]);
+exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.paragraphhead {\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.paragraphtext {\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\nagm-map {\r\n    height: 300px;\r\n}\r\n\r\n/*links*/\r\na {\r\n    color: rgba(41, 43, 41, 0.9);\r\n    text-decoration: underline;\r\n}\r\n\r\na:hover {\r\n    color: rgba(41, 43, 41, 0.5);\r\n    text-decoration: underline;\r\n}", ""]);
 
 // exports
 
@@ -9863,7 +12943,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.bolder {\r\n    font-weight: bold;\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    color: #FFFFFF;\r\n    float: right;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n    color: #FFFFFF;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatootable {\r\n    color: #000000;\r\n}\r\n\r\n.tatoodiv {\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n    color: #000000;\r\n    margin: 1%;\r\n}\r\n\r\n@media only screen and (min-width: 800px) {\r\n    .tatoodiv {\r\n        width: 40%;\r\n    }\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\n.tatoolable {\r\n    font-family: 'comic sans ms';\r\n    color: #000000;\r\n    min-width: 39%;\r\n    max-width: 39%;\r\n}\r\n\r\n.tatooinput {\r\n    font-family: 'comic sans ms';\r\n    color: #000000;\r\n    min-width: 58%;\r\n    max-width: 58%;\r\n    margin-right: 1%;\r\n}\r\n\r\n.marginbottom {\r\n    margin-bottom: 1%;\r\n}\r\n\r\n/*links*/\r\na {\r\n    color: rgba(41, 43, 41, 0.9);\r\n    text-decoration: underline;\r\n}\r\n\r\na:hover {\r\n    color: rgba(41, 43, 41, 0.5);\r\n    text-decoration: underline;\r\n}\r\n\r\na:visited {\r\n    color: rgba(41, 43, 41, 0.9) !important;\r\n    text-decoration: underline;\r\n}\r\n\r\n/*placeholders*/\r\n::-webkit-input-placeholder {\r\n    color: #808080;\r\n}\r\n\r\n::-moz-placeholder {\r\n    color: #808080;\r\n}\r\n/* Firefox 19+ */\r\n:-moz-placeholder {\r\n    color: #808080;\r\n}\r\n/* Firefox 18- */\r\n:-ms-input-placeholder {\r\n    color: #808080;\r\n}", ""]);
+exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.paragraphhead {\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\n/*links*/\r\na {\r\n    color: rgba(41, 43, 41, 0.9);\r\n    text-decoration: underline;\r\n}\r\n\r\na:hover {\r\n    color: rgba(41, 43, 41, 0.5);\r\n    text-decoration: underline;\r\n}", ""]);
 
 // exports
 
@@ -9877,7 +12957,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    float: right;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatoolable {\r\n    color: #000000;\r\n    min-width: 39%;\r\n    max-width: 39%;\r\n}\r\n\r\n.tatooinput {\r\n    color: #000000;\r\n    min-width: 58%;\r\n    max-width: 58%;\r\n    margin-right: 1%;\r\n}\r\n\r\n.marginbottom {\r\n    margin-bottom: 1%;\r\n}\r\n\r\n.tatoodiv {\r\n    width: 98%;\r\n    margin: 1%;\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n}\r\n\r\n@media only screen and (min-width: 800px) {\r\n    .tatoodiv {\r\n        width: 40%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "/*text styles*/\r\n.text{\r\n    font-family: 'TEMPUS SANS ITC';\r\n}\r\n\r\n.whitetext{\r\n    color: #FFFFFF;\r\n}\r\n\r\n.arcticleheading {\r\n    font-size: 6vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.arcticletext {\r\n    font-size: 4vmin;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n/*styles*/\r\n.tatooback{   \r\n    font-weight: bold;\r\n    font-size: 12vmin;  \r\n}\r\n\r\n.margin2{\r\n    margin-left: 5%;\r\n    margin-right: 5%;\r\n}\r\n\r\n.margin1 {\r\n    margin-left: 3%;\r\n}\r\n\r\n.tatooarticle{\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n    width: 100%;\r\n    font-weight: bold;\r\n}\r\n\r\n.circles{\r\n  align-self: center;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-around;\r\n  margin:2%;\r\n}\r\n\r\n.examplesofwork{\r\n    width: 25%;\r\n    height: 25%; \r\n    border-radius: 50%; \r\n}\r\n\r\n/*links*/\r\na {color: rgba(41, 43, 41, 0.9); text-decoration: underline; }\r\na:hover {color: rgba(41, 43, 41, 0.5); text-decoration: underline; }", ""]);
 
 // exports
 
@@ -9891,7 +12971,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    float: right;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatoolable {\r\n    color: #000000;\r\n    min-width: 39%;\r\n    max-width: 39%;\r\n}\r\n\r\n.tatooinput {\r\n    color: #000000;\r\n    min-width: 58%;\r\n    max-width: 58%;\r\n    margin-right: 1%;\r\n}\r\n\r\n.marginbottom{\r\n    margin-bottom: 1%;\r\n}\r\n\r\n.tatoodiv {\r\n    width: 98%;\r\n    margin: 1%;\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n}\r\n\r\n@media only screen and (min-width: 800px) {\r\n    .tatoodiv {\r\n        width: 40%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "/*text styles*/\r\n.bolder{\r\n    font-weight: bold;\r\n}\r\n\r\n/*styles*/\r\n.tatoobutton{\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    color: #FFFFFF;\r\n}\r\n\r\n.tatoobutton:hover{\r\n    background-color: #464451 !important;\r\n    border-color: #D5D5D5 !important;\r\n    color: #FFFFFF !important;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatootable{\r\n    color: #000000;\r\n}\r\n\r\n#tatoodiv {\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n    color: #000000 !important;\r\n    margin: 1%;\r\n}\r\n\r\n/*stars*/\r\n.star {\r\n    position: relative;\r\n    display: inline-block;\r\n    font-size: 2rem;\r\n    color: white;\r\n    border-color: black;\r\n}\r\n\r\n.full {\r\n    color: black;\r\n}\r\n\r\n.half {\r\n    position: absolute;\r\n    display: inline-block;\r\n    overflow: hidden;\r\n    color: black;\r\n}", ""]);
 
 // exports
 
@@ -9905,7 +12985,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*test styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    font-size: 4vmin;\r\n    text-shadow: #ffffff 0 0 4px;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.maintext {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    float: right;\r\n}\r\n\r\n.tatoobutton:hover {\r\n        background-color: #464451;\r\n        border-color: #D5D5D5;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\n.tatooarticle {\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n    width: 100%;\r\n}\r\n\r\n.tatoolable {\r\n    color: #000000;\r\n    min-width: 39%;\r\n    max-width: 39%;\r\n}\r\n\r\n.tatooinput {\r\n    color: #000000;\r\n    min-width: 58%;\r\n    max-width: 58%;\r\n    margin-right: 1%;\r\n}\r\n\r\n.marginbottom {\r\n    margin-bottom: 1%;\r\n}\r\n\r\n.tatoodiv {\r\n    width: 98%;\r\n    margin: 1%;\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n}\r\n\r\n@media only screen and (min-width: 800px) {\r\n    .tatoodiv {\r\n        width: 40%;\r\n    }\r\n}", ""]);
+exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}", ""]);
 
 // exports
 
@@ -9919,7 +12999,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    color: #FFFFFF;\r\n    float: right;\r\n    text-decoration: none;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n    color: #FFFFFF;\r\n    text-decoration: none;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatootable {\r\n    color: #000000;\r\n}\r\n\r\n.tatoodiv {\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n    color: #000000;\r\n    margin: 1%;\r\n}\r\n\r\n/*links*/\r\na {\r\n    color: #000000;\r\n    text-decoration: underline;\r\n}\r\n\r\na:hover {\r\n    color: rgba(41, 43, 41, 0.8);\r\n    text-decoration: underline;\r\n}\r\n\r\n/*stars*/\r\n.star {\r\n    position: relative;\r\n    display: inline-block;\r\n    font-size: 2rem;\r\n    color: white;\r\n    border-color: black;\r\n}\r\n\r\n.full {\r\n    color: black;\r\n}\r\n\r\n.half {\r\n    position: absolute;\r\n    display: inline-block;\r\n    overflow: hidden;\r\n    color: black;\r\n}", ""]);
+exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.bolder {\r\n    font-weight: bold;\r\n}\r\n\r\n/*styles*/\r\n.tatooarticle {\r\n    width: 100%;\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    color: #FFFFFF;\r\n    float: right;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n    color: #FFFFFF;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatootable {\r\n    color: #000000;\r\n}\r\n\r\n.tatoodiv {\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n    color: #000000;\r\n    margin: 1%;\r\n}\r\n\r\n@media only screen and (min-width: 800px) {\r\n    .tatoodiv {\r\n        width: 40%;\r\n    }\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\n.tatoolable {\r\n    font-family: 'comic sans ms';\r\n    color: #000000;\r\n    min-width: 39%;\r\n    max-width: 39%;\r\n}\r\n\r\n.tatooinput {\r\n    font-family: 'comic sans ms';\r\n    color: #000000;\r\n    min-width: 58%;\r\n    max-width: 58%;\r\n    margin-right: 1%;\r\n}\r\n\r\n.marginbottom {\r\n    margin-bottom: 1%;\r\n}\r\n\r\n/*links*/\r\na {\r\n    color: rgba(41, 43, 41, 0.9);\r\n    text-decoration: underline;\r\n}\r\n\r\na:hover {\r\n    color: rgba(41, 43, 41, 0.5);\r\n    text-decoration: underline;\r\n}\r\n\r\na:visited {\r\n    color: rgba(41, 43, 41, 0.9) !important;\r\n    text-decoration: underline;\r\n}\r\n\r\n/*placeholders*/\r\n::-webkit-input-placeholder {\r\n    color: #808080;\r\n}\r\n\r\n::-moz-placeholder {\r\n    color: #808080;\r\n}\r\n/* Firefox 19+ */\r\n:-moz-placeholder {\r\n    color: #808080;\r\n}\r\n/* Firefox 18- */\r\n:-ms-input-placeholder {\r\n    color: #808080;\r\n}", ""]);
 
 // exports
 
@@ -9933,7 +13013,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    color: #FFFFFF;\r\n    text-decoration: none;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n    color: #FFFFFF;\r\n    text-decoration: none;\r\n}", ""]);
+exports.push([module.i, "/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    float: right;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatoolable {\r\n    color: #000000;\r\n    min-width: 39%;\r\n    max-width: 39%;\r\n}\r\n\r\n.tatooinput {\r\n    color: #000000;\r\n    min-width: 58%;\r\n    max-width: 58%;\r\n    margin-right: 1%;\r\n}\r\n\r\n.marginbottom {\r\n    margin-bottom: 1%;\r\n}\r\n\r\n.tatoodiv {\r\n    width: 98%;\r\n    margin: 1%;\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n}\r\n\r\n@media only screen and (min-width: 800px) {\r\n    .tatoodiv {\r\n        width: 40%;\r\n    }\r\n}", ""]);
 
 // exports
 
@@ -9942,142 +13022,180 @@ exports.push([module.i, "/*styles*/\r\n.tatoobutton {\r\n    background-color: #
 /* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "ad7df5eaf1366bb0506c7e138adfc840.jpg";
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    float: right;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatoolable {\r\n    color: #000000;\r\n    min-width: 39%;\r\n    max-width: 39%;\r\n}\r\n\r\n.tatooinput {\r\n    color: #000000;\r\n    min-width: 58%;\r\n    max-width: 58%;\r\n    margin-right: 1%;\r\n}\r\n\r\n.marginbottom{\r\n    margin-bottom: 1%;\r\n}\r\n\r\n.tatoodiv {\r\n    width: 98%;\r\n    margin: 1%;\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n}\r\n\r\n@media only screen and (min-width: 800px) {\r\n    .tatoodiv {\r\n        width: 40%;\r\n    }\r\n}", ""]);
+
+// exports
+
 
 /***/ }),
 /* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "aec8fe3d27076bfe480b150efc8a9a59.jpg";
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*text styles*/\r\n.text {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.plaintext {\r\n    font-size: 4vmin;\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.paragraphhead {\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.paragraphtext {\r\n    color: rgba(41, 43, 41, 0.7);\r\n}\r\n\r\n.heading {\r\n    font-size: 7vmin;\r\n    color: rgba(41, 43, 41, 0.9);\r\n}\r\n\r\n.textfordescription {\r\n    font-family: 'TEMPUS SANS ITC';\r\n    font-weight: bold;\r\n    color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n.paragraphheaddescription {\r\n    color: rgba(255, 255, 255, 0.7);\r\n}\r\n\r\n.paragraphdescription {\r\n    color: rgba(255, 255, 255, 0.4);\r\n}\r\n\r\n/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n}\r\n\r\n.tatoobutton:hover {\r\n        background-color: #464451;\r\n        border-color: #D5D5D5;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.margin2 {\r\n    margin-left: 3%;\r\n    margin-right: 3%;\r\n}\r\n\r\n.tatooarticle {\r\n    background-color: rgba(255, 255, 255, 0.4);\r\n    width: 100%;\r\n}\r\n\r\n.tatoolable {\r\n    color: #000000;\r\n    min-width: 39%;\r\n    max-width: 39%;\r\n}\r\n\r\n.tatooinput {\r\n    color: #000000;\r\n    min-width: 56%;\r\n    max-width: 56%;\r\n    margin-right: 1%;\r\n}\r\n\r\n.marginbottom {\r\n    margin-bottom: 1%;\r\n}\r\n\r\n.tatoodiv {\r\n    width: 98%;\r\n    margin: 1%;\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n}\r\n\r\n@media only screen and (min-width: 800px) {\r\n    .tatoodiv {\r\n        width: 50%;\r\n    }\r\n\r\n    .tatooinput {\r\n        min-width: 59%;\r\n        max-width: 59%;\r\n    }\r\n}\r\n\r\n.descriptionback {\r\n    background-color: rgba(41, 43, 41, 0.7);\r\n    width: 100%;\r\n}\r\n\r\n.scretch{\r\n    cursor: pointer;\r\n}\r\n\r\n.formtext {\r\n    font-family: 'comic sans ms';\r\n    color: black;\r\n}\r\n\r\n.lowborder {\r\n    border-bottom-style: solid;\r\n    border-bottom-color: #000000;\r\n    border-left-width: 1px;\r\n}\r\n\r\n.inputfile {\r\n    width: 0.1px;\r\n    height: 0.1px;\r\n    opacity: 0;\r\n    overflow: hidden;\r\n    position: absolute;\r\n    z-index: -1;\r\n}", ""]);
+
+// exports
+
 
 /***/ }),
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "ae96ee403b301359c44e3c1f51a0f7c4.jpg";
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    color: #FFFFFF;\r\n    text-decoration: none;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n    color: #FFFFFF;\r\n    text-decoration: none;\r\n}\r\n\r\n#tatoopanel {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    border-color: #000000;\r\n    font-size: 3vmin;\r\n}\r\n\r\n.tatootable {\r\n    color: #000000;\r\n}\r\n\r\n.tatoodiv {\r\n    border-color: #000000;\r\n    font-family: 'comic sans ms';\r\n    color: #000000;\r\n    margin: 1%;\r\n}\r\n\r\n/*links*/\r\na {\r\n    color: #000000;\r\n    text-decoration: underline;\r\n}\r\n\r\na:hover {\r\n    color: rgba(41, 43, 41, 0.8);\r\n    text-decoration: underline;\r\n}\r\n\r\n/*stars*/\r\n.star {\r\n    position: relative;\r\n    display: inline-block;\r\n    font-size: 2rem;\r\n    color: white;\r\n    border-color: black;\r\n}\r\n\r\n.full {\r\n    color: black;\r\n}\r\n\r\n.half {\r\n    position: absolute;\r\n    display: inline-block;\r\n    overflow: hidden;\r\n    color: black;\r\n}\r\n\r\n@media only screen and (min-width: 800px) {\r\n    .remove-row {\r\n        padding-right: 0%;\r\n    }\r\n}\r\n\r\n.flexer {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-end;\r\n}", ""]);
+
+// exports
+
 
 /***/ }),
 /* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "2192e7ff89fd8bc18355edae312b34fd.jpg";
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*styles*/\r\n.tatoobutton {\r\n    background-color: #000000;\r\n    border-color: #FFFFFF;\r\n    color: #FFFFFF;\r\n    text-decoration: none;\r\n}\r\n\r\n.tatoobutton:hover {\r\n    background-color: #464451;\r\n    border-color: #D5D5D5;\r\n    color: #FFFFFF;\r\n    text-decoration: none;\r\n}", ""]);
+
+// exports
+
 
 /***/ }),
 /* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "f9e059cc1458a5b75b123e38e2978b07.jpg";
+module.exports = __webpack_require__.p + "ad7df5eaf1366bb0506c7e138adfc840.jpg";
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "160658c4fbfe2e3df300c4a8a438cb1b.jpg";
+module.exports = __webpack_require__.p + "aec8fe3d27076bfe480b150efc8a9a59.jpg";
 
 /***/ }),
 /* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "176bbf4713b59f05c5ab272b9c73eef2.jpg";
+module.exports = __webpack_require__.p + "ae96ee403b301359c44e3c1f51a0f7c4.jpg";
 
 /***/ }),
 /* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "91f7078c9b239f4f6192467df07cab90.jpg";
+module.exports = __webpack_require__.p + "2192e7ff89fd8bc18355edae312b34fd.jpg";
 
 /***/ }),
 /* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "94ca305e6edb85007dacfe900b5ff4c4.jpg";
+module.exports = __webpack_require__.p + "f9e059cc1458a5b75b123e38e2978b07.jpg";
 
 /***/ }),
 /* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "c7febc266698ef500a7a949aa48f51d0.jpg";
+module.exports = __webpack_require__.p + "160658c4fbfe2e3df300c4a8a438cb1b.jpg";
 
 /***/ }),
 /* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "3adaca6a649df6522b11be6d03b8d80b.jpg";
+module.exports = __webpack_require__.p + "176bbf4713b59f05c5ab272b9c73eef2.jpg";
 
 /***/ }),
 /* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "ac1f72d741dfee22d68bc9d4c47a7c93.jpg";
+module.exports = __webpack_require__.p + "91f7078c9b239f4f6192467df07cab90.jpg";
 
 /***/ }),
 /* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "93ad8489895d992e6dbf4e3f824d6171.jpg";
+module.exports = __webpack_require__.p + "94ca305e6edb85007dacfe900b5ff4c4.jpg";
 
 /***/ }),
 /* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "79f9fc41a9ae597d2d7de37276a249b1.png";
+module.exports = __webpack_require__.p + "c7febc266698ef500a7a949aa48f51d0.jpg";
 
 /***/ }),
 /* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "92633415125abb91103d2c6243d41ba1.png";
+module.exports = __webpack_require__.p + "3adaca6a649df6522b11be6d03b8d80b.jpg";
 
 /***/ }),
 /* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "dc29b0114d182e08147ffa25617ae933.png";
+module.exports = __webpack_require__.p + "ac1f72d741dfee22d68bc9d4c47a7c93.jpg";
 
 /***/ }),
 /* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "2991b5a00b30526bab264b1153277602.jpg";
+module.exports = __webpack_require__.p + "93ad8489895d992e6dbf4e3f824d6171.jpg";
 
 /***/ }),
 /* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "c910b97a7b177419f57f4d3cd1180651.jpg";
+module.exports = __webpack_require__.p + "79f9fc41a9ae597d2d7de37276a249b1.png";
 
 /***/ }),
 /* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "b373ef6d95b31ea31b838f1c7dd2ee92.jpg";
+module.exports = __webpack_require__.p + "92633415125abb91103d2c6243d41ba1.png";
 
 /***/ }),
 /* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "2700e1f4a531373e8e4cf64106110116.jpg";
+module.exports = __webpack_require__.p + "dc29b0114d182e08147ffa25617ae933.png";
 
 /***/ }),
 /* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "28648c58ee5ad332db07d3552bef939f.jpg";
+module.exports = __webpack_require__.p + "2991b5a00b30526bab264b1153277602.jpg";
 
 /***/ }),
 /* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "256003beed7be13f573dc1424fd53fd1.jpg";
+module.exports = __webpack_require__.p + "c910b97a7b177419f57f4d3cd1180651.jpg";
 
 /***/ }),
 /* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "b373ef6d95b31ea31b838f1c7dd2ee92.jpg";
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
-var localstorage_1 = __webpack_require__(46);
-var sessionstorage_1 = __webpack_require__(47);
+var localstorage_1 = __webpack_require__(51);
+var sessionstorage_1 = __webpack_require__(52);
 function StorageProperty() {
     var params = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -10147,19 +13265,19 @@ exports.StorageProperty = StorageProperty;
 
 
 /***/ }),
-/* 111 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
-  XmlEntities: __webpack_require__(113),
-  Html4Entities: __webpack_require__(112),
-  Html5Entities: __webpack_require__(48),
-  AllHtmlEntities: __webpack_require__(48)
+  XmlEntities: __webpack_require__(114),
+  Html4Entities: __webpack_require__(113),
+  Html5Entities: __webpack_require__(53),
+  AllHtmlEntities: __webpack_require__(53)
 };
 
 
 /***/ }),
-/* 112 */
+/* 113 */
 /***/ (function(module, exports) {
 
 var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
@@ -10312,7 +13430,7 @@ module.exports = Html4Entities;
 
 
 /***/ }),
-/* 113 */
+/* 114 */
 /***/ (function(module, exports) {
 
 var ALPHA_INDEX = {
@@ -10473,97 +13591,97 @@ module.exports = XmlEntities;
 
 
 /***/ }),
-/* 114 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = "    <div class=\"tatooarticle text\">\r\n            <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n            <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n    </div> \r\n    \r\n    <div class=\"circles\">\r\n        <img src=\"" + __webpack_require__(88) + "\" alt=\"example of work #1\" class=\"examplesofwork\">\r\n        <img src=\"" + __webpack_require__(89) + "\" alt=\"example of work #2\" class=\"examplesofwork\">\r\n        <img src=\"" + __webpack_require__(90) + "\" alt=\"example of work #3\" class=\"examplesofwork\">\r\n    </div>\r\n\r\n    <div class=\"backerformaster text plaintext\">\r\n     <div class=\"circles\">\r\n        <div class=\"tatooarticle center\">\r\n            <p class=\"heading\"> {{FirstMaster}} </p>\r\n            <div>\r\n                <label class=\"textheading\"> {{Age}} </label>\r\n                <label> {{FAgeValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Experience}} </label>\r\n                <label> {{FExperienceValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Education}} </label>\r\n                <label> {{FEducationValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{SphereOfDrawings}} </label>\r\n                <label> {{FSphereOfDrawingsValue}} </label>\r\n            </div>\r\n        </div>\r\n        <img src=\"" + __webpack_require__(100) + "\" class=\"rect\" alt=\"Martha's photo\">\r\n     </div>  \r\n    \r\n     <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(96) + "\" alt=\"Mrtha's example pf work #1'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[0]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(97) + "\" alt=\"Mrtha's example pf work #2'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[1]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(98) + "\" alt=\"Mrtha's example pf work #3'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[2]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(99) + "\" alt=\"Mrtha's example pf work #4'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[3]}} </label>\r\n        </div>\r\n     </div>\r\n    </div>\r\n\r\n    <div class=\"backerformaster text plaintext\">\r\n     <div class=\"circles\">\r\n        <div class=\"tatooarticle center\">\r\n            <p class=\"heading\"> {{SecondMaster}} </p>\r\n            <div>\r\n                <label class=\"textheading\"> {{Age}} </label>\r\n                <label> {{FAgeValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Experience}} </label>\r\n                <label> {{FExperienceValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Education}} </label>\r\n                <label> {{FEducationValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{SphereOfDrawings}} </label>\r\n                <label> {{FSphereOfDrawingsValue}} </label>\r\n            </div>\r\n        </div>\r\n        <img src=\"" + __webpack_require__(95) + "\" alt=\"Asya's photo\" class=\"rect\">\r\n     </div>  \r\n    \r\n     <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(91) + "\" alt=\"Asya's example pf work #1\"  class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[0]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(92) + "\" alt=\"Asya's example pf work #2\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[1]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(93) + "\" alt=\"Asya's example pf work #3\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[2]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(94) + "\" alt=\"Asya's example pf work #4\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[3]}} </label>\r\n        </div>\r\n     </div>\r\n</div>";
-
-/***/ }),
 /* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "    <nav class=\"navbar navbar-inverse navbar-fixed-top\" style=\"border-radius:0px\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"navbar-header\">\r\n                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                </button>\r\n                <a class=\"navbar-brand\" href=\"#\"></a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/welcome']\">Home</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/products']\">Online Shop</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/scretches']\">Scretches</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/contacts']\">Contacts</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/aboutus']\">About Us</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/help']\">FAQ</a></li>\r\n                </ul>\r\n\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cart']\" *ngIf=\"isLoggedIn()\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> My Cart</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cabinet']\" *ngIf=\"isLoggedIn()\">Hello, {{loggedUserName()}}</a></li>\r\n                    <li (click)=\"logOut()\"><a *ngIf=\"isLoggedIn()\"><span class=\"glyphicon glyphicon-log-in\"></span> Log Out</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/signup']\" *ngIf=\"!isLoggedIn()\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/login']\" *ngIf=\"!isLoggedIn()\"><span class=\"glyphicon glyphicon-log-in\"></span> Log In</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n    <div class='container heading margins' style='width:100%; padding:0%;'>\r\n        <router-outlet class=\"margins\"></router-outlet>\r\n        <p></p>\r\n    </div>\r\n    <footer class=\"footerstyle\">\r\n        <div class=\"containerimage\">\r\n            <div class=\"texter\">\r\n                <a class=\"foot\" [routerLink]=\"['/questions']\">Extra questions?</a>\r\n            </div>\r\n            <a style=\"display: inline\" href=\"https://www.instagram.com/martha_bocharova/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(101) + "' />\r\n            </a>\r\n            <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(102) + "' />\r\n            </a>\r\n            <a href=\"https://vk.com/id20028415\" class=\"footer-link\" style=\"margin-right:1%\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(103) + "' />\r\n            </a>\r\n        </div>\r\n    </footer>";
+module.exports = "    <div class=\"tatooarticle text\">\r\n            <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n            <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n    </div> \r\n    \r\n    <div class=\"circles\">\r\n        <img src=\"" + __webpack_require__(92) + "\" alt=\"example of work #1\" class=\"examplesofwork\">\r\n        <img src=\"" + __webpack_require__(93) + "\" alt=\"example of work #2\" class=\"examplesofwork\">\r\n        <img src=\"" + __webpack_require__(94) + "\" alt=\"example of work #3\" class=\"examplesofwork\">\r\n    </div>\r\n\r\n    <div class=\"backerformaster text plaintext\">\r\n     <div class=\"circles\">\r\n        <div class=\"tatooarticle center\">\r\n            <p class=\"heading\"> {{FirstMaster}} </p>\r\n            <div>\r\n                <label class=\"textheading\"> {{Age}} </label>\r\n                <label> {{FAgeValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Experience}} </label>\r\n                <label> {{FExperienceValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Education}} </label>\r\n                <label> {{FEducationValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{SphereOfDrawings}} </label>\r\n                <label> {{FSphereOfDrawingsValue}} </label>\r\n            </div>\r\n        </div>\r\n        <img src=\"" + __webpack_require__(104) + "\" class=\"rect\" alt=\"Martha's photo\">\r\n     </div>  \r\n    \r\n     <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(100) + "\" alt=\"Mrtha's example pf work #1'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[0]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(101) + "\" alt=\"Mrtha's example pf work #2'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[1]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(102) + "\" alt=\"Mrtha's example pf work #3'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[2]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(103) + "\" alt=\"Mrtha's example pf work #4'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[3]}} </label>\r\n        </div>\r\n     </div>\r\n    </div>\r\n\r\n    <div class=\"backerformaster text plaintext\">\r\n     <div class=\"circles\">\r\n        <div class=\"tatooarticle center\">\r\n            <p class=\"heading\"> {{SecondMaster}} </p>\r\n            <div>\r\n                <label class=\"textheading\"> {{Age}} </label>\r\n                <label> {{FAgeValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Experience}} </label>\r\n                <label> {{FExperienceValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Education}} </label>\r\n                <label> {{FEducationValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{SphereOfDrawings}} </label>\r\n                <label> {{FSphereOfDrawingsValue}} </label>\r\n            </div>\r\n        </div>\r\n        <img src=\"" + __webpack_require__(99) + "\" alt=\"Asya's photo\" class=\"rect\">\r\n     </div>  \r\n    \r\n     <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(95) + "\" alt=\"Asya's example pf work #1\"  class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[0]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(96) + "\" alt=\"Asya's example pf work #2\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[1]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(97) + "\" alt=\"Asya's example pf work #3\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[2]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(98) + "\" alt=\"Asya's example pf work #4\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[3]}} </label>\r\n        </div>\r\n     </div>\r\n</div>";
 
 /***/ }),
 /* 116 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Subtitle}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\">\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{FirstnameLabel}}\r\n        <label class=\"paragraphtext\"> {{FirstName}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{LastnameLabel}}\r\n        <label class=\"paragraphtext\"> {{LastName}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{EmailLabel}}\r\n        <label class=\"paragraphtext\"> {{Email}}</label>\r\n    </p>\r\n</div>";
+module.exports = "    <nav class=\"navbar navbar-inverse navbar-fixed-top\" style=\"border-radius:0px\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"navbar-header\">\r\n                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                </button>\r\n                <a class=\"navbar-brand\" href=\"#\"></a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/welcome']\">Home</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/products']\">Online Shop</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/scretches']\">Scretches</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/contacts']\">Contacts</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/aboutus']\">About Us</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/help']\">FAQ</a></li>\r\n                </ul>\r\n\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cart']\" *ngIf=\"isLoggedIn()\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> My Cart</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cabinet']\" *ngIf=\"isLoggedIn()\">Hello, {{loggedUserName()}}</a></li>\r\n                    <li (click)=\"logOut()\"><a *ngIf=\"isLoggedIn()\"><span class=\"glyphicon glyphicon-log-in\"></span> Log Out</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/signup']\" *ngIf=\"!isLoggedIn()\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/login']\" *ngIf=\"!isLoggedIn()\"><span class=\"glyphicon glyphicon-log-in\"></span> Log In</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n    <div class='container heading margins' style='width:100%; padding:0%;'>\r\n        <router-outlet class=\"margins\"></router-outlet>\r\n        <p></p>\r\n    </div>\r\n    <footer class=\"footerstyle\">\r\n        <div class=\"containerimage\">\r\n            <div class=\"texter\">\r\n                <a class=\"foot\" [routerLink]=\"['/questions']\">Extra questions?</a>\r\n            </div>\r\n            <a style=\"display: inline\" href=\"https://www.instagram.com/martha_bocharova/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(105) + "' />\r\n            </a>\r\n            <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(106) + "' />\r\n            </a>\r\n            <a href=\"https://vk.com/id20028415\" class=\"footer-link\" style=\"margin-right:1%\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(107) + "' />\r\n            </a>\r\n        </div>\r\n    </footer>";
 
 /***/ }),
 /* 117 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"true\"> </all-products>";
+module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Subtitle}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\">\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{FirstnameLabel}}\r\n        <label class=\"paragraphtext\"> {{FirstName}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{LastnameLabel}}\r\n        <label class=\"paragraphtext\"> {{LastName}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{EmailLabel}}\r\n        <label class=\"paragraphtext\"> {{Email}}</label>\r\n    </p>\r\n</div>";
 
 /***/ }),
 /* 118 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div> \r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\">\r\n    <p class=\"margin2 paragraphhead\">{{EmailLabel}}\r\n        <label class=\"paragraphtext\"> {{Email}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{PhoneLabel}}\r\n        <label class=\"paragraphtext\"> {{Phone}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{InstagramLabel}}\r\n        <a href=\"https://www.instagram.com/martha_bocharova/\" class=\"paragraphtext\"> {{Instagram}}</a>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{TwitterLabel}}\r\n        <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"paragraphtext\"> {{Twitter}}</a>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{VkLabel}}\r\n        <a href=\"https://vk.com/id20028415\" class=\"paragraphtext\"> {{Vk}}</a>\r\n    </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<agm-map [zoom]=\"15\" [latitude]=\"Lat\" [longitude]=\"Lng\">\r\n    <agm-marker [latitude]=\"Lat\" [longitude]=\"Lng\"></agm-marker>\r\n</agm-map>\r\n";
+module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"true\"> </all-products>";
 
 /***/ }),
 /* 119 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tatooarticle text\">\r\n        <p  class=\"margin2 heading\">{{Maintitle}}</p>\r\n\r\n        <p class=\"text plaintext margin2\"> {{Description}} </p>\r\n\r\n    <p></p>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"tatooarticle text plaintext\" id=\"menu\">\r\n        <ol class=\"margin2\">\r\n            <li> <a pageScroll href=\"#menu\"> {{Points[0]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme1\"> {{Points[1]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme2\"> {{Points[2]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme3\"> {{Points[3]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme4\"> {{Points[4]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme5\"> {{Points[5]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme6\"> {{Points[6]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme7\"> {{Points[7]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme8\"> {{Points[8]}} </a> </li>\r\n        </ol>\r\n    </div>\r\n\r\n    <p></p>\r\n    <br>\r\n\r\n    <div class=\"tatooarticle text plaintext\">\r\n    <ol class=\"margin2 text questiontext\" >\r\n        <li>\r\n            <label id=\"theme1\" class=\"paragraphhead\"> {{Points[0]}} </label>\r\n            <p>{{Theme1}} </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme2\" class=\"paragraphhead\"> {{Points[1]}} </label>\r\n            <p>{{Theme2}} </p>\r\n        </li>\r\n\r\n        <li>\r\n            <label id=\"theme3\" class=\"paragraphhead\"> {{Points[2]}} </label>\r\n            <p>{{Theme3}} </p>\r\n            <ul>\r\n                <li>{{Theme3_item1}}</li>\r\n                <li>{{Theme3_item2}}</li>\r\n                <li>{{Theme3_item3}}</li>\r\n                <li>{{Theme3_item4}}</li>\r\n                <li>{{Theme3_item5}}</li>\r\n                <li>{{Theme3_item6}}</li>\r\n            </ul>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme4\" class=\"paragraphhead\"> {{Points[3]}} </label>\r\n            <p>{{Theme4}} </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme5\" class=\"paragraphhead\"> {{Points[4]}} </label>\r\n            <p> {{Theme5}} <a routerLink=\"/scretches\"> {{Here}}</a> . </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme6\" class=\"paragraphhead\"> {{Points[5]}} </label>\r\n            <p> {{Theme6}} </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme7\" class=\"paragraphhead\"> {{Points[6]}} </label>\r\n            <p> {{Theme7}} </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme8\" class=\"paragraphhead\"> {{Points[7]}} </label>\r\n            <p> {{Theme8_part1}} <a routerLink=\"/welcome\"> {{Here}} </a> {{Theme8_part2}} <a routerLink=\"/aboutus\"> {{Here}} </a> {{Theme8_part3}} <a routerLink=\"/aboutus\"> {{Shop}}</a> {{Theme8_part4}} <a routerLink=\"/aboutus\"> {{Scretches}} </a>. </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme9\" class=\"paragraphhead\"> {{Points[8]}} </label>\r\n            <p> {{Theme9}} <a routerLink=\"/questions\"> {{Page}}</a>. </p>\r\n        </li>\r\n    </ol>\r\n</div>\r\n";
+module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div> \r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\">\r\n    <p class=\"margin2 paragraphhead\">{{EmailLabel}}\r\n        <label class=\"paragraphtext\"> {{Email}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{PhoneLabel}}\r\n        <label class=\"paragraphtext\"> {{Phone}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{InstagramLabel}}\r\n        <a href=\"https://www.instagram.com/martha_bocharova/\" class=\"paragraphtext\"> {{Instagram}}</a>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{TwitterLabel}}\r\n        <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"paragraphtext\"> {{Twitter}}</a>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{VkLabel}}\r\n        <a href=\"https://vk.com/id20028415\" class=\"paragraphtext\"> {{Vk}}</a>\r\n    </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<agm-map [zoom]=\"15\" [latitude]=\"Lat\" [longitude]=\"Lng\">\r\n    <agm-marker [latitude]=\"Lat\" [longitude]=\"Lng\"></agm-marker>\r\n</agm-map>\r\n";
 
 /***/ }),
 /* 120 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel-body text whitetext margin1\" > \r\n    <div class=\"row\">\r\n        <p class=\"tatooback\"> {{PageTitle}} </p>\r\n    </div>\r\n</div>\r\n    \r\n<div class=\"tatooarticle text\">\r\n    <div class=\"row\">\r\n        <p class=\"arcticleheading margin2\"> {{ArticleTitle}} </p>\r\n        <p class=\"arcticletext margin2\"> {{ArticleText}} <a [routerLink]=\"['/aboutus']\"> here</a>.</p>\r\n    </div>\r\n</div> \r\n   \r\n<div class=\"circles\">\r\n    <img src=\"" + __webpack_require__(104) + "\" alt=\"example of work #1\" class=\"examplesofwork\">\r\n    <img src=\"" + __webpack_require__(105) + "\" alt=\"example of work #2\" class=\"examplesofwork\">\r\n    <img src=\"" + __webpack_require__(106) + "\" alt=\"example of work #3\" class=\"examplesofwork\">\r\n</div>\r\n\r\n <div class=\"tatooarticle text\">\r\n    <div class=\"row\">\r\n        <p class=\"arcticleheading margin2\"> {{StartwithTitle}} </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[0]}} <a [routerLink]=\"['/aboutus']\"> {{Here}} </a>. </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[1]}} <a [routerLink]=\"['/scretches']\"> {{ThisPage}} </a>. {{StartwithText[2]}} <a [routerLink]=\"['/products']\"> {{Shop}}</a>.</p>   \r\n        <p class=\"arcticletext margin2\"> {{StartwithText[3]}} <a [routerLink]=\"['/contacts']\"> {{Here}} </a>. </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[4]}} <a [routerLink]=\"['/help']\"> {{FAQ}} </a>{{StartwithText[5]}} <a [routerLink]=\"['/questions']\"> {{Questions}}</a>.</p>\r\n    </div>\r\n\r\n</div> \r\n\r\n\r\n";
+module.exports = "<div class=\"tatooarticle text\">\r\n        <p  class=\"margin2 heading\">{{Maintitle}}</p>\r\n\r\n        <p class=\"text plaintext margin2\"> {{Description}} </p>\r\n\r\n    <p></p>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"tatooarticle text plaintext\" id=\"menu\">\r\n        <ol class=\"margin2\">\r\n            <li> <a pageScroll href=\"#menu\"> {{Points[0]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme1\"> {{Points[1]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme2\"> {{Points[2]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme3\"> {{Points[3]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme4\"> {{Points[4]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme5\"> {{Points[5]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme6\"> {{Points[6]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme7\"> {{Points[7]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme8\"> {{Points[8]}} </a> </li>\r\n        </ol>\r\n    </div>\r\n\r\n    <p></p>\r\n    <br>\r\n\r\n    <div class=\"tatooarticle text plaintext\">\r\n    <ol class=\"margin2 text questiontext\" >\r\n        <li>\r\n            <label id=\"theme1\" class=\"paragraphhead\"> {{Points[0]}} </label>\r\n            <p>{{Theme1}} </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme2\" class=\"paragraphhead\"> {{Points[1]}} </label>\r\n            <p>{{Theme2}} </p>\r\n        </li>\r\n\r\n        <li>\r\n            <label id=\"theme3\" class=\"paragraphhead\"> {{Points[2]}} </label>\r\n            <p>{{Theme3}} </p>\r\n            <ul>\r\n                <li>{{Theme3_item1}}</li>\r\n                <li>{{Theme3_item2}}</li>\r\n                <li>{{Theme3_item3}}</li>\r\n                <li>{{Theme3_item4}}</li>\r\n                <li>{{Theme3_item5}}</li>\r\n                <li>{{Theme3_item6}}</li>\r\n            </ul>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme4\" class=\"paragraphhead\"> {{Points[3]}} </label>\r\n            <p>{{Theme4}} </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme5\" class=\"paragraphhead\"> {{Points[4]}} </label>\r\n            <p> {{Theme5}} <a routerLink=\"/scretches\"> {{Here}}</a> . </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme6\" class=\"paragraphhead\"> {{Points[5]}} </label>\r\n            <p> {{Theme6}} </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme7\" class=\"paragraphhead\"> {{Points[6]}} </label>\r\n            <p> {{Theme7}} </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme8\" class=\"paragraphhead\"> {{Points[7]}} </label>\r\n            <p> {{Theme8_part1}} <a routerLink=\"/welcome\"> {{Here}} </a> {{Theme8_part2}} <a routerLink=\"/aboutus\"> {{Here}} </a> {{Theme8_part3}} <a routerLink=\"/aboutus\"> {{Shop}}</a> {{Theme8_part4}} <a routerLink=\"/aboutus\"> {{Scretches}} </a>. </p>\r\n        </li>\r\n        <li>\r\n            <label id=\"theme9\" class=\"paragraphhead\"> {{Points[8]}} </label>\r\n            <p> {{Theme9}} <a routerLink=\"/questions\"> {{Page}}</a>. </p>\r\n        </li>\r\n    </ol>\r\n</div>\r\n";
 
 /***/ }),
 /* 121 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<!--Template for stars-->\r\n<ng-template #t let-fill=\"fill\">\r\n    <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n    <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n    <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n        <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n    </span>\r\n</ng-template>\r\n\r\n<!--Page-->\r\n<div class='panel panel-primary ' id=\"tatoodiv\" *ngIf='Product'>\r\n    <div class='panel-heading'id=\"tatoopanel\"  style='font-size:large'>\r\n        {{PageTitle + ': ' + Product.productName}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <div class='col-md-6'>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Name}}</div>\r\n                    <div class='col-md-6'>{{Product.productName}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Description}}</div>\r\n                    <div class='col-md-6'>{{Product.description}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{AmountLeft}}</div>\r\n                    <div class='col-md-6'>{{Product.amountLeft}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Price}}</div>\r\n                    <div class='col-md-6'>{{Product.price|currency:'USD':true}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{StarRating}}</div>\r\n                    <div class='col-md-6'>\r\n                        <ngb-rating title={{Product.starRating}} [(rate)]=\"Product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class='col-md-6'>\r\n                <img class='center-block img-responsive' \r\n                     [style.width.px]='200' \r\n                     [style.margin.px]='2' \r\n                     [src]='Product.imageUrl'\r\n                     [title]='Product.productName'>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class='panel-footer'>\r\n        <a class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px'>\r\n            <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}\r\n        </a>\r\n        <button [disabled]='!IsInCart' class='btn btn-default tatoobutton' (click)='RemoveProduct()' style='float: right'>\r\n            <i class='glyphicon glyphicon-remove'></i> {{Remove}}\r\n        </button>\r\n\r\n        <button [disabled]='IsInCart' class='btn btn-default tatoobutton' (click)='addToCart()' style='float: right; margin-right: 1%'>\r\n            <i class='glyphicon glyphicon-shopping-cart'></i> {{AddToCart}}\r\n        </button>        \r\n    </div>      \r\n</div>";
+module.exports = "<div class=\"panel-body text whitetext margin1\" > \r\n    <div class=\"row\">\r\n        <p class=\"tatooback\"> {{PageTitle}} </p>\r\n    </div>\r\n</div>\r\n    \r\n<div class=\"tatooarticle text\">\r\n    <div class=\"row\">\r\n        <p class=\"arcticleheading margin2\"> {{ArticleTitle}} </p>\r\n        <p class=\"arcticletext margin2\"> {{ArticleText}} <a [routerLink]=\"['/aboutus']\"> here</a>.</p>\r\n    </div>\r\n</div> \r\n   \r\n<div class=\"circles\">\r\n    <img src=\"" + __webpack_require__(108) + "\" alt=\"example of work #1\" class=\"examplesofwork\">\r\n    <img src=\"" + __webpack_require__(109) + "\" alt=\"example of work #2\" class=\"examplesofwork\">\r\n    <img src=\"" + __webpack_require__(110) + "\" alt=\"example of work #3\" class=\"examplesofwork\">\r\n</div>\r\n\r\n <div class=\"tatooarticle text\">\r\n    <div class=\"row\">\r\n        <p class=\"arcticleheading margin2\"> {{StartwithTitle}} </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[0]}} <a [routerLink]=\"['/aboutus']\"> {{Here}} </a>. </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[1]}} <a [routerLink]=\"['/scretches']\"> {{ThisPage}} </a>. {{StartwithText[2]}} <a [routerLink]=\"['/products']\"> {{Shop}}</a>.</p>   \r\n        <p class=\"arcticletext margin2\"> {{StartwithText[3]}} <a [routerLink]=\"['/contacts']\"> {{Here}} </a>. </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[4]}} <a [routerLink]=\"['/help']\"> {{FAQ}} </a>{{StartwithText[5]}} <a [routerLink]=\"['/questions']\"> {{Questions}}</a>.</p>\r\n    </div>\r\n\r\n</div> \r\n\r\n";
 
 /***/ }),
 /* 122 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"false\"> </all-products>";
+module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-top: 50px !important;\r\n    }\r\n\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<!--Template for stars-->\r\n<ng-template #t let-fill=\"fill\">\r\n    <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n    <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n    <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n        <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n    </span>\r\n</ng-template>\r\n\r\n<!--Page-->\r\n<div class='panel panel-primary ' id=\"tatoodiv\" *ngIf='Product'>\r\n    <div class='panel-heading'id=\"tatoopanel\"  style='font-size:large'>\r\n        {{PageTitle + ': ' + Product.productName}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <div class='col-md-6'>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Name}}</div>\r\n                    <div class='col-md-6'>{{Product.productName}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Description}}</div>\r\n                    <div class='col-md-6'>{{Product.description}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{AmountLeft}}</div>\r\n                    <div class='col-md-6'>{{Product.amountLeft}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Price}}</div>\r\n                    <div class='col-md-6'>{{Product.price|currency:'USD':true}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{StarRating}}</div>\r\n                    <div class='col-md-6'>\r\n                        <ngb-rating title={{Product.starRating}} [(rate)]=\"Product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class='col-md-6'>\r\n                <img class='center-block img-responsive' \r\n                     [style.width.px]='200' \r\n                     [style.margin.px]='2' \r\n                     [src]='Product.imageUrl'\r\n                     [title]='Product.productName'>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class='panel-footer'>\r\n        <a class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px'>\r\n            <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}\r\n        </a>\r\n        <button [disabled]='!IsInCart' class='btn btn-default tatoobutton' (click)='RemoveProduct()' style='float: right'>\r\n            <i class='glyphicon glyphicon-remove'></i> {{Remove}}\r\n        </button>\r\n\r\n        <button [disabled]='IsInCart' class='btn btn-default tatoobutton' (click)='addToCart()' style='float: right; margin-right: 1%'>\r\n            <i class='glyphicon glyphicon-shopping-cart'></i> {{AddToCart}}\r\n        </button>        \r\n    </div>      \r\n</div>";
 
 /***/ }),
 /* 123 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-top: 50px !important;\r\n    }\r\n\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Description_part1}} <a routerLink=\"/help\">{{Insert}}</a> {{Description_part2}} </p>\r\n</div>\r\n\r\n<div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{Subtitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{Points[0]}}</label>\r\n            <select type=\"number\" class='tatooinput marginbottom' [(ngModel)]=\"Num\">\r\n                <option [ngValue]=\"0\">{{Themes[0]}}</option>\r\n                <option [ngValue]=\"1\">{{Themes[1]}}</option>\r\n                <option [ngValue]=\"2\">{{Themes[2]}}</option>\r\n                <option [ngValue]=\"3\">{{Themes[3]}}</option>\r\n                <option [ngValue]=\"4\">{{Themes[4]}}</option>\r\n            </select>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{Points[1]}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point2_placeholder}}\" [(ngModel)]='Theme' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{Points[2]}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point3_placeholder}}\" [(ngModel)]='Message' />\r\n        </div>\r\n        <button class=' btn btn-primary tatoobutton' (click)= 'SendQuestion()'> {{ButtonName}} </button>\r\n    </div>\r\n</div>\r\n\r\n<br>\r\n<div class='panel panel-primary tatoodiv' style=\"width:98%\">\r\n    <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n       {{TableName}}\r\n    </div>\r\n    <div class='panel-body'>\r\n\r\n        <div class='table-responsive'>\r\n            <table class='table tatootable'\r\n                   *ngIf='Questions && Questions.length'>\r\n                <thead>\r\n                    <tr>\r\n                        <th>{{NumName}}</th>\r\n                        <th>{{CategoryName}}</th>\r\n                        <th>{{ThemeName}}</th>\r\n                        <th>{{QuestionName}}</th>\r\n                        <th>{{AnswerName}}</th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    <tr *ngFor='let question of Questions'>\r\n                        <td>{{ Numbering()}}</td>\r\n                        <td>{{ question.category }}</td>\r\n                        <td>{{ question.theme}}</td>\r\n                        <td>{{ question.questionName}}</td>\r\n                        <td> </td>\r\n                    </tr>\r\n                </tbody>\r\n            </table>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
+module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"false\"> </all-products>";
 
 /***/ }),
 /* 124 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .ui-growl-item-container{\r\n        margin-top:50px !important;\r\n    }\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <!-- Filter the Products   -->\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)= 'logIn()'> {{ButtonText}} </button>\r\n    </div>\r\n</div>";
+module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-top: 50px !important;\r\n    }\r\n\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Description_part1}} <a routerLink=\"/help\">{{Insert}}</a> {{Description_part2}} </p>\r\n</div>\r\n\r\n<div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{Subtitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{Points[0]}}</label>\r\n            <select type=\"number\" class='tatooinput marginbottom' [(ngModel)]=\"Num\">\r\n                <option [ngValue]=\"0\">{{Themes[0]}}</option>\r\n                <option [ngValue]=\"1\">{{Themes[1]}}</option>\r\n                <option [ngValue]=\"2\">{{Themes[2]}}</option>\r\n                <option [ngValue]=\"3\">{{Themes[3]}}</option>\r\n                <option [ngValue]=\"4\">{{Themes[4]}}</option>\r\n            </select>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{Points[1]}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point2_placeholder}}\" [(ngModel)]='Theme' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{Points[2]}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point3_placeholder}}\" [(ngModel)]='Message' />\r\n        </div>\r\n        <button class=' btn btn-primary tatoobutton' (click)= 'SendQuestion()'> {{ButtonName}} </button>\r\n    </div>\r\n</div>\r\n\r\n<br>\r\n<div class='panel panel-primary tatoodiv' style=\"width:98%\">\r\n    <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n       {{TableName}}\r\n    </div>\r\n    <div class='panel-body'>\r\n\r\n        <div class='table-responsive'>\r\n            <table class='table tatootable'\r\n                   *ngIf='Questions && Questions.length'>\r\n                <thead>\r\n                    <tr>\r\n                        <th>{{NumName}}</th>\r\n                        <th>{{CategoryName}}</th>\r\n                        <th>{{ThemeName}}</th>\r\n                        <th>{{QuestionName}}</th>\r\n                        <th>{{AnswerName}}</th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    <tr *ngFor='let question of Questions'>\r\n                        <td>{{ Numbering()}}</td>\r\n                        <td>{{ question.category }}</td>\r\n                        <td>{{ question.theme}}</td>\r\n                        <td>{{ question.questionName}}</td>\r\n                        <td> </td>\r\n                    </tr>\r\n                </tbody>\r\n            </table>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
 
 /***/ }),
 /* 125 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable' >{{LableFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHoldeFirstName}}\" [(ngModel)]='FirstName'/>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHoldeLastName}}\" [(ngModel)]='LastName' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderRepeatPassword}}\" />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='signUp()'> {{ButtonText}} </button>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n";
+module.exports = "<style>\r\n    .ui-growl-item-container{\r\n        margin-top:50px !important;\r\n    }\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <!-- Filter the Products   -->\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)= 'logIn()'> {{ButtonText}} </button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 126 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = "  <style>\r\n  .carousel-inner > .item > img,\r\n  .carousel-inner > .item > a > img {\r\n      width: 45%;\r\n      margin: auto;\r\n  }\r\n  </style>\r\n\r\n<div class=\"tatooarticle maintext\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"margin2 maintext plaintext\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<div class=\"container\" style=\"margin:0%; width:100%; padding:0%\">\r\n    <br>\r\n    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\r\n        <!-- Indicators -->\r\n        <ol class=\"carousel-indicators\">\r\n            <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\r\n            <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\r\n            <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\r\n        </ol>\r\n\r\n        <!-- Wrapper for slides -->\r\n        <div class=\"carousel-inner\" role=\"listbox\">\r\n\r\n            <div class=\"item active\" style=\"width:100%; margin:0%\">\r\n                <img src=\"" + __webpack_require__(107) + "\" alt=\"Leafs\">\r\n                <div class=\"carousel-caption text\">\r\n                    <h1>Leafs</h1>\r\n                    <p>20 x 30 cm, 1 session, 50$</p>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"item\">\r\n                <img src=\"" + __webpack_require__(108) + "\" alt=\"Red Flowers\">\r\n                <div class=\"carousel-caption text\">\r\n                    <h1>Red Flowers</h1>\r\n                    <p>15 x 30 cm, 1 session, 60$</p>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"item\">\r\n                <img src=\"" + __webpack_require__(109) + "\" alt=\"Geometry + Nature\">\r\n                <div class=\"carousel-caption text\">\r\n                    <h1>Geometry + Nature</h1>\r\n                    <p>10 x 10 cm, 2 sessions, 65 $</p>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n\r\n        <!-- Left and right controls -->\r\n        <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\r\n            <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\r\n            <span class=\"sr-only\">Previous</span>\r\n        </a>\r\n        <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\r\n            <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\r\n            <span class=\"sr-only\">Next</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n<div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{Choosed}} {{Option}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class=\"ui-g\" style=\"width:250px;margin-bottom:10px\">\r\n            <div class=\"ui-g-12\"><p-radioButton name=\"typeOfPicture\" value=\"Scretch from gallery\" label={{Scretch}} [(ngModel)]=\"Option\"></p-radioButton></div>\r\n            <div class=\"ui-g-12\"><p-radioButton name=\"typeOfPicture\" value=\"Your own picture\" label={{Picture}} [(ngModel)]=\"Option\"></p-radioButton></div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{FormTitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LabelChoose}}</label>\r\n            <select class='tatooinput marginbottom'>\r\n                <option>Leafs</option>\r\n                <option>Red Flowers</option>\r\n                <option>Geometry + Nature</option>\r\n            </select>\r\n        </div>\r\n        <button class=' btn btn-primary tatoobutton'> {{ButtonName}} </button>\r\n    </div>\r\n</div>";
+module.exports = "<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable' >{{LableFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHoldeFirstName}}\" [(ngModel)]='FirstName'/>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHoldeLastName}}\" [(ngModel)]='LastName' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderRepeatPassword}}\" />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='signUp()'> {{ButtonText}} </button>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n";
 
 /***/ }),
 /* 127 */
 /***/ (function(module, exports) {
 
-module.exports = "<!--Template for stars-->\r\n<ng-template #t let-fill=\"fill\">\r\n    <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n    <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n    <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n        <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n    </span>\r\n</ng-template>\r\n\r\n<!--Page-->\r\n<div class='tatoodiv panel panel-primary'>\r\n    <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <div class='col-md-2 tatootable'>{{Filter}}</div>\r\n            <div class='col-md-2 tatootable'>\r\n                <input type='text' class='tatootable' [(ngModel)]='ListFilter' />\r\n            </div>\r\n        </div>\r\n\r\n        <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n        <div class='table-responsive'>\r\n            <table class='table tatootable'\r\n                   *ngIf='AllProducts && AllProducts.length'>\r\n                <thead>\r\n                    <tr>\r\n                        <th>{{Image}}</th>\r\n                        <th>{{Name}}</th>\r\n                        <th>{{AmountLeft}}</th>\r\n                        <th>{{Price}}</th>\r\n                        <th>{{StarRating}}</th>\r\n                        <th *ngIf=\"IsCart\">{{Quantity}}</th>\r\n                        <th *ngIf=\"IsCart\"></th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    <tr *ngFor='let product of AllProducts | productFilter:ListFilter'>\r\n                        <td>\r\n                            <img\r\n                                 [src]='product.imageUrl'\r\n                                 [title]='product.productName | uppercase'\r\n                                 [style.width.px]='ImageWidth' \r\n                                 [style.margin.px]='ImageMargin'>\r\n                        </td>\r\n                        <td><a [routerLink]=\"['/product', product.id]\">\r\n                            {{product.productName}}\r\n                            </a>\r\n                        </td>\r\n                        <td>{{ product.amountLeft}}</td>\r\n                        <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>\r\n                        <td >\r\n                            <ngb-rating title = {{product.starRating}} [(rate)]=\"product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                        </td>\r\n                        <td *ngIf=\"IsCart\">\r\n                            <spinnerNum [IncomeVal]=\"1\"></spinnerNum>\r\n                        </td>\r\n                        <td *ngIf=\"IsCart\"> \r\n                        <a class='btn btn-default tatoobutton' (click)='RemoveProduct()'>\r\n                            <i class='glyphicon glyphicon-remove'></i> {{Remove}}\r\n                        </a>\r\n                        </td>\r\n                    </tr>\r\n                </tbody>\r\n            </table>\r\n            \r\n            <div *ngIf=\"IsCart\" class='panel-footer'>\r\n                <a class='btn btn-default tatoobutton' (click)='BuyAll()'>\r\n                    {{Buy}}\r\n                </a>\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "  <style>\r\n  .carousel-inner > .item > img,\r\n  .carousel-inner > .item > a > img {\r\n      width: 45%;\r\n      margin: auto;\r\n  }\r\n  </style>\r\n\r\n<div class=\"tatooarticle text plaintext\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n<div class=\"container\" style=\"margin:0%; width:100%; padding:0%\">\r\n    <br>\r\n    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"false\">\r\n        <!-- Indicators -->\r\n        <ol class=\"carousel-indicators\">\r\n            <li data-target=\"#myCarousel\" *ngFor=\"let Scretch of Scretches\" data-slide-to='DescriptionNumber' [ngClass]=\"{active: isActive(Scretch.imageUrl)}\"></li>\r\n        </ol>\r\n\r\n        <!-- Wrapper for slides -->\r\n        <div class=\"carousel-inner\" role=\"listbox\">\r\n            <div *ngFor=\"let Scretch of Scretches\" class=\"item\" [ngClass]=\"{active: isActive(Scretch.imageUrl)}\" style=\"width:100%; margin:0%\">\r\n                <a pageScroll href=\"#form\"> <img class=\"scretch\" src={{Scretch.imageUrl}} alt={{Scretch.scretchName}} (click)='ChoosingScretch()'> </a>\r\n            </div>\r\n        </div>\r\n\r\n        <!-- Left and right controls -->\r\n        <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\" (click)='Left()'>\r\n            <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"false\"></span>\r\n            <span class=\"sr-only\">Previous</span>\r\n        </a>\r\n        <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\" (click)='Right()'>\r\n            <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"false\"></span>\r\n            <span class=\"sr-only\">Next</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"descriptionback textfordescription plaintext\">\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchNameLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchName}}</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\"> {{Scretches !== undefined ? Scretches[0].scretchName : undefined}} </label>\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchDescriptionLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchDescription}}</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\">{{Scretches !== undefined ? Scretches[0].description : undefined}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchPriceLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchPrice | currency:'USD':true:'1.2-2'}}</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\">${{Scretches !== undefined ? Scretches[0].price : undefined }}.00</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchSizeLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchWidth}}cm x {{ScretchHeight}}cm</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\">{{Scretches !== undefined ? Scretches[0].width : undefined }}cm x {{Scretches !== undefined ? Scretches[0].height : undefined }}cm</label>\r\n    </p>\r\n</div>\r\n\r\n<div id=\"form\" class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PanelHeading}}\r\n    </div>\r\n    <div class='panel-body'>    \r\n        <div class=\"ui-g lowborder\" style=\"width:100%; margin-bottom:10px\">\r\n            <div class=\"ui-g-12\"><p-radioButton name=\"typeOfPicture\" value=\"Scretch from gallery\" label={{Scretch}} [(ngModel)]=\"Option\"></p-radioButton></div>\r\n            <div class=\"ui-g-12\"><p-radioButton name=\"typeOfPicture\" value=\"Your own picture\" label={{Picture}} [(ngModel)]=\"Option\"></p-radioButton></div>\r\n        </div>        \r\n        <div *ngIf=\"Option=='Scretch from gallery'\" class=\"lowborder\">\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LabelChoose}}</label>\r\n                <select class='tatooinput marginbottom' [(ngModel)]=\"SelectedName\" (change)=\"OnSelectionChange()\">\r\n                    <option value=\"\" disabled selected>Select scretch name</option>\r\n                    <option *ngFor=\"let Scretch of Scretches\" [value]=\"Scretch.scretchName\">{{Scretch.scretchName}}</option>\r\n                </select>\r\n            </div>\r\n            <div *ngIf=\"SelectedName && Option=='Scretch from gallery'\" class=\"formtext\">\r\n                <p>\r\n                    <label>\r\n                        {{ScretchNameLabel}}\r\n                    </label>\r\n                    {{SelectedName}}\r\n                <p>\r\n                    <label>\r\n                        {{ScretchDescriptionLabel}}\r\n                    </label>\r\n                    {{SelectedNameDescription}}\r\n                </p>\r\n                <p>\r\n                    <label>\r\n                        {{ScretchPriceLabel}}\r\n                    </label>\r\n                    {{ScretchNamePrice | currency:'USD':true:'1.2-2'}}\r\n                </p>\r\n                <p>\r\n                    <label>\r\n                        {{ScretchSizeLabel}}\r\n                    </label>\r\n                    {{ScretchNameWidth}}cm x {{ScretchNameHeight}}cm\r\n                </p>\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"Option=='Your own picture'\" class=\"lowborder\">\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LabelUpload}}</label>\r\n                <input name=\"file\" id=\"file\" class='inputfile' type=\"file\" accept=\".gif,.jpg,.jpeg,.png\" #file (change)=\"onChange(file.files)\">\r\n                <label class='btn btn-primary tatoobutton marginbottom' for=\"file\">Choose a file</label>\r\n                <span *ngIf=\"ChoosedFileName\" style=\"color: black\"> {{ChoosedFileName}} </span>\r\n                <span *ngIf=\"!ChoosedFileName\" style=\"color: black\"> no file </span>\r\n            </div>\r\n        </div>\r\n        <button class='btn btn-primary tatoobutton' style=\"float: right; margin-top: 1%\"> {{ButtonName}} </button>\r\n    </div>\r\n    <div class='panel-footer' id=\"tatoopanel\">\r\n        {{Choosed}} <span *ngIf=\"!Option\">nothing</span>\r\n        <ul *ngIf=\"Option\">\r\n            <li>{{Option}}</li>\r\n            <li *ngIf=\"SelectedName==undefined && Option=='Scretch from gallery'\"> {{ScretchNameLabel}} {{NotChoosed}}</li>\r\n            <li *ngIf=\"SelectedName && Option=='Scretch from gallery'\"> {{ScretchNameLabel}} {{SelectedName}}</li>\r\n        </ul>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 128 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <button class=\"btn btn-default tatoobutton\" (click)=\"Decrease()\">\r\n        <i class='glyphicon glyphicon-chevron-left'></i>\r\n    </button>\r\n    {{IncomeVal}}\r\n    <button class=\"btn btn-default tatoobutton\" (click)=\"Increase()\">\r\n        <i class='glyphicon glyphicon-chevron-right'></i>\r\n    </button>\r\n</div>";
+module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-top: 50px !important;\r\n    }\r\n\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<!--Template for stars-->\r\n<ng-template #t let-fill=\"fill\">\r\n    <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n    <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n    <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n        <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n    </span>\r\n</ng-template>\r\n\r\n<!--Page-->\r\n<div class='tatoodiv panel panel-primary'>\r\n    <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <div class='col-md-2 tatootable'>{{Filter}}</div>\r\n            <div class='col-md-2 tatootable'>\r\n                <input type='text' class='tatootable' [(ngModel)]='ListFilter' />\r\n            </div>\r\n        </div>\r\n\r\n        <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n        <div class='table-responsive'>\r\n            <table class='table tatootable'>\r\n                <thead>\r\n                    <tr>\r\n                        <th>{{Image}}</th>\r\n                        <th>{{Name}}</th>\r\n                        <th>{{AmountLeft}}</th>\r\n                        <th>{{Price}}</th>\r\n                        <th>{{StarRating}}</th>\r\n                        <th *ngIf=\"IsCart\">{{Quantity}}</th>\r\n                        <th *ngIf=\"IsCart\"></th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody *ngIf='AllProducts && AllProducts.length'>\r\n                    <tr *ngFor='let product of AllProducts | productFilter:ListFilter'>\r\n                        <td>\r\n                            <img\r\n                                 [src]='product.imageUrl'\r\n                                 [title]='product.productName | uppercase'\r\n                                 [style.width.px]='ImageWidth' \r\n                                 [style.margin.px]='ImageMargin'>\r\n                        </td>\r\n                        <td><a [routerLink]=\"['/product', product.id, CartToSend]\">\r\n                            {{product.productName}}\r\n                            </a>\r\n                        </td>\r\n                        <td>{{ product.amountLeft}}</td>\r\n                        <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>\r\n                        <td >\r\n                            <ngb-rating title = {{product.starRating}} [(rate)]=\"product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                        </td>\r\n                        <td *ngIf=\"IsCart\">\r\n                            <spinnerNum [IncomeVal]=\"product.amount\" (IncreaseAmount)=\"IncreasingAmount(product)\" (DecreaseAmount)=\"DecreasingAmount(product)\"></spinnerNum>\r\n                        </td>\r\n                        <td *ngIf=\"IsCart\" class=\"remove-row\"> \r\n                        <a title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style=\"float: right\">\r\n                            <i class='glyphicon glyphicon-remove'></i> {{Remove}}\r\n                        </a>\r\n                        </td>\r\n                    </tr>\r\n                </tbody>\r\n            </table>\r\n        </div>\r\n\r\n        <div *ngIf=\"IsCart\" class='panel-footer' style=\"width:100%; padding-left: 0%; padding-right: 0%;\">\r\n            <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleClear}} class='btn btn-default tatoobutton' (click)='ShowDialogClear()'>\r\n                <i class='glyphicon glyphicon-remove'></i> {{Delete}}\r\n            </button>\r\n            <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleBuy}} class='btn btn-default tatoobutton' (click)='ShowDialogByuAll()' style=\"float: right; margin-bottom: 1%\">\r\n                <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n            </button>\r\n            <div style=\"width: 100%\" class=\"flexer\">\r\n                <p>\r\n                    <label style=\"float: right\">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>     \r\n                </p>\r\n                <p>\r\n                    <label style=\"float: right\">{{LabelTotalAmount}}{{TotalAmount}}</label>\r\n               </p>        \r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<p-dialog [(visible)]=\"DisplayBuyAll\" [dismissableMask]=\"false\" [showHeader]=\"false\" [contentStyle]=\"{'background-color':'white', 'color':'black', 'border-radius':'2px', 'border-color':'black', 'border-width':'5px', 'padding':'0px', 'font-family':'comic sans ms'}\">\r\n    <span class='col-md-2 tatoolable' style=\"width:100%; padding-bottom:1%; padding-top:1%; margin-left: 0%; margin-bottom:1%; background-color:black; color: white\">Do you want to buy all the products? </span>\r\n    <p>\r\n        <label style=\"width:98%; margin-left:1%; margin-top:1%\">{{NowInCart}}</label>\r\n    </p>\r\n    <p>\r\n        <label style=\"width:98%; margin-left:1%; margin-top:1%\">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>\r\n    </p>\r\n    <p>\r\n        <label style=\"width:98%; margin-left: 1%\">{{LabelTotalAmount}}{{TotalAmount}}</label>\r\n    </p>             \r\n    <br />\r\n    <button style=\"float: right; margin-left: 1%; margin-bottom: 1%; margin-right: 1%\" class=' btn btn-primary tatoobutton' (click)='BuyAll()'> \r\n         <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n     </button>\r\n     <button style=\"float: right; margin-bottom: 1%\" class=' btn btn-primary tatoobutton' (click)='HideDialogByuAll()'> \r\n        {{Cancel}} \r\n     </button>\r\n</p-dialog>\r\n\r\n\r\n\r\n<p-dialog [(visible)]=\"DisplayClear\" [dismissableMask]=\"true\" [showHeader]=\"false\" [contentStyle]=\"{'background-color':'white', 'color':'black', 'border-radius':'2px', 'border-color':'black', 'border-width':'5px', 'padding':'0px', 'font-family':'comic sans ms'}\">\r\n    <span class='col-md-2 tatoolable' style=\"width:100%; padding-bottom:1%; padding-top:1%; margin-left: 0%; margin-bottom:1%; background-color:black; color: white\">Do you want to clear the cart? </span>\r\n    <p>\r\n        <label style=\"width:98%; margin-left:1%; margin-top:1%\">{{NowInCart}}</label>  \r\n    </p>\r\n    <p>\r\n        <label style=\"width:98%; margin-left:1%; margin-top:1%\">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>\r\n    </p>\r\n    <p>\r\n        <label style=\"width:98%; margin-left: 1%\">{{LabelTotalAmount}}{{TotalAmount}}</label>\r\n    </p>\r\n    <br />\r\n    <button style=\"float: right; margin-left: 1%; margin-bottom: 1%; margin-right: 1%\" class=' btn btn-primary tatoobutton' (click)='DeleteAll()'>\r\n        <i class='glyphicon glyphicon-remove'></i> {{Delete}}\r\n    </button>\r\n    <button style=\"float: right; margin-bottom: 1%\" class=' btn btn-primary tatoobutton' (click)='HideDialogClear()'>\r\n        {{Cancel}}\r\n    </button>\r\n</p-dialog> ";
 
 /***/ }),
 /* 129 */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\r\n    <button title={{TitleDecrease}} class=\"btn btn-default tatoobutton\" (click)=\"Decrease()\">\r\n        <i class='glyphicon glyphicon-chevron-left'></i>\r\n    </button>\r\n    {{IncomeVal}}\r\n    <button title={{TitleIncrease}} class=\"btn btn-default tatoobutton\" (click)=\"Increase()\">\r\n        <i class='glyphicon glyphicon-chevron-right'></i>\r\n    </button>\r\n</div>";
+
+/***/ }),
+/* 130 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -10653,7 +13771,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -10664,7 +13782,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10707,7 +13825,7 @@ var AboutusComponent = (function () {
 }());
 AboutusComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(114),
+        template: __webpack_require__(115),
         styles: [__webpack_require__(220)]
     })
 ], AboutusComponent);
@@ -10715,7 +13833,7 @@ exports.AboutusComponent = AboutusComponent;
 
 
 /***/ }),
-/* 132 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10723,7 +13841,7 @@ exports.AboutusComponent = AboutusComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var h5webstorage_1 = __webpack_require__(17);
+var h5webstorage_1 = __webpack_require__(18);
 var auth_service_1 = __webpack_require__(13);
 var AppComponent = (function () {
     function AppComponent(localStorage, sessionStorage, authService) {
@@ -10763,7 +13881,7 @@ tslib_1.__decorate([
 AppComponent = tslib_1.__decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: __webpack_require__(115),
+        template: __webpack_require__(116),
         styles: [__webpack_require__(221)]
     }),
     tslib_1.__metadata("design:paramtypes", [h5webstorage_1.LocalStorage, h5webstorage_1.SessionStorage, auth_service_1.AuthService])
@@ -10772,7 +13890,7 @@ exports.AppComponent = AppComponent;
 
 
 /***/ }),
-/* 133 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10780,31 +13898,31 @@ exports.AppComponent = AppComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var platform_browser_1 = __webpack_require__(36);
-var http_1 = __webpack_require__(14);
+var platform_browser_1 = __webpack_require__(24);
+var http_1 = __webpack_require__(15);
 var router_1 = __webpack_require__(6);
 var forms_1 = __webpack_require__(5);
-var ng2_page_scroll_1 = __webpack_require__(152);
-var primeng_1 = __webpack_require__(35);
-var core_2 = __webpack_require__(66);
-var ng_bootstrap_1 = __webpack_require__(57);
-var app_component_1 = __webpack_require__(132);
-var welcome_component_1 = __webpack_require__(139);
-var aboutus_component_1 = __webpack_require__(131);
-var singup_component_1 = __webpack_require__(147);
-var login_component_1 = __webpack_require__(146);
-var primeng_2 = __webpack_require__(35);
-var h5webstorage_1 = __webpack_require__(17);
-var questions_component_1 = __webpack_require__(145);
-var help_component_1 = __webpack_require__(138);
-var contacts_component_1 = __webpack_require__(137);
-var question_service_1 = __webpack_require__(50);
-var cabinet_component_1 = __webpack_require__(134);
+var ng2_page_scroll_1 = __webpack_require__(56);
+var primeng_1 = __webpack_require__(14);
+var core_2 = __webpack_require__(68);
+var ng_bootstrap_1 = __webpack_require__(62);
+var app_component_1 = __webpack_require__(133);
+var welcome_component_1 = __webpack_require__(140);
+var aboutus_component_1 = __webpack_require__(132);
+var singup_component_1 = __webpack_require__(148);
+var login_component_1 = __webpack_require__(147);
+var primeng_2 = __webpack_require__(14);
+var h5webstorage_1 = __webpack_require__(18);
+var questions_component_1 = __webpack_require__(146);
+var help_component_1 = __webpack_require__(139);
+var contacts_component_1 = __webpack_require__(138);
+var question_service_1 = __webpack_require__(55);
+var cabinet_component_1 = __webpack_require__(135);
 /* Feature Modules */
-var product_module_1 = __webpack_require__(144);
-var scretches_module_1 = __webpack_require__(149);
-var shared_module_1 = __webpack_require__(19);
-var cart_module_1 = __webpack_require__(136);
+var product_module_1 = __webpack_require__(145);
+var scretches_module_1 = __webpack_require__(150);
+var shared_module_1 = __webpack_require__(20);
+var cart_module_1 = __webpack_require__(137);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -10860,7 +13978,7 @@ exports.AppModule = AppModule;
 
 
 /***/ }),
-/* 134 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10896,46 +14014,12 @@ var CabinetComponent = (function () {
 }());
 CabinetComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(116),
+        template: __webpack_require__(117),
         styles: [__webpack_require__(222)]
     }),
     tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService])
 ], CabinetComponent);
 exports.CabinetComponent = CabinetComponent;
-
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(3);
-var core_1 = __webpack_require__(0);
-var product_service_1 = __webpack_require__(18);
-var CartComponent = (function () {
-    function CartComponent(_productService) {
-        this._productService = _productService;
-        this.ArticleTitle = "My Cart";
-        this.ArticleText = "Easy enough - just buy everything you want!";
-    }
-    /*Executes on initialisation of page*/
-    CartComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._productService.getProducts()
-            .subscribe(function (products) { return _this.Products = products; }, function (error) { return _this.ErrorMessage = error; });
-    };
-    return CartComponent;
-}());
-CartComponent = tslib_1.__decorate([
-    core_1.Component({
-        template: __webpack_require__(117),
-        styles: [__webpack_require__(223)]
-    }),
-    tslib_1.__metadata("design:paramtypes", [product_service_1.ProductService])
-], CartComponent);
-exports.CartComponent = CartComponent;
 
 
 /***/ }),
@@ -10947,10 +14031,44 @@ exports.CartComponent = CartComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
+var cart_service_1 = __webpack_require__(19);
+var CartComponent = (function () {
+    function CartComponent(_cartService) {
+        this._cartService = _cartService;
+        this.ArticleTitle = "My Cart";
+        this.ArticleText = "Easy enough - just buy everything you want!";
+    }
+    /*Executes on initialisation of page*/
+    CartComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._cartService.getProductsInCart()
+            .subscribe(function (products) { return _this.Products = products; }, function (error) { return _this.ErrorMessage = error; });
+    };
+    return CartComponent;
+}());
+CartComponent = tslib_1.__decorate([
+    core_1.Component({
+        template: __webpack_require__(118),
+        styles: [__webpack_require__(223)]
+    }),
+    tslib_1.__metadata("design:paramtypes", [cart_service_1.CartService])
+], CartComponent);
+exports.CartComponent = CartComponent;
+
+
+/***/ }),
+/* 137 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(3);
+var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(6);
-var shared_module_1 = __webpack_require__(19);
-var cart_component_1 = __webpack_require__(135);
-var cart_service_1 = __webpack_require__(49);
+var shared_module_1 = __webpack_require__(20);
+var cart_component_1 = __webpack_require__(136);
+var cart_service_1 = __webpack_require__(19);
 var CartModule = (function () {
     function CartModule() {
     }
@@ -10976,7 +14094,7 @@ exports.CartModule = CartModule;
 
 
 /***/ }),
-/* 137 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11005,7 +14123,7 @@ var ContactsComponent = (function () {
 }());
 ContactsComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(118),
+        template: __webpack_require__(119),
         styles: [__webpack_require__(224)]
     })
 ], ContactsComponent);
@@ -11013,7 +14131,7 @@ exports.ContactsComponent = ContactsComponent;
 
 
 /***/ }),
-/* 138 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11063,7 +14181,7 @@ var HelpComponent = (function () {
 }());
 HelpComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(119),
+        template: __webpack_require__(120),
         styles: [__webpack_require__(225)]
     })
 ], HelpComponent);
@@ -11071,7 +14189,7 @@ exports.HelpComponent = HelpComponent;
 
 
 /***/ }),
-/* 139 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11103,7 +14221,7 @@ var WelcomeComponent = (function () {
 }());
 WelcomeComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(120),
+        template: __webpack_require__(121),
         styles: [__webpack_require__(226)]
     })
 ], WelcomeComponent);
@@ -11111,7 +14229,7 @@ exports.WelcomeComponent = WelcomeComponent;
 
 
 /***/ }),
-/* 140 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11120,8 +14238,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(6);
-var product_service_1 = __webpack_require__(18);
-var cart_service_1 = __webpack_require__(49);
+var product_service_1 = __webpack_require__(35);
+var cart_service_1 = __webpack_require__(19);
 var ProductDetailComponent = (function () {
     function ProductDetailComponent(_route, _router, _productService, _cartService) {
         this._route = _route;
@@ -11137,6 +14255,7 @@ var ProductDetailComponent = (function () {
         this.AmountLeft = "Amount Left:";
         this.StarRating = "5 Star Rating:";
         this.Remove = "Remove from cart";
+        this.Msgs = [];
     }
     /*Executes on initialisation of page*/
     ProductDetailComponent.prototype.ngOnInit = function () {
@@ -11145,6 +14264,7 @@ var ProductDetailComponent = (function () {
             var id = +params['id'];
             _this.getProduct(id);
             _this.Id = id;
+            _this.isCart = params['cartToSend'];
         });
         this._cartService.productIsInCart(this.Id).subscribe(function (isInCart) { return _this.IsInCart = isInCart; });
     };
@@ -11159,7 +14279,10 @@ var ProductDetailComponent = (function () {
     };
     /*Executes on pressing the 'back' button*/
     ProductDetailComponent.prototype.onBack = function () {
-        this._router.navigate(['/products']);
+        if (this.isCart == 0)
+            this._router.navigate(['/products']);
+        if (this.isCart == 1)
+            this._router.navigate(['/cart']);
     };
     /*Executes on clicking the 'rating'*/
     ProductDetailComponent.prototype.onRatingClicked = function (message) {
@@ -11167,15 +14290,20 @@ var ProductDetailComponent = (function () {
     /*Adding product to your cart*/
     ProductDetailComponent.prototype.addToCart = function () {
         this._cartService.addProductToCart(this.Id).subscribe();
+        this.IsInCart = true;
+        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Added to cart." });
     };
     /*Removing product from your cart*/
     ProductDetailComponent.prototype.RemoveProduct = function () {
+        this._cartService.deleteProduct(this.Id).subscribe();
+        this.IsInCart = false;
+        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Removed from cart." });
     };
     return ProductDetailComponent;
 }());
 ProductDetailComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(121),
+        template: __webpack_require__(122),
         styles: [__webpack_require__(227)]
     }),
     tslib_1.__metadata("design:paramtypes", [router_1.ActivatedRoute,
@@ -11187,7 +14315,7 @@ exports.ProductDetailComponent = ProductDetailComponent;
 
 
 /***/ }),
-/* 141 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11215,7 +14343,7 @@ exports.ProductFilterPipe = ProductFilterPipe;
 
 
 /***/ }),
-/* 142 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11250,7 +14378,7 @@ exports.ProductDetailGuard = ProductDetailGuard;
 
 
 /***/ }),
-/* 143 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11258,7 +14386,7 @@ exports.ProductDetailGuard = ProductDetailGuard;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var product_service_1 = __webpack_require__(18);
+var product_service_1 = __webpack_require__(35);
 var ProductListComponent = (function () {
     function ProductListComponent(_productService) {
         this._productService = _productService;
@@ -11276,7 +14404,7 @@ var ProductListComponent = (function () {
 }());
 ProductListComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(122),
+        template: __webpack_require__(123),
         styles: [__webpack_require__(228)]
     }),
     tslib_1.__metadata("design:paramtypes", [product_service_1.ProductService])
@@ -11285,7 +14413,7 @@ exports.ProductListComponent = ProductListComponent;
 
 
 /***/ }),
-/* 144 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11294,11 +14422,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(6);
-var product_list_component_1 = __webpack_require__(143);
-var product_detail_component_1 = __webpack_require__(140);
-var product_guard_service_1 = __webpack_require__(142);
-var product_service_1 = __webpack_require__(18);
-var shared_module_1 = __webpack_require__(19);
+var primeng_1 = __webpack_require__(14);
+var product_list_component_1 = __webpack_require__(144);
+var product_detail_component_1 = __webpack_require__(141);
+var product_guard_service_1 = __webpack_require__(143);
+var product_service_1 = __webpack_require__(35);
+var shared_module_1 = __webpack_require__(20);
 var ProductModule = (function () {
     function ProductModule() {
     }
@@ -11308,11 +14437,12 @@ ProductModule = tslib_1.__decorate([
     core_1.NgModule({
         imports: [
             shared_module_1.SharedModule,
+            primeng_1.GrowlModule,
             router_1.RouterModule.forChild([
                 { path: 'products', component: product_list_component_1.ProductListComponent },
-                { path: 'product/:id',
+                { path: 'product/:id/:cartToSend',
                     canActivate: [product_guard_service_1.ProductDetailGuard],
-                    component: product_detail_component_1.ProductDetailComponent
+                    component: product_detail_component_1.ProductDetailComponent,
                 }
             ])
         ],
@@ -11330,7 +14460,7 @@ exports.ProductModule = ProductModule;
 
 
 /***/ }),
-/* 145 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11338,7 +14468,7 @@ exports.ProductModule = ProductModule;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var question_service_1 = __webpack_require__(50);
+var question_service_1 = __webpack_require__(55);
 var auth_service_1 = __webpack_require__(13);
 var QuestionsComponent = (function () {
     function QuestionsComponent(_questionService, _authService) {
@@ -11408,7 +14538,7 @@ var QuestionsComponent = (function () {
 }());
 QuestionsComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(123),
+        template: __webpack_require__(124),
         styles: [__webpack_require__(229)]
     }),
     tslib_1.__metadata("design:paramtypes", [question_service_1.QuestionService, auth_service_1.AuthService])
@@ -11417,7 +14547,7 @@ exports.QuestionsComponent = QuestionsComponent;
 
 
 /***/ }),
-/* 146 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11458,7 +14588,7 @@ var LogInComponent = (function () {
 }());
 LogInComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(124),
+        template: __webpack_require__(125),
         styles: [__webpack_require__(230)]
     }),
     tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])
@@ -11467,7 +14597,7 @@ exports.LogInComponent = LogInComponent;
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11506,44 +14636,12 @@ var SignUpComponent = (function () {
 }());
 SignUpComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(125),
+        template: __webpack_require__(126),
         styles: [__webpack_require__(231)]
     }),
     tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService])
 ], SignUpComponent);
 exports.SignUpComponent = SignUpComponent;
-
-
-/***/ }),
-/* 148 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(3);
-var core_1 = __webpack_require__(0);
-var ScretchesComponent = (function () {
-    function ScretchesComponent() {
-        this.ArticleTitle = 'Scretches...';
-        this.ArticleText = 'If you are ready to have a cool picture on your body, choose one scretch from below or draw your own in a field at the bottom of this page and fill in the form to make an appointment. There are prices and short description of each model and you can see this characteristics for your picture, too. Have fun!';
-        this.FormTitle = 'Fill in the form to make an appointment';
-        this.LabelChoose = 'Choose one of the scretches:';
-        this.ButtonName = 'Confirm';
-        this.Choosed = 'Choosed: ';
-        this.Option = 'Scretch from gallery';
-        this.Scretch = 'Scretch from gallery';
-        this.Picture = 'Your own picture';
-    }
-    return ScretchesComponent;
-}());
-ScretchesComponent = tslib_1.__decorate([
-    core_1.Component({
-        template: __webpack_require__(126),
-        styles: [__webpack_require__(232)]
-    })
-], ScretchesComponent);
-exports.ScretchesComponent = ScretchesComponent;
 
 
 /***/ }),
@@ -11555,30 +14653,117 @@ exports.ScretchesComponent = ScretchesComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(6);
-var primeng_1 = __webpack_require__(35);
-var scretches_component_1 = __webpack_require__(148);
-var shared_module_1 = __webpack_require__(19);
-var ScretchesModule = (function () {
-    function ScretchesModule() {
+var scretch_service_1 = __webpack_require__(54);
+var ScretchesComponent = (function () {
+    function ScretchesComponent(_scretchService) {
+        this._scretchService = _scretchService;
+        this.ArticleTitle = 'Scretches...';
+        this.ArticleText = 'If you are ready to have a cool picture on your body, choose one scretch from below (just click on it!) or upload your own picture in a field at the bottom of this page and fill in the form to make an appointment. We will phone or email you in a couple of days after receiving your order. There is a name, price, size and short description of each model beneath the picture. Have fun!';
+        this.ErrorMessage = "";
+        this.ScretchNameLabel = "Scretch name: ";
+        this.ScretchDescriptionLabel = "Description: ";
+        this.ScretchPriceLabel = "Price: ";
+        this.ScretchSizeLabel = "Size: ";
+        this.DescriptionNumber = 0;
+        this.IsFirst = true;
+        this.AllowMove = true;
+        this.PanelHeading = 'Fill in the form to book a scretch and make an appointment';
+        this.Choosed = 'Choosed: ';
+        this.Scretch = 'Scretch from gallery';
+        this.Picture = 'Your own picture';
+        this.LabelChoose = 'Choose one of the scretches:';
+        this.LabelUpload = 'Upload your own picture:';
+        this.ButtonName = 'Confirm';
+        this.NotChoosed = "not choosed";
     }
-    return ScretchesModule;
+    /*Executes on initialisation of page*/
+    ScretchesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._scretchService.getScretches()
+            .subscribe(function (scretches) { return _this.Scretches = scretches; }, function (error) { return _this.ErrorMessage = error; });
+    };
+    ScretchesComponent.prototype.isActive = function (url) {
+        return url === (this.Scretches !== undefined ? this.Scretches[0].imageUrl : undefined);
+    };
+    ScretchesComponent.prototype.Right = function () {
+        var _this = this;
+        if (this.AllowMove) {
+            this.AllowMove = false;
+            setTimeout(function () {
+                _this.AllowMove = true;
+            }, 602);
+            this.DescriptionNumber++;
+            if (this.DescriptionNumber == this.Scretches.length)
+                this.DescriptionNumber = 0;
+            this.ScretchName = this.Scretches[this.DescriptionNumber].scretchName;
+            this.ScretchDescription = this.Scretches[this.DescriptionNumber].description;
+            this.ScretchPrice = this.Scretches[this.DescriptionNumber].price;
+            this.ScretchWidth = this.Scretches[this.DescriptionNumber].width;
+            this.ScretchHeight = this.Scretches[this.DescriptionNumber].height;
+            this.IsFirst = false;
+        }
+    };
+    ScretchesComponent.prototype.Left = function () {
+        var _this = this;
+        if (this.AllowMove) {
+            this.AllowMove = false;
+            setTimeout(function () {
+                _this.AllowMove = true;
+            }, 602);
+            this.DescriptionNumber--;
+            if (this.DescriptionNumber == -1)
+                this.DescriptionNumber = this.Scretches.length - 1;
+            this.ScretchName = this.Scretches[this.DescriptionNumber].scretchName;
+            this.ScretchDescription = this.Scretches[this.DescriptionNumber].description;
+            this.ScretchPrice = this.Scretches[this.DescriptionNumber].price;
+            this.ScretchWidth = this.Scretches[this.DescriptionNumber].width;
+            this.ScretchHeight = this.Scretches[this.DescriptionNumber].height;
+            this.IsFirst = false;
+        }
+    };
+    ScretchesComponent.prototype.ChoosingScretch = function () {
+        this.Option = 'Scretch from gallery';
+        this.SelectedName = this.ScretchName;
+        this.SelectedNameDescription = this.ScretchDescription;
+        this.ScretchNamePrice = this.ScretchPrice;
+        this.ScretchNameWidth = this.ScretchWidth;
+        this.ScretchNameHeight = this.ScretchHeight;
+        if (this.IsFirst) {
+            this.SelectedName = this.Scretches[0].scretchName;
+            this.SelectedNameDescription = this.Scretches[0].description;
+            this.ScretchNamePrice = this.Scretches[0].price;
+            this.ScretchNameWidth = this.Scretches[0].width;
+            this.ScretchNameHeight = this.Scretches[0].height;
+        }
+    };
+    ScretchesComponent.prototype.OnSelectionChange = function () {
+        var _this = this;
+        var temp = this.Scretches.find(function (x) { return x.scretchName == _this.SelectedName; });
+        if (temp) {
+            this.SelectedNameDescription = temp.description;
+            this.ScretchNamePrice = temp.price;
+            this.ScretchNameWidth = temp.width;
+            this.ScretchNameHeight = temp.height;
+        }
+    };
+    ScretchesComponent.prototype.onChange = function (files) {
+        var l = files.length;
+        var namesArr = [];
+        for (var i = 0; i < l; i++) {
+            namesArr.push(files[i].name);
+        }
+        this.ChoosedFileName = namesArr[0];
+    };
+    return ScretchesComponent;
 }());
-ScretchesModule = tslib_1.__decorate([
-    core_1.NgModule({
-        imports: [
-            shared_module_1.SharedModule,
-            primeng_1.RadioButtonModule,
-            router_1.RouterModule.forChild([
-                { path: 'scretches', component: scretches_component_1.ScretchesComponent },
-            ])
-        ],
-        declarations: [
-            scretches_component_1.ScretchesComponent
-        ]
-    })
-], ScretchesModule);
-exports.ScretchesModule = ScretchesModule;
+ScretchesComponent = tslib_1.__decorate([
+    core_1.Component({
+        template: __webpack_require__(127),
+        styles: [__webpack_require__(232)]
+    }),
+    tslib_1.__metadata("design:paramtypes", [scretch_service_1.ScretchService])
+], ScretchesComponent);
+exports.ScretchesComponent = ScretchesComponent;
 
 
 /***/ }),
@@ -11590,11 +14775,56 @@ exports.ScretchesModule = ScretchesModule;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(6);
+var primeng_1 = __webpack_require__(14);
+var ng2_page_scroll_1 = __webpack_require__(56);
+var scretches_component_1 = __webpack_require__(149);
+var scretch_service_1 = __webpack_require__(54);
+var shared_module_1 = __webpack_require__(20);
+var ScretchesModule = (function () {
+    function ScretchesModule() {
+    }
+    return ScretchesModule;
+}());
+ScretchesModule = tslib_1.__decorate([
+    core_1.NgModule({
+        imports: [
+            shared_module_1.SharedModule,
+            primeng_1.RadioButtonModule,
+            ng2_page_scroll_1.Ng2PageScrollModule.forRoot(),
+            router_1.RouterModule.forChild([
+                { path: 'scretches', component: scretches_component_1.ScretchesComponent },
+            ])
+        ],
+        declarations: [
+            scretches_component_1.ScretchesComponent
+        ],
+        providers: [
+            scretch_service_1.ScretchService
+        ]
+    })
+], ScretchesModule);
+exports.ScretchesModule = ScretchesModule;
+
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(3);
+var core_1 = __webpack_require__(0);
+var cart_service_1 = __webpack_require__(19);
 var AllProductsComponent = (function () {
-    function AllProductsComponent() {
+    function AllProductsComponent(_cartService) {
+        this._cartService = _cartService;
         this.PageTitle = 'Product List';
         this.ImageWidth = 50;
         this.ImageMargin = 2;
+        this.BuyAllDisabled = false;
+        this.ClearCartDisabled = false;
         this.Image = "Image";
         this.Name = "Name:";
         this.Description = "Description:";
@@ -11605,11 +14835,98 @@ var AllProductsComponent = (function () {
         this.Filter = "Filter products by:";
         this.Buy = "Buy all";
         this.Remove = "Remove";
-        this.val = 5;
+        this.Delete = "Clear cart";
+        this.TitleRemove = "Click to remove product from cart";
+        this.TitleClear = "Click to clear the cart";
+        this.TitleBuy = "Click to buy all products in cart";
+        this.LabelTotalPrice = "Total price: ";
+        this.LabelTotalAmount = "Total amount of products: ";
+        this.Cancel = "Cancel";
+        this.Msgs = [];
+        this.DisplayBuyAll = false;
+        this.DisplayClear = false;
+        this.NowInCart = "Now in your cart: ";
     }
-    AllProductsComponent.prototype.RemoveProduct = function () {
+    /*Executes on initialisation*/
+    AllProductsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        if (this.IsCart) {
+            this.CartToSend = 1;
+            this._cartService.totalSum()
+                .subscribe(function (sum) { return _this.TotalPrice = sum; });
+            this._cartService.totalAmount()
+                .subscribe(function (amount) { return _this.TotalAmount = amount; });
+        }
+        else
+            this.CartToSend = 0;
     };
+    /*Removing product from cart*/
+    AllProductsComponent.prototype.RemoveProduct = function (productId) {
+        var idx = this.AllProducts.findIndex(function (x) { return x.id == productId; });
+        this.TotalAmount = this.TotalAmount - this.AllProducts[idx].amount;
+        this.TotalPrice = this.TotalPrice - this.AllProducts[idx].price * this.AllProducts[idx].amount;
+        this.AllProducts.splice(idx, 1);
+        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Removed from cart." });
+        this._cartService.deleteProduct(productId)
+            .subscribe();
+    };
+    /*Buying all products from cart*/
     AllProductsComponent.prototype.BuyAll = function () {
+        this.DisplayBuyAll = false;
+        var len = this.AllProducts.length;
+        this.AllProducts.splice(0, len);
+        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Products bought" });
+        this.TotalAmount = 0;
+        this.TotalPrice = 0;
+        this._cartService.buyAll()
+            .subscribe();
+    };
+    /*Clearing the cart*/
+    AllProductsComponent.prototype.DeleteAll = function () {
+        this.DisplayClear = false;
+        var len = this.AllProducts.length;
+        this.AllProducts.splice(0, len);
+        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Cart cleared" });
+        this.TotalAmount = 0;
+        this.TotalPrice = 0;
+        this._cartService.deleteAll()
+            .subscribe();
+    };
+    /*Increasing amount of product in cart*/
+    AllProductsComponent.prototype.IncreasingAmount = function (product) {
+        if (product.amount < product.amountLeft) {
+            product.amount++;
+            this.TotalAmount++;
+            this.TotalPrice = this.TotalPrice + product.price;
+        }
+        if (product.amount) {
+            this._cartService.changeAmount(product.id, product.amount)
+                .subscribe();
+        }
+    };
+    /*Decreasing amount of product in cart*/
+    AllProductsComponent.prototype.DecreasingAmount = function (product) {
+        if (product.amount > 1) {
+            product.amount--;
+            this.TotalAmount--;
+            this.TotalPrice = this.TotalPrice - product.price;
+        }
+        if (product.amount) {
+            this._cartService.changeAmount(product.id, product.amount)
+                .subscribe();
+        }
+    };
+    AllProductsComponent.prototype.ShowDialogByuAll = function () {
+        this.DisplayBuyAll = true;
+    };
+    AllProductsComponent.prototype.HideDialogByuAll = function () {
+        this.DisplayBuyAll = false;
+    };
+    AllProductsComponent.prototype.ShowDialogClear = function () {
+        this.DisplayClear = true;
+    };
+    AllProductsComponent.prototype.HideDialogClear = function () {
+        this.DisplayClear = false;
     };
     return AllProductsComponent;
 }());
@@ -11628,15 +14945,16 @@ tslib_1.__decorate([
 AllProductsComponent = tslib_1.__decorate([
     core_1.Component({
         selector: 'all-products',
-        template: __webpack_require__(127),
+        template: __webpack_require__(128),
         styles: [__webpack_require__(233)]
-    })
+    }),
+    tslib_1.__metadata("design:paramtypes", [cart_service_1.CartService])
 ], AllProductsComponent);
 exports.AllProductsComponent = AllProductsComponent;
 
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11646,13 +14964,18 @@ var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var SpinnerComponent = (function () {
     function SpinnerComponent() {
+        this.IncreaseAmount = new core_1.EventEmitter();
+        this.DecreaseAmount = new core_1.EventEmitter();
+        this.TitleIncrease = "Click to increase amount";
+        this.TitleDecrease = "Click to decrease amount";
     }
+    /*Increasing amount of product in cart*/
     SpinnerComponent.prototype.Increase = function () {
-        this.IncomeVal++;
+        this.IncreaseAmount.emit();
     };
+    /*Decreasing amount of product in cart*/
     SpinnerComponent.prototype.Decrease = function () {
-        if (this.IncomeVal > 1)
-            this.IncomeVal--;
+        this.DecreaseAmount.emit();
     };
     return SpinnerComponent;
 }());
@@ -11660,41 +14983,22 @@ tslib_1.__decorate([
     core_1.Input(),
     tslib_1.__metadata("design:type", Number)
 ], SpinnerComponent.prototype, "IncomeVal", void 0);
+tslib_1.__decorate([
+    core_1.Output(),
+    tslib_1.__metadata("design:type", core_1.EventEmitter)
+], SpinnerComponent.prototype, "IncreaseAmount", void 0);
+tslib_1.__decorate([
+    core_1.Output(),
+    tslib_1.__metadata("design:type", core_1.EventEmitter)
+], SpinnerComponent.prototype, "DecreaseAmount", void 0);
 SpinnerComponent = tslib_1.__decorate([
     core_1.Component({
         selector: 'spinnerNum',
-        template: __webpack_require__(128),
+        template: __webpack_require__(129),
         styles: [__webpack_require__(234)]
     })
 ], SpinnerComponent);
 exports.SpinnerComponent = SpinnerComponent;
-
-
-/***/ }),
-/* 152 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_ng2_page_scroll_directive__ = __webpack_require__(52);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScroll", function() { return __WEBPACK_IMPORTED_MODULE_0__src_ng2_page_scroll_directive__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_ng2_page_scroll_service__ = __webpack_require__(34);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollService", function() { return __WEBPACK_IMPORTED_MODULE_1__src_ng2_page_scroll_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_ng2_page_scroll_config__ = __webpack_require__(33);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "EasingLogic", function() { return __WEBPACK_IMPORTED_MODULE_2__src_ng2_page_scroll_config__["a"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollConfig", function() { return __WEBPACK_IMPORTED_MODULE_2__src_ng2_page_scroll_config__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_ng2_page_scroll_instance__ = __webpack_require__(51);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollInstance", function() { return __WEBPACK_IMPORTED_MODULE_3__src_ng2_page_scroll_instance__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_ng2_page_scroll_util_service__ = __webpack_require__(20);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollUtilService", function() { return __WEBPACK_IMPORTED_MODULE_4__src_ng2_page_scroll_util_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_ng2_page_scroll_module__ = __webpack_require__(153);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Ng2PageScrollModule", function() { return __WEBPACK_IMPORTED_MODULE_5__src_ng2_page_scroll_module__["a"]; });
-
-
-
-
-
-
 
 
 /***/ }),
@@ -11704,8 +15008,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_service__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_page_scroll_directive__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_service__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_page_scroll_directive__ = __webpack_require__(58);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Ng2PageScrollModule; });
 /**
  * Created by sebastianfuss on 03.09.16.
@@ -11942,7 +15246,7 @@ var inputtext_1 = __webpack_require__(12);
 var button_1 = __webpack_require__(11);
 var shared_1 = __webpack_require__(4);
 var domhandler_1 = __webpack_require__(2);
-var ObjectUtils_1 = __webpack_require__(22);
+var ObjectUtils_1 = __webpack_require__(23);
 var forms_1 = __webpack_require__(5);
 exports.AUTOCOMPLETE_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
@@ -14608,7 +17912,7 @@ var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
 var shared_1 = __webpack_require__(4);
 var button_1 = __webpack_require__(11);
-var api_1 = __webpack_require__(53);
+var api_1 = __webpack_require__(59);
 var ConfirmDialog = (function () {
     function ConfirmDialog(el, domHandler, renderer, confirmationService) {
         var _this = this;
@@ -15150,7 +18454,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(4);
-var paginator_1 = __webpack_require__(21);
+var paginator_1 = __webpack_require__(22);
 var DataGrid = (function () {
     function DataGrid(el, differs) {
         this.el = el;
@@ -15346,7 +18650,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(4);
-var paginator_1 = __webpack_require__(21);
+var paginator_1 = __webpack_require__(22);
 var DataList = (function () {
     function DataList(el, differs) {
         this.el = el;
@@ -15764,11 +19068,11 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var forms_1 = __webpack_require__(5);
 var shared_1 = __webpack_require__(4);
-var paginator_1 = __webpack_require__(21);
+var paginator_1 = __webpack_require__(22);
 var inputtext_1 = __webpack_require__(12);
 var shared_2 = __webpack_require__(4);
 var domhandler_1 = __webpack_require__(2);
-var ObjectUtils_1 = __webpack_require__(22);
+var ObjectUtils_1 = __webpack_require__(23);
 var DTRadioButton = (function () {
     function DTRadioButton() {
         this.onClick = new core_1.EventEmitter();
@@ -18258,7 +21562,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(4);
 var domhandler_1 = __webpack_require__(2);
-var ObjectUtils_1 = __webpack_require__(22);
+var ObjectUtils_1 = __webpack_require__(23);
 var forms_1 = __webpack_require__(5);
 exports.DROPDOWN_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
@@ -18998,10 +22302,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var platform_browser_1 = __webpack_require__(36);
+var platform_browser_1 = __webpack_require__(24);
 var button_1 = __webpack_require__(11);
-var messages_1 = __webpack_require__(54);
-var progressbar_1 = __webpack_require__(55);
+var messages_1 = __webpack_require__(60);
+var progressbar_1 = __webpack_require__(61);
 var shared_1 = __webpack_require__(4);
 var FileUpload = (function () {
     function FileUpload(sanitizer) {
@@ -21026,7 +24330,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(4);
 var domhandler_1 = __webpack_require__(2);
-var ObjectUtils_1 = __webpack_require__(22);
+var ObjectUtils_1 = __webpack_require__(23);
 var forms_1 = __webpack_require__(5);
 exports.LISTBOX_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
@@ -28621,7 +31925,7 @@ var Reflect;
             Function("return this;")());
 })(Reflect || (Reflect = {}));
 //# sourceMappingURL=Reflect.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(239), __webpack_require__(61)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(239), __webpack_require__(63)))
 
 /***/ }),
 /* 219 */
@@ -28629,7 +31933,7 @@ var Reflect;
 
 "use strict";
 
-var ansiRegex = __webpack_require__(70)();
+var ansiRegex = __webpack_require__(74)();
 
 module.exports = function (str) {
 	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
@@ -28638,62 +31942,6 @@ module.exports = function (str) {
 
 /***/ }),
 /* 220 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(73);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 221 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(74);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 222 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(75);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 223 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(76);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28707,7 +31955,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 225 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28721,7 +31969,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 226 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28735,7 +31983,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 227 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28749,7 +31997,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 228 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28763,7 +32011,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 229 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28777,7 +32025,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 230 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28791,7 +32039,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 231 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28805,7 +32053,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 232 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28819,7 +32067,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 233 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -28833,11 +32081,67 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 234 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
         var result = __webpack_require__(87);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(88);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 232 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(89);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(90);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(91);
 
         if (typeof result === "string") {
             module.exports = result;
@@ -28876,7 +32180,7 @@ for (var key in styles) {
   clientOverlay.style[key] = styles[key];
 }
 
-var ansiHTML = __webpack_require__(69);
+var ansiHTML = __webpack_require__(73);
 var colors = {
   reset: ['transparent', 'transparent'],
   black: '181818',
@@ -28891,7 +32195,7 @@ var colors = {
 };
 ansiHTML.setColors(colors);
 
-var Entities = __webpack_require__(111).AllHtmlEntities;
+var Entities = __webpack_require__(112).AllHtmlEntities;
 var entities = new Entities();
 
 exports.showProblems =
@@ -29107,26 +32411,32 @@ module.exports = (__webpack_require__(8))(13)
 /* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(37))(161)
+module.exports = (__webpack_require__(42))(161)
 
 /***/ }),
 /* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(8))(313)
+module.exports = (__webpack_require__(8))(312)
 
 /***/ }),
 /* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(37))(322)
+module.exports = (__webpack_require__(8))(313)
 
 /***/ }),
 /* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(63);
-module.exports = __webpack_require__(62);
+module.exports = (__webpack_require__(42))(322)
+
+/***/ }),
+/* 243 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(65);
+module.exports = __webpack_require__(64);
 
 
 /***/ })

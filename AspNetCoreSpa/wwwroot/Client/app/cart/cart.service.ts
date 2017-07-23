@@ -7,8 +7,6 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 
-import { IProduct } from '../products/product';
-
 @Injectable()
 export class CartService {
     private _cartUrl = 'api/Cart/';
@@ -16,7 +14,6 @@ export class CartService {
     constructor(private _http: Http) { }
 
     addProductToCart(idProduct: number): Observable<any> {
-
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -28,18 +25,50 @@ export class CartService {
             .map((response: Response) => <boolean>response.json());
     }
 
-    /*getProducts(): Observable<IProduct[]> {
-        return this._http.get(this._productUrl)
-            .map((response: Response) => <IProduct[]> response.json())
+    getProductsInCart(): Observable<any> {
+        return this._http.get(this._cartUrl)
+            .map((response: Response) => <any> response.json())
             .do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);
     }
 
-    getProduct(id: number): Observable<IProduct> {
-        return this._http.get(this._productUrl+id)
-            .map((response: Response) => response.json())
-            .do(data => console.log(data))
-            .catch(this.handleError);
+    deleteProduct(idProduct: number): Observable<any>
+    {
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http.post(this._cartUrl + "delete", idProduct, { headers: headers });
+    }
+
+    deleteAll(): Observable<any> {
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http.post(this._cartUrl + "deleteall", { headers: headers });
+    }
+
+    buyAll(): Observable<any> {
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http.post(this._cartUrl + "buyall", { headers: headers });
+    }
+
+    changeAmount(id: number, amount: number): Observable<any> {
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http.post(this._cartUrl + id + "/changeamount", amount, { headers: headers });
+    }
+
+    totalSum(): Observable<number> {
+        return this._http.get(this._cartUrl + "totalsum")
+            .map((response: Response) => <number>response.json());
+    }
+
+    totalAmount(): Observable<number> {
+        return this._http.get(this._cartUrl + "totalamount")
+            .map((response: Response) => <number>response.json());
     }
 
     private handleError(error: Response) {
@@ -47,5 +76,5 @@ export class CartService {
         // instead of just logging it to the console
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
-    }*/
+    }
 }

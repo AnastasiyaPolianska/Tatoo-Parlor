@@ -58,9 +58,6 @@
     <Content Include="wwwroot\Client\app\help\help.component.css" />
     <Content Include="wwwroot\Client\app\help\help.component.html" />
     <Content Include="wwwroot\Client\app\help\help.component.ts" />
-    <Content Include="wwwroot\Client\app\home\help.component.css" />
-    <Content Include="wwwroot\Client\app\home\help.component.html" />
-    <Content Include="wwwroot\Client\app\home\help.component.ts" />
     <Content Include="wwwroot\Client\app\questions\question.js" />
     <Content Include="wwwroot\Client\app\questions\question.js.map" />
     <Content Include="wwwroot\Client\app\questions\question.module.js" />
@@ -81,6 +78,16 @@
     <Content Include="wwwroot\Client\app\registration\login.component.js" />
     <Content Include="wwwroot\Client\app\registration\login.component.js.map" />
     <Content Include="wwwroot\Client\app\registration\login.component.ts" />
+    <Content Include="wwwroot\Client\app\scretches\scretch.js" />
+    <Content Include="wwwroot\Client\app\scretches\scretch.js.map" />
+    <Content Include="wwwroot\Client\app\scretches\scretch.module.js" />
+    <Content Include="wwwroot\Client\app\scretches\scretch.module.js.map" />
+    <Content Include="wwwroot\Client\app\scretches\scretch.service.js" />
+    <Content Include="wwwroot\Client\app\scretches\scretch.service.js.map" />
+    <Content Include="wwwroot\Client\app\scretches\scretch.service.ts" />
+    <Content Include="wwwroot\Client\app\scretches\scretch.ts">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="wwwroot\Client\app\shared\spinner.component.css" />
     <Content Include="wwwroot\Client\app\shared\spinner.component.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
