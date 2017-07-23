@@ -1,8 +1,9 @@
 /* Defines the product entity */
 export interface IProduct {
-    Id: number;
+    id: number;
     productName: string;
-    amountLeft: string;
+    amountLeft: number;
+    amount?: number;
     price: number;
     description: string;
     starRating: number;

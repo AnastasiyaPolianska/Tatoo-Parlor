@@ -1,3 +1,15 @@
+<style>
+    .ui-growl-item-container {
+        margin-top: 50px !important;
+    }
+
+    #growl {
+        margin-top: 50px;
+    }
+</style>
+
+<p-growl [value]="Msgs" id="growl"></p-growl>
+
 <!--Template for stars-->
 <ng-template #t let-fill="fill">
     <span *ngIf="fill === 100" class="star full">&#9733;</span>

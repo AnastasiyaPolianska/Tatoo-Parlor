@@ -1,4 +1,4 @@
-import { Component, Input}  from '@angular/core';
+import { Component, Input, Output, EventEmitter}  from '@angular/core';
 
 @Component({
     selector: 'spinnerNum',
@@ -7,12 +7,19 @@ import { Component, Input}  from '@angular/core';
 })
 export class SpinnerComponent{
     @Input() public IncomeVal: number;
+    @Output() public IncreaseAmount: EventEmitter<number> = new EventEmitter(); 
+    @Output() public DecreaseAmount: EventEmitter<number> = new EventEmitter(); 
 
+    public TitleIncrease = "Click to increase amount";
+    public TitleDecrease = "Click to decrease amount";
+
+    /*Increasing amount of product in cart*/
     public Increase(): void {
-        this.IncomeVal++;
+        this.IncreaseAmount.emit();
     }
 
+    /*Decreasing amount of product in cart*/
     public Decrease(): void {
-        if (this.IncomeVal > 1) this.IncomeVal--;
+        this.DecreaseAmount.emit();
     }
 }
