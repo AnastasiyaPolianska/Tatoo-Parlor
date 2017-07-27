@@ -5,7 +5,7 @@ import { IScretch } from './scretch';
 
 @Component({
     templateUrl: './scretches.component.html',
-    styleUrls: ['./scretches.component.css']
+    styleUrls: ['./scretches.component.scss']
 })
 export class ScretchesComponent {
     public ArticleTitle: string = 'Scretches...';

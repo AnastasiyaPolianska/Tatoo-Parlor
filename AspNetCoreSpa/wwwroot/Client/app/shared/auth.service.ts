@@ -3,7 +3,7 @@ import { ISingUpModel } from './singUpModel';
 import { ILogInModel } from './logInModel';
 import { Observable } from 'rxjs/Observable';
 import { LocalStorage, SessionStorage } from 'h5webstorage';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()
 export  class AuthService {
@@ -11,6 +11,9 @@ export  class AuthService {
     private _signUpUrl = 'api/Account/register';
     private _logInUrl = 'api/Account/login';
     private _logOutUrl = 'api/Account/logout';
+    private _changeFirstNameUrl = 'api/Profile/changefirstname';
+    private _changeLastNameUrl = 'api/Profile/changelastname';
+    private _changeEmailUrl = 'api/Profile/changeemail';
     private _idUrl = 'api/Profile/id';
     private _userUrl = 'api/Profile/username';
 
@@ -49,5 +52,20 @@ export  class AuthService {
                 this.localStorage.setItem('localAuthData',"");
                 this.sessionStorage.setItem('sessionAuthData',"");
             })
+    }
+
+    changeFirstName(newFirstName: string): Observable<any> {
+        return this._http.get(this._changeFirstNameUrl+"/"+newFirstName);
+    }
+
+    changeLastName(newLastName: string): Observable<any> {
+        return this._http.get(this._changeLastNameUrl + "/" + newLastName);
+    }
+
+    changeEmail(newEmail: string, password: string): Observable<any> {
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http.post(this._changeEmailUrl, { newEmail: newEmail, password: password }, { headers: headers });
     }
 }

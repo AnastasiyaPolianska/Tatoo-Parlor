@@ -3,7 +3,7 @@ import { Component, Input, Output, EventEmitter}  from '@angular/core';
 @Component({
     selector: 'spinnerNum',
     templateUrl: './spinner.component.html',
-    styleUrls: ['./spinner.component.css']
+    styleUrls: ['./spinner.component.scss']
 })
 export class SpinnerComponent{
     @Input() public IncomeVal: number;

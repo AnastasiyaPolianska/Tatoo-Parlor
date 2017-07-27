@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "7aa35df50afa7f36dc42b5835f1b3e3186f5de95"
+    "signature": "f32b690f9e4335f70546d11e030d29494b360205"
   },
   "compilationOptions": {
     "defines": [
@@ -65,9 +65,9 @@
           "Microsoft.NETCore.App": "1.1.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "1.1.0",
           "Newtonsoft.Json": "10.0.2",
-          "OpenIddict": "1.0.0-beta2-0615",
-          "OpenIddict.EntityFrameworkCore": "1.0.0-beta2-0615",
-          "OpenIddict.Mvc": "1.0.0-beta2-0615",
+          "OpenIddict": "1.0.0-beta2-0636",
+          "OpenIddict.EntityFrameworkCore": "1.0.0-beta2-0636",
+          "OpenIddict.Mvc": "1.0.0-beta2-0636",
           "SendGrid.NetCore": "1.0.0-rtm-00002",
           "Serilog": "2.4.1-dev-00801",
           "Serilog.Extensions.Logging": "1.4.1-dev-10147",
@@ -2034,13 +2034,13 @@
           "lib/netstandard1.3/NuGet.Frameworks.dll": {}
         }
       },
-      "openiddict/1.0.0-beta2-0615": {
+      "openiddict/1.0.0-beta2-0636": {
         "dependencies": {
           "AspNet.Security.OpenIdConnect.Server": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.Abstractions": "1.1.1",
           "Microsoft.Extensions.Caching.Abstractions": "1.1.1",
           "NETStandard.Library": "1.6.1",
-          "OpenIddict.Core": "1.0.0-beta2-0615"
+          "OpenIddict.Core": "1.0.0-beta2-0636"
         },
         "runtime": {
           "lib/netstandard1.4/OpenIddict.dll": {}
@@ -2049,7 +2049,7 @@
           "lib/netstandard1.4/OpenIddict.dll": {}
         }
       },
-      "openiddict.core/1.0.0-beta2-0615": {
+      "openiddict.core/1.0.0-beta2-0636": {
         "dependencies": {
           "AspNet.Security.OpenIdConnect.Primitives": "1.0.0",
           "CryptoHelper": "2.0.0",
@@ -2057,7 +2057,7 @@
           "Microsoft.Extensions.Logging.Abstractions": "1.1.1",
           "Microsoft.Extensions.Options": "1.1.1",
           "NETStandard.Library": "1.6.1",
-          "OpenIddict.Models": "1.0.0-beta2-0615",
+          "OpenIddict.Models": "1.0.0-beta2-0636",
           "System.Reflection.TypeExtensions": "4.3.0",
           "System.Security.Claims": "4.3.0"
         },
@@ -2068,11 +2068,11 @@
           "lib/netstandard1.3/OpenIddict.Core.dll": {}
         }
       },
-      "openiddict.entityframeworkcore/1.0.0-beta2-0615": {
+      "openiddict.entityframeworkcore/1.0.0-beta2-0636": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "1.1.1",
           "NETStandard.Library": "1.6.1",
-          "OpenIddict.Core": "1.0.0-beta2-0615",
+          "OpenIddict.Core": "1.0.0-beta2-0636",
           "System.ComponentModel.TypeConverter": "4.3.0"
         },
         "runtime": {
@@ -2082,7 +2082,7 @@
           "lib/netstandard1.3/OpenIddict.EntityFrameworkCore.dll": {}
         }
       },
-      "openiddict.models/1.0.0-beta2-0615": {
+      "openiddict.models/1.0.0-beta2-0636": {
         "dependencies": {
           "NETStandard.Library": "1.6.1"
         },
@@ -2093,12 +2093,12 @@
           "lib/netstandard1.0/OpenIddict.Models.dll": {}
         }
       },
-      "openiddict.mvc/1.0.0-beta2-0615": {
+      "openiddict.mvc/1.0.0-beta2-0636": {
         "dependencies": {
           "AspNet.Security.OpenIdConnect.Server": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "1.1.2",
           "NETStandard.Library": "1.6.1",
-          "OpenIddict.Core": "1.0.0-beta2-0615"
+          "OpenIddict.Core": "1.0.0-beta2-0636"
         },
         "runtime": {
           "lib/netstandard1.6/OpenIddict.Mvc.dll": {}
@@ -5456,40 +5456,40 @@
       "path": "nuget.frameworks/3.5.0",
       "hashPath": "nuget.frameworks.3.5.0.nupkg.sha512"
     },
-    "openiddict/1.0.0-beta2-0615": {
+    "openiddict/1.0.0-beta2-0636": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-X0oaqdjYXmrUUKhlxk+Fr/hZfBE1x+a9cCJgOTAGuNLUnWaqM1Ye851+OKArd/HZifuCbMB681m1iuHsXNtWUQ==",
-      "path": "openiddict/1.0.0-beta2-0615",
-      "hashPath": "openiddict.1.0.0-beta2-0615.nupkg.sha512"
+      "sha512": "sha512-Lzj7QxvX8Rh+qpSuAGubvn5DV0WULnKd+e7McAW1o7VSJpHVZA4avEKit1aqU/kQw5QcqS29F6sr1deHO/Qd0w==",
+      "path": "openiddict/1.0.0-beta2-0636",
+      "hashPath": "openiddict.1.0.0-beta2-0636.nupkg.sha512"
     },
-    "openiddict.core/1.0.0-beta2-0615": {
+    "openiddict.core/1.0.0-beta2-0636": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Tc9w0yGF2I19cAtdwaiq0L4sYNeEuw4UgqqpgxAAtwNOx2U3RbzLg5CyHTgUNoMOxQb1JiVaRo0Oa6CZO/U+KQ==",
-      "path": "openiddict.core/1.0.0-beta2-0615",
-      "hashPath": "openiddict.core.1.0.0-beta2-0615.nupkg.sha512"
+      "sha512": "sha512-ZMOsIVn8d4+9Qxnd5v9Z5UR3xdwsHwoCLWSBZr9JJon0dYYFMvaMzG8+FQ3wMw13SapR/6mMhit7lpFOhz4O/w==",
+      "path": "openiddict.core/1.0.0-beta2-0636",
+      "hashPath": "openiddict.core.1.0.0-beta2-0636.nupkg.sha512"
     },
-    "openiddict.entityframeworkcore/1.0.0-beta2-0615": {
+    "openiddict.entityframeworkcore/1.0.0-beta2-0636": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mRj1kqNJfrV3YQgwXKxb+yPrPKhnx0pkDYP9uiJCi4Z/yc/3bO1LsmapNoEuJrgdQSp529VZS1vunEVMZYd6IQ==",
-      "path": "openiddict.entityframeworkcore/1.0.0-beta2-0615",
-      "hashPath": "openiddict.entityframeworkcore.1.0.0-beta2-0615.nupkg.sha512"
+      "sha512": "sha512-7I3kEEiUQ0wxgJu3rAe58b7P5h0Ug6V4CqsYQ2SdyMj0cYSaDl14uywBOMG99zC8/jD2ChvA+EB9Jkf+XdQcKA==",
+      "path": "openiddict.entityframeworkcore/1.0.0-beta2-0636",
+      "hashPath": "openiddict.entityframeworkcore.1.0.0-beta2-0636.nupkg.sha512"
     },
-    "openiddict.models/1.0.0-beta2-0615": {
+    "openiddict.models/1.0.0-beta2-0636": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-K+jw97M0MzmQ+KUdVV2wW8NVgGe4pkL309MBmaUA8uI2A43WZGeYLVC6imHN6b4Ub0+fUyH/MjNj6anAY+K61A==",
-      "path": "openiddict.models/1.0.0-beta2-0615",
-      "hashPath": "openiddict.models.1.0.0-beta2-0615.nupkg.sha512"
+      "sha512": "sha512-Y9WN81Td0JFTj9tfSKKIb14boknDNpACBmmbViNQJJBR4W0WMz3FyaULHT9wXFo/qJSMDN1JNlAKkKBP6UwQDA==",
+      "path": "openiddict.models/1.0.0-beta2-0636",
+      "hashPath": "openiddict.models.1.0.0-beta2-0636.nupkg.sha512"
     },
-    "openiddict.mvc/1.0.0-beta2-0615": {
+    "openiddict.mvc/1.0.0-beta2-0636": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JpTvrq0+G8vnTpWZLFz9qZLalGVWThI8L8DSoE3FSzk47C/1N9RwMs+a3IDQQmxLGNlnABaqTWbcCELH/nL/9A==",
-      "path": "openiddict.mvc/1.0.0-beta2-0615",
-      "hashPath": "openiddict.mvc.1.0.0-beta2-0615.nupkg.sha512"
+      "sha512": "sha512-iT6gSgUnFJd6Z1PpNC0+xU6k/RlOB+bwhmJIO7E00REcghwgiwIdc9UKzLHrxjs5c1X1E77fGiUADQiVAt4Okw==",
+      "path": "openiddict.mvc/1.0.0-beta2-0636",
+      "hashPath": "openiddict.mvc.1.0.0-beta2-0636.nupkg.sha512"
     },
     "portable.bouncycastle/1.8.1.2": {
       "type": "package",

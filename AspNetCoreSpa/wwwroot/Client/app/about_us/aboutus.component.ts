@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     templateUrl: './aboutus.component.html',
-    styleUrls: ['./aboutus.component.css']
+    styleUrls: ['./aboutus.component.scss']
 })
 export class AboutusComponent {
     public ArticleTitle: string = 'About us...';

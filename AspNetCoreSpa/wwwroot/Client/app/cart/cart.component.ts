@@ -4,7 +4,7 @@ import { CartService } from '../cart/cart.service';
 
 @Component({
     templateUrl: './cart.component.html',
-    styleUrls: ['./cart.component.css']
+    styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
     public ErrorMessage: string;

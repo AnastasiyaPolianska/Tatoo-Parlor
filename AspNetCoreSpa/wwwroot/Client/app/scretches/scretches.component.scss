@@ -1,0 +1,134 @@
+/*text styles*/
+.text {
+    font-family: 'TEMPUS SANS ITC';
+    font-weight: bold;
+    color: rgba(41, 43, 41, 0.7);
+}
+
+.plaintext {
+    font-size: 4vmin;
+}
+
+.heading {
+    font-size: 7vmin;
+    color: rgba(41, 43, 41, 0.9);
+}
+
+.paragraphhead {
+    color: rgba(41, 43, 41, 0.9);
+}
+
+.paragraphtext {
+    color: rgba(41, 43, 41, 0.7);
+}
+
+.heading {
+    font-size: 7vmin;
+    color: rgba(41, 43, 41, 0.9);
+}
+
+.textfordescription {
+    font-family: 'TEMPUS SANS ITC';
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.paragraphheaddescription {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.paragraphdescription {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/*styles*/
+.tatoobutton {
+    background-color: #000000;
+    border-color: #FFFFFF;
+}
+
+.tatoobutton:hover {
+        background-color: #464451;
+        border-color: #D5D5D5;
+}
+
+#tatoopanel {
+    background-color: #000000;
+    border-color: #FFFFFF;
+    border-color: #000000;
+    font-size: 3vmin;
+}
+
+.margin2 {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.tatooarticle {
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100%;
+}
+
+.tatoolable {
+    color: #000000;
+    min-width: 39%;
+    max-width: 39%;
+}
+
+.tatooinput {
+    color: #000000;
+    min-width: 56%;
+    max-width: 56%;
+    margin-right: 1%;
+}
+
+.marginbottom {
+    margin-bottom: 1%;
+}
+
+.tatoodiv {
+    width: 98%;
+    margin: 1%;
+    border-color: #000000;
+    font-family: 'comic sans ms';
+}
+
+@media only screen and (min-width: 800px) {
+    .tatoodiv {
+        width: 50%;
+    }
+
+    .tatooinput {
+        min-width: 59%;
+        max-width: 59%;
+    }
+}
+
+.descriptionback {
+    background-color: rgba(41, 43, 41, 0.7);
+    width: 100%;
+}
+
+.scretch{
+    cursor: pointer;
+}
+
+.formtext {
+    font-family: 'comic sans ms';
+    color: black;
+}
+
+.lowborder {
+    border-bottom-style: solid;
+    border-bottom-color: #000000;
+    border-left-width: 1px;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}

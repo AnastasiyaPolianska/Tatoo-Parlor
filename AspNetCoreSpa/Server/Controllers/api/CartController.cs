@@ -83,7 +83,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
             return Ok();
         }
 
-        //GET: api/Cart/5/changeamount
+        //POST: api/Cart/5/changeamount
         [HttpPost("{id}/changeamount")]
         public async Task<IActionResult> ChangeAmount([FromRoute] int id, [FromBody] int amount)
         {

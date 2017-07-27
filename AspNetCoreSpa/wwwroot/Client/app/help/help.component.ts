@@ -2,7 +2,7 @@
 
 @Component({
     templateUrl: './help.component.html',
-    styleUrls: ['./help.component.css']
+    styleUrls: ['./help.component.scss']
 })
 export class HelpComponent {
     public Maintitle: string = 'Frequently Asked Questions';

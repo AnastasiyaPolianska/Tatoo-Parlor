@@ -88,7 +88,6 @@
     <Content Include="wwwroot\Client\app\scretches\scretch.ts">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="wwwroot\Client\app\shared\spinner.component.css" />
     <Content Include="wwwroot\Client\app\shared\spinner.component.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>

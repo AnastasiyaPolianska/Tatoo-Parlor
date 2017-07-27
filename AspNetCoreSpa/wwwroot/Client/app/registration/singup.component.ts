@@ -4,7 +4,7 @@ import { ISingUpModel } from '../shared/singUpModel';
 
 @Component({
     templateUrl: './singup.component.html',
-    styleUrls: ['./singup.component.css']
+    styleUrls: ['./singup.component.scss']
 })
 export class SignUpComponent {
 

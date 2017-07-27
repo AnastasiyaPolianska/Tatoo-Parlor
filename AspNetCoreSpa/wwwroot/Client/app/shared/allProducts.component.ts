@@ -1,12 +1,14 @@
-import { Component, Input, OnInit}  from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation}  from '@angular/core';
 import { IProduct } from '../products/product';
 import { CartService } from '../cart/cart.service';
 import { Message } from 'primeng/primeng';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'all-products',
     templateUrl: './allProducts.component.html',
-    styleUrls: ['./allProducts.component.css']
+    encapsulation: ViewEncapsulation.None,
+    styleUrls: ['./allProducts.component.scss']
 })
 export class AllProductsComponent{
     @Input() public AllProducts: IProduct[];
@@ -15,7 +17,7 @@ export class AllProductsComponent{
     public ImageWidth: number = 50;
     public ImageMargin: number = 2;
     public ListFilter: string;
-    @Input() public ErrorMessage: string; 
+    @Input() public ErrorMessage: string;
     @Input() public IsCart: boolean; 
 
     public BuyAllDisabled: boolean = false;
@@ -36,6 +38,7 @@ export class AllProductsComponent{
     public TitleRemove = "Click to remove product from cart";
     public TitleClear = "Click to clear the cart";
     public TitleBuy = "Click to buy all products in cart";
+    public TitleDetails = "Click to find out more info about product";
 
     public CartToSend: number;
 
@@ -44,10 +47,14 @@ export class AllProductsComponent{
     public LabelTotalAmount: string = "Total amount of products: ";
     public TotalAmount: number;
     public Cancel: string = "Cancel";
+    public Buying: boolean;
+
+    public Header: string = "Confirm your action";
+    public Content: string = "";
 
     public Msgs: Message[] = [];
 
-    constructor(private _cartService: CartService) { }
+    constructor(private _cartService: CartService, private modalService: NgbModal) { }
 
     /*Executes on initialisation*/
     ngOnInit(): void {
@@ -81,13 +88,11 @@ export class AllProductsComponent{
 
     /*Buying all products from cart*/
     public BuyAll(): void {
-        this.DisplayBuyAll = false;
-
         var len = this.AllProducts.length;
 
         this.AllProducts.splice(0, len);
 
-        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Products bought" });
+        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Products bought" });
 
         this.TotalAmount = 0;
         this.TotalPrice = 0;
@@ -98,13 +103,11 @@ export class AllProductsComponent{
 
     /*Clearing the cart*/
     public DeleteAll(): void {
-        this.DisplayClear = false;
-
         var len = this.AllProducts.length;
 
         this.AllProducts.splice(0, len);
 
-        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Cart cleared" });
+        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Cart cleared" });
 
         this.TotalAmount = 0;
         this.TotalPrice = 0;
@@ -139,26 +142,35 @@ export class AllProductsComponent{
         }
     }
 
-    public DisplayBuyAll: boolean = false;
+    public ShowDialogByuAll(content) {
+        this.Content = "Are you sure, you want to byu ";
+        this.Content += this.TotalAmount;
 
-    public ShowDialogByuAll() {
-        this.DisplayBuyAll = true;
+        if (this.TotalAmount > 1) this.Content += " products ";
+        else this.Content += " product ";
+
+        this.Content += "for ";
+        this.Content += this.TotalPrice;
+        this.Content += "$ ?";
+
+        this.Buying = true;
+
+        this.modalService.open(content);
     }
 
     public HideDialogByuAll() {
-        this.DisplayBuyAll = false;
+        
     }
 
-    public DisplayClear: boolean = false;
+    public ShowDialogClear(content) {
+        this.Content = "Are you sure you want to clear the cart?";
 
-    public ShowDialogClear() {
-        this.DisplayClear = true;
+        this.Buying = false;
+
+        this.modalService.open(content);
     }
 
     public HideDialogClear() {
-        this.DisplayClear = false;
+        
     }
-
-    public NowInCart: string = "Now in your cart: ";
-    
 }

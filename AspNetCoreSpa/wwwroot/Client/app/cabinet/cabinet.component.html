@@ -1,21 +1,179 @@
-﻿<div class="tatooarticle text">
+﻿<p-growl [value]="Msgs" id="growl"></p-growl>
+
+<div class="tatooarticle text">
     <p class="margin2 heading">{{Maintitle}}</p>
     <p class="text plaintext margin2"> {{Subtitle}} </p>
 </div>
 
 <br />
 
-<div class="tatooarticle text plaintext">
-    <p class="margin2 paragraphhead">
-        {{FirstnameLabel}}
-        <label class="paragraphtext"> {{FirstName}}</label>
+<div class="tatooarticle text plaintext" style="width:100%">
+    <p class="margin2" style="width: 100%; margin-bottom: 0px">
+            <label class="paragraphhead headchangewidth">{{FirstnameLabel}} </label>
+            <label class="paragraphtext" style="width:30%"> {{FirstName}}</label>
+            <label class="floating changeinfo" title={{TitleLinkChangeFirstName}} (click)="ToggleChangeFirstName()"> {{ChangeInfoFirstName}} </label>
     </p>
-    <p class="margin2 paragraphhead">
-        {{LastnameLabel}}
-        <label class="paragraphtext"> {{LastName}}</label>
+</div>    
+<div *ngIf="ShowChangeFirstName" class='panel panel-primary tatoodiv'>
+        <div class='panel-heading' id='tatoopanel'>
+            {{TitleChangeFirstName}}
+        </div>
+
+        <div class='panel-body'>
+            <div class='row'>
+                <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>
+                <input type='text' class='tatooinput marginbottom' placeholder="{{PlaceHolderChangeFirstName}}" [(ngModel)]='NewFirstName' />
+            </div>
+
+            <button class=' btn btn-primary tatoobutton' (click)='ChangeFirstName()' title={{TitleButtonChangeFirstName}}> 
+                <i class='glyphicon glyphicon-ok'></i> {{Change}} 
+            </button>
+            <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeFirstName()' title={{TitleLinkChangeFirstName}} style="margin-right: 1%"> 
+                <i class='glyphicon glyphicon-remove'></i> {{Cancel}} 
+            </button>
+        </div>
+</div>
+<div class="tatooarticle text plaintext" style="width:100%">
+    <p class="margin2" style="width: 100%; margin-bottom: 0px">
+        <label class="paragraphhead headchangewidth">{{LastnameLabel}} </label>
+        <label class="paragraphtext" style="width:30%"> {{LastName}}</label>
+        <label class="floating changeinfo" title={{TitleLinkChangeLastName}} (click)="ToggleChangeLastName()"> {{ChangeInfoLastName}} </label>
     </p>
-    <p class="margin2 paragraphhead">
-        {{EmailLabel}}
-        <label class="paragraphtext"> {{Email}}</label>
+</div>
+<div *ngIf="ShowChangeLastName" class='panel panel-primary tatoodiv'>
+    <div class='panel-heading' id='tatoopanel'>
+        {{TitleChangeLastName}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>
+            <input type='text' class='tatooinput marginbottom' placeholder="{{PlaceHolderChangeLastName}}" [(ngModel)]='NewLastName' />
+        </div>
+        
+        <button class=' btn btn-primary tatoobutton' (click)='ChangeLastName()' title={{TitleButtonChangeLastName}}>
+            <i class='glyphicon glyphicon-ok'></i> {{Change}}
+        </button>
+        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeLastName()' title={{TitleLinkChangeLastName}} style="margin-right: 1%">
+            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}
+        </button>
+    </div>
+</div>
+<div class="tatooarticle text plaintext" style="width:100%">
+    <p class="margin2" style="width: 100%; margin-bottom: 0px">
+        <label class="paragraphhead headchangewidth">{{EmailLabel}} </label>
+        <label class="paragraphtext" style="width:30%"> {{Email}}</label>
+        <label class="floating changeinfo" title={{TitleLinkChangeEmail}} (click)="ToggleChangeEmail()"> {{ChangeInfoEmail}} </label>
     </p>
+</div>
+<div *ngIf="ShowChangeEmail" class='panel panel-primary tatoodiv'>
+    <div class='panel-heading' id='tatoopanel'>
+        {{TitleChangeEmail}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>
+            <input type='email' class='tatooinput marginbottom' placeholder="{{PlaceHolderChangeEmail}}" [(ngModel)]='NewEmail' />
+        </div>
+
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableConfirmEmail}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderConfirmEmail}}" [(ngModel)]='ConfirmEmail' />
+        </div>
+
+        <button class=' btn btn-primary tatoobutton' (click)='ChangeEmail()' title={{TitleButtonChangeEmail}}>
+            <i class='glyphicon glyphicon-ok'></i> {{Change}}
+        </button>
+        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEmail()' title={{TitleLinkChangeEmail}} style="margin-right: 1%">
+            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}
+        </button>
+    </div>
+</div>
+<div class="tatooarticle text plaintext" style="width:100%">
+    <p class="margin2" style="width: 100%; margin-bottom: 0px">
+        <label class="paragraphhead headchangewidth"></label>
+        <label class="paragraphtext" style="width:30%"></label>
+        <label class="floating changeinfo" title={{TitleLinkChangePassword}} (click)="ToggleChangePassword()"> {{ChangeInfoPassword}} </label>
+    </p>
+</div>
+<div *ngIf="ShowChangePassword" class='panel panel-primary tatoodiv'>
+    <div class='panel-heading' id='tatoopanel'>
+        {{TitleChangePassword}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderChangePassword}}" [(ngModel)]='NewPassword' />
+        </div>
+
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderRepeatPassword}}" [(ngModel)]='RepeatPassword' />
+        </div>
+
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableConfirmPassword}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderConfirmPassword}}" [(ngModel)]='ConfirmPassword' />
+        </div>
+
+        <button class=' btn btn-primary tatoobutton' (click)='ChangePassword()' title={{TitleButtonChangePassword}}>
+            <i class='glyphicon glyphicon-ok'></i> {{Change}}
+        </button>
+        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangePassword()' title={{TitleLinkChangePassword}} style="margin-right: 1%">
+            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}
+        </button>
+    </div>
+</div>
+<div class="tatooarticle text plaintext" style="width:100%">
+    <p class="margin2" style="width: 100%; margin-bottom: 0px">
+        <label class="paragraphhead headchangewidth"></label>
+        <label class="paragraphtext" style="width:30%"></label>
+        <label class="floating changeinfo" title={{TitleLinkChangeEvery}} (click)="ToggleChangeEvery()"> {{ChangeInfoEvery}} </label>
+    </p>
+</div>
+<div *ngIf="ShowChangeEvery" class='panel panel-primary tatoodiv'>
+    <div class='panel-heading' id='tatoopanel'>
+        {{TitleChangeEvery}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>
+            <input type='text' class='tatooinput marginbottom' placeholder="{{PlaceHolderChangeFirstName}}" [(ngModel)]='NewFirstName' />
+        </div>
+
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>
+            <input type='text' class='tatooinput marginbottom' placeholder="{{PlaceHolderChangeLastName}}" [(ngModel)]='NewLastName' />
+        </div>
+
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>
+            <input type='email' class='tatooinput marginbottom' placeholder="{{PlaceHolderChangeEmail}}" [(ngModel)]='NewEmail' />
+        </div>
+
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderChangePassword}}" [(ngModel)]='NewPassword' />
+        </div>
+
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderRepeatPassword}}" [(ngModel)]='RepeatPassword' />
+        </div>
+
+        <div class='row'>
+            <label class='col-md-2 tatoolable'>{{LableConfirmEvery}}</label>
+            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderConfirmEvery}}" [(ngModel)]='ConfirmEvery' />
+        </div>
+
+        <button class=' btn btn-primary tatoobutton' (click)='ChangeEvery()' title={{TitleButtonChangeEvery}}>
+            <i class='glyphicon glyphicon-ok'></i> {{Change}}
+        </button>
+        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEvery()' title={{TitleLinkChangeEvery}} style="margin-right: 1%">
+            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}
+        </button>
+    </div>
 </div>

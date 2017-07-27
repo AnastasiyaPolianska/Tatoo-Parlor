@@ -7,6 +7,8 @@ using AspNetCoreSpa.Server.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using AspNetCoreSpa.DAL;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -14,12 +16,14 @@ namespace AspNetCoreSpa.Server.Controllers.api
     public class ProfileController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ApplicationDbContext _context;
         private readonly ILogger _logger;
 
-        public ProfileController(ILoggerFactory loggerFactory, UserManager<ApplicationUser> userManager)
+        public ProfileController(ILoggerFactory loggerFactory, UserManager<ApplicationUser> userManager, ApplicationDbContext context)
         {
             _logger = loggerFactory.CreateLogger<ProfileController>();
             _userManager = userManager;
+            _context = context;
         }
 
         [HttpGet("username")]
@@ -72,6 +76,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
             }
 
         }
+
         [HttpPost("changepassword")]
         public async Task<IActionResult> ChangePassword([FromBody]ChangePasswordVm model)
         {
@@ -118,6 +123,104 @@ namespace AspNetCoreSpa.Server.Controllers.api
             }
 
         }
+
+        //GET: api/Profile/changefirstname/newFirstName
+        [HttpGet("changefirstname/{newFirstName}")]
+        public async Task<IActionResult> ChangeFirstName([FromRoute] string newFirstName)
+        {
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
+                if (user != null)
+                {
+                    user.FirstName = newFirstName;
+                    var result = await _userManager.UpdateAsync(user);
+                    if (result == IdentityResult.Success)
+                    {
+                        return Ok();
+                    }
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json("Unable to update user");
+                }
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(ModelState.GetModelErrors());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(1, ex, "Unable to save user name");
+
+                return BadRequest();
+            }
+        }
+
+        //GET: api/Profile/changelastname/newLastName
+        [HttpGet("changelastname/{newLastName}")]
+        public async Task<IActionResult> ChangeLastName([FromRoute] string newLastName)
+        {
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
+                if (user != null)
+                {
+                    user.LastName = newLastName;
+
+                    var result = await _userManager.UpdateAsync(user);
+                    if (result == IdentityResult.Success)
+                    {
+                        return Ok();
+                    }
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json("Unable to update user");
+                }
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(ModelState.GetModelErrors());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(1, ex, "Unable to save user name");
+
+                return BadRequest();
+            }
+        }
+
+        //GET: api/Profile/changeemail
+        [HttpPost("changeemail")]
+        public async Task<IActionResult> ChangeEmail([FromBody] ChangeEmailModel changeEmail)
+        {
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
+                if (user != null)
+                {
+                    var temp = await _userManager.CheckPasswordAsync(user, changeEmail.password);
+                    if (temp) user.Email = changeEmail.newEmail;
+
+                    var result = await _userManager.UpdateAsync(user);
+                    if (result == IdentityResult.Success)
+                    {
+                        return Ok();
+                    }
+                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                    return Json("Unable to update user");
+                }
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(ModelState.GetModelErrors());
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(1, ex, "Unable to save user name");
+
+                return BadRequest();
+            }
+        }
     }
 
+    public class ChangeEmailModel
+    {
+        [Required]
+        [EmailAddress]
+        public string newEmail { get; set; }
+        [Required]
+        public string password { get; set; }
+    }
 }

@@ -10,7 +10,7 @@ import { CartService } from '../cart/cart.service';
 
 @Component({
     templateUrl: './product-detail.component.html',
-    styleUrls: ['./product-detail.component.css']
+    styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit, OnDestroy {
     public PageTitle: string = 'Product Detail';
@@ -82,13 +82,13 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     addToCart(): void {
         this._cartService.addProductToCart(this.Id).subscribe();
         this.IsInCart = true;
-        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Added to cart." });
+        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Added to cart." });
     }
 
     /*Removing product from your cart*/
     RemoveProduct(): void {
         this._cartService.deleteProduct(this.Id).subscribe();
         this.IsInCart = false;
-        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Removed from cart." });
+        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Removed from cart." });
     }
 }

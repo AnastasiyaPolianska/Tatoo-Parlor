@@ -1,0 +1,76 @@
+.cart-page {
+
+    /*styles*/
+    .tatoobutton {
+        background-color: #000000;
+        border-color: #FFFFFF;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    .tatoobutton:hover {
+        background-color: #464451;
+        border-color: #D5D5D5;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    #tatoopanel {
+        background-color: #000000;
+        border-color: #FFFFFF;
+        border-color: #000000;
+        font-size: 3vmin;
+    }
+
+    .tatootable {
+        color: #000000;
+    }
+
+    .tatoodiv {
+        border-color: #000000;
+        font-family: 'comic sans ms';
+        color: #000000;
+        margin: 1%;
+    }
+    /*links*/
+    a {
+        color: #000000;
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: rgba(41, 43, 41, 0.8);
+        text-decoration: underline;
+    }
+    /*stars*/
+    .star {
+        position: relative;
+        display: inline-block;
+        font-size: 2rem;
+        color: white;
+        border-color: black;
+    }
+
+    .full {
+        color: black;
+    }
+
+    .half {
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        color: black;
+    }
+
+    @media only screen and (min-width: 800px) {
+        .remove-row {
+            padding-right: 0%;
+        }
+    }
+
+    .flexer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}

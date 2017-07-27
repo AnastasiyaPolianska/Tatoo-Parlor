@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, ViewEncapsulation } from '@angular/core';
 import { QuestionService } from '../shared/question.service';
 import { IQuestionModel } from '../shared/questionModel';
 import { Message } from 'primeng/primeng';
@@ -7,7 +7,8 @@ import { IQuestion } from './question';
 
 @Component({
     templateUrl: './questions.component.html',
-    styleUrls: ['./questions.component.css']
+    styleUrls: ['./questions.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class QuestionsComponent {
     constructor(private _questionService: QuestionService, private _authService: AuthService) { };

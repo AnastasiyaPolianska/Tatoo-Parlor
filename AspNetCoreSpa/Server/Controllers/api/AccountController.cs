@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
+using AspNetCoreSpa.DAL;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -18,6 +19,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly ApplicationDbContext _context;
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
@@ -25,6 +27,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
+            ApplicationDbContext context,
             IEmailSender emailSender,
             ISmsSender smsSender,
             ILoggerFactory loggerFactory)
@@ -34,8 +37,8 @@ namespace AspNetCoreSpa.Server.Controllers.api
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+            _context = context;
         }
-
 
         [HttpPost("login")]
         [AllowAnonymous]
@@ -65,7 +68,6 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 return BadRequest(ModelState.GetModelErrors());
             }
-
         }
 
         [HttpPost("register")]

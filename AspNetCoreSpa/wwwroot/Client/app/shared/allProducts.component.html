@@ -1,141 +1,153 @@
 <style>
-    .ui-growl-item-container {
-        margin-top: 50px !important;
+    .lalala {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
     }
 
-    #growl {
-        margin-top: 50px;
+    .cross {
+        align-self: flex-end;
     }
+
+    .header {
+        align-self: flex-start;
+    }
+
+    .modal-content {
+        margin-top: 100px !important;
+    }
+
+    /*styles*/
+    .tatoobutton {
+        background-color: #000000;
+        border-color: #FFFFFF;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    .tatoobutton:hover {
+        background-color: #464451;
+        border-color: #D5D5D5;
+        color: #FFFFFF !important;
+        text-decoration: none;
+     }
 </style>
 
-<p-growl [value]="Msgs" id="growl"></p-growl>
+<div class="cart-page"> 
+    <p-growl [value]="Msgs" id="growl"></p-growl>
 
-<!--Template for stars-->
-<ng-template #t let-fill="fill">
-    <span *ngIf="fill === 100" class="star full">&#9733;</span>
-    <span *ngIf="fill === 0" class="star">&#9733;</span>
-    <span *ngIf="fill < 100 && fill > 0" class="star">
-        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
-    </span>
-</ng-template>
+    <!--Template for stars-->
+    <ng-template #t let-fill="fill">
+        <span *ngIf="fill === 100" class="star full">&#9733;</span>
+        <span *ngIf="fill === 0" class="star">&#9733;</span>
+        <span *ngIf="fill < 100 && fill > 0" class="star">
+            <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+        </span>
+    </ng-template>
 
-<!--Page-->
-<div class='tatoodiv panel panel-primary'>
-    <div class='tatoopanel panel-heading ' id="tatoopanel">
-        {{PageTitle}}
-    </div>
+    <!--Page-->
+    <div class='tatoodiv panel panel-primary'>
+        <div class='tatoopanel panel-heading ' id="tatoopanel">
+            {{PageTitle}}
+        </div>
 
-    <div class='panel-body'>
-        <div class='row'>
-            <div class='col-md-2 tatootable'>{{Filter}}</div>
-            <div class='col-md-2 tatootable'>
-                <input type='text' class='tatootable' [(ngModel)]='ListFilter' />
+        <div class='panel-body'>
+            <div class='row'>
+                <div class='col-md-2 tatootable'>{{Filter}}</div>
+                <div class='col-md-2 tatootable'>
+                    <input type='text' class='tatootable' [(ngModel)]='ListFilter' />
+                </div>
+            </div>
+
+            <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>
+
+            <div class='table-responsive'>
+                <table class='table tatootable'>
+                    <thead>
+                        <tr>
+                            <th>{{Image}}</th>
+                            <th>{{Name}}</th>
+                            <th>{{AmountLeft}}</th>
+                            <th>{{Price}}</th>
+                            <th>{{StarRating}}</th>
+                            <th *ngIf="IsCart">{{Quantity}}</th>
+                            <th *ngIf="IsCart"></th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf='AllProducts && AllProducts.length'>
+                        <tr *ngFor='let product of AllProducts | productFilter:ListFilter'>
+                            <td>
+                                <img [src]='product.imageUrl'
+                                     [title]='product.productName'
+                                     [style.width.px]='ImageWidth'
+                                     [style.margin.px]='ImageMargin'>
+                            </td>
+                            <td>
+                                <a title={{TitleDetails}} [routerLink]="['/product', product.id, CartToSend]">
+                                    {{product.productName}}
+                                </a>
+                            </td>
+                            <td>{{ product.amountLeft}}</td>
+                            <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
+                            <td>
+                                <ngb-rating title={{product.starRating}} [(rate)]="product.starRating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+                            </td>
+                            <td *ngIf="IsCart">
+                                <spinnerNum [IncomeVal]="product.amount" (IncreaseAmount)="IncreasingAmount(product)" (DecreaseAmount)="DecreasingAmount(product)"></spinnerNum>
+                            </td>
+                            <td *ngIf="IsCart" class="remove-row">
+                                <button title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style="float: right">
+                                    <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div *ngIf="IsCart" class='panel-footer' style="width:100%; padding-left: 0%; padding-right: 0%;">
+                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleClear}} class='btn btn-default tatoobutton' (click)="ShowDialogClear(content)">
+                    <i class="fa fa-trash" aria-hidden="true"></i> {{Delete}}
+                </button>
+                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleBuy}} class='btn btn-default tatoobutton' (click)='ShowDialogByuAll(content)' style="float: right; margin-bottom: 1%">
+                    <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}
+                </button>
+                <div style="width: 100%" class="flexer">
+                    <p>
+                        <label style="float: right">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>
+                    </p>
+                    <p>
+                        <label style="float: right">{{LabelTotalAmount}}{{TotalAmount}}</label>
+                    </p>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>
-
-        <div class='table-responsive'>
-            <table class='table tatootable'>
-                <thead>
-                    <tr>
-                        <th>{{Image}}</th>
-                        <th>{{Name}}</th>
-                        <th>{{AmountLeft}}</th>
-                        <th>{{Price}}</th>
-                        <th>{{StarRating}}</th>
-                        <th *ngIf="IsCart">{{Quantity}}</th>
-                        <th *ngIf="IsCart"></th>
-                    </tr>
-                </thead>
-                <tbody *ngIf='AllProducts && AllProducts.length'>
-                    <tr *ngFor='let product of AllProducts | productFilter:ListFilter'>
-                        <td>
-                            <img
-                                 [src]='product.imageUrl'
-                                 [title]='product.productName | uppercase'
-                                 [style.width.px]='ImageWidth' 
-                                 [style.margin.px]='ImageMargin'>
-                        </td>
-                        <td><a [routerLink]="['/product', product.id, CartToSend]">
-                            {{product.productName}}
-                            </a>
-                        </td>
-                        <td>{{ product.amountLeft}}</td>
-                        <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
-                        <td >
-                            <ngb-rating title = {{product.starRating}} [(rate)]="product.starRating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
-                        </td>
-                        <td *ngIf="IsCart">
-                            <spinnerNum [IncomeVal]="product.amount" (IncreaseAmount)="IncreasingAmount(product)" (DecreaseAmount)="DecreasingAmount(product)"></spinnerNum>
-                        </td>
-                        <td *ngIf="IsCart" class="remove-row"> 
-                        <a title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style="float: right">
-                            <i class='glyphicon glyphicon-remove'></i> {{Remove}}
-                        </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <ng-template class="temp" #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <div class="lalala">
+                <h4 class="modal-title header">{{Header}}</h4>
+                <button type="button" class="close cross" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         </div>
-
-        <div *ngIf="IsCart" class='panel-footer' style="width:100%; padding-left: 0%; padding-right: 0%;">
-            <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleClear}} class='btn btn-default tatoobutton' (click)='ShowDialogClear()'>
-                <i class='glyphicon glyphicon-remove'></i> {{Delete}}
+        <div class="modal-body">
+            <p>{{Content}}</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary tatoobutton" (click)="c('Close click')">
+                <i class='glyphicon glyphicon-remove'></i> {{Cancel}}
             </button>
-            <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleBuy}} class='btn btn-default tatoobutton' (click)='ShowDialogByuAll()' style="float: right; margin-bottom: 1%">
+            <button *ngIf="Buying" class="btn btn-secondary tatoobutton" (click)="BuyAll(); c('Close click')">
                 <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}
             </button>
-            <div style="width: 100%" class="flexer">
-                <p>
-                    <label style="float: right">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>     
-                </p>
-                <p>
-                    <label style="float: right">{{LabelTotalAmount}}{{TotalAmount}}</label>
-               </p>        
-            </div>
+            <button *ngIf="!Buying" class="btn btn-secondary tatoobutton" (click)="DeleteAll(); c('Close click')">
+                <i class="fa fa-trash" aria-hidden="true"></i> {{Delete}}
+            </button>
         </div>
-    </div>
+    </ng-template>
+
 </div>
-
-<p-dialog [(visible)]="DisplayBuyAll" [dismissableMask]="false" [showHeader]="false" [contentStyle]="{'background-color':'white', 'color':'black', 'border-radius':'2px', 'border-color':'black', 'border-width':'5px', 'padding':'0px', 'font-family':'comic sans ms'}">
-    <span class='col-md-2 tatoolable' style="width:100%; padding-bottom:1%; padding-top:1%; margin-left: 0%; margin-bottom:1%; background-color:black; color: white">Do you want to buy all the products? </span>
-    <p>
-        <label style="width:98%; margin-left:1%; margin-top:1%">{{NowInCart}}</label>
-    </p>
-    <p>
-        <label style="width:98%; margin-left:1%; margin-top:1%">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>
-    </p>
-    <p>
-        <label style="width:98%; margin-left: 1%">{{LabelTotalAmount}}{{TotalAmount}}</label>
-    </p>             
-    <br />
-    <button style="float: right; margin-left: 1%; margin-bottom: 1%; margin-right: 1%" class=' btn btn-primary tatoobutton' (click)='BuyAll()'> 
-         <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}
-     </button>
-     <button style="float: right; margin-bottom: 1%" class=' btn btn-primary tatoobutton' (click)='HideDialogByuAll()'> 
-        {{Cancel}} 
-     </button>
-</p-dialog>
-
-
-
-<p-dialog [(visible)]="DisplayClear" [dismissableMask]="true" [showHeader]="false" [contentStyle]="{'background-color':'white', 'color':'black', 'border-radius':'2px', 'border-color':'black', 'border-width':'5px', 'padding':'0px', 'font-family':'comic sans ms'}">
-    <span class='col-md-2 tatoolable' style="width:100%; padding-bottom:1%; padding-top:1%; margin-left: 0%; margin-bottom:1%; background-color:black; color: white">Do you want to clear the cart? </span>
-    <p>
-        <label style="width:98%; margin-left:1%; margin-top:1%">{{NowInCart}}</label>  
-    </p>
-    <p>
-        <label style="width:98%; margin-left:1%; margin-top:1%">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>
-    </p>
-    <p>
-        <label style="width:98%; margin-left: 1%">{{LabelTotalAmount}}{{TotalAmount}}</label>
-    </p>
-    <br />
-    <button style="float: right; margin-left: 1%; margin-bottom: 1%; margin-right: 1%" class=' btn btn-primary tatoobutton' (click)='DeleteAll()'>
-        <i class='glyphicon glyphicon-remove'></i> {{Delete}}
-    </button>
-    <button style="float: right; margin-bottom: 1%" class=' btn btn-primary tatoobutton' (click)='HideDialogClear()'>
-        {{Cancel}}
-    </button>
-</p-dialog> 
