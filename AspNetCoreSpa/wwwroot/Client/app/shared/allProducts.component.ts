@@ -52,6 +52,9 @@ export class AllProductsComponent{
     public Header: string = "Confirm your action";
     public Content: string = "";
 
+    public OutOfStock = "Out of stock";
+    public AlreadyInCart = "Product is already in cart";
+
     public Msgs: Message[] = [];
 
     constructor(private _cartService: CartService, private modalService: NgbModal) { }
@@ -123,10 +126,14 @@ export class AllProductsComponent{
             this.TotalAmount++;
             this.TotalPrice = this.TotalPrice + product.price;
         }
+        else {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Unable to increase quantity: only " + product.amountLeft+" items left" });
+        }
+
         if (product.amount) {
             this._cartService.changeAmount(product.id, product.amount)
                 .subscribe();
-        }
+        }      
     }
 
     /*Decreasing amount of product in cart*/
@@ -136,10 +143,14 @@ export class AllProductsComponent{
             this.TotalAmount--;
             this.TotalPrice = this.TotalPrice - product.price;
         }
+        else {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Unable to decrease quantity: it is already minimum" });
+        }
+
         if (product.amount) {
             this._cartService.changeAmount(product.id, product.amount)
                 .subscribe();
-        }
+        }       
     }
 
     public ShowDialogByuAll(content) {
@@ -158,19 +169,11 @@ export class AllProductsComponent{
         this.modalService.open(content);
     }
 
-    public HideDialogByuAll() {
-        
-    }
-
     public ShowDialogClear(content) {
         this.Content = "Are you sure you want to clear the cart?";
 
         this.Buying = false;
 
         this.modalService.open(content);
-    }
-
-    public HideDialogClear() {
-        
     }
 }

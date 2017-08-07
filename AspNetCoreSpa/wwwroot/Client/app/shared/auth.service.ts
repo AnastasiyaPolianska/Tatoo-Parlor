@@ -62,10 +62,11 @@ export  class AuthService {
         return this._http.get(this._changeLastNameUrl + "/" + newLastName);
     }
 
-    changeEmail(newEmail: string, password: string): Observable<any> {
+    changeEmail(newEmail: string, password: string): Observable<string> {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        return this._http.post(this._changeEmailUrl, { newEmail: newEmail, password: password }, { headers: headers });
+        return this._http.post(this._changeEmailUrl, { newEmail: newEmail, password: password }, { headers: headers })
+            .map((response: Response) => <string>response.json());
     }
 }

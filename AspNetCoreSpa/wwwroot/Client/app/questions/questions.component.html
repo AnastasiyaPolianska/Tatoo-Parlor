@@ -1,78 +1,69 @@
-﻿<style>
-    .ui-growl-item-container {
-        margin-top: 50px !important;
-    }
+﻿<div class="questions-page">
+    <p-growl [value]="Msgs" id="growl"></p-growl>
 
-    #growl {
-        margin-top: 50px;
-    }
-</style>
-
-<p-growl [value]="Msgs" id="growl"></p-growl>
-
-<div class="tatooarticle text">
-    <p class="margin2 heading">{{Maintitle}}</p>
-    <p class="text plaintext margin2"> {{Description_part1}} <a routerLink="/help">{{Insert}}</a> {{Description_part2}} </p>
-</div>
-
-<div class='panel panel-primary tatoodiv' style="margin-top:2%">
-    <div class='panel-heading' id="tatoopanel">
-        {{Subtitle}}
+    <div class="tatooarticle text">
+        <p class="margin2 heading">{{Maintitle}}</p>
+        <p class="text plaintext margin2"> {{Description_part1}} <a routerLink="/help">{{Insert}}</a> {{Description_part2}} </p>
     </div>
 
-    <div class='panel-body'>
-        <div class='row'>
-            <label class='col-md-2 tatoolable'>{{Points[0]}}</label>
-            <select type="number" class='tatooinput marginbottom' [(ngModel)]="Num">
-                <option [ngValue]="0">{{Themes[0]}}</option>
-                <option [ngValue]="1">{{Themes[1]}}</option>
-                <option [ngValue]="2">{{Themes[2]}}</option>
-                <option [ngValue]="3">{{Themes[3]}}</option>
-                <option [ngValue]="4">{{Themes[4]}}</option>
-            </select>
+    <div class='panel panel-primary tatoodiv' style="margin-top:2%">
+        <div class='panel-heading' id="tatoopanel">
+            {{Subtitle}}
         </div>
-        <div class='row'>
-            <label class='col-md-2 tatoolable'>{{Points[1]}}</label>
-            <input type='text' class='tatooinput marginbottom' placeholder="{{Point2_placeholder}}" [(ngModel)]='Theme' />
-        </div>
-        <div class='row'>
-            <label class='col-md-2 tatoolable'>{{Points[2]}}</label>
-            <input type='text' class='tatooinput marginbottom' placeholder="{{Point3_placeholder}}" [(ngModel)]='Message' />
-        </div>
-        <button class=' btn btn-primary tatoobutton' (click)= 'SendQuestion()'> {{ButtonName}} </button>
-    </div>
-</div>
 
-<br>
-<div class='panel panel-primary tatoodiv' style="width:98%">
-    <div class='tatoopanel panel-heading ' id="tatoopanel">
-       {{TableName}}
+        <div class='panel-body'>
+            <div class='row'>
+                <label class='col-md-2 tatoolable'>{{Points[0]}}</label>
+                <select type="number" class='tatooinput marginbottom' [(ngModel)]="Num">
+                    <option [ngValue]="0">{{Themes[0]}}</option>
+                    <option [ngValue]="1">{{Themes[1]}}</option>
+                    <option [ngValue]="2">{{Themes[2]}}</option>
+                    <option [ngValue]="3">{{Themes[3]}}</option>
+                    <option [ngValue]="4">{{Themes[4]}}</option>
+                </select>
+            </div>
+            <div class='row'>
+                <label class='col-md-2 tatoolable'>{{Points[1]}}</label>
+                <input type='text' class='tatooinput marginbottom' placeholder="{{Point2_placeholder}}" [(ngModel)]='Theme' />
+            </div>
+            <div class='row'>
+                <label class='col-md-2 tatoolable'>{{Points[2]}}</label>
+                <input type='text' class='tatooinput marginbottom' placeholder="{{Point3_placeholder}}" [(ngModel)]='Message' />
+            </div>
+            <button class=' btn btn-primary tatoobutton' (click)='SendQuestion()'> {{ButtonName}} </button>
+        </div>
     </div>
-    <div class='panel-body'>
 
-        <div class='table-responsive'>
-            <table class='table tatootable'
-                   *ngIf='Questions && Questions.length'>
-                <thead>
-                    <tr>
-                        <th>{{NumName}}</th>
-                        <th>{{CategoryName}}</th>
-                        <th>{{ThemeName}}</th>
-                        <th>{{QuestionName}}</th>
-                        <th>{{AnswerName}}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor='let question of Questions'>
-                        <td>{{ Numbering()}}</td>
-                        <td>{{ question.category }}</td>
-                        <td>{{ question.theme}}</td>
-                        <td>{{ question.questionName}}</td>
-                        <td> </td>
-                    </tr>
-                </tbody>
-            </table>
+    <br>
+    <div class='panel panel-primary tatoodiv' style="width:98%">
+        <div class='tatoopanel panel-heading ' id="tatoopanel">
+            {{TableName}}
+        </div>
+        <div class='panel-body'>
+
+            <div class='table-responsive'>
+                <table class='table tatootable'
+                       *ngIf='Questions && Questions.length'>
+                    <thead>
+                        <tr>
+                            <th>{{NumName}}</th>
+                            <th>{{CategoryName}}</th>
+                            <th>{{ThemeName}}</th>
+                            <th>{{QuestionName}}</th>
+                            <th>{{AnswerName}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let question of Questions'>
+                            <td>{{ Numbering()}}</td>
+                            <td>{{ question.category }}</td>
+                            <td>{{ question.theme}}</td>
+                            <td>{{ question.questionName}}</td>
+                            <td> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
-

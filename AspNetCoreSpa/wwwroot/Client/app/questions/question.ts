@@ -2,6 +2,6 @@
 export interface IQuestion {
     category: number;
     theme: string;
-    questionName: number;
-    createdBy: string;
+    questionName: string;
+    createdBy: number;
 }

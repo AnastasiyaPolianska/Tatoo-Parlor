@@ -76,7 +76,7 @@
                         </tr>
                     </thead>
                     <tbody *ngIf='AllProducts && AllProducts.length'>
-                        <tr *ngFor='let product of AllProducts | productFilter:ListFilter'>
+                        <tr *ngFor='let product of AllProducts | productFilter:ListFilter' [ngClass]="{'backerror': product.amountLeft<1, 'backgood':product.isInCart}">
                             <td>
                                 <img [src]='product.imageUrl'
                                      [title]='product.productName'
@@ -87,6 +87,12 @@
                                 <a title={{TitleDetails}} [routerLink]="['/product', product.id, CartToSend]">
                                     {{product.productName}}
                                 </a>
+                                <div *ngIf="product.amountLeft<1" class="tatooerror">
+                                    {{OutOfStock}}
+                                </div>
+                                <div *ngIf="product.isInCart" class="tatoogood">
+                                    {{AlreadyInCart}}
+                                </div>
                             </td>
                             <td>{{ product.amountLeft}}</td>
                             <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>

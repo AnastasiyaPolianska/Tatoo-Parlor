@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using AspNetCoreSpa.DAL;
 using AspNetCoreSpa.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -16,18 +17,26 @@ namespace AspNetCoreSpa.Server.Controllers.api
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private UserManager<ApplicationUser> _userManager;
 
-        public ProductsController(ApplicationDbContext context)
+        public ProductsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: api/Products
         [HttpGet, Authorize]
-        public IEnumerable<Product> GetProduct()
+        public async Task<IActionResult> GetProductAsync()
         {
-            var test = _context.Product.ToList();
-            return _context.Product;
+            var user = await _userManager.FindByEmailAsync(User.Identity.Name);
+
+            var userProducts = _context.UserProducts.Include(y => y.ProductInCart).Where(x => x.UserId == user.Id).Select(x => x.ProductInCart).ToList();
+            var allProducts = _context.Product.ToList();
+
+            var rezult = allProducts.Select(x => new { x.Id, x.ProductName, x.AmountLeft, x.Price, x.Description, x.StarRating, x.ImageUrl, isInCart=userProducts.Contains(x) }).ToList();
+
+            return Ok(rezult);
         }
 
         // GET: api/Products/5

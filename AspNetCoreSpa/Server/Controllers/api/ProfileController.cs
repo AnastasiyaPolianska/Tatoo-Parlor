@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AspNetCoreSpa.DAL;
 using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -133,14 +134,24 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
                 if (user != null)
                 {
-                    user.FirstName = newFirstName;
-                    var result = await _userManager.UpdateAsync(user);
-                    if (result == IdentityResult.Success)
+                    Regex regex = new Regex("[^a-zA-Z0-9_'-]");
+                    MatchCollection matches = regex.Matches(newFirstName);
+                    if (matches.Count > 0 || newFirstName.Length<4 || newFirstName.Length > 15)
                     {
-                        return Ok();
+                        throw new System.ArgumentException("Invalid argument", "newFirstName");
                     }
-                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    return Json("Unable to update user");
+                    else
+                    {
+                        user.FirstName = newFirstName;
+                        var result = await _userManager.UpdateAsync(user);
+                        if (result == IdentityResult.Success)
+                        {                       
+                            Console.WriteLine("goodgoodgoodgood");
+                            return Ok();
+                        }
+                        Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                        return Json("Unable to update user");                
+                    }      
                 }
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(ModelState.GetModelErrors());
@@ -162,15 +173,24 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
                 if (user != null)
                 {
-                    user.LastName = newLastName;
-
-                    var result = await _userManager.UpdateAsync(user);
-                    if (result == IdentityResult.Success)
+                    Regex regex = new Regex("[^a-zA-Z0-9_'-]");
+                    MatchCollection matches = regex.Matches(newLastName);
+                    if (matches.Count > 0 || newLastName.Length < 4 || newLastName.Length > 15)
                     {
-                        return Ok();
+                        throw new System.ArgumentException("Invalid argument", "newLastName");
                     }
-                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    return Json("Unable to update user");
+                    else
+                    {
+                        user.LastName = newLastName;
+
+                        var result = await _userManager.UpdateAsync(user);
+                        if (result == IdentityResult.Success)
+                        {
+                            return Ok();
+                        }
+                        Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                        return Json("Unable to update user");
+                    }
                 }
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(ModelState.GetModelErrors());
@@ -185,32 +205,45 @@ namespace AspNetCoreSpa.Server.Controllers.api
 
         //GET: api/Profile/changeemail
         [HttpPost("changeemail")]
-        public async Task<IActionResult> ChangeEmail([FromBody] ChangeEmailModel changeEmail)
+        public async Task<string> ChangeEmail([FromBody] ChangeEmailModel changeEmail)
         {
             try
             {
                 var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
                 if (user != null)
                 {
-                    var temp = await _userManager.CheckPasswordAsync(user, changeEmail.password);
-                    if (temp) user.Email = changeEmail.newEmail;
-
-                    var result = await _userManager.UpdateAsync(user);
-                    if (result == IdentityResult.Success)
+                    Regex regex = new Regex("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
+                    bool noErrors = regex.IsMatch(changeEmail.newEmail);
+                    if (noErrors == false)
                     {
-                        return Ok();
+                        throw new System.ArgumentException("Invalid argument", "newEmail");
                     }
-                    Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                    return Json("Unable to update user");
+                    else
+                    {
+                        var temp = await _userManager.CheckPasswordAsync(user, changeEmail.password);
+                        if (temp)
+                        {
+                            await _userManager.SetEmailAsync(user, changeEmail.newEmail);
+                            await _userManager.SetUserNameAsync(user, changeEmail.newEmail);
+                        }
+
+                        var result = await _userManager.UpdateAsync(user);
+                        if (result == IdentityResult.Success)
+                        {
+                            return "good";
+                        }
+                        Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                        throw new System.Exception("Unable to update user");
+                    }
                 }
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(ModelState.GetModelErrors());
+                throw new System.Exception("Model errors");
             }
             catch (Exception ex)
             {
                 _logger.LogError(1, ex, "Unable to save user name");
 
-                return BadRequest();
+                throw new System.Exception("Bad request");
             }
         }
     }

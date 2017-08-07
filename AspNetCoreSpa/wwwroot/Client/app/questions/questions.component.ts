@@ -20,7 +20,7 @@ export class QuestionsComponent {
     public Subtitle: string = "Feedback form";
 
     public Points: string[] = ['Choose question category: ',
-    'Enter question theme: ',
+        'Enter question theme: ',
         'Enter your question: ']
 
     public Point2_placeholder: string = 'Enter question theme... ';
@@ -47,7 +47,7 @@ export class QuestionsComponent {
     public TempId: number;
     public Msgs: Message[] = [];
 
-    public details: any; 
+    public details: any;
 
     public Questions: IQuestion[];
 
@@ -60,7 +60,7 @@ export class QuestionsComponent {
     /*Sending the question to store in database*/
     SendQuestion(): void {
         if (this.Theme.length < 1 || this.Message.length < 1) {
-            this.details = "Question was not send. Fill in all fields.";   
+            this.details = "Question was not send. Fill in all fields.";
             this.Msgs.push({ severity: 'error', summary: 'Error', detail: this.details });
         }
 
