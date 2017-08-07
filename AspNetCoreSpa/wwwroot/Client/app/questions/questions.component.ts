@@ -33,7 +33,6 @@ export class QuestionsComponent {
         "Errors on the page",
         "Your fresh idea",
         "Other"];
-    public RowNumber: number = 0;
 
     public NumName = "№";
     public CategoryName = "Category";
@@ -51,12 +50,6 @@ export class QuestionsComponent {
 
     public Questions: IQuestion[];
 
-    /*Returns the number of the next question*/
-    Numbering(): number {
-        this.RowNumber++;
-        return this.RowNumber;
-    }
-
     /*Sending the question to store in database*/
     SendQuestion(): void {
         if (this.Theme.length < 1 || this.Message.length < 1) {
@@ -65,8 +58,23 @@ export class QuestionsComponent {
         }
 
         else {
+            var category = "";
+
+            switch (this.Num) {
+                case 0: category = "Problems with account/web site";
+                    break;
+                case 1: category = "Need additional info";
+                    break;
+                case 2: category = "Errors on the page";
+                    break;
+                case 3: category = "Your fresh idea";
+                    break;
+                case 4: category = "Other";
+                    break;
+            }
+
             this._authService.getId().subscribe(data => {
-                this.TempId = data; let tempModel: IQuestionModel = { Category: this.Num, Theme: this.Theme, QuestionName: this.Message, CreatedBy: this.TempId };
+                this.TempId = data; let tempModel: IQuestionModel = { Category: category, Theme: this.Theme, QuestionName: this.Message, CreatedBy: this.TempId };
 
                 this._questionService.add(tempModel).subscribe(data => { }, err => {
                     this.Msgs.push({ severity: 'error', summary: 'Error', detail: err });
@@ -78,10 +86,8 @@ export class QuestionsComponent {
     }
 
     /*Executes on initialisation*/
-    ngOnInit(): void {
-        this._authService.getId().subscribe(data => {
-            this._questionService.getQuestions(data).subscribe(
+    ngOnInit(): void {        
+            this._questionService.getQuestions().subscribe(
                 x => { this.Questions = x; });
-        });
-    }
+        };
 }

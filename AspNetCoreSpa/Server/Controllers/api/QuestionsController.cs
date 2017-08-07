@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using AspNetCoreSpa.DAL;
 using AspNetCoreSpa.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -17,10 +18,12 @@ namespace AspNetCoreSpa.Server.Controllers.api
     public class QuestionsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private UserManager<ApplicationUser> _userManager;
 
-        public QuestionsController(ApplicationDbContext context)
+        public QuestionsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: api/Questions
@@ -32,10 +35,11 @@ namespace AspNetCoreSpa.Server.Controllers.api
         }
 
         // GET: api/Questions
-        [HttpGet("GetQuestionsForUser/{userid}")]
-        public IEnumerable<Question> GetQuestionsForUser([FromRoute] int userid)
+        [HttpGet("GetQuestionsForUser")]
+        public async Task<IEnumerable<Question>> GetQuestionsForUserAsync()
         {
-            return _context.Questions.Where(x => x.CreatedBy == userid).ToList();
+            var user = await _userManager.FindByEmailAsync(User.Identity.Name);
+            return _context.Questions.Where(x => x.CreatedBy == user.Id).ToList();
         }
 
         // GET: api/Questions/5

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a9399f19ef0ddb82bfe7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a6e8a224c577f7fd47b4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -6385,8 +6385,8 @@ var QuestionService = (function () {
     QuestionService.prototype.add = function (model) {
         return this._http.post(this._addUrl, model);
     };
-    QuestionService.prototype.getQuestions = function (userId) {
-        return this._http.get(this._getQuestionsForUserUrl + userId)
+    QuestionService.prototype.getQuestions = function () {
+        return this._http.get(this._getQuestionsForUserUrl)
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log('All:' + JSON.stringify(data)); });
     };
@@ -13776,7 +13776,7 @@ module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 he
 /* 137 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"questions-page\">\r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <div class=\"tatooarticle text\">\r\n        <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n        <p class=\"text plaintext margin2\"> {{Description_part1}} <a routerLink=\"/help\">{{Insert}}</a> {{Description_part2}} </p>\r\n    </div>\r\n\r\n    <div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n        <div class='panel-heading' id=\"tatoopanel\">\r\n            {{Subtitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[0]}}</label>\r\n                <select type=\"number\" class='tatooinput marginbottom' [(ngModel)]=\"Num\">\r\n                    <option [ngValue]=\"0\">{{Themes[0]}}</option>\r\n                    <option [ngValue]=\"1\">{{Themes[1]}}</option>\r\n                    <option [ngValue]=\"2\">{{Themes[2]}}</option>\r\n                    <option [ngValue]=\"3\">{{Themes[3]}}</option>\r\n                    <option [ngValue]=\"4\">{{Themes[4]}}</option>\r\n                </select>\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[1]}}</label>\r\n                <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point2_placeholder}}\" [(ngModel)]='Theme' />\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[2]}}</label>\r\n                <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point3_placeholder}}\" [(ngModel)]='Message' />\r\n            </div>\r\n            <button class=' btn btn-primary tatoobutton' (click)='SendQuestion()'> {{ButtonName}} </button>\r\n        </div>\r\n    </div>\r\n\r\n    <br>\r\n    <div class='panel panel-primary tatoodiv' style=\"width:98%\">\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{TableName}}\r\n        </div>\r\n        <div class='panel-body'>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'\r\n                       *ngIf='Questions && Questions.length'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th>{{NumName}}</th>\r\n                            <th>{{CategoryName}}</th>\r\n                            <th>{{ThemeName}}</th>\r\n                            <th>{{QuestionName}}</th>\r\n                            <th>{{AnswerName}}</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr *ngFor='let question of Questions'>\r\n                            <td>{{ Numbering()}}</td>\r\n                            <td>{{ question.category }}</td>\r\n                            <td>{{ question.theme}}</td>\r\n                            <td>{{ question.questionName}}</td>\r\n                            <td> </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<div class=\"questions-page\">\r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <div class=\"tatooarticle text\">\r\n        <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n        <p class=\"text plaintext margin2\"> {{Description_part1}} <a routerLink=\"/help\">{{Insert}}</a> {{Description_part2}} </p>\r\n    </div>\r\n\r\n    <div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n        <div class='panel-heading' id=\"tatoopanel\">\r\n            {{Subtitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[0]}}</label>\r\n                <select type=\"number\" class='tatooinput marginbottom' [(ngModel)]=\"Num\">\r\n                    <option [ngValue]=\"0\">{{Themes[0]}}</option>\r\n                    <option [ngValue]=\"1\">{{Themes[1]}}</option>\r\n                    <option [ngValue]=\"2\">{{Themes[2]}}</option>\r\n                    <option [ngValue]=\"3\">{{Themes[3]}}</option>\r\n                    <option [ngValue]=\"4\">{{Themes[4]}}</option>\r\n                </select>\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[1]}}</label>\r\n                <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point2_placeholder}}\" [(ngModel)]='Theme' />\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[2]}}</label>\r\n                <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point3_placeholder}}\" [(ngModel)]='Message' />\r\n            </div>\r\n            <button class=' btn btn-primary tatoobutton' (click)='SendQuestion()'> {{ButtonName}} </button>\r\n        </div>\r\n    </div>\r\n\r\n    <br>\r\n    <div class='panel panel-primary tatoodiv' style=\"width:98%\">\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{TableName}}\r\n        </div>\r\n        <div class='panel-body'>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'\r\n                       *ngIf='Questions && Questions.length'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th>{{NumName}}</th>\r\n                            <th>{{CategoryName}}</th>\r\n                            <th>{{ThemeName}}</th>\r\n                            <th>{{QuestionName}}</th>\r\n                            <th>{{AnswerName}}</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr *ngFor='let question of Questions; let i=index'>\r\n                            <td>{{i+1}}</td>\r\n                            <td>{{ question.category }}</td>\r\n                            <td>{{ question.theme}}</td>\r\n                            <td>{{ question.questionName}}</td>\r\n                            <td> </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 138 */
@@ -14970,7 +14970,6 @@ var QuestionsComponent = (function () {
             "Errors on the page",
             "Your fresh idea",
             "Other"];
-        this.RowNumber = 0;
         this.NumName = "№";
         this.CategoryName = "Category";
         this.ThemeName = "Theme";
@@ -14982,11 +14981,6 @@ var QuestionsComponent = (function () {
         this.Msgs = [];
     }
     ;
-    /*Returns the number of the next question*/
-    QuestionsComponent.prototype.Numbering = function () {
-        this.RowNumber++;
-        return this.RowNumber;
-    };
     /*Sending the question to store in database*/
     QuestionsComponent.prototype.SendQuestion = function () {
         var _this = this;
@@ -14995,9 +14989,27 @@ var QuestionsComponent = (function () {
             this.Msgs.push({ severity: 'error', summary: 'Error', detail: this.details });
         }
         else {
+            var category = "";
+            switch (this.Num) {
+                case 0:
+                    category = "Problems with account/web site";
+                    break;
+                case 1:
+                    category = "Need additional info";
+                    break;
+                case 2:
+                    category = "Errors on the page";
+                    break;
+                case 3:
+                    category = "Your fresh idea";
+                    break;
+                case 4:
+                    category = "Other";
+                    break;
+            }
             this._authService.getId().subscribe(function (data) {
                 _this.TempId = data;
-                var tempModel = { Category: _this.Num, Theme: _this.Theme, QuestionName: _this.Message, CreatedBy: _this.TempId };
+                var tempModel = { Category: category, Theme: _this.Theme, QuestionName: _this.Message, CreatedBy: _this.TempId };
                 _this._questionService.add(tempModel).subscribe(function (data) { }, function (err) {
                     _this.Msgs.push({ severity: 'error', summary: 'Error', detail: err });
                 });
@@ -15009,10 +15021,9 @@ var QuestionsComponent = (function () {
     /*Executes on initialisation*/
     QuestionsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._authService.getId().subscribe(function (data) {
-            _this._questionService.getQuestions(data).subscribe(function (x) { _this.Questions = x; });
-        });
+        this._questionService.getQuestions().subscribe(function (x) { _this.Questions = x; });
     };
+    ;
     return QuestionsComponent;
 }());
 QuestionsComponent = tslib_1.__decorate([

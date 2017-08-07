@@ -1,6 +1,6 @@
 /* Defines the product entity */
 export interface IQuestion {
-    category: number;
+    category: string;
     theme: string;
     questionName: string;
     createdBy: number;

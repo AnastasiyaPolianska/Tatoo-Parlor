@@ -54,8 +54,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor='let question of Questions'>
-                            <td>{{ Numbering()}}</td>
+                        <tr *ngFor='let question of Questions; let i=index'>
+                            <td>{{i+1}}</td>
                             <td>{{ question.category }}</td>
                             <td>{{ question.theme}}</td>
                             <td>{{ question.questionName}}</td>
