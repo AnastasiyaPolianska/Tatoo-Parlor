@@ -315,22 +315,22 @@ export class CabinetComponent
         var containError = !reg.test(this.NewEmail);
 
         if (!containError) {
-            var changeEmail = "";
 
-            this._authService.changeEmail(this.NewEmail, this.ConfirmEmail).subscribe(data => changeEmail=data);
+            this._authService.changeEmail(this.NewEmail, this.ConfirmEmail).subscribe(data => {
+                var changeEmail = data;
+                if (changeEmail != "") {
+                    this.Email = this.NewEmail;
+                    this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Email changed" });
 
-            if (changeEmail!="") {
-                this.Email = this.NewEmail;
-                this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Email changed" });
-
-                this._authService.logOut();
-                this._router.navigate(['/login']);
-            }
-            else {
-                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your current password correctly" });
-                this.EmailOK = false;
-                this.ToolErrorEmail = "Invalid email: enter your current password correctly";
-            }
+                    this._authService.logOut();
+                    this._router.navigate(['/login']);
+                }
+                else {
+                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your current password correctly" });
+                    this.EmailOK = false;
+                    this.ToolErrorEmail = "Invalid email: enter your current password correctly";
+                }
+            });
         }
         else {
             this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your real current email address" });

@@ -301,3 +301,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/AspNetCoreSpa/logs/log-20170808.txt
+/AspNetCoreSpa/logs
