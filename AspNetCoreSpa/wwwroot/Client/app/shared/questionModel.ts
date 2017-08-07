@@ -1,6 +1,6 @@
 ﻿/* Defines the product entity */
 export interface IQuestionModel {
-    Category: number;
+    Category: string;
     Theme: string;
     QuestionName: string;
     CreatedBy: number;

@@ -1,5 +1,4 @@
 .cart-page {
-
     /*styles*/
     .tatoobutton {
         background-color: #000000;
@@ -62,9 +61,35 @@
         color: black;
     }
 
+    .tatooerror {
+        color: red;
+        font-size: 3.5vmin;
+    }
+
+    .backerror {
+        background-color: #F6D9D9;
+    }
+
+    .tatoogood {
+        color: #137F25;
+        font-size: 3.5vmin;
+    }
+
+    .backgood {
+        background-color: #C7F9CF;
+    }
+
     @media only screen and (min-width: 800px) {
         .remove-row {
             padding-right: 0%;
+        }
+
+        .tatooerror {
+            font-size: 2vmin;
+        }
+
+        .tatoogood {
+            font-size: 2vmin;
         }
     }
 

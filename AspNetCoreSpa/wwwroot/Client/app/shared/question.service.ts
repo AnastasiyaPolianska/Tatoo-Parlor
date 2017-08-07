@@ -21,8 +21,8 @@ export  class QuestionService {
         return this._http.post(this._addUrl, model);
     }
 
-    getQuestions(userId: number): Observable<IQuestion[]> {
-        return this._http.get(this._getQuestionsForUserUrl + userId)
+    getQuestions(): Observable<IQuestion[]> {
+        return this._http.get(this._getQuestionsForUserUrl)
             .map((response: Response) => <IQuestion[]>response.json())
             .do(data => console.log('All:' + JSON.stringify(data)));
     }

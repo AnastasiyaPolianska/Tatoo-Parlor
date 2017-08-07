@@ -53,3 +53,33 @@
     overflow: hidden;
     color: black;
 }
+
+.tatooerror {
+    color: red;
+    font-size: 3.5vmin;
+    font-weight: bold;
+}
+
+.tatoogood {
+    color: #137F25;
+    font-size: 3.5vmin;
+    font-weight: bold;
+}
+
+.backerror {
+    background-color: #F6D9D9;
+}
+
+.backgood {
+    background-color: #C7F9CF;
+}
+
+@media only screen and (min-width: 800px) {
+    .tatooerror {
+        font-size: 2vmin;
+    }
+
+    .tatoogood {
+        font-size: 2vmin;
+    }
+}

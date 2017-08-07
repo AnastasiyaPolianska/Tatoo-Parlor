@@ -21,11 +21,11 @@
 
 <!--Page-->
 <div class='panel panel-primary ' id="tatoodiv" *ngIf='Product'>
-    <div class='panel-heading'id="tatoopanel"  style='font-size:large'>
+    <div class='panel-heading'id="tatoopanel"  style='font-size:large; margin-bottom: 1%'>
         {{PageTitle + ': ' + Product.productName}}
     </div>
 
-    <div class='panel-body'>
+    <div class='panel-body' [ngClass]="{'backerror':Product.amountLeft<1, 'backgood':IsInCart}">
         <div class='row'>
             <div class='col-md-6'>
                 <div class='row'>
@@ -50,6 +50,9 @@
                         <ngb-rating title={{Product.starRating}} [(rate)]="Product.starRating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
                     </div>
                 </div>
+                <div class='row' *ngIf="Product.amountLeft<1">
+                    <div class='col-md-3 tatooerror'>{{OutOfStock}}</div>
+                </div>
             </div>
 
             <div class='col-md-6'>
@@ -60,17 +63,21 @@
                      [title]='Product.productName'>
             </div>
         </div>
+
+        <div class='row' *ngIf="IsInCart" style="float: right; margin-right: 0.5%">
+            <div class='tatoogood'>{{AlreadyInCart}}</div>
+        </div>
     </div>
 
     <div class='panel-footer'>
-        <button class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px'>
+        <button class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px' title={{TitleButtonBack}}>
             <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}
         </button>
-        <button [disabled]='!IsInCart' class='btn btn-default tatoobutton' (click)='RemoveProduct()' style='float: right'>
-            <i class='glyphicon glyphicon-remove'></i> {{Remove}}
+        <button [disabled]='!IsInCart' class='btn btn-default tatoobutton' (click)='RemoveProduct()' style='float: right' title={{TitleButtonRemove}}>
+            <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}
         </button>
 
-        <button [disabled]='IsInCart' class='btn btn-default tatoobutton' (click)='addToCart()' style='float: right; margin-right: 1%'>
+        <button [disabled]='IsInCart || Product.amountLeft<1' class='btn btn-default tatoobutton' (click)='addToCart()' style='float: right; margin-right: 0.5%' title={{TitleButtonAdd}}>
             <i class='glyphicon glyphicon-shopping-cart'></i> {{AddToCart}}
         </button>        
     </div>      

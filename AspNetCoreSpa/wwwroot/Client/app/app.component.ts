@@ -21,15 +21,13 @@ export class AppComponent {
         else return true;
     });
 
-    loggedUserName = (() =>
-    {
+    loggedUserName = (() => {
         if (this.LocalAuth != "")
             return this.LocalAuth;
         else return this.SessionAuth;
-    })
+    });
 
     logOut = (() => {
         this.authService.logOut().subscribe();
-    })
-
+    });
 }

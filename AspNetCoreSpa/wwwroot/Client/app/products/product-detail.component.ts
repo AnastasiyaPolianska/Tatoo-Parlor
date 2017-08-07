@@ -17,7 +17,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     public Product: IProduct;
     public ErrorMessage: string;
     public Back = "Back";
-    public AddToCart = "Add to cart"
+    public AddToCart = "Add"
 
     public Name = "Name:";
     public Description = "Description:";
@@ -27,7 +27,13 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     public Id: number;
 
     public IsInCart: boolean;
-    public Remove = "Remove from cart";
+    public Remove = "Remove";
+    public OutOfStock = "Out of stock";
+    public AlreadyInCart = "Product is already in cart";
+
+    public TitleButtonBack = "Click to return to previous page";
+    public TitleButtonAdd = "Click to add product to cart";
+    public TitleButtonRemove = "Click to remove product from cart";
 
     public isCart: number;
 

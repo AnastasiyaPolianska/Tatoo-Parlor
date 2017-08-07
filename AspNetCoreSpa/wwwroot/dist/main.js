@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6fcc6474ee000612d680"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a6e8a224c577f7fd47b4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1688,13 +1688,13 @@ exports.SharedModule = SharedModule;
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(8))(46)
+module.exports = (__webpack_require__(8))(314)
 
 /***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(8))(314)
+module.exports = (__webpack_require__(8))(46)
 
 /***/ }),
 /* 7 */
@@ -2191,7 +2191,8 @@ var AuthService = (function () {
     AuthService.prototype.changeEmail = function (newEmail, password) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this._http.post(this._changeEmailUrl, { newEmail: newEmail, password: password }, { headers: headers });
+        return this._http.post(this._changeEmailUrl, { newEmail: newEmail, password: password }, { headers: headers })
+            .map(function (response) { return response.json(); });
     };
     return AuthService;
 }());
@@ -2549,8 +2550,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(5);
-var router_1 = __webpack_require__(6);
+var forms_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var ng_bootstrap_1 = __webpack_require__(39);
 var auth_service_1 = __webpack_require__(13);
 var product_filter_pipe_1 = __webpack_require__(155);
@@ -6384,8 +6385,8 @@ var QuestionService = (function () {
     QuestionService.prototype.add = function (model) {
         return this._http.post(this._addUrl, model);
     };
-    QuestionService.prototype.getQuestions = function (userId) {
-        return this._http.get(this._getQuestionsForUserUrl + userId)
+    QuestionService.prototype.getQuestions = function () {
+        return this._http.get(this._getQuestionsForUserUrl)
             .map(function (response) { return response.json(); })
             .do(function (data) { return console.log('All:' + JSON.stringify(data)); });
     };
@@ -6926,7 +6927,7 @@ var PageScrollInstance = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_page_scroll_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_page_scroll_instance__ = __webpack_require__(59);
@@ -12980,7 +12981,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n.changeinfo {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline;\n  font-size: 3vmin;\n  cursor: pointer; }\n  .changeinfo:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4);\n  margin-bottom: 0px !important; }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.floating {\n  float: right;\n  margin-right: 5%; }\n\n.headchangewidth {\n  width: 30%; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 4vmin; }\n\n@media only screen and (min-width: 800px) {\n  .floating {\n    float: none;\n    margin-right: 0%; }\n  .headchangewidth {\n    width: 15%; }\n  #tatoopanel {\n    font-size: 3vmin; } }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; } }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n.changeinfo {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline;\n  font-size: 3vmin;\n  cursor: pointer; }\n  .changeinfo:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4);\n  margin-bottom: 0px !important; }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.floating {\n  float: right;\n  margin-right: 5%; }\n\n.headchangewidth {\n  width: 30%; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 4vmin; }\n\n.tatootool {\n  font-size: 2vmin;\n  float: right;\n  color: rgba(41, 43, 41, 0.9); }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .floating {\n    float: none;\n    margin-right: 0%; }\n  .headchangewidth {\n    width: 15%; }\n  #tatoopanel {\n    font-size: 3vmin; }\n  .tatootool {\n    font-size: 1.5vmin; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n", ""]);
 
 // exports
 
@@ -13050,7 +13051,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.bolder {\n  font-weight: bold; }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  color: #FFFFFF; }\n\n.tatoobutton:hover {\n  background-color: #464451 !important;\n  border-color: #D5D5D5 !important;\n  color: #FFFFFF !important; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatootable {\n  color: #000000; }\n\n#tatoodiv {\n  border-color: #000000;\n  font-family: 'comic sans ms';\n  color: #000000 !important;\n  margin: 1%; }\n\n/*stars*/\n.star {\n  position: relative;\n  display: inline-block;\n  font-size: 2rem;\n  color: white;\n  border-color: black; }\n\n.full {\n  color: black; }\n\n.half {\n  position: absolute;\n  display: inline-block;\n  overflow: hidden;\n  color: black; }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.bolder {\n  font-weight: bold; }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  color: #FFFFFF; }\n\n.tatoobutton:hover {\n  background-color: #464451 !important;\n  border-color: #D5D5D5 !important;\n  color: #FFFFFF !important; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatootable {\n  color: #000000; }\n\n#tatoodiv {\n  border-color: #000000;\n  font-family: 'comic sans ms';\n  color: #000000 !important;\n  margin: 1%; }\n\n/*stars*/\n.star {\n  position: relative;\n  display: inline-block;\n  font-size: 2rem;\n  color: white;\n  border-color: black; }\n\n.full {\n  color: black; }\n\n.half {\n  position: absolute;\n  display: inline-block;\n  overflow: hidden;\n  color: black; }\n\n.tatooerror {\n  color: red;\n  font-size: 3.5vmin;\n  font-weight: bold; }\n\n.tatoogood {\n  color: #137F25;\n  font-size: 3.5vmin;\n  font-weight: bold; }\n\n.backerror {\n  background-color: #F6D9D9; }\n\n.backgood {\n  background-color: #C7F9CF; }\n\n@media only screen and (min-width: 800px) {\n  .tatooerror {\n    font-size: 2vmin; }\n  .tatoogood {\n    font-size: 2vmin; } }\n", ""]);
 
 // exports
 
@@ -13078,7 +13079,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.bolder {\n  font-weight: bold; }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4); }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5;\n  color: #FFFFFF; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatootable {\n  color: #000000; }\n\n.tatoodiv {\n  border-color: #000000;\n  font-family: 'comic sans ms';\n  color: #000000;\n  margin: 1%; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; } }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.tatoolable {\n  font-family: 'comic sans ms';\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  font-family: 'comic sans ms';\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n/*links*/\na {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline; }\n\na:hover {\n  color: rgba(41, 43, 41, 0.5);\n  text-decoration: underline; }\n\na:visited {\n  color: rgba(41, 43, 41, 0.9) !important;\n  text-decoration: underline; }\n\n/*placeholders*/\n::-webkit-input-placeholder {\n  color: #808080; }\n\n::-moz-placeholder {\n  color: #808080; }\n\n/* Firefox 19+ */\n:-moz-placeholder {\n  color: #808080; }\n\n/* Firefox 18- */\n:-ms-input-placeholder {\n  color: #808080; }\n", ""]);
+exports.push([module.i, ".questions-page {\n  /*text styles*/\n  /*styles*/\n  /*links*/\n  /*placeholders*/\n  /* Firefox 19+ */\n  /* Firefox 18- */ }\n  .questions-page .text {\n    font-family: 'TEMPUS SANS ITC';\n    font-weight: bold;\n    color: rgba(41, 43, 41, 0.7); }\n  .questions-page .plaintext {\n    font-size: 4vmin; }\n  .questions-page .heading {\n    font-size: 7vmin;\n    color: rgba(41, 43, 41, 0.9); }\n  .questions-page .bolder {\n    font-weight: bold; }\n  .questions-page .tatooarticle {\n    width: 100%;\n    background-color: rgba(255, 255, 255, 0.4); }\n  .questions-page .margin2 {\n    margin-left: 3%;\n    margin-right: 3%; }\n  .questions-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    color: #FFFFFF;\n    float: right; }\n  .questions-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5;\n    color: #FFFFFF; }\n  .questions-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .questions-page .tatootable {\n    color: #000000; }\n  .questions-page .tatoodiv {\n    border-color: #000000;\n    font-family: 'comic sans ms';\n    color: #000000;\n    margin: 1%; }\n  @media only screen and (min-width: 800px) {\n    .questions-page .tatoodiv {\n      width: 40%; } }\n  .questions-page .margin2 {\n    margin-left: 3%;\n    margin-right: 3%; }\n  .questions-page .tatoolable {\n    font-family: 'comic sans ms';\n    color: #000000;\n    min-width: 39%;\n    max-width: 39%; }\n  .questions-page .tatooinput {\n    font-family: 'comic sans ms';\n    color: #000000;\n    min-width: 58%;\n    max-width: 58%;\n    margin-right: 1%; }\n  .questions-page .marginbottom {\n    margin-bottom: 1%; }\n  .questions-page a {\n    color: rgba(41, 43, 41, 0.9);\n    text-decoration: underline; }\n  .questions-page a:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n  .questions-page a:visited {\n    color: rgba(41, 43, 41, 0.9) !important;\n    text-decoration: underline; }\n  .questions-page ::-webkit-input-placeholder {\n    color: #808080; }\n  .questions-page ::-moz-placeholder {\n    color: #808080; }\n  .questions-page :-moz-placeholder {\n    color: #808080; }\n  .questions-page :-ms-input-placeholder {\n    color: #808080; }\n", ""]);
 
 // exports
 
@@ -13134,7 +13135,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".cart-page {\n  /*styles*/\n  /*links*/\n  /*stars*/ }\n  .cart-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .cart-page .tatootable {\n    color: #000000; }\n  .cart-page .tatoodiv {\n    border-color: #000000;\n    font-family: 'comic sans ms';\n    color: #000000;\n    margin: 1%; }\n  .cart-page a {\n    color: #000000;\n    text-decoration: underline; }\n  .cart-page a:hover {\n    color: rgba(41, 43, 41, 0.8);\n    text-decoration: underline; }\n  .cart-page .star {\n    position: relative;\n    display: inline-block;\n    font-size: 2rem;\n    color: white;\n    border-color: black; }\n  .cart-page .full {\n    color: black; }\n  .cart-page .half {\n    position: absolute;\n    display: inline-block;\n    overflow: hidden;\n    color: black; }\n  @media only screen and (min-width: 800px) {\n    .cart-page .remove-row {\n      padding-right: 0%; } }\n  .cart-page .flexer {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end; }\n", ""]);
+exports.push([module.i, ".cart-page {\n  /*styles*/\n  /*links*/\n  /*stars*/ }\n  .cart-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .cart-page .tatootable {\n    color: #000000; }\n  .cart-page .tatoodiv {\n    border-color: #000000;\n    font-family: 'comic sans ms';\n    color: #000000;\n    margin: 1%; }\n  .cart-page a {\n    color: #000000;\n    text-decoration: underline; }\n  .cart-page a:hover {\n    color: rgba(41, 43, 41, 0.8);\n    text-decoration: underline; }\n  .cart-page .star {\n    position: relative;\n    display: inline-block;\n    font-size: 2rem;\n    color: white;\n    border-color: black; }\n  .cart-page .full {\n    color: black; }\n  .cart-page .half {\n    position: absolute;\n    display: inline-block;\n    overflow: hidden;\n    color: black; }\n  .cart-page .tatooerror {\n    color: red;\n    font-size: 3.5vmin; }\n  .cart-page .backerror {\n    background-color: #F6D9D9; }\n  .cart-page .tatoogood {\n    color: #137F25;\n    font-size: 3.5vmin; }\n  .cart-page .backgood {\n    background-color: #C7F9CF; }\n  @media only screen and (min-width: 800px) {\n    .cart-page .remove-row {\n      padding-right: 0%; }\n    .cart-page .tatooerror {\n      font-size: 2vmin; }\n    .cart-page .tatoogood {\n      font-size: 2vmin; } }\n  .cart-page .flexer {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end; }\n", ""]);
 
 // exports
 
@@ -13733,7 +13734,7 @@ module.exports = "    <nav class=\"navbar navbar-inverse navbar-fixed-top\" styl
 /* 130 */
 /***/ (function(module, exports) {
 
-module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Subtitle}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n            <label class=\"paragraphhead headchangewidth\">{{FirstnameLabel}} </label>\r\n            <label class=\"paragraphtext\" style=\"width:30%\"> {{FirstName}}</label>\r\n            <label class=\"floating changeinfo\" title={{TitleLinkChangeFirstName}} (click)=\"ToggleChangeFirstName()\"> {{ChangeInfoFirstName}} </label>\r\n    </p>\r\n</div>    \r\n<div *ngIf=\"ShowChangeFirstName\" class='panel panel-primary tatoodiv'>\r\n        <div class='panel-heading' id='tatoopanel'>\r\n            {{TitleChangeFirstName}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n                <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n            </div>\r\n\r\n            <button class=' btn btn-primary tatoobutton' (click)='ChangeFirstName()' title={{TitleButtonChangeFirstName}}> \r\n                <i class='glyphicon glyphicon-ok'></i> {{Change}} \r\n            </button>\r\n            <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeFirstName()' title={{TitleLinkChangeFirstName}} style=\"margin-right: 1%\"> \r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}} \r\n            </button>\r\n        </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{LastnameLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{LastName}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeLastName}} (click)=\"ToggleChangeLastName()\"> {{ChangeInfoLastName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeLastName\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeLastName}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n        </div>\r\n        \r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeLastName()' title={{TitleButtonChangeLastName}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeLastName()' title={{TitleLinkChangeLastName}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{EmailLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{Email}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEmail}} (click)=\"ToggleChangeEmail()\"> {{ChangeInfoEmail}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEmail\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEmail}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEmail}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderConfirmEmail}}\" [(ngModel)]='ConfirmEmail' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEmail()' title={{TitleButtonChangeEmail}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEmail()' title={{TitleLinkChangeEmail}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangePassword}} (click)=\"ToggleChangePassword()\"> {{ChangeInfoPassword}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangePassword\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangePassword}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderConfirmPassword}}\" [(ngModel)]='ConfirmPassword' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangePassword()' title={{TitleButtonChangePassword}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangePassword()' title={{TitleLinkChangePassword}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEvery}} (click)=\"ToggleChangeEvery()\"> {{ChangeInfoEvery}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEvery\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEvery}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEvery}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderConfirmEvery}}\" [(ngModel)]='ConfirmEvery' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEvery()' title={{TitleButtonChangeEvery}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEvery()' title={{TitleLinkChangeEvery}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>";
+module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Subtitle}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n            <label class=\"paragraphhead headchangewidth\">{{FirstnameLabel}} </label>\r\n            <label class=\"paragraphtext\" style=\"width:30%\"> {{FirstName}}</label>\r\n            <label class=\"floating changeinfo\" title={{TitleLinkChangeFirstName}} (click)=\"ToggleChangeFirstName()\"> {{ChangeInfoFirstName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeFirstName\" class='panel panel-primary tatoodiv'>\r\n        <div class='panel-heading' id='tatoopanel'>\r\n            {{TitleChangeFirstName}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n                <input type='text' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" class='tatooinput marginbottom' id=\"firstNameLabel\" placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n                <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n                <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n            </div>\r\n\r\n            <button class=' btn btn-primary tatoobutton' (click)='ChangeFirstName()' title={{TitleButtonChangeFirstName}}> \r\n                <i class='glyphicon glyphicon-ok'></i> {{Change}} \r\n            </button>\r\n            <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeFirstName()' title={{TitleLinkChangeFirstName}} style=\"margin-right: 1%\"> \r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}} \r\n            </button>\r\n        </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{LastnameLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{LastName}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeLastName}} (click)=\"ToggleChangeLastName()\"> {{ChangeInfoLastName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeLastName\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeLastName}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n        \r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeLastName()' title={{TitleButtonChangeLastName}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeLastName()' title={{TitleLinkChangeLastName}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{EmailLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{Email}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEmail}} (click)=\"ToggleChangeEmail()\"> {{ChangeInfoEmail}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEmail\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEmail}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEmail}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderConfirmEmail}}\" [(ngModel)]='ConfirmEmail' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEmail()' title={{TitleButtonChangeEmail}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEmail()' title={{TitleLinkChangeEmail}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangePassword}} (click)=\"ToggleChangePassword()\"> {{ChangeInfoPassword}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangePassword\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangePassword}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderConfirmPassword}}\" [(ngModel)]='ConfirmPassword' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangePassword()' title={{TitleButtonChangePassword}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangePassword()' title={{TitleLinkChangePassword}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEvery}} (click)=\"ToggleChangeEvery()\"> {{ChangeInfoEvery}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEvery\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEvery}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n            <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEvery}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderConfirmEvery}}\" [(ngModel)]='ConfirmEvery' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEvery()' title={{TitleButtonChangeEvery}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEvery()' title={{TitleLinkChangeEvery}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 131 */
@@ -13763,7 +13764,7 @@ module.exports = "<div class=\"panel-body text whitetext margin1\" > \r\n    <di
 /* 135 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-top: 50px !important;\r\n    }\r\n\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<!--Template for stars-->\r\n<ng-template #t let-fill=\"fill\">\r\n    <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n    <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n    <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n        <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n    </span>\r\n</ng-template>\r\n\r\n<!--Page-->\r\n<div class='panel panel-primary ' id=\"tatoodiv\" *ngIf='Product'>\r\n    <div class='panel-heading'id=\"tatoopanel\"  style='font-size:large'>\r\n        {{PageTitle + ': ' + Product.productName}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <div class='col-md-6'>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Name}}</div>\r\n                    <div class='col-md-6'>{{Product.productName}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Description}}</div>\r\n                    <div class='col-md-6'>{{Product.description}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{AmountLeft}}</div>\r\n                    <div class='col-md-6'>{{Product.amountLeft}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Price}}</div>\r\n                    <div class='col-md-6'>{{Product.price|currency:'USD':true}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{StarRating}}</div>\r\n                    <div class='col-md-6'>\r\n                        <ngb-rating title={{Product.starRating}} [(rate)]=\"Product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class='col-md-6'>\r\n                <img class='center-block img-responsive' \r\n                     [style.width.px]='200' \r\n                     [style.margin.px]='2' \r\n                     [src]='Product.imageUrl'\r\n                     [title]='Product.productName'>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class='panel-footer'>\r\n        <button class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px'>\r\n            <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}\r\n        </button>\r\n        <button [disabled]='!IsInCart' class='btn btn-default tatoobutton' (click)='RemoveProduct()' style='float: right'>\r\n            <i class='glyphicon glyphicon-remove'></i> {{Remove}}\r\n        </button>\r\n\r\n        <button [disabled]='IsInCart' class='btn btn-default tatoobutton' (click)='addToCart()' style='float: right; margin-right: 1%'>\r\n            <i class='glyphicon glyphicon-shopping-cart'></i> {{AddToCart}}\r\n        </button>        \r\n    </div>      \r\n</div>";
+module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-top: 50px !important;\r\n    }\r\n\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<!--Template for stars-->\r\n<ng-template #t let-fill=\"fill\">\r\n    <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n    <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n    <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n        <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n    </span>\r\n</ng-template>\r\n\r\n<!--Page-->\r\n<div class='panel panel-primary ' id=\"tatoodiv\" *ngIf='Product'>\r\n    <div class='panel-heading'id=\"tatoopanel\"  style='font-size:large; margin-bottom: 1%'>\r\n        {{PageTitle + ': ' + Product.productName}}\r\n    </div>\r\n\r\n    <div class='panel-body' [ngClass]=\"{'backerror':Product.amountLeft<1, 'backgood':IsInCart}\">\r\n        <div class='row'>\r\n            <div class='col-md-6'>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Name}}</div>\r\n                    <div class='col-md-6'>{{Product.productName}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Description}}</div>\r\n                    <div class='col-md-6'>{{Product.description}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{AmountLeft}}</div>\r\n                    <div class='col-md-6'>{{Product.amountLeft}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Price}}</div>\r\n                    <div class='col-md-6'>{{Product.price|currency:'USD':true}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{StarRating}}</div>\r\n                    <div class='col-md-6'>\r\n                        <ngb-rating title={{Product.starRating}} [(rate)]=\"Product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                    </div>\r\n                </div>\r\n                <div class='row' *ngIf=\"Product.amountLeft<1\">\r\n                    <div class='col-md-3 tatooerror'>{{OutOfStock}}</div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class='col-md-6'>\r\n                <img class='center-block img-responsive' \r\n                     [style.width.px]='200' \r\n                     [style.margin.px]='2' \r\n                     [src]='Product.imageUrl'\r\n                     [title]='Product.productName'>\r\n            </div>\r\n        </div>\r\n\r\n        <div class='row' *ngIf=\"IsInCart\" style=\"float: right; margin-right: 0.5%\">\r\n            <div class='tatoogood'>{{AlreadyInCart}}</div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class='panel-footer'>\r\n        <button class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px' title={{TitleButtonBack}}>\r\n            <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}\r\n        </button>\r\n        <button [disabled]='!IsInCart' class='btn btn-default tatoobutton' (click)='RemoveProduct()' style='float: right' title={{TitleButtonRemove}}>\r\n            <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n        </button>\r\n\r\n        <button [disabled]='IsInCart || Product.amountLeft<1' class='btn btn-default tatoobutton' (click)='addToCart()' style='float: right; margin-right: 0.5%' title={{TitleButtonAdd}}>\r\n            <i class='glyphicon glyphicon-shopping-cart'></i> {{AddToCart}}\r\n        </button>        \r\n    </div>      \r\n</div>";
 
 /***/ }),
 /* 136 */
@@ -13775,7 +13776,7 @@ module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 he
 /* 137 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-top: 50px !important;\r\n    }\r\n\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Description_part1}} <a routerLink=\"/help\">{{Insert}}</a> {{Description_part2}} </p>\r\n</div>\r\n\r\n<div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{Subtitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{Points[0]}}</label>\r\n            <select type=\"number\" class='tatooinput marginbottom' [(ngModel)]=\"Num\">\r\n                <option [ngValue]=\"0\">{{Themes[0]}}</option>\r\n                <option [ngValue]=\"1\">{{Themes[1]}}</option>\r\n                <option [ngValue]=\"2\">{{Themes[2]}}</option>\r\n                <option [ngValue]=\"3\">{{Themes[3]}}</option>\r\n                <option [ngValue]=\"4\">{{Themes[4]}}</option>\r\n            </select>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{Points[1]}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point2_placeholder}}\" [(ngModel)]='Theme' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{Points[2]}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point3_placeholder}}\" [(ngModel)]='Message' />\r\n        </div>\r\n        <button class=' btn btn-primary tatoobutton' (click)= 'SendQuestion()'> {{ButtonName}} </button>\r\n    </div>\r\n</div>\r\n\r\n<br>\r\n<div class='panel panel-primary tatoodiv' style=\"width:98%\">\r\n    <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n       {{TableName}}\r\n    </div>\r\n    <div class='panel-body'>\r\n\r\n        <div class='table-responsive'>\r\n            <table class='table tatootable'\r\n                   *ngIf='Questions && Questions.length'>\r\n                <thead>\r\n                    <tr>\r\n                        <th>{{NumName}}</th>\r\n                        <th>{{CategoryName}}</th>\r\n                        <th>{{ThemeName}}</th>\r\n                        <th>{{QuestionName}}</th>\r\n                        <th>{{AnswerName}}</th>\r\n                    </tr>\r\n                </thead>\r\n                <tbody>\r\n                    <tr *ngFor='let question of Questions'>\r\n                        <td>{{ Numbering()}}</td>\r\n                        <td>{{ question.category }}</td>\r\n                        <td>{{ question.theme}}</td>\r\n                        <td>{{ question.questionName}}</td>\r\n                        <td> </td>\r\n                    </tr>\r\n                </tbody>\r\n            </table>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
+module.exports = "<div class=\"questions-page\">\r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <div class=\"tatooarticle text\">\r\n        <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n        <p class=\"text plaintext margin2\"> {{Description_part1}} <a routerLink=\"/help\">{{Insert}}</a> {{Description_part2}} </p>\r\n    </div>\r\n\r\n    <div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n        <div class='panel-heading' id=\"tatoopanel\">\r\n            {{Subtitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[0]}}</label>\r\n                <select type=\"number\" class='tatooinput marginbottom' [(ngModel)]=\"Num\">\r\n                    <option [ngValue]=\"0\">{{Themes[0]}}</option>\r\n                    <option [ngValue]=\"1\">{{Themes[1]}}</option>\r\n                    <option [ngValue]=\"2\">{{Themes[2]}}</option>\r\n                    <option [ngValue]=\"3\">{{Themes[3]}}</option>\r\n                    <option [ngValue]=\"4\">{{Themes[4]}}</option>\r\n                </select>\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[1]}}</label>\r\n                <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point2_placeholder}}\" [(ngModel)]='Theme' />\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[2]}}</label>\r\n                <input type='text' class='tatooinput marginbottom' placeholder=\"{{Point3_placeholder}}\" [(ngModel)]='Message' />\r\n            </div>\r\n            <button class=' btn btn-primary tatoobutton' (click)='SendQuestion()'> {{ButtonName}} </button>\r\n        </div>\r\n    </div>\r\n\r\n    <br>\r\n    <div class='panel panel-primary tatoodiv' style=\"width:98%\">\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{TableName}}\r\n        </div>\r\n        <div class='panel-body'>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'\r\n                       *ngIf='Questions && Questions.length'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th>{{NumName}}</th>\r\n                            <th>{{CategoryName}}</th>\r\n                            <th>{{ThemeName}}</th>\r\n                            <th>{{QuestionName}}</th>\r\n                            <th>{{AnswerName}}</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr *ngFor='let question of Questions; let i=index'>\r\n                            <td>{{i+1}}</td>\r\n                            <td>{{ question.category }}</td>\r\n                            <td>{{ question.theme}}</td>\r\n                            <td>{{ question.questionName}}</td>\r\n                            <td> </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 138 */
@@ -13799,7 +13800,7 @@ module.exports = "  <style>\r\n  .carousel-inner > .item > img,\r\n  .carousel-i
 /* 141 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .lalala {\r\n        display: flex;\r\n        flex-direction: row;\r\n        justify-content: space-between;\r\n        width: 100%;\r\n    }\r\n\r\n    .cross {\r\n        align-self: flex-end;\r\n    }\r\n\r\n    .header {\r\n        align-self: flex-start;\r\n    }\r\n\r\n    .modal-content {\r\n        margin-top: 100px !important;\r\n    }\r\n\r\n    /*styles*/\r\n    .tatoobutton {\r\n        background-color: #000000;\r\n        border-color: #FFFFFF;\r\n        color: #FFFFFF;\r\n        text-decoration: none;\r\n    }\r\n\r\n    .tatoobutton:hover {\r\n        background-color: #464451;\r\n        border-color: #D5D5D5;\r\n        color: #FFFFFF !important;\r\n        text-decoration: none;\r\n     }\r\n</style>\r\n\r\n<div class=\"cart-page\"> \r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <!--Template for stars-->\r\n    <ng-template #t let-fill=\"fill\">\r\n        <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n        <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n        <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n            <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n        </span>\r\n    </ng-template>\r\n\r\n    <!--Page-->\r\n    <div class='tatoodiv panel panel-primary'>\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{PageTitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <div class='col-md-2 tatootable'>{{Filter}}</div>\r\n                <div class='col-md-2 tatootable'>\r\n                    <input type='text' class='tatootable' [(ngModel)]='ListFilter' />\r\n                </div>\r\n            </div>\r\n\r\n            <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th>{{Image}}</th>\r\n                            <th>{{Name}}</th>\r\n                            <th>{{AmountLeft}}</th>\r\n                            <th>{{Price}}</th>\r\n                            <th>{{StarRating}}</th>\r\n                            <th *ngIf=\"IsCart\">{{Quantity}}</th>\r\n                            <th *ngIf=\"IsCart\"></th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody *ngIf='AllProducts && AllProducts.length'>\r\n                        <tr *ngFor='let product of AllProducts | productFilter:ListFilter'>\r\n                            <td>\r\n                                <img [src]='product.imageUrl'\r\n                                     [title]='product.productName'\r\n                                     [style.width.px]='ImageWidth'\r\n                                     [style.margin.px]='ImageMargin'>\r\n                            </td>\r\n                            <td>\r\n                                <a title={{TitleDetails}} [routerLink]=\"['/product', product.id, CartToSend]\">\r\n                                    {{product.productName}}\r\n                                </a>\r\n                            </td>\r\n                            <td>{{ product.amountLeft}}</td>\r\n                            <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>\r\n                            <td>\r\n                                <ngb-rating title={{product.starRating}} [(rate)]=\"product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\">\r\n                                <spinnerNum [IncomeVal]=\"product.amount\" (IncreaseAmount)=\"IncreasingAmount(product)\" (DecreaseAmount)=\"DecreasingAmount(product)\"></spinnerNum>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\" class=\"remove-row\">\r\n                                <button title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style=\"float: right\">\r\n                                    <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n                                </button>\r\n                            </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n\r\n            <div *ngIf=\"IsCart\" class='panel-footer' style=\"width:100%; padding-left: 0%; padding-right: 0%;\">\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleClear}} class='btn btn-default tatoobutton' (click)=\"ShowDialogClear(content)\">\r\n                    <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n                </button>\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleBuy}} class='btn btn-default tatoobutton' (click)='ShowDialogByuAll(content)' style=\"float: right; margin-bottom: 1%\">\r\n                    <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n                </button>\r\n                <div style=\"width: 100%\" class=\"flexer\">\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>\r\n                    </p>\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalAmount}}{{TotalAmount}}</label>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ng-template class=\"temp\" #content let-c=\"close\" let-d=\"dismiss\">\r\n        <div class=\"modal-header\">\r\n            <div class=\"lalala\">\r\n                <h4 class=\"modal-title header\">{{Header}}</h4>\r\n                <button type=\"button\" class=\"close cross\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n            <p>{{Content}}</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n            <button class=\"btn btn-secondary tatoobutton\" (click)=\"c('Close click')\">\r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n            </button>\r\n            <button *ngIf=\"Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"BuyAll(); c('Close click')\">\r\n                <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n            </button>\r\n            <button *ngIf=\"!Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"DeleteAll(); c('Close click')\">\r\n                <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n            </button>\r\n        </div>\r\n    </ng-template>\r\n\r\n</div>";
+module.exports = "<style>\r\n    .lalala {\r\n        display: flex;\r\n        flex-direction: row;\r\n        justify-content: space-between;\r\n        width: 100%;\r\n    }\r\n\r\n    .cross {\r\n        align-self: flex-end;\r\n    }\r\n\r\n    .header {\r\n        align-self: flex-start;\r\n    }\r\n\r\n    .modal-content {\r\n        margin-top: 100px !important;\r\n    }\r\n\r\n    /*styles*/\r\n    .tatoobutton {\r\n        background-color: #000000;\r\n        border-color: #FFFFFF;\r\n        color: #FFFFFF;\r\n        text-decoration: none;\r\n    }\r\n\r\n    .tatoobutton:hover {\r\n        background-color: #464451;\r\n        border-color: #D5D5D5;\r\n        color: #FFFFFF !important;\r\n        text-decoration: none;\r\n     }\r\n</style>\r\n\r\n<div class=\"cart-page\"> \r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <!--Template for stars-->\r\n    <ng-template #t let-fill=\"fill\">\r\n        <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n        <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n        <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n            <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n        </span>\r\n    </ng-template>\r\n\r\n    <!--Page-->\r\n    <div class='tatoodiv panel panel-primary'>\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{PageTitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <div class='col-md-2 tatootable'>{{Filter}}</div>\r\n                <div class='col-md-2 tatootable'>\r\n                    <input type='text' class='tatootable' [(ngModel)]='ListFilter' />\r\n                </div>\r\n            </div>\r\n\r\n            <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th>{{Image}}</th>\r\n                            <th>{{Name}}</th>\r\n                            <th>{{AmountLeft}}</th>\r\n                            <th>{{Price}}</th>\r\n                            <th>{{StarRating}}</th>\r\n                            <th *ngIf=\"IsCart\">{{Quantity}}</th>\r\n                            <th *ngIf=\"IsCart\"></th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody *ngIf='AllProducts && AllProducts.length'>\r\n                        <tr *ngFor='let product of AllProducts | productFilter:ListFilter' [ngClass]=\"{'backerror': product.amountLeft<1, 'backgood':product.isInCart}\">\r\n                            <td>\r\n                                <img [src]='product.imageUrl'\r\n                                     [title]='product.productName'\r\n                                     [style.width.px]='ImageWidth'\r\n                                     [style.margin.px]='ImageMargin'>\r\n                            </td>\r\n                            <td>\r\n                                <a title={{TitleDetails}} [routerLink]=\"['/product', product.id, CartToSend]\">\r\n                                    {{product.productName}}\r\n                                </a>\r\n                                <div *ngIf=\"product.amountLeft<1\" class=\"tatooerror\">\r\n                                    {{OutOfStock}}\r\n                                </div>\r\n                                <div *ngIf=\"product.isInCart\" class=\"tatoogood\">\r\n                                    {{AlreadyInCart}}\r\n                                </div>\r\n                            </td>\r\n                            <td>{{ product.amountLeft}}</td>\r\n                            <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>\r\n                            <td>\r\n                                <ngb-rating title={{product.starRating}} [(rate)]=\"product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\">\r\n                                <spinnerNum [IncomeVal]=\"product.amount\" (IncreaseAmount)=\"IncreasingAmount(product)\" (DecreaseAmount)=\"DecreasingAmount(product)\"></spinnerNum>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\" class=\"remove-row\">\r\n                                <button title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style=\"float: right\">\r\n                                    <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n                                </button>\r\n                            </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n\r\n            <div *ngIf=\"IsCart\" class='panel-footer' style=\"width:100%; padding-left: 0%; padding-right: 0%;\">\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleClear}} class='btn btn-default tatoobutton' (click)=\"ShowDialogClear(content)\">\r\n                    <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n                </button>\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleBuy}} class='btn btn-default tatoobutton' (click)='ShowDialogByuAll(content)' style=\"float: right; margin-bottom: 1%\">\r\n                    <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n                </button>\r\n                <div style=\"width: 100%\" class=\"flexer\">\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>\r\n                    </p>\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalAmount}}{{TotalAmount}}</label>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ng-template class=\"temp\" #content let-c=\"close\" let-d=\"dismiss\">\r\n        <div class=\"modal-header\">\r\n            <div class=\"lalala\">\r\n                <h4 class=\"modal-title header\">{{Header}}</h4>\r\n                <button type=\"button\" class=\"close cross\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n            <p>{{Content}}</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n            <button class=\"btn btn-secondary tatoobutton\" (click)=\"c('Close click')\">\r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n            </button>\r\n            <button *ngIf=\"Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"BuyAll(); c('Close click')\">\r\n                <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n            </button>\r\n            <button *ngIf=\"!Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"DeleteAll(); c('Close click')\">\r\n                <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n            </button>\r\n        </div>\r\n    </ng-template>\r\n\r\n</div>";
 
 /***/ }),
 /* 142 */
@@ -14028,8 +14029,8 @@ var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(24);
 var http_1 = __webpack_require__(14);
-var router_1 = __webpack_require__(6);
-var forms_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 var ng2_page_scroll_1 = __webpack_require__(58);
 var primeng_1 = __webpack_require__(15);
 var core_2 = __webpack_require__(69);
@@ -14115,9 +14116,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var auth_service_1 = __webpack_require__(13);
+var router_1 = __webpack_require__(5);
 var CabinetComponent = (function () {
-    function CabinetComponent(_authService) {
+    function CabinetComponent(_authService, _router) {
         this._authService = _authService;
+        this._router = _router;
         this.Maintitle = 'My cabinet';
         this.Subtitle = 'Feel yourself at home.';
         this.FirstnameLabel = "First name: ";
@@ -14134,16 +14137,24 @@ var CabinetComponent = (function () {
         this.PlaceHolderChangeFirstName = "Enter new first name...";
         this.ShowChangeFirstName = false;
         this.TitleLinkChangeFirstName = "Click to change your first name";
+        this.ToolFirstName = "*Use any letters, numbers and symbols: -,',_ . From 4 to 15 characters.";
+        this.FirstNameOK = true;
         this.TitleChangeLastName = "Change last name";
         this.LableChangeLastName = "Enter new last name: ";
         this.PlaceHolderChangeLastName = "Enter new last name...";
         this.ShowChangeLastName = false;
         this.TitleLinkChangeLastName = "Click to change your last name";
+        this.ToolLastName = "*Use any letters, numbers and symbols: -,',_ . From 4 to 15 characters.";
+        this.ToolErrorLastName = "";
+        this.LastNameOK = true;
         this.TitleChangeEmail = "Change email";
         this.LableChangeEmail = "Enter new email: ";
         this.PlaceHolderChangeEmail = "Enter new email...";
         this.ShowChangeEmail = false;
         this.TitleLinkChangeEmail = "Click to change your email";
+        this.ToolEmail = "*Enter your new email correctly.";
+        this.ToolErrorEmail = "";
+        this.EmailOK = true;
         this.TitleChangePassword = "Change password";
         this.LableChangePassword = "Enter new password: ";
         this.PlaceHolderChangePassword = "Enter new password...";
@@ -14151,12 +14162,19 @@ var CabinetComponent = (function () {
         this.TitleLinkChangePassword = "Click to change your password";
         this.LableRepeatPassword = "Repeat new password: ";
         this.PlaceHolderRepeatPassword = "Repeat new password...";
+        this.ToolPassword = "*Use any letters, numbers or symbols. Must be at least one lowercase letter, one uppercase letter and one number. From 8 to 15 characters.";
+        this.ToolPasswordRepeat = "*Repeat new password, make sure it is exactly the same as entered.";
+        this.PasswordOK = true;
+        this.RepeatPasswordOK = true;
         this.LableConfirmEmail = "Enter your password to confirm: ";
         this.PlaceHolderConfirmEmail = "Enter your password to confirm...";
+        this.ConfirmEmailOK = true;
         this.LableConfirmPassword = "Enter your old password to confirm: ";
         this.PlaceHolderConfirmPassword = "Enter your old password to confirm...";
+        this.ConfirmPasswordOK = true;
         this.LableConfirmEvery = "Enter your old password to confirm: ";
         this.PlaceHolderConfirmEvery = "Enter your old password to confirm...";
+        this.ConfirmEveryOK = true;
         this.ShowChangeEvery = false;
         this.TitleChangeEvery = "Change all information";
         this.TitleLinkChangeEvery = "Click to change all information";
@@ -14188,16 +14206,61 @@ var CabinetComponent = (function () {
         if (this.ShowChangeFirstName) {
             this.ChangeInfoFirstName = "Cancel";
             this.TitleLinkChangeFirstName = "Click to cancel changing";
+            this.NewFirstName = "";
+            this.FirstNameOK = true;
+            this.ShowChangeLastName = false;
+            this.ChangeInfoLastName = "Change info";
+            this.TitleLinkChangeLastName = "Click to change your last name";
+            this.NewLastName = "";
+            this.LastNameOK = true;
+            this.ShowChangeEmail = false;
+            this.ChangeInfoEmail = "Change info";
+            this.TitleLinkChangeEmail = "Click to change your email";
+            this.NewEmail = "";
+            this.ConfirmEmail = "";
+            this.EmailOK = true;
+            this.ConfirmEmailOK = true;
+            this.ShowChangePassword = false;
+            this.ChangeInfoPassword = "Change password";
+            this.TitleLinkChangePassword = "Click to change your password";
+            this.NewPassword = "";
+            this.RepeatPassword = "";
+            this.ConfirmPassword = "";
+            this.PasswordOK = true;
+            this.ConfirmPasswordOK = true;
+            this.ShowChangeEvery = false;
+            this.ChangeInfoEvery = "Change all information";
+            this.TitleLinkChangeEvery = "Click to change all information";
+            this.ConfirmEveryOK = true;
         }
         else {
             this.ChangeInfoFirstName = "Change info";
             this.TitleLinkChangeFirstName = "Click to change your first name";
+            this.NewFirstName = "";
+            this.FirstNameOK = true;
         }
     };
     CabinetComponent.prototype.ChangeFirstName = function () {
-        this.FirstName = this.NewFirstName;
-        this._authService.changeFirstName(this.NewFirstName).subscribe();
-        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "First name changed" });
+        if (this.NewFirstName.length >= 4 && this.NewFirstName.length <= 15) {
+            var reg = new RegExp("[^a-zA-Z0-9_'-]");
+            var containError = reg.test(this.NewFirstName);
+            if (!containError) {
+                this.FirstName = this.NewFirstName;
+                this.FirstNameOK = true;
+                this._authService.changeFirstName(this.NewFirstName).subscribe();
+                this.Msgs.push({ severity: 'success', summary: 'Success', detail: "First name changed" });
+            }
+            else {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the first name: unacceptable character" });
+                this.FirstNameOK = false;
+                this.ToolErrorFirstName = "*Check the characters: use only letters, numbers and symbols: -,',_ .";
+            }
+        }
+        else {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the first name: check the length" });
+            this.FirstNameOK = false;
+            this.ToolErrorFirstName = "Check the length: it should be between 4 and 15 characters.";
+        }
         ;
     };
     CabinetComponent.prototype.ToggleChangeLastName = function () {
@@ -14205,42 +14268,167 @@ var CabinetComponent = (function () {
         if (this.ShowChangeLastName) {
             this.ChangeInfoLastName = "Cancel";
             this.TitleLinkChangeLastName = "Click to cancel changing";
+            this.ShowChangeFirstName = false;
+            this.ChangeInfoFirstName = "Change info";
+            this.TitleLinkChangeFirstName = "Click to change your first name";
+            this.NewFirstName = "";
+            this.FirstNameOK = true;
+            this.NewLastName = "";
+            this.LastNameOK = true;
+            this.ShowChangeEmail = false;
+            this.ChangeInfoEmail = "Change info";
+            this.TitleLinkChangeEmail = "Click to change your email";
+            this.NewEmail = "";
+            this.ConfirmEmail = "";
+            this.EmailOK = true;
+            this.ConfirmEmailOK = true;
+            this.ShowChangePassword = false;
+            this.ChangeInfoPassword = "Change password";
+            this.TitleLinkChangePassword = "Click to change your password";
+            this.NewPassword = "";
+            this.RepeatPassword = "";
+            this.ConfirmPassword = "";
+            this.PasswordOK = true;
+            this.ConfirmPasswordOK = true;
+            this.ShowChangeEvery = false;
+            this.ChangeInfoEvery = "Change all information";
+            this.TitleLinkChangeEvery = "Click to change all information";
+            this.ConfirmEveryOK = true;
         }
         else {
             this.ChangeInfoLastName = "Change info";
             this.TitleLinkChangeLastName = "Click to change your last name";
+            this.NewLastName = "";
+            this.LastNameOK = true;
         }
     };
     CabinetComponent.prototype.ChangeLastName = function () {
-        this.LastName = this.NewLastName;
-        this._authService.changeLastName(this.NewLastName).subscribe();
-        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Last name changed" });
+        if (this.NewLastName.length >= 4 && this.NewLastName.length <= 15) {
+            var reg = new RegExp("[^a-zA-Z0-9_'-]");
+            var containError = reg.test(this.NewLastName);
+            if (!containError) {
+                this.LastName = this.NewLastName;
+                this.LastNameOK = true;
+                this._authService.changeLastName(this.NewLastName).subscribe();
+                this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Last name changed" });
+            }
+            else {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the last name: unacceptable character" });
+                this.LastNameOK = false;
+                this.ToolErrorLastName = "*Check the characters: use only letters, numbers and symbols: -,',_ .";
+            }
+        }
+        else {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the last name: check the length" });
+            this.LastNameOK = false;
+            this.ToolErrorLastName = "Check the length: it should be between 4 and 15 characters.";
+        }
     };
     CabinetComponent.prototype.ToggleChangeEmail = function () {
         this.ShowChangeEmail = !this.ShowChangeEmail;
         if (this.ShowChangeEmail) {
             this.ChangeInfoEmail = "Cancel";
             this.TitleLinkChangeEmail = "Click to cancel changing";
+            this.ShowChangeFirstName = false;
+            this.ChangeInfoFirstName = "Change info";
+            this.TitleLinkChangeFirstName = "Click to change your first name";
+            this.NewFirstName = "";
+            this.FirstNameOK = true;
+            this.ShowChangeLastName = false;
+            this.ChangeInfoLastName = "Change info";
+            this.TitleLinkChangeLastName = "Click to change your last name";
+            this.NewLastName = "";
+            this.LastNameOK = true;
+            this.NewEmail = "";
+            this.ConfirmEmail = "";
+            this.EmailOK = true;
+            this.ConfirmEmailOK = true;
+            this.ShowChangePassword = false;
+            this.ChangeInfoPassword = "Change password";
+            this.TitleLinkChangePassword = "Click to change your password";
+            this.NewPassword = "";
+            this.RepeatPassword = "";
+            this.ConfirmPassword = "";
+            this.PasswordOK = true;
+            this.ConfirmPasswordOK = true;
+            this.ShowChangeEvery = false;
+            this.ChangeInfoEvery = "Change all information";
+            this.TitleLinkChangeEvery = "Click to change all information";
+            this.ConfirmEveryOK = true;
         }
         else {
             this.ChangeInfoEmail = "Change info";
             this.TitleLinkChangeEmail = "Click to change your email";
+            this.NewEmail = "";
+            this.ConfirmEmail = "";
+            this.EmailOK = true;
+            this.ConfirmEmailOK = true;
         }
     };
     CabinetComponent.prototype.ChangeEmail = function () {
-        this.Email = this.NewEmail;
-        this._authService.changeEmail(this.NewEmail, this.ConfirmEmail).subscribe();
-        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Email changed" });
+        var reg = new RegExp("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
+        var containError = !reg.test(this.NewEmail);
+        if (!containError) {
+            var changeEmail = "";
+            this._authService.changeEmail(this.NewEmail, this.ConfirmEmail).subscribe(function (data) { return changeEmail = data; });
+            if (changeEmail != "") {
+                this.Email = this.NewEmail;
+                this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Email changed" });
+                this._authService.logOut();
+                this._router.navigate(['/login']);
+            }
+            else {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your current password correctly" });
+                this.EmailOK = false;
+                this.ToolErrorEmail = "Invalid email: enter your current password correctly";
+            }
+        }
+        else {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your real current email address" });
+            this.EmailOK = false;
+            this.ToolErrorEmail = "Invalid email: enter your real current email address";
+        }
     };
     CabinetComponent.prototype.ToggleChangePassword = function () {
         this.ShowChangePassword = !this.ShowChangePassword;
         if (this.ShowChangePassword) {
             this.ChangeInfoPassword = "Cancel";
             this.TitleLinkChangePassword = "Click to cancel changing";
+            this.ShowChangeFirstName = false;
+            this.ChangeInfoFirstName = "Change info";
+            this.TitleLinkChangeFirstName = "Click to change your first name";
+            this.NewFirstName = "";
+            this.FirstNameOK = true;
+            this.ShowChangeLastName = false;
+            this.ChangeInfoLastName = "Change info";
+            this.TitleLinkChangeLastName = "Click to change your last name";
+            this.NewLastName = "";
+            this.LastNameOK = true;
+            this.ShowChangeEmail = false;
+            this.ChangeInfoEmail = "Change info";
+            this.TitleLinkChangeEmail = "Click to change your email";
+            this.NewEmail = "";
+            this.ConfirmEmail = "";
+            this.EmailOK = true;
+            this.ConfirmEmailOK = true;
+            this.NewPassword = "";
+            this.RepeatPassword = "";
+            this.ConfirmPassword = "";
+            this.PasswordOK = true;
+            this.ConfirmPasswordOK = true;
+            this.ShowChangeEvery = false;
+            this.ChangeInfoEvery = "Change all information";
+            this.TitleLinkChangeEvery = "Click to change all information";
+            this.ConfirmEveryOK = true;
         }
         else {
             this.ChangeInfoPassword = "Change password";
             this.TitleLinkChangePassword = "Click to change your password";
+            this.NewPassword = "";
+            this.RepeatPassword = "";
+            this.ConfirmPassword = "";
+            this.PasswordOK = true;
+            this.ConfirmPasswordOK = true;
         }
     };
     CabinetComponent.prototype.ChangePassword = function () {
@@ -14250,10 +14438,47 @@ var CabinetComponent = (function () {
         if (this.ShowChangeEvery) {
             this.ChangeInfoEvery = "Cancel";
             this.TitleLinkChangeEvery = "Click to cancel changing";
+            this.ShowChangeFirstName = false;
+            this.ChangeInfoFirstName = "Change info";
+            this.TitleLinkChangeFirstName = "Click to change your first name";
+            this.NewFirstName = "";
+            this.FirstNameOK = true;
+            this.ShowChangeLastName = false;
+            this.ChangeInfoLastName = "Change info";
+            this.TitleLinkChangeLastName = "Click to change your last name";
+            this.NewLastName = "";
+            this.LastNameOK = true;
+            this.ShowChangeEmail = false;
+            this.ChangeInfoEmail = "Change info";
+            this.TitleLinkChangeEmail = "Click to change your email";
+            this.NewEmail = "";
+            this.ConfirmEmail = "";
+            this.EmailOK = true;
+            this.ConfirmEmailOK = true;
+            this.ShowChangePassword = false;
+            this.ChangeInfoPassword = "Change password";
+            this.TitleLinkChangePassword = "Click to change your password";
+            this.NewPassword = "";
+            this.RepeatPassword = "";
+            this.ConfirmPassword = "";
+            this.PasswordOK = true;
+            this.ConfirmPasswordOK = true;
+            this.ConfirmEveryOK = true;
         }
         else {
             this.ChangeInfoEvery = "Change all information";
             this.TitleLinkChangeEvery = "Click to change all information";
+            this.NewFirstName = "";
+            this.NewLastName = "";
+            this.NewEmail = "";
+            this.NewPassword = "";
+            this.RepeatPassword = "";
+            this.ConfirmEvery = "";
+            this.FirstNameOK = true;
+            this.LastNameOK = true;
+            this.EmailOK = true;
+            this.PasswordOK = true;
+            this.ConfirmEveryOK = true;
         }
     };
     CabinetComponent.prototype.ChangeEvery = function () {
@@ -14265,7 +14490,8 @@ CabinetComponent = tslib_1.__decorate([
         template: __webpack_require__(130),
         styles: [__webpack_require__(235)]
     }),
-    tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService])
+    tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService,
+        router_1.Router])
 ], CabinetComponent);
 exports.CabinetComponent = CabinetComponent;
 
@@ -14313,7 +14539,7 @@ exports.CartComponent = CartComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var shared_module_1 = __webpack_require__(20);
 var cart_component_1 = __webpack_require__(149);
 var cart_service_1 = __webpack_require__(19);
@@ -14485,7 +14711,7 @@ exports.WelcomeComponent = WelcomeComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var product_service_1 = __webpack_require__(35);
 var cart_service_1 = __webpack_require__(19);
 var ProductDetailComponent = (function () {
@@ -14496,13 +14722,18 @@ var ProductDetailComponent = (function () {
         this._cartService = _cartService;
         this.PageTitle = 'Product Detail';
         this.Back = "Back";
-        this.AddToCart = "Add to cart";
+        this.AddToCart = "Add";
         this.Name = "Name:";
         this.Description = "Description:";
         this.Price = "Price:";
         this.AmountLeft = "Amount Left:";
         this.StarRating = "5 Star Rating:";
-        this.Remove = "Remove from cart";
+        this.Remove = "Remove";
+        this.OutOfStock = "Out of stock";
+        this.AlreadyInCart = "Product is already in cart";
+        this.TitleButtonBack = "Click to return to previous page";
+        this.TitleButtonAdd = "Click to add product to cart";
+        this.TitleButtonRemove = "Click to remove product from cart";
         this.Msgs = [];
     }
     /*Executes on initialisation of page*/
@@ -14599,7 +14830,7 @@ exports.ProductFilterPipe = ProductFilterPipe;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var ProductDetailGuard = (function () {
     function ProductDetailGuard(_router) {
         this._router = _router;
@@ -14669,7 +14900,7 @@ exports.ProductListComponent = ProductListComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var primeng_1 = __webpack_require__(15);
 var product_list_component_1 = __webpack_require__(157);
 var product_detail_component_1 = __webpack_require__(154);
@@ -14739,7 +14970,6 @@ var QuestionsComponent = (function () {
             "Errors on the page",
             "Your fresh idea",
             "Other"];
-        this.RowNumber = 0;
         this.NumName = "№";
         this.CategoryName = "Category";
         this.ThemeName = "Theme";
@@ -14751,11 +14981,6 @@ var QuestionsComponent = (function () {
         this.Msgs = [];
     }
     ;
-    /*Returns the number of the next question*/
-    QuestionsComponent.prototype.Numbering = function () {
-        this.RowNumber++;
-        return this.RowNumber;
-    };
     /*Sending the question to store in database*/
     QuestionsComponent.prototype.SendQuestion = function () {
         var _this = this;
@@ -14764,9 +14989,27 @@ var QuestionsComponent = (function () {
             this.Msgs.push({ severity: 'error', summary: 'Error', detail: this.details });
         }
         else {
+            var category = "";
+            switch (this.Num) {
+                case 0:
+                    category = "Problems with account/web site";
+                    break;
+                case 1:
+                    category = "Need additional info";
+                    break;
+                case 2:
+                    category = "Errors on the page";
+                    break;
+                case 3:
+                    category = "Your fresh idea";
+                    break;
+                case 4:
+                    category = "Other";
+                    break;
+            }
             this._authService.getId().subscribe(function (data) {
                 _this.TempId = data;
-                var tempModel = { Category: _this.Num, Theme: _this.Theme, QuestionName: _this.Message, CreatedBy: _this.TempId };
+                var tempModel = { Category: category, Theme: _this.Theme, QuestionName: _this.Message, CreatedBy: _this.TempId };
                 _this._questionService.add(tempModel).subscribe(function (data) { }, function (err) {
                     _this.Msgs.push({ severity: 'error', summary: 'Error', detail: err });
                 });
@@ -14778,10 +15021,9 @@ var QuestionsComponent = (function () {
     /*Executes on initialisation*/
     QuestionsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._authService.getId().subscribe(function (data) {
-            _this._questionService.getQuestions(data).subscribe(function (x) { _this.Questions = x; });
-        });
+        this._questionService.getQuestions().subscribe(function (x) { _this.Questions = x; });
     };
+    ;
     return QuestionsComponent;
 }());
 QuestionsComponent = tslib_1.__decorate([
@@ -14805,7 +15047,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var auth_service_1 = __webpack_require__(13);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var LogInComponent = (function () {
     function LogInComponent(_authService, router) {
         this._authService = _authService;
@@ -15024,7 +15266,7 @@ exports.ScretchesComponent = ScretchesComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var primeng_1 = __webpack_require__(15);
 var ng2_page_scroll_1 = __webpack_require__(58);
 var scretches_component_1 = __webpack_require__(162);
@@ -15096,6 +15338,8 @@ var AllProductsComponent = (function () {
         this.Cancel = "Cancel";
         this.Header = "Confirm your action";
         this.Content = "";
+        this.OutOfStock = "Out of stock";
+        this.AlreadyInCart = "Product is already in cart";
         this.Msgs = [];
     }
     /*Executes on initialisation*/
@@ -15148,6 +15392,9 @@ var AllProductsComponent = (function () {
             this.TotalAmount++;
             this.TotalPrice = this.TotalPrice + product.price;
         }
+        else {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Unable to increase quantity: only " + product.amountLeft + " items left" });
+        }
         if (product.amount) {
             this._cartService.changeAmount(product.id, product.amount)
                 .subscribe();
@@ -15159,6 +15406,9 @@ var AllProductsComponent = (function () {
             product.amount--;
             this.TotalAmount--;
             this.TotalPrice = this.TotalPrice - product.price;
+        }
+        else {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Unable to decrease quantity: it is already minimum" });
         }
         if (product.amount) {
             this._cartService.changeAmount(product.id, product.amount)
@@ -15178,14 +15428,10 @@ var AllProductsComponent = (function () {
         this.Buying = true;
         this.modalService.open(content);
     };
-    AllProductsComponent.prototype.HideDialogByuAll = function () {
-    };
     AllProductsComponent.prototype.ShowDialogClear = function (content) {
         this.Content = "Are you sure you want to clear the cart?";
         this.Buying = false;
         this.modalService.open(content);
-    };
-    AllProductsComponent.prototype.HideDialogClear = function () {
     };
     return AllProductsComponent;
 }());
@@ -15507,7 +15753,7 @@ var button_1 = __webpack_require__(11);
 var shared_1 = __webpack_require__(4);
 var domhandler_1 = __webpack_require__(2);
 var ObjectUtils_1 = __webpack_require__(23);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.AUTOCOMPLETE_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return AutoComplete; }),
@@ -16060,7 +16306,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var Breadcrumb = (function () {
     function Breadcrumb(router) {
         this.router = router;
@@ -16164,7 +16410,7 @@ var common_1 = __webpack_require__(1);
 var button_1 = __webpack_require__(11);
 var inputtext_1 = __webpack_require__(12);
 var domhandler_1 = __webpack_require__(2);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.CALENDAR_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return Calendar; }),
@@ -17753,7 +17999,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.CHECKBOX_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return Checkbox; }),
@@ -17919,7 +18165,7 @@ var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(4);
 var inputtext_1 = __webpack_require__(12);
 var domhandler_1 = __webpack_require__(2);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.CHIPS_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return Chips; }),
@@ -18460,7 +18706,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var ContextMenuSub = (function () {
     function ContextMenuSub(domHandler, router, contextMenu) {
         this.domHandler = domHandler;
@@ -19326,7 +19572,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 var shared_1 = __webpack_require__(4);
 var paginator_1 = __webpack_require__(22);
 var inputtext_1 = __webpack_require__(12);
@@ -21823,7 +22069,7 @@ var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(4);
 var domhandler_1 = __webpack_require__(2);
 var ObjectUtils_1 = __webpack_require__(23);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.DROPDOWN_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return Dropdown; }),
@@ -22303,7 +22549,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(4);
 var domhandler_1 = __webpack_require__(2);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.EDITOR_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return Editor; }),
@@ -23535,7 +23781,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
 var inputtext_1 = __webpack_require__(12);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.INPUTMASK_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return InputMask; }),
@@ -24069,7 +24315,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 var domhandler_1 = __webpack_require__(2);
 exports.INPUTSWITCH_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
@@ -24591,7 +24837,7 @@ var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(4);
 var domhandler_1 = __webpack_require__(2);
 var ObjectUtils_1 = __webpack_require__(23);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.LISTBOX_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return Listbox; }),
@@ -24935,7 +25181,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var MegaMenu = (function () {
     function MegaMenu(el, domHandler, renderer, router) {
         this.el = el;
@@ -25090,7 +25336,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var Menu = (function () {
     function Menu(el, domHandler, renderer, router) {
         this.el = el;
@@ -25271,7 +25517,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var MenubarSub = (function () {
     function MenubarSub(domHandler, router) {
         this.domHandler = domHandler;
@@ -25426,7 +25672,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.MULTISELECT_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return MultiSelect; }),
@@ -26289,7 +26535,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var BasePanelMenuItem = (function () {
     function BasePanelMenuItem(router) {
         this.router = router;
@@ -26953,7 +27199,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.RADIO_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return RadioButton; }),
@@ -27080,7 +27326,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.RATING_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return Rating; }),
@@ -27705,7 +27951,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.SELECTBUTTON_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return SelectButton; }),
@@ -27842,7 +28088,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var SlideMenuSub = (function () {
     function SlideMenuSub(slideMenu, router) {
         this.slideMenu = slideMenu;
@@ -28076,7 +28322,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.SLIDER_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return Slider; }),
@@ -28352,7 +28598,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var inputtext_1 = __webpack_require__(12);
 var domhandler_1 = __webpack_require__(2);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.SPINNER_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return Spinner; }),
@@ -28642,7 +28888,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
 var button_1 = __webpack_require__(11);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var SplitButton = (function () {
     function SplitButton(el, domHandler, renderer, router) {
         this.el = el;
@@ -28782,7 +29028,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var Steps = (function () {
     function Steps(router) {
         this.router = router;
@@ -28885,7 +29131,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var TabMenu = (function () {
     function TabMenu(router) {
         this.router = router;
@@ -29270,7 +29516,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
 var Terminal = (function () {
@@ -29385,7 +29631,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
 var common_2 = __webpack_require__(1);
-var router_1 = __webpack_require__(6);
+var router_1 = __webpack_require__(5);
 var TieredMenuSub = (function () {
     function TieredMenuSub(domHandler, router, location) {
         this.domHandler = domHandler;
@@ -29567,7 +29813,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.TOGGLEBUTTON_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return ToggleButton; }),
@@ -30756,7 +31002,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var forms_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(6);
 exports.TRISTATECHECKBOX_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
     useExisting: core_1.forwardRef(function () { return TriStateCheckbox; }),
