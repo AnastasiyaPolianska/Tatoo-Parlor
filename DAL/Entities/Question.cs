@@ -16,6 +16,8 @@ namespace AspNetCoreSpa.DAL.Entities
         [Required]
         public string QuestionName { get; set; }
 
+        public string Answer { get; set; }
+
         [Required]
         public long CreatedBy { get; set; }
 

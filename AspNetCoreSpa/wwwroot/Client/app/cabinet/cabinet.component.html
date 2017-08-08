@@ -78,13 +78,15 @@
     <div class='panel-body'>
         <div class='row'>
             <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>
-            <input type='email' class='tatooinput marginbottom' placeholder="{{PlaceHolderChangeEmail}}" [(ngModel)]='NewEmail' />
+            <input type='email' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': EmailOK==false}" placeholder="{{PlaceHolderChangeEmail}}" [(ngModel)]='NewEmail' />
             <label *ngIf="EmailOK" class='tatootool' style="margin-left: 39%">{{ToolEmail}}</label>
+            <label *ngIf="!EmailOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorEmail}}</label>
         </div>
 
         <div class='row'>
             <label class='col-md-2 tatoolable'>{{LableConfirmEmail}}</label>
-            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderConfirmEmail}}" [(ngModel)]='ConfirmEmail' />
+            <input type='password' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': ConfirmEmailOK==false}" placeholder="{{PlaceHolderConfirmEmail}}" [(ngModel)]='ConfirmEmail' />
+            <label *ngIf="!ConfirmEmailOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorConfirmEmail}}</label>
         </div>
 
         <button class=' btn btn-primary tatoobutton' (click)='ChangeEmail()' title={{TitleButtonChangeEmail}}>

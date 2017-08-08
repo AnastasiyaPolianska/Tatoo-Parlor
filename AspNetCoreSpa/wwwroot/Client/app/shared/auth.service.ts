@@ -67,6 +67,10 @@ export  class AuthService {
         headers.append('Content-Type', 'application/json');
 
         return this._http.post(this._changeEmailUrl, { newEmail: newEmail, password: password }, { headers: headers })
-            .map((response: Response) => { console.log(response); return <string>response._body; });
+            .map((response: Response) => { console.log(response); return <string>response._body; })
+            .catch(err => {
+                console.error(err);
+                return Observable.throw(err.json()[0] || ' error');
+        });
     }
 }

@@ -67,6 +67,7 @@ export class CabinetComponent
 
     public LableConfirmEmail: string = "Enter your password to confirm: ";
     public PlaceHolderConfirmEmail: string = "Enter your password to confirm...";
+    public ToolErrorConfirmEmail: string;
     public ConfirmEmailOK: boolean = true;
 
     public LableConfirmPassword: string = "Enter your old password to confirm: ";
@@ -106,6 +107,7 @@ export class CabinetComponent
     public ConfirmEvery: string;
 
     public Msgs: Message[] = [];
+    public error: string;
 
     /*Getting user info from database on server side*/
     public GetUser(): void {
@@ -193,7 +195,7 @@ export class CabinetComponent
         {
             this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the first name: check the length" });
             this.FirstNameOK = false;
-            this.ToolErrorFirstName = "Check the length: it should be between 4 and 15 characters."; 
+            this.ToolErrorFirstName = "*Check the length: it should be between 4 and 15 characters."; 
         }
 ;    }
 
@@ -262,7 +264,7 @@ export class CabinetComponent
         else {
             this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the last name: check the length" });
             this.LastNameOK = false;
-            this.ToolErrorLastName = "Check the length: it should be between 4 and 15 characters.";
+            this.ToolErrorLastName = "*Check the length: it should be between 4 and 15 characters.";
         }
     }
 
@@ -311,6 +313,9 @@ export class CabinetComponent
     }
 
     public ChangeEmail(): void {
+        this.EmailOK = true;
+        this.ConfirmEmailOK = true;
+
         var reg = new RegExp("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
         var containError = !reg.test(this.NewEmail);
 
@@ -318,24 +323,53 @@ export class CabinetComponent
 
             this._authService.changeEmail(this.NewEmail, this.ConfirmEmail).subscribe(data => {
                 var changeEmail = data;
-                if (changeEmail != "") {
+                if (changeEmail == "good") {
                     this.Email = this.NewEmail;
                     this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Email changed" });
 
-                    this._authService.logOut();
-                    this._router.navigate(['/login']);
+                    setTimeout((router: Router) => {
+                        this._authService.logOut();
+                        this._router.navigate(['/login']);
+                    }, 2500);
                 }
                 else {
                     this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your current password correctly" });
                     this.EmailOK = false;
-                    this.ToolErrorEmail = "Invalid email: enter your current password correctly";
+                    this.ToolErrorEmail = "*Invalid email: enter your current password correctly";
                 }
-            });
+            },
+                err => {
+
+                    this.error = err;
+
+                    if (this.error == "Error while changing the email: enter your current password correctly") {
+                        this.ToolErrorConfirmEmail = "*Invalid current password: enter your current password correctly.";
+                        this.ConfirmEmailOK = false;
+                    }
+
+                    if (this.error == "The password field is required.") {
+                        this.error = "Invalid current password: enter your current password correctly"
+                        this.ToolErrorConfirmEmail = "*Invalid current password: enter your current password correctly.";
+                        this.ConfirmEmailOK = false;
+                    }           
+
+                    if (this.error == "Error while changing the email: enter your real current email address") {
+                        this.ToolErrorEmail = "*Invalid email: enter your real current email address.";
+                        this.EmailOK = false;
+                    }
+
+                    if (this.error == "Error while changing the email: user with such email already exists") {
+                        this.ToolErrorEmail = "*Invalid email: user with such email already exists.";
+                        this.EmailOK = false;
+                    }
+
+                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: this.error }); 
+                });
         }
         else {
             this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your real current email address" });
             this.EmailOK = false;
-            this.ToolErrorEmail = "Invalid email: enter your real current email address";
+            this.ToolErrorEmail = "*Invalid email: enter your real current email address.";
         }
     }
 

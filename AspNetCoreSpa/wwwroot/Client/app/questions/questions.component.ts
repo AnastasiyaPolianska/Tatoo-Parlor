@@ -40,6 +40,14 @@ export class QuestionsComponent {
     public QuestionName = "Question";
     public AnswerName = "Answer";
 
+    public ThemeOK: boolean = true;
+    public ToolTheme: string = "*Use from 10 to 200 symbols.";
+    public ToolErrorTheme: string;
+
+    public MessageOK: boolean = true;
+    public ToolMessage: string = "*Use from 50 to 300 symbols.";
+    public ToolErrorMessage: string;
+
     public Num: number = 0;
     public Theme: string = "";
     public Message: string = "";
@@ -52,31 +60,46 @@ export class QuestionsComponent {
 
     /*Sending the question to store in database*/
     SendQuestion(): void {
-        if (this.Theme.length < 1 || this.Message.length < 1) {
-            this.details = "Question was not send. Fill in all fields.";
-            this.Msgs.push({ severity: 'error', summary: 'Error', detail: this.details });
+        this.ThemeOK = true;
+        this.MessageOK = true;
+
+        if (this.Theme.length < 10 || this.Theme.length > 200) {
+            this.ThemeOK = false;
+            this.ToolErrorTheme = "*Invalid length: use from 10 to 200 symbols.";
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while sending the question: use from 10 to 200 symbols in theme field" });
+        }
+
+        if (this.Message.length < 50 || this.Message.length > 300) {
+            this.MessageOK = false;
+            this.ToolErrorMessage = "*Invalid length: use from 50 to 300 symbols.";
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while sending the question: use from 50 to 300 symbols in question field" });
         }
 
         else {
-            var category = "";
+            var cat = "";
 
             switch (this.Num) {
-                case 0: category = "Problems with account/web site";
+                case 0: cat = "Problems with account/web site";
                     break;
-                case 1: category = "Need additional info";
+                case 1: cat = "Need additional info";
                     break;
-                case 2: category = "Errors on the page";
+                case 2: cat = "Errors on the page";
                     break;
-                case 3: category = "Your fresh idea";
+                case 3: cat = "Your fresh idea";
                     break;
-                case 4: category = "Other";
+                case 4: cat = "Other";
                     break;
             }
 
             this._authService.getId().subscribe(data => {
-                this.TempId = data; let tempModel: IQuestionModel = { Category: category, Theme: this.Theme, QuestionName: this.Message, CreatedBy: this.TempId };
+                this.TempId = data; let tempModel: IQuestionModel = { Category: cat, Theme: this.Theme, QuestionName: this.Message, CreatedBy: this.TempId };
 
-                this._questionService.add(tempModel).subscribe(data => { }, err => {
+                this._questionService.add(tempModel).subscribe(data => {
+                    this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Question sent successfully. We will answer as fast as possible." });
+                    let toAdd: IQuestion = { category: cat, theme: this.Theme, questionName: this.Message, createdBy: this.TempId };
+                    this.Questions.push(toAdd);
+                },
+                    err => {
                     this.Msgs.push({ severity: 'error', summary: 'Error', detail: err });
                 });
             }, err => {

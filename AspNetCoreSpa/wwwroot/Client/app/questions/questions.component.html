@@ -24,13 +24,20 @@
             </div>
             <div class='row'>
                 <label class='col-md-2 tatoolable'>{{Points[1]}}</label>
-                <input type='text' class='tatooinput marginbottom' placeholder="{{Point2_placeholder}}" [(ngModel)]='Theme' />
+                <textarea type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': ThemeOK==false}" placeholder="{{Point2_placeholder}}" [(ngModel)]='Theme'></textarea>
+                <label *ngIf="ThemeOK" class='tatootool' style="margin-left: 39%">{{ToolTheme}}</label>
+                <label *ngIf="!ThemeOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorTheme}}</label>
             </div>
             <div class='row'>
                 <label class='col-md-2 tatoolable'>{{Points[2]}}</label>
-                <input type='text' class='tatooinput marginbottom' placeholder="{{Point3_placeholder}}" [(ngModel)]='Message' />
+                <textarea rows="5" type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': MessageOK==false}" placeholder="{{Point3_placeholder}}" [(ngModel)]='Message'></textarea>
+                <label *ngIf="MessageOK" class='tatootool' style="margin-left: 39%">{{ToolMessage}}</label>
+                <label *ngIf="!MessageOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorMessage}}</label>
             </div>
-            <button class=' btn btn-primary tatoobutton' (click)='SendQuestion()'> {{ButtonName}} </button>
+
+            <button class=' btn btn-primary tatoobutton' (click)='SendQuestion()'>
+                <i class='glyphicon glyphicon-envelope'></i> {{ButtonName}} 
+            </button>
         </div>
     </div>
 
@@ -46,20 +53,20 @@
                        *ngIf='Questions && Questions.length'>
                     <thead>
                         <tr>
-                            <th>{{NumName}}</th>
-                            <th>{{CategoryName}}</th>
-                            <th>{{ThemeName}}</th>
-                            <th>{{QuestionName}}</th>
-                            <th>{{AnswerName}}</th>
+                            <th class="smallColumn">{{NumName}}</th>
+                            <th class="smallColumn">{{CategoryName}}</th>
+                            <th class="smallColumn">{{ThemeName}}</th>
+                            <th class="bigColumn">{{QuestionName}}</th>
+                            <th class="bigColumn">{{AnswerName}}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor='let question of Questions; let i=index'>
-                            <td>{{i+1}}</td>
-                            <td>{{ question.category }}</td>
-                            <td>{{ question.theme}}</td>
-                            <td>{{ question.questionName}}</td>
-                            <td> </td>
+                            <td class="smallColumn">{{i+1}}</td>
+                            <td class="smallColumn">{{ question.category }}</td>
+                            <td class="smallColumn">{{ question.theme}}</td>
+                            <td class="bigColumn">{{ question.questionName}}</td>
+                            <td class="bigColumn"> </td>
                         </tr>
                     </tbody>
                 </table>

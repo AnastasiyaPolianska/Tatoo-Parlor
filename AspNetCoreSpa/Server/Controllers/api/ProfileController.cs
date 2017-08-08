@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using AspNetCoreSpa.DAL;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -205,18 +206,25 @@ namespace AspNetCoreSpa.Server.Controllers.api
 
         //GET: api/Profile/changeemail
         [HttpPost("changeemail")]
-        public async Task<string> ChangeEmail([FromBody] ChangeEmailModel changeEmail)
+        public async Task<IActionResult> ChangeEmail([FromBody] ChangeEmailModel changeEmail)
         {
-            try
+            var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
+            if (user != null)
             {
-                var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
-                if (user != null)
+                Regex regex = new Regex("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
+                bool noErrors = regex.IsMatch(changeEmail.newEmail);
+
+                if (!noErrors)
                 {
-                    Regex regex = new Regex("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
-                    bool noErrors = regex.IsMatch(changeEmail.newEmail);
-                    if (noErrors == false)
+                    ModelState.AddModelError(string.Empty, "Error while changing the email: enter your real current email address");
+                    return BadRequest(ModelState.GetModelErrors());
+                }
+                else
+                {
+                    if (_context.Users.Any(x => x.Email == changeEmail.newEmail))
                     {
-                        throw new System.ArgumentException("Invalid argument", "newEmail");
+                        ModelState.AddModelError(string.Empty, "Error while changing the email: user with such email already exists");
+                        return BadRequest(ModelState.GetModelErrors());
                     }
                     else
                     {
@@ -225,26 +233,26 @@ namespace AspNetCoreSpa.Server.Controllers.api
                         {
                             await _userManager.SetEmailAsync(user, changeEmail.newEmail);
                             await _userManager.SetUserNameAsync(user, changeEmail.newEmail);
-                        }
 
-                        var result = await _userManager.UpdateAsync(user);
-                        if (result == IdentityResult.Success)
-                        {
-                            return "good";
+                            var result = await _userManager.UpdateAsync(user);
+                            if (result == IdentityResult.Success)
+                            {
+                                return Ok("good");
+                            }
+                            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                            throw new System.Exception("Error while changing the email: unable to update user");
                         }
-                        Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                        throw new System.Exception("Unable to update user");
+                        else
+                        {
+                            ModelState.AddModelError(string.Empty, "Error while changing the email: enter your current password correctly");
+                            return BadRequest(ModelState.GetModelErrors());
+                        }
                     }
                 }
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                throw new System.Exception("Model errors");
             }
-            catch (Exception ex)
-            {
-                _logger.LogError(1, ex, "Unable to save user name");
 
-                throw new System.Exception("Bad request");
-            }
+            ModelState.AddModelError(string.Empty, "Error while changing the email: user isn't logged in");
+            return BadRequest(ModelState.GetModelErrors());
         }
     }
 
