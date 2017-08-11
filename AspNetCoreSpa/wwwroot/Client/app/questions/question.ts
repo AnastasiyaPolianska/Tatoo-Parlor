@@ -4,4 +4,5 @@ export interface IQuestion {
     theme: string;
     questionName: string;
     createdBy: number;
+    answer: string;
 }

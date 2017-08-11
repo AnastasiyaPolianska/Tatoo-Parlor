@@ -14,6 +14,7 @@ export  class AuthService {
     private _changeFirstNameUrl = 'api/Profile/changefirstname';
     private _changeLastNameUrl = 'api/Profile/changelastname';
     private _changeEmailUrl = 'api/Profile/changeemail';
+    private _changePasswordUrl = 'api/Profile/changepassword';
     private _idUrl = 'api/Profile/id';
     private _userUrl = 'api/Profile/username';
 
@@ -72,5 +73,17 @@ export  class AuthService {
                 console.error(err);
                 return Observable.throw(err.json()[0] || ' error');
         });
+    }
+
+    changePassword(newPasword: string, password: string): Observable<string> {
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http.post(this._changePasswordUrl, { newPassword: newPasword, password: password }, { headers: headers })
+            .map((response: Response) => { console.log(response); return <string>response._body; })
+            .catch(err => {
+                console.error(err);
+                return Observable.throw(err.json()[0] || ' error');
+            });
     }
 }

@@ -92,11 +92,11 @@ export class QuestionsComponent {
             }
 
             this._authService.getId().subscribe(data => {
-                this.TempId = data; let tempModel: IQuestionModel = { Category: cat, Theme: this.Theme, QuestionName: this.Message, CreatedBy: this.TempId };
+                this.TempId = data; let tempModel: IQuestionModel = { Category: cat, Theme: this.Theme, QuestionName: this.Message, CreatedBy: this.TempId, Answer: "" };
 
                 this._questionService.add(tempModel).subscribe(data => {
                     this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Question sent successfully. We will answer as fast as possible." });
-                    let toAdd: IQuestion = { category: cat, theme: this.Theme, questionName: this.Message, createdBy: this.TempId };
+                    let toAdd: IQuestion = { category: cat, theme: this.Theme, questionName: this.Message, createdBy: this.TempId, answer: "" };
                     this.Questions.push(toAdd);
                 },
                     err => {
@@ -112,5 +112,10 @@ export class QuestionsComponent {
     ngOnInit(): void {        
             this._questionService.getQuestions().subscribe(
                 x => { this.Questions = x; });
-        };
+    };
+
+    Answer(question: IQuestion): string {
+        if (question.answer == "") return "Not answered yet. We will answer as fast as possible.";
+        else return question.answer;
+    }
 }

@@ -50,7 +50,7 @@ namespace AspNetCoreSpa.Server.Extensions
             // For api unauthorised calls return 401 with no body
             services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
             {
-                options.Password.RequiredLength = 4;
+                options.Password.RequiredLength = 8;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Cookies.ApplicationCookie.AutomaticChallenge = false;
