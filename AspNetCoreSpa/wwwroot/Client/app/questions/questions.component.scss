@@ -90,6 +90,22 @@
         white-space: normal !important;
     }
 
+    .tatooerror {
+        color: red;
+    }
+
+    .backerror {
+        background-color: #F6D9D9;
+    }
+
+    .tatoogood {
+        color: #137F25;
+    }
+
+    .backgood {
+        background-color: #C7F9CF;
+    }
+
     @media only screen and (min-width: 800px) {
         .tatoodiv {
             width: 40%;

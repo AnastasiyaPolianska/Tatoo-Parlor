@@ -60,8 +60,10 @@ export class CabinetComponent
     public TitleLinkChangePassword: string = "Click to change your password";
     public LableRepeatPassword: string = "Repeat new password: ";
     public PlaceHolderRepeatPassword: string = "Repeat new password...";
-    public ToolPassword: string = "*Use any letters, numbers or symbols. Must be at least one lowercase letter, one uppercase letter and one number. From 8 to 15 characters.";
+    public ToolPassword: string = "*Use any letters, numbers or symbols. Must be at least one digit, one small letter and one capital letter. From 8 to 100 characters.";
+    public ToolErrorPassword: string = "";
     public ToolPasswordRepeat: string = "*Repeat new password, make sure it is exactly the same as entered.";
+    public ToolErrorPasswordRepeat: string = "";
     public PasswordOK: boolean = true;
     public RepeatPasswordOK: boolean = true;
 
@@ -72,6 +74,7 @@ export class CabinetComponent
 
     public LableConfirmPassword: string = "Enter your old password to confirm: ";
     public PlaceHolderConfirmPassword: string = "Enter your old password to confirm...";
+    public ToolErrorConfirmPassword: string;
     public ConfirmPasswordOK: boolean = true;
 
     public LableConfirmEvery: string = "Enter your old password to confirm: ";
@@ -325,7 +328,7 @@ export class CabinetComponent
                 var changeEmail = data;
                 if (changeEmail == "good") {
                     this.Email = this.NewEmail;
-                    this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Email changed" });
+                    this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Email changed. Now you will be rerouted to log in." });
 
                     setTimeout((router: Router) => {
                         this._authService.logOut();
@@ -335,7 +338,7 @@ export class CabinetComponent
                 else {
                     this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your current password correctly" });
                     this.EmailOK = false;
-                    this.ToolErrorEmail = "*Invalid email: enter your current password correctly";
+                    this.ToolErrorEmail = "*Invalid current password: enter your current password correctly.";
                 }
             },
                 err => {
@@ -419,7 +422,79 @@ export class CabinetComponent
     }
 
     public ChangePassword(): void {
+        this.PasswordOK = true;
+        this.ConfirmPasswordOK = true;
+        this.RepeatPasswordOK = true;
 
+        if (this.NewPassword.length < 6 || this.NewPassword.length > 100)
+        {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: check the length" });
+            this.PasswordOK = false;
+            this.ToolErrorPassword = "*Check the length: it should be between 6 and 100 characters.";
+        }
+        else
+        {
+            var reg1 = new RegExp("[0-9]");
+            var reg2 = new RegExp("[A-Z]");
+            var reg3 = new RegExp("[a-z]");
+            var containError = !reg1.test(this.NewPassword);
+            if (!containError) var containError = !reg2.test(this.NewPassword);
+            if (!containError) var containError = !reg3.test(this.NewPassword);
+
+            if (!containError) {
+                if (this.NewPassword != this.RepeatPassword)
+                {
+                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: make sure the repeated password is exactly the same as entered" });
+                    this.RepeatPasswordOK = false;
+                    this.ToolErrorPasswordRepeat = "*Repeat new password, make sure it is exactly the same as entered.";
+                }
+                else {
+                    this._authService.changePassword(this.NewPassword, this.ConfirmPassword).subscribe(data => {
+                    var changePassword = data;
+                    if (changePassword == "good") {
+                        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Password changed. Now you will be rerouted to log in." });
+
+                        setTimeout((router: Router) => {
+                            this._authService.logOut();
+                            this._router.navigate(['/login']);
+                        }, 2500);
+                    }
+                    else {
+                        this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: enter your current password correctly" });
+                        this.PasswordOK = false;
+                        this.ToolErrorPassword = "*Invalid current password: enter your current password correctly.";
+                    }
+                    },
+                        err => {
+
+                        this.error = err;
+
+                        if (this.error == "Error while changing the password: enter your current password correctly") {
+                            this.ToolErrorConfirmPassword = "*Invalid current password: enter your current password correctly.";
+                            this.ConfirmPasswordOK = false;
+                        }
+
+                        if (this.error == "The password field is required.") {
+                            this.error = "Invalid current password: enter your current password correctly"
+                            this.ToolErrorConfirmPassword = "*Invalid current password: enter your current password correctly.";
+                            this.ConfirmPasswordOK = false;
+                        }
+
+                        if (this.error == "Error while changing the password: check the length") {
+                            this.ToolErrorPassword = "*Check the length: it should be between 8 and 100 characters.";
+                            this.PasswordOK = false;
+                        }
+
+                        this.Msgs.push({ severity: 'error', summary: 'Error', detail: this.error });
+                    });
+                }
+            }
+            else {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: must be at least one digit, one small letter and one capital letter" });
+                this.PasswordOK = false;
+                this.ToolErrorPassword = "*Invalid password: use at least one digit, one small letter and one capital letter.";
+            }
+        }
     }
 
     public ToggleChangeEvery() : void{

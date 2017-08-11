@@ -61,12 +61,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor='let question of Questions; let i=index'>
+                        <tr *ngFor='let question of Questions; let i=index' [ngClass]="{'backerror': question.answer=='', 'backgood': question.answer!=''}">
                             <td class="smallColumn">{{i+1}}</td>
                             <td class="smallColumn">{{ question.category }}</td>
                             <td class="smallColumn">{{ question.theme}}</td>
                             <td class="bigColumn">{{ question.questionName}}</td>
-                            <td class="bigColumn"> </td>
+                            <td class="bigColumn" [ngClass]="{'tatooerror': question.answer=='', 'tatoogood': question.answer!=''}">{{ Answer(question)}}</td>
                         </tr>
                     </tbody>
                 </table>

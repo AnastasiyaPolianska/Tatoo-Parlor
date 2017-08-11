@@ -4,4 +4,5 @@ export interface IQuestionModel {
     Theme: string;
     QuestionName: string;
     CreatedBy: number;
+    Answer: string;
 }

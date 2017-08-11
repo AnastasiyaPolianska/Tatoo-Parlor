@@ -79,31 +79,6 @@ namespace AspNetCoreSpa.Server.Controllers.api
 
         }
 
-        [HttpPost("changepassword")]
-        public async Task<IActionResult> ChangePassword([FromBody]ChangePasswordVm model)
-        {
-            try
-            {
-                var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
-                if (user != null)
-                {
-                    var result = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
-                    if (result == IdentityResult.Success)
-                    {
-                        return Ok(new { });
-                    }
-                }
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(new[] { "Unable to change password" });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(1, ex, "Unable to change password");
-                return BadRequest();
-            }
-
-        }
-
         [HttpGet("id")]
         public async Task<IActionResult> MyId()
         {
@@ -147,7 +122,6 @@ namespace AspNetCoreSpa.Server.Controllers.api
                         var result = await _userManager.UpdateAsync(user);
                         if (result == IdentityResult.Success)
                         {                       
-                            Console.WriteLine("goodgoodgoodgood");
                             return Ok();
                         }
                         Response.StatusCode = (int)HttpStatusCode.BadRequest;
@@ -183,7 +157,6 @@ namespace AspNetCoreSpa.Server.Controllers.api
                     else
                     {
                         user.LastName = newLastName;
-
                         var result = await _userManager.UpdateAsync(user);
                         if (result == IdentityResult.Success)
                         {
@@ -209,51 +182,70 @@ namespace AspNetCoreSpa.Server.Controllers.api
         public async Task<IActionResult> ChangeEmail([FromBody] ChangeEmailModel changeEmail)
         {
             var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
-            if (user != null)
+            if (user == null)
             {
-                Regex regex = new Regex("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
-                bool noErrors = regex.IsMatch(changeEmail.newEmail);
-
-                if (!noErrors)
-                {
-                    ModelState.AddModelError(string.Empty, "Error while changing the email: enter your real current email address");
-                    return BadRequest(ModelState.GetModelErrors());
-                }
-                else
-                {
-                    if (_context.Users.Any(x => x.Email == changeEmail.newEmail))
-                    {
-                        ModelState.AddModelError(string.Empty, "Error while changing the email: user with such email already exists");
-                        return BadRequest(ModelState.GetModelErrors());
-                    }
-                    else
-                    {
-                        var temp = await _userManager.CheckPasswordAsync(user, changeEmail.password);
-                        if (temp)
-                        {
-                            await _userManager.SetEmailAsync(user, changeEmail.newEmail);
-                            await _userManager.SetUserNameAsync(user, changeEmail.newEmail);
-
-                            var result = await _userManager.UpdateAsync(user);
-                            if (result == IdentityResult.Success)
-                            {
-                                return Ok("good");
-                            }
-                            Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                            throw new System.Exception("Error while changing the email: unable to update user");
-                        }
-                        else
-                        {
-                            ModelState.AddModelError(string.Empty, "Error while changing the email: enter your current password correctly");
-                            return BadRequest(ModelState.GetModelErrors());
-                        }
-                    }
-                }
+                ModelState.AddModelError(string.Empty, "Error while changing the email: user isn't logged in");
+                return BadRequest(ModelState.GetModelErrors());
             }
 
-            ModelState.AddModelError(string.Empty, "Error while changing the email: user isn't logged in");
-            return BadRequest(ModelState.GetModelErrors());
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError(string.Empty, "Error while changing the email: enter your real current email address");
+                return BadRequest(ModelState.GetModelErrors());
+            }
+      
+            if (_context.Users.Any(x => x.Email == changeEmail.newEmail))
+            {
+                ModelState.AddModelError(string.Empty, "Error while changing the email: user with such email already exists");
+                return BadRequest(ModelState.GetModelErrors());
+            }
+
+            var temp = await _userManager.CheckPasswordAsync(user, changeEmail.password);
+            if (!temp)
+            {
+                ModelState.AddModelError(string.Empty, "Error while changing the email: enter your current password correctly");
+                return BadRequest(ModelState.GetModelErrors());
+            }
+
+            await _userManager.SetEmailAsync(user, changeEmail.newEmail);
+            await _userManager.SetUserNameAsync(user, changeEmail.newEmail);
+
+            var result = await _userManager.UpdateAsync(user);
+            if (result == IdentityResult.Success)
+                {
+                    return Ok("good");
+                }
+
+            Response.StatusCode = (int)HttpStatusCode.BadRequest;
+            throw new System.Exception("Error while changing the email: unable to update user");
         }
+
+        //GET: api/Profile/changeemail
+        [HttpPost("changepassword")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel changePassword)
+        {
+            var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Error while changing the email: user isn't logged in");
+                return BadRequest(ModelState.GetModelErrors());
+            }
+
+            if (changePassword.newPassword.Length < 6)
+            {
+                ModelState.AddModelError(string.Empty, "Error while changing the password: check the length");
+                return BadRequest(ModelState.GetModelErrors());
+            }
+
+            var result = await _userManager.ChangePasswordAsync(user, changePassword.password, changePassword.newPassword);
+            if (result == IdentityResult.Success)
+            {
+                return Ok("good");
+            }
+
+            ModelState.AddModelError(string.Empty, "Error while changing the password: enter your current password correctly");
+            return BadRequest(ModelState.GetModelErrors());
+        }       
     }
 
     public class ChangeEmailModel
@@ -261,6 +253,14 @@ namespace AspNetCoreSpa.Server.Controllers.api
         [Required]
         [EmailAddress]
         public string newEmail { get; set; }
+        [Required]
+        public string password { get; set; }
+    }
+
+    public class ChangePasswordModel
+    {
+        [Required]
+        public string newPassword { get; set; }
         [Required]
         public string password { get; set; }
     }
