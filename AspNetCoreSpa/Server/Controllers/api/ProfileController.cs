@@ -11,6 +11,7 @@ using AspNetCoreSpa.DAL;
 using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -102,14 +103,12 @@ namespace AspNetCoreSpa.Server.Controllers.api
         }
 
         //GET: api/Profile/changefirstname/newFirstName
-        [HttpGet("changefirstname/{newFirstName}")]
+        [HttpGet("changefirstname/{newFirstName}"), Authorize]
         public async Task<IActionResult> ChangeFirstName([FromRoute] string newFirstName)
         {
             try
             {
                 var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
-                if (user != null)
-                {
                     Regex regex = new Regex("[^a-zA-Z0-9_'-]");
                     MatchCollection matches = regex.Matches(newFirstName);
                     if (matches.Count > 0 || newFirstName.Length<4 || newFirstName.Length > 15)
@@ -127,9 +126,6 @@ namespace AspNetCoreSpa.Server.Controllers.api
                         Response.StatusCode = (int)HttpStatusCode.BadRequest;
                         return Json("Unable to update user");                
                     }      
-                }
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(ModelState.GetModelErrors());
             }
             catch (Exception ex)
             {
@@ -140,14 +136,12 @@ namespace AspNetCoreSpa.Server.Controllers.api
         }
 
         //GET: api/Profile/changelastname/newLastName
-        [HttpGet("changelastname/{newLastName}")]
+        [HttpGet("changelastname/{newLastName}"), Authorize]
         public async Task<IActionResult> ChangeLastName([FromRoute] string newLastName)
         {
             try
             {
                 var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
-                if (user != null)
-                {
                     Regex regex = new Regex("[^a-zA-Z0-9_'-]");
                     MatchCollection matches = regex.Matches(newLastName);
                     if (matches.Count > 0 || newLastName.Length < 4 || newLastName.Length > 15)
@@ -165,9 +159,6 @@ namespace AspNetCoreSpa.Server.Controllers.api
                         Response.StatusCode = (int)HttpStatusCode.BadRequest;
                         return Json("Unable to update user");
                     }
-                }
-                Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                return Json(ModelState.GetModelErrors());
             }
             catch (Exception ex)
             {
@@ -178,15 +169,10 @@ namespace AspNetCoreSpa.Server.Controllers.api
         }
 
         //GET: api/Profile/changeemail
-        [HttpPost("changeemail")]
+        [HttpPost("changeemail"), Authorize]
         public async Task<IActionResult> ChangeEmail([FromBody] ChangeEmailModel changeEmail)
         {
             var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
-            if (user == null)
-            {
-                ModelState.AddModelError(string.Empty, "Error while changing the email: user isn't logged in");
-                return BadRequest(ModelState.GetModelErrors());
-            }
 
             if (!ModelState.IsValid)
             {
@@ -200,8 +186,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 return BadRequest(ModelState.GetModelErrors());
             }
 
-            var temp = await _userManager.CheckPasswordAsync(user, changeEmail.password);
-            if (!temp)
+            if (! await _userManager.CheckPasswordAsync(user, changeEmail.password))
             {
                 ModelState.AddModelError(string.Empty, "Error while changing the email: enter your current password correctly");
                 return BadRequest(ModelState.GetModelErrors());
@@ -221,15 +206,10 @@ namespace AspNetCoreSpa.Server.Controllers.api
         }
 
         //GET: api/Profile/changeemail
-        [HttpPost("changepassword")]
+        [HttpPost("changepassword"), Authorize]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordModel changePassword)
         {
             var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
-            if (user == null)
-            {
-                ModelState.AddModelError(string.Empty, "Error while changing the email: user isn't logged in");
-                return BadRequest(ModelState.GetModelErrors());
-            }
 
             if (changePassword.newPassword.Length < 6)
             {
