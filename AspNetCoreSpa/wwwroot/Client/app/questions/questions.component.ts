@@ -1,4 +1,4 @@
-﻿import { Component, ViewEncapsulation } from '@angular/core';
+﻿import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 import { QuestionService } from '../shared/question.service';
 import { IQuestionModel } from '../shared/questionModel';
 import { Message } from 'primeng/primeng';
@@ -10,7 +10,7 @@ import { IQuestion } from './question';
     styleUrls: ['./questions.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class QuestionsComponent {
+export class QuestionsComponent implements OnInit {
     constructor(private _questionService: QuestionService, private _authService: AuthService) { };
 
     public Maintitle: string = 'Any extra questions?';

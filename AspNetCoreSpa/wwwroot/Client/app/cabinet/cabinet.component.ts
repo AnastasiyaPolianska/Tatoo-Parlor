@@ -79,6 +79,7 @@ export class CabinetComponent
 
     public LableConfirmEvery: string = "Enter your old password to confirm: ";
     public PlaceHolderConfirmEvery: string = "Enter your old password to confirm...";
+    public ToolErrorConfirmEvery: string;
     public ConfirmEveryOK: boolean = true;
 
     public ShowChangeEvery: boolean = false;
@@ -171,6 +172,7 @@ export class CabinetComponent
     }
 
     public ChangeFirstName(): void {
+        this.FirstNameOK = true;
 
         if (this.NewFirstName.length >= 4 && this.NewFirstName.length <= 15)
         {
@@ -200,7 +202,7 @@ export class CabinetComponent
             this.FirstNameOK = false;
             this.ToolErrorFirstName = "*Check the length: it should be between 4 and 15 characters."; 
         }
-;    }
+    }
 
     public ToggleChangeLastName(): void {
         this.ShowChangeLastName = !this.ShowChangeLastName;
@@ -245,6 +247,8 @@ export class CabinetComponent
     }
 
     public ChangeLastName(): void {
+        this.LastNameOK = true;
+
         if (this.NewLastName.length >= 4 && this.NewLastName.length <= 15) {
             var reg = new RegExp("[^a-zA-Z0-9_'-]");
             var containError = reg.test(this.NewLastName);
@@ -351,7 +355,7 @@ export class CabinetComponent
                     }
 
                     if (this.error == "The password field is required.") {
-                        this.error = "Invalid current password: enter your current password correctly"
+                        this.error = "Error while changing the email: enter your current password correctly"
                         this.ToolErrorConfirmEmail = "*Invalid current password: enter your current password correctly.";
                         this.ConfirmEmailOK = false;
                     }           
@@ -475,7 +479,7 @@ export class CabinetComponent
                         }
 
                         if (this.error == "The password field is required.") {
-                            this.error = "Invalid current password: enter your current password correctly"
+                            this.error = "Error while changing the password: enter your current password correctly"
                             this.ToolErrorConfirmPassword = "*Invalid current password: enter your current password correctly.";
                             this.ConfirmPasswordOK = false;
                         }
@@ -550,5 +554,230 @@ export class CabinetComponent
 
     public ChangeEvery(): void {
 
+        var toSaveFirstName = this.FirstName;
+        var toSaveLastName = this.LastName;
+
+        this.FirstNameOK = true;
+        this.LastNameOK = true;
+        this.EmailOK = true;
+        this.ConfirmEveryOK = true;
+        this.PasswordOK = true;
+        this.RepeatPasswordOK = true;
+
+        var validFirstName = true;
+        var validLastName = true;
+        var validEmail = true;
+        var validPassword = true;
+
+        //check first name
+        if (this.NewFirstName.length < 4 || this.NewFirstName.length > 15) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the first name: check the length" });
+            this.FirstNameOK = false;
+            this.ToolErrorFirstName = "*Check the length: it should be between 4 and 15 characters.";
+            validFirstName = false;
+        }
+
+        else {
+            var reg = new RegExp("[^a-zA-Z0-9_'-]");
+            var containError = reg.test(this.NewFirstName);
+
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the first name: unacceptable character" });
+                this.FirstNameOK = false;
+                this.ToolErrorFirstName = "*Check the characters: use only letters, numbers and symbols: -,',_ .";
+                validFirstName = false;
+            }
+        }
+
+        //check last name
+        if (this.NewLastName.length < 4 || this.NewLastName.length > 15) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the last name: check the length" });
+            this.LastNameOK = false;
+            this.ToolErrorLastName = "*Check the length: it should be between 4 and 15 characters.";
+            validLastName = false;
+        }
+
+        else {
+            var reg = new RegExp("[^a-zA-Z0-9_'-]");
+            var containError = reg.test(this.NewLastName);
+
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the last name: unacceptable character" });
+                this.LastNameOK = false;
+                this.ToolErrorLastName = "*Check the characters: use only letters, numbers and symbols: -,',_ .";
+                validLastName = false;
+            }
+        }
+
+        //check password
+        if (this.NewPassword.length < 6 || this.NewPassword.length > 100) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: check the length" });
+            this.PasswordOK = false;
+            this.ToolErrorPassword = "*Check the length: it should be between 6 and 100 characters.";
+            validPassword = false;
+        }
+
+        else {
+            var reg1 = new RegExp("[0-9]");
+            var reg2 = new RegExp("[A-Z]");
+            var reg3 = new RegExp("[a-z]");
+            var containError = !reg1.test(this.NewPassword);
+            if (!containError) var containError = !reg2.test(this.NewPassword);
+            if (!containError) var containError = !reg3.test(this.NewPassword);
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: must be at least one digit, one small letter and one capital letter" });
+                this.PasswordOK = false;
+                this.ToolErrorPassword = "*Invalid password: use at least one digit, one small letter and one capital letter.";
+                validPassword = false;
+            }
+
+            else {
+                if (this.NewPassword != this.RepeatPassword) {
+                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: make sure the repeated password is exactly the same as entered" });
+                    this.RepeatPasswordOK = false;
+                    this.ToolErrorPasswordRepeat = "*Repeat new password, make sure it is exactly the same as entered.";
+                    validPassword = false;
+                }
+            }
+        }
+
+        //check email
+        var reg = new RegExp("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
+        var containError = !reg.test(this.NewEmail);
+
+        if (containError) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your real current email address" });
+            this.EmailOK = false;
+            this.ToolErrorEmail = "*Invalid email: enter your real current email address.";
+            validEmail = false;
+        }
+
+        else {
+            this._authService.userExist(this.NewEmail).subscribe(data => {
+                if (validFirstName && validLastName && validEmail && validPassword) 
+                {
+                    this.FirstNameOK = true;
+                    this.LastNameOK = true;
+                    this.EmailOK = true;
+
+                    this._authService.changeFirstName(this.NewFirstName).subscribe(data => {
+
+                        this._authService.changeLastName(this.NewLastName).subscribe(data => {
+
+                            this._authService.changeEmail(this.NewEmail, this.ConfirmEvery).subscribe(data => {
+
+                                var changeEmail = data;
+                                if (changeEmail == "good") {
+
+                                    this._authService.changePassword(this.NewPassword, this.ConfirmEvery, this.NewEmail).subscribe(data => {
+                                        var changePassword = data;
+                                        if (changePassword == "good") {
+
+                                            this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Everything changed. Now you will be rerouted to log in." });
+                                            this.FirstName = this.NewFirstName;
+                                            this.LastName = this.NewLastName;
+                                            this.Email = this.NewEmail;
+
+                                            setTimeout((router: Router) => {
+                                                this._authService.logOut();
+                                                this._router.navigate(['/login']);
+                                            }, 2500);
+                                        }
+                                        else {
+                                            //in case of error change back
+                                            this._authService.changeFirstName(toSaveFirstName).subscribe(data => {
+                                                this._authService.changeLastName(toSaveLastName).subscribe(data => { });
+                                            });
+
+                                            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: enter your current password correctly" });
+                                            this.PasswordOK = false;
+                                            this.ToolErrorPassword = "*Invalid current password: enter your current password correctly.";
+                                        }
+                                    },
+                                        err => {
+
+                                            //in case of error change back
+                                            this._authService.changeFirstName(toSaveFirstName).subscribe(data => {
+                                                this._authService.changeLastName(toSaveLastName).subscribe(data => { });
+                                            });
+
+                                            this.error = err;
+
+                                            if (this.error == "Error while changing the password: enter your current password correctly") {
+                                                this.error = "Error while changing: enter your current password correctly";
+                                                this.ToolErrorConfirmPassword = "*Invalid current password: enter your current password correctly.";
+                                                this.ConfirmEveryOK = false;
+                                            }
+
+                                            if (this.error == "The password field is required.") {
+                                                this.error = "Error while changing: enter your current password correctly";
+                                                this.ToolErrorConfirmPassword = "*Invalid current password: enter your current password correctly.";
+                                                this.ConfirmEveryOK = false;
+                                            }
+
+                                            if (this.error == "Error while changing the password: check the length") {
+                                                this.ToolErrorPassword = "*Check the length: it should be between 8 and 100 characters.";
+                                                this.PasswordOK = false;
+                                            }
+
+                                            this.Msgs.push({ severity: 'error', summary: 'Error', detail: this.error });
+                                        });            
+                                }
+                                else {
+                                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your current password correctly" });
+                                    this.EmailOK = false;
+                                    this.ToolErrorEmail = "*Invalid current password: enter your current password correctly.";
+
+                                    //in case of error change back
+                                    this._authService.changeFirstName(toSaveFirstName).subscribe(data => {
+                                        this._authService.changeLastName(toSaveLastName).subscribe(data => { });
+                                    });
+                                }
+                            },
+                                err => {
+
+                                    //in case of error change back
+                                    this._authService.changeFirstName(toSaveFirstName).subscribe(data => {
+                                        this._authService.changeLastName(toSaveLastName).subscribe(data => { });
+                                    });
+
+                                    this.error = err;
+
+                                    if (this.error == "Error while changing the email: enter your current password correctly") {
+                                        this.error = "Error while changing: enter your current password correctly";
+                                        this.ToolErrorConfirmEvery = "*Invalid current password: enter your current password correctly.";
+                                        this.ConfirmEveryOK = false;
+                                    }
+
+                                    if (this.error == "The password field is required.") {
+                                        this.error = "Error while changing: enter your current password correctly"
+                                        this.ToolErrorConfirmEvery = "*Invalid current password: enter your current password correctly.";
+                                        this.ConfirmEveryOK = false;
+                                    }
+
+                                    if (this.error == "Error while changing the email: enter your real current email address") {
+                                        this.ToolErrorEmail = "*Invalid email: enter your real current email address.";
+                                        this.EmailOK = false;
+                                    }
+
+                                    if (this.error == "Error while changing the email: user with such email already exists") {
+                                        this.ToolErrorEmail = "*Invalid email: user with such email already exists.";
+                                        this.EmailOK = false;
+                                    }
+
+                                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: this.error });
+                                });
+                        });
+                    }
+                    );
+                }        
+            },
+                err => {
+                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your real current email address" });
+                    this.ToolErrorEmail = "*Invalid email: user with such email already exists.";
+                    this.EmailOK = false;
+                    validEmail = false;
+                })           
+        }        
     }
 }

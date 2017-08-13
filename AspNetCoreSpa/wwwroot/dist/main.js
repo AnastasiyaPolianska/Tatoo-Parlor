@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c9055be27b2a14c661e3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6d209a9ff574818c7978"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -2150,20 +2150,14 @@ var AuthService = (function () {
         this._changePasswordUrl = 'api/Profile/changepassword';
         this._idUrl = 'api/Profile/id';
         this._userUrl = 'api/Profile/username';
+        this._userExist = 'api/Profile/userexist';
+        this.IsLoggedIn = false;
     }
     AuthService.prototype.signUp = function (model) {
         return this._http.post(this._signUpUrl, model);
     };
     AuthService.prototype.logIn = function (model) {
-        var _this = this;
         return this._http.post(this._logInUrl, model)
-            .map(function (res) {
-            if (model.rememberMe) {
-                _this.localStorage.setItem('localAuthData', model.email);
-            }
-            else
-                _this.sessionStorage.setItem('sessionAuthData', model.email);
-        })
             .catch(function (err) {
             console.error(err);
             return Observable_1.Observable.throw(err.json()[0] || ' error');
@@ -2176,12 +2170,9 @@ var AuthService = (function () {
         return this._http.get(this._userUrl).map(function (response) { return response.json(); });
     };
     AuthService.prototype.logOut = function () {
-        var _this = this;
-        return this._http.post(this._logOutUrl, {})
-            .map(function (res) {
-            _this.localStorage.setItem('localAuthData', "");
-            _this.sessionStorage.setItem('sessionAuthData', "");
-        });
+        this.IsLoggedIn = false;
+        this.CurrentUserEmail = "";
+        return this._http.post(this._logOutUrl, {});
     };
     AuthService.prototype.changeFirstName = function (newFirstName) {
         return this._http.get(this._changeFirstNameUrl + "/" + newFirstName);
@@ -2199,15 +2190,19 @@ var AuthService = (function () {
             return Observable_1.Observable.throw(err.json()[0] || ' error');
         });
     };
-    AuthService.prototype.changePassword = function (newPasword, password) {
+    AuthService.prototype.changePassword = function (newPasword, password, emailToFind) {
+        if (emailToFind === void 0) { emailToFind = ""; }
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this._http.post(this._changePasswordUrl, { newPassword: newPasword, password: password }, { headers: headers })
+        return this._http.post(this._changePasswordUrl, { newPassword: newPasword, password: password, emailToFind: emailToFind }, { headers: headers })
             .map(function (response) { console.log(response); return response._body; })
             .catch(function (err) {
             console.error(err);
             return Observable_1.Observable.throw(err.json()[0] || ' error');
         });
+    };
+    AuthService.prototype.userExist = function (email) {
+        return this._http.get(this._userExist + "/" + email);
     };
     return AuthService;
 }());
@@ -13743,13 +13738,13 @@ module.exports = "    \r\n    <div class=\"tatooarticle text\">\r\n            <
 /* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "    <nav class=\"navbar navbar-inverse navbar-fixed-top\" style=\"border-radius:0px\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"navbar-header\">\r\n                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                </button>\r\n                <a class=\"navbar-brand\" href=\"#\"></a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/welcome']\">Home</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/products']\">Online Shop</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/scretches']\">Scretches</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/contacts']\">Contacts</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/aboutus']\">About Us</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/help']\">FAQ</a></li>\r\n                </ul>\r\n\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cart']\" *ngIf=\"isLoggedIn()\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> My Cart</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cabinet']\" *ngIf=\"isLoggedIn()\">Hello, {{loggedUserName()}}</a></li>\r\n                    <li (click)=\"logOut()\"><a *ngIf=\"isLoggedIn()\"><span class=\"glyphicon glyphicon-log-in\"></span> Log Out</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/signup']\" *ngIf=\"!isLoggedIn()\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/login']\" *ngIf=\"!isLoggedIn()\"><span class=\"glyphicon glyphicon-log-in\"></span> Log In</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n    <div class='container heading margins' style='width:100%; padding:0%;'>\r\n        <router-outlet class=\"margins\"></router-outlet>\r\n        <p></p>\r\n    </div>\r\n    <footer class=\"footerstyle\">\r\n        <div class=\"containerimage\">\r\n            <div class=\"texter\">\r\n                <a class=\"foot\" [routerLink]=\"['/questions']\">Extra questions?</a>\r\n            </div>\r\n            <a style=\"display: inline\" href=\"https://www.instagram.com/martha_bocharova/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(118) + "' />\r\n            </a>\r\n            <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(119) + "' />\r\n            </a>\r\n            <a href=\"https://vk.com/id20028415\" class=\"footer-link\" style=\"margin-right:1%\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(120) + "' />\r\n            </a>\r\n        </div>\r\n    </footer>";
+module.exports = "    <nav class=\"navbar navbar-inverse navbar-fixed-top\" style=\"border-radius:0px\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"navbar-header\">\r\n                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                </button>\r\n                <a class=\"navbar-brand\" href=\"#\"></a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/welcome']\">Home</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/products']\">Online Shop</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/scretches']\">Scretches</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/contacts']\">Contacts</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/aboutus']\">About Us</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/help']\">FAQ</a></li>\r\n                </ul>\r\n\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cart']\" *ngIf=\"authService.IsLoggedIn\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> My Cart</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cabinet']\" *ngIf=\"authService.IsLoggedIn\">Hello, {{authService.CurrentUserEmail}}</a></li>\r\n                    <li [routerLinkActive]=\"['active']\" style=\"cursor: pointer\"><a *ngIf=\"authService.IsLoggedIn\" (click)=\"logOut()\"><span class=\"glyphicon glyphicon-log-in\"></span> Log Out</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/signup']\" *ngIf=\"!authService.IsLoggedIn\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/login']\" *ngIf=\"!authService.IsLoggedIn\"><span class=\"glyphicon glyphicon-log-in\"></span> Log In</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n    <div class='container heading margins' style='width:100%; padding:0%;'>\r\n        <router-outlet class=\"margins\"></router-outlet>\r\n        <p></p>\r\n    </div>\r\n    <footer class=\"footerstyle\">\r\n        <div class=\"containerimage\">\r\n            <div class=\"texter\">\r\n                <a class=\"foot\" [routerLink]=\"['/questions']\">Extra questions?</a>\r\n            </div>\r\n            <a style=\"display: inline\" href=\"https://www.instagram.com/martha_bocharova/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(118) + "' />\r\n            </a>\r\n            <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(119) + "' />\r\n            </a>\r\n            <a href=\"https://vk.com/id20028415\" class=\"footer-link\" style=\"margin-right:1%\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(120) + "' />\r\n            </a>\r\n        </div>\r\n    </footer>";
 
 /***/ }),
 /* 130 */
 /***/ (function(module, exports) {
 
-module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Subtitle}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n            <label class=\"paragraphhead headchangewidth\">{{FirstnameLabel}} </label>\r\n            <label class=\"paragraphtext\" style=\"width:30%\"> {{FirstName}}</label>\r\n            <label class=\"floating changeinfo\" title={{TitleLinkChangeFirstName}} (click)=\"ToggleChangeFirstName()\"> {{ChangeInfoFirstName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeFirstName\" class='panel panel-primary tatoodiv'>\r\n        <div class='panel-heading' id='tatoopanel'>\r\n            {{TitleChangeFirstName}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n                <input type='text' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" class='tatooinput marginbottom' id=\"firstNameLabel\" placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n                <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n                <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n            </div>\r\n\r\n            <button class=' btn btn-primary tatoobutton' (click)='ChangeFirstName()' title={{TitleButtonChangeFirstName}}> \r\n                <i class='glyphicon glyphicon-ok'></i> {{Change}} \r\n            </button>\r\n            <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeFirstName()' title={{TitleLinkChangeFirstName}} style=\"margin-right: 1%\"> \r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}} \r\n            </button>\r\n        </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{LastnameLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{LastName}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeLastName}} (click)=\"ToggleChangeLastName()\"> {{ChangeInfoLastName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeLastName\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeLastName}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n        \r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeLastName()' title={{TitleButtonChangeLastName}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeLastName()' title={{TitleLinkChangeLastName}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{EmailLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{Email}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEmail}} (click)=\"ToggleChangeEmail()\"> {{ChangeInfoEmail}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEmail\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEmail}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEmail}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmEmailOK==false}\" placeholder=\"{{PlaceHolderConfirmEmail}}\" [(ngModel)]='ConfirmEmail' />\r\n            <label *ngIf=\"!ConfirmEmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmEmail}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEmail()' title={{TitleButtonChangeEmail}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEmail()' title={{TitleLinkChangeEmail}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangePassword}} (click)=\"ToggleChangePassword()\"> {{ChangeInfoPassword}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangePassword\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangePassword}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmPasswordOK==false}\" placeholder=\"{{PlaceHolderConfirmPassword}}\" [(ngModel)]='ConfirmPassword' />\r\n            <label *ngIf=\"!ConfirmPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmPassword}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangePassword()' title={{TitleButtonChangePassword}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangePassword()' title={{TitleLinkChangePassword}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEvery}} (click)=\"ToggleChangeEvery()\"> {{ChangeInfoEvery}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEvery\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEvery}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n            <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEvery}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderConfirmEvery}}\" [(ngModel)]='ConfirmEvery' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEvery()' title={{TitleButtonChangeEvery}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEvery()' title={{TitleLinkChangeEvery}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>";
+module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Subtitle}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n            <label class=\"paragraphhead headchangewidth\">{{FirstnameLabel}} </label>\r\n            <label class=\"paragraphtext\" style=\"width:30%\"> {{FirstName}}</label>\r\n            <label class=\"floating changeinfo\" title={{TitleLinkChangeFirstName}} (click)=\"ToggleChangeFirstName()\"> {{ChangeInfoFirstName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeFirstName\" class='panel panel-primary tatoodiv'>\r\n        <div class='panel-heading' id='tatoopanel'>\r\n            {{TitleChangeFirstName}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n                <input type='text' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" class='tatooinput marginbottom' id=\"firstNameLabel\" placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n                <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n                <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n            </div>\r\n\r\n            <button class=' btn btn-primary tatoobutton' (click)='ChangeFirstName()' title={{TitleButtonChangeFirstName}}> \r\n                <i class='glyphicon glyphicon-ok'></i> {{Change}} \r\n            </button>\r\n            <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeFirstName()' title={{TitleLinkChangeFirstName}} style=\"margin-right: 1%\"> \r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}} \r\n            </button>\r\n        </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{LastnameLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{LastName}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeLastName}} (click)=\"ToggleChangeLastName()\"> {{ChangeInfoLastName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeLastName\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeLastName}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n        \r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeLastName()' title={{TitleButtonChangeLastName}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeLastName()' title={{TitleLinkChangeLastName}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{EmailLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{Email}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEmail}} (click)=\"ToggleChangeEmail()\"> {{ChangeInfoEmail}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEmail\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEmail}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEmail}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmEmailOK==false}\" placeholder=\"{{PlaceHolderConfirmEmail}}\" [(ngModel)]='ConfirmEmail' />\r\n            <label *ngIf=\"!ConfirmEmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmEmail}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEmail()' title={{TitleButtonChangeEmail}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEmail()' title={{TitleLinkChangeEmail}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangePassword}} (click)=\"ToggleChangePassword()\"> {{ChangeInfoPassword}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangePassword\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangePassword}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmPasswordOK==false}\" placeholder=\"{{PlaceHolderConfirmPassword}}\" [(ngModel)]='ConfirmPassword' />\r\n            <label *ngIf=\"!ConfirmPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmPassword}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangePassword()' title={{TitleButtonChangePassword}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangePassword()' title={{TitleLinkChangePassword}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEvery}} (click)=\"ToggleChangeEvery()\"> {{ChangeInfoEvery}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEvery\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEvery}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n            <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n            <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEvery}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmEveryOK==false}\" placeholder=\"{{PlaceHolderConfirmEvery}}\" [(ngModel)]='ConfirmEvery' />\r\n            <label *ngIf=\"!ConfirmEveryOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmEvery}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEvery()' title={{TitleButtonChangeEvery}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEvery()' title={{TitleLinkChangeEvery}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 131 */
@@ -13995,22 +13990,28 @@ var AppComponent = (function () {
         this.pageTitle = 'Tatooed Youth';
         this.LocalAuth = "";
         this.SessionAuth = "";
-        this.isLoggedIn = (function () {
-            if (_this.LocalAuth == "" && _this.SessionAuth == "")
-                return false;
-            else
-                return true;
-        });
-        this.loggedUserName = (function () {
-            if (_this.LocalAuth != "")
-                return _this.LocalAuth;
-            else
-                return _this.SessionAuth;
-        });
         this.logOut = (function () {
-            _this.authService.logOut().subscribe();
+            _this.authService.logOut().subscribe(function (data) {
+                _this.authService.IsLoggedIn = false;
+                _this.authService.CurrentUserEmail = "";
+            });
         });
     }
+    /*Executes on initialisation*/
+    AppComponent.prototype.ngOnInit = function () {
+        this.GettingUserInfo();
+    };
+    ;
+    AppComponent.prototype.GettingUserInfo = function () {
+        var _this = this;
+        this.authService.getUser().subscribe(function (data) {
+            _this.authService.IsLoggedIn = true;
+            _this.authService.CurrentUserEmail = data.email;
+        }, function (err) {
+            _this.authService.IsLoggedIn = false;
+            _this.authService.CurrentUserEmail = "";
+        });
+    };
     return AppComponent;
 }());
 tslib_1.__decorate([
@@ -14258,6 +14259,7 @@ var CabinetComponent = (function () {
         }
     };
     CabinetComponent.prototype.ChangeFirstName = function () {
+        this.FirstNameOK = true;
         if (this.NewFirstName.length >= 4 && this.NewFirstName.length <= 15) {
             var reg = new RegExp("[^a-zA-Z0-9_'-]");
             var containError = reg.test(this.NewFirstName);
@@ -14278,7 +14280,6 @@ var CabinetComponent = (function () {
             this.FirstNameOK = false;
             this.ToolErrorFirstName = "*Check the length: it should be between 4 and 15 characters.";
         }
-        ;
     };
     CabinetComponent.prototype.ToggleChangeLastName = function () {
         this.ShowChangeLastName = !this.ShowChangeLastName;
@@ -14320,6 +14321,7 @@ var CabinetComponent = (function () {
         }
     };
     CabinetComponent.prototype.ChangeLastName = function () {
+        this.LastNameOK = true;
         if (this.NewLastName.length >= 4 && this.NewLastName.length <= 15) {
             var reg = new RegExp("[^a-zA-Z0-9_'-]");
             var containError = reg.test(this.NewLastName);
@@ -14411,7 +14413,7 @@ var CabinetComponent = (function () {
                     _this.ConfirmEmailOK = false;
                 }
                 if (_this.error == "The password field is required.") {
-                    _this.error = "Invalid current password: enter your current password correctly";
+                    _this.error = "Error while changing the email: enter your current password correctly";
                     _this.ToolErrorConfirmEmail = "*Invalid current password: enter your current password correctly.";
                     _this.ConfirmEmailOK = false;
                 }
@@ -14521,7 +14523,7 @@ var CabinetComponent = (function () {
                             _this.ConfirmPasswordOK = false;
                         }
                         if (_this.error == "The password field is required.") {
-                            _this.error = "Invalid current password: enter your current password correctly";
+                            _this.error = "Error while changing the password: enter your current password correctly";
                             _this.ToolErrorConfirmPassword = "*Invalid current password: enter your current password correctly.";
                             _this.ConfirmPasswordOK = false;
                         }
@@ -14589,6 +14591,193 @@ var CabinetComponent = (function () {
         }
     };
     CabinetComponent.prototype.ChangeEvery = function () {
+        var _this = this;
+        var toSaveFirstName = this.FirstName;
+        var toSaveLastName = this.LastName;
+        this.FirstNameOK = true;
+        this.LastNameOK = true;
+        this.EmailOK = true;
+        this.ConfirmEveryOK = true;
+        this.PasswordOK = true;
+        this.RepeatPasswordOK = true;
+        var validFirstName = true;
+        var validLastName = true;
+        var validEmail = true;
+        var validPassword = true;
+        //check first name
+        if (this.NewFirstName.length < 4 || this.NewFirstName.length > 15) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the first name: check the length" });
+            this.FirstNameOK = false;
+            this.ToolErrorFirstName = "*Check the length: it should be between 4 and 15 characters.";
+            validFirstName = false;
+        }
+        else {
+            var reg = new RegExp("[^a-zA-Z0-9_'-]");
+            var containError = reg.test(this.NewFirstName);
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the first name: unacceptable character" });
+                this.FirstNameOK = false;
+                this.ToolErrorFirstName = "*Check the characters: use only letters, numbers and symbols: -,',_ .";
+                validFirstName = false;
+            }
+        }
+        //check last name
+        if (this.NewLastName.length < 4 || this.NewLastName.length > 15) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the last name: check the length" });
+            this.LastNameOK = false;
+            this.ToolErrorLastName = "*Check the length: it should be between 4 and 15 characters.";
+            validLastName = false;
+        }
+        else {
+            var reg = new RegExp("[^a-zA-Z0-9_'-]");
+            var containError = reg.test(this.NewLastName);
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the last name: unacceptable character" });
+                this.LastNameOK = false;
+                this.ToolErrorLastName = "*Check the characters: use only letters, numbers and symbols: -,',_ .";
+                validLastName = false;
+            }
+        }
+        //check password
+        if (this.NewPassword.length < 6 || this.NewPassword.length > 100) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: check the length" });
+            this.PasswordOK = false;
+            this.ToolErrorPassword = "*Check the length: it should be between 6 and 100 characters.";
+            validPassword = false;
+        }
+        else {
+            var reg1 = new RegExp("[0-9]");
+            var reg2 = new RegExp("[A-Z]");
+            var reg3 = new RegExp("[a-z]");
+            var containError = !reg1.test(this.NewPassword);
+            if (!containError)
+                var containError = !reg2.test(this.NewPassword);
+            if (!containError)
+                var containError = !reg3.test(this.NewPassword);
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: must be at least one digit, one small letter and one capital letter" });
+                this.PasswordOK = false;
+                this.ToolErrorPassword = "*Invalid password: use at least one digit, one small letter and one capital letter.";
+                validPassword = false;
+            }
+            else {
+                if (this.NewPassword != this.RepeatPassword) {
+                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: make sure the repeated password is exactly the same as entered" });
+                    this.RepeatPasswordOK = false;
+                    this.ToolErrorPasswordRepeat = "*Repeat new password, make sure it is exactly the same as entered.";
+                    validPassword = false;
+                }
+            }
+        }
+        //check email
+        var reg = new RegExp("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
+        var containError = !reg.test(this.NewEmail);
+        if (containError) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your real current email address" });
+            this.EmailOK = false;
+            this.ToolErrorEmail = "*Invalid email: enter your real current email address.";
+            validEmail = false;
+        }
+        else {
+            this._authService.userExist(this.NewEmail).subscribe(function (data) {
+                if (validFirstName && validLastName && validEmail && validPassword) {
+                    _this.FirstNameOK = true;
+                    _this.LastNameOK = true;
+                    _this.EmailOK = true;
+                    _this._authService.changeFirstName(_this.NewFirstName).subscribe(function (data) {
+                        _this._authService.changeLastName(_this.NewLastName).subscribe(function (data) {
+                            _this._authService.changeEmail(_this.NewEmail, _this.ConfirmEvery).subscribe(function (data) {
+                                var changeEmail = data;
+                                if (changeEmail == "good") {
+                                    _this._authService.changePassword(_this.NewPassword, _this.ConfirmEvery, _this.NewEmail).subscribe(function (data) {
+                                        var changePassword = data;
+                                        if (changePassword == "good") {
+                                            _this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Everything changed. Now you will be rerouted to log in." });
+                                            _this.FirstName = _this.NewFirstName;
+                                            _this.LastName = _this.NewLastName;
+                                            _this.Email = _this.NewEmail;
+                                            setTimeout(function (router) {
+                                                _this._authService.logOut();
+                                                _this._router.navigate(['/login']);
+                                            }, 2500);
+                                        }
+                                        else {
+                                            //in case of error change back
+                                            _this._authService.changeFirstName(toSaveFirstName).subscribe(function (data) {
+                                                _this._authService.changeLastName(toSaveLastName).subscribe(function (data) { });
+                                            });
+                                            _this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the password: enter your current password correctly" });
+                                            _this.PasswordOK = false;
+                                            _this.ToolErrorPassword = "*Invalid current password: enter your current password correctly.";
+                                        }
+                                    }, function (err) {
+                                        //in case of error change back
+                                        _this._authService.changeFirstName(toSaveFirstName).subscribe(function (data) {
+                                            _this._authService.changeLastName(toSaveLastName).subscribe(function (data) { });
+                                        });
+                                        _this.error = err;
+                                        if (_this.error == "Error while changing the password: enter your current password correctly") {
+                                            _this.error = "Error while changing: enter your current password correctly";
+                                            _this.ToolErrorConfirmPassword = "*Invalid current password: enter your current password correctly.";
+                                            _this.ConfirmEveryOK = false;
+                                        }
+                                        if (_this.error == "The password field is required.") {
+                                            _this.error = "Error while changing: enter your current password correctly";
+                                            _this.ToolErrorConfirmPassword = "*Invalid current password: enter your current password correctly.";
+                                            _this.ConfirmEveryOK = false;
+                                        }
+                                        if (_this.error == "Error while changing the password: check the length") {
+                                            _this.ToolErrorPassword = "*Check the length: it should be between 8 and 100 characters.";
+                                            _this.PasswordOK = false;
+                                        }
+                                        _this.Msgs.push({ severity: 'error', summary: 'Error', detail: _this.error });
+                                    });
+                                }
+                                else {
+                                    _this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your current password correctly" });
+                                    _this.EmailOK = false;
+                                    _this.ToolErrorEmail = "*Invalid current password: enter your current password correctly.";
+                                    //in case of error change back
+                                    _this._authService.changeFirstName(toSaveFirstName).subscribe(function (data) {
+                                        _this._authService.changeLastName(toSaveLastName).subscribe(function (data) { });
+                                    });
+                                }
+                            }, function (err) {
+                                //in case of error change back
+                                _this._authService.changeFirstName(toSaveFirstName).subscribe(function (data) {
+                                    _this._authService.changeLastName(toSaveLastName).subscribe(function (data) { });
+                                });
+                                _this.error = err;
+                                if (_this.error == "Error while changing the email: enter your current password correctly") {
+                                    _this.error = "Error while changing: enter your current password correctly";
+                                    _this.ToolErrorConfirmEvery = "*Invalid current password: enter your current password correctly.";
+                                    _this.ConfirmEveryOK = false;
+                                }
+                                if (_this.error == "The password field is required.") {
+                                    _this.error = "Error while changing: enter your current password correctly";
+                                    _this.ToolErrorConfirmEvery = "*Invalid current password: enter your current password correctly.";
+                                    _this.ConfirmEveryOK = false;
+                                }
+                                if (_this.error == "Error while changing the email: enter your real current email address") {
+                                    _this.ToolErrorEmail = "*Invalid email: enter your real current email address.";
+                                    _this.EmailOK = false;
+                                }
+                                if (_this.error == "Error while changing the email: user with such email already exists") {
+                                    _this.ToolErrorEmail = "*Invalid email: user with such email already exists.";
+                                    _this.EmailOK = false;
+                                }
+                                _this.Msgs.push({ severity: 'error', summary: 'Error', detail: _this.error });
+                            });
+                        });
+                    });
+                }
+            }, function (err) {
+                _this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while changing the email: enter your real current email address" });
+                _this.ToolErrorEmail = "*Invalid email: user with such email already exists.";
+                _this.EmailOK = false;
+                validEmail = false;
+            });
+        }
     };
     return CabinetComponent;
 }());
@@ -15197,6 +15386,13 @@ var LogInComponent = (function () {
         var _this = this;
         var tempModel = { email: this.Email, password: this.Password, rememberMe: true };
         this._authService.logIn(tempModel).subscribe(function (data) {
+            _this._authService.getUser().subscribe(function (data) {
+                _this._authService.IsLoggedIn = true;
+                _this._authService.CurrentUserEmail = data.email;
+            }, function (err) {
+                _this._authService.IsLoggedIn = false;
+                _this._authService.CurrentUserEmail = "";
+            });
             setTimeout(function (router) {
                 _this.router.navigate(['/cabinet']);
             }, 2000);

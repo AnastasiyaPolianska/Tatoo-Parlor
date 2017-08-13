@@ -28,6 +28,18 @@ export class LogInComponent {
         let tempModel: ILogInModel = { email: this.Email, password: this.Password, rememberMe: true };
 
         this._authService.logIn(tempModel).subscribe(data => {
+
+            this._authService.getUser().subscribe(
+                data => {
+                    this._authService.IsLoggedIn = true;
+                    this._authService.CurrentUserEmail = data.email;
+                },
+
+                err => {
+                    this._authService.IsLoggedIn = false;
+                    this._authService.CurrentUserEmail = "";
+                })
+
             setTimeout((router: Router) => {
                 this.router.navigate(['/cabinet'])
             }, 2000);           

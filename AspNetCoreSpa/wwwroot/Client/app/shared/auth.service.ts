@@ -17,6 +17,10 @@ export  class AuthService {
     private _changePasswordUrl = 'api/Profile/changepassword';
     private _idUrl = 'api/Profile/id';
     private _userUrl = 'api/Profile/username';
+    private _userExist = 'api/Profile/userexist';
+
+    public IsLoggedIn: boolean = false;
+    public CurrentUserEmail: string;
 
     constructor(private _http: Http, private localStorage: LocalStorage, private sessionStorage: SessionStorage) { }
 
@@ -26,13 +30,6 @@ export  class AuthService {
 
     logIn(model: ILogInModel): Observable<any> {
         return this._http.post(this._logInUrl, model)
-            .map(res => {
-                if (model.rememberMe) {
-                    this.localStorage.setItem('localAuthData', model.email);
-                    
-            }
-                else this.sessionStorage.setItem('sessionAuthData', model.email);
-    })
             .catch(err => {
                 console.error(err);
                 return Observable.throw(err.json()[0] || ' error');
@@ -48,11 +45,9 @@ export  class AuthService {
     }
 
     logOut(): Observable<any> {
-        return this._http.post(this._logOutUrl, {})
-            .map(res => {
-                this.localStorage.setItem('localAuthData',"");
-                this.sessionStorage.setItem('sessionAuthData',"");
-            })
+        this.IsLoggedIn = false;
+        this.CurrentUserEmail = "";
+        return this._http.post(this._logOutUrl, {});
     }
 
     changeFirstName(newFirstName: string): Observable<any> {
@@ -75,15 +70,19 @@ export  class AuthService {
         });
     }
 
-    changePassword(newPasword: string, password: string): Observable<string> {
+    changePassword(newPasword: string, password: string, emailToFind: string = ""): Observable<string> {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        return this._http.post(this._changePasswordUrl, { newPassword: newPasword, password: password }, { headers: headers })
+        return this._http.post(this._changePasswordUrl, { newPassword: newPasword, password: password, emailToFind: emailToFind }, { headers: headers })
             .map((response: Response) => { console.log(response); return <string>response._body; })
             .catch(err => {
                 console.error(err);
                 return Observable.throw(err.json()[0] || ' error');
             });
+    }
+
+    userExist(email: string): Observable<any> {
+        return this._http.get(this._userExist + "/" + email);
     }
 }
