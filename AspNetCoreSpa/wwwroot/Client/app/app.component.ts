@@ -1,4 +1,4 @@
-import { Component,  ViewEncapsulation } from '@angular/core';
+import { Component,  ViewEncapsulation, OnInit } from '@angular/core';
 import { LocalStorage, SessionStorage, StorageProperty } from 'h5webstorage';
 import { AuthService } from './shared/auth.service';
 @Component({
@@ -7,27 +7,38 @@ import { AuthService } from './shared/auth.service';
     styleUrls: ['./app.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     constructor(private localStorage: LocalStorage, private sessionStorage: SessionStorage, private authService: AuthService) {
     }
-    pageTitle: string = 'Tatooed Youth';
+    public pageTitle: string = 'Tatooed Youth';
 
     @StorageProperty({ storageKey: 'localAuthData', storage:"Local" }) public LocalAuth: string = "";
     @StorageProperty({ storageKey: 'sessionAuthData', storage: "Session" }) public SessionAuth: string = "";
      
-    isLoggedIn = (() => {
-        if (this.LocalAuth == "" && this.SessionAuth == "")
-            return false;
-        else return true;
-    });
+    /*Executes on initialisation*/
+    ngOnInit(): void {
+        this.GettingUserInfo();
+    };
 
-    loggedUserName = (() => {
-        if (this.LocalAuth != "")
-            return this.LocalAuth;
-        else return this.SessionAuth;
-    });
+    public GettingUserInfo(): void {
+        this.authService.getUser().subscribe(
+            data => {
+                this.authService.IsLoggedIn = true;
+                this.authService.CurrentUserEmail = data.email;
+            },
+
+            err => {
+                this.authService.IsLoggedIn = false;
+                this.authService.CurrentUserEmail = "";
+            })
+    }
 
     logOut = (() => {
-        this.authService.logOut().subscribe();
+        this.authService.logOut().subscribe(
+            data => {
+                this.authService.IsLoggedIn = false;
+                this.authService.CurrentUserEmail = "";
+            }
+        );
     });
 }

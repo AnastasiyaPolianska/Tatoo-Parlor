@@ -211,6 +211,11 @@ namespace AspNetCoreSpa.Server.Controllers.api
         {
             var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
 
+            if (changePassword.emailToFind != "")
+            {
+                user = _context.Users.FirstOrDefault(x => x.Email == changePassword.emailToFind);
+            }
+            
             if (changePassword.newPassword.Length < 6)
             {
                 ModelState.AddModelError(string.Empty, "Error while changing the password: check the length");
@@ -225,7 +230,20 @@ namespace AspNetCoreSpa.Server.Controllers.api
 
             ModelState.AddModelError(string.Empty, "Error while changing the password: enter your current password correctly");
             return BadRequest(ModelState.GetModelErrors());
-        }       
+        }
+
+        //GET: api/Profile/userexist
+        [HttpGet("userexist/{email}"), Authorize]
+        public IActionResult UserExist([FromRoute] string email)
+        {
+            if (_context.Users.Any(x => x.Email == email))
+            {
+                ModelState.AddModelError(string.Empty, "Error while changing the email: user with such email already exists");
+                return BadRequest(ModelState.GetModelErrors());
+            }
+
+            return Ok("good");
+        }
     }
 
     public class ChangeEmailModel
@@ -239,6 +257,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
 
     public class ChangePasswordModel
     {
+        public string emailToFind { get; set; }
         [Required]
         public string newPassword { get; set; }
         [Required]

@@ -19,11 +19,11 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li [routerLinkActive]="['active']"><a [routerLink]="['/cart']" *ngIf="isLoggedIn()"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
-                    <li [routerLinkActive]="['active']"><a [routerLink]="['/cabinet']" *ngIf="isLoggedIn()">Hello, {{loggedUserName()}}</a></li>
-                    <li (click)="logOut()"><a *ngIf="isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
-                    <li [routerLinkActive]="['active']"><a [routerLink]="['/signup']" *ngIf="!isLoggedIn()"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li [routerLinkActive]="['active']"><a [routerLink]="['/login']" *ngIf="!isLoggedIn()"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/cart']" *ngIf="authService.IsLoggedIn"><span class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/cabinet']" *ngIf="authService.IsLoggedIn">Hello, {{authService.CurrentUserEmail}}</a></li>
+                    <li [routerLinkActive]="['active']" style="cursor: pointer"><a *ngIf="authService.IsLoggedIn" (click)="logOut()"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/signup']" *ngIf="!authService.IsLoggedIn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li [routerLinkActive]="['active']"><a [routerLink]="['/login']" *ngIf="!authService.IsLoggedIn"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
                 </ul>
             </div>
         </div>
