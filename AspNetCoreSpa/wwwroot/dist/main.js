@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6d209a9ff574818c7978"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5f22a1ac241ed3c7f0cc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -2154,7 +2154,10 @@ var AuthService = (function () {
         this.IsLoggedIn = false;
     }
     AuthService.prototype.signUp = function (model) {
-        return this._http.post(this._signUpUrl, model);
+        return this._http.post(this._signUpUrl, model).catch(function (err) {
+            console.error(err);
+            return Observable_1.Observable.throw(err.json()[0] || ' error');
+        });
     };
     AuthService.prototype.logIn = function (model) {
         return this._http.post(this._logInUrl, model)
@@ -12991,7 +12994,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n.changeinfo {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline;\n  font-size: 3vmin;\n  cursor: pointer; }\n  .changeinfo:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4);\n  margin-bottom: 0px !important; }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.floating {\n  float: right;\n  margin-right: 5%; }\n\n.headchangewidth {\n  width: 30%; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 4vmin; }\n\n.tatootool {\n  font-size: 2vmin;\n  float: right;\n  color: rgba(41, 43, 41, 0.9); }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .floating {\n    float: none;\n    margin-right: 0%; }\n  .headchangewidth {\n    width: 15%; }\n  #tatoopanel {\n    font-size: 3vmin; }\n  .tatootool {\n    font-size: 1.5vmin; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n.changeinfo {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline;\n  font-size: 3vmin;\n  cursor: pointer; }\n  .changeinfo:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4);\n  margin-bottom: 0px !important; }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.floating {\n  float: right;\n  margin-right: 5%; }\n\n.headchangewidth {\n  width: 30%; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 4vmin; }\n\n.tatootool {\n  font-size: 2vmin;\n  float: right;\n  color: rgba(41, 43, 41, 0.9);\n  margin-right: 1%; }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right;\n  margin-right: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .floating {\n    float: none;\n    margin-right: 0%; }\n  .headchangewidth {\n    width: 15%; }\n  #tatoopanel {\n    font-size: 3vmin; }\n  .tatootool {\n    font-size: 1.5vmin; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n", ""]);
 
 // exports
 
@@ -13103,7 +13106,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; } }\n", ""]);
+exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n", ""]);
 
 // exports
 
@@ -13117,7 +13120,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; } }\n", ""]);
+exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n.tatootool {\n  font-size: 2vmin;\n  float: right;\n  color: rgba(41, 43, 41, 0.9);\n  margin-right: 1%; }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right;\n  margin-right: 1%; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .tatootool {\n    font-size: 1.5vmin; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n", ""]);
 
 // exports
 
@@ -13792,13 +13795,13 @@ module.exports = "<div class=\"questions-page\">\r\n    <p-growl [value]=\"Msgs\
 /* 138 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .ui-growl-item-container{\r\n        margin-top:50px !important;\r\n    }\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <!-- Filter the Products   -->\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)= 'logIn()'> {{ButtonText}} </button>\r\n    </div>\r\n</div>";
+module.exports = "<style>\r\n    .ui-growl-item-container{\r\n        margin-top:50px !important;\r\n    }\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <!-- Filter the Products   -->\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOk==false}\" placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n            <label *ngIf=\"!EmailOk\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOk==false}\" placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n            <label *ngIf=\"!PasswordOk\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)= 'logIn()' title={{TitleLogIn}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{ButtonText}} \r\n        </button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 139 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable' >{{LableFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHoldeFirstName}}\" [(ngModel)]='FirstName'/>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' placeholder=\"{{PlaceHoldeLastName}}\" [(ngModel)]='LastName' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' placeholder=\"{{PlaceHolderRepeatPassword}}\" />\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='signUp()'> {{ButtonText}} </button>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n";
+module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable' >{{LableFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" placeholder=\"{{PlaceHoldeFirstName}}\" [(ngModel)]='FirstName'/>\r\n            <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n            <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" placeholder=\"{{PlaceHoldeLastName}}\" [(ngModel)]='LastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword'/>\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='signUp()' title={{TitleSignUp}}> \r\n            <i class='glyphicon glyphicon-ok'></i> {{ButtonText}} \r\n        </button>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n";
 
 /***/ }),
 /* 140 */
@@ -15377,28 +15380,53 @@ var LogInComponent = (function () {
         this.PlaceHolderPassword = 'Enter password...';
         this.ButtonText = 'Log in';
         this.Msgs = [];
+        this.TitleLogIn = "Click to log in";
         this.Email = "";
         this.Password = "";
+        this.EmailOk = true;
+        this.PasswordOk = true;
     }
     ;
     /*Logging into the system*/
     LogInComponent.prototype.logIn = function () {
         var _this = this;
-        var tempModel = { email: this.Email, password: this.Password, rememberMe: true };
-        this._authService.logIn(tempModel).subscribe(function (data) {
-            _this._authService.getUser().subscribe(function (data) {
-                _this._authService.IsLoggedIn = true;
-                _this._authService.CurrentUserEmail = data.email;
+        this.EmailOk = true;
+        ;
+        this.PasswordOk = true;
+        var reg = new RegExp("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
+        var containError = !reg.test(this.Email);
+        if (containError) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while logging in: enter your real email address" });
+            this.EmailOk = false;
+            this.ToolErrorEmail = "*Invalid email: enter your real email address.";
+        }
+        else {
+            var tempModel = { email: this.Email, password: this.Password, rememberMe: true };
+            this._authService.logIn(tempModel).subscribe(function (data) {
+                _this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have logged in successfully. Now you will be rerouted to your cabinet." });
+                _this._authService.getUser().subscribe(function (data) {
+                    _this._authService.IsLoggedIn = true;
+                    _this._authService.CurrentUserEmail = data.email;
+                }, function (err) {
+                    _this._authService.IsLoggedIn = false;
+                    _this._authService.CurrentUserEmail = "";
+                });
+                setTimeout(function (router) {
+                    _this.router.navigate(['/cabinet']);
+                }, 2000);
             }, function (err) {
-                _this._authService.IsLoggedIn = false;
-                _this._authService.CurrentUserEmail = "";
+                _this.error = err;
+                if (_this.error == "Error while logging in: user with such email does not exist") {
+                    _this.ToolErrorEmail = "*Invalid email: enter your real email address.";
+                    _this.EmailOk = false;
+                }
+                if (_this.error == "Error while logging in: incorect password.") {
+                    _this.ToolErrorPassword = "*Invalid current password: enter your current password correctly.";
+                    _this.PasswordOk = false;
+                }
+                _this.Msgs.push({ severity: 'error', summary: 'Error', detail: err });
             });
-            setTimeout(function (router) {
-                _this.router.navigate(['/cabinet']);
-            }, 2000);
-        }, function (err) {
-            _this.Msgs.push({ severity: 'error', summary: 'Error', detail: err });
-        });
+        }
     };
     return LogInComponent;
 }());
@@ -15422,9 +15450,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var auth_service_1 = __webpack_require__(13);
+var router_1 = __webpack_require__(5);
 var SignUpComponent = (function () {
-    function SignUpComponent(_authService) {
+    function SignUpComponent(_authService, router) {
         this._authService = _authService;
+        this.router = router;
         this.PageTitle = 'Registration Form';
         this.LableFirstName = 'Enter First Name:';
         this.PlaceHoldeFirstName = 'Enter first name...';
@@ -15437,16 +15467,137 @@ var SignUpComponent = (function () {
         this.LableRepeatPassword = 'Repeat password:';
         this.PlaceHolderRepeatPassword = 'Repeat password...';
         this.ButtonText = 'Sign up';
+        this.ToolFirstName = "*Use any letters, numbers and symbols: -,',_ . From 4 to 15 characters.";
+        this.FirstNameOK = true;
+        this.ToolLastName = "*Use any letters, numbers and symbols: -,',_ . From 4 to 15 characters.";
+        this.ToolErrorLastName = "";
+        this.LastNameOK = true;
+        this.ToolEmail = "*Enter your new email correctly.";
+        this.ToolErrorEmail = "";
+        this.EmailOK = true;
+        this.ToolPassword = "*Use any letters, numbers or symbols. Must be at least one digit, one small letter and one capital letter. From 8 to 100 characters.";
+        this.ToolErrorPassword = "";
+        this.ToolPasswordRepeat = "*Repeat new password, make sure it is exactly the same as entered.";
+        this.ToolErrorPasswordRepeat = "";
+        this.PasswordOK = true;
+        this.RepeatPasswordOK = true;
         this.FirstName = "";
         this.LastName = "";
         this.Email = "";
         this.Password = "";
+        this.RepeatPassword = "";
+        this.TitleSignUp = "Click to sign up";
+        this.Msgs = [];
     }
     ;
     /*Signing up*/
     SignUpComponent.prototype.signUp = function () {
-        var tempModel = { email: this.Email, firstName: this.FirstName, lastName: this.LastName, password: this.Password };
-        this._authService.signUp(tempModel).subscribe();
+        var _this = this;
+        this.FirstNameOK = true;
+        this.LastNameOK = true;
+        this.EmailOK = true;
+        this.PasswordOK = true;
+        this.RepeatPasswordOK = true;
+        var validFirstName = true;
+        var validLastName = true;
+        var validEmail = true;
+        var validPassword = true;
+        //check first name
+        if (this.FirstName.length < 4 || this.FirstName.length > 15) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: check the length of first name" });
+            this.FirstNameOK = false;
+            this.ToolErrorFirstName = "*Check the length: it should be between 4 and 15 characters.";
+            validFirstName = false;
+        }
+        else {
+            var reg = new RegExp("[^a-zA-Z0-9_'-]");
+            var containError = reg.test(this.FirstName);
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: unacceptable character in first name" });
+                this.FirstNameOK = false;
+                this.ToolErrorFirstName = "*Check the characters: use only letters, numbers and symbols: -,',_ .";
+                validFirstName = false;
+            }
+        }
+        //check last name
+        if (this.LastName.length < 4 || this.LastName.length > 15) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: check the length of last name" });
+            this.LastNameOK = false;
+            this.ToolErrorLastName = "*Check the length: it should be between 4 and 15 characters.";
+            validLastName = false;
+        }
+        else {
+            var reg = new RegExp("[^a-zA-Z0-9_'-]");
+            var containError = reg.test(this.LastName);
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: unacceptable character in last name" });
+                this.LastNameOK = false;
+                this.ToolErrorLastName = "*Check the characters: use only letters, numbers and symbols: -,',_ .";
+                validLastName = false;
+            }
+        }
+        //check password
+        if (this.Password.length < 6 || this.Password.length > 100) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: check the length of password" });
+            this.PasswordOK = false;
+            this.ToolErrorPassword = "*Check the length: it should be between 6 and 100 characters.";
+            validPassword = false;
+        }
+        else {
+            var reg1 = new RegExp("[0-9]");
+            var reg2 = new RegExp("[A-Z]");
+            var reg3 = new RegExp("[a-z]");
+            var containError = !reg1.test(this.Password);
+            if (!containError)
+                var containError = !reg2.test(this.Password);
+            if (!containError)
+                var containError = !reg3.test(this.Password);
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: must be at least one digit, one small letter and one capital letter in password" });
+                this.PasswordOK = false;
+                this.ToolErrorPassword = "*Invalid password: use at least one digit, one small letter and one capital letter.";
+                validPassword = false;
+            }
+            else {
+                if (this.Password != this.RepeatPassword) {
+                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: make sure the repeated password is exactly the same as entered" });
+                    this.RepeatPasswordOK = false;
+                    this.ToolErrorPasswordRepeat = "*Repeat new password, make sure it is exactly the same as entered.";
+                    validPassword = false;
+                }
+            }
+        }
+        //check email
+        var reg = new RegExp("(\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,6})");
+        var containError = !reg.test(this.Email);
+        if (containError) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: enter your real current email address" });
+            this.EmailOK = false;
+            this.ToolErrorEmail = "*Invalid email: enter your real current email address.";
+            validEmail = false;
+        }
+        else {
+            this._authService.userExist(this.Email).subscribe(function (data) {
+                if (validFirstName && validLastName && validEmail && validPassword) {
+                    var tempModel = { email: _this.Email, firstName: _this.FirstName, lastName: _this.LastName, password: _this.Password };
+                    _this._authService.signUp(tempModel).subscribe(function (data) {
+                        _this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have signed up successfully. Now you will be rerouted to log in." });
+                        setTimeout(function (router) {
+                            _this.router.navigate(['/login']);
+                        }, 2500);
+                    }, function (err) {
+                        _this.error = err;
+                        _this.Msgs.push({ severity: 'error', summary: 'Error', detail: err });
+                    });
+                }
+                ;
+            }, function (err) {
+                _this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: enter your real current email address" });
+                _this.ToolErrorEmail = "*Invalid email: user with such email already exists.";
+                _this.EmailOK = false;
+                validEmail = false;
+            });
+        }
     };
     return SignUpComponent;
 }());
@@ -15455,7 +15606,7 @@ SignUpComponent = tslib_1.__decorate([
         template: __webpack_require__(139),
         styles: [__webpack_require__(244)]
     }),
-    tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService])
+    tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])
 ], SignUpComponent);
 exports.SignUpComponent = SignUpComponent;
 

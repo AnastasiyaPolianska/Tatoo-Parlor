@@ -18,13 +18,17 @@
     <div class='panel-body'>
         <div class='row'>
             <label class='col-md-2 tatoolable'>{{LableEmail}}</label>
-            <input type='email' class='tatooinput marginbottom' placeholder="{{PlaceHolderEmail}}" [(ngModel)]='Email' />
+            <input type='email' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': EmailOk==false}" placeholder="{{PlaceHolderEmail}}" [(ngModel)]='Email' />
+            <label *ngIf="!EmailOk" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorEmail}}</label>
         </div>
         <div class='row'>
             <label class='col-md-2 tatoolable'>{{LablePassword}}</label>
-            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderPassword}}" [(ngModel)]='Password' />
+            <input type='password' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': PasswordOk==false}" placeholder="{{PlaceHolderPassword}}" [(ngModel)]='Password' />
+            <label *ngIf="!PasswordOk" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorPassword}}</label>
         </div>
 
-        <button class=' btn btn-primary tatoobutton' (click)= 'logIn()'> {{ButtonText}} </button>
+        <button class=' btn btn-primary tatoobutton' (click)= 'logIn()' title={{TitleLogIn}}>
+            <i class='glyphicon glyphicon-ok'></i> {{ButtonText}} 
+        </button>
     </div>
 </div>

@@ -233,7 +233,8 @@ namespace AspNetCoreSpa.Server.Controllers.api
         }
 
         //GET: api/Profile/userexist
-        [HttpGet("userexist/{email}"), Authorize]
+        [HttpGet("userexist/{email}")]
+        [AllowAnonymous]
         public IActionResult UserExist([FromRoute] string email)
         {
             if (_context.Users.Any(x => x.Email == email))

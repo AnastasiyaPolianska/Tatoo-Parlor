@@ -25,7 +25,10 @@ export  class AuthService {
     constructor(private _http: Http, private localStorage: LocalStorage, private sessionStorage: SessionStorage) { }
 
     signUp(model: ISingUpModel): Observable<any> {
-        return this._http.post(this._signUpUrl, model);
+        return this._http.post(this._signUpUrl, model).catch(err => {
+            console.error(err);
+            return Observable.throw(err.json()[0] || ' error');
+        });
     }
 
     logIn(model: ILogInModel): Observable<any> {
