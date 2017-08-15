@@ -25,11 +25,13 @@ export class AppComponent implements OnInit {
             data => {
                 this.authService.IsLoggedIn = true;
                 this.authService.CurrentUserEmail = data.email;
+                this.authService.IsAdmin = data.isAdmin;
             },
 
             err => {
                 this.authService.IsLoggedIn = false;
                 this.authService.CurrentUserEmail = "";
+                this.authService.IsAdmin = false;
             })
     }
 
@@ -38,6 +40,7 @@ export class AppComponent implements OnInit {
             data => {
                 this.authService.IsLoggedIn = false;
                 this.authService.CurrentUserEmail = "";
+                this.authService.IsAdmin = false;
             }
         );
     });

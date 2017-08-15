@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5f22a1ac241ed3c7f0cc"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4cacb461e572099017a7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -704,7 +704,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(256)(__webpack_require__.s = 256);
+/******/ 	return hotCreateRequire(261)(__webpack_require__.s = 261);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1221,6 +1221,12 @@ function __asyncValues(o) {
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = (__webpack_require__(8))(314)
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1685,12 +1691,6 @@ exports.SharedModule = SharedModule;
 //# sourceMappingURL=shared.js.map
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(8))(314)
-
-/***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2061,75 +2061,6 @@ exports.ButtonModule = ButtonModule;
 
 "use strict";
 
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(0);
-var common_1 = __webpack_require__(1);
-var InputText = (function () {
-    function InputText(el) {
-        this.el = el;
-    }
-    Object.defineProperty(InputText.prototype, "filled", {
-        get: function () {
-            return this.el.nativeElement.value && this.el.nativeElement.value.length;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    InputText.prototype.onBlur = function (e) {
-        //To trigger change detection to manage ui-state-filled for material labels
-    };
-    return InputText;
-}());
-__decorate([
-    core_1.HostListener('blur', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], InputText.prototype, "onBlur", null);
-InputText = __decorate([
-    core_1.Directive({
-        selector: '[pInputText]',
-        host: {
-            '[class.ui-inputtext]': 'true',
-            '[class.ui-corner-all]': 'true',
-            '[class.ui-state-default]': 'true',
-            '[class.ui-widget]': 'true',
-            '[class.ui-state-filled]': 'filled'
-        }
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], InputText);
-exports.InputText = InputText;
-var InputTextModule = (function () {
-    function InputTextModule() {
-    }
-    return InputTextModule;
-}());
-InputTextModule = __decorate([
-    core_1.NgModule({
-        imports: [common_1.CommonModule],
-        exports: [InputText],
-        declarations: [InputText]
-    })
-], InputTextModule);
-exports.InputTextModule = InputTextModule;
-//# sourceMappingURL=inputtext.js.map
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
@@ -2152,6 +2083,7 @@ var AuthService = (function () {
         this._userUrl = 'api/Profile/username';
         this._userExist = 'api/Profile/userexist';
         this.IsLoggedIn = false;
+        this.IsAdmin = false;
     }
     AuthService.prototype.signUp = function (model) {
         return this._http.post(this._signUpUrl, model).catch(function (err) {
@@ -2217,6 +2149,75 @@ exports.AuthService = AuthService;
 
 
 /***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(0);
+var common_1 = __webpack_require__(1);
+var InputText = (function () {
+    function InputText(el) {
+        this.el = el;
+    }
+    Object.defineProperty(InputText.prototype, "filled", {
+        get: function () {
+            return this.el.nativeElement.value && this.el.nativeElement.value.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    InputText.prototype.onBlur = function (e) {
+        //To trigger change detection to manage ui-state-filled for material labels
+    };
+    return InputText;
+}());
+__decorate([
+    core_1.HostListener('blur', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], InputText.prototype, "onBlur", null);
+InputText = __decorate([
+    core_1.Directive({
+        selector: '[pInputText]',
+        host: {
+            '[class.ui-inputtext]': 'true',
+            '[class.ui-corner-all]': 'true',
+            '[class.ui-state-default]': 'true',
+            '[class.ui-widget]': 'true',
+            '[class.ui-state-filled]': 'filled'
+        }
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], InputText);
+exports.InputText = InputText;
+var InputTextModule = (function () {
+    function InputTextModule() {
+    }
+    return InputTextModule;
+}());
+InputTextModule = __decorate([
+    core_1.NgModule({
+        imports: [common_1.CommonModule],
+        exports: [InputText],
+        declarations: [InputText]
+    })
+], InputTextModule);
+exports.InputTextModule = InputTextModule;
+//# sourceMappingURL=inputtext.js.map
+
+/***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2233,29 +2234,25 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(61));
-__export(__webpack_require__(4));
-__export(__webpack_require__(167));
-__export(__webpack_require__(168));
-__export(__webpack_require__(169));
-__export(__webpack_require__(170));
-__export(__webpack_require__(11));
-__export(__webpack_require__(172));
+__export(__webpack_require__(5));
 __export(__webpack_require__(171));
+__export(__webpack_require__(172));
 __export(__webpack_require__(173));
 __export(__webpack_require__(174));
-__export(__webpack_require__(175));
+__export(__webpack_require__(11));
 __export(__webpack_require__(176));
+__export(__webpack_require__(175));
 __export(__webpack_require__(177));
+__export(__webpack_require__(178));
 __export(__webpack_require__(179));
 __export(__webpack_require__(180));
 __export(__webpack_require__(181));
-__export(__webpack_require__(182));
 __export(__webpack_require__(183));
-__export(__webpack_require__(178));
 __export(__webpack_require__(184));
 __export(__webpack_require__(185));
 __export(__webpack_require__(186));
 __export(__webpack_require__(187));
+__export(__webpack_require__(182));
 __export(__webpack_require__(188));
 __export(__webpack_require__(189));
 __export(__webpack_require__(190));
@@ -2264,42 +2261,46 @@ __export(__webpack_require__(192));
 __export(__webpack_require__(193));
 __export(__webpack_require__(194));
 __export(__webpack_require__(195));
-__export(__webpack_require__(12));
 __export(__webpack_require__(196));
 __export(__webpack_require__(197));
 __export(__webpack_require__(198));
 __export(__webpack_require__(199));
+__export(__webpack_require__(13));
 __export(__webpack_require__(200));
 __export(__webpack_require__(201));
-__export(__webpack_require__(62));
 __export(__webpack_require__(202));
 __export(__webpack_require__(203));
 __export(__webpack_require__(204));
-__export(__webpack_require__(22));
 __export(__webpack_require__(205));
+__export(__webpack_require__(62));
 __export(__webpack_require__(206));
 __export(__webpack_require__(207));
 __export(__webpack_require__(208));
-__export(__webpack_require__(63));
+__export(__webpack_require__(22));
 __export(__webpack_require__(209));
 __export(__webpack_require__(210));
 __export(__webpack_require__(211));
 __export(__webpack_require__(212));
+__export(__webpack_require__(63));
 __export(__webpack_require__(213));
 __export(__webpack_require__(214));
 __export(__webpack_require__(215));
 __export(__webpack_require__(216));
 __export(__webpack_require__(217));
-__export(__webpack_require__(219));
 __export(__webpack_require__(218));
+__export(__webpack_require__(219));
 __export(__webpack_require__(220));
 __export(__webpack_require__(221));
-__export(__webpack_require__(222));
 __export(__webpack_require__(223));
+__export(__webpack_require__(222));
 __export(__webpack_require__(224));
 __export(__webpack_require__(225));
 __export(__webpack_require__(226));
 __export(__webpack_require__(227));
+__export(__webpack_require__(228));
+__export(__webpack_require__(229));
+__export(__webpack_require__(230));
+__export(__webpack_require__(231));
 //# sourceMappingURL=primeng.js.map
 
 /***/ }),
@@ -2463,7 +2464,7 @@ exports.BROWSER_STORAGE_PROVIDERS = [
     { provide: basestorage_1.SERDES_OBJECT, useValue: { stringify: JSON.stringify, parse: JSON.parse } },
     ConfigureStorage({ prefix: "" })
 ];
-var storageproperty_1 = __webpack_require__(124);
+var storageproperty_1 = __webpack_require__(125);
 exports.StorageProperty = storageproperty_1.StorageProperty;
 /**
  * Creates a provider for the StorageOptions
@@ -2564,14 +2565,14 @@ var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var forms_1 = __webpack_require__(6);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var ng_bootstrap_1 = __webpack_require__(39);
-var auth_service_1 = __webpack_require__(13);
-var product_filter_pipe_1 = __webpack_require__(155);
+var auth_service_1 = __webpack_require__(12);
+var product_filter_pipe_1 = __webpack_require__(158);
 var animations_1 = __webpack_require__(73);
 var primeng_1 = __webpack_require__(15);
-var allProducts_component_1 = __webpack_require__(164);
-var spinner_component_1 = __webpack_require__(165);
+var allProducts_component_1 = __webpack_require__(167);
+var spinner_component_1 = __webpack_require__(169);
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -6429,7 +6430,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollInstance", function() { return __WEBPACK_IMPORTED_MODULE_3__src_ng2_page_scroll_instance__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_ng2_page_scroll_util_service__ = __webpack_require__(21);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollUtilService", function() { return __WEBPACK_IMPORTED_MODULE_4__src_ng2_page_scroll_util_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_ng2_page_scroll_module__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_ng2_page_scroll_module__ = __webpack_require__(170);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Ng2PageScrollModule", function() { return __WEBPACK_IMPORTED_MODULE_5__src_ng2_page_scroll_module__["a"]; });
 
 
@@ -6940,7 +6941,7 @@ var PageScrollInstance = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_page_scroll_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_page_scroll_instance__ = __webpack_require__(59);
@@ -7084,7 +7085,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var Subject_1 = __webpack_require__(251);
+var Subject_1 = __webpack_require__(256);
 var domhandler_1 = __webpack_require__(2);
 exports.DomHandler = domhandler_1.DomHandler;
 var ConfirmationService = (function () {
@@ -7276,11 +7277,11 @@ module.exports = (__webpack_require__(43))(83)
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(255);
-__webpack_require__(231);
+__webpack_require__(260);
+__webpack_require__(235);
 // main entry point
-var platform_browser_dynamic_1 = __webpack_require__(254);
-var app_module_1 = __webpack_require__(147);
+var platform_browser_dynamic_1 = __webpack_require__(259);
+var app_module_1 = __webpack_require__(150);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
@@ -7301,7 +7302,7 @@ var options = {
   name: ''
 };
 if (true) {
-  var querystring = __webpack_require__(230);
+  var querystring = __webpack_require__(234);
   var overrides = querystring.parse(__resourceQuery.slice(1));
   if (overrides.path) options.path = overrides.path;
   if (overrides.timeout) options.timeout = overrides.timeout;
@@ -7421,11 +7422,11 @@ if (typeof window !== 'undefined') {
 }
 
 function createReporter() {
-  var strip = __webpack_require__(232);
+  var strip = __webpack_require__(236);
 
   var overlay;
   if (typeof document !== 'undefined' && options.overlay) {
-    overlay = __webpack_require__(248);
+    overlay = __webpack_require__(253);
   }
 
   var styles = {
@@ -7478,7 +7479,7 @@ function createReporter() {
   };
 }
 
-var processUpdate = __webpack_require__(249);
+var processUpdate = __webpack_require__(254);
 
 var customHandler;
 var subscribeAllHandler;
@@ -7543,7 +7544,7 @@ if (module) {
   };
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(250)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(255)(module)))
 
 /***/ }),
 /* 67 */
@@ -7767,7 +7768,7 @@ var NoOpMapsAPILoader = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__(258);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return AnimationDriver; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnimationEngine; });
 /* unused harmony export ɵAnimation */
@@ -11117,8 +11118,8 @@ function fromByteArray (uint8) {
 
 
 var base64 = __webpack_require__(76)
-var ieee754 = __webpack_require__(143)
-var isArray = __webpack_require__(144)
+var ieee754 = __webpack_require__(145)
+var isArray = __webpack_require__(146)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -12921,7 +12922,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*!\r\n *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome\r\n *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)\r\n */\r\n/* FONT PATH\r\n * -------------------------- */\r\n@font-face {\r\n  font-family: 'FontAwesome';\r\n  src: url(" + __webpack_require__(98) + ");\r\n  src: url(" + __webpack_require__(97) + "?#iefix&v=4.7.0) format('embedded-opentype'), url(" + __webpack_require__(101) + ") format('woff2'), url(" + __webpack_require__(102) + ") format('woff'), url(" + __webpack_require__(100) + ") format('truetype'), url(" + __webpack_require__(99) + "#fontawesomeregular) format('svg');\r\n  font-weight: normal;\r\n  font-style: normal;\r\n}\r\n.fa {\r\n  display: inline-block;\r\n  font: normal normal normal 14px/1 FontAwesome;\r\n  font-size: inherit;\r\n  text-rendering: auto;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n/* makes the font 33% larger relative to the icon container */\r\n.fa-lg {\r\n  font-size: 1.33333333em;\r\n  line-height: 0.75em;\r\n  vertical-align: -15%;\r\n}\r\n.fa-2x {\r\n  font-size: 2em;\r\n}\r\n.fa-3x {\r\n  font-size: 3em;\r\n}\r\n.fa-4x {\r\n  font-size: 4em;\r\n}\r\n.fa-5x {\r\n  font-size: 5em;\r\n}\r\n.fa-fw {\r\n  width: 1.28571429em;\r\n  text-align: center;\r\n}\r\n.fa-ul {\r\n  padding-left: 0;\r\n  margin-left: 2.14285714em;\r\n  list-style-type: none;\r\n}\r\n.fa-ul > li {\r\n  position: relative;\r\n}\r\n.fa-li {\r\n  position: absolute;\r\n  left: -2.14285714em;\r\n  width: 2.14285714em;\r\n  top: 0.14285714em;\r\n  text-align: center;\r\n}\r\n.fa-li.fa-lg {\r\n  left: -1.85714286em;\r\n}\r\n.fa-border {\r\n  padding: .2em .25em .15em;\r\n  border: solid 0.08em #eeeeee;\r\n  border-radius: .1em;\r\n}\r\n.fa-pull-left {\r\n  float: left;\r\n}\r\n.fa-pull-right {\r\n  float: right;\r\n}\r\n.fa.fa-pull-left {\r\n  margin-right: .3em;\r\n}\r\n.fa.fa-pull-right {\r\n  margin-left: .3em;\r\n}\r\n/* Deprecated as of 4.4.0 */\r\n.pull-right {\r\n  float: right;\r\n}\r\n.pull-left {\r\n  float: left;\r\n}\r\n.fa.pull-left {\r\n  margin-right: .3em;\r\n}\r\n.fa.pull-right {\r\n  margin-left: .3em;\r\n}\r\n.fa-spin {\r\n  -webkit-animation: fa-spin 2s infinite linear;\r\n  animation: fa-spin 2s infinite linear;\r\n}\r\n.fa-pulse {\r\n  -webkit-animation: fa-spin 1s infinite steps(8);\r\n  animation: fa-spin 1s infinite steps(8);\r\n}\r\n@-webkit-keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg);\r\n  }\r\n}\r\n@keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg);\r\n  }\r\n}\r\n.fa-rotate-90 {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=1)\";\r\n  -webkit-transform: rotate(90deg);\r\n  -ms-transform: rotate(90deg);\r\n  transform: rotate(90deg);\r\n}\r\n.fa-rotate-180 {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)\";\r\n  -webkit-transform: rotate(180deg);\r\n  -ms-transform: rotate(180deg);\r\n  transform: rotate(180deg);\r\n}\r\n.fa-rotate-270 {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=3)\";\r\n  -webkit-transform: rotate(270deg);\r\n  -ms-transform: rotate(270deg);\r\n  transform: rotate(270deg);\r\n}\r\n.fa-flip-horizontal {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)\";\r\n  -webkit-transform: scale(-1, 1);\r\n  -ms-transform: scale(-1, 1);\r\n  transform: scale(-1, 1);\r\n}\r\n.fa-flip-vertical {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)\";\r\n  -webkit-transform: scale(1, -1);\r\n  -ms-transform: scale(1, -1);\r\n  transform: scale(1, -1);\r\n}\r\n:root .fa-rotate-90,\r\n:root .fa-rotate-180,\r\n:root .fa-rotate-270,\r\n:root .fa-flip-horizontal,\r\n:root .fa-flip-vertical {\r\n  filter: none;\r\n}\r\n.fa-stack {\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 2em;\r\n  height: 2em;\r\n  line-height: 2em;\r\n  vertical-align: middle;\r\n}\r\n.fa-stack-1x,\r\n.fa-stack-2x {\r\n  position: absolute;\r\n  left: 0;\r\n  width: 100%;\r\n  text-align: center;\r\n}\r\n.fa-stack-1x {\r\n  line-height: inherit;\r\n}\r\n.fa-stack-2x {\r\n  font-size: 2em;\r\n}\r\n.fa-inverse {\r\n  color: #ffffff;\r\n}\r\n/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen\r\n   readers do not read off random characters that represent icons */\r\n.fa-glass:before {\r\n  content: \"\\F000\";\r\n}\r\n.fa-music:before {\r\n  content: \"\\F001\";\r\n}\r\n.fa-search:before {\r\n  content: \"\\F002\";\r\n}\r\n.fa-envelope-o:before {\r\n  content: \"\\F003\";\r\n}\r\n.fa-heart:before {\r\n  content: \"\\F004\";\r\n}\r\n.fa-star:before {\r\n  content: \"\\F005\";\r\n}\r\n.fa-star-o:before {\r\n  content: \"\\F006\";\r\n}\r\n.fa-user:before {\r\n  content: \"\\F007\";\r\n}\r\n.fa-film:before {\r\n  content: \"\\F008\";\r\n}\r\n.fa-th-large:before {\r\n  content: \"\\F009\";\r\n}\r\n.fa-th:before {\r\n  content: \"\\F00A\";\r\n}\r\n.fa-th-list:before {\r\n  content: \"\\F00B\";\r\n}\r\n.fa-check:before {\r\n  content: \"\\F00C\";\r\n}\r\n.fa-remove:before,\r\n.fa-close:before,\r\n.fa-times:before {\r\n  content: \"\\F00D\";\r\n}\r\n.fa-search-plus:before {\r\n  content: \"\\F00E\";\r\n}\r\n.fa-search-minus:before {\r\n  content: \"\\F010\";\r\n}\r\n.fa-power-off:before {\r\n  content: \"\\F011\";\r\n}\r\n.fa-signal:before {\r\n  content: \"\\F012\";\r\n}\r\n.fa-gear:before,\r\n.fa-cog:before {\r\n  content: \"\\F013\";\r\n}\r\n.fa-trash-o:before {\r\n  content: \"\\F014\";\r\n}\r\n.fa-home:before {\r\n  content: \"\\F015\";\r\n}\r\n.fa-file-o:before {\r\n  content: \"\\F016\";\r\n}\r\n.fa-clock-o:before {\r\n  content: \"\\F017\";\r\n}\r\n.fa-road:before {\r\n  content: \"\\F018\";\r\n}\r\n.fa-download:before {\r\n  content: \"\\F019\";\r\n}\r\n.fa-arrow-circle-o-down:before {\r\n  content: \"\\F01A\";\r\n}\r\n.fa-arrow-circle-o-up:before {\r\n  content: \"\\F01B\";\r\n}\r\n.fa-inbox:before {\r\n  content: \"\\F01C\";\r\n}\r\n.fa-play-circle-o:before {\r\n  content: \"\\F01D\";\r\n}\r\n.fa-rotate-right:before,\r\n.fa-repeat:before {\r\n  content: \"\\F01E\";\r\n}\r\n.fa-refresh:before {\r\n  content: \"\\F021\";\r\n}\r\n.fa-list-alt:before {\r\n  content: \"\\F022\";\r\n}\r\n.fa-lock:before {\r\n  content: \"\\F023\";\r\n}\r\n.fa-flag:before {\r\n  content: \"\\F024\";\r\n}\r\n.fa-headphones:before {\r\n  content: \"\\F025\";\r\n}\r\n.fa-volume-off:before {\r\n  content: \"\\F026\";\r\n}\r\n.fa-volume-down:before {\r\n  content: \"\\F027\";\r\n}\r\n.fa-volume-up:before {\r\n  content: \"\\F028\";\r\n}\r\n.fa-qrcode:before {\r\n  content: \"\\F029\";\r\n}\r\n.fa-barcode:before {\r\n  content: \"\\F02A\";\r\n}\r\n.fa-tag:before {\r\n  content: \"\\F02B\";\r\n}\r\n.fa-tags:before {\r\n  content: \"\\F02C\";\r\n}\r\n.fa-book:before {\r\n  content: \"\\F02D\";\r\n}\r\n.fa-bookmark:before {\r\n  content: \"\\F02E\";\r\n}\r\n.fa-print:before {\r\n  content: \"\\F02F\";\r\n}\r\n.fa-camera:before {\r\n  content: \"\\F030\";\r\n}\r\n.fa-font:before {\r\n  content: \"\\F031\";\r\n}\r\n.fa-bold:before {\r\n  content: \"\\F032\";\r\n}\r\n.fa-italic:before {\r\n  content: \"\\F033\";\r\n}\r\n.fa-text-height:before {\r\n  content: \"\\F034\";\r\n}\r\n.fa-text-width:before {\r\n  content: \"\\F035\";\r\n}\r\n.fa-align-left:before {\r\n  content: \"\\F036\";\r\n}\r\n.fa-align-center:before {\r\n  content: \"\\F037\";\r\n}\r\n.fa-align-right:before {\r\n  content: \"\\F038\";\r\n}\r\n.fa-align-justify:before {\r\n  content: \"\\F039\";\r\n}\r\n.fa-list:before {\r\n  content: \"\\F03A\";\r\n}\r\n.fa-dedent:before,\r\n.fa-outdent:before {\r\n  content: \"\\F03B\";\r\n}\r\n.fa-indent:before {\r\n  content: \"\\F03C\";\r\n}\r\n.fa-video-camera:before {\r\n  content: \"\\F03D\";\r\n}\r\n.fa-photo:before,\r\n.fa-image:before,\r\n.fa-picture-o:before {\r\n  content: \"\\F03E\";\r\n}\r\n.fa-pencil:before {\r\n  content: \"\\F040\";\r\n}\r\n.fa-map-marker:before {\r\n  content: \"\\F041\";\r\n}\r\n.fa-adjust:before {\r\n  content: \"\\F042\";\r\n}\r\n.fa-tint:before {\r\n  content: \"\\F043\";\r\n}\r\n.fa-edit:before,\r\n.fa-pencil-square-o:before {\r\n  content: \"\\F044\";\r\n}\r\n.fa-share-square-o:before {\r\n  content: \"\\F045\";\r\n}\r\n.fa-check-square-o:before {\r\n  content: \"\\F046\";\r\n}\r\n.fa-arrows:before {\r\n  content: \"\\F047\";\r\n}\r\n.fa-step-backward:before {\r\n  content: \"\\F048\";\r\n}\r\n.fa-fast-backward:before {\r\n  content: \"\\F049\";\r\n}\r\n.fa-backward:before {\r\n  content: \"\\F04A\";\r\n}\r\n.fa-play:before {\r\n  content: \"\\F04B\";\r\n}\r\n.fa-pause:before {\r\n  content: \"\\F04C\";\r\n}\r\n.fa-stop:before {\r\n  content: \"\\F04D\";\r\n}\r\n.fa-forward:before {\r\n  content: \"\\F04E\";\r\n}\r\n.fa-fast-forward:before {\r\n  content: \"\\F050\";\r\n}\r\n.fa-step-forward:before {\r\n  content: \"\\F051\";\r\n}\r\n.fa-eject:before {\r\n  content: \"\\F052\";\r\n}\r\n.fa-chevron-left:before {\r\n  content: \"\\F053\";\r\n}\r\n.fa-chevron-right:before {\r\n  content: \"\\F054\";\r\n}\r\n.fa-plus-circle:before {\r\n  content: \"\\F055\";\r\n}\r\n.fa-minus-circle:before {\r\n  content: \"\\F056\";\r\n}\r\n.fa-times-circle:before {\r\n  content: \"\\F057\";\r\n}\r\n.fa-check-circle:before {\r\n  content: \"\\F058\";\r\n}\r\n.fa-question-circle:before {\r\n  content: \"\\F059\";\r\n}\r\n.fa-info-circle:before {\r\n  content: \"\\F05A\";\r\n}\r\n.fa-crosshairs:before {\r\n  content: \"\\F05B\";\r\n}\r\n.fa-times-circle-o:before {\r\n  content: \"\\F05C\";\r\n}\r\n.fa-check-circle-o:before {\r\n  content: \"\\F05D\";\r\n}\r\n.fa-ban:before {\r\n  content: \"\\F05E\";\r\n}\r\n.fa-arrow-left:before {\r\n  content: \"\\F060\";\r\n}\r\n.fa-arrow-right:before {\r\n  content: \"\\F061\";\r\n}\r\n.fa-arrow-up:before {\r\n  content: \"\\F062\";\r\n}\r\n.fa-arrow-down:before {\r\n  content: \"\\F063\";\r\n}\r\n.fa-mail-forward:before,\r\n.fa-share:before {\r\n  content: \"\\F064\";\r\n}\r\n.fa-expand:before {\r\n  content: \"\\F065\";\r\n}\r\n.fa-compress:before {\r\n  content: \"\\F066\";\r\n}\r\n.fa-plus:before {\r\n  content: \"\\F067\";\r\n}\r\n.fa-minus:before {\r\n  content: \"\\F068\";\r\n}\r\n.fa-asterisk:before {\r\n  content: \"\\F069\";\r\n}\r\n.fa-exclamation-circle:before {\r\n  content: \"\\F06A\";\r\n}\r\n.fa-gift:before {\r\n  content: \"\\F06B\";\r\n}\r\n.fa-leaf:before {\r\n  content: \"\\F06C\";\r\n}\r\n.fa-fire:before {\r\n  content: \"\\F06D\";\r\n}\r\n.fa-eye:before {\r\n  content: \"\\F06E\";\r\n}\r\n.fa-eye-slash:before {\r\n  content: \"\\F070\";\r\n}\r\n.fa-warning:before,\r\n.fa-exclamation-triangle:before {\r\n  content: \"\\F071\";\r\n}\r\n.fa-plane:before {\r\n  content: \"\\F072\";\r\n}\r\n.fa-calendar:before {\r\n  content: \"\\F073\";\r\n}\r\n.fa-random:before {\r\n  content: \"\\F074\";\r\n}\r\n.fa-comment:before {\r\n  content: \"\\F075\";\r\n}\r\n.fa-magnet:before {\r\n  content: \"\\F076\";\r\n}\r\n.fa-chevron-up:before {\r\n  content: \"\\F077\";\r\n}\r\n.fa-chevron-down:before {\r\n  content: \"\\F078\";\r\n}\r\n.fa-retweet:before {\r\n  content: \"\\F079\";\r\n}\r\n.fa-shopping-cart:before {\r\n  content: \"\\F07A\";\r\n}\r\n.fa-folder:before {\r\n  content: \"\\F07B\";\r\n}\r\n.fa-folder-open:before {\r\n  content: \"\\F07C\";\r\n}\r\n.fa-arrows-v:before {\r\n  content: \"\\F07D\";\r\n}\r\n.fa-arrows-h:before {\r\n  content: \"\\F07E\";\r\n}\r\n.fa-bar-chart-o:before,\r\n.fa-bar-chart:before {\r\n  content: \"\\F080\";\r\n}\r\n.fa-twitter-square:before {\r\n  content: \"\\F081\";\r\n}\r\n.fa-facebook-square:before {\r\n  content: \"\\F082\";\r\n}\r\n.fa-camera-retro:before {\r\n  content: \"\\F083\";\r\n}\r\n.fa-key:before {\r\n  content: \"\\F084\";\r\n}\r\n.fa-gears:before,\r\n.fa-cogs:before {\r\n  content: \"\\F085\";\r\n}\r\n.fa-comments:before {\r\n  content: \"\\F086\";\r\n}\r\n.fa-thumbs-o-up:before {\r\n  content: \"\\F087\";\r\n}\r\n.fa-thumbs-o-down:before {\r\n  content: \"\\F088\";\r\n}\r\n.fa-star-half:before {\r\n  content: \"\\F089\";\r\n}\r\n.fa-heart-o:before {\r\n  content: \"\\F08A\";\r\n}\r\n.fa-sign-out:before {\r\n  content: \"\\F08B\";\r\n}\r\n.fa-linkedin-square:before {\r\n  content: \"\\F08C\";\r\n}\r\n.fa-thumb-tack:before {\r\n  content: \"\\F08D\";\r\n}\r\n.fa-external-link:before {\r\n  content: \"\\F08E\";\r\n}\r\n.fa-sign-in:before {\r\n  content: \"\\F090\";\r\n}\r\n.fa-trophy:before {\r\n  content: \"\\F091\";\r\n}\r\n.fa-github-square:before {\r\n  content: \"\\F092\";\r\n}\r\n.fa-upload:before {\r\n  content: \"\\F093\";\r\n}\r\n.fa-lemon-o:before {\r\n  content: \"\\F094\";\r\n}\r\n.fa-phone:before {\r\n  content: \"\\F095\";\r\n}\r\n.fa-square-o:before {\r\n  content: \"\\F096\";\r\n}\r\n.fa-bookmark-o:before {\r\n  content: \"\\F097\";\r\n}\r\n.fa-phone-square:before {\r\n  content: \"\\F098\";\r\n}\r\n.fa-twitter:before {\r\n  content: \"\\F099\";\r\n}\r\n.fa-facebook-f:before,\r\n.fa-facebook:before {\r\n  content: \"\\F09A\";\r\n}\r\n.fa-github:before {\r\n  content: \"\\F09B\";\r\n}\r\n.fa-unlock:before {\r\n  content: \"\\F09C\";\r\n}\r\n.fa-credit-card:before {\r\n  content: \"\\F09D\";\r\n}\r\n.fa-feed:before,\r\n.fa-rss:before {\r\n  content: \"\\F09E\";\r\n}\r\n.fa-hdd-o:before {\r\n  content: \"\\F0A0\";\r\n}\r\n.fa-bullhorn:before {\r\n  content: \"\\F0A1\";\r\n}\r\n.fa-bell:before {\r\n  content: \"\\F0F3\";\r\n}\r\n.fa-certificate:before {\r\n  content: \"\\F0A3\";\r\n}\r\n.fa-hand-o-right:before {\r\n  content: \"\\F0A4\";\r\n}\r\n.fa-hand-o-left:before {\r\n  content: \"\\F0A5\";\r\n}\r\n.fa-hand-o-up:before {\r\n  content: \"\\F0A6\";\r\n}\r\n.fa-hand-o-down:before {\r\n  content: \"\\F0A7\";\r\n}\r\n.fa-arrow-circle-left:before {\r\n  content: \"\\F0A8\";\r\n}\r\n.fa-arrow-circle-right:before {\r\n  content: \"\\F0A9\";\r\n}\r\n.fa-arrow-circle-up:before {\r\n  content: \"\\F0AA\";\r\n}\r\n.fa-arrow-circle-down:before {\r\n  content: \"\\F0AB\";\r\n}\r\n.fa-globe:before {\r\n  content: \"\\F0AC\";\r\n}\r\n.fa-wrench:before {\r\n  content: \"\\F0AD\";\r\n}\r\n.fa-tasks:before {\r\n  content: \"\\F0AE\";\r\n}\r\n.fa-filter:before {\r\n  content: \"\\F0B0\";\r\n}\r\n.fa-briefcase:before {\r\n  content: \"\\F0B1\";\r\n}\r\n.fa-arrows-alt:before {\r\n  content: \"\\F0B2\";\r\n}\r\n.fa-group:before,\r\n.fa-users:before {\r\n  content: \"\\F0C0\";\r\n}\r\n.fa-chain:before,\r\n.fa-link:before {\r\n  content: \"\\F0C1\";\r\n}\r\n.fa-cloud:before {\r\n  content: \"\\F0C2\";\r\n}\r\n.fa-flask:before {\r\n  content: \"\\F0C3\";\r\n}\r\n.fa-cut:before,\r\n.fa-scissors:before {\r\n  content: \"\\F0C4\";\r\n}\r\n.fa-copy:before,\r\n.fa-files-o:before {\r\n  content: \"\\F0C5\";\r\n}\r\n.fa-paperclip:before {\r\n  content: \"\\F0C6\";\r\n}\r\n.fa-save:before,\r\n.fa-floppy-o:before {\r\n  content: \"\\F0C7\";\r\n}\r\n.fa-square:before {\r\n  content: \"\\F0C8\";\r\n}\r\n.fa-navicon:before,\r\n.fa-reorder:before,\r\n.fa-bars:before {\r\n  content: \"\\F0C9\";\r\n}\r\n.fa-list-ul:before {\r\n  content: \"\\F0CA\";\r\n}\r\n.fa-list-ol:before {\r\n  content: \"\\F0CB\";\r\n}\r\n.fa-strikethrough:before {\r\n  content: \"\\F0CC\";\r\n}\r\n.fa-underline:before {\r\n  content: \"\\F0CD\";\r\n}\r\n.fa-table:before {\r\n  content: \"\\F0CE\";\r\n}\r\n.fa-magic:before {\r\n  content: \"\\F0D0\";\r\n}\r\n.fa-truck:before {\r\n  content: \"\\F0D1\";\r\n}\r\n.fa-pinterest:before {\r\n  content: \"\\F0D2\";\r\n}\r\n.fa-pinterest-square:before {\r\n  content: \"\\F0D3\";\r\n}\r\n.fa-google-plus-square:before {\r\n  content: \"\\F0D4\";\r\n}\r\n.fa-google-plus:before {\r\n  content: \"\\F0D5\";\r\n}\r\n.fa-money:before {\r\n  content: \"\\F0D6\";\r\n}\r\n.fa-caret-down:before {\r\n  content: \"\\F0D7\";\r\n}\r\n.fa-caret-up:before {\r\n  content: \"\\F0D8\";\r\n}\r\n.fa-caret-left:before {\r\n  content: \"\\F0D9\";\r\n}\r\n.fa-caret-right:before {\r\n  content: \"\\F0DA\";\r\n}\r\n.fa-columns:before {\r\n  content: \"\\F0DB\";\r\n}\r\n.fa-unsorted:before,\r\n.fa-sort:before {\r\n  content: \"\\F0DC\";\r\n}\r\n.fa-sort-down:before,\r\n.fa-sort-desc:before {\r\n  content: \"\\F0DD\";\r\n}\r\n.fa-sort-up:before,\r\n.fa-sort-asc:before {\r\n  content: \"\\F0DE\";\r\n}\r\n.fa-envelope:before {\r\n  content: \"\\F0E0\";\r\n}\r\n.fa-linkedin:before {\r\n  content: \"\\F0E1\";\r\n}\r\n.fa-rotate-left:before,\r\n.fa-undo:before {\r\n  content: \"\\F0E2\";\r\n}\r\n.fa-legal:before,\r\n.fa-gavel:before {\r\n  content: \"\\F0E3\";\r\n}\r\n.fa-dashboard:before,\r\n.fa-tachometer:before {\r\n  content: \"\\F0E4\";\r\n}\r\n.fa-comment-o:before {\r\n  content: \"\\F0E5\";\r\n}\r\n.fa-comments-o:before {\r\n  content: \"\\F0E6\";\r\n}\r\n.fa-flash:before,\r\n.fa-bolt:before {\r\n  content: \"\\F0E7\";\r\n}\r\n.fa-sitemap:before {\r\n  content: \"\\F0E8\";\r\n}\r\n.fa-umbrella:before {\r\n  content: \"\\F0E9\";\r\n}\r\n.fa-paste:before,\r\n.fa-clipboard:before {\r\n  content: \"\\F0EA\";\r\n}\r\n.fa-lightbulb-o:before {\r\n  content: \"\\F0EB\";\r\n}\r\n.fa-exchange:before {\r\n  content: \"\\F0EC\";\r\n}\r\n.fa-cloud-download:before {\r\n  content: \"\\F0ED\";\r\n}\r\n.fa-cloud-upload:before {\r\n  content: \"\\F0EE\";\r\n}\r\n.fa-user-md:before {\r\n  content: \"\\F0F0\";\r\n}\r\n.fa-stethoscope:before {\r\n  content: \"\\F0F1\";\r\n}\r\n.fa-suitcase:before {\r\n  content: \"\\F0F2\";\r\n}\r\n.fa-bell-o:before {\r\n  content: \"\\F0A2\";\r\n}\r\n.fa-coffee:before {\r\n  content: \"\\F0F4\";\r\n}\r\n.fa-cutlery:before {\r\n  content: \"\\F0F5\";\r\n}\r\n.fa-file-text-o:before {\r\n  content: \"\\F0F6\";\r\n}\r\n.fa-building-o:before {\r\n  content: \"\\F0F7\";\r\n}\r\n.fa-hospital-o:before {\r\n  content: \"\\F0F8\";\r\n}\r\n.fa-ambulance:before {\r\n  content: \"\\F0F9\";\r\n}\r\n.fa-medkit:before {\r\n  content: \"\\F0FA\";\r\n}\r\n.fa-fighter-jet:before {\r\n  content: \"\\F0FB\";\r\n}\r\n.fa-beer:before {\r\n  content: \"\\F0FC\";\r\n}\r\n.fa-h-square:before {\r\n  content: \"\\F0FD\";\r\n}\r\n.fa-plus-square:before {\r\n  content: \"\\F0FE\";\r\n}\r\n.fa-angle-double-left:before {\r\n  content: \"\\F100\";\r\n}\r\n.fa-angle-double-right:before {\r\n  content: \"\\F101\";\r\n}\r\n.fa-angle-double-up:before {\r\n  content: \"\\F102\";\r\n}\r\n.fa-angle-double-down:before {\r\n  content: \"\\F103\";\r\n}\r\n.fa-angle-left:before {\r\n  content: \"\\F104\";\r\n}\r\n.fa-angle-right:before {\r\n  content: \"\\F105\";\r\n}\r\n.fa-angle-up:before {\r\n  content: \"\\F106\";\r\n}\r\n.fa-angle-down:before {\r\n  content: \"\\F107\";\r\n}\r\n.fa-desktop:before {\r\n  content: \"\\F108\";\r\n}\r\n.fa-laptop:before {\r\n  content: \"\\F109\";\r\n}\r\n.fa-tablet:before {\r\n  content: \"\\F10A\";\r\n}\r\n.fa-mobile-phone:before,\r\n.fa-mobile:before {\r\n  content: \"\\F10B\";\r\n}\r\n.fa-circle-o:before {\r\n  content: \"\\F10C\";\r\n}\r\n.fa-quote-left:before {\r\n  content: \"\\F10D\";\r\n}\r\n.fa-quote-right:before {\r\n  content: \"\\F10E\";\r\n}\r\n.fa-spinner:before {\r\n  content: \"\\F110\";\r\n}\r\n.fa-circle:before {\r\n  content: \"\\F111\";\r\n}\r\n.fa-mail-reply:before,\r\n.fa-reply:before {\r\n  content: \"\\F112\";\r\n}\r\n.fa-github-alt:before {\r\n  content: \"\\F113\";\r\n}\r\n.fa-folder-o:before {\r\n  content: \"\\F114\";\r\n}\r\n.fa-folder-open-o:before {\r\n  content: \"\\F115\";\r\n}\r\n.fa-smile-o:before {\r\n  content: \"\\F118\";\r\n}\r\n.fa-frown-o:before {\r\n  content: \"\\F119\";\r\n}\r\n.fa-meh-o:before {\r\n  content: \"\\F11A\";\r\n}\r\n.fa-gamepad:before {\r\n  content: \"\\F11B\";\r\n}\r\n.fa-keyboard-o:before {\r\n  content: \"\\F11C\";\r\n}\r\n.fa-flag-o:before {\r\n  content: \"\\F11D\";\r\n}\r\n.fa-flag-checkered:before {\r\n  content: \"\\F11E\";\r\n}\r\n.fa-terminal:before {\r\n  content: \"\\F120\";\r\n}\r\n.fa-code:before {\r\n  content: \"\\F121\";\r\n}\r\n.fa-mail-reply-all:before,\r\n.fa-reply-all:before {\r\n  content: \"\\F122\";\r\n}\r\n.fa-star-half-empty:before,\r\n.fa-star-half-full:before,\r\n.fa-star-half-o:before {\r\n  content: \"\\F123\";\r\n}\r\n.fa-location-arrow:before {\r\n  content: \"\\F124\";\r\n}\r\n.fa-crop:before {\r\n  content: \"\\F125\";\r\n}\r\n.fa-code-fork:before {\r\n  content: \"\\F126\";\r\n}\r\n.fa-unlink:before,\r\n.fa-chain-broken:before {\r\n  content: \"\\F127\";\r\n}\r\n.fa-question:before {\r\n  content: \"\\F128\";\r\n}\r\n.fa-info:before {\r\n  content: \"\\F129\";\r\n}\r\n.fa-exclamation:before {\r\n  content: \"\\F12A\";\r\n}\r\n.fa-superscript:before {\r\n  content: \"\\F12B\";\r\n}\r\n.fa-subscript:before {\r\n  content: \"\\F12C\";\r\n}\r\n.fa-eraser:before {\r\n  content: \"\\F12D\";\r\n}\r\n.fa-puzzle-piece:before {\r\n  content: \"\\F12E\";\r\n}\r\n.fa-microphone:before {\r\n  content: \"\\F130\";\r\n}\r\n.fa-microphone-slash:before {\r\n  content: \"\\F131\";\r\n}\r\n.fa-shield:before {\r\n  content: \"\\F132\";\r\n}\r\n.fa-calendar-o:before {\r\n  content: \"\\F133\";\r\n}\r\n.fa-fire-extinguisher:before {\r\n  content: \"\\F134\";\r\n}\r\n.fa-rocket:before {\r\n  content: \"\\F135\";\r\n}\r\n.fa-maxcdn:before {\r\n  content: \"\\F136\";\r\n}\r\n.fa-chevron-circle-left:before {\r\n  content: \"\\F137\";\r\n}\r\n.fa-chevron-circle-right:before {\r\n  content: \"\\F138\";\r\n}\r\n.fa-chevron-circle-up:before {\r\n  content: \"\\F139\";\r\n}\r\n.fa-chevron-circle-down:before {\r\n  content: \"\\F13A\";\r\n}\r\n.fa-html5:before {\r\n  content: \"\\F13B\";\r\n}\r\n.fa-css3:before {\r\n  content: \"\\F13C\";\r\n}\r\n.fa-anchor:before {\r\n  content: \"\\F13D\";\r\n}\r\n.fa-unlock-alt:before {\r\n  content: \"\\F13E\";\r\n}\r\n.fa-bullseye:before {\r\n  content: \"\\F140\";\r\n}\r\n.fa-ellipsis-h:before {\r\n  content: \"\\F141\";\r\n}\r\n.fa-ellipsis-v:before {\r\n  content: \"\\F142\";\r\n}\r\n.fa-rss-square:before {\r\n  content: \"\\F143\";\r\n}\r\n.fa-play-circle:before {\r\n  content: \"\\F144\";\r\n}\r\n.fa-ticket:before {\r\n  content: \"\\F145\";\r\n}\r\n.fa-minus-square:before {\r\n  content: \"\\F146\";\r\n}\r\n.fa-minus-square-o:before {\r\n  content: \"\\F147\";\r\n}\r\n.fa-level-up:before {\r\n  content: \"\\F148\";\r\n}\r\n.fa-level-down:before {\r\n  content: \"\\F149\";\r\n}\r\n.fa-check-square:before {\r\n  content: \"\\F14A\";\r\n}\r\n.fa-pencil-square:before {\r\n  content: \"\\F14B\";\r\n}\r\n.fa-external-link-square:before {\r\n  content: \"\\F14C\";\r\n}\r\n.fa-share-square:before {\r\n  content: \"\\F14D\";\r\n}\r\n.fa-compass:before {\r\n  content: \"\\F14E\";\r\n}\r\n.fa-toggle-down:before,\r\n.fa-caret-square-o-down:before {\r\n  content: \"\\F150\";\r\n}\r\n.fa-toggle-up:before,\r\n.fa-caret-square-o-up:before {\r\n  content: \"\\F151\";\r\n}\r\n.fa-toggle-right:before,\r\n.fa-caret-square-o-right:before {\r\n  content: \"\\F152\";\r\n}\r\n.fa-euro:before,\r\n.fa-eur:before {\r\n  content: \"\\F153\";\r\n}\r\n.fa-gbp:before {\r\n  content: \"\\F154\";\r\n}\r\n.fa-dollar:before,\r\n.fa-usd:before {\r\n  content: \"\\F155\";\r\n}\r\n.fa-rupee:before,\r\n.fa-inr:before {\r\n  content: \"\\F156\";\r\n}\r\n.fa-cny:before,\r\n.fa-rmb:before,\r\n.fa-yen:before,\r\n.fa-jpy:before {\r\n  content: \"\\F157\";\r\n}\r\n.fa-ruble:before,\r\n.fa-rouble:before,\r\n.fa-rub:before {\r\n  content: \"\\F158\";\r\n}\r\n.fa-won:before,\r\n.fa-krw:before {\r\n  content: \"\\F159\";\r\n}\r\n.fa-bitcoin:before,\r\n.fa-btc:before {\r\n  content: \"\\F15A\";\r\n}\r\n.fa-file:before {\r\n  content: \"\\F15B\";\r\n}\r\n.fa-file-text:before {\r\n  content: \"\\F15C\";\r\n}\r\n.fa-sort-alpha-asc:before {\r\n  content: \"\\F15D\";\r\n}\r\n.fa-sort-alpha-desc:before {\r\n  content: \"\\F15E\";\r\n}\r\n.fa-sort-amount-asc:before {\r\n  content: \"\\F160\";\r\n}\r\n.fa-sort-amount-desc:before {\r\n  content: \"\\F161\";\r\n}\r\n.fa-sort-numeric-asc:before {\r\n  content: \"\\F162\";\r\n}\r\n.fa-sort-numeric-desc:before {\r\n  content: \"\\F163\";\r\n}\r\n.fa-thumbs-up:before {\r\n  content: \"\\F164\";\r\n}\r\n.fa-thumbs-down:before {\r\n  content: \"\\F165\";\r\n}\r\n.fa-youtube-square:before {\r\n  content: \"\\F166\";\r\n}\r\n.fa-youtube:before {\r\n  content: \"\\F167\";\r\n}\r\n.fa-xing:before {\r\n  content: \"\\F168\";\r\n}\r\n.fa-xing-square:before {\r\n  content: \"\\F169\";\r\n}\r\n.fa-youtube-play:before {\r\n  content: \"\\F16A\";\r\n}\r\n.fa-dropbox:before {\r\n  content: \"\\F16B\";\r\n}\r\n.fa-stack-overflow:before {\r\n  content: \"\\F16C\";\r\n}\r\n.fa-instagram:before {\r\n  content: \"\\F16D\";\r\n}\r\n.fa-flickr:before {\r\n  content: \"\\F16E\";\r\n}\r\n.fa-adn:before {\r\n  content: \"\\F170\";\r\n}\r\n.fa-bitbucket:before {\r\n  content: \"\\F171\";\r\n}\r\n.fa-bitbucket-square:before {\r\n  content: \"\\F172\";\r\n}\r\n.fa-tumblr:before {\r\n  content: \"\\F173\";\r\n}\r\n.fa-tumblr-square:before {\r\n  content: \"\\F174\";\r\n}\r\n.fa-long-arrow-down:before {\r\n  content: \"\\F175\";\r\n}\r\n.fa-long-arrow-up:before {\r\n  content: \"\\F176\";\r\n}\r\n.fa-long-arrow-left:before {\r\n  content: \"\\F177\";\r\n}\r\n.fa-long-arrow-right:before {\r\n  content: \"\\F178\";\r\n}\r\n.fa-apple:before {\r\n  content: \"\\F179\";\r\n}\r\n.fa-windows:before {\r\n  content: \"\\F17A\";\r\n}\r\n.fa-android:before {\r\n  content: \"\\F17B\";\r\n}\r\n.fa-linux:before {\r\n  content: \"\\F17C\";\r\n}\r\n.fa-dribbble:before {\r\n  content: \"\\F17D\";\r\n}\r\n.fa-skype:before {\r\n  content: \"\\F17E\";\r\n}\r\n.fa-foursquare:before {\r\n  content: \"\\F180\";\r\n}\r\n.fa-trello:before {\r\n  content: \"\\F181\";\r\n}\r\n.fa-female:before {\r\n  content: \"\\F182\";\r\n}\r\n.fa-male:before {\r\n  content: \"\\F183\";\r\n}\r\n.fa-gittip:before,\r\n.fa-gratipay:before {\r\n  content: \"\\F184\";\r\n}\r\n.fa-sun-o:before {\r\n  content: \"\\F185\";\r\n}\r\n.fa-moon-o:before {\r\n  content: \"\\F186\";\r\n}\r\n.fa-archive:before {\r\n  content: \"\\F187\";\r\n}\r\n.fa-bug:before {\r\n  content: \"\\F188\";\r\n}\r\n.fa-vk:before {\r\n  content: \"\\F189\";\r\n}\r\n.fa-weibo:before {\r\n  content: \"\\F18A\";\r\n}\r\n.fa-renren:before {\r\n  content: \"\\F18B\";\r\n}\r\n.fa-pagelines:before {\r\n  content: \"\\F18C\";\r\n}\r\n.fa-stack-exchange:before {\r\n  content: \"\\F18D\";\r\n}\r\n.fa-arrow-circle-o-right:before {\r\n  content: \"\\F18E\";\r\n}\r\n.fa-arrow-circle-o-left:before {\r\n  content: \"\\F190\";\r\n}\r\n.fa-toggle-left:before,\r\n.fa-caret-square-o-left:before {\r\n  content: \"\\F191\";\r\n}\r\n.fa-dot-circle-o:before {\r\n  content: \"\\F192\";\r\n}\r\n.fa-wheelchair:before {\r\n  content: \"\\F193\";\r\n}\r\n.fa-vimeo-square:before {\r\n  content: \"\\F194\";\r\n}\r\n.fa-turkish-lira:before,\r\n.fa-try:before {\r\n  content: \"\\F195\";\r\n}\r\n.fa-plus-square-o:before {\r\n  content: \"\\F196\";\r\n}\r\n.fa-space-shuttle:before {\r\n  content: \"\\F197\";\r\n}\r\n.fa-slack:before {\r\n  content: \"\\F198\";\r\n}\r\n.fa-envelope-square:before {\r\n  content: \"\\F199\";\r\n}\r\n.fa-wordpress:before {\r\n  content: \"\\F19A\";\r\n}\r\n.fa-openid:before {\r\n  content: \"\\F19B\";\r\n}\r\n.fa-institution:before,\r\n.fa-bank:before,\r\n.fa-university:before {\r\n  content: \"\\F19C\";\r\n}\r\n.fa-mortar-board:before,\r\n.fa-graduation-cap:before {\r\n  content: \"\\F19D\";\r\n}\r\n.fa-yahoo:before {\r\n  content: \"\\F19E\";\r\n}\r\n.fa-google:before {\r\n  content: \"\\F1A0\";\r\n}\r\n.fa-reddit:before {\r\n  content: \"\\F1A1\";\r\n}\r\n.fa-reddit-square:before {\r\n  content: \"\\F1A2\";\r\n}\r\n.fa-stumbleupon-circle:before {\r\n  content: \"\\F1A3\";\r\n}\r\n.fa-stumbleupon:before {\r\n  content: \"\\F1A4\";\r\n}\r\n.fa-delicious:before {\r\n  content: \"\\F1A5\";\r\n}\r\n.fa-digg:before {\r\n  content: \"\\F1A6\";\r\n}\r\n.fa-pied-piper-pp:before {\r\n  content: \"\\F1A7\";\r\n}\r\n.fa-pied-piper-alt:before {\r\n  content: \"\\F1A8\";\r\n}\r\n.fa-drupal:before {\r\n  content: \"\\F1A9\";\r\n}\r\n.fa-joomla:before {\r\n  content: \"\\F1AA\";\r\n}\r\n.fa-language:before {\r\n  content: \"\\F1AB\";\r\n}\r\n.fa-fax:before {\r\n  content: \"\\F1AC\";\r\n}\r\n.fa-building:before {\r\n  content: \"\\F1AD\";\r\n}\r\n.fa-child:before {\r\n  content: \"\\F1AE\";\r\n}\r\n.fa-paw:before {\r\n  content: \"\\F1B0\";\r\n}\r\n.fa-spoon:before {\r\n  content: \"\\F1B1\";\r\n}\r\n.fa-cube:before {\r\n  content: \"\\F1B2\";\r\n}\r\n.fa-cubes:before {\r\n  content: \"\\F1B3\";\r\n}\r\n.fa-behance:before {\r\n  content: \"\\F1B4\";\r\n}\r\n.fa-behance-square:before {\r\n  content: \"\\F1B5\";\r\n}\r\n.fa-steam:before {\r\n  content: \"\\F1B6\";\r\n}\r\n.fa-steam-square:before {\r\n  content: \"\\F1B7\";\r\n}\r\n.fa-recycle:before {\r\n  content: \"\\F1B8\";\r\n}\r\n.fa-automobile:before,\r\n.fa-car:before {\r\n  content: \"\\F1B9\";\r\n}\r\n.fa-cab:before,\r\n.fa-taxi:before {\r\n  content: \"\\F1BA\";\r\n}\r\n.fa-tree:before {\r\n  content: \"\\F1BB\";\r\n}\r\n.fa-spotify:before {\r\n  content: \"\\F1BC\";\r\n}\r\n.fa-deviantart:before {\r\n  content: \"\\F1BD\";\r\n}\r\n.fa-soundcloud:before {\r\n  content: \"\\F1BE\";\r\n}\r\n.fa-database:before {\r\n  content: \"\\F1C0\";\r\n}\r\n.fa-file-pdf-o:before {\r\n  content: \"\\F1C1\";\r\n}\r\n.fa-file-word-o:before {\r\n  content: \"\\F1C2\";\r\n}\r\n.fa-file-excel-o:before {\r\n  content: \"\\F1C3\";\r\n}\r\n.fa-file-powerpoint-o:before {\r\n  content: \"\\F1C4\";\r\n}\r\n.fa-file-photo-o:before,\r\n.fa-file-picture-o:before,\r\n.fa-file-image-o:before {\r\n  content: \"\\F1C5\";\r\n}\r\n.fa-file-zip-o:before,\r\n.fa-file-archive-o:before {\r\n  content: \"\\F1C6\";\r\n}\r\n.fa-file-sound-o:before,\r\n.fa-file-audio-o:before {\r\n  content: \"\\F1C7\";\r\n}\r\n.fa-file-movie-o:before,\r\n.fa-file-video-o:before {\r\n  content: \"\\F1C8\";\r\n}\r\n.fa-file-code-o:before {\r\n  content: \"\\F1C9\";\r\n}\r\n.fa-vine:before {\r\n  content: \"\\F1CA\";\r\n}\r\n.fa-codepen:before {\r\n  content: \"\\F1CB\";\r\n}\r\n.fa-jsfiddle:before {\r\n  content: \"\\F1CC\";\r\n}\r\n.fa-life-bouy:before,\r\n.fa-life-buoy:before,\r\n.fa-life-saver:before,\r\n.fa-support:before,\r\n.fa-life-ring:before {\r\n  content: \"\\F1CD\";\r\n}\r\n.fa-circle-o-notch:before {\r\n  content: \"\\F1CE\";\r\n}\r\n.fa-ra:before,\r\n.fa-resistance:before,\r\n.fa-rebel:before {\r\n  content: \"\\F1D0\";\r\n}\r\n.fa-ge:before,\r\n.fa-empire:before {\r\n  content: \"\\F1D1\";\r\n}\r\n.fa-git-square:before {\r\n  content: \"\\F1D2\";\r\n}\r\n.fa-git:before {\r\n  content: \"\\F1D3\";\r\n}\r\n.fa-y-combinator-square:before,\r\n.fa-yc-square:before,\r\n.fa-hacker-news:before {\r\n  content: \"\\F1D4\";\r\n}\r\n.fa-tencent-weibo:before {\r\n  content: \"\\F1D5\";\r\n}\r\n.fa-qq:before {\r\n  content: \"\\F1D6\";\r\n}\r\n.fa-wechat:before,\r\n.fa-weixin:before {\r\n  content: \"\\F1D7\";\r\n}\r\n.fa-send:before,\r\n.fa-paper-plane:before {\r\n  content: \"\\F1D8\";\r\n}\r\n.fa-send-o:before,\r\n.fa-paper-plane-o:before {\r\n  content: \"\\F1D9\";\r\n}\r\n.fa-history:before {\r\n  content: \"\\F1DA\";\r\n}\r\n.fa-circle-thin:before {\r\n  content: \"\\F1DB\";\r\n}\r\n.fa-header:before {\r\n  content: \"\\F1DC\";\r\n}\r\n.fa-paragraph:before {\r\n  content: \"\\F1DD\";\r\n}\r\n.fa-sliders:before {\r\n  content: \"\\F1DE\";\r\n}\r\n.fa-share-alt:before {\r\n  content: \"\\F1E0\";\r\n}\r\n.fa-share-alt-square:before {\r\n  content: \"\\F1E1\";\r\n}\r\n.fa-bomb:before {\r\n  content: \"\\F1E2\";\r\n}\r\n.fa-soccer-ball-o:before,\r\n.fa-futbol-o:before {\r\n  content: \"\\F1E3\";\r\n}\r\n.fa-tty:before {\r\n  content: \"\\F1E4\";\r\n}\r\n.fa-binoculars:before {\r\n  content: \"\\F1E5\";\r\n}\r\n.fa-plug:before {\r\n  content: \"\\F1E6\";\r\n}\r\n.fa-slideshare:before {\r\n  content: \"\\F1E7\";\r\n}\r\n.fa-twitch:before {\r\n  content: \"\\F1E8\";\r\n}\r\n.fa-yelp:before {\r\n  content: \"\\F1E9\";\r\n}\r\n.fa-newspaper-o:before {\r\n  content: \"\\F1EA\";\r\n}\r\n.fa-wifi:before {\r\n  content: \"\\F1EB\";\r\n}\r\n.fa-calculator:before {\r\n  content: \"\\F1EC\";\r\n}\r\n.fa-paypal:before {\r\n  content: \"\\F1ED\";\r\n}\r\n.fa-google-wallet:before {\r\n  content: \"\\F1EE\";\r\n}\r\n.fa-cc-visa:before {\r\n  content: \"\\F1F0\";\r\n}\r\n.fa-cc-mastercard:before {\r\n  content: \"\\F1F1\";\r\n}\r\n.fa-cc-discover:before {\r\n  content: \"\\F1F2\";\r\n}\r\n.fa-cc-amex:before {\r\n  content: \"\\F1F3\";\r\n}\r\n.fa-cc-paypal:before {\r\n  content: \"\\F1F4\";\r\n}\r\n.fa-cc-stripe:before {\r\n  content: \"\\F1F5\";\r\n}\r\n.fa-bell-slash:before {\r\n  content: \"\\F1F6\";\r\n}\r\n.fa-bell-slash-o:before {\r\n  content: \"\\F1F7\";\r\n}\r\n.fa-trash:before {\r\n  content: \"\\F1F8\";\r\n}\r\n.fa-copyright:before {\r\n  content: \"\\F1F9\";\r\n}\r\n.fa-at:before {\r\n  content: \"\\F1FA\";\r\n}\r\n.fa-eyedropper:before {\r\n  content: \"\\F1FB\";\r\n}\r\n.fa-paint-brush:before {\r\n  content: \"\\F1FC\";\r\n}\r\n.fa-birthday-cake:before {\r\n  content: \"\\F1FD\";\r\n}\r\n.fa-area-chart:before {\r\n  content: \"\\F1FE\";\r\n}\r\n.fa-pie-chart:before {\r\n  content: \"\\F200\";\r\n}\r\n.fa-line-chart:before {\r\n  content: \"\\F201\";\r\n}\r\n.fa-lastfm:before {\r\n  content: \"\\F202\";\r\n}\r\n.fa-lastfm-square:before {\r\n  content: \"\\F203\";\r\n}\r\n.fa-toggle-off:before {\r\n  content: \"\\F204\";\r\n}\r\n.fa-toggle-on:before {\r\n  content: \"\\F205\";\r\n}\r\n.fa-bicycle:before {\r\n  content: \"\\F206\";\r\n}\r\n.fa-bus:before {\r\n  content: \"\\F207\";\r\n}\r\n.fa-ioxhost:before {\r\n  content: \"\\F208\";\r\n}\r\n.fa-angellist:before {\r\n  content: \"\\F209\";\r\n}\r\n.fa-cc:before {\r\n  content: \"\\F20A\";\r\n}\r\n.fa-shekel:before,\r\n.fa-sheqel:before,\r\n.fa-ils:before {\r\n  content: \"\\F20B\";\r\n}\r\n.fa-meanpath:before {\r\n  content: \"\\F20C\";\r\n}\r\n.fa-buysellads:before {\r\n  content: \"\\F20D\";\r\n}\r\n.fa-connectdevelop:before {\r\n  content: \"\\F20E\";\r\n}\r\n.fa-dashcube:before {\r\n  content: \"\\F210\";\r\n}\r\n.fa-forumbee:before {\r\n  content: \"\\F211\";\r\n}\r\n.fa-leanpub:before {\r\n  content: \"\\F212\";\r\n}\r\n.fa-sellsy:before {\r\n  content: \"\\F213\";\r\n}\r\n.fa-shirtsinbulk:before {\r\n  content: \"\\F214\";\r\n}\r\n.fa-simplybuilt:before {\r\n  content: \"\\F215\";\r\n}\r\n.fa-skyatlas:before {\r\n  content: \"\\F216\";\r\n}\r\n.fa-cart-plus:before {\r\n  content: \"\\F217\";\r\n}\r\n.fa-cart-arrow-down:before {\r\n  content: \"\\F218\";\r\n}\r\n.fa-diamond:before {\r\n  content: \"\\F219\";\r\n}\r\n.fa-ship:before {\r\n  content: \"\\F21A\";\r\n}\r\n.fa-user-secret:before {\r\n  content: \"\\F21B\";\r\n}\r\n.fa-motorcycle:before {\r\n  content: \"\\F21C\";\r\n}\r\n.fa-street-view:before {\r\n  content: \"\\F21D\";\r\n}\r\n.fa-heartbeat:before {\r\n  content: \"\\F21E\";\r\n}\r\n.fa-venus:before {\r\n  content: \"\\F221\";\r\n}\r\n.fa-mars:before {\r\n  content: \"\\F222\";\r\n}\r\n.fa-mercury:before {\r\n  content: \"\\F223\";\r\n}\r\n.fa-intersex:before,\r\n.fa-transgender:before {\r\n  content: \"\\F224\";\r\n}\r\n.fa-transgender-alt:before {\r\n  content: \"\\F225\";\r\n}\r\n.fa-venus-double:before {\r\n  content: \"\\F226\";\r\n}\r\n.fa-mars-double:before {\r\n  content: \"\\F227\";\r\n}\r\n.fa-venus-mars:before {\r\n  content: \"\\F228\";\r\n}\r\n.fa-mars-stroke:before {\r\n  content: \"\\F229\";\r\n}\r\n.fa-mars-stroke-v:before {\r\n  content: \"\\F22A\";\r\n}\r\n.fa-mars-stroke-h:before {\r\n  content: \"\\F22B\";\r\n}\r\n.fa-neuter:before {\r\n  content: \"\\F22C\";\r\n}\r\n.fa-genderless:before {\r\n  content: \"\\F22D\";\r\n}\r\n.fa-facebook-official:before {\r\n  content: \"\\F230\";\r\n}\r\n.fa-pinterest-p:before {\r\n  content: \"\\F231\";\r\n}\r\n.fa-whatsapp:before {\r\n  content: \"\\F232\";\r\n}\r\n.fa-server:before {\r\n  content: \"\\F233\";\r\n}\r\n.fa-user-plus:before {\r\n  content: \"\\F234\";\r\n}\r\n.fa-user-times:before {\r\n  content: \"\\F235\";\r\n}\r\n.fa-hotel:before,\r\n.fa-bed:before {\r\n  content: \"\\F236\";\r\n}\r\n.fa-viacoin:before {\r\n  content: \"\\F237\";\r\n}\r\n.fa-train:before {\r\n  content: \"\\F238\";\r\n}\r\n.fa-subway:before {\r\n  content: \"\\F239\";\r\n}\r\n.fa-medium:before {\r\n  content: \"\\F23A\";\r\n}\r\n.fa-yc:before,\r\n.fa-y-combinator:before {\r\n  content: \"\\F23B\";\r\n}\r\n.fa-optin-monster:before {\r\n  content: \"\\F23C\";\r\n}\r\n.fa-opencart:before {\r\n  content: \"\\F23D\";\r\n}\r\n.fa-expeditedssl:before {\r\n  content: \"\\F23E\";\r\n}\r\n.fa-battery-4:before,\r\n.fa-battery:before,\r\n.fa-battery-full:before {\r\n  content: \"\\F240\";\r\n}\r\n.fa-battery-3:before,\r\n.fa-battery-three-quarters:before {\r\n  content: \"\\F241\";\r\n}\r\n.fa-battery-2:before,\r\n.fa-battery-half:before {\r\n  content: \"\\F242\";\r\n}\r\n.fa-battery-1:before,\r\n.fa-battery-quarter:before {\r\n  content: \"\\F243\";\r\n}\r\n.fa-battery-0:before,\r\n.fa-battery-empty:before {\r\n  content: \"\\F244\";\r\n}\r\n.fa-mouse-pointer:before {\r\n  content: \"\\F245\";\r\n}\r\n.fa-i-cursor:before {\r\n  content: \"\\F246\";\r\n}\r\n.fa-object-group:before {\r\n  content: \"\\F247\";\r\n}\r\n.fa-object-ungroup:before {\r\n  content: \"\\F248\";\r\n}\r\n.fa-sticky-note:before {\r\n  content: \"\\F249\";\r\n}\r\n.fa-sticky-note-o:before {\r\n  content: \"\\F24A\";\r\n}\r\n.fa-cc-jcb:before {\r\n  content: \"\\F24B\";\r\n}\r\n.fa-cc-diners-club:before {\r\n  content: \"\\F24C\";\r\n}\r\n.fa-clone:before {\r\n  content: \"\\F24D\";\r\n}\r\n.fa-balance-scale:before {\r\n  content: \"\\F24E\";\r\n}\r\n.fa-hourglass-o:before {\r\n  content: \"\\F250\";\r\n}\r\n.fa-hourglass-1:before,\r\n.fa-hourglass-start:before {\r\n  content: \"\\F251\";\r\n}\r\n.fa-hourglass-2:before,\r\n.fa-hourglass-half:before {\r\n  content: \"\\F252\";\r\n}\r\n.fa-hourglass-3:before,\r\n.fa-hourglass-end:before {\r\n  content: \"\\F253\";\r\n}\r\n.fa-hourglass:before {\r\n  content: \"\\F254\";\r\n}\r\n.fa-hand-grab-o:before,\r\n.fa-hand-rock-o:before {\r\n  content: \"\\F255\";\r\n}\r\n.fa-hand-stop-o:before,\r\n.fa-hand-paper-o:before {\r\n  content: \"\\F256\";\r\n}\r\n.fa-hand-scissors-o:before {\r\n  content: \"\\F257\";\r\n}\r\n.fa-hand-lizard-o:before {\r\n  content: \"\\F258\";\r\n}\r\n.fa-hand-spock-o:before {\r\n  content: \"\\F259\";\r\n}\r\n.fa-hand-pointer-o:before {\r\n  content: \"\\F25A\";\r\n}\r\n.fa-hand-peace-o:before {\r\n  content: \"\\F25B\";\r\n}\r\n.fa-trademark:before {\r\n  content: \"\\F25C\";\r\n}\r\n.fa-registered:before {\r\n  content: \"\\F25D\";\r\n}\r\n.fa-creative-commons:before {\r\n  content: \"\\F25E\";\r\n}\r\n.fa-gg:before {\r\n  content: \"\\F260\";\r\n}\r\n.fa-gg-circle:before {\r\n  content: \"\\F261\";\r\n}\r\n.fa-tripadvisor:before {\r\n  content: \"\\F262\";\r\n}\r\n.fa-odnoklassniki:before {\r\n  content: \"\\F263\";\r\n}\r\n.fa-odnoklassniki-square:before {\r\n  content: \"\\F264\";\r\n}\r\n.fa-get-pocket:before {\r\n  content: \"\\F265\";\r\n}\r\n.fa-wikipedia-w:before {\r\n  content: \"\\F266\";\r\n}\r\n.fa-safari:before {\r\n  content: \"\\F267\";\r\n}\r\n.fa-chrome:before {\r\n  content: \"\\F268\";\r\n}\r\n.fa-firefox:before {\r\n  content: \"\\F269\";\r\n}\r\n.fa-opera:before {\r\n  content: \"\\F26A\";\r\n}\r\n.fa-internet-explorer:before {\r\n  content: \"\\F26B\";\r\n}\r\n.fa-tv:before,\r\n.fa-television:before {\r\n  content: \"\\F26C\";\r\n}\r\n.fa-contao:before {\r\n  content: \"\\F26D\";\r\n}\r\n.fa-500px:before {\r\n  content: \"\\F26E\";\r\n}\r\n.fa-amazon:before {\r\n  content: \"\\F270\";\r\n}\r\n.fa-calendar-plus-o:before {\r\n  content: \"\\F271\";\r\n}\r\n.fa-calendar-minus-o:before {\r\n  content: \"\\F272\";\r\n}\r\n.fa-calendar-times-o:before {\r\n  content: \"\\F273\";\r\n}\r\n.fa-calendar-check-o:before {\r\n  content: \"\\F274\";\r\n}\r\n.fa-industry:before {\r\n  content: \"\\F275\";\r\n}\r\n.fa-map-pin:before {\r\n  content: \"\\F276\";\r\n}\r\n.fa-map-signs:before {\r\n  content: \"\\F277\";\r\n}\r\n.fa-map-o:before {\r\n  content: \"\\F278\";\r\n}\r\n.fa-map:before {\r\n  content: \"\\F279\";\r\n}\r\n.fa-commenting:before {\r\n  content: \"\\F27A\";\r\n}\r\n.fa-commenting-o:before {\r\n  content: \"\\F27B\";\r\n}\r\n.fa-houzz:before {\r\n  content: \"\\F27C\";\r\n}\r\n.fa-vimeo:before {\r\n  content: \"\\F27D\";\r\n}\r\n.fa-black-tie:before {\r\n  content: \"\\F27E\";\r\n}\r\n.fa-fonticons:before {\r\n  content: \"\\F280\";\r\n}\r\n.fa-reddit-alien:before {\r\n  content: \"\\F281\";\r\n}\r\n.fa-edge:before {\r\n  content: \"\\F282\";\r\n}\r\n.fa-credit-card-alt:before {\r\n  content: \"\\F283\";\r\n}\r\n.fa-codiepie:before {\r\n  content: \"\\F284\";\r\n}\r\n.fa-modx:before {\r\n  content: \"\\F285\";\r\n}\r\n.fa-fort-awesome:before {\r\n  content: \"\\F286\";\r\n}\r\n.fa-usb:before {\r\n  content: \"\\F287\";\r\n}\r\n.fa-product-hunt:before {\r\n  content: \"\\F288\";\r\n}\r\n.fa-mixcloud:before {\r\n  content: \"\\F289\";\r\n}\r\n.fa-scribd:before {\r\n  content: \"\\F28A\";\r\n}\r\n.fa-pause-circle:before {\r\n  content: \"\\F28B\";\r\n}\r\n.fa-pause-circle-o:before {\r\n  content: \"\\F28C\";\r\n}\r\n.fa-stop-circle:before {\r\n  content: \"\\F28D\";\r\n}\r\n.fa-stop-circle-o:before {\r\n  content: \"\\F28E\";\r\n}\r\n.fa-shopping-bag:before {\r\n  content: \"\\F290\";\r\n}\r\n.fa-shopping-basket:before {\r\n  content: \"\\F291\";\r\n}\r\n.fa-hashtag:before {\r\n  content: \"\\F292\";\r\n}\r\n.fa-bluetooth:before {\r\n  content: \"\\F293\";\r\n}\r\n.fa-bluetooth-b:before {\r\n  content: \"\\F294\";\r\n}\r\n.fa-percent:before {\r\n  content: \"\\F295\";\r\n}\r\n.fa-gitlab:before {\r\n  content: \"\\F296\";\r\n}\r\n.fa-wpbeginner:before {\r\n  content: \"\\F297\";\r\n}\r\n.fa-wpforms:before {\r\n  content: \"\\F298\";\r\n}\r\n.fa-envira:before {\r\n  content: \"\\F299\";\r\n}\r\n.fa-universal-access:before {\r\n  content: \"\\F29A\";\r\n}\r\n.fa-wheelchair-alt:before {\r\n  content: \"\\F29B\";\r\n}\r\n.fa-question-circle-o:before {\r\n  content: \"\\F29C\";\r\n}\r\n.fa-blind:before {\r\n  content: \"\\F29D\";\r\n}\r\n.fa-audio-description:before {\r\n  content: \"\\F29E\";\r\n}\r\n.fa-volume-control-phone:before {\r\n  content: \"\\F2A0\";\r\n}\r\n.fa-braille:before {\r\n  content: \"\\F2A1\";\r\n}\r\n.fa-assistive-listening-systems:before {\r\n  content: \"\\F2A2\";\r\n}\r\n.fa-asl-interpreting:before,\r\n.fa-american-sign-language-interpreting:before {\r\n  content: \"\\F2A3\";\r\n}\r\n.fa-deafness:before,\r\n.fa-hard-of-hearing:before,\r\n.fa-deaf:before {\r\n  content: \"\\F2A4\";\r\n}\r\n.fa-glide:before {\r\n  content: \"\\F2A5\";\r\n}\r\n.fa-glide-g:before {\r\n  content: \"\\F2A6\";\r\n}\r\n.fa-signing:before,\r\n.fa-sign-language:before {\r\n  content: \"\\F2A7\";\r\n}\r\n.fa-low-vision:before {\r\n  content: \"\\F2A8\";\r\n}\r\n.fa-viadeo:before {\r\n  content: \"\\F2A9\";\r\n}\r\n.fa-viadeo-square:before {\r\n  content: \"\\F2AA\";\r\n}\r\n.fa-snapchat:before {\r\n  content: \"\\F2AB\";\r\n}\r\n.fa-snapchat-ghost:before {\r\n  content: \"\\F2AC\";\r\n}\r\n.fa-snapchat-square:before {\r\n  content: \"\\F2AD\";\r\n}\r\n.fa-pied-piper:before {\r\n  content: \"\\F2AE\";\r\n}\r\n.fa-first-order:before {\r\n  content: \"\\F2B0\";\r\n}\r\n.fa-yoast:before {\r\n  content: \"\\F2B1\";\r\n}\r\n.fa-themeisle:before {\r\n  content: \"\\F2B2\";\r\n}\r\n.fa-google-plus-circle:before,\r\n.fa-google-plus-official:before {\r\n  content: \"\\F2B3\";\r\n}\r\n.fa-fa:before,\r\n.fa-font-awesome:before {\r\n  content: \"\\F2B4\";\r\n}\r\n.fa-handshake-o:before {\r\n  content: \"\\F2B5\";\r\n}\r\n.fa-envelope-open:before {\r\n  content: \"\\F2B6\";\r\n}\r\n.fa-envelope-open-o:before {\r\n  content: \"\\F2B7\";\r\n}\r\n.fa-linode:before {\r\n  content: \"\\F2B8\";\r\n}\r\n.fa-address-book:before {\r\n  content: \"\\F2B9\";\r\n}\r\n.fa-address-book-o:before {\r\n  content: \"\\F2BA\";\r\n}\r\n.fa-vcard:before,\r\n.fa-address-card:before {\r\n  content: \"\\F2BB\";\r\n}\r\n.fa-vcard-o:before,\r\n.fa-address-card-o:before {\r\n  content: \"\\F2BC\";\r\n}\r\n.fa-user-circle:before {\r\n  content: \"\\F2BD\";\r\n}\r\n.fa-user-circle-o:before {\r\n  content: \"\\F2BE\";\r\n}\r\n.fa-user-o:before {\r\n  content: \"\\F2C0\";\r\n}\r\n.fa-id-badge:before {\r\n  content: \"\\F2C1\";\r\n}\r\n.fa-drivers-license:before,\r\n.fa-id-card:before {\r\n  content: \"\\F2C2\";\r\n}\r\n.fa-drivers-license-o:before,\r\n.fa-id-card-o:before {\r\n  content: \"\\F2C3\";\r\n}\r\n.fa-quora:before {\r\n  content: \"\\F2C4\";\r\n}\r\n.fa-free-code-camp:before {\r\n  content: \"\\F2C5\";\r\n}\r\n.fa-telegram:before {\r\n  content: \"\\F2C6\";\r\n}\r\n.fa-thermometer-4:before,\r\n.fa-thermometer:before,\r\n.fa-thermometer-full:before {\r\n  content: \"\\F2C7\";\r\n}\r\n.fa-thermometer-3:before,\r\n.fa-thermometer-three-quarters:before {\r\n  content: \"\\F2C8\";\r\n}\r\n.fa-thermometer-2:before,\r\n.fa-thermometer-half:before {\r\n  content: \"\\F2C9\";\r\n}\r\n.fa-thermometer-1:before,\r\n.fa-thermometer-quarter:before {\r\n  content: \"\\F2CA\";\r\n}\r\n.fa-thermometer-0:before,\r\n.fa-thermometer-empty:before {\r\n  content: \"\\F2CB\";\r\n}\r\n.fa-shower:before {\r\n  content: \"\\F2CC\";\r\n}\r\n.fa-bathtub:before,\r\n.fa-s15:before,\r\n.fa-bath:before {\r\n  content: \"\\F2CD\";\r\n}\r\n.fa-podcast:before {\r\n  content: \"\\F2CE\";\r\n}\r\n.fa-window-maximize:before {\r\n  content: \"\\F2D0\";\r\n}\r\n.fa-window-minimize:before {\r\n  content: \"\\F2D1\";\r\n}\r\n.fa-window-restore:before {\r\n  content: \"\\F2D2\";\r\n}\r\n.fa-times-rectangle:before,\r\n.fa-window-close:before {\r\n  content: \"\\F2D3\";\r\n}\r\n.fa-times-rectangle-o:before,\r\n.fa-window-close-o:before {\r\n  content: \"\\F2D4\";\r\n}\r\n.fa-bandcamp:before {\r\n  content: \"\\F2D5\";\r\n}\r\n.fa-grav:before {\r\n  content: \"\\F2D6\";\r\n}\r\n.fa-etsy:before {\r\n  content: \"\\F2D7\";\r\n}\r\n.fa-imdb:before {\r\n  content: \"\\F2D8\";\r\n}\r\n.fa-ravelry:before {\r\n  content: \"\\F2D9\";\r\n}\r\n.fa-eercast:before {\r\n  content: \"\\F2DA\";\r\n}\r\n.fa-microchip:before {\r\n  content: \"\\F2DB\";\r\n}\r\n.fa-snowflake-o:before {\r\n  content: \"\\F2DC\";\r\n}\r\n.fa-superpowers:before {\r\n  content: \"\\F2DD\";\r\n}\r\n.fa-wpexplorer:before {\r\n  content: \"\\F2DE\";\r\n}\r\n.fa-meetup:before {\r\n  content: \"\\F2E0\";\r\n}\r\n.sr-only {\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 1px;\r\n  padding: 0;\r\n  margin: -1px;\r\n  overflow: hidden;\r\n  clip: rect(0, 0, 0, 0);\r\n  border: 0;\r\n}\r\n.sr-only-focusable:active,\r\n.sr-only-focusable:focus {\r\n  position: static;\r\n  width: auto;\r\n  height: auto;\r\n  margin: 0;\r\n  overflow: visible;\r\n  clip: auto;\r\n}\r\n", ""]);
+exports.push([module.i, "/*!\r\n *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome\r\n *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)\r\n */\r\n/* FONT PATH\r\n * -------------------------- */\r\n@font-face {\r\n  font-family: 'FontAwesome';\r\n  src: url(" + __webpack_require__(99) + ");\r\n  src: url(" + __webpack_require__(98) + "?#iefix&v=4.7.0) format('embedded-opentype'), url(" + __webpack_require__(102) + ") format('woff2'), url(" + __webpack_require__(103) + ") format('woff'), url(" + __webpack_require__(101) + ") format('truetype'), url(" + __webpack_require__(100) + "#fontawesomeregular) format('svg');\r\n  font-weight: normal;\r\n  font-style: normal;\r\n}\r\n.fa {\r\n  display: inline-block;\r\n  font: normal normal normal 14px/1 FontAwesome;\r\n  font-size: inherit;\r\n  text-rendering: auto;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n/* makes the font 33% larger relative to the icon container */\r\n.fa-lg {\r\n  font-size: 1.33333333em;\r\n  line-height: 0.75em;\r\n  vertical-align: -15%;\r\n}\r\n.fa-2x {\r\n  font-size: 2em;\r\n}\r\n.fa-3x {\r\n  font-size: 3em;\r\n}\r\n.fa-4x {\r\n  font-size: 4em;\r\n}\r\n.fa-5x {\r\n  font-size: 5em;\r\n}\r\n.fa-fw {\r\n  width: 1.28571429em;\r\n  text-align: center;\r\n}\r\n.fa-ul {\r\n  padding-left: 0;\r\n  margin-left: 2.14285714em;\r\n  list-style-type: none;\r\n}\r\n.fa-ul > li {\r\n  position: relative;\r\n}\r\n.fa-li {\r\n  position: absolute;\r\n  left: -2.14285714em;\r\n  width: 2.14285714em;\r\n  top: 0.14285714em;\r\n  text-align: center;\r\n}\r\n.fa-li.fa-lg {\r\n  left: -1.85714286em;\r\n}\r\n.fa-border {\r\n  padding: .2em .25em .15em;\r\n  border: solid 0.08em #eeeeee;\r\n  border-radius: .1em;\r\n}\r\n.fa-pull-left {\r\n  float: left;\r\n}\r\n.fa-pull-right {\r\n  float: right;\r\n}\r\n.fa.fa-pull-left {\r\n  margin-right: .3em;\r\n}\r\n.fa.fa-pull-right {\r\n  margin-left: .3em;\r\n}\r\n/* Deprecated as of 4.4.0 */\r\n.pull-right {\r\n  float: right;\r\n}\r\n.pull-left {\r\n  float: left;\r\n}\r\n.fa.pull-left {\r\n  margin-right: .3em;\r\n}\r\n.fa.pull-right {\r\n  margin-left: .3em;\r\n}\r\n.fa-spin {\r\n  -webkit-animation: fa-spin 2s infinite linear;\r\n  animation: fa-spin 2s infinite linear;\r\n}\r\n.fa-pulse {\r\n  -webkit-animation: fa-spin 1s infinite steps(8);\r\n  animation: fa-spin 1s infinite steps(8);\r\n}\r\n@-webkit-keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg);\r\n  }\r\n}\r\n@keyframes fa-spin {\r\n  0% {\r\n    -webkit-transform: rotate(0deg);\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    -webkit-transform: rotate(359deg);\r\n    transform: rotate(359deg);\r\n  }\r\n}\r\n.fa-rotate-90 {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=1)\";\r\n  -webkit-transform: rotate(90deg);\r\n  -ms-transform: rotate(90deg);\r\n  transform: rotate(90deg);\r\n}\r\n.fa-rotate-180 {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)\";\r\n  -webkit-transform: rotate(180deg);\r\n  -ms-transform: rotate(180deg);\r\n  transform: rotate(180deg);\r\n}\r\n.fa-rotate-270 {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=3)\";\r\n  -webkit-transform: rotate(270deg);\r\n  -ms-transform: rotate(270deg);\r\n  transform: rotate(270deg);\r\n}\r\n.fa-flip-horizontal {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)\";\r\n  -webkit-transform: scale(-1, 1);\r\n  -ms-transform: scale(-1, 1);\r\n  transform: scale(-1, 1);\r\n}\r\n.fa-flip-vertical {\r\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)\";\r\n  -webkit-transform: scale(1, -1);\r\n  -ms-transform: scale(1, -1);\r\n  transform: scale(1, -1);\r\n}\r\n:root .fa-rotate-90,\r\n:root .fa-rotate-180,\r\n:root .fa-rotate-270,\r\n:root .fa-flip-horizontal,\r\n:root .fa-flip-vertical {\r\n  filter: none;\r\n}\r\n.fa-stack {\r\n  position: relative;\r\n  display: inline-block;\r\n  width: 2em;\r\n  height: 2em;\r\n  line-height: 2em;\r\n  vertical-align: middle;\r\n}\r\n.fa-stack-1x,\r\n.fa-stack-2x {\r\n  position: absolute;\r\n  left: 0;\r\n  width: 100%;\r\n  text-align: center;\r\n}\r\n.fa-stack-1x {\r\n  line-height: inherit;\r\n}\r\n.fa-stack-2x {\r\n  font-size: 2em;\r\n}\r\n.fa-inverse {\r\n  color: #ffffff;\r\n}\r\n/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen\r\n   readers do not read off random characters that represent icons */\r\n.fa-glass:before {\r\n  content: \"\\F000\";\r\n}\r\n.fa-music:before {\r\n  content: \"\\F001\";\r\n}\r\n.fa-search:before {\r\n  content: \"\\F002\";\r\n}\r\n.fa-envelope-o:before {\r\n  content: \"\\F003\";\r\n}\r\n.fa-heart:before {\r\n  content: \"\\F004\";\r\n}\r\n.fa-star:before {\r\n  content: \"\\F005\";\r\n}\r\n.fa-star-o:before {\r\n  content: \"\\F006\";\r\n}\r\n.fa-user:before {\r\n  content: \"\\F007\";\r\n}\r\n.fa-film:before {\r\n  content: \"\\F008\";\r\n}\r\n.fa-th-large:before {\r\n  content: \"\\F009\";\r\n}\r\n.fa-th:before {\r\n  content: \"\\F00A\";\r\n}\r\n.fa-th-list:before {\r\n  content: \"\\F00B\";\r\n}\r\n.fa-check:before {\r\n  content: \"\\F00C\";\r\n}\r\n.fa-remove:before,\r\n.fa-close:before,\r\n.fa-times:before {\r\n  content: \"\\F00D\";\r\n}\r\n.fa-search-plus:before {\r\n  content: \"\\F00E\";\r\n}\r\n.fa-search-minus:before {\r\n  content: \"\\F010\";\r\n}\r\n.fa-power-off:before {\r\n  content: \"\\F011\";\r\n}\r\n.fa-signal:before {\r\n  content: \"\\F012\";\r\n}\r\n.fa-gear:before,\r\n.fa-cog:before {\r\n  content: \"\\F013\";\r\n}\r\n.fa-trash-o:before {\r\n  content: \"\\F014\";\r\n}\r\n.fa-home:before {\r\n  content: \"\\F015\";\r\n}\r\n.fa-file-o:before {\r\n  content: \"\\F016\";\r\n}\r\n.fa-clock-o:before {\r\n  content: \"\\F017\";\r\n}\r\n.fa-road:before {\r\n  content: \"\\F018\";\r\n}\r\n.fa-download:before {\r\n  content: \"\\F019\";\r\n}\r\n.fa-arrow-circle-o-down:before {\r\n  content: \"\\F01A\";\r\n}\r\n.fa-arrow-circle-o-up:before {\r\n  content: \"\\F01B\";\r\n}\r\n.fa-inbox:before {\r\n  content: \"\\F01C\";\r\n}\r\n.fa-play-circle-o:before {\r\n  content: \"\\F01D\";\r\n}\r\n.fa-rotate-right:before,\r\n.fa-repeat:before {\r\n  content: \"\\F01E\";\r\n}\r\n.fa-refresh:before {\r\n  content: \"\\F021\";\r\n}\r\n.fa-list-alt:before {\r\n  content: \"\\F022\";\r\n}\r\n.fa-lock:before {\r\n  content: \"\\F023\";\r\n}\r\n.fa-flag:before {\r\n  content: \"\\F024\";\r\n}\r\n.fa-headphones:before {\r\n  content: \"\\F025\";\r\n}\r\n.fa-volume-off:before {\r\n  content: \"\\F026\";\r\n}\r\n.fa-volume-down:before {\r\n  content: \"\\F027\";\r\n}\r\n.fa-volume-up:before {\r\n  content: \"\\F028\";\r\n}\r\n.fa-qrcode:before {\r\n  content: \"\\F029\";\r\n}\r\n.fa-barcode:before {\r\n  content: \"\\F02A\";\r\n}\r\n.fa-tag:before {\r\n  content: \"\\F02B\";\r\n}\r\n.fa-tags:before {\r\n  content: \"\\F02C\";\r\n}\r\n.fa-book:before {\r\n  content: \"\\F02D\";\r\n}\r\n.fa-bookmark:before {\r\n  content: \"\\F02E\";\r\n}\r\n.fa-print:before {\r\n  content: \"\\F02F\";\r\n}\r\n.fa-camera:before {\r\n  content: \"\\F030\";\r\n}\r\n.fa-font:before {\r\n  content: \"\\F031\";\r\n}\r\n.fa-bold:before {\r\n  content: \"\\F032\";\r\n}\r\n.fa-italic:before {\r\n  content: \"\\F033\";\r\n}\r\n.fa-text-height:before {\r\n  content: \"\\F034\";\r\n}\r\n.fa-text-width:before {\r\n  content: \"\\F035\";\r\n}\r\n.fa-align-left:before {\r\n  content: \"\\F036\";\r\n}\r\n.fa-align-center:before {\r\n  content: \"\\F037\";\r\n}\r\n.fa-align-right:before {\r\n  content: \"\\F038\";\r\n}\r\n.fa-align-justify:before {\r\n  content: \"\\F039\";\r\n}\r\n.fa-list:before {\r\n  content: \"\\F03A\";\r\n}\r\n.fa-dedent:before,\r\n.fa-outdent:before {\r\n  content: \"\\F03B\";\r\n}\r\n.fa-indent:before {\r\n  content: \"\\F03C\";\r\n}\r\n.fa-video-camera:before {\r\n  content: \"\\F03D\";\r\n}\r\n.fa-photo:before,\r\n.fa-image:before,\r\n.fa-picture-o:before {\r\n  content: \"\\F03E\";\r\n}\r\n.fa-pencil:before {\r\n  content: \"\\F040\";\r\n}\r\n.fa-map-marker:before {\r\n  content: \"\\F041\";\r\n}\r\n.fa-adjust:before {\r\n  content: \"\\F042\";\r\n}\r\n.fa-tint:before {\r\n  content: \"\\F043\";\r\n}\r\n.fa-edit:before,\r\n.fa-pencil-square-o:before {\r\n  content: \"\\F044\";\r\n}\r\n.fa-share-square-o:before {\r\n  content: \"\\F045\";\r\n}\r\n.fa-check-square-o:before {\r\n  content: \"\\F046\";\r\n}\r\n.fa-arrows:before {\r\n  content: \"\\F047\";\r\n}\r\n.fa-step-backward:before {\r\n  content: \"\\F048\";\r\n}\r\n.fa-fast-backward:before {\r\n  content: \"\\F049\";\r\n}\r\n.fa-backward:before {\r\n  content: \"\\F04A\";\r\n}\r\n.fa-play:before {\r\n  content: \"\\F04B\";\r\n}\r\n.fa-pause:before {\r\n  content: \"\\F04C\";\r\n}\r\n.fa-stop:before {\r\n  content: \"\\F04D\";\r\n}\r\n.fa-forward:before {\r\n  content: \"\\F04E\";\r\n}\r\n.fa-fast-forward:before {\r\n  content: \"\\F050\";\r\n}\r\n.fa-step-forward:before {\r\n  content: \"\\F051\";\r\n}\r\n.fa-eject:before {\r\n  content: \"\\F052\";\r\n}\r\n.fa-chevron-left:before {\r\n  content: \"\\F053\";\r\n}\r\n.fa-chevron-right:before {\r\n  content: \"\\F054\";\r\n}\r\n.fa-plus-circle:before {\r\n  content: \"\\F055\";\r\n}\r\n.fa-minus-circle:before {\r\n  content: \"\\F056\";\r\n}\r\n.fa-times-circle:before {\r\n  content: \"\\F057\";\r\n}\r\n.fa-check-circle:before {\r\n  content: \"\\F058\";\r\n}\r\n.fa-question-circle:before {\r\n  content: \"\\F059\";\r\n}\r\n.fa-info-circle:before {\r\n  content: \"\\F05A\";\r\n}\r\n.fa-crosshairs:before {\r\n  content: \"\\F05B\";\r\n}\r\n.fa-times-circle-o:before {\r\n  content: \"\\F05C\";\r\n}\r\n.fa-check-circle-o:before {\r\n  content: \"\\F05D\";\r\n}\r\n.fa-ban:before {\r\n  content: \"\\F05E\";\r\n}\r\n.fa-arrow-left:before {\r\n  content: \"\\F060\";\r\n}\r\n.fa-arrow-right:before {\r\n  content: \"\\F061\";\r\n}\r\n.fa-arrow-up:before {\r\n  content: \"\\F062\";\r\n}\r\n.fa-arrow-down:before {\r\n  content: \"\\F063\";\r\n}\r\n.fa-mail-forward:before,\r\n.fa-share:before {\r\n  content: \"\\F064\";\r\n}\r\n.fa-expand:before {\r\n  content: \"\\F065\";\r\n}\r\n.fa-compress:before {\r\n  content: \"\\F066\";\r\n}\r\n.fa-plus:before {\r\n  content: \"\\F067\";\r\n}\r\n.fa-minus:before {\r\n  content: \"\\F068\";\r\n}\r\n.fa-asterisk:before {\r\n  content: \"\\F069\";\r\n}\r\n.fa-exclamation-circle:before {\r\n  content: \"\\F06A\";\r\n}\r\n.fa-gift:before {\r\n  content: \"\\F06B\";\r\n}\r\n.fa-leaf:before {\r\n  content: \"\\F06C\";\r\n}\r\n.fa-fire:before {\r\n  content: \"\\F06D\";\r\n}\r\n.fa-eye:before {\r\n  content: \"\\F06E\";\r\n}\r\n.fa-eye-slash:before {\r\n  content: \"\\F070\";\r\n}\r\n.fa-warning:before,\r\n.fa-exclamation-triangle:before {\r\n  content: \"\\F071\";\r\n}\r\n.fa-plane:before {\r\n  content: \"\\F072\";\r\n}\r\n.fa-calendar:before {\r\n  content: \"\\F073\";\r\n}\r\n.fa-random:before {\r\n  content: \"\\F074\";\r\n}\r\n.fa-comment:before {\r\n  content: \"\\F075\";\r\n}\r\n.fa-magnet:before {\r\n  content: \"\\F076\";\r\n}\r\n.fa-chevron-up:before {\r\n  content: \"\\F077\";\r\n}\r\n.fa-chevron-down:before {\r\n  content: \"\\F078\";\r\n}\r\n.fa-retweet:before {\r\n  content: \"\\F079\";\r\n}\r\n.fa-shopping-cart:before {\r\n  content: \"\\F07A\";\r\n}\r\n.fa-folder:before {\r\n  content: \"\\F07B\";\r\n}\r\n.fa-folder-open:before {\r\n  content: \"\\F07C\";\r\n}\r\n.fa-arrows-v:before {\r\n  content: \"\\F07D\";\r\n}\r\n.fa-arrows-h:before {\r\n  content: \"\\F07E\";\r\n}\r\n.fa-bar-chart-o:before,\r\n.fa-bar-chart:before {\r\n  content: \"\\F080\";\r\n}\r\n.fa-twitter-square:before {\r\n  content: \"\\F081\";\r\n}\r\n.fa-facebook-square:before {\r\n  content: \"\\F082\";\r\n}\r\n.fa-camera-retro:before {\r\n  content: \"\\F083\";\r\n}\r\n.fa-key:before {\r\n  content: \"\\F084\";\r\n}\r\n.fa-gears:before,\r\n.fa-cogs:before {\r\n  content: \"\\F085\";\r\n}\r\n.fa-comments:before {\r\n  content: \"\\F086\";\r\n}\r\n.fa-thumbs-o-up:before {\r\n  content: \"\\F087\";\r\n}\r\n.fa-thumbs-o-down:before {\r\n  content: \"\\F088\";\r\n}\r\n.fa-star-half:before {\r\n  content: \"\\F089\";\r\n}\r\n.fa-heart-o:before {\r\n  content: \"\\F08A\";\r\n}\r\n.fa-sign-out:before {\r\n  content: \"\\F08B\";\r\n}\r\n.fa-linkedin-square:before {\r\n  content: \"\\F08C\";\r\n}\r\n.fa-thumb-tack:before {\r\n  content: \"\\F08D\";\r\n}\r\n.fa-external-link:before {\r\n  content: \"\\F08E\";\r\n}\r\n.fa-sign-in:before {\r\n  content: \"\\F090\";\r\n}\r\n.fa-trophy:before {\r\n  content: \"\\F091\";\r\n}\r\n.fa-github-square:before {\r\n  content: \"\\F092\";\r\n}\r\n.fa-upload:before {\r\n  content: \"\\F093\";\r\n}\r\n.fa-lemon-o:before {\r\n  content: \"\\F094\";\r\n}\r\n.fa-phone:before {\r\n  content: \"\\F095\";\r\n}\r\n.fa-square-o:before {\r\n  content: \"\\F096\";\r\n}\r\n.fa-bookmark-o:before {\r\n  content: \"\\F097\";\r\n}\r\n.fa-phone-square:before {\r\n  content: \"\\F098\";\r\n}\r\n.fa-twitter:before {\r\n  content: \"\\F099\";\r\n}\r\n.fa-facebook-f:before,\r\n.fa-facebook:before {\r\n  content: \"\\F09A\";\r\n}\r\n.fa-github:before {\r\n  content: \"\\F09B\";\r\n}\r\n.fa-unlock:before {\r\n  content: \"\\F09C\";\r\n}\r\n.fa-credit-card:before {\r\n  content: \"\\F09D\";\r\n}\r\n.fa-feed:before,\r\n.fa-rss:before {\r\n  content: \"\\F09E\";\r\n}\r\n.fa-hdd-o:before {\r\n  content: \"\\F0A0\";\r\n}\r\n.fa-bullhorn:before {\r\n  content: \"\\F0A1\";\r\n}\r\n.fa-bell:before {\r\n  content: \"\\F0F3\";\r\n}\r\n.fa-certificate:before {\r\n  content: \"\\F0A3\";\r\n}\r\n.fa-hand-o-right:before {\r\n  content: \"\\F0A4\";\r\n}\r\n.fa-hand-o-left:before {\r\n  content: \"\\F0A5\";\r\n}\r\n.fa-hand-o-up:before {\r\n  content: \"\\F0A6\";\r\n}\r\n.fa-hand-o-down:before {\r\n  content: \"\\F0A7\";\r\n}\r\n.fa-arrow-circle-left:before {\r\n  content: \"\\F0A8\";\r\n}\r\n.fa-arrow-circle-right:before {\r\n  content: \"\\F0A9\";\r\n}\r\n.fa-arrow-circle-up:before {\r\n  content: \"\\F0AA\";\r\n}\r\n.fa-arrow-circle-down:before {\r\n  content: \"\\F0AB\";\r\n}\r\n.fa-globe:before {\r\n  content: \"\\F0AC\";\r\n}\r\n.fa-wrench:before {\r\n  content: \"\\F0AD\";\r\n}\r\n.fa-tasks:before {\r\n  content: \"\\F0AE\";\r\n}\r\n.fa-filter:before {\r\n  content: \"\\F0B0\";\r\n}\r\n.fa-briefcase:before {\r\n  content: \"\\F0B1\";\r\n}\r\n.fa-arrows-alt:before {\r\n  content: \"\\F0B2\";\r\n}\r\n.fa-group:before,\r\n.fa-users:before {\r\n  content: \"\\F0C0\";\r\n}\r\n.fa-chain:before,\r\n.fa-link:before {\r\n  content: \"\\F0C1\";\r\n}\r\n.fa-cloud:before {\r\n  content: \"\\F0C2\";\r\n}\r\n.fa-flask:before {\r\n  content: \"\\F0C3\";\r\n}\r\n.fa-cut:before,\r\n.fa-scissors:before {\r\n  content: \"\\F0C4\";\r\n}\r\n.fa-copy:before,\r\n.fa-files-o:before {\r\n  content: \"\\F0C5\";\r\n}\r\n.fa-paperclip:before {\r\n  content: \"\\F0C6\";\r\n}\r\n.fa-save:before,\r\n.fa-floppy-o:before {\r\n  content: \"\\F0C7\";\r\n}\r\n.fa-square:before {\r\n  content: \"\\F0C8\";\r\n}\r\n.fa-navicon:before,\r\n.fa-reorder:before,\r\n.fa-bars:before {\r\n  content: \"\\F0C9\";\r\n}\r\n.fa-list-ul:before {\r\n  content: \"\\F0CA\";\r\n}\r\n.fa-list-ol:before {\r\n  content: \"\\F0CB\";\r\n}\r\n.fa-strikethrough:before {\r\n  content: \"\\F0CC\";\r\n}\r\n.fa-underline:before {\r\n  content: \"\\F0CD\";\r\n}\r\n.fa-table:before {\r\n  content: \"\\F0CE\";\r\n}\r\n.fa-magic:before {\r\n  content: \"\\F0D0\";\r\n}\r\n.fa-truck:before {\r\n  content: \"\\F0D1\";\r\n}\r\n.fa-pinterest:before {\r\n  content: \"\\F0D2\";\r\n}\r\n.fa-pinterest-square:before {\r\n  content: \"\\F0D3\";\r\n}\r\n.fa-google-plus-square:before {\r\n  content: \"\\F0D4\";\r\n}\r\n.fa-google-plus:before {\r\n  content: \"\\F0D5\";\r\n}\r\n.fa-money:before {\r\n  content: \"\\F0D6\";\r\n}\r\n.fa-caret-down:before {\r\n  content: \"\\F0D7\";\r\n}\r\n.fa-caret-up:before {\r\n  content: \"\\F0D8\";\r\n}\r\n.fa-caret-left:before {\r\n  content: \"\\F0D9\";\r\n}\r\n.fa-caret-right:before {\r\n  content: \"\\F0DA\";\r\n}\r\n.fa-columns:before {\r\n  content: \"\\F0DB\";\r\n}\r\n.fa-unsorted:before,\r\n.fa-sort:before {\r\n  content: \"\\F0DC\";\r\n}\r\n.fa-sort-down:before,\r\n.fa-sort-desc:before {\r\n  content: \"\\F0DD\";\r\n}\r\n.fa-sort-up:before,\r\n.fa-sort-asc:before {\r\n  content: \"\\F0DE\";\r\n}\r\n.fa-envelope:before {\r\n  content: \"\\F0E0\";\r\n}\r\n.fa-linkedin:before {\r\n  content: \"\\F0E1\";\r\n}\r\n.fa-rotate-left:before,\r\n.fa-undo:before {\r\n  content: \"\\F0E2\";\r\n}\r\n.fa-legal:before,\r\n.fa-gavel:before {\r\n  content: \"\\F0E3\";\r\n}\r\n.fa-dashboard:before,\r\n.fa-tachometer:before {\r\n  content: \"\\F0E4\";\r\n}\r\n.fa-comment-o:before {\r\n  content: \"\\F0E5\";\r\n}\r\n.fa-comments-o:before {\r\n  content: \"\\F0E6\";\r\n}\r\n.fa-flash:before,\r\n.fa-bolt:before {\r\n  content: \"\\F0E7\";\r\n}\r\n.fa-sitemap:before {\r\n  content: \"\\F0E8\";\r\n}\r\n.fa-umbrella:before {\r\n  content: \"\\F0E9\";\r\n}\r\n.fa-paste:before,\r\n.fa-clipboard:before {\r\n  content: \"\\F0EA\";\r\n}\r\n.fa-lightbulb-o:before {\r\n  content: \"\\F0EB\";\r\n}\r\n.fa-exchange:before {\r\n  content: \"\\F0EC\";\r\n}\r\n.fa-cloud-download:before {\r\n  content: \"\\F0ED\";\r\n}\r\n.fa-cloud-upload:before {\r\n  content: \"\\F0EE\";\r\n}\r\n.fa-user-md:before {\r\n  content: \"\\F0F0\";\r\n}\r\n.fa-stethoscope:before {\r\n  content: \"\\F0F1\";\r\n}\r\n.fa-suitcase:before {\r\n  content: \"\\F0F2\";\r\n}\r\n.fa-bell-o:before {\r\n  content: \"\\F0A2\";\r\n}\r\n.fa-coffee:before {\r\n  content: \"\\F0F4\";\r\n}\r\n.fa-cutlery:before {\r\n  content: \"\\F0F5\";\r\n}\r\n.fa-file-text-o:before {\r\n  content: \"\\F0F6\";\r\n}\r\n.fa-building-o:before {\r\n  content: \"\\F0F7\";\r\n}\r\n.fa-hospital-o:before {\r\n  content: \"\\F0F8\";\r\n}\r\n.fa-ambulance:before {\r\n  content: \"\\F0F9\";\r\n}\r\n.fa-medkit:before {\r\n  content: \"\\F0FA\";\r\n}\r\n.fa-fighter-jet:before {\r\n  content: \"\\F0FB\";\r\n}\r\n.fa-beer:before {\r\n  content: \"\\F0FC\";\r\n}\r\n.fa-h-square:before {\r\n  content: \"\\F0FD\";\r\n}\r\n.fa-plus-square:before {\r\n  content: \"\\F0FE\";\r\n}\r\n.fa-angle-double-left:before {\r\n  content: \"\\F100\";\r\n}\r\n.fa-angle-double-right:before {\r\n  content: \"\\F101\";\r\n}\r\n.fa-angle-double-up:before {\r\n  content: \"\\F102\";\r\n}\r\n.fa-angle-double-down:before {\r\n  content: \"\\F103\";\r\n}\r\n.fa-angle-left:before {\r\n  content: \"\\F104\";\r\n}\r\n.fa-angle-right:before {\r\n  content: \"\\F105\";\r\n}\r\n.fa-angle-up:before {\r\n  content: \"\\F106\";\r\n}\r\n.fa-angle-down:before {\r\n  content: \"\\F107\";\r\n}\r\n.fa-desktop:before {\r\n  content: \"\\F108\";\r\n}\r\n.fa-laptop:before {\r\n  content: \"\\F109\";\r\n}\r\n.fa-tablet:before {\r\n  content: \"\\F10A\";\r\n}\r\n.fa-mobile-phone:before,\r\n.fa-mobile:before {\r\n  content: \"\\F10B\";\r\n}\r\n.fa-circle-o:before {\r\n  content: \"\\F10C\";\r\n}\r\n.fa-quote-left:before {\r\n  content: \"\\F10D\";\r\n}\r\n.fa-quote-right:before {\r\n  content: \"\\F10E\";\r\n}\r\n.fa-spinner:before {\r\n  content: \"\\F110\";\r\n}\r\n.fa-circle:before {\r\n  content: \"\\F111\";\r\n}\r\n.fa-mail-reply:before,\r\n.fa-reply:before {\r\n  content: \"\\F112\";\r\n}\r\n.fa-github-alt:before {\r\n  content: \"\\F113\";\r\n}\r\n.fa-folder-o:before {\r\n  content: \"\\F114\";\r\n}\r\n.fa-folder-open-o:before {\r\n  content: \"\\F115\";\r\n}\r\n.fa-smile-o:before {\r\n  content: \"\\F118\";\r\n}\r\n.fa-frown-o:before {\r\n  content: \"\\F119\";\r\n}\r\n.fa-meh-o:before {\r\n  content: \"\\F11A\";\r\n}\r\n.fa-gamepad:before {\r\n  content: \"\\F11B\";\r\n}\r\n.fa-keyboard-o:before {\r\n  content: \"\\F11C\";\r\n}\r\n.fa-flag-o:before {\r\n  content: \"\\F11D\";\r\n}\r\n.fa-flag-checkered:before {\r\n  content: \"\\F11E\";\r\n}\r\n.fa-terminal:before {\r\n  content: \"\\F120\";\r\n}\r\n.fa-code:before {\r\n  content: \"\\F121\";\r\n}\r\n.fa-mail-reply-all:before,\r\n.fa-reply-all:before {\r\n  content: \"\\F122\";\r\n}\r\n.fa-star-half-empty:before,\r\n.fa-star-half-full:before,\r\n.fa-star-half-o:before {\r\n  content: \"\\F123\";\r\n}\r\n.fa-location-arrow:before {\r\n  content: \"\\F124\";\r\n}\r\n.fa-crop:before {\r\n  content: \"\\F125\";\r\n}\r\n.fa-code-fork:before {\r\n  content: \"\\F126\";\r\n}\r\n.fa-unlink:before,\r\n.fa-chain-broken:before {\r\n  content: \"\\F127\";\r\n}\r\n.fa-question:before {\r\n  content: \"\\F128\";\r\n}\r\n.fa-info:before {\r\n  content: \"\\F129\";\r\n}\r\n.fa-exclamation:before {\r\n  content: \"\\F12A\";\r\n}\r\n.fa-superscript:before {\r\n  content: \"\\F12B\";\r\n}\r\n.fa-subscript:before {\r\n  content: \"\\F12C\";\r\n}\r\n.fa-eraser:before {\r\n  content: \"\\F12D\";\r\n}\r\n.fa-puzzle-piece:before {\r\n  content: \"\\F12E\";\r\n}\r\n.fa-microphone:before {\r\n  content: \"\\F130\";\r\n}\r\n.fa-microphone-slash:before {\r\n  content: \"\\F131\";\r\n}\r\n.fa-shield:before {\r\n  content: \"\\F132\";\r\n}\r\n.fa-calendar-o:before {\r\n  content: \"\\F133\";\r\n}\r\n.fa-fire-extinguisher:before {\r\n  content: \"\\F134\";\r\n}\r\n.fa-rocket:before {\r\n  content: \"\\F135\";\r\n}\r\n.fa-maxcdn:before {\r\n  content: \"\\F136\";\r\n}\r\n.fa-chevron-circle-left:before {\r\n  content: \"\\F137\";\r\n}\r\n.fa-chevron-circle-right:before {\r\n  content: \"\\F138\";\r\n}\r\n.fa-chevron-circle-up:before {\r\n  content: \"\\F139\";\r\n}\r\n.fa-chevron-circle-down:before {\r\n  content: \"\\F13A\";\r\n}\r\n.fa-html5:before {\r\n  content: \"\\F13B\";\r\n}\r\n.fa-css3:before {\r\n  content: \"\\F13C\";\r\n}\r\n.fa-anchor:before {\r\n  content: \"\\F13D\";\r\n}\r\n.fa-unlock-alt:before {\r\n  content: \"\\F13E\";\r\n}\r\n.fa-bullseye:before {\r\n  content: \"\\F140\";\r\n}\r\n.fa-ellipsis-h:before {\r\n  content: \"\\F141\";\r\n}\r\n.fa-ellipsis-v:before {\r\n  content: \"\\F142\";\r\n}\r\n.fa-rss-square:before {\r\n  content: \"\\F143\";\r\n}\r\n.fa-play-circle:before {\r\n  content: \"\\F144\";\r\n}\r\n.fa-ticket:before {\r\n  content: \"\\F145\";\r\n}\r\n.fa-minus-square:before {\r\n  content: \"\\F146\";\r\n}\r\n.fa-minus-square-o:before {\r\n  content: \"\\F147\";\r\n}\r\n.fa-level-up:before {\r\n  content: \"\\F148\";\r\n}\r\n.fa-level-down:before {\r\n  content: \"\\F149\";\r\n}\r\n.fa-check-square:before {\r\n  content: \"\\F14A\";\r\n}\r\n.fa-pencil-square:before {\r\n  content: \"\\F14B\";\r\n}\r\n.fa-external-link-square:before {\r\n  content: \"\\F14C\";\r\n}\r\n.fa-share-square:before {\r\n  content: \"\\F14D\";\r\n}\r\n.fa-compass:before {\r\n  content: \"\\F14E\";\r\n}\r\n.fa-toggle-down:before,\r\n.fa-caret-square-o-down:before {\r\n  content: \"\\F150\";\r\n}\r\n.fa-toggle-up:before,\r\n.fa-caret-square-o-up:before {\r\n  content: \"\\F151\";\r\n}\r\n.fa-toggle-right:before,\r\n.fa-caret-square-o-right:before {\r\n  content: \"\\F152\";\r\n}\r\n.fa-euro:before,\r\n.fa-eur:before {\r\n  content: \"\\F153\";\r\n}\r\n.fa-gbp:before {\r\n  content: \"\\F154\";\r\n}\r\n.fa-dollar:before,\r\n.fa-usd:before {\r\n  content: \"\\F155\";\r\n}\r\n.fa-rupee:before,\r\n.fa-inr:before {\r\n  content: \"\\F156\";\r\n}\r\n.fa-cny:before,\r\n.fa-rmb:before,\r\n.fa-yen:before,\r\n.fa-jpy:before {\r\n  content: \"\\F157\";\r\n}\r\n.fa-ruble:before,\r\n.fa-rouble:before,\r\n.fa-rub:before {\r\n  content: \"\\F158\";\r\n}\r\n.fa-won:before,\r\n.fa-krw:before {\r\n  content: \"\\F159\";\r\n}\r\n.fa-bitcoin:before,\r\n.fa-btc:before {\r\n  content: \"\\F15A\";\r\n}\r\n.fa-file:before {\r\n  content: \"\\F15B\";\r\n}\r\n.fa-file-text:before {\r\n  content: \"\\F15C\";\r\n}\r\n.fa-sort-alpha-asc:before {\r\n  content: \"\\F15D\";\r\n}\r\n.fa-sort-alpha-desc:before {\r\n  content: \"\\F15E\";\r\n}\r\n.fa-sort-amount-asc:before {\r\n  content: \"\\F160\";\r\n}\r\n.fa-sort-amount-desc:before {\r\n  content: \"\\F161\";\r\n}\r\n.fa-sort-numeric-asc:before {\r\n  content: \"\\F162\";\r\n}\r\n.fa-sort-numeric-desc:before {\r\n  content: \"\\F163\";\r\n}\r\n.fa-thumbs-up:before {\r\n  content: \"\\F164\";\r\n}\r\n.fa-thumbs-down:before {\r\n  content: \"\\F165\";\r\n}\r\n.fa-youtube-square:before {\r\n  content: \"\\F166\";\r\n}\r\n.fa-youtube:before {\r\n  content: \"\\F167\";\r\n}\r\n.fa-xing:before {\r\n  content: \"\\F168\";\r\n}\r\n.fa-xing-square:before {\r\n  content: \"\\F169\";\r\n}\r\n.fa-youtube-play:before {\r\n  content: \"\\F16A\";\r\n}\r\n.fa-dropbox:before {\r\n  content: \"\\F16B\";\r\n}\r\n.fa-stack-overflow:before {\r\n  content: \"\\F16C\";\r\n}\r\n.fa-instagram:before {\r\n  content: \"\\F16D\";\r\n}\r\n.fa-flickr:before {\r\n  content: \"\\F16E\";\r\n}\r\n.fa-adn:before {\r\n  content: \"\\F170\";\r\n}\r\n.fa-bitbucket:before {\r\n  content: \"\\F171\";\r\n}\r\n.fa-bitbucket-square:before {\r\n  content: \"\\F172\";\r\n}\r\n.fa-tumblr:before {\r\n  content: \"\\F173\";\r\n}\r\n.fa-tumblr-square:before {\r\n  content: \"\\F174\";\r\n}\r\n.fa-long-arrow-down:before {\r\n  content: \"\\F175\";\r\n}\r\n.fa-long-arrow-up:before {\r\n  content: \"\\F176\";\r\n}\r\n.fa-long-arrow-left:before {\r\n  content: \"\\F177\";\r\n}\r\n.fa-long-arrow-right:before {\r\n  content: \"\\F178\";\r\n}\r\n.fa-apple:before {\r\n  content: \"\\F179\";\r\n}\r\n.fa-windows:before {\r\n  content: \"\\F17A\";\r\n}\r\n.fa-android:before {\r\n  content: \"\\F17B\";\r\n}\r\n.fa-linux:before {\r\n  content: \"\\F17C\";\r\n}\r\n.fa-dribbble:before {\r\n  content: \"\\F17D\";\r\n}\r\n.fa-skype:before {\r\n  content: \"\\F17E\";\r\n}\r\n.fa-foursquare:before {\r\n  content: \"\\F180\";\r\n}\r\n.fa-trello:before {\r\n  content: \"\\F181\";\r\n}\r\n.fa-female:before {\r\n  content: \"\\F182\";\r\n}\r\n.fa-male:before {\r\n  content: \"\\F183\";\r\n}\r\n.fa-gittip:before,\r\n.fa-gratipay:before {\r\n  content: \"\\F184\";\r\n}\r\n.fa-sun-o:before {\r\n  content: \"\\F185\";\r\n}\r\n.fa-moon-o:before {\r\n  content: \"\\F186\";\r\n}\r\n.fa-archive:before {\r\n  content: \"\\F187\";\r\n}\r\n.fa-bug:before {\r\n  content: \"\\F188\";\r\n}\r\n.fa-vk:before {\r\n  content: \"\\F189\";\r\n}\r\n.fa-weibo:before {\r\n  content: \"\\F18A\";\r\n}\r\n.fa-renren:before {\r\n  content: \"\\F18B\";\r\n}\r\n.fa-pagelines:before {\r\n  content: \"\\F18C\";\r\n}\r\n.fa-stack-exchange:before {\r\n  content: \"\\F18D\";\r\n}\r\n.fa-arrow-circle-o-right:before {\r\n  content: \"\\F18E\";\r\n}\r\n.fa-arrow-circle-o-left:before {\r\n  content: \"\\F190\";\r\n}\r\n.fa-toggle-left:before,\r\n.fa-caret-square-o-left:before {\r\n  content: \"\\F191\";\r\n}\r\n.fa-dot-circle-o:before {\r\n  content: \"\\F192\";\r\n}\r\n.fa-wheelchair:before {\r\n  content: \"\\F193\";\r\n}\r\n.fa-vimeo-square:before {\r\n  content: \"\\F194\";\r\n}\r\n.fa-turkish-lira:before,\r\n.fa-try:before {\r\n  content: \"\\F195\";\r\n}\r\n.fa-plus-square-o:before {\r\n  content: \"\\F196\";\r\n}\r\n.fa-space-shuttle:before {\r\n  content: \"\\F197\";\r\n}\r\n.fa-slack:before {\r\n  content: \"\\F198\";\r\n}\r\n.fa-envelope-square:before {\r\n  content: \"\\F199\";\r\n}\r\n.fa-wordpress:before {\r\n  content: \"\\F19A\";\r\n}\r\n.fa-openid:before {\r\n  content: \"\\F19B\";\r\n}\r\n.fa-institution:before,\r\n.fa-bank:before,\r\n.fa-university:before {\r\n  content: \"\\F19C\";\r\n}\r\n.fa-mortar-board:before,\r\n.fa-graduation-cap:before {\r\n  content: \"\\F19D\";\r\n}\r\n.fa-yahoo:before {\r\n  content: \"\\F19E\";\r\n}\r\n.fa-google:before {\r\n  content: \"\\F1A0\";\r\n}\r\n.fa-reddit:before {\r\n  content: \"\\F1A1\";\r\n}\r\n.fa-reddit-square:before {\r\n  content: \"\\F1A2\";\r\n}\r\n.fa-stumbleupon-circle:before {\r\n  content: \"\\F1A3\";\r\n}\r\n.fa-stumbleupon:before {\r\n  content: \"\\F1A4\";\r\n}\r\n.fa-delicious:before {\r\n  content: \"\\F1A5\";\r\n}\r\n.fa-digg:before {\r\n  content: \"\\F1A6\";\r\n}\r\n.fa-pied-piper-pp:before {\r\n  content: \"\\F1A7\";\r\n}\r\n.fa-pied-piper-alt:before {\r\n  content: \"\\F1A8\";\r\n}\r\n.fa-drupal:before {\r\n  content: \"\\F1A9\";\r\n}\r\n.fa-joomla:before {\r\n  content: \"\\F1AA\";\r\n}\r\n.fa-language:before {\r\n  content: \"\\F1AB\";\r\n}\r\n.fa-fax:before {\r\n  content: \"\\F1AC\";\r\n}\r\n.fa-building:before {\r\n  content: \"\\F1AD\";\r\n}\r\n.fa-child:before {\r\n  content: \"\\F1AE\";\r\n}\r\n.fa-paw:before {\r\n  content: \"\\F1B0\";\r\n}\r\n.fa-spoon:before {\r\n  content: \"\\F1B1\";\r\n}\r\n.fa-cube:before {\r\n  content: \"\\F1B2\";\r\n}\r\n.fa-cubes:before {\r\n  content: \"\\F1B3\";\r\n}\r\n.fa-behance:before {\r\n  content: \"\\F1B4\";\r\n}\r\n.fa-behance-square:before {\r\n  content: \"\\F1B5\";\r\n}\r\n.fa-steam:before {\r\n  content: \"\\F1B6\";\r\n}\r\n.fa-steam-square:before {\r\n  content: \"\\F1B7\";\r\n}\r\n.fa-recycle:before {\r\n  content: \"\\F1B8\";\r\n}\r\n.fa-automobile:before,\r\n.fa-car:before {\r\n  content: \"\\F1B9\";\r\n}\r\n.fa-cab:before,\r\n.fa-taxi:before {\r\n  content: \"\\F1BA\";\r\n}\r\n.fa-tree:before {\r\n  content: \"\\F1BB\";\r\n}\r\n.fa-spotify:before {\r\n  content: \"\\F1BC\";\r\n}\r\n.fa-deviantart:before {\r\n  content: \"\\F1BD\";\r\n}\r\n.fa-soundcloud:before {\r\n  content: \"\\F1BE\";\r\n}\r\n.fa-database:before {\r\n  content: \"\\F1C0\";\r\n}\r\n.fa-file-pdf-o:before {\r\n  content: \"\\F1C1\";\r\n}\r\n.fa-file-word-o:before {\r\n  content: \"\\F1C2\";\r\n}\r\n.fa-file-excel-o:before {\r\n  content: \"\\F1C3\";\r\n}\r\n.fa-file-powerpoint-o:before {\r\n  content: \"\\F1C4\";\r\n}\r\n.fa-file-photo-o:before,\r\n.fa-file-picture-o:before,\r\n.fa-file-image-o:before {\r\n  content: \"\\F1C5\";\r\n}\r\n.fa-file-zip-o:before,\r\n.fa-file-archive-o:before {\r\n  content: \"\\F1C6\";\r\n}\r\n.fa-file-sound-o:before,\r\n.fa-file-audio-o:before {\r\n  content: \"\\F1C7\";\r\n}\r\n.fa-file-movie-o:before,\r\n.fa-file-video-o:before {\r\n  content: \"\\F1C8\";\r\n}\r\n.fa-file-code-o:before {\r\n  content: \"\\F1C9\";\r\n}\r\n.fa-vine:before {\r\n  content: \"\\F1CA\";\r\n}\r\n.fa-codepen:before {\r\n  content: \"\\F1CB\";\r\n}\r\n.fa-jsfiddle:before {\r\n  content: \"\\F1CC\";\r\n}\r\n.fa-life-bouy:before,\r\n.fa-life-buoy:before,\r\n.fa-life-saver:before,\r\n.fa-support:before,\r\n.fa-life-ring:before {\r\n  content: \"\\F1CD\";\r\n}\r\n.fa-circle-o-notch:before {\r\n  content: \"\\F1CE\";\r\n}\r\n.fa-ra:before,\r\n.fa-resistance:before,\r\n.fa-rebel:before {\r\n  content: \"\\F1D0\";\r\n}\r\n.fa-ge:before,\r\n.fa-empire:before {\r\n  content: \"\\F1D1\";\r\n}\r\n.fa-git-square:before {\r\n  content: \"\\F1D2\";\r\n}\r\n.fa-git:before {\r\n  content: \"\\F1D3\";\r\n}\r\n.fa-y-combinator-square:before,\r\n.fa-yc-square:before,\r\n.fa-hacker-news:before {\r\n  content: \"\\F1D4\";\r\n}\r\n.fa-tencent-weibo:before {\r\n  content: \"\\F1D5\";\r\n}\r\n.fa-qq:before {\r\n  content: \"\\F1D6\";\r\n}\r\n.fa-wechat:before,\r\n.fa-weixin:before {\r\n  content: \"\\F1D7\";\r\n}\r\n.fa-send:before,\r\n.fa-paper-plane:before {\r\n  content: \"\\F1D8\";\r\n}\r\n.fa-send-o:before,\r\n.fa-paper-plane-o:before {\r\n  content: \"\\F1D9\";\r\n}\r\n.fa-history:before {\r\n  content: \"\\F1DA\";\r\n}\r\n.fa-circle-thin:before {\r\n  content: \"\\F1DB\";\r\n}\r\n.fa-header:before {\r\n  content: \"\\F1DC\";\r\n}\r\n.fa-paragraph:before {\r\n  content: \"\\F1DD\";\r\n}\r\n.fa-sliders:before {\r\n  content: \"\\F1DE\";\r\n}\r\n.fa-share-alt:before {\r\n  content: \"\\F1E0\";\r\n}\r\n.fa-share-alt-square:before {\r\n  content: \"\\F1E1\";\r\n}\r\n.fa-bomb:before {\r\n  content: \"\\F1E2\";\r\n}\r\n.fa-soccer-ball-o:before,\r\n.fa-futbol-o:before {\r\n  content: \"\\F1E3\";\r\n}\r\n.fa-tty:before {\r\n  content: \"\\F1E4\";\r\n}\r\n.fa-binoculars:before {\r\n  content: \"\\F1E5\";\r\n}\r\n.fa-plug:before {\r\n  content: \"\\F1E6\";\r\n}\r\n.fa-slideshare:before {\r\n  content: \"\\F1E7\";\r\n}\r\n.fa-twitch:before {\r\n  content: \"\\F1E8\";\r\n}\r\n.fa-yelp:before {\r\n  content: \"\\F1E9\";\r\n}\r\n.fa-newspaper-o:before {\r\n  content: \"\\F1EA\";\r\n}\r\n.fa-wifi:before {\r\n  content: \"\\F1EB\";\r\n}\r\n.fa-calculator:before {\r\n  content: \"\\F1EC\";\r\n}\r\n.fa-paypal:before {\r\n  content: \"\\F1ED\";\r\n}\r\n.fa-google-wallet:before {\r\n  content: \"\\F1EE\";\r\n}\r\n.fa-cc-visa:before {\r\n  content: \"\\F1F0\";\r\n}\r\n.fa-cc-mastercard:before {\r\n  content: \"\\F1F1\";\r\n}\r\n.fa-cc-discover:before {\r\n  content: \"\\F1F2\";\r\n}\r\n.fa-cc-amex:before {\r\n  content: \"\\F1F3\";\r\n}\r\n.fa-cc-paypal:before {\r\n  content: \"\\F1F4\";\r\n}\r\n.fa-cc-stripe:before {\r\n  content: \"\\F1F5\";\r\n}\r\n.fa-bell-slash:before {\r\n  content: \"\\F1F6\";\r\n}\r\n.fa-bell-slash-o:before {\r\n  content: \"\\F1F7\";\r\n}\r\n.fa-trash:before {\r\n  content: \"\\F1F8\";\r\n}\r\n.fa-copyright:before {\r\n  content: \"\\F1F9\";\r\n}\r\n.fa-at:before {\r\n  content: \"\\F1FA\";\r\n}\r\n.fa-eyedropper:before {\r\n  content: \"\\F1FB\";\r\n}\r\n.fa-paint-brush:before {\r\n  content: \"\\F1FC\";\r\n}\r\n.fa-birthday-cake:before {\r\n  content: \"\\F1FD\";\r\n}\r\n.fa-area-chart:before {\r\n  content: \"\\F1FE\";\r\n}\r\n.fa-pie-chart:before {\r\n  content: \"\\F200\";\r\n}\r\n.fa-line-chart:before {\r\n  content: \"\\F201\";\r\n}\r\n.fa-lastfm:before {\r\n  content: \"\\F202\";\r\n}\r\n.fa-lastfm-square:before {\r\n  content: \"\\F203\";\r\n}\r\n.fa-toggle-off:before {\r\n  content: \"\\F204\";\r\n}\r\n.fa-toggle-on:before {\r\n  content: \"\\F205\";\r\n}\r\n.fa-bicycle:before {\r\n  content: \"\\F206\";\r\n}\r\n.fa-bus:before {\r\n  content: \"\\F207\";\r\n}\r\n.fa-ioxhost:before {\r\n  content: \"\\F208\";\r\n}\r\n.fa-angellist:before {\r\n  content: \"\\F209\";\r\n}\r\n.fa-cc:before {\r\n  content: \"\\F20A\";\r\n}\r\n.fa-shekel:before,\r\n.fa-sheqel:before,\r\n.fa-ils:before {\r\n  content: \"\\F20B\";\r\n}\r\n.fa-meanpath:before {\r\n  content: \"\\F20C\";\r\n}\r\n.fa-buysellads:before {\r\n  content: \"\\F20D\";\r\n}\r\n.fa-connectdevelop:before {\r\n  content: \"\\F20E\";\r\n}\r\n.fa-dashcube:before {\r\n  content: \"\\F210\";\r\n}\r\n.fa-forumbee:before {\r\n  content: \"\\F211\";\r\n}\r\n.fa-leanpub:before {\r\n  content: \"\\F212\";\r\n}\r\n.fa-sellsy:before {\r\n  content: \"\\F213\";\r\n}\r\n.fa-shirtsinbulk:before {\r\n  content: \"\\F214\";\r\n}\r\n.fa-simplybuilt:before {\r\n  content: \"\\F215\";\r\n}\r\n.fa-skyatlas:before {\r\n  content: \"\\F216\";\r\n}\r\n.fa-cart-plus:before {\r\n  content: \"\\F217\";\r\n}\r\n.fa-cart-arrow-down:before {\r\n  content: \"\\F218\";\r\n}\r\n.fa-diamond:before {\r\n  content: \"\\F219\";\r\n}\r\n.fa-ship:before {\r\n  content: \"\\F21A\";\r\n}\r\n.fa-user-secret:before {\r\n  content: \"\\F21B\";\r\n}\r\n.fa-motorcycle:before {\r\n  content: \"\\F21C\";\r\n}\r\n.fa-street-view:before {\r\n  content: \"\\F21D\";\r\n}\r\n.fa-heartbeat:before {\r\n  content: \"\\F21E\";\r\n}\r\n.fa-venus:before {\r\n  content: \"\\F221\";\r\n}\r\n.fa-mars:before {\r\n  content: \"\\F222\";\r\n}\r\n.fa-mercury:before {\r\n  content: \"\\F223\";\r\n}\r\n.fa-intersex:before,\r\n.fa-transgender:before {\r\n  content: \"\\F224\";\r\n}\r\n.fa-transgender-alt:before {\r\n  content: \"\\F225\";\r\n}\r\n.fa-venus-double:before {\r\n  content: \"\\F226\";\r\n}\r\n.fa-mars-double:before {\r\n  content: \"\\F227\";\r\n}\r\n.fa-venus-mars:before {\r\n  content: \"\\F228\";\r\n}\r\n.fa-mars-stroke:before {\r\n  content: \"\\F229\";\r\n}\r\n.fa-mars-stroke-v:before {\r\n  content: \"\\F22A\";\r\n}\r\n.fa-mars-stroke-h:before {\r\n  content: \"\\F22B\";\r\n}\r\n.fa-neuter:before {\r\n  content: \"\\F22C\";\r\n}\r\n.fa-genderless:before {\r\n  content: \"\\F22D\";\r\n}\r\n.fa-facebook-official:before {\r\n  content: \"\\F230\";\r\n}\r\n.fa-pinterest-p:before {\r\n  content: \"\\F231\";\r\n}\r\n.fa-whatsapp:before {\r\n  content: \"\\F232\";\r\n}\r\n.fa-server:before {\r\n  content: \"\\F233\";\r\n}\r\n.fa-user-plus:before {\r\n  content: \"\\F234\";\r\n}\r\n.fa-user-times:before {\r\n  content: \"\\F235\";\r\n}\r\n.fa-hotel:before,\r\n.fa-bed:before {\r\n  content: \"\\F236\";\r\n}\r\n.fa-viacoin:before {\r\n  content: \"\\F237\";\r\n}\r\n.fa-train:before {\r\n  content: \"\\F238\";\r\n}\r\n.fa-subway:before {\r\n  content: \"\\F239\";\r\n}\r\n.fa-medium:before {\r\n  content: \"\\F23A\";\r\n}\r\n.fa-yc:before,\r\n.fa-y-combinator:before {\r\n  content: \"\\F23B\";\r\n}\r\n.fa-optin-monster:before {\r\n  content: \"\\F23C\";\r\n}\r\n.fa-opencart:before {\r\n  content: \"\\F23D\";\r\n}\r\n.fa-expeditedssl:before {\r\n  content: \"\\F23E\";\r\n}\r\n.fa-battery-4:before,\r\n.fa-battery:before,\r\n.fa-battery-full:before {\r\n  content: \"\\F240\";\r\n}\r\n.fa-battery-3:before,\r\n.fa-battery-three-quarters:before {\r\n  content: \"\\F241\";\r\n}\r\n.fa-battery-2:before,\r\n.fa-battery-half:before {\r\n  content: \"\\F242\";\r\n}\r\n.fa-battery-1:before,\r\n.fa-battery-quarter:before {\r\n  content: \"\\F243\";\r\n}\r\n.fa-battery-0:before,\r\n.fa-battery-empty:before {\r\n  content: \"\\F244\";\r\n}\r\n.fa-mouse-pointer:before {\r\n  content: \"\\F245\";\r\n}\r\n.fa-i-cursor:before {\r\n  content: \"\\F246\";\r\n}\r\n.fa-object-group:before {\r\n  content: \"\\F247\";\r\n}\r\n.fa-object-ungroup:before {\r\n  content: \"\\F248\";\r\n}\r\n.fa-sticky-note:before {\r\n  content: \"\\F249\";\r\n}\r\n.fa-sticky-note-o:before {\r\n  content: \"\\F24A\";\r\n}\r\n.fa-cc-jcb:before {\r\n  content: \"\\F24B\";\r\n}\r\n.fa-cc-diners-club:before {\r\n  content: \"\\F24C\";\r\n}\r\n.fa-clone:before {\r\n  content: \"\\F24D\";\r\n}\r\n.fa-balance-scale:before {\r\n  content: \"\\F24E\";\r\n}\r\n.fa-hourglass-o:before {\r\n  content: \"\\F250\";\r\n}\r\n.fa-hourglass-1:before,\r\n.fa-hourglass-start:before {\r\n  content: \"\\F251\";\r\n}\r\n.fa-hourglass-2:before,\r\n.fa-hourglass-half:before {\r\n  content: \"\\F252\";\r\n}\r\n.fa-hourglass-3:before,\r\n.fa-hourglass-end:before {\r\n  content: \"\\F253\";\r\n}\r\n.fa-hourglass:before {\r\n  content: \"\\F254\";\r\n}\r\n.fa-hand-grab-o:before,\r\n.fa-hand-rock-o:before {\r\n  content: \"\\F255\";\r\n}\r\n.fa-hand-stop-o:before,\r\n.fa-hand-paper-o:before {\r\n  content: \"\\F256\";\r\n}\r\n.fa-hand-scissors-o:before {\r\n  content: \"\\F257\";\r\n}\r\n.fa-hand-lizard-o:before {\r\n  content: \"\\F258\";\r\n}\r\n.fa-hand-spock-o:before {\r\n  content: \"\\F259\";\r\n}\r\n.fa-hand-pointer-o:before {\r\n  content: \"\\F25A\";\r\n}\r\n.fa-hand-peace-o:before {\r\n  content: \"\\F25B\";\r\n}\r\n.fa-trademark:before {\r\n  content: \"\\F25C\";\r\n}\r\n.fa-registered:before {\r\n  content: \"\\F25D\";\r\n}\r\n.fa-creative-commons:before {\r\n  content: \"\\F25E\";\r\n}\r\n.fa-gg:before {\r\n  content: \"\\F260\";\r\n}\r\n.fa-gg-circle:before {\r\n  content: \"\\F261\";\r\n}\r\n.fa-tripadvisor:before {\r\n  content: \"\\F262\";\r\n}\r\n.fa-odnoklassniki:before {\r\n  content: \"\\F263\";\r\n}\r\n.fa-odnoklassniki-square:before {\r\n  content: \"\\F264\";\r\n}\r\n.fa-get-pocket:before {\r\n  content: \"\\F265\";\r\n}\r\n.fa-wikipedia-w:before {\r\n  content: \"\\F266\";\r\n}\r\n.fa-safari:before {\r\n  content: \"\\F267\";\r\n}\r\n.fa-chrome:before {\r\n  content: \"\\F268\";\r\n}\r\n.fa-firefox:before {\r\n  content: \"\\F269\";\r\n}\r\n.fa-opera:before {\r\n  content: \"\\F26A\";\r\n}\r\n.fa-internet-explorer:before {\r\n  content: \"\\F26B\";\r\n}\r\n.fa-tv:before,\r\n.fa-television:before {\r\n  content: \"\\F26C\";\r\n}\r\n.fa-contao:before {\r\n  content: \"\\F26D\";\r\n}\r\n.fa-500px:before {\r\n  content: \"\\F26E\";\r\n}\r\n.fa-amazon:before {\r\n  content: \"\\F270\";\r\n}\r\n.fa-calendar-plus-o:before {\r\n  content: \"\\F271\";\r\n}\r\n.fa-calendar-minus-o:before {\r\n  content: \"\\F272\";\r\n}\r\n.fa-calendar-times-o:before {\r\n  content: \"\\F273\";\r\n}\r\n.fa-calendar-check-o:before {\r\n  content: \"\\F274\";\r\n}\r\n.fa-industry:before {\r\n  content: \"\\F275\";\r\n}\r\n.fa-map-pin:before {\r\n  content: \"\\F276\";\r\n}\r\n.fa-map-signs:before {\r\n  content: \"\\F277\";\r\n}\r\n.fa-map-o:before {\r\n  content: \"\\F278\";\r\n}\r\n.fa-map:before {\r\n  content: \"\\F279\";\r\n}\r\n.fa-commenting:before {\r\n  content: \"\\F27A\";\r\n}\r\n.fa-commenting-o:before {\r\n  content: \"\\F27B\";\r\n}\r\n.fa-houzz:before {\r\n  content: \"\\F27C\";\r\n}\r\n.fa-vimeo:before {\r\n  content: \"\\F27D\";\r\n}\r\n.fa-black-tie:before {\r\n  content: \"\\F27E\";\r\n}\r\n.fa-fonticons:before {\r\n  content: \"\\F280\";\r\n}\r\n.fa-reddit-alien:before {\r\n  content: \"\\F281\";\r\n}\r\n.fa-edge:before {\r\n  content: \"\\F282\";\r\n}\r\n.fa-credit-card-alt:before {\r\n  content: \"\\F283\";\r\n}\r\n.fa-codiepie:before {\r\n  content: \"\\F284\";\r\n}\r\n.fa-modx:before {\r\n  content: \"\\F285\";\r\n}\r\n.fa-fort-awesome:before {\r\n  content: \"\\F286\";\r\n}\r\n.fa-usb:before {\r\n  content: \"\\F287\";\r\n}\r\n.fa-product-hunt:before {\r\n  content: \"\\F288\";\r\n}\r\n.fa-mixcloud:before {\r\n  content: \"\\F289\";\r\n}\r\n.fa-scribd:before {\r\n  content: \"\\F28A\";\r\n}\r\n.fa-pause-circle:before {\r\n  content: \"\\F28B\";\r\n}\r\n.fa-pause-circle-o:before {\r\n  content: \"\\F28C\";\r\n}\r\n.fa-stop-circle:before {\r\n  content: \"\\F28D\";\r\n}\r\n.fa-stop-circle-o:before {\r\n  content: \"\\F28E\";\r\n}\r\n.fa-shopping-bag:before {\r\n  content: \"\\F290\";\r\n}\r\n.fa-shopping-basket:before {\r\n  content: \"\\F291\";\r\n}\r\n.fa-hashtag:before {\r\n  content: \"\\F292\";\r\n}\r\n.fa-bluetooth:before {\r\n  content: \"\\F293\";\r\n}\r\n.fa-bluetooth-b:before {\r\n  content: \"\\F294\";\r\n}\r\n.fa-percent:before {\r\n  content: \"\\F295\";\r\n}\r\n.fa-gitlab:before {\r\n  content: \"\\F296\";\r\n}\r\n.fa-wpbeginner:before {\r\n  content: \"\\F297\";\r\n}\r\n.fa-wpforms:before {\r\n  content: \"\\F298\";\r\n}\r\n.fa-envira:before {\r\n  content: \"\\F299\";\r\n}\r\n.fa-universal-access:before {\r\n  content: \"\\F29A\";\r\n}\r\n.fa-wheelchair-alt:before {\r\n  content: \"\\F29B\";\r\n}\r\n.fa-question-circle-o:before {\r\n  content: \"\\F29C\";\r\n}\r\n.fa-blind:before {\r\n  content: \"\\F29D\";\r\n}\r\n.fa-audio-description:before {\r\n  content: \"\\F29E\";\r\n}\r\n.fa-volume-control-phone:before {\r\n  content: \"\\F2A0\";\r\n}\r\n.fa-braille:before {\r\n  content: \"\\F2A1\";\r\n}\r\n.fa-assistive-listening-systems:before {\r\n  content: \"\\F2A2\";\r\n}\r\n.fa-asl-interpreting:before,\r\n.fa-american-sign-language-interpreting:before {\r\n  content: \"\\F2A3\";\r\n}\r\n.fa-deafness:before,\r\n.fa-hard-of-hearing:before,\r\n.fa-deaf:before {\r\n  content: \"\\F2A4\";\r\n}\r\n.fa-glide:before {\r\n  content: \"\\F2A5\";\r\n}\r\n.fa-glide-g:before {\r\n  content: \"\\F2A6\";\r\n}\r\n.fa-signing:before,\r\n.fa-sign-language:before {\r\n  content: \"\\F2A7\";\r\n}\r\n.fa-low-vision:before {\r\n  content: \"\\F2A8\";\r\n}\r\n.fa-viadeo:before {\r\n  content: \"\\F2A9\";\r\n}\r\n.fa-viadeo-square:before {\r\n  content: \"\\F2AA\";\r\n}\r\n.fa-snapchat:before {\r\n  content: \"\\F2AB\";\r\n}\r\n.fa-snapchat-ghost:before {\r\n  content: \"\\F2AC\";\r\n}\r\n.fa-snapchat-square:before {\r\n  content: \"\\F2AD\";\r\n}\r\n.fa-pied-piper:before {\r\n  content: \"\\F2AE\";\r\n}\r\n.fa-first-order:before {\r\n  content: \"\\F2B0\";\r\n}\r\n.fa-yoast:before {\r\n  content: \"\\F2B1\";\r\n}\r\n.fa-themeisle:before {\r\n  content: \"\\F2B2\";\r\n}\r\n.fa-google-plus-circle:before,\r\n.fa-google-plus-official:before {\r\n  content: \"\\F2B3\";\r\n}\r\n.fa-fa:before,\r\n.fa-font-awesome:before {\r\n  content: \"\\F2B4\";\r\n}\r\n.fa-handshake-o:before {\r\n  content: \"\\F2B5\";\r\n}\r\n.fa-envelope-open:before {\r\n  content: \"\\F2B6\";\r\n}\r\n.fa-envelope-open-o:before {\r\n  content: \"\\F2B7\";\r\n}\r\n.fa-linode:before {\r\n  content: \"\\F2B8\";\r\n}\r\n.fa-address-book:before {\r\n  content: \"\\F2B9\";\r\n}\r\n.fa-address-book-o:before {\r\n  content: \"\\F2BA\";\r\n}\r\n.fa-vcard:before,\r\n.fa-address-card:before {\r\n  content: \"\\F2BB\";\r\n}\r\n.fa-vcard-o:before,\r\n.fa-address-card-o:before {\r\n  content: \"\\F2BC\";\r\n}\r\n.fa-user-circle:before {\r\n  content: \"\\F2BD\";\r\n}\r\n.fa-user-circle-o:before {\r\n  content: \"\\F2BE\";\r\n}\r\n.fa-user-o:before {\r\n  content: \"\\F2C0\";\r\n}\r\n.fa-id-badge:before {\r\n  content: \"\\F2C1\";\r\n}\r\n.fa-drivers-license:before,\r\n.fa-id-card:before {\r\n  content: \"\\F2C2\";\r\n}\r\n.fa-drivers-license-o:before,\r\n.fa-id-card-o:before {\r\n  content: \"\\F2C3\";\r\n}\r\n.fa-quora:before {\r\n  content: \"\\F2C4\";\r\n}\r\n.fa-free-code-camp:before {\r\n  content: \"\\F2C5\";\r\n}\r\n.fa-telegram:before {\r\n  content: \"\\F2C6\";\r\n}\r\n.fa-thermometer-4:before,\r\n.fa-thermometer:before,\r\n.fa-thermometer-full:before {\r\n  content: \"\\F2C7\";\r\n}\r\n.fa-thermometer-3:before,\r\n.fa-thermometer-three-quarters:before {\r\n  content: \"\\F2C8\";\r\n}\r\n.fa-thermometer-2:before,\r\n.fa-thermometer-half:before {\r\n  content: \"\\F2C9\";\r\n}\r\n.fa-thermometer-1:before,\r\n.fa-thermometer-quarter:before {\r\n  content: \"\\F2CA\";\r\n}\r\n.fa-thermometer-0:before,\r\n.fa-thermometer-empty:before {\r\n  content: \"\\F2CB\";\r\n}\r\n.fa-shower:before {\r\n  content: \"\\F2CC\";\r\n}\r\n.fa-bathtub:before,\r\n.fa-s15:before,\r\n.fa-bath:before {\r\n  content: \"\\F2CD\";\r\n}\r\n.fa-podcast:before {\r\n  content: \"\\F2CE\";\r\n}\r\n.fa-window-maximize:before {\r\n  content: \"\\F2D0\";\r\n}\r\n.fa-window-minimize:before {\r\n  content: \"\\F2D1\";\r\n}\r\n.fa-window-restore:before {\r\n  content: \"\\F2D2\";\r\n}\r\n.fa-times-rectangle:before,\r\n.fa-window-close:before {\r\n  content: \"\\F2D3\";\r\n}\r\n.fa-times-rectangle-o:before,\r\n.fa-window-close-o:before {\r\n  content: \"\\F2D4\";\r\n}\r\n.fa-bandcamp:before {\r\n  content: \"\\F2D5\";\r\n}\r\n.fa-grav:before {\r\n  content: \"\\F2D6\";\r\n}\r\n.fa-etsy:before {\r\n  content: \"\\F2D7\";\r\n}\r\n.fa-imdb:before {\r\n  content: \"\\F2D8\";\r\n}\r\n.fa-ravelry:before {\r\n  content: \"\\F2D9\";\r\n}\r\n.fa-eercast:before {\r\n  content: \"\\F2DA\";\r\n}\r\n.fa-microchip:before {\r\n  content: \"\\F2DB\";\r\n}\r\n.fa-snowflake-o:before {\r\n  content: \"\\F2DC\";\r\n}\r\n.fa-superpowers:before {\r\n  content: \"\\F2DD\";\r\n}\r\n.fa-wpexplorer:before {\r\n  content: \"\\F2DE\";\r\n}\r\n.fa-meetup:before {\r\n  content: \"\\F2E0\";\r\n}\r\n.sr-only {\r\n  position: absolute;\r\n  width: 1px;\r\n  height: 1px;\r\n  padding: 0;\r\n  margin: -1px;\r\n  overflow: hidden;\r\n  clip: rect(0, 0, 0, 0);\r\n  border: 0;\r\n}\r\n.sr-only-focusable:active,\r\n.sr-only-focusable:focus {\r\n  position: static;\r\n  width: auto;\r\n  height: auto;\r\n  margin: 0;\r\n  overflow: visible;\r\n  clip: auto;\r\n}\r\n", ""]);
 
 // exports
 
@@ -12935,7 +12936,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".ui-widget * {\n    box-sizing: border-box;\n}\n.ui-helper-hidden {\n    display: none;\n}\n.ui-helper-hidden-accessible {\n    border: 0;\n    clip: rect(0 0 0 0);\n    height: 1px;\n    margin: -1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 1px;\n}\n.ui-helper-reset {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    outline: 0;\n    line-height: 1.3;\n    text-decoration: none;\n    font-size: 100%;\n    list-style: none;\n}\n.ui-helper-clearfix:before,\n.ui-helper-clearfix:after {\n    content: \"\";\n    display: table;\n}\n.ui-helper-clearfix:after {\n    clear: both;\n}\n.ui-helper-clearfix {\n    zoom: 1;\n}\n.ui-helper-zfix {\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    position: absolute;\n    opacity: 0;\n    filter: Alpha(Opacity=0);\n}\n.ui-state-disabled {\n    cursor: default !important;\n}\n.ui-state-disabled a {\n    cursor: default !important;\n}\n.ui-icon {\n    display: block;\n    text-indent: -99999px;\n    overflow: hidden;\n    background-repeat: no-repeat;\n}\n.ui-widget-overlay {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n.ui-resizable {\n    position: relative;\n}\n.ui-resizable-handle {\n    position: absolute;\n    font-size: 0.1px;\n    display: block;\n}\n.ui-resizable-disabled .ui-resizable-handle,\n.ui-resizable-autohide .ui-resizable-handle {\n    display: none;\n}\n.ui-resizable-n {\n    cursor: n-resize;\n    height: 7px;\n    width: 100%;\n    top: -5px;\n    left: 0;\n}\n.ui-resizable-s {\n    cursor: s-resize;\n    height: 7px;\n    width: 100%;\n    bottom: -5px;\n    left: 0;\n}\n.ui-resizable-e {\n    cursor: e-resize;\n    width: 7px;\n    right: -5px;\n    top: 0;\n    height: 100%;\n}\n.ui-resizable-w {\n    cursor: w-resize;\n    width: 7px;\n    left: -5px;\n    top: 0;\n    height: 100%;\n}\n.ui-resizable-se {\n    cursor: se-resize;\n    width: 12px;\n    height: 12px;\n    right: 1px;\n    bottom: 1px;\n}\n.ui-resizable-sw {\n    cursor: sw-resize;\n    width: 9px;\n    height: 9px;\n    left: -5px;\n    bottom: -5px;\n}\n.ui-resizable-nw {\n    cursor: nw-resize;\n    width: 9px;\n    height: 9px;\n    left: -5px;\n    top: -5px;\n}\n.ui-resizable-ne {\n    cursor: ne-resize;\n    width: 9px;\n    height: 9px;\n    right: -5px;\n    top: -5px;\n}\n.ui-shadow {\n    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);\n    -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);\n    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);\n}\n.ui-unselectable-text {\n    -webkit-user-select: none;\n    -khtml-user-select: none;\n    -moz-user-select: none;\n    -o-user-select: none;\n    user-select: none;\n}\n.ui-scrollbar-measure {\n    width: 100px;\n    height: 100px;\n    overflow: scroll;\n    position: absolute;\n    top: -9999px;\n}\n.ui-accordion { \n    width: 100%; \n}\n\n.ui-accordion .ui-accordion-header { \n    cursor: pointer; \n    position: relative; \n    margin-top: 1px; \n    zoom: 1; \n}\n\n.ui-accordion .ui-accordion-header a { \n    display: block; \n    padding: .5em .5em .5em 2em; \n}\n\n.ui-accordion .ui-accordion-header .fa {\n    position: absolute; \n    left: .5em; \n    top: 50%; \n    margin-top: -.5em; \n}\n\n.ui-accordion .ui-accordion-content { \n    padding: 1em;\n    border-top: 0; \n    overflow: visible;\n    zoom: 1; \n}\n\n.ui-accordion .ui-accordion-header.ui-state-disabled, \n.ui-accordion .ui-accordion-header.ui-state-disabled a { \n    cursor: default; \n}\n\n.ui-accordion-content-wrapper-overflown {\n    overflow: hidden;\n}\n.ui-autocomplete {\n    width: auto;\n    zoom: 1;\n    cursor: pointer;\n    -moz-box-shadow: none;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    position: relative;\n    display: inline-block;\n}\n\n.ui-autocomplete .ui-autocomplete-dropdown {\n    height: 100%;\n    width: 2em;\n    margin-right: 0;\n    vertical-align: top;\n}\n\n.ui-autocomplete-query {\n    font-weight: bold;\n}\n\n.ui-autocomplete-panel {\n    position: absolute;\n    overflow: auto;\n}\n\n.ui-autocomplete-panel .ui-autocomplete-list {\n    padding: 0.4em;\n    border: 0 none;\n}\n\n.ui-autocomplete-panel .ui-autocomplete-list-item {\n    border: 0 none;\n    cursor: pointer;\n    font-weight: normal;\n    margin: 1px 0;\n    padding: 0.186em 0.313em;\n    text-align: left;\n}\n\n.ui-autocomplete .ui-button-icon-only,\n.ui-autocomplete .ui-button-icon-only:hover,\n.ui-autocomplete .ui-button-icon-only:focus,\n.ui-autocomplete .ui-button-icon-only:active {\n    border-left: 0 none;\n}\n\n/* Multiple Selection */\n.ui-autocomplete-multiple-container {\n    display: inline-block;\n}\n\n.ui-autocomplete-multiple-container.ui-inputtext {\n    clear: left;\n    cursor: text;\n    list-style-type: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0 .25em;\n}\n\n.ui-autocomplete-token {\n    cursor: default;\n    display: inline-block;\n    vertical-align: middle;\n    overflow: hidden;\n    padding: .125em .5em;\n    white-space: nowrap;\n    position: relative;\n    margin-right: .125em;\n    border: 0 none;\n    font-size: .9em;\n}\n\n.ui-autocomplete-token-label {\n    display: block;\n    margin-right: 2em;\n}\n\n.ui-autocomplete-token-icon {\n    margin-top: -.5em;\n    position: absolute;\n    right: 0.2em;\n    top: 50%;\n    cursor: pointer;\n}\n\n.ui-autocomplete-input-token {\n    display: inline-block;\n    vertical-align: middle;\n    list-style-type: none;\n    margin: 0 0 0 .125em;\n    padding: .25em .25em .25em 0;\n}\n\n.ui-autocomplete-input-token .ui-inputtext {\n    border: 0 none;\n    width: 10em;\n    outline: medium none;\n    background-color: transparent;\n    margin: 0;\n    padding: 0;\n    box-shadow: none;\n    -moz-border-radius: 0;\n    -webkit-border-radius: 0;\n    border-radius: 0;\n}\n\n.ui-autocomplete-dd input.ui-corner-all ,\n.ui-autocomplete-dd .ui-autocomplete-multiple-container.ui-corner-all {\n     -moz-border-radius-topright: 0px; \n     -webkit-border-top-right-radius: 0px;\n     border-top-right-radius: 0px;\n     -moz-border-radius-bottomright: 0px;\n     -webkit-border-bottom-right-radius: 0px;\n     border-bottom-right-radius: 0px;\n }\n \n.ui-autocomplete-dd .ui-autocomplete-dropdown.ui-corner-all {\n     -moz-border-radius-topleft: 0px; \n     -webkit-border-top-left-radius: 0px;\n     border-top-left-radius: 0px;\n     -moz-border-radius-bottomleft: 0px;\n     -webkit-border-bottom-left-radius: 0px;\n     border-bottom-left-radius: 0px;\n}\n\n/** AutoComplete **/\n.ui-fluid .ui-autocomplete,\n.ui-fluid .ui-autocomplete-input {\n    width: 100%;\n}\n\n.ui-fluid .ui-autocomplete.ui-autocomplete-dd .ui-autocomplete-input,\n.ui-fluid .ui-autocomplete.ui-autocomplete-dd .ui-autocomplete-multiple-container {\n    width: calc(100% - 2em);\n}\n\n.ui-fluid .ui-autocomplete .ui-autocomplete-dropdown.ui-button {\n    width: 2em;\n}\n.ui-blockui {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.ui-blockui-document {\n    position: fixed;\n}\n/** Breadcrumb **/\n.ui-breadcrumb {\n    margin: 0;\n    padding: 0;\n    padding: .3em;\n}\n\n.ui-breadcrumb ul {\n    margin: 0;\n    padding: 0;\n}\n\n.ui-breadcrumb ul li {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-breadcrumb ul li .ui-menuitem-link {\n    text-decoration: none;\n}\n/* Button */\n.ui-button { \n    display: inline-block; \n    position: relative; \n    padding: 0; \n    margin-right: .1em; \n    text-decoration: none !important; \n    cursor: pointer; \n    text-align: center; \n    zoom: 1; \n    overflow: visible; /* the overflow property removes extra width in IE */\n} \n\n.ui-button-icon-only { \n    width: 2em;\n} \n\n/*button text element */\n.ui-button .ui-button-text { \n    display: block; \n    line-height: normal;  \n}\n\n.ui-button-text-only .ui-button-text { \n    padding: .25em 1em; \n}\n\n.ui-button-icon-only .ui-button-text { \n    padding: .25em; \n    text-indent: -9999999px; \n}\n\n.ui-button-text-icon-left .ui-button-text { \n    padding: .25em 1em .25em 2.1em; \n}\n\n.ui-button-text-icon-right .ui-button-text { \n    padding: .25em 2.1em .25em 1em; \n}\n\n/*button icon element(s) */\n.ui-button-icon-only .fa,\n.ui-button-text-icon-left .fa,\n.ui-button-text-icon-right .fa {\n    position: absolute; \n    top: 50%;\n    margin-top: -.5em; \n}\n\n.ui-button-icon-only .fa {\n    top: 50%;\n    left: 50%;\n    margin-top: -.5em;\n    margin-left: -.6em;\n}\n\n.ui-button-icon-left {\n    left: .5em; \n}\n\n.ui-button-icon-right {\n    right: .5em; \n}\n\n/*button sets*/\n.ui-buttonset .ui-button { \n    margin-left: 0; \n    margin-right: 0;\n}\n\n/* workarounds */\nbutton.ui-button::-moz-focus-inner { \n    border: 0; padding: 0; /* reset extra padding in Firefox */\n}\n\n/** Fluid **/\n.ui-fluid .ui-button {\n    width: 100%;\n    box-sizing: border-box;\n    -webkit-box-sizing:border-box;\n    -moz-box-sizing: border-box;\n}\n\n/** ButtonSet **/\n.ui-fluid .ui-buttonset {\n    width: 100%;\n}\n\n.ui-fluid .ui-buttonset.ui-buttonset-1 .ui-button {width: 100%;}\n.ui-fluid .ui-buttonset.ui-buttonset-2 .ui-button {width: 50%;}\n.ui-fluid .ui-buttonset.ui-buttonset-3 .ui-button {width: 33.3%;}\n.ui-fluid .ui-buttonset.ui-buttonset-4 .ui-button {width: 25%;}\n.ui-fluid .ui-buttonset.ui-buttonset-5 .ui-button {width: 20%;}\n.ui-fluid .ui-buttonset.ui-buttonset-6 .ui-button {width: 16.6%;}\n\n@media (max-width: 640px) {\n    .ui-fluid .ui-buttonset.ui-buttonset-1 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-2 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-3 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-4 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-5 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-6 .ui-button {\n        width: 100%;\n    }\n}\n\n/* Severity Buttons */\n/* Secondary */\n.ui-button.ui-button-secondary.ui-state-default {\n    background-color: #ffffff;\n    border-color: #cccccc;\n    color: #373a3c;\n}\n\n.ui-button.ui-button-secondary:enabled:hover,\n.ui-button.ui-button-secondary:focus {\n    background-color: #f2f2f2;\n}\n\n.ui-button.ui-button-secondary:enabled:active {\n    background-color: #e6e6e6;\n}\n\n/* Success */\n.ui-button.ui-button-success.ui-state-default {\n    background-color: #5cb85c;\n    border-color: #5cb85c;\n    color: #ffffff;\n}\n\n.ui-button.ui-button-success:enabled:hover,\n.ui-button.ui-button-success:focus {\n    background-color: #4cae4c;\n}\n\n.ui-button.ui-button-success:enabled:active {\n    background-color: #449d44;\n}\n\n/* Info */\n.ui-button.ui-button-info.ui-state-default {\n    background-color: #5bc0de;\n    border-color: #5bc0de;\n    color: #ffffff;\n}\n\n.ui-button.ui-button-info:enabled:hover,\n.ui-button.ui-button-info:focus {\n    background-color: #46b8da;\n}\n\n.ui-button.ui-button-info:enabled:active {\n    background-color: #31b0d5;\n}\n\n/* Warning */\n.ui-button.ui-button-warning.ui-state-default {\n    background-color: #f0ad4e;\n    border-color: #f0ad4e;\n    color: #ffffff;\n}\n\n.ui-button.ui-button-warning:enabled:hover,\n.ui-button.ui-button-warning:focus {\n    background-color: #eea236;\n}\n\n.ui-button.ui-button-warning:enabled:active {\n    background-color: #ec971f;\n}\n\n/* Danger */\n.ui-button.ui-button-danger.ui-state-default {\n    background-color: #d9534f;\n    border-color: #d9534f;\n    color: #ffffff;\n}\n\n.ui-button.ui-button-danger:enabled:hover,\n.ui-button.ui-button-danger:focus {\n    background-color: #d43f3a;\n}\n\n.ui-button.ui-button-danger:enabled:active {\n    background-color: #c9302c;\n}\n.ui-calendar {\n    position: relative;\n    display: inline-block;\n}\n\n.ui-calendar button {\n    position: absolute;\n    height: 100%;\n    border-top-left-radius: 0px;\n    border-bottom-left-radius: 0px;\n    position: absolute;\n    width: 2em;\n    border-left: 0 none;\n}\n\n/* Fluid */\n.ui-fluid .ui-calendar {\n    width: 100%;\n}\n\n.ui-fluid .ui-calendar button {\n    width: 2em;\n}\n\n.ui-fluid .ui-calendar.ui-calendar-w-btn .ui-inputtext {\n    width: calc(100% - 2em);\n}\n\n/* Datepicker */\n.ui-datepicker {\n\twidth: 17em;\n\tpadding: .2em;\n\tdisplay: none;\n    position: absolute;\n}\n.ui-datepicker.ui-datepicker-inline {\n    display: block;\n    position: static;\n}\n.ui-datepicker .ui-datepicker-header {\n\tposition: relative;\n\tpadding: .2em 0;\n}\n.ui-datepicker .ui-datepicker-prev,\n.ui-datepicker .ui-datepicker-next {\n\tposition: absolute;\n\ttop: .125em;\n\twidth: 1.8em;\n\theight: 1.8em;\n}\n\n.ui-datepicker .ui-datepicker-prev {\n\tleft: .125em;\n}\n.ui-datepicker .ui-datepicker-next {\n\tright: .125em;\n}\n.ui-datepicker .ui-datepicker-prev span,\n.ui-datepicker .ui-datepicker-next span {\n\tdisplay: block;\n\tposition: absolute;\n\tleft: 50%;\n\ttop: 50%;\n\tmargin-top: -.5em;\n}\n.ui-datepicker .ui-datepicker-prev span {\n\tmargin-left: -.25em;\n}\n.ui-datepicker .ui-datepicker-next span {\n\tmargin-left: -.125em;\n}\n.ui-datepicker .ui-datepicker-title {\n\tmargin: 0 2.3em;\n\tline-height: 1.8em;\n\ttext-align: center;\n}\n.ui-datepicker .ui-datepicker-title select {\n\tfont-size: 1em;\n\tmargin: .125em 0;\n}\n.ui-datepicker select.ui-datepicker-month {\n    width: 55%;\n}\n.ui-datepicker select.ui-datepicker-year {\n\twidth: 35%;\n}\n.ui-datepicker select.ui-datepicker-month {\n    margin-right: .25em;\n}\n.ui-datepicker table {\n\twidth: 100%;\n\tfont-size: .9em;\n\tborder-collapse: collapse;\n\tmargin: 0 0 .4em;\n}\n.ui-datepicker th {\n\tpadding: .7em .3em;\n\ttext-align: center;\n\tfont-weight: bold;\n\tborder: 0;\n}\n.ui-datepicker td {\n\tborder: 0;\n\tpadding: .125em;\n}\n.ui-datepicker td span,\n.ui-datepicker td a {\n\tdisplay: block;\n\tpadding: .2em;\n\ttext-align: right;\n\ttext-decoration: none;\n}\n.ui-datepicker .ui-datepicker-buttonpane {\n\tbackground-image: none;\n\tmargin: .7em 0 0 0;\n\tpadding: 0 .2em;\n\tborder-left: 0;\n\tborder-right: 0;\n\tborder-bottom: 0;\n}\n.ui-datepicker .ui-datepicker-buttonpane button {\n\tfloat: right;\n\tmargin: .5em .2em .4em;\n\tcursor: pointer;\n\tpadding: .2em .6em .3em .6em;\n\twidth: auto;\n\toverflow: visible;\n}\n.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {\n\tfloat: left;\n}\n\n/* with multiple calendars */\n.ui-datepicker.ui-datepicker-multi {\n\twidth: auto;\n}\n.ui-datepicker-multi .ui-datepicker-group {\n\tfloat: left;\n}\n.ui-datepicker-multi .ui-datepicker-group table {\n\twidth: 95%;\n\tmargin: 0 auto .4em;\n}\n.ui-datepicker-multi-2 .ui-datepicker-group {\n\twidth: 50%;\n}\n.ui-datepicker-multi-3 .ui-datepicker-group {\n\twidth: 33.3%;\n}\n.ui-datepicker-multi-4 .ui-datepicker-group {\n\twidth: 25%;\n}\n.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,\n.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {\n\tborder-left-width: 0;\n}\n.ui-datepicker-multi .ui-datepicker-buttonpane {\n\tclear: left;\n}\n.ui-datepicker-row-break {\n\tclear: both;\n\twidth: 100%;\n\tfont-size: 0;\n}\n\n.ui-calendar.ui-calendar-w-btn input {\n    -moz-border-radius-topright: 0px; \n    -webkit-border-top-right-radius: 0px; \n    -khtml-border-top-right-radius: 0px; \n    border-top-right-radius: 0px;\n    -moz-border-radius-bottomright: 0px; \n    -webkit-border-bottom-right-radius: 0px; \n    -khtml-border-bottom-right-radius: 0px; \n    border-bottom-right-radius: 0px;\n}\n\n.ui-timepicker {\n    text-align: center;\n    padding: .5em 0;\n}\n\n.ui-timepicker > div {\n    display: inline-block;\n    margin-left: .5em;\n    min-width: 1.5em;\n}\n\n.ui-timepicker > .ui-minute-picker,\n.ui-timepicker > .ui-second-picker {\n    margin-left: 0;\n}\n\n.ui-timepicker > .ui-separator {\n    margin-left: 0px;\n    min-width: .75em;\n}\n\n.ui-timepicker > .ui-separator a {\n    visibility: hidden;\n}\n\n.ui-timepicker > div a {\n    display: block;\n    opacity: 0.7;\n    filter:Alpha(Opacity=70);\n}\n\n.ui-timepicker > div a:hover {\n    display: block;\n    opacity: 1;\n    filter:Alpha(Opacity=100);\n}\n.ui-carousel {\n    position: relative;\n    padding: .063em;\n}\n\n.ui-carousel .ui-carousel-viewport .ui-carousel-items {\n    list-style: none outside none;\n    margin: 0;\n    padding:0;\n    position: relative;\n    width: 32000px;\n    left: 0;\n}\n\n.ui-carousel .ui-carousel-viewport .ui-carousel-items .ui-carousel-item {\n    margin: 1px;\n    padding: 0;\n    float: left;\n    box-sizing: border-box;\n}\n\n.ui-carousel .ui-carousel-viewport {\n    overflow: hidden;\n    position: relative;\n    border: 0;\n}\n\n.ui-carousel .ui-carousel-footer {\n    margin: 1px 1px 0px 1px;\n    padding: .5em;\n    overflow: hidden;\n}\n\n.ui-carousel .ui-carousel-header {\n    margin: 0 1px;\n    overflow: hidden;\n    padding: .625em;\n}\n\n.ui-carousel .ui-carousel-header .ui-carousel-header-title {\n    display: inline-block;\n    overflow: hidden;\n}\n\n.ui-carousel .ui-carousel-dropdown,\n.ui-carousel .ui-carousel-mobiledropdown {\n    float: right;\n    margin: 0px .625em;\n    background-image: none;\n}\n\n.ui-carousel .ui-carousel-dropdown option,\n.ui-carousel .ui-carousel-mobiledropdown option{\n    background-image: none;\n    border: 0 none;\n    box-shadow: none;\n    -moz-box-shadow: none;\n    -webkit-box-shadow: none;\n}\n\n.ui-carousel .ui-carousel-button {\n    float: right;\n    margin: .125em;\n}\n\n.ui-carousel .ui-carousel-page-link {\n    float: left;\n    margin: 0 .125em;\n    text-decoration: none;\n}\n\n.ui-carousel .ui-carousel-page-link, \n.ui-carousel .ui-carousel-button {\n    cursor: pointer;\n}\n\n.ui-carousel .ui-carousel-page-links {\n    margin: 0px .5em;\n    margin-top: .125em;\n    float: right;\n}\n\n.ui-carousel .ui-carousel-mobiledropdown {\n    display: none;\n}\n.ui-chkbox {\n    display: inline-block;\n    cursor: pointer;\n    vertical-align: middle;\n    margin-right: .25em;\n}\n\n.ui-chkbox .ui-chkbox-box {\n    width: 1.125em;\n    height: 1.125em;\n    line-height: 1.125em;\n    -moz-border-radius: 2px;\n    -webkit-border-radius: 2px;\n    border-radius: 2px;\n    text-align: center;\n}\n\n.ui-chkbox .ui-chkbox-icon {\n    line-height: inherit;\n    display: block;\n}\n\n.ui-chkbox-label {\n    vertical-align: middle;  \n}\n\n\n.ui-chips > ul.ui-inputtext {\n    clear: left;\n    cursor: text;\n    list-style-type: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0 .25em;\n}\n\n.ui-chips-token {\n    cursor: default;\n    display: inline-block;\n    vertical-align: middle;\n    overflow: hidden;\n    padding: .125em .5em;\n    white-space: nowrap;\n    position: relative;\n    margin-right: .125em;\n    border: 0 none;\n    font-size: .9em;\n}\n\n.ui-chips-token .ui-chips-token-label {\n    display: block;\n    margin-right: 2em;\n}\n\n.ui-chips > .ui-state-disabled .ui-chips-token-label {\n    margin-right: 0;\n}\n\n.ui-chips-token .ui-chips-token-icon {\n    margin-top: -.5em;\n    position: absolute;\n    right: 0.2em;\n    top: 50%;\n    cursor: pointer;\n}\n\n.ui-chips-input-token {\n    display: inline-block;\n    vertical-align: middle;\n    list-style-type: none;\n    margin: 0 0 0 .125em;\n    padding: .25em .25em .25em 0;\n}\n\n.ui-chips-input-token .ui-inputtext {\n    border: 0 none;\n    width: 10em;\n    outline: medium none;\n    background-color: transparent;\n    margin: 0;\n    padding: 0;\n    box-shadow: none;\n    -moz-border-radius: 0;\n    -webkit-border-radius: 0;\n    border-radius: 0;\n}\n.ui-datagrid .ui-paginator {\n\ttext-align: center;\n    border-top: 0 none;\n}\n\n.ui-datagrid-column {\n\tpadding: .25em;\n}\n\n.ui-datagrid-content-empty {\n    padding: .25em .625em;\n}\n\n.ui-datagrid .ui-datagrid-header,\n.ui-datagrid .ui-datagrid-footer {\n    text-align:center;\n\tpadding: .5em .75em;\n}\n\n.ui-datagrid .ui-datagrid-header {\n    border-bottom: 0 none;\n}\n\n.ui-datagrid .ui-datagrid-footer {\n    border-top: 0 none;\n}\n\n.ui-datagrid .ui-paginator-top {\n    border-bottom: 0 none;\n}\n\n.ui-datagrid .ui-paginator-bottom {\n    border-top: 0 none;\n}\n\n\n.ui-datalist .ui-datalist-header,\n.ui-datalist .ui-datalist-footer {\n    text-align:center;\n\tpadding: .5em .75em;\n}\n\n.ui-datalist .ui-datalist-header {\n    border-bottom: 0 none;\n}\n\n.ui-datalist .ui-datalist-footer {\n    border-top: 0 none;\n}\n\n.ui-datalist .ui-paginator {\n    border-top: 0 none;\n}\n\n.ui-datalist .ui-datalist-data {\n    margin: 0;\n    padding: 0;\n}\n\n.ui-datalist .ui-datalist-data > li {\n    list-style-type: none;\n    \n}\n\n.ui-datalist .ui-datalist-emtptymessage {\n    padding: .5em .75em;\n}\n.ui-datascroller {\n}\n\n.ui-datascroller .ui-datascroller-header {\n    text-align: center;\n\tpadding: .5em .75em;\n    border-bottom: 0 none;\n}\n\n.ui-datascroller .ui-datascroller-footer {\n    text-align: center;\n    padding: .25em .625em;\n    border-top: 0px none;\n}\n\n.ui-datascroller .ui-datascroller-content {\n    padding: .25em .625em;\n}\n\n.ui-datascroller-inline .ui-datascroller-content {\n    overflow: auto;\n}\n\n.ui-datascroller .ui-datascroller-list {\n    list-style-type: none; \n    margin: 0;\n    padding: 0;\n}\n.ui-datatable {\n    position: relative;\n}\n\n.ui-datatable table {\n\tborder-collapse:collapse;\n    width: 100%;\n    table-layout: fixed;\n}\n\n.ui-datatable .ui-datatable-header,\n.ui-datatable .ui-datatable-caption,\n.ui-datatable .ui-datatable-footer {\n    text-align: center;\n\tpadding: .5em .75em;\n    box-sizing: border-box;\n}\n\n.ui-datatable .ui-datatable-caption,\n.ui-datatable .ui-datatable-header {\n    border-bottom: 0 none;\n}\n\n.ui-datatable .ui-datatable-footer {\n    border-top: 0 none;\n}\n\n.ui-datatable thead th, .ui-datatable tfoot td {\n    text-align: center;\n}\n\n.ui-datatable thead tr {\n    border-width: 0;\n}\n\n.ui-datatable .ui-datatable-thead > tr > th,\n.ui-datatable .ui-datatable-tfoot > tr > td,\n.ui-datatable .ui-datatable-data > tr > td {\n    border-color: inherit;\n    box-sizing: border-box;\n    padding: .25em .5em;\n    overflow: hidden;\n    border-width: 1px;\n    border-style: solid;\n}\n\n.ui-datatable .ui-datatable-thead > tr > th,\n.ui-datatable .ui-datatable-tfoot > tr > td {\n    font-weight: normal;\n}\n\n.ui-datatable tbody {\n    outline: 0;\n}\n\n.ui-datatable .ui-sortable-column {\n    cursor: pointer;\n}\n\n.ui-datatable .ui-sortable-column-icon {\n    display: inline-block;\n    margin-left: .125em;\n}\n\n.ui-datatable tr.ui-state-highlight {\n    cursor: pointer;\n}\n\n/* Scrollable */\n.ui-datatable-scrollable-body {\n    overflow:auto;\n}\n.ui-datatable-scrollable-header {\n    overflow: hidden;\n}\n\n.ui-datatable-scrollable .ui-datatable-scrollable-header,\n.ui-datatable-scrollable .ui-datatable-scrollable-footer {\n    position: relative;\n    border: 0 none;\n}\n\n.ui-datatable-scrollable .ui-datatable-scrollable-header td {\n    font-weight: normal;\n}\n\n.ui-datatable .ui-datatable-scrollable-body  {\n    min-height: 0%;\n}\n\n.ui-datatable .ui-datatable-data tr.ui-state-hover,\n.ui-datatable .ui-datatable-data tr.ui-state-highlight {\n    border-color: inherit;\n    font-weight: inherit;\n    cursor: pointer;\n}\n\n.ui-datatable-scrollable-theadclone {\n    height: 0;\n}\n\n.ui-datatable-scrollable-theadclone tr {\n    height: 0;\n}\n\n.ui-datatable-scrollable-theadclone th.ui-state-default {\n    height: 0;\n    border-bottom-width: 0;\n    border-top-width: 0;\n    padding-top: 0;\n    padding-bottom: 0;\n    outline: 0 none;\n}\n\n.ui-datatable-scrollable-theadclone th span.ui-column-title {\n  display: block;\n  height: 0;\n}\n\n.ui-datatable .ui-paginator {\n    padding: .125em;\n    border-top: 0 none;\n}\n\n.ui-datatable-rtl {\n    direction: rtl;\n}\n\n.ui-datatable-rtl.ui-datatable thead th,\n.ui-datatable-rtl.ui-datatable tfoot td {\n    text-align: right;\n}\n\n/* Row Toggler */\n.ui-row-toggler {\n    cursor: pointer;\n}\n\n/* Resizable */\n.ui-datatable .ui-column-resizer {\n    display: block;\n    position: absolute !important;\n    top: 0;\n    right: 0;\n    margin: 0;\n    width: .5em;\n    height: 100%;\n    padding: 0px;\n    cursor:col-resize;\n    border: 1px solid transparent;\n}\n\n.ui-datatable .ui-column-resizer-helper {\n    width: 1px;\n    position: absolute;\n    z-index: 10;\n    display: none;\n}\n\n.ui-datatable-resizable {\n    padding-bottom: 1px;     /*fix for webkit overlow*/\n    overflow:auto;\n}\n\n.ui-datatable-resizable thead th,\n.ui-datatable-resizable tbody td,\n.ui-datatable-resizable tfoot td {\n    white-space: nowrap;\n}\n\n.ui-datatable-resizable th.ui-resizable-column {\n    background-clip: padding-box;\n    position: relative;\n}\n\n/** Reflow **/\n.ui-datatable-reflow .ui-datatable-data td .ui-column-title {\n    display: none;\n}\n\n/* Filter */\n.ui-datatable .ui-column-filter {\n    display: block;\n    width: 100%;\n    box-sizing: border-box;\n    margin-top: .25em;\n}\n\n/* Editing */\n.ui-datatable .ui-editable-column input {\n    width: 100%;\n    outline: 0;\n}\n\n.ui-datatable .ui-datatable-data > tr > td.ui-editable-column {\n    padding: .5em;\n}\n\n.ui-datatable .ui-editable-column .ui-cell-editor {\n    display: none;\n}\n\n.ui-datatable .ui-datatable-data > tr > td.ui-editable-column.ui-cell-editing {\n    padding: 1px;\n}\n\n.ui-datatable .ui-editable-column.ui-cell-editing .ui-cell-editor {\n    display: block;\n}\n\n.ui-datatable .ui-editable-column.ui-cell-editing .ui-cell-data {\n    display: none;\n}\n\n.ui-datatable-stacked thead th,\n.ui-datatable-stacked tfoot td {\n    display: none !important;\n}\n\n.ui-datatable.ui-datatable-stacked .ui-datatable-data > tr > td {\n    text-align: left;\n    display: block;\n    border: 0 none;\n    width: 100%;\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n    float: left;\n    clear: left;\n}\n\n.ui-datatable.ui-datatable-stacked .ui-datatable-data.ui-widget-content {\n    border: 0 none;\n}\n\n.ui-datatable-stacked .ui-datatable-data tr.ui-widget-content {\n    border-left: 0 none;\n    border-right: 0 none;\n}\n\n.ui-datatable-stacked .ui-datatable-data td .ui-column-title {\n    padding: .4em;\n    min-width: 30%;\n    display: inline-block;\n    margin: -.4em 1em -.4em -.4em;\n    font-weight: bold;\n}\n\n.ui-datatable .ui-selection-column .ui-chkbox,\n.ui-datatable .ui-selection-column .ui-radiobutton {\n     margin: 0;\n     display: block;\n}\n\n.ui-datatable .ui-selection-column .ui-chkbox-box,\n.ui-datatable .ui-selection-column .ui-radiobutton-box {\n    display: block;\n    box-sizing: border-box;\n    margin: 0;\n}\n\n.ui-datatable-scrollable-wrapper {\n    position: relative;\n}\n\n.ui-datatable-scrollable-view {\n    \n}\n\n.ui-datatable-frozen-view .ui-datatable-scrollable-body {\n    overflow: hidden;\n}\n\n.ui-datatable-unfrozen-view {\n    position: absolute;\n    top: 0px;\n}\n\n.ui-datatable .ui-datatable-load-status {\n    width: 100%;\n    height: 100%;\n    top: 0px;\n    left: 0px;\n}\n\n.ui-datatable .ui-datatable-virtual-table {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n}\n\n@media ( max-width: 35em ) {\n    .ui-datatable-reflow thead th,\n    .ui-datatable-reflow tfoot td {\n        display: none !important;\n    }\n\n    .ui-datatable-reflow .ui-datatable-data > tr > td {\n        text-align: left;\n        display: block;\n        border: 0 none;\n        width: 100%;\n\t\t-webkit-box-sizing: border-box;\n\t\t-moz-box-sizing: border-box;\n\t\tbox-sizing: border-box;\n\t\tfloat: left;\n\t\tclear: left;\n    }\n\n    .ui-datatable-reflow .ui-datatable-data.ui-widget-content {\n        border: 0 none;\n    }\n\n    .ui-datatable-reflow .ui-datatable-data tr.ui-widget-content {\n        border-left: 0 none;\n        border-right: 0 none;\n    }\n\n    .ui-datatable-reflow .ui-datatable-data td .ui-column-title {\n        padding: .4em;\n        min-width: 30%;\n        display: inline-block;\n        margin: -.4em 1em -.4em -.4em;\n        font-weight: bold;\n    }\n}\n.ui-dialog {\n    position: fixed;\n    padding: 0;\n}\n.ui-dialog .ui-dialog-titlebar {\n\tpadding: .5em .75em;\n    position: relative;\n    border: 0;\n}\n.ui-dialog .ui-dialog-content {\n    position: relative;\n    border: 0;\n    padding: .5em .75em;\n    background: none;\n    overflow: auto;\n    zoom: 1;\n}\n.ui-dialog .ui-dialog-buttonpane {\n    text-align: left;\n    border-width: 1px 0 0 0;\n    background-image: none;\n    margin: .5em 0 0 0;\n    padding: .3em 1em .5em .4em;\n}\n.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {\n    float: right;\n}\n.ui-dialog .ui-dialog-buttonpane button {\n    margin: .5em .4em .5em 0;\n    cursor: pointer;\n    float: right;\n}\n.ui-dialog .ui-resizable-se {\n    width: 14px;\n    height: 14px;\n    right: 3px;\n    bottom: 3px;\n}\n.ui-draggable .ui-dialog-titlebar {\n    cursor: move;\n}\n.ui-dialog .ui-dialog-titlebar-icon {\n    text-decoration: none\n}\n.ui-dialog .ui-dialog-titlebar-close {\n    float: right;\n    padding: .125em;\n    cursor: pointer;\n    border: 1px solid transparent;\n}\n.ui-dialog .ui-dialog-titlebar-close span {\n    display: block;\n    margin: 0;\n}\n.ui-dialog-footer {\n    padding: .4em 1em;\n    border-width: 1px 0 0 0;\n    text-align: left;\n}\n\n.ui-dialog-mask {\n    position: fixed;\n    width: 100%;\n    height: 100%;\n}\n\n/* ConfirmDialog */\n.ui-confirmdialog.ui-dialog .ui-dialog-content {\n    padding: 1em 2em;\n}\n.ui-confirmdialog .ui-dialog-content .fa {\n    font-size: 1.5em;\n    vertical-align: middle;\n    margin-right: .5em;\n}\n.ui-confirmdialog .ui-dialog-content .ui-confirmdialog-message {\n    vertical-align: middle;\n}\n\n/* Fluid */\n.ui-fluid .ui-dialog-buttonpane .ui-button {\n    width: auto;\n}\n.ui-dropdown {\n    display: inline-block;\n    position: relative;\n    cursor: pointer;\n    vertical-align: middle;\n}\n\n.ui-dropdown .ui-dropdown-trigger {\n    border-right: none;\n    border-top: none;\n    border-bottom: none;\n    cursor: pointer;\n    width: 1.5em;\n    height: 100%;\n    position: absolute;\n    right: 0;\n    top: 0;\n    padding: 0 .25em;\n}\n\n.ui-dropdown .ui-dropdown-trigger .fa {\n    margin-top: .4em;\n    margin-left: -.125em;\n}\n\n.ui-dropdown .ui-dropdown-label  {\n    display: block;\n    border: none;\n    white-space: nowrap;\n    overflow: hidden;\n    font-weight: normal;\n    width: 100%;\n    padding-right: 1.5em;\n}\n\n.ui-dropdown .ui-dropdown-item-empty,\n.ui-dropdown .ui-dropdown-label-empty {\n    text-indent: -9999px;   \n}\n\n.ui-dropdown.ui-state-disabled .ui-dropdown-trigger,\n.ui-dropdown.ui-state-disabled .ui-dropdown-label {\n    cursor: default;\n}\n\n.ui-dropdown label.ui-dropdown-label  {\n    cursor: pointer;\n}\n\n.ui-dropdown input.ui-dropdown-label  {\n    cursor: default;\n}\n\n.ui-dropdown .ui-dropdown-panel {\n    min-width: 100%;\n}\n\n.ui-dropdown-panel {\n    position: absolute;\n    height: auto;\n}\n\n.ui-dropdown-panel .ui-dropdown-items-wrapper {\n    overflow: auto;\n}\n\n.ui-dropdown-panel .ui-dropdown-item {\n    font-weight: normal;\n    border: 0 none;\n    cursor: pointer;\n    margin: 1px 0;\n    padding: .125em .25em;\n    text-align: left;\n}\n\n.ui-dropdown-panel .ui-dropdown-item-group {\n    font-weight: bold;\n}\n\n.ui-dropdown-panel .ui-dropdown-list {\n    padding: 0.4em;\n    border: 0 none;\n}\n\n.ui-dropdown-panel .ui-dropdown-filter {\n    width: 100%;\n    padding-right: 1.5em;\n}\n\n.ui-dropdown-panel .ui-dropdown-filter-container {\n    position: relative;\n    margin: 0;\n    padding: 0.4em;\n    display: inline-block;\n}\n\n.ui-dropdown-panel .ui-dropdown-filter-container .fa {\n    position: absolute;\n    top: .8em;\n    right: 1em;\n}\n\n/** Dropdown **/\n.ui-fluid .ui-dropdown {\n    width: 100%;\n}\n.ui-fieldset, .ui-fieldset .ui-fieldset-legend {\n    padding: 0.6em 1em;\n}\n\n.ui-fieldset-toggleable .ui-fieldset-legend {\n    padding: 0.5em 1em 0.5em 0.5em;\n    cursor:pointer;\n    white-space: nowrap;\n}\n\n.ui-fieldset .ui-fieldset-toggler {\n    margin-right: .1em;\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-fieldset .ui-fieldset-content-wrapper-overflown {\n    overflow: hidden;\n} \n/*\n * FileUpload\n */\n.ui-fileupload-buttonbar .ui-fileupload-choose input {\n    display: none;\n}\n\n.ui-fileupload-buttonbar .ui-fileupload-choose.ui-state-disabled input {\n    cursor: default;\n}\n\n.ui-fileupload-choose {\n    position: relative;\n    overflow: hidden;\n}\n\n.ui-fileupload-buttonbar {\n    padding: .5em;\n    border-bottom: 0 none;\n}\n\n.ui-fileupload-buttonbar .ui-button {\n    vertical-align: middle;\n    margin-right: .25em;\n}\n\n.ui-fileupload-content {\n    padding: 1em;\n    position: relative;\n    transition: border-color .3s;\n}\n\n.ui-fileupload-content.ui-fileupload-highlight {\n    border-color: #156090;\n}\n\n.ui-fileupload-files img {\n    border: none;\n}\n\n.ui-fileupload-files {\n    display: table;\n}\n\n.ui-fileupload-row {\n    display: table-row;\n}\n\n.ui-fileupload-row > div {\n    display: table-cell;\n    padding: .5em 1em;\n    vertical-align: middle;\n}\n\n.ui-fileupload-content .ui-progressbar {\n    width: 100%;\n    position: absolute;\n    top: 1px;\n    left: 0;\n    height: .25em;\n    border: 0 none;\n}\n\n.ui-fileupload-content .ui-progressbar-value {\n    -moz-border-radius: 0;\n    -webkit-border-radius: 0;\n    border-radius: 0;\n    border: 0 none;\n}\n\n/* ui-fluid */\n.ui-fluid .ui-fileupload .ui-button {\n    width: auto;\n}\n\n.ui-fluid .ui-fileupload-content .ui-button-icon-only {\n    width: 2em;\n}\n\n\n\n\n.ui-galleria { \n    overflow: hidden; \n    visibility: hidden; \n    position: relative;\n}\n\n.ui-galleria-panel-wrapper {\n    position: relative;\n    padding: 0;\n    margin: 0;\n}\n\n.ui-galleria-panel {\n    filter: inherit;\n    position: absolute;\n    top: 0;\n    left: 0;\n    list-style-type: none;\n}\n\n.ui-galleria-filmstrip-wrapper {\n    overflow: hidden;\n    margin: .25em auto;\n    position: relative;\n}\n\n.ui-galleria-filmstrip { \n    list-style: none outside none;\n    margin: 0;\n    padding: 0;\n    width: 2340px;\n    z-index: 900;\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n.ui-galleria-frame {\n    float:left;\n    margin-right: 5px;\n    opacity: 0.3;\n    cursor: pointer;\n}\n\n.ui-galleria-frame-active {\n    opacity: 1;\n}\n\n.ui-galleria-frame-content {\n    overflow: hidden;\n}\n\n.ui-galleria-nav-next, .ui-galleria-nav-prev {\n\tcursor: pointer;\n    position: absolute;\n}\n\n.ui-galleria-nav-prev {\t\n    left: 5px;\n}\n\n.ui-galleria-nav-next {\n    right: 5px;\n}\n\n.ui-galleria-caption {\n    position: absolute;\n    left:1px;\n    background-color: rgba(0,0,0,0.5);\n    display: none;\n    color: #ededed;\n    padding: 0.2em 1em;\n}\n\n.ui-galleria-caption h4 {\n    color: #ededed;\n}\n\n.ui-galleria-panel-content {\n    padding: 1em 1.4em;\n}\n/* Deprecated Grid CSS */\n.ui-grid {\n    clear: both;\n    padding: 0;\n    margin: 0;\n}\n\n.ui-grid:before,\n.ui-grid:after {\n    content:\"\";\n    display:table;\n}\n\n.ui-grid:after {\n    clear:both;\n}\n\n.ui-grid .ui-grid-row {\n    display: -webkit-box;\n    display: -moz-box;\n    display: -ms-flexbox;\n    display: -webkit-flex;\n    display: flex;\n    clear:both;\n}\n\n.ui-grid-row:after {\n    clear: both;\n    content: \"\";\n    display: table;\n}\n\n.ui-grid-col-1,\n.ui-grid-col-2,\n.ui-grid-col-3,\n.ui-grid-col-4,\n.ui-grid-col-5,\n.ui-grid-col-6,\n.ui-grid-col-7,\n.ui-grid-col-8,\n.ui-grid-col-9,\n.ui-grid-col-10,\n.ui-grid-col-11,\n.ui-grid-col-12 {\n    float: left;\n    box-sizing: border-box;\n}\n\n.ui-grid-col-1 {\n    width: 8.33333%;\n}\n\n.ui-grid-col-2 {\n    width: 16.66666%;\n}\n\n.ui-grid-col-3 {\n    width: 25%;\n}\n\n.ui-grid-col-4 {\n    width: 33.33333%;\n}\n\n.ui-grid-col-5 {\n    width: 41.66666%;\n}\n\n.ui-grid-col-6 {\n    width: 50%;\n}\n\n.ui-grid-col-7 {\n    width: 58.33333%;\n}\n\n.ui-grid-col-8 {\n    width: 66.66666%;\n}\n\n.ui-grid-col-9 {\n    width: 75%;\n}\n\n.ui-grid-col-10 {\n    width: 83.33333%;\n}\n\n.ui-grid-col-11 {\n    width: 91.66666%;\n}\n\n.ui-grid-col-12 {\n    width: 100%;\n}\n\n@media (min-width: 480px) {\n    .ui-grid-fixed {\n        width: 480px;\n    }\n}\n\n@media (min-width: 768px) {\n    .ui-grid-fixed {\n        width: 768px;\n    }\n}\n\n@media (min-width: 960px) {\n    .ui-grid-fixed {\n        width: 960px;\n    }\n}\n\n@media (min-width: 1024px) {\n    .ui-grid-fixed {\n        width: 1024px;\n    }\n}\n\n/* Responsive */\n@media (max-width: 640px) {\n    .ui-grid-responsive .ui-grid-row {\n        display: block;\n    }\n    \n    .ui-grid-responsive .ui-grid-col-1,\n    .ui-grid-responsive .ui-grid-col-2,\n    .ui-grid-responsive .ui-grid-col-3,\n    .ui-grid-responsive .ui-grid-col-4,\n    .ui-grid-responsive .ui-grid-col-5,\n    .ui-grid-responsive .ui-grid-col-6,\n    .ui-grid-responsive .ui-grid-col-7,\n    .ui-grid-responsive .ui-grid-col-8,\n    .ui-grid-responsive .ui-grid-col-9,\n    .ui-grid-responsive .ui-grid-col-10,\n    .ui-grid-responsive .ui-grid-col-11,\n    .ui-grid-responsive .ui-grid-col-12 {\n        width: 100%;\n        float: none;\n    }\n}\n\n.ui-grid.ui-grid-pad > .ui-grid-row > div {\n    padding: .25em .5em;\n}\n\n/* Responsive */\n@media (max-width: 640px) {\n    .ui-grid-responsive .ui-grid-row {\n        display: block;\n    }\n    \n    .ui-grid-responsive .ui-grid-col-1,\n    .ui-grid-responsive .ui-grid-col-2,\n    .ui-grid-responsive .ui-grid-col-3,\n    .ui-grid-responsive .ui-grid-col-4,\n    .ui-grid-responsive .ui-grid-col-5,\n    .ui-grid-responsive .ui-grid-col-6,\n    .ui-grid-responsive .ui-grid-col-7,\n    .ui-grid-responsive .ui-grid-col-8,\n    .ui-grid-responsive .ui-grid-col-9,\n    .ui-grid-responsive .ui-grid-col-10,\n    .ui-grid-responsive .ui-grid-col-11,\n    .ui-grid-responsive .ui-grid-col-12 {\n        width: 100%;\n        float: none;\n    }\n}\n\n/* New Grid CSS */\n.ui-g {\n    display: -webkit-box;\n    display: -moz-box;\n    display: -ms-flexbox;\n    display: -webkit-flex;\n    display: flex;\n    flex-wrap: wrap;\n}\n            \n.ui-g:after {\n    clear: both;\n    content: \"\";\n    display: table;\n}\n            \n.ui-g-1,\n.ui-g-2,\n.ui-g-3,\n.ui-g-4,\n.ui-g-5,\n.ui-g-6,\n.ui-g-7,\n.ui-g-8,\n.ui-g-9,\n.ui-g-10,\n.ui-g-11,\n.ui-g-12 {\n    float: left;\n    box-sizing: border-box;\n    padding: 0.5em;\n}\n\n.ui-g-1 {\n    width: 8.3333%;\n}\n\n.ui-g-2 {\n    width: 16.6667%;\n}\n\n.ui-g-3 {\n    width: 25%;\n}\n\n.ui-g-4 {\n    width: 33.3333%;\n}\n\n.ui-g-5 {\n    width: 41.6667%;\n}\n\n.ui-g-6 {\n    width: 50%;\n}\n\n.ui-g-7 {\n    width: 58.3333%;\n}\n\n.ui-g-8 {\n    width: 66.6667%;\n}\n\n.ui-g-9 {\n    width: 75%;\n}\n\n.ui-g-10 {\n    width: 83.3333%;\n}\n\n.ui-g-11 {\n    width: 91.6667%;\n}\n\n.ui-g-12 {\n    width: 100%;\n}\n\n@media screen and (max-width: 40em) {\n    .ui-sm-1,\n    .ui-sm-2,\n    .ui-sm-3,\n    .ui-sm-4,\n    .ui-sm-5,\n    .ui-sm-6,\n    .ui-sm-7,\n    .ui-sm-8,\n    .ui-sm-9,\n    .ui-sm-10,\n    .ui-sm-11,\n    .ui-sm-12 {\n        padding: 0.5em;\n    }\n\n    .ui-sm-1 {\n        width: 8.3333%;\n    }\n\n    .ui-sm-2 {\n        width: 16.6667%;\n    }\n\n    .ui-sm-3 {\n        width: 25%;\n    }\n\n    .ui-sm-4 {\n        width: 33.3333%;\n    }\n\n    .ui-sm-5 {\n        width: 41.6667%;\n    }\n\n    .ui-sm-6 {\n        width: 50%;\n    }\n\n    .ui-sm-7 {\n        width: 58.3333%;\n    }\n\n    .ui-sm-8 {\n        width: 66.6667%;\n    }\n\n    .ui-sm-9 {\n        width: 75%;\n    }\n\n    .ui-sm-10 {\n        width: 83.3333%;\n    }\n\n    .ui-sm-11 {\n        width: 91.6667%;\n    }\n\n    .ui-sm-12 {\n        width: 100%;\n    }\n}\n\n@media screen and (min-width: 40.063em) {\n    .ui-md-1,\n    .ui-md-2,\n    .ui-md-3,\n    .ui-md-4,\n    .ui-md-5,\n    .ui-md-6,\n    .ui-md-7,\n    .ui-md-8,\n    .ui-md-9,\n    .ui-md-10,\n    .ui-md-11,\n    .ui-md-12 {\n        padding: 0.5em;\n    }\n\n    .ui-md-1 {\n        width: 8.3333%;\n    }\n\n    .ui-md-2 {\n        width: 16.6667%;\n    }\n\n    .ui-md-3 {\n        width: 25%;\n    }\n\n    .ui-md-4 {\n        width: 33.3333%;\n    }\n\n    .ui-md-5 {\n        width: 41.6667%;\n    }\n\n    .ui-md-6 {\n        width: 50%;\n    }\n\n    .ui-md-7 {\n        width: 58.3333%;\n    }\n\n    .ui-md-8 {\n        width: 66.6667%;\n    }\n\n    .ui-md-9 {\n        width: 75%;\n    }\n\n    .ui-md-10 {\n        width: 83.3333%;\n    }\n\n    .ui-md-11 {\n        width: 91.6667%;\n    }\n\n    .ui-md-12 {\n        width: 100%;\n    }\n}\n\n@media screen and (min-width: 64.063em) {\n    .ui-lg-1,\n    .ui-lg-2,\n    .ui-lg-3,\n    .ui-lg-4,\n    .ui-lg-5,\n    .ui-lg-6,\n    .ui-lg-7,\n    .ui-lg-8,\n    .ui-lg-9,\n    .ui-lg-10,\n    .ui-lg-11,\n    .ui-lg-12 {\n        padding: 0.5em;\n    }\n\n    .ui-lg-1 {\n        width: 8.3333%;\n    }\n\n    .ui-lg-2 {\n        width: 16.6667%;\n    }\n\n    .ui-lg-3 {\n        width: 25%;\n    }\n\n    .ui-lg-4 {\n        width: 33.3333%;\n    }\n\n    .ui-lg-5 {\n        width: 41.6667%;\n    }\n\n    .ui-lg-6 {\n        width: 50%;\n    }\n\n    .ui-lg-7 {\n        width: 58.3333%;\n    }\n\n    .ui-lg-8 {\n        width: 66.6667%;\n    }\n\n    .ui-lg-9 {\n        width: 75%;\n    }\n\n    .ui-lg-10 {\n        width: 83.3333%;\n    }\n\n    .ui-lg-11 {\n        width: 91.6667%;\n    }\n\n    .ui-lg-12 {\n        width: 100%;\n    }\n}\n\n@media screen and (min-width: 90.063em) {\n    .ui-xl-1,\n    .ui-xl-2,\n    .ui-xl-3,\n    .ui-xl-4,\n    .ui-xl-5,\n    .ui-xl-6,\n    .ui-xl-7,\n    .ui-xl-8,\n    .ui-xl-9,\n    .ui-xl-10,\n    .ui-xl-11,\n    .ui-xl-12 {\n        padding: 0.5em;\n    }\n\n    .ui-xl-1 {\n        width: 8.3333%;\n    }\n\n    .ui-xl-2 {\n        width: 16.6667%;\n    }\n\n    .ui-xl-3 {\n        width: 25%;\n    }\n\n    .ui-xl-4 {\n        width: 33.3333%;\n    }\n\n    .ui-xl-5 {\n        width: 41.6667%;\n    }\n\n    .ui-xl-6 {\n        width: 50%;\n    }\n\n    .ui-xl-7 {\n        width: 58.3333%;\n    }\n\n    .ui-xl-8 {\n        width: 66.6667%;\n    }\n\n    .ui-xl-9 {\n        width: 75%;\n    }\n\n    .ui-xl-10 {\n        width: 83.3333%;\n    }\n\n    .ui-xl-11 {\n        width: 91.6667%;\n    }\n\n    .ui-xl-12 {\n        width: 100%;\n    }\n}\n\n.ui-g-nopad {\n    padding: 0;\n}\n\n.ui-growl {\n\tposition:fixed;\n\ttop: 20px;\n\tright: 20px;\n\twidth: 20em;\n}\n\n.ui-growl-item-container {\n\tposition:relative;\n\tmargin:0 0 10px 0;\n\topacity:0.95;\n\tfilter:alpha(opacity=95);\n}\n\n.ui-growl-item {\n    position: relative;\n\tdisplay: block;\n\tpadding: .5em 1em;\n}\n\n.ui-growl-item p {\n\tpadding: 0;\n\tmargin: 0;\n}\n\n.ui-growl-icon-close {\n\tposition: absolute;\n\ttop: 4px;\n\tright: 4px;\n\tcursor: pointer;\n}\n\n.ui-growl-title {\n\tfont-weight: bold;\n\tpadding: 0 0 .5em 0;\n\tdisplay: block;\n}\n\n.ui-growl-image {\n    position: absolute;\n    display: inline-block;\n    left: .5em;\n    top: .25em;\n    padding: 0;\n}\n\n.ui-growl-message {\n\tpadding: 0 0 .25em 0;\n    margin-left: 2.5em;\n}\n\n.ui-growl-message p {\n\tfont-weight: normal;\n}\n.ui-inplace .ui-inplace-display {\n    display: inline;\n    cursor: pointer;\n    border: 0 none;\n    padding: .25em;\n    font-weight: normal;\n}\n\n.ui-inplace .ui-inplace-content {\n    display: inline;\n}\n.ui-inputswitch {\n\tdisplay: inline-block;\n\tpadding: 0;\n\tposition: relative;\n\toverflow: hidden;\n\tcursor: pointer;\n\tuser-select: none;\n    -moz-user-select: none;\n    -khtml-user-select: none;\n    -webkit-user-select: none;\n    height: 1.5em;\n}\n\n.ui-inputswitch .ui-inputswitch-on,\n.ui-inputswitch .ui-inputswitch-off {\n\twhite-space: nowrap;\n    display: inline-block;\n    position: absolute;\n\ttop: 0;\n    width: auto;\n    overflow: hidden;\n    user-select: none;\n    -moz-user-select: none;\n    -khtml-user-select: none;\n    -webkit-user-select: none;\n\tfont-weight: bold;\n\theight: 100%;\n    line-height: 1.5em;\n}\n\n.ui-inputswitch .ui-inputswitch-on {\n\tleft: 0;\n    border: 0 none;\n}\n\n.ui-inputswitch .ui-inputswitch-off {\n\tright: 0;\n    text-align: right;\n}\n\n.ui-inputswitch .ui-inputswitch-on span,\n.ui-inputswitch .ui-inputswitch-off span {\n\tdisplay: inline-block;\n\ttext-align: center;\n\theight: 100%;\n    line-height: inherit;\n}\n\n.ui-inputswitch .ui-inputswitch-handle {\n\tdisplay: block;\n\twidth: 0;\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n    height: 100%;\n    border-top: 0 none;\n    border-bottom: 0 none;\n}\n.ui-inputtext {\n    margin: 0;\n    outline: medium none;\n    padding: .25em;\n    font-weight: normal;\n}\n\n.ui-widget-header .ui-inputtext,\n.ui-widget-content .ui-inputtext {\n    font-weight: normal;\n}\n\n.ui-fluid .ui-inputtext {\n    width: 100%;\n    box-sizing: border-box;\n    -webkit-box-sizing:border-box;\n    -moz-box-sizing: border-box;\n}\n.ui-inputtextarea-resizable {\n    overflow: hidden;\n    resize:none;\n}\n\n.ui-fluid .ui-inputtextarea {\n    width: 100%;\n}\n.ui-lightbox {\n    position: fixed;\n}\n\n.ui-lightbox-content-wrapper {\n    position: relative;\n}\n\n.ui-lightbox-content {\n    position: relative;\n    margin: 0;\n    padding: 0;\n    background-color: #000000;\n}\n\n.ui-lightbox-nav-right, .ui-lightbox-nav-left {\n   position: absolute;\n   top: 50%;\n   cursor: pointer;\n}\n\n.ui-lightbox-nav-left {\n   left: 0;\n}\n\n.ui-lightbox-nav-right {\n   right: 0;\n}\n\n.ui-lightbox-loading {\n    background: url(" + __webpack_require__(103) + ") #000000 center center no-repeat;\n}\n\n.ui-lightbox-caption {\n    padding: 0.2em 0.4em;\n    display: none;\n}\n\n.ui-lightbox-caption-text {\n    margin: 0.3em 0 0.1em 0;\n    float:left;\n}\n\n.ui-lightbox-close {\n    float:right;\n    margin: 0;\n    padding: .125em;\n}\n\n.ui-lightbox-close.ui-state-hover {\n    padding: 0;\n}\n\n.ui-lightbox-nav-left, .ui-lightbox-nav-right {\n    opacity: .5;\n}\n\n.ui-lightbox-nav-left:hover, .ui-lightbox-nav-right:hover{\n    opacity: 1;\n}\n.ui-listbox {\n    overflow:auto;\n    padding: .25em;\n    width: 10em;\n}\n\n.ui-listbox .ui-listbox-list {\n    list-style-type: none; \n    margin: 0;\n    padding: 0;\n}\n\n.ui-listbox .ui-listbox-item {\n    padding: .25em;\n    border: 0 none;\n    cursor: pointer;\n    font-weight: normal;\n    margin-bottom: 1px;\n}\n\n.ui-listbox .ui-listbox-item > span {\n    vertical-align: middle;\n}\n\n.ui-listbox .ui-listbox-item:last-child {\n    margin-bottom: 0;\n}\n\n.ui-listbox.ui-state-disabled .ui-listbox-item {\n    cursor: default;\n}\n\n.ui-listbox-header {\n    margin-bottom: 0.3em;\n    padding: .125em .2em;\n    position: relative;\n}\n\n.ui-listbox-header .ui-chkbox {\n    display: inline-block;\n    vertical-align: middle;\n    cursor: pointer;\n}\n\n.ui-listbox-header .ui-listbox-filter-container {\n    display: inline-block;\n    vertical-align: middle;\n    position: relative;\n    width: 7em;\n}\n\n.ui-listbox-header .ui-listbox-filter-container .fa {\n    position: absolute;\n    top: .25em;\n    left: .25em;\n}\n\n.ui-listbox-header .ui-inputtext {\n    padding: .125em .125em .125em 1.25em;\n    width: 100%;\n}\n\n/* Fluid */\n.ui-fluid .ui-listbox .ui-listbox-filter-container,\n.ui-fluid .ui-listbox .ui-listbox-filter-container input {\n    width: calc(100% - 32px);\n}\n.ui-menu {\n    width: 12.5em;\n    padding: .25em;\n    position:relative;\n}\n\n.ui-menu.ui-menu-dynamic {\n    position: absolute;\n    display: none;\n    z-index: 100000;\n}\n\n.ui-menu-list {\n    position: static;\n}\n\n.ui-menu .ui-menu-list .ui-menuitem {\n    border: none;\n}\n\n.ui-menu .ui-menu-list .ui-widget-header {\n    clear:both;\n    float:left;\n    width: 100%;\n    margin: .125em 0;\n    padding: .25em .5em;\n}\n\n.ui-menu .ui-menuitem-parent,\n.ui-menu .ui-menuitem {\n    width: 100%;\n    clear: both;\n    margin: .125em 0;\n    padding: 0;\n}\n\n.ui-menu .ui-menuitem-link {\n    display: block;\n    width: 100%;\n    outline: none;\n    text-decoration: none;\n    font-weight: normal;\n    border: 1px solid transparent;\n    line-height: 1em;\n    padding: .25em;\n    cursor: pointer;\n}\n\n.ui-menu .ui-menuitem-link .ui-menuitem-icon {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-menu .ui-menuitem-text {\n    vertical-align: middle;\n}\n\n.ui-menu .ui-widget-header h1,\n.ui-menu .ui-widget-header h2,\n.ui-menu .ui-widget-header h3,\n.ui-menu .ui-widget-header h4,\n.ui-menu .ui-widget-header h5,\n.ui-menu .ui-widget-header h6 {\n    font-size: 1em;\n    margin: 0 auto;\n}\n\n/* Tiered Menu */\n.ui-menu .ui-menu-parent .ui-menu-child {\n    display: none;\n    width: 12.5em;\n    padding: .25em;\n    position:absolute;\n    margin: 0; \n    outline: 0; \n    text-decoration:none;\n    list-style:none;\n}\n\n.ui-menu .ui-menu-parent {\n    position: relative;\n}\n\n.ui-menu .ui-menu-parent .ui-submenu-icon {\n    float: right;\n    margin-right: -.25em;\n}\n\n/** MenuButton **/\n.ui-menubutton {\n    padding: 0;\n}\n\n.ui-menubutton .ui-button {\n    margin: 0;\n}\n\n/** Menubar **/\n.ui-menu.ui-menubar .ui-menubar-root-list > li > a > .ui-submenu-icon {\n    float: none;\n}\n\n.ui-menubar {\n    width:auto;\n}\n\n.ui-menubar .ui-menubar-root-list {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.ui-menubar .ui-menubar-root-list > .ui-menuitem {\n    display: inline-block;\n    width: auto;\n}\n\n.ui-menubar .ui-menu-child .ui-menuitem {\n    width: 100%;\n}\n\n.ui-menubar .ui-menubar-options {\n    float: right;\n}\n           \n/** SlideMenu **/\n.ui-slidemenu .ui-slidemenu-wrapper {\n    position: relative;\n}\n\n.ui-slidemenu .ui-slidemenu-content {\n    overflow-x: hidden;\n    overflow-y: auto;\n    position: relative;\n}\n\n.ui-slidemenu .ui-menu-list {\n    position: absolute;\n    top: 0;\n}\n\n.ui-slidemenu .ui-menu-parent {\n    position: static;\n}\n\n.ui-slidemenu .ui-menu-child {\n    box-shadow : none;\n    border: 0 none;\n    background: none repeat scroll 0 0 transparent;\n}\n\n.ui-slidemenu-backward {\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n    padding: 0.2em;\n    cursor: pointer;\n    display: none;\n}\n\n.ui-slidemenu-backward .fa {\n    vertical-align: middle;\n}\n\n.ui-slidemenu-backward span {\n    vertical-align: middle;\n}\n\n.ui-slidemenu .ui-slidemenuitem-active > .ui-submenu > ul {\n    display: block !important;\n}\n\n/** MegaMenu **/\n.ui-megamenu .ui-g {\n    flex-wrap: nowrap;\n}\n\n.ui-megamenu .ui-megamenu-panel.ui-menu-child {\n    width: auto;\n}\n\n.ui-megamenu .ui-megamenu-panel .ui-menu-list {\n    width: 12.5em;\n}\n\n.ui-megamenu-vertical {\n    width: 12.5em;\n}\n\n.ui-megamenu-vertical .ui-menuitem-link,\n.ui-megamenu-vertical .ui-menu-list .ui-menuitem {\n    width: 100%;\n    box-sizing: border-box;\n}\n\n/** PanelMenu **/\n.ui-panelmenu {\n    width: auto;\n}\n\n.ui-panelmenu .ui-panelmenu-panel {\n    padding: 0;\n    margin: 0;\n}\n\n.ui-panelmenu .ui-panelmenu-header {\n    cursor: pointer;\n    position: relative;\n    margin: 0;\n    zoom: 1;\n}\n\n.ui-panelmenu .ui-panelmenu-header a {\n    display: block;\n    padding: .25em .5em;\n}\n\n.ui-panelmenu span {\n    vertical-align: middle;\n}\n\n.ui-panelmenu .fa {\n    width: 1em;\n    text-align: center;\n    vertical-align: middle;\n    margin-right: .25em;\n}\n\n.ui-panelmenu .ui-menuitem-text {\n    margin-left: .125em;\n}\n\n.ui-panelmenu span {\n    vertical-align: middle;\n}\n\n.ui-panelmenu .ui-panelmenu-content {\n    padding: 0.2em 0;\n    border-top: 0;\n    overflow: auto;\n    zoom: 1;\n    outline: none;\n    margin-bottom: 1px;\n}\n\n.ui-panelmenu .ui-panelmenu-content-wrapper {\n    box-sizing: border-box;\n}\n\n.ui-panelmenu .ui-panelmenu-content-wrapper-overflown {\n    overflow: hidden;\n}\n\n.ui-panelmenu .ui-panelmenu-header.ui-state-disabled,\n.ui-panelmenu .ui-panelmenu-header.ui-state-disabled a {\n    cursor: default;\n}\n\n.ui-panelmenu .ui-menu-list {\n    position: static;\n}\n\n.ui-panelmenu .ui-menuitem {\n    margin: 1px 0;\n    padding: 0;\n}\n\n.ui-panelmenu .ui-menuitem-link {\n    display: block;\n    outline: none;\n    text-decoration: none;\n    font-weight: normal;\n    border: 1px solid  transparent;\n    line-height: 1em;\n    cursor: pointer;\n    position: relative;\n    padding: .25em .5em;\n}\n\n.ui-panelmenu .ui-menu-parent .ui-menu-list {\n    margin-left: 1.5em;\n}\n\n/** MegaMenu and TieredMenus **/\n.ui-menuitem-active > .ui-submenu > ul,\n.ui-menuitem-active > .ui-megamenu-panel {\n    display: block !important;\n}\n\n.ui-menuitem-outline {\n    outline: 1px dotted;\n    z-index: 1;\n}\n\n/** Fluid **/\n.ui-fluid .ui-menu {\n    width: 100%;\n}\n.ui-messages {\n    border: 1px solid;\n    margin: .5em 0;\n    padding: 1em 1em 1em .5em;\n    display: none;\n    position: relative;\n}\n\n.ui-messages-icon {\n    display:inline-block;\n    padding: 0;\n    vertical-align: middle;\n}\n\n.ui-messages-summary {\n    font-weight: bold;\n    margin-left: .25em;\n}\n\n.ui-messages-detail {\n    margin-left: .25em;\n}\n\n.ui-messages-success {\n    color: #ffffff;\n    background-color: #4CAF50;\n    border-color: #4CAF50;\n}\n\n.ui-messages-info {\n    color: #ffffff;\n    background-color: #2196f3;\n    border-color: #2196f3;\n}\n\n.ui-messages-warn {\n    color: #ffffff;\n    background-color: #FFB300;\n    border-color: #FFB300;\n}\n\n.ui-messages-error {\n    color: #ffffff;\n    background-color: #f44336;\n    border-color: #f44336;\n}\n\n.ui-messages ul {\n    margin: 0;\n    padding: 0;\n    list-style-type: none;\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-messages.ui-messages-noicon ul {\n    margin: 0 1.5em 0 0;\n}\n\n.ui-messages .ui-messages-close {\n    color: #ffffff;\n    cursor: pointer;\n    position: absolute;\n    top: 5px;\n    right: 5px;\n}\n\n/* Message */\n.ui-message {\n    border: 1px solid;\n    margin: 0px .25em;\n    padding: .125em .25em;\n}\n/** MultiSelect **/\n.ui-multiselect {\n    display: inline-block;\n    position: relative;\n    width: auto;\n    cursor: pointer;\n}\n\n.ui-multiselect .ui-multiselect-trigger {\n    border-right: none;\n    border-top: none;\n    border-bottom: none;\n    cursor: pointer;\n    width: 1.5em;\n    height: 100%;\n    position: absolute;\n    right: 0;\n    top: 0;\n    padding: 0 .25em;\n}\n\n.ui-multiselect .ui-multiselect-trigger  .fa {\n    margin-top: .4em;\n    margin-left: -.125em;\n}\n\n.ui-multiselect .ui-multiselect-label-container  {\n    overflow: hidden;\n}\n\n.ui-multiselect .ui-multiselect-label  {\n    display: block;\n    padding: .25em 2em .25em .25em;\n    width: auto;\n    border: none;\n    cursor: pointer;\n    text-overflow: ellipsis;\n    overflow: hidden;\n}\n\n.ui-multiselect.ui-state-disabled .ui-multiselect-trigger,\n.ui-multiselect.ui-state-disabled .ui-multiselect-label {\n    cursor: auto\n}\n\n.ui-multiselect-panel {\n    padding: 0.2em;\n    position: absolute;\n    min-width: 10em;\n}\n\n.ui-multiselect-panel .ui-multiselect-items-wrapper {\n    overflow: auto;\n    position: relative;\n    padding: 0.2em 0;\n}\n\n.ui-multiselect-panel .ui-multiselect-list {\n    border: 0 none;\n}\n\n.ui-multiselect-panel .ui-multiselect-item {\n    border: 0 none;\n    cursor: pointer;\n    font-weight: normal;\n    margin: 1px 0;\n    padding: .125em .25em;\n    text-align: left;\n    white-space: nowrap;\n    display: block;\n    position: relative;\n}\n\n.ui-multiselect-panel .ui-multiselect-item .ui-chkbox {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-multiselect-panel .ui-multiselect-item label {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-multiselect-header {\n    margin-bottom: 0.3em;\n    padding: .25em;\n    position: relative;\n    text-align: left;\n}\n\n.ui-multiselect-header .ui-chkbox {\n    display: inline-block;\n    vertical-align: middle;\n    cursor:pointer;\n}\n\n.ui-multiselect-header .ui-multiselect-filter-container {\n    position: relative;\n    display: inline-block;\n    vertical-align: middle;\n    width: 65%;\n}\n\n.ui-multiselect-header .ui-multiselect-filter-container .fa {\n    position: absolute;\n    top: .25em;\n    left: .125em;\n}\n            \n.ui-multiselect-header .ui-inputtext {\n    padding: .125em .125em .125em 1.25em;\n    width: 100%;\n}\n\n.ui-multiselect-header .ui-multiselect-close {\n    position: absolute;\n    right: .375em;\n    top: .375em;\n    display: block;\n    font-size: 1em;\n    border: 0 none;\n}\n\n.ui-multiselect-header a.ui-multiselect-all,\n.ui-multiselect-header a.ui-multiselect-none {\n    float:left;\n    margin-right: 10px;\n    display: block;\n}\n\n.ui-multiselect-header .ui-multiselect-close.ui-state-hover {\n    padding:0px;\n}\n\n.ui-fluid .ui-multiselect {\n    width: 100%;\n    box-sizing: border-box;\n}\n\n.ui-orderlist {\n    display: table;\n}\n\n.ui-orderlist .ui-orderlist-caption {\n    width: 12.5em;\n}\n\n.ui-orderlist .ui-orderlist-list {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    overflow: auto;\n    height: 12.5em;\n    width: 12.5em;\n}\n\n.ui-orderlist .ui-orderlist-list li {\n    margin: 1px;\n    padding: .125em;\n}\n\n.ui-orderlist .ui-button {\n    display: block;\n    margin-bottom: 0.3em;\n}\n\n.ui-orderlist .ui-orderlist-button.ui-button-text-icon-primary {\n    width: 100%;\n}\n\n.ui-orderlist .ui-orderlist-item {\n    cursor: pointer;\n    border: 0 none;\n    font-weight: inherit;\n}\n\n.ui-orderlist .ui-orderlist-caption {\n    text-align: center;\n\tpadding: .5em .75em;\n    border-bottom: 0 none;\n}\n\n.ui-orderlist table {\n    width: 100%;\n    border-collapse: collapse;\n}\n\n.ui-orderlist.ui-state-disabled .ui-orderlist-item,\n.ui-orderlist.ui-state-disabled .ui-button {\n    cursor: default;\n}\n\n.ui-orderlist.ui-state-disabled .ui-orderlist-list {\n    overflow:hidden;\n}\n\n/* Responsive */\n.ui-orderlist.ui-grid-responsive {\n    display: block;\n    width: 100%;\n}\n\n.ui-orderlist.ui-grid-responsive .ui-orderlist-controls {\n    margin-right: .5em;\n}\n\n.ui-orderlist.ui-grid-responsive .ui-orderlist-list,\n.ui-orderlist.ui-grid-responsive .ui-orderlist-caption {\n    width: 100%;\n}  \n\n.ui-orderlist.ui-grid-responsive .ui-orderlist-controls .ui-button {\n    width: 100%;\n}\n\n@media (max-width: 40em) { \n    .ui-orderlist.ui-grid-responsive .ui-orderlist-controls {\n        text-align: center;\n    }\n\n    .ui-orderlist.ui-grid-responsive .ui-orderlist-controls .ui-button {\n        display: inline;\n        width: 20%;\n    }\n}\n.ui-overlaypanel {\n    padding: 0;\n    margin: 0;\n    position: absolute;\n}\n\n.ui-overlaypanel-content {\n    padding: 0.5em 1em;\n}\n\n.ui-overlaypanel-close {\n    position: absolute;\n    top: -.5em;\n    right: -.5em;\n    -moz-border-radius: 100%;\n    -webkit-border-radius: 100%;\n    border-radius: 100%;\n}\n.ui-paginator {\n    margin: 0;\n    text-align: center;\n    padding: .125em;\n}\n\n.ui-paginator .ui-paginator-top {\n    border-bottom: 0 none;\n}\n\n.ui-paginator .ui-paginator-bottom {\n    border-top:0 none;\n}\n\n.ui-paginator .ui-paginator-page,\n.ui-paginator .ui-paginator-pages,\n.ui-paginator .ui-paginator-next,\n.ui-paginator .ui-paginator-last,\n.ui-paginator .ui-paginator-first,\n.ui-paginator .ui-paginator-prev,\n.ui-paginator .ui-paginator-current {\n\tdisplay: inline-block;\n\tpadding: .125em .375em;\n\tzoom: 1;\n\tmargin-left: .063em;\n\tmargin-right: .063em;\n\ttext-decoration: none;\n}\n\n.ui-paginator .ui-paginator-page,\n.ui-paginator .ui-paginator-next,\n.ui-paginator .ui-paginator-last,\n.ui-paginator .ui-paginator-first,\n.ui-paginator .ui-paginator-prev{\n    cursor: pointer;\n}\n\n.ui-paginator .ui-paginator-current,\n.ui-paginator .ui-paginator-rpp-options {\n\tmargin-left: 1em;\n\tmargin-right: 1em;\n    background-image: none;\n}\n\n.ui-paginator .ui-paginator-jtp-select option,\n.ui-paginator .ui-paginator-rpp-options option {\n    background-image: none;\n    border: 0 none;\n    box-shadow: none;\n    -moz-box-shadow: none;\n    -webkit-box-shadow: none;\n}\n\n.ui-paginator a.ui-state-disabled {\n    outline: 0 none;\n}\n.ui-panel {\n\tpadding: 0.2em;\n}\n\n.ui-panel .ui-panel-titlebar {\n\tpadding: .5em .75em;\n}\n\n.ui-panel .ui-panel-titlebar-icon {\n\tfloat: right;\n    cursor: pointer;\n}\n\n.ui-panel .ui-panel-titlebar-icon {\n\tmargin-left: 0.2em;\n    margin-top: -0.1em;\n}\n\n.ui-panel .ui-panel-content {\n\tborder: 0;\n    background: none;\n    padding: .5em .75em;\n}\n\n.ui-panel .ui-panel-footer {\n\tborder-width: 1px 0 0;\n\tpadding: .25em .5em;\n\ttext-align:left;\n}\n  \n.ui-panel-content-wrapper-overflown {\n    overflow: hidden;\n}     \n.ui-password-panel {\n    padding: .25em .5em;\n    width: 10em;\n    margin-top: 2px;\n}\n\n.ui-password-panel .ui-password-meter { \n    height: 10px; \n    background:transparent url(" + __webpack_require__(104) + ") no-repeat left top; \n    padding: 0;\n    margin: 0;\n}\n\n.ui-password-info { \n    margin-top: .25em;\n}\n\n.ui-password-panel-overlay { \n    position: absolute; \n}\n.ui-picklist > div {\n    float: left;\n}\n\n.ui-picklist .ui-picklist-buttons {\n    height: 12.5em;\n    padding: 0 .25em;\n}\n\n.ui-picklist .ui-picklist-list {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    overflow:auto;\n    height: 12.5em;\n    width: 12.5em;\n}\n\n.ui-picklist .ui-picklist-list li {\n    margin: 1px;\n    padding: .125em;\n}\n\n.ui-picklist .ui-button {\n    display:block;\n    margin-bottom: 0.25em;\n}\n\n.ui-picklist .ui-button-text-icon-left {\n    width: 100%;\n}\n\n.ui-picklist .ui-picklist-item {\n    cursor: pointer;\n    border: 0 none;\n    font-weight: inherit;\n}\n\n.ui-picklist .ui-picklist-caption {\n    text-align: center;\n\tpadding: .5em .75em;\n    border-bottom:0 none;\n}\n\n.ui-picklist table {\n    width: 100%;\n    border-collapse:collapse;\n}\n\n.ui-picklist .ui-picklist-filter {\n    padding-right: 1em;\n    width: 100%;\n    box-sizing: border-box;\n}\n\n.ui-picklist .ui-picklist-filter-container {\n    position: relative;\n    margin: 0;\n    padding: 0;\n}\n\n.ui-picklist .ui-picklist-filter-container .fa {\n    position: absolute;\n    top: .25em;\n    right: .125em;\n}\n\n.ui-picklist {\n    display: table;\n}\n\n.ui-picklist > div {\n    float: none;\n    display: table-cell;\n    vertical-align: top;\n}\n\n.ui-picklist .ui-picklist-buttons {\n    vertical-align: middle;\n}\n\n/* Vertical */\n.ui-picklist.ui-picklist-vertical {\n    display: table;\n}\n\n.ui-picklist.ui-picklist-vertical > div {\n    float: none;\n    display: table-row;\n    vertical-align: top;\n}\n\n.ui-picklist.ui-picklist-vertical .ui-picklist-buttons {\n    text-align:center;\n    height: auto;\n}\n\n.ui-picklist.ui-picklist-vertical .ui-picklist-buttons .ui-button {\n    display: inline-block;\n}\n\n.ui-picklist.ui-picklist-vertical .ui-button {\n    margin-top: 0.25em;\n}\n\n.ui-picklist-outline {\n    outline: 1px dotted black;\n    z-index: 1;\n}\n\n.ui-picklist-list.ui-picklist-source,\n.ui-picklist-list.ui-picklist-target {\n    outline: none;\n}\n\n/* Responsive */\n.ui-picklist.ui-picklist-responsive * {\n    box-sizing: border-box;\n}\n\n.ui-picklist.ui-picklist-responsive {\n    width: 100%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-listwrapper {\n    width: 35%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-listwrapper.ui-picklist-listwrapper-nocontrols {\n    width: 45%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-buttons {\n    width: 10%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-buttons button {\n    width: 100%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-list {\n    width: auto;\n}\n        \n/* Responsive */\n@media (max-width: 40em) {\n    .ui-picklist.ui-picklist-responsive {\n        display: block;\n    }\n    \n    .ui-picklist.ui-picklist-responsive > div {\n        display: block;\n        width: 100% !important;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons {\n        text-align: center;\n        height: auto;\n        padding: .4em 0;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons button {\n        display: inline;\n        width: 20%;\n        margin-bottom: 0;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-source-controls.ui-picklist-buttons {\n        padding-bottom: .4em;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-target-controls.ui-picklist-buttons {\n        padding-top: .4em;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .fa-angle-right:before {\n        content: \"\\F107\";\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .fa-angle-double-right:before {\n        content: \"\\F103\";\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .fa-angle-left:before {\n        content: \"\\F106\";\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .fa-angle-double-left:before {\n        content: \"\\F102\";\n    }\n}\n\n.ui-progressbar { \n    height: 1.2em; \n    text-align: left; \n    position: relative;\n}\n\n.ui-progressbar .ui-progressbar-value {\n    height: 100%;\n    width: 0%;\n    position: absolute;\n    display: none;\n    border: 0 none;\n}\n\n.ui-progressbar .ui-progressbar-value-animate {\n    -webkit-transition: width 1s ease-in-out;\n    -moz-transition: width 1s ease-in-out;\n    -o-transition: width 1s ease-in-out;\n    transition: width 1s ease-in-out;\n}\n\n.ui-progressbar .ui-progressbar-label {\n    text-align: center;\n    height: 100%;\n    width: 100%;\n    position: absolute;\n    display: none;\n    font-weight: bold;\n}\n.ui-radiobutton {\n    display:inline-block;\n    cursor: pointer;\n    vertical-align: middle;\n    margin-right: .25em;\n}\n\n.ui-radiobutton-box {\n    width: 1.125em;\n    height: 1.125em;\n    line-height: 1.125em;\n    -moz-border-radius: 100%;\n    -webkit-border-radius: 100%;\n    border-radius: 100%;\n    text-align: center;\n}\n\n.ui-radiobutton-icon {\n    display: block;\n    font-size: .6em;\n    line-height: inherit;\n}\n \n.ui-radiobutton, .ui-radiobutton-label {\n    vertical-align: middle;\n    display: inline-block;\n}\n.ui-fluid .fc .ui-button {\n    width: auto;\n}\n.ui-selectbutton{\n    display: inline-block;\n}\n            \n.ui-selectbutton.ui-state-error {\n    padding: 0;\n}\n\n.ui-selectbutton .ui-button.ui-state-focus{\n    outline: none;\n}\n.ui-slider {\n\tposition: relative;\n\ttext-align: left;\n}\n.ui-slider .ui-slider-handle {\n\tposition: absolute;\n\twidth: 1.2em;\n\theight: 1.2em;\n\tcursor: default;\n\t-ms-touch-action: none;\n\ttouch-action: none;\n    z-index: 1;\n}\n.ui-slider .ui-slider-handle.ui-slider-handle-active {\n    z-index: 2;\n}\n.ui-slider .ui-slider-range {\n\tposition: absolute;\n\tfont-size: .7em;\n\tdisplay: block;\n\tborder: 0;\n\tbackground-position: 0 0;\n}\n\n.ui-slider-horizontal {\n\theight: .8em;\n}\n.ui-slider-horizontal .ui-slider-handle {\n\ttop: -.3em;\n\tmargin-left: -.6em;\n}\n.ui-slider-horizontal .ui-slider-range {\n\ttop: 0;\n\theight: 100%;\n}\n.ui-slider-horizontal .ui-slider-range-min {\n\tleft: 0;\n}\n.ui-slider-horizontal .ui-slider-range-max {\n\tright: 0;\n}\n\n.ui-slider-vertical {\n\twidth: .8em;\n\theight: 100px;\n}\n.ui-slider-vertical .ui-slider-handle {\n\tleft: -.3em;\n\tmargin-left: 0;\n\tmargin-bottom: -.6em;\n}\n.ui-slider-vertical .ui-slider-range {\n\tleft: 0;\n\twidth: 100%;\n}\n.ui-slider-vertical .ui-slider-range-min {\n\tbottom: 0;\n}\n.ui-slider-vertical .ui-slider-range-max {\n\ttop: 0;\n}\n\n.ui-slider-animate .ui-slider-handle {\n    transition: left .3s;\n}\n.ui-spinner {\n    display: inline-block;\n    overflow: visible;\n    padding: 0;\n    position: relative;\n    vertical-align: middle;\n}\n\n.ui-spinner-input {\n    vertical-align: middle;\n    padding-right: 1.5em;\n}\n\n.ui-spinner-button {\n    cursor: default;\n    display: block;\n    height: 50%;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    right: 0;\n    text-align: center;\n    vertical-align: middle;\n    width: 1.5em;\n}\n\n.ui-spinner .fa {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    margin-top: -.5em;\n    margin-left: -.5em;\n    width: 1em;\n}\n\n.ui-spinner-up {\n    top: 0;\n}\n\n.ui-spinner-down {\n    bottom: 0;\n}\n\n/* Fluid */\n.ui-fluid .ui-spinner {\n    width: 100%;\n}\n\n.ui-fluid .ui-spinner .ui-spinner-input {\n    padding-right: 2em;\n    width: 100%;\n}\n\n.ui-fluid .ui-spinner .ui-spinner-button {\n    width: 1.5em;\n}\n\n.ui-fluid .ui-spinner .ui-spinner-button .fa {\n    left: .7em;\n}\n.ui-splitbutton {\n    position: relative;\n    display: inline-block;\n    zoom: 1;\n}\n\n.ui-splitbutton .ui-button.ui-splitbutton-menubutton {\n    width: 2em;\n}\n\n.ui-splitbutton.ui-state-disabled button {\n    cursor: default;\n}\n\n.ui-fluid .ui-splitbutton {\n    width: 100%;\n    box-sizing: border-box;\n    -webkit-box-sizing:border-box;\n    -moz-box-sizing: border-box;\n}\n\n.ui-fluid .ui-splitbutton .ui-button:first-child {\n    width: calc(100% - 2em);\n}\n\n.ui-fluid .ui-splitbutton .ui-button.ui-splitbutton-menubutton {\n    width: 2em;\n    box-sizing: border-box;\n    -webkit-box-sizing:border-box;\n    -moz-box-sizing: border-box;\n}\n.ui-steps ul {\n    list-style-type: none;\n    padding: 0;\n    margin: 0;\n}     \n\n.ui-steps .ui-steps-item {\n    float: left;\n    box-sizing: border-box;\n    cursor: pointer;\n}\n\n.ui-steps.ui-steps-readonly .ui-steps-item {\n    cursor: auto;\n}\n\n.ui-steps .ui-steps-item .ui-menuitem-link {\n    text-decoration: none;\n    display: block;\n    padding: 1em;\n    position: relative;\n    text-align: center;\n}\n\n.ui-steps .ui-steps-item.ui-state-highlight .ui-menuitem-link,\n.ui-steps .ui-steps-item.ui-state-disabled .ui-menuitem-link {\n    cursor: default;\n}\n\n.ui-steps .ui-steps-number {\n    font-size: 200%; \n    display: block;\n}\n\n.ui-steps .ui-steps-title {\n    display: block;\n    white-space: nowrap;\n}\n\n/* Responsive */\n@media (max-width: 40em) {    \n    .ui-steps .ui-steps-item .ui-menuitem-link {\n        padding: 0.5em;\n    }\n    \n    .ui-steps .ui-steps-item .ui-steps-title {\n        display: none;\n    }\n}\n/** TabMenu **/\n.ui-tabmenu { \n\n}\n\n.ui-tabmenu .ui-tabmenu-nav { \n    margin: 0;\n    padding: .25em .5em 0 .25em; \n}\n\n.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem { \n    list-style: none; \n    float: left; \n    position: relative; \n    margin: 0 .2em 1px 0;  \n    padding: 0; \n    white-space: nowrap;\n    display: block;\n    border-bottom: 0;\n    top: 1px; \n}\n\n.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem a { \n    float: left; \n    padding: 0.5em 1em;\n    text-decoration: none; \n}\n\n.ui-tabmenu .ui-tabmenu-nav a { \n    padding: 0.5em 1em;\n}\n\n.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-icon { \n    float: left; \n}\n\n.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-disabled a {\n     cursor: default;\n} \n.ui-tabview {\n    padding: .25em; \n}\n\n.ui-tabview .ui-tabview-nav { \n    margin: 0;\n}\n\n.ui-tabview .ui-tabview-nav li { \n    list-style: none; \n    float: left; \n    position: relative; \n    margin: 0 .125em 1px 0;  \n    padding: 0; \n    white-space: nowrap; \n}\n\n.ui-tabview .ui-tabview-nav li a { \n    float: left; \n    padding: .5em 1em; \n    text-decoration: none; \n}\n\n.ui-tabview .ui-tabview-nav li.ui-tabview-selected a, \n.ui-tabview .ui-tabview-nav li.ui-state-disabled a, \n.ui-tabview .ui-tabview-nav li.ui-state-processing a { \n    cursor: text; \n}\n\n.ui-tabview .ui-tabview-nav li a, \n.ui-tabview.ui-tabview-collapsible .ui-tabview-nav li.ui-tabview-selected a { \n    cursor: pointer; \n}\n\n.ui-tabview .ui-tabview-panel { \n    border-width: 0; \n    padding: 1em; \n    background: none; \n}\n\n.ui-tabview .ui-tabview-nav li { \n    display: block; \n}\n\n.ui-tabview .ui-tabview-nav li .ui-tabview-left-icon,\n.ui-tabview .ui-tabview-nav li .ui-tabview-right-icon,\n.ui-tabview .ui-tabview-nav li .ui-tabview-title { \n    vertical-align: middle;\n}\n\n.ui-tabview .ui-tabview-nav li .ui-tabview-close { \n    margin: 0.5em 0.3em 0 0; \n    cursor: pointer; \n}\n\n/* per orientation settings */\n/* top and bottom */\n.ui-tabview.ui-tabview-top > .ui-tabview-nav li { \n    border-bottom: 0;\n    top: 1px; \n}\n\n.ui-tabview.ui-tabview-top > .ui-tabview-nav { \n    padding: .2em .2em 0; \n}\n\n.ui-tabview.ui-tabview-bottom > .ui-tabview-nav { \n    padding: 0 .2em .2em; \n}\n\n.ui-tabview.ui-tabview-bottom > .ui-tabview-nav li { \n    border-top: 0;\n}\n\n/* left and right*/\n.ui-tabview-left:after,\n.ui-tabview-right:after {\n    clear:both;\n    content: \".\";\n    display: block;\n    height: 0;\n    visibility: hidden;\n}\n\n.ui-tabview-left > .ui-tabview-nav {\n    float:left;\n    width: 25%;\n    height: 300px;\n    background-image: none;\n    padding-top: 1px;\n}\n\n.ui-tabview-left > .ui-tabview-panels {\n    float:right;\n    width: 75%;\n}\n\n.ui-tabview.ui-tabview-left > .ui-tabview-nav li,\n.ui-tabview.ui-tabview-right > .ui-tabview-nav li{\n    display: block;\n    float: right;\n    white-space: normal;\n    width: 99%;\n}\n\n.ui-tabview.ui-tabview-left > .ui-tabview-nav li {\n    margin: 0 0 1px 0;\n    border-right:0 none;\n}\n\n.ui-tabview.ui-tabview-right > .ui-tabview-nav {\n    float:right;\n    width: 25%;\n    height: 300px;\n    background-image: none;\n    padding-top: 1px;\n}\n\n.ui-tabview.ui-tabview-right > .ui-tabview-panels {\n    float:left;\n    width: 75%;\n}\n\n.ui-tabview.ui-tabview-right > .ui-tabview-nav li {\n    margin: 0 0 1px 0;\n    border-left:0 none;\n}\n\n.ui-terminal {\n    height: 18em;\n    overflow: auto;\n    padding: .25em;\n}\n\n.ui-terminal-input {\n    border: 0 none;\n    background-color: transparent;\n    color: inherit;\n    padding: 0;\n    margin: 0 0 0 .125em;\n    width: 75%;\n    outline: none;\n    vertical-align: baseline;\n}\n\n.ui-terminal-command {\n    margin-left: .125em;\n    -moz-margin-start: .125em;\n}\n\n.ui-terminal-input::-ms-clear {\n    display: none;\n}\n.ui-toolbar {\n    padding: .25em .5em;\n}\n\n.ui-toolbar-group-left {\n    float:left\n}\n\n.ui-toolbar-group-right {\n    float:right\n}\n.ui-tooltip {\n    position:absolute;\n    display:none;\n    padding: .25em .5em;\n}\n\n.ui-tooltip.ui-tooltip-right,\n.ui-tooltip.ui-tooltip-left {\n    padding: 0 .25em;\n}\n\n.ui-tooltip.ui-tooltip-top,\n.ui-tooltip.ui-tooltip-bottom {\n    padding:.25em 0;\n}\n\n.ui-tooltip .ui-tooltip-text {\n   padding: .125em .5em;\n   background-color: rgb(76, 76, 76);\n   color: #ffffff;\n   white-space: nowrap;\n}\n\n.ui-tooltip-arrow {\n    position: absolute;\n    width: 0;\n    height: 0;\n    border-color: transparent;\n    border-style: solid;\n}\n\n.ui-tooltip-right .ui-tooltip-arrow {\n    top: 50%;\n    left: 0;\n    margin-top: -.25em;\n    border-width: .25em .25em .25em 0;\n    border-right-color: rgb(76, 76, 76);\n}\n\n.ui-tooltip-left .ui-tooltip-arrow {\n    top: 50%;\n    right: 0;\n    margin-top: -.25em;\n    border-width: .25em 0 .25em .25em;\n    border-left-color: rgb(76, 76, 76);\n}\n\n.ui-tooltip.ui-tooltip-top {\n    padding: .25em 0;\n}\n\n.ui-tooltip-top .ui-tooltip-arrow {\n    bottom: 0;\n    left: 50%;\n    margin-left: -.25em;\n    border-width: .25em .25em 0;\n    border-top-color: rgb(76, 76, 76);\n}\n\n.ui-tooltip-bottom .ui-tooltip-arrow {\n    top: 0;\n    left: 50%;\n    margin-left: -.25em;\n    border-width: 0 .25em .25em;\n    border-bottom-color: rgb(76, 76, 76);\n}\n.ui-tree {\n    width: 18em;\n}\n\n.ui-tree.ui-tree-selectable .ui-treenode-content {\n    cursor: pointer;\n}\n\n.ui-tree .ui-tree-container {\n    height: 100%;\n    margin: 0;\n    overflow: auto;\n    padding: .25em;\n    white-space: nowrap;\n}\n\n.ui-tree .ui-treenode-children {\n    margin: 0;\n    padding: 0 0 0 1em;\n}\n\n.ui-tree .ui-treenode {\n    background-attachment: scroll;\n    background-color: transparent;\n    background-image: none;\n    background-position: 0 0;\n    background-repeat: repeat-y;\n    list-style: none outside none;\n    margin: 0;\n    padding: .125em 0 0 0;\n}\n\n.ui-tree .ui-tree-toggler {\n    cursor: pointer;\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-tree .ui-treenode-icon {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-tree .ui-treenode-label {\n    display: inline-block;\n    padding: 0 .25em;\n    vertical-align: middle;\n}\n\n.ui-tree .ui-treenode-label.ui-state-hover,\n.ui-tree .ui-treenode-label.ui-state-highlight {\n    font-weight: normal;\n    border: 0 none;\n}\n\n.ui-tree .ui-treenode.ui-treenode-leaf > .ui-treenode-content > .ui-tree-toggler {\n    visibility: hidden;\n}\n\n.ui-tree .ui-chkbox-box {\n    cursor: pointer;\n}\n\n.ui-tree .ui-chkbox {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-tree .ui-chkbox .ui-chkbox-icon {\n    margin-left: 1px;\n}\n\n/** Fluid **/\n.ui-fluid .ui-tree {\n    width: 100%;\n}\n\n/** Horizontal Tree **/\n.ui-tree-horizontal {\n    width:auto;\n    padding: .5em 0;\n    overflow:auto;\n}\n\n.ui-tree.ui-tree-horizontal table,\n.ui-tree.ui-tree-horizontal tr,\n.ui-tree.ui-tree-horizontal td {\n    border-collapse: collapse;\n    margin: 0;\n    padding: 0;\n    vertical-align: middle;\n}\n\n.ui-tree.ui-tree-horizontal .ui-tree-toggler {\n    vertical-align: middle;\n    margin: 0;\n}\n\n.ui-tree-horizontal .ui-treenode-content {\n    font-weight: normal;\n    padding: 0.4em 1em 0.4em 0.2em;\n}\n\n.ui-tree.ui-tree-horizontal .ui-tree-node-label {\n    margin: 0;\n}\n\n.ui-tree-horizontal .ui-treenode-parent .ui-treenode-content {\n    font-weight: normal;\n    white-space: nowrap;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode {\n    background: url(" + __webpack_require__(52) + ") repeat-x scroll center center transparent;\n    padding: .25em 2.5em;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode.ui-treenode-leaf,\n.ui-tree.ui-tree-horizontal .ui-treenode.ui-treenode-collapsed {\n    padding-right: 0;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode-children {\n    padding: 0;\n    margin: 0;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode-connector {\n    width: 1px;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode-connector-table {\n    height: 100%;\n    width: 1px;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode-connector-line {\n    background: url(" + __webpack_require__(52) + ") repeat-y scroll 0 0 transparent;\n    width: 1px;\n}\n\n.ui-tree.ui-tree-horizontal table {\n\theight: 0;\n}\n\n.ui-tree.ui-tree-horizontal .ui-chkbox {\n    vertical-align: bottom;\n    margin-right: .25em;\n}\n\n.ui-treetable table {\n\tborder-collapse:collapse;\n    width: 100%;\n    table-layout: fixed;\n}\n\n.ui-treetable .ui-treetable-header,\n.ui-treetable .ui-treetable-footer {\n    text-align:center;\n\tpadding: .5em .75em;\n}\n\n.ui-treetable .ui-treetable-header {\n    border-bottom: 0 none;\n}\n\n.ui-treetable .ui-treetable-footer {\n    border-top: 0 none;\n}\n\n.ui-treetable th, .ui-treetable tfoot td {\n    text-align: center;\n}\n\n.ui-treetable thead th,\n.ui-treetable tbody td,\n.ui-treetable tfoot td {\n    padding: .25em .5em;\n    overflow: hidden;\n    white-space: nowrap;\n    border-width: 1px;\n    border-style: solid;\n}\n\n.ui-treetable tbody td {\n    border-color: inherit;\n}\n\n.ui-treetable tbody td:first-child span {\n    vertical-align: middle;\n}\n\n.ui-treetable .ui-treetable-toggler {\n    vertical-align: middle;\n    cursor: pointer;\n    text-decoration: none;\n}\n\n.ui-treetable .ui-treetable-checkbox {\n    margin-right: .5em;\n}\n\n.ui-treetable .ui-treetable-checkbox .ui-chkbox-icon {\n    margin-left: 1px;\n}\n\n.ui-treetable .ui-treetable-row.ui-treetable-row-selectable {\n    cursor: pointer;\n}\n\n.ui-treetable .ui-treetable-row.ui-state-highlight {\n    border: 0 none;\n}\n      \n.ui-treetable tr.ui-state-hover {\n    border-color: inherit;\n    font-weight: inherit;\n}\n\n.ui-treetable .ui-treetable-indent {\n    width: 1em;\n    height: 1em;\n    float: left;\n}\n\n/* PrimeNG */\n.ui-treetable td.ui-treetable-child-table-container {\n    padding: 0;\n    border: 0 none;\n}\n\n.ui-treetable .ui-treetable-row {\n    display: table-row;\n    border-bottom: 0 transparent\n}\n\n.ui-treetable tbody .ui-treetable-row td {\n    border: 0 none;\n}\n\n.ui-treetable tbody .ui-treetable-row td input {\n    outline: 0 none;\n}", ""]);
+exports.push([module.i, ".ui-widget * {\n    box-sizing: border-box;\n}\n.ui-helper-hidden {\n    display: none;\n}\n.ui-helper-hidden-accessible {\n    border: 0;\n    clip: rect(0 0 0 0);\n    height: 1px;\n    margin: -1px;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    width: 1px;\n}\n.ui-helper-reset {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    outline: 0;\n    line-height: 1.3;\n    text-decoration: none;\n    font-size: 100%;\n    list-style: none;\n}\n.ui-helper-clearfix:before,\n.ui-helper-clearfix:after {\n    content: \"\";\n    display: table;\n}\n.ui-helper-clearfix:after {\n    clear: both;\n}\n.ui-helper-clearfix {\n    zoom: 1;\n}\n.ui-helper-zfix {\n    width: 100%;\n    height: 100%;\n    top: 0;\n    left: 0;\n    position: absolute;\n    opacity: 0;\n    filter: Alpha(Opacity=0);\n}\n.ui-state-disabled {\n    cursor: default !important;\n}\n.ui-state-disabled a {\n    cursor: default !important;\n}\n.ui-icon {\n    display: block;\n    text-indent: -99999px;\n    overflow: hidden;\n    background-repeat: no-repeat;\n}\n.ui-widget-overlay {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n.ui-resizable {\n    position: relative;\n}\n.ui-resizable-handle {\n    position: absolute;\n    font-size: 0.1px;\n    display: block;\n}\n.ui-resizable-disabled .ui-resizable-handle,\n.ui-resizable-autohide .ui-resizable-handle {\n    display: none;\n}\n.ui-resizable-n {\n    cursor: n-resize;\n    height: 7px;\n    width: 100%;\n    top: -5px;\n    left: 0;\n}\n.ui-resizable-s {\n    cursor: s-resize;\n    height: 7px;\n    width: 100%;\n    bottom: -5px;\n    left: 0;\n}\n.ui-resizable-e {\n    cursor: e-resize;\n    width: 7px;\n    right: -5px;\n    top: 0;\n    height: 100%;\n}\n.ui-resizable-w {\n    cursor: w-resize;\n    width: 7px;\n    left: -5px;\n    top: 0;\n    height: 100%;\n}\n.ui-resizable-se {\n    cursor: se-resize;\n    width: 12px;\n    height: 12px;\n    right: 1px;\n    bottom: 1px;\n}\n.ui-resizable-sw {\n    cursor: sw-resize;\n    width: 9px;\n    height: 9px;\n    left: -5px;\n    bottom: -5px;\n}\n.ui-resizable-nw {\n    cursor: nw-resize;\n    width: 9px;\n    height: 9px;\n    left: -5px;\n    top: -5px;\n}\n.ui-resizable-ne {\n    cursor: ne-resize;\n    width: 9px;\n    height: 9px;\n    right: -5px;\n    top: -5px;\n}\n.ui-shadow {\n    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);\n    -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);\n    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);\n}\n.ui-unselectable-text {\n    -webkit-user-select: none;\n    -khtml-user-select: none;\n    -moz-user-select: none;\n    -o-user-select: none;\n    user-select: none;\n}\n.ui-scrollbar-measure {\n    width: 100px;\n    height: 100px;\n    overflow: scroll;\n    position: absolute;\n    top: -9999px;\n}\n.ui-accordion { \n    width: 100%; \n}\n\n.ui-accordion .ui-accordion-header { \n    cursor: pointer; \n    position: relative; \n    margin-top: 1px; \n    zoom: 1; \n}\n\n.ui-accordion .ui-accordion-header a { \n    display: block; \n    padding: .5em .5em .5em 2em; \n}\n\n.ui-accordion .ui-accordion-header .fa {\n    position: absolute; \n    left: .5em; \n    top: 50%; \n    margin-top: -.5em; \n}\n\n.ui-accordion .ui-accordion-content { \n    padding: 1em;\n    border-top: 0; \n    overflow: visible;\n    zoom: 1; \n}\n\n.ui-accordion .ui-accordion-header.ui-state-disabled, \n.ui-accordion .ui-accordion-header.ui-state-disabled a { \n    cursor: default; \n}\n\n.ui-accordion-content-wrapper-overflown {\n    overflow: hidden;\n}\n.ui-autocomplete {\n    width: auto;\n    zoom: 1;\n    cursor: pointer;\n    -moz-box-shadow: none;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n    position: relative;\n    display: inline-block;\n}\n\n.ui-autocomplete .ui-autocomplete-dropdown {\n    height: 100%;\n    width: 2em;\n    margin-right: 0;\n    vertical-align: top;\n}\n\n.ui-autocomplete-query {\n    font-weight: bold;\n}\n\n.ui-autocomplete-panel {\n    position: absolute;\n    overflow: auto;\n}\n\n.ui-autocomplete-panel .ui-autocomplete-list {\n    padding: 0.4em;\n    border: 0 none;\n}\n\n.ui-autocomplete-panel .ui-autocomplete-list-item {\n    border: 0 none;\n    cursor: pointer;\n    font-weight: normal;\n    margin: 1px 0;\n    padding: 0.186em 0.313em;\n    text-align: left;\n}\n\n.ui-autocomplete .ui-button-icon-only,\n.ui-autocomplete .ui-button-icon-only:hover,\n.ui-autocomplete .ui-button-icon-only:focus,\n.ui-autocomplete .ui-button-icon-only:active {\n    border-left: 0 none;\n}\n\n/* Multiple Selection */\n.ui-autocomplete-multiple-container {\n    display: inline-block;\n}\n\n.ui-autocomplete-multiple-container.ui-inputtext {\n    clear: left;\n    cursor: text;\n    list-style-type: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0 .25em;\n}\n\n.ui-autocomplete-token {\n    cursor: default;\n    display: inline-block;\n    vertical-align: middle;\n    overflow: hidden;\n    padding: .125em .5em;\n    white-space: nowrap;\n    position: relative;\n    margin-right: .125em;\n    border: 0 none;\n    font-size: .9em;\n}\n\n.ui-autocomplete-token-label {\n    display: block;\n    margin-right: 2em;\n}\n\n.ui-autocomplete-token-icon {\n    margin-top: -.5em;\n    position: absolute;\n    right: 0.2em;\n    top: 50%;\n    cursor: pointer;\n}\n\n.ui-autocomplete-input-token {\n    display: inline-block;\n    vertical-align: middle;\n    list-style-type: none;\n    margin: 0 0 0 .125em;\n    padding: .25em .25em .25em 0;\n}\n\n.ui-autocomplete-input-token .ui-inputtext {\n    border: 0 none;\n    width: 10em;\n    outline: medium none;\n    background-color: transparent;\n    margin: 0;\n    padding: 0;\n    box-shadow: none;\n    -moz-border-radius: 0;\n    -webkit-border-radius: 0;\n    border-radius: 0;\n}\n\n.ui-autocomplete-dd input.ui-corner-all ,\n.ui-autocomplete-dd .ui-autocomplete-multiple-container.ui-corner-all {\n     -moz-border-radius-topright: 0px; \n     -webkit-border-top-right-radius: 0px;\n     border-top-right-radius: 0px;\n     -moz-border-radius-bottomright: 0px;\n     -webkit-border-bottom-right-radius: 0px;\n     border-bottom-right-radius: 0px;\n }\n \n.ui-autocomplete-dd .ui-autocomplete-dropdown.ui-corner-all {\n     -moz-border-radius-topleft: 0px; \n     -webkit-border-top-left-radius: 0px;\n     border-top-left-radius: 0px;\n     -moz-border-radius-bottomleft: 0px;\n     -webkit-border-bottom-left-radius: 0px;\n     border-bottom-left-radius: 0px;\n}\n\n/** AutoComplete **/\n.ui-fluid .ui-autocomplete,\n.ui-fluid .ui-autocomplete-input {\n    width: 100%;\n}\n\n.ui-fluid .ui-autocomplete.ui-autocomplete-dd .ui-autocomplete-input,\n.ui-fluid .ui-autocomplete.ui-autocomplete-dd .ui-autocomplete-multiple-container {\n    width: calc(100% - 2em);\n}\n\n.ui-fluid .ui-autocomplete .ui-autocomplete-dropdown.ui-button {\n    width: 2em;\n}\n.ui-blockui {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.ui-blockui-document {\n    position: fixed;\n}\n/** Breadcrumb **/\n.ui-breadcrumb {\n    margin: 0;\n    padding: 0;\n    padding: .3em;\n}\n\n.ui-breadcrumb ul {\n    margin: 0;\n    padding: 0;\n}\n\n.ui-breadcrumb ul li {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-breadcrumb ul li .ui-menuitem-link {\n    text-decoration: none;\n}\n/* Button */\n.ui-button { \n    display: inline-block; \n    position: relative; \n    padding: 0; \n    margin-right: .1em; \n    text-decoration: none !important; \n    cursor: pointer; \n    text-align: center; \n    zoom: 1; \n    overflow: visible; /* the overflow property removes extra width in IE */\n} \n\n.ui-button-icon-only { \n    width: 2em;\n} \n\n/*button text element */\n.ui-button .ui-button-text { \n    display: block; \n    line-height: normal;  \n}\n\n.ui-button-text-only .ui-button-text { \n    padding: .25em 1em; \n}\n\n.ui-button-icon-only .ui-button-text { \n    padding: .25em; \n    text-indent: -9999999px; \n}\n\n.ui-button-text-icon-left .ui-button-text { \n    padding: .25em 1em .25em 2.1em; \n}\n\n.ui-button-text-icon-right .ui-button-text { \n    padding: .25em 2.1em .25em 1em; \n}\n\n/*button icon element(s) */\n.ui-button-icon-only .fa,\n.ui-button-text-icon-left .fa,\n.ui-button-text-icon-right .fa {\n    position: absolute; \n    top: 50%;\n    margin-top: -.5em; \n}\n\n.ui-button-icon-only .fa {\n    top: 50%;\n    left: 50%;\n    margin-top: -.5em;\n    margin-left: -.6em;\n}\n\n.ui-button-icon-left {\n    left: .5em; \n}\n\n.ui-button-icon-right {\n    right: .5em; \n}\n\n/*button sets*/\n.ui-buttonset .ui-button { \n    margin-left: 0; \n    margin-right: 0;\n}\n\n/* workarounds */\nbutton.ui-button::-moz-focus-inner { \n    border: 0; padding: 0; /* reset extra padding in Firefox */\n}\n\n/** Fluid **/\n.ui-fluid .ui-button {\n    width: 100%;\n    box-sizing: border-box;\n    -webkit-box-sizing:border-box;\n    -moz-box-sizing: border-box;\n}\n\n/** ButtonSet **/\n.ui-fluid .ui-buttonset {\n    width: 100%;\n}\n\n.ui-fluid .ui-buttonset.ui-buttonset-1 .ui-button {width: 100%;}\n.ui-fluid .ui-buttonset.ui-buttonset-2 .ui-button {width: 50%;}\n.ui-fluid .ui-buttonset.ui-buttonset-3 .ui-button {width: 33.3%;}\n.ui-fluid .ui-buttonset.ui-buttonset-4 .ui-button {width: 25%;}\n.ui-fluid .ui-buttonset.ui-buttonset-5 .ui-button {width: 20%;}\n.ui-fluid .ui-buttonset.ui-buttonset-6 .ui-button {width: 16.6%;}\n\n@media (max-width: 640px) {\n    .ui-fluid .ui-buttonset.ui-buttonset-1 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-2 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-3 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-4 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-5 .ui-button,\n    .ui-fluid .ui-buttonset.ui-buttonset-6 .ui-button {\n        width: 100%;\n    }\n}\n\n/* Severity Buttons */\n/* Secondary */\n.ui-button.ui-button-secondary.ui-state-default {\n    background-color: #ffffff;\n    border-color: #cccccc;\n    color: #373a3c;\n}\n\n.ui-button.ui-button-secondary:enabled:hover,\n.ui-button.ui-button-secondary:focus {\n    background-color: #f2f2f2;\n}\n\n.ui-button.ui-button-secondary:enabled:active {\n    background-color: #e6e6e6;\n}\n\n/* Success */\n.ui-button.ui-button-success.ui-state-default {\n    background-color: #5cb85c;\n    border-color: #5cb85c;\n    color: #ffffff;\n}\n\n.ui-button.ui-button-success:enabled:hover,\n.ui-button.ui-button-success:focus {\n    background-color: #4cae4c;\n}\n\n.ui-button.ui-button-success:enabled:active {\n    background-color: #449d44;\n}\n\n/* Info */\n.ui-button.ui-button-info.ui-state-default {\n    background-color: #5bc0de;\n    border-color: #5bc0de;\n    color: #ffffff;\n}\n\n.ui-button.ui-button-info:enabled:hover,\n.ui-button.ui-button-info:focus {\n    background-color: #46b8da;\n}\n\n.ui-button.ui-button-info:enabled:active {\n    background-color: #31b0d5;\n}\n\n/* Warning */\n.ui-button.ui-button-warning.ui-state-default {\n    background-color: #f0ad4e;\n    border-color: #f0ad4e;\n    color: #ffffff;\n}\n\n.ui-button.ui-button-warning:enabled:hover,\n.ui-button.ui-button-warning:focus {\n    background-color: #eea236;\n}\n\n.ui-button.ui-button-warning:enabled:active {\n    background-color: #ec971f;\n}\n\n/* Danger */\n.ui-button.ui-button-danger.ui-state-default {\n    background-color: #d9534f;\n    border-color: #d9534f;\n    color: #ffffff;\n}\n\n.ui-button.ui-button-danger:enabled:hover,\n.ui-button.ui-button-danger:focus {\n    background-color: #d43f3a;\n}\n\n.ui-button.ui-button-danger:enabled:active {\n    background-color: #c9302c;\n}\n.ui-calendar {\n    position: relative;\n    display: inline-block;\n}\n\n.ui-calendar button {\n    position: absolute;\n    height: 100%;\n    border-top-left-radius: 0px;\n    border-bottom-left-radius: 0px;\n    position: absolute;\n    width: 2em;\n    border-left: 0 none;\n}\n\n/* Fluid */\n.ui-fluid .ui-calendar {\n    width: 100%;\n}\n\n.ui-fluid .ui-calendar button {\n    width: 2em;\n}\n\n.ui-fluid .ui-calendar.ui-calendar-w-btn .ui-inputtext {\n    width: calc(100% - 2em);\n}\n\n/* Datepicker */\n.ui-datepicker {\n\twidth: 17em;\n\tpadding: .2em;\n\tdisplay: none;\n    position: absolute;\n}\n.ui-datepicker.ui-datepicker-inline {\n    display: block;\n    position: static;\n}\n.ui-datepicker .ui-datepicker-header {\n\tposition: relative;\n\tpadding: .2em 0;\n}\n.ui-datepicker .ui-datepicker-prev,\n.ui-datepicker .ui-datepicker-next {\n\tposition: absolute;\n\ttop: .125em;\n\twidth: 1.8em;\n\theight: 1.8em;\n}\n\n.ui-datepicker .ui-datepicker-prev {\n\tleft: .125em;\n}\n.ui-datepicker .ui-datepicker-next {\n\tright: .125em;\n}\n.ui-datepicker .ui-datepicker-prev span,\n.ui-datepicker .ui-datepicker-next span {\n\tdisplay: block;\n\tposition: absolute;\n\tleft: 50%;\n\ttop: 50%;\n\tmargin-top: -.5em;\n}\n.ui-datepicker .ui-datepicker-prev span {\n\tmargin-left: -.25em;\n}\n.ui-datepicker .ui-datepicker-next span {\n\tmargin-left: -.125em;\n}\n.ui-datepicker .ui-datepicker-title {\n\tmargin: 0 2.3em;\n\tline-height: 1.8em;\n\ttext-align: center;\n}\n.ui-datepicker .ui-datepicker-title select {\n\tfont-size: 1em;\n\tmargin: .125em 0;\n}\n.ui-datepicker select.ui-datepicker-month {\n    width: 55%;\n}\n.ui-datepicker select.ui-datepicker-year {\n\twidth: 35%;\n}\n.ui-datepicker select.ui-datepicker-month {\n    margin-right: .25em;\n}\n.ui-datepicker table {\n\twidth: 100%;\n\tfont-size: .9em;\n\tborder-collapse: collapse;\n\tmargin: 0 0 .4em;\n}\n.ui-datepicker th {\n\tpadding: .7em .3em;\n\ttext-align: center;\n\tfont-weight: bold;\n\tborder: 0;\n}\n.ui-datepicker td {\n\tborder: 0;\n\tpadding: .125em;\n}\n.ui-datepicker td span,\n.ui-datepicker td a {\n\tdisplay: block;\n\tpadding: .2em;\n\ttext-align: right;\n\ttext-decoration: none;\n}\n.ui-datepicker .ui-datepicker-buttonpane {\n\tbackground-image: none;\n\tmargin: .7em 0 0 0;\n\tpadding: 0 .2em;\n\tborder-left: 0;\n\tborder-right: 0;\n\tborder-bottom: 0;\n}\n.ui-datepicker .ui-datepicker-buttonpane button {\n\tfloat: right;\n\tmargin: .5em .2em .4em;\n\tcursor: pointer;\n\tpadding: .2em .6em .3em .6em;\n\twidth: auto;\n\toverflow: visible;\n}\n.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {\n\tfloat: left;\n}\n\n/* with multiple calendars */\n.ui-datepicker.ui-datepicker-multi {\n\twidth: auto;\n}\n.ui-datepicker-multi .ui-datepicker-group {\n\tfloat: left;\n}\n.ui-datepicker-multi .ui-datepicker-group table {\n\twidth: 95%;\n\tmargin: 0 auto .4em;\n}\n.ui-datepicker-multi-2 .ui-datepicker-group {\n\twidth: 50%;\n}\n.ui-datepicker-multi-3 .ui-datepicker-group {\n\twidth: 33.3%;\n}\n.ui-datepicker-multi-4 .ui-datepicker-group {\n\twidth: 25%;\n}\n.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,\n.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {\n\tborder-left-width: 0;\n}\n.ui-datepicker-multi .ui-datepicker-buttonpane {\n\tclear: left;\n}\n.ui-datepicker-row-break {\n\tclear: both;\n\twidth: 100%;\n\tfont-size: 0;\n}\n\n.ui-calendar.ui-calendar-w-btn input {\n    -moz-border-radius-topright: 0px; \n    -webkit-border-top-right-radius: 0px; \n    -khtml-border-top-right-radius: 0px; \n    border-top-right-radius: 0px;\n    -moz-border-radius-bottomright: 0px; \n    -webkit-border-bottom-right-radius: 0px; \n    -khtml-border-bottom-right-radius: 0px; \n    border-bottom-right-radius: 0px;\n}\n\n.ui-timepicker {\n    text-align: center;\n    padding: .5em 0;\n}\n\n.ui-timepicker > div {\n    display: inline-block;\n    margin-left: .5em;\n    min-width: 1.5em;\n}\n\n.ui-timepicker > .ui-minute-picker,\n.ui-timepicker > .ui-second-picker {\n    margin-left: 0;\n}\n\n.ui-timepicker > .ui-separator {\n    margin-left: 0px;\n    min-width: .75em;\n}\n\n.ui-timepicker > .ui-separator a {\n    visibility: hidden;\n}\n\n.ui-timepicker > div a {\n    display: block;\n    opacity: 0.7;\n    filter:Alpha(Opacity=70);\n}\n\n.ui-timepicker > div a:hover {\n    display: block;\n    opacity: 1;\n    filter:Alpha(Opacity=100);\n}\n.ui-carousel {\n    position: relative;\n    padding: .063em;\n}\n\n.ui-carousel .ui-carousel-viewport .ui-carousel-items {\n    list-style: none outside none;\n    margin: 0;\n    padding:0;\n    position: relative;\n    width: 32000px;\n    left: 0;\n}\n\n.ui-carousel .ui-carousel-viewport .ui-carousel-items .ui-carousel-item {\n    margin: 1px;\n    padding: 0;\n    float: left;\n    box-sizing: border-box;\n}\n\n.ui-carousel .ui-carousel-viewport {\n    overflow: hidden;\n    position: relative;\n    border: 0;\n}\n\n.ui-carousel .ui-carousel-footer {\n    margin: 1px 1px 0px 1px;\n    padding: .5em;\n    overflow: hidden;\n}\n\n.ui-carousel .ui-carousel-header {\n    margin: 0 1px;\n    overflow: hidden;\n    padding: .625em;\n}\n\n.ui-carousel .ui-carousel-header .ui-carousel-header-title {\n    display: inline-block;\n    overflow: hidden;\n}\n\n.ui-carousel .ui-carousel-dropdown,\n.ui-carousel .ui-carousel-mobiledropdown {\n    float: right;\n    margin: 0px .625em;\n    background-image: none;\n}\n\n.ui-carousel .ui-carousel-dropdown option,\n.ui-carousel .ui-carousel-mobiledropdown option{\n    background-image: none;\n    border: 0 none;\n    box-shadow: none;\n    -moz-box-shadow: none;\n    -webkit-box-shadow: none;\n}\n\n.ui-carousel .ui-carousel-button {\n    float: right;\n    margin: .125em;\n}\n\n.ui-carousel .ui-carousel-page-link {\n    float: left;\n    margin: 0 .125em;\n    text-decoration: none;\n}\n\n.ui-carousel .ui-carousel-page-link, \n.ui-carousel .ui-carousel-button {\n    cursor: pointer;\n}\n\n.ui-carousel .ui-carousel-page-links {\n    margin: 0px .5em;\n    margin-top: .125em;\n    float: right;\n}\n\n.ui-carousel .ui-carousel-mobiledropdown {\n    display: none;\n}\n.ui-chkbox {\n    display: inline-block;\n    cursor: pointer;\n    vertical-align: middle;\n    margin-right: .25em;\n}\n\n.ui-chkbox .ui-chkbox-box {\n    width: 1.125em;\n    height: 1.125em;\n    line-height: 1.125em;\n    -moz-border-radius: 2px;\n    -webkit-border-radius: 2px;\n    border-radius: 2px;\n    text-align: center;\n}\n\n.ui-chkbox .ui-chkbox-icon {\n    line-height: inherit;\n    display: block;\n}\n\n.ui-chkbox-label {\n    vertical-align: middle;  \n}\n\n\n.ui-chips > ul.ui-inputtext {\n    clear: left;\n    cursor: text;\n    list-style-type: none;\n    margin: 0;\n    overflow: hidden;\n    padding: 0 .25em;\n}\n\n.ui-chips-token {\n    cursor: default;\n    display: inline-block;\n    vertical-align: middle;\n    overflow: hidden;\n    padding: .125em .5em;\n    white-space: nowrap;\n    position: relative;\n    margin-right: .125em;\n    border: 0 none;\n    font-size: .9em;\n}\n\n.ui-chips-token .ui-chips-token-label {\n    display: block;\n    margin-right: 2em;\n}\n\n.ui-chips > .ui-state-disabled .ui-chips-token-label {\n    margin-right: 0;\n}\n\n.ui-chips-token .ui-chips-token-icon {\n    margin-top: -.5em;\n    position: absolute;\n    right: 0.2em;\n    top: 50%;\n    cursor: pointer;\n}\n\n.ui-chips-input-token {\n    display: inline-block;\n    vertical-align: middle;\n    list-style-type: none;\n    margin: 0 0 0 .125em;\n    padding: .25em .25em .25em 0;\n}\n\n.ui-chips-input-token .ui-inputtext {\n    border: 0 none;\n    width: 10em;\n    outline: medium none;\n    background-color: transparent;\n    margin: 0;\n    padding: 0;\n    box-shadow: none;\n    -moz-border-radius: 0;\n    -webkit-border-radius: 0;\n    border-radius: 0;\n}\n.ui-datagrid .ui-paginator {\n\ttext-align: center;\n    border-top: 0 none;\n}\n\n.ui-datagrid-column {\n\tpadding: .25em;\n}\n\n.ui-datagrid-content-empty {\n    padding: .25em .625em;\n}\n\n.ui-datagrid .ui-datagrid-header,\n.ui-datagrid .ui-datagrid-footer {\n    text-align:center;\n\tpadding: .5em .75em;\n}\n\n.ui-datagrid .ui-datagrid-header {\n    border-bottom: 0 none;\n}\n\n.ui-datagrid .ui-datagrid-footer {\n    border-top: 0 none;\n}\n\n.ui-datagrid .ui-paginator-top {\n    border-bottom: 0 none;\n}\n\n.ui-datagrid .ui-paginator-bottom {\n    border-top: 0 none;\n}\n\n\n.ui-datalist .ui-datalist-header,\n.ui-datalist .ui-datalist-footer {\n    text-align:center;\n\tpadding: .5em .75em;\n}\n\n.ui-datalist .ui-datalist-header {\n    border-bottom: 0 none;\n}\n\n.ui-datalist .ui-datalist-footer {\n    border-top: 0 none;\n}\n\n.ui-datalist .ui-paginator {\n    border-top: 0 none;\n}\n\n.ui-datalist .ui-datalist-data {\n    margin: 0;\n    padding: 0;\n}\n\n.ui-datalist .ui-datalist-data > li {\n    list-style-type: none;\n    \n}\n\n.ui-datalist .ui-datalist-emtptymessage {\n    padding: .5em .75em;\n}\n.ui-datascroller {\n}\n\n.ui-datascroller .ui-datascroller-header {\n    text-align: center;\n\tpadding: .5em .75em;\n    border-bottom: 0 none;\n}\n\n.ui-datascroller .ui-datascroller-footer {\n    text-align: center;\n    padding: .25em .625em;\n    border-top: 0px none;\n}\n\n.ui-datascroller .ui-datascroller-content {\n    padding: .25em .625em;\n}\n\n.ui-datascroller-inline .ui-datascroller-content {\n    overflow: auto;\n}\n\n.ui-datascroller .ui-datascroller-list {\n    list-style-type: none; \n    margin: 0;\n    padding: 0;\n}\n.ui-datatable {\n    position: relative;\n}\n\n.ui-datatable table {\n\tborder-collapse:collapse;\n    width: 100%;\n    table-layout: fixed;\n}\n\n.ui-datatable .ui-datatable-header,\n.ui-datatable .ui-datatable-caption,\n.ui-datatable .ui-datatable-footer {\n    text-align: center;\n\tpadding: .5em .75em;\n    box-sizing: border-box;\n}\n\n.ui-datatable .ui-datatable-caption,\n.ui-datatable .ui-datatable-header {\n    border-bottom: 0 none;\n}\n\n.ui-datatable .ui-datatable-footer {\n    border-top: 0 none;\n}\n\n.ui-datatable thead th, .ui-datatable tfoot td {\n    text-align: center;\n}\n\n.ui-datatable thead tr {\n    border-width: 0;\n}\n\n.ui-datatable .ui-datatable-thead > tr > th,\n.ui-datatable .ui-datatable-tfoot > tr > td,\n.ui-datatable .ui-datatable-data > tr > td {\n    border-color: inherit;\n    box-sizing: border-box;\n    padding: .25em .5em;\n    overflow: hidden;\n    border-width: 1px;\n    border-style: solid;\n}\n\n.ui-datatable .ui-datatable-thead > tr > th,\n.ui-datatable .ui-datatable-tfoot > tr > td {\n    font-weight: normal;\n}\n\n.ui-datatable tbody {\n    outline: 0;\n}\n\n.ui-datatable .ui-sortable-column {\n    cursor: pointer;\n}\n\n.ui-datatable .ui-sortable-column-icon {\n    display: inline-block;\n    margin-left: .125em;\n}\n\n.ui-datatable tr.ui-state-highlight {\n    cursor: pointer;\n}\n\n/* Scrollable */\n.ui-datatable-scrollable-body {\n    overflow:auto;\n}\n.ui-datatable-scrollable-header {\n    overflow: hidden;\n}\n\n.ui-datatable-scrollable .ui-datatable-scrollable-header,\n.ui-datatable-scrollable .ui-datatable-scrollable-footer {\n    position: relative;\n    border: 0 none;\n}\n\n.ui-datatable-scrollable .ui-datatable-scrollable-header td {\n    font-weight: normal;\n}\n\n.ui-datatable .ui-datatable-scrollable-body  {\n    min-height: 0%;\n}\n\n.ui-datatable .ui-datatable-data tr.ui-state-hover,\n.ui-datatable .ui-datatable-data tr.ui-state-highlight {\n    border-color: inherit;\n    font-weight: inherit;\n    cursor: pointer;\n}\n\n.ui-datatable-scrollable-theadclone {\n    height: 0;\n}\n\n.ui-datatable-scrollable-theadclone tr {\n    height: 0;\n}\n\n.ui-datatable-scrollable-theadclone th.ui-state-default {\n    height: 0;\n    border-bottom-width: 0;\n    border-top-width: 0;\n    padding-top: 0;\n    padding-bottom: 0;\n    outline: 0 none;\n}\n\n.ui-datatable-scrollable-theadclone th span.ui-column-title {\n  display: block;\n  height: 0;\n}\n\n.ui-datatable .ui-paginator {\n    padding: .125em;\n    border-top: 0 none;\n}\n\n.ui-datatable-rtl {\n    direction: rtl;\n}\n\n.ui-datatable-rtl.ui-datatable thead th,\n.ui-datatable-rtl.ui-datatable tfoot td {\n    text-align: right;\n}\n\n/* Row Toggler */\n.ui-row-toggler {\n    cursor: pointer;\n}\n\n/* Resizable */\n.ui-datatable .ui-column-resizer {\n    display: block;\n    position: absolute !important;\n    top: 0;\n    right: 0;\n    margin: 0;\n    width: .5em;\n    height: 100%;\n    padding: 0px;\n    cursor:col-resize;\n    border: 1px solid transparent;\n}\n\n.ui-datatable .ui-column-resizer-helper {\n    width: 1px;\n    position: absolute;\n    z-index: 10;\n    display: none;\n}\n\n.ui-datatable-resizable {\n    padding-bottom: 1px;     /*fix for webkit overlow*/\n    overflow:auto;\n}\n\n.ui-datatable-resizable thead th,\n.ui-datatable-resizable tbody td,\n.ui-datatable-resizable tfoot td {\n    white-space: nowrap;\n}\n\n.ui-datatable-resizable th.ui-resizable-column {\n    background-clip: padding-box;\n    position: relative;\n}\n\n/** Reflow **/\n.ui-datatable-reflow .ui-datatable-data td .ui-column-title {\n    display: none;\n}\n\n/* Filter */\n.ui-datatable .ui-column-filter {\n    display: block;\n    width: 100%;\n    box-sizing: border-box;\n    margin-top: .25em;\n}\n\n/* Editing */\n.ui-datatable .ui-editable-column input {\n    width: 100%;\n    outline: 0;\n}\n\n.ui-datatable .ui-datatable-data > tr > td.ui-editable-column {\n    padding: .5em;\n}\n\n.ui-datatable .ui-editable-column .ui-cell-editor {\n    display: none;\n}\n\n.ui-datatable .ui-datatable-data > tr > td.ui-editable-column.ui-cell-editing {\n    padding: 1px;\n}\n\n.ui-datatable .ui-editable-column.ui-cell-editing .ui-cell-editor {\n    display: block;\n}\n\n.ui-datatable .ui-editable-column.ui-cell-editing .ui-cell-data {\n    display: none;\n}\n\n.ui-datatable-stacked thead th,\n.ui-datatable-stacked tfoot td {\n    display: none !important;\n}\n\n.ui-datatable.ui-datatable-stacked .ui-datatable-data > tr > td {\n    text-align: left;\n    display: block;\n    border: 0 none;\n    width: 100%;\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n    float: left;\n    clear: left;\n}\n\n.ui-datatable.ui-datatable-stacked .ui-datatable-data.ui-widget-content {\n    border: 0 none;\n}\n\n.ui-datatable-stacked .ui-datatable-data tr.ui-widget-content {\n    border-left: 0 none;\n    border-right: 0 none;\n}\n\n.ui-datatable-stacked .ui-datatable-data td .ui-column-title {\n    padding: .4em;\n    min-width: 30%;\n    display: inline-block;\n    margin: -.4em 1em -.4em -.4em;\n    font-weight: bold;\n}\n\n.ui-datatable .ui-selection-column .ui-chkbox,\n.ui-datatable .ui-selection-column .ui-radiobutton {\n     margin: 0;\n     display: block;\n}\n\n.ui-datatable .ui-selection-column .ui-chkbox-box,\n.ui-datatable .ui-selection-column .ui-radiobutton-box {\n    display: block;\n    box-sizing: border-box;\n    margin: 0;\n}\n\n.ui-datatable-scrollable-wrapper {\n    position: relative;\n}\n\n.ui-datatable-scrollable-view {\n    \n}\n\n.ui-datatable-frozen-view .ui-datatable-scrollable-body {\n    overflow: hidden;\n}\n\n.ui-datatable-unfrozen-view {\n    position: absolute;\n    top: 0px;\n}\n\n.ui-datatable .ui-datatable-load-status {\n    width: 100%;\n    height: 100%;\n    top: 0px;\n    left: 0px;\n}\n\n.ui-datatable .ui-datatable-virtual-table {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n}\n\n@media ( max-width: 35em ) {\n    .ui-datatable-reflow thead th,\n    .ui-datatable-reflow tfoot td {\n        display: none !important;\n    }\n\n    .ui-datatable-reflow .ui-datatable-data > tr > td {\n        text-align: left;\n        display: block;\n        border: 0 none;\n        width: 100%;\n\t\t-webkit-box-sizing: border-box;\n\t\t-moz-box-sizing: border-box;\n\t\tbox-sizing: border-box;\n\t\tfloat: left;\n\t\tclear: left;\n    }\n\n    .ui-datatable-reflow .ui-datatable-data.ui-widget-content {\n        border: 0 none;\n    }\n\n    .ui-datatable-reflow .ui-datatable-data tr.ui-widget-content {\n        border-left: 0 none;\n        border-right: 0 none;\n    }\n\n    .ui-datatable-reflow .ui-datatable-data td .ui-column-title {\n        padding: .4em;\n        min-width: 30%;\n        display: inline-block;\n        margin: -.4em 1em -.4em -.4em;\n        font-weight: bold;\n    }\n}\n.ui-dialog {\n    position: fixed;\n    padding: 0;\n}\n.ui-dialog .ui-dialog-titlebar {\n\tpadding: .5em .75em;\n    position: relative;\n    border: 0;\n}\n.ui-dialog .ui-dialog-content {\n    position: relative;\n    border: 0;\n    padding: .5em .75em;\n    background: none;\n    overflow: auto;\n    zoom: 1;\n}\n.ui-dialog .ui-dialog-buttonpane {\n    text-align: left;\n    border-width: 1px 0 0 0;\n    background-image: none;\n    margin: .5em 0 0 0;\n    padding: .3em 1em .5em .4em;\n}\n.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {\n    float: right;\n}\n.ui-dialog .ui-dialog-buttonpane button {\n    margin: .5em .4em .5em 0;\n    cursor: pointer;\n    float: right;\n}\n.ui-dialog .ui-resizable-se {\n    width: 14px;\n    height: 14px;\n    right: 3px;\n    bottom: 3px;\n}\n.ui-draggable .ui-dialog-titlebar {\n    cursor: move;\n}\n.ui-dialog .ui-dialog-titlebar-icon {\n    text-decoration: none\n}\n.ui-dialog .ui-dialog-titlebar-close {\n    float: right;\n    padding: .125em;\n    cursor: pointer;\n    border: 1px solid transparent;\n}\n.ui-dialog .ui-dialog-titlebar-close span {\n    display: block;\n    margin: 0;\n}\n.ui-dialog-footer {\n    padding: .4em 1em;\n    border-width: 1px 0 0 0;\n    text-align: left;\n}\n\n.ui-dialog-mask {\n    position: fixed;\n    width: 100%;\n    height: 100%;\n}\n\n/* ConfirmDialog */\n.ui-confirmdialog.ui-dialog .ui-dialog-content {\n    padding: 1em 2em;\n}\n.ui-confirmdialog .ui-dialog-content .fa {\n    font-size: 1.5em;\n    vertical-align: middle;\n    margin-right: .5em;\n}\n.ui-confirmdialog .ui-dialog-content .ui-confirmdialog-message {\n    vertical-align: middle;\n}\n\n/* Fluid */\n.ui-fluid .ui-dialog-buttonpane .ui-button {\n    width: auto;\n}\n.ui-dropdown {\n    display: inline-block;\n    position: relative;\n    cursor: pointer;\n    vertical-align: middle;\n}\n\n.ui-dropdown .ui-dropdown-trigger {\n    border-right: none;\n    border-top: none;\n    border-bottom: none;\n    cursor: pointer;\n    width: 1.5em;\n    height: 100%;\n    position: absolute;\n    right: 0;\n    top: 0;\n    padding: 0 .25em;\n}\n\n.ui-dropdown .ui-dropdown-trigger .fa {\n    margin-top: .4em;\n    margin-left: -.125em;\n}\n\n.ui-dropdown .ui-dropdown-label  {\n    display: block;\n    border: none;\n    white-space: nowrap;\n    overflow: hidden;\n    font-weight: normal;\n    width: 100%;\n    padding-right: 1.5em;\n}\n\n.ui-dropdown .ui-dropdown-item-empty,\n.ui-dropdown .ui-dropdown-label-empty {\n    text-indent: -9999px;   \n}\n\n.ui-dropdown.ui-state-disabled .ui-dropdown-trigger,\n.ui-dropdown.ui-state-disabled .ui-dropdown-label {\n    cursor: default;\n}\n\n.ui-dropdown label.ui-dropdown-label  {\n    cursor: pointer;\n}\n\n.ui-dropdown input.ui-dropdown-label  {\n    cursor: default;\n}\n\n.ui-dropdown .ui-dropdown-panel {\n    min-width: 100%;\n}\n\n.ui-dropdown-panel {\n    position: absolute;\n    height: auto;\n}\n\n.ui-dropdown-panel .ui-dropdown-items-wrapper {\n    overflow: auto;\n}\n\n.ui-dropdown-panel .ui-dropdown-item {\n    font-weight: normal;\n    border: 0 none;\n    cursor: pointer;\n    margin: 1px 0;\n    padding: .125em .25em;\n    text-align: left;\n}\n\n.ui-dropdown-panel .ui-dropdown-item-group {\n    font-weight: bold;\n}\n\n.ui-dropdown-panel .ui-dropdown-list {\n    padding: 0.4em;\n    border: 0 none;\n}\n\n.ui-dropdown-panel .ui-dropdown-filter {\n    width: 100%;\n    padding-right: 1.5em;\n}\n\n.ui-dropdown-panel .ui-dropdown-filter-container {\n    position: relative;\n    margin: 0;\n    padding: 0.4em;\n    display: inline-block;\n}\n\n.ui-dropdown-panel .ui-dropdown-filter-container .fa {\n    position: absolute;\n    top: .8em;\n    right: 1em;\n}\n\n/** Dropdown **/\n.ui-fluid .ui-dropdown {\n    width: 100%;\n}\n.ui-fieldset, .ui-fieldset .ui-fieldset-legend {\n    padding: 0.6em 1em;\n}\n\n.ui-fieldset-toggleable .ui-fieldset-legend {\n    padding: 0.5em 1em 0.5em 0.5em;\n    cursor:pointer;\n    white-space: nowrap;\n}\n\n.ui-fieldset .ui-fieldset-toggler {\n    margin-right: .1em;\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-fieldset .ui-fieldset-content-wrapper-overflown {\n    overflow: hidden;\n} \n/*\n * FileUpload\n */\n.ui-fileupload-buttonbar .ui-fileupload-choose input {\n    display: none;\n}\n\n.ui-fileupload-buttonbar .ui-fileupload-choose.ui-state-disabled input {\n    cursor: default;\n}\n\n.ui-fileupload-choose {\n    position: relative;\n    overflow: hidden;\n}\n\n.ui-fileupload-buttonbar {\n    padding: .5em;\n    border-bottom: 0 none;\n}\n\n.ui-fileupload-buttonbar .ui-button {\n    vertical-align: middle;\n    margin-right: .25em;\n}\n\n.ui-fileupload-content {\n    padding: 1em;\n    position: relative;\n    transition: border-color .3s;\n}\n\n.ui-fileupload-content.ui-fileupload-highlight {\n    border-color: #156090;\n}\n\n.ui-fileupload-files img {\n    border: none;\n}\n\n.ui-fileupload-files {\n    display: table;\n}\n\n.ui-fileupload-row {\n    display: table-row;\n}\n\n.ui-fileupload-row > div {\n    display: table-cell;\n    padding: .5em 1em;\n    vertical-align: middle;\n}\n\n.ui-fileupload-content .ui-progressbar {\n    width: 100%;\n    position: absolute;\n    top: 1px;\n    left: 0;\n    height: .25em;\n    border: 0 none;\n}\n\n.ui-fileupload-content .ui-progressbar-value {\n    -moz-border-radius: 0;\n    -webkit-border-radius: 0;\n    border-radius: 0;\n    border: 0 none;\n}\n\n/* ui-fluid */\n.ui-fluid .ui-fileupload .ui-button {\n    width: auto;\n}\n\n.ui-fluid .ui-fileupload-content .ui-button-icon-only {\n    width: 2em;\n}\n\n\n\n\n.ui-galleria { \n    overflow: hidden; \n    visibility: hidden; \n    position: relative;\n}\n\n.ui-galleria-panel-wrapper {\n    position: relative;\n    padding: 0;\n    margin: 0;\n}\n\n.ui-galleria-panel {\n    filter: inherit;\n    position: absolute;\n    top: 0;\n    left: 0;\n    list-style-type: none;\n}\n\n.ui-galleria-filmstrip-wrapper {\n    overflow: hidden;\n    margin: .25em auto;\n    position: relative;\n}\n\n.ui-galleria-filmstrip { \n    list-style: none outside none;\n    margin: 0;\n    padding: 0;\n    width: 2340px;\n    z-index: 900;\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n\n.ui-galleria-frame {\n    float:left;\n    margin-right: 5px;\n    opacity: 0.3;\n    cursor: pointer;\n}\n\n.ui-galleria-frame-active {\n    opacity: 1;\n}\n\n.ui-galleria-frame-content {\n    overflow: hidden;\n}\n\n.ui-galleria-nav-next, .ui-galleria-nav-prev {\n\tcursor: pointer;\n    position: absolute;\n}\n\n.ui-galleria-nav-prev {\t\n    left: 5px;\n}\n\n.ui-galleria-nav-next {\n    right: 5px;\n}\n\n.ui-galleria-caption {\n    position: absolute;\n    left:1px;\n    background-color: rgba(0,0,0,0.5);\n    display: none;\n    color: #ededed;\n    padding: 0.2em 1em;\n}\n\n.ui-galleria-caption h4 {\n    color: #ededed;\n}\n\n.ui-galleria-panel-content {\n    padding: 1em 1.4em;\n}\n/* Deprecated Grid CSS */\n.ui-grid {\n    clear: both;\n    padding: 0;\n    margin: 0;\n}\n\n.ui-grid:before,\n.ui-grid:after {\n    content:\"\";\n    display:table;\n}\n\n.ui-grid:after {\n    clear:both;\n}\n\n.ui-grid .ui-grid-row {\n    display: -webkit-box;\n    display: -moz-box;\n    display: -ms-flexbox;\n    display: -webkit-flex;\n    display: flex;\n    clear:both;\n}\n\n.ui-grid-row:after {\n    clear: both;\n    content: \"\";\n    display: table;\n}\n\n.ui-grid-col-1,\n.ui-grid-col-2,\n.ui-grid-col-3,\n.ui-grid-col-4,\n.ui-grid-col-5,\n.ui-grid-col-6,\n.ui-grid-col-7,\n.ui-grid-col-8,\n.ui-grid-col-9,\n.ui-grid-col-10,\n.ui-grid-col-11,\n.ui-grid-col-12 {\n    float: left;\n    box-sizing: border-box;\n}\n\n.ui-grid-col-1 {\n    width: 8.33333%;\n}\n\n.ui-grid-col-2 {\n    width: 16.66666%;\n}\n\n.ui-grid-col-3 {\n    width: 25%;\n}\n\n.ui-grid-col-4 {\n    width: 33.33333%;\n}\n\n.ui-grid-col-5 {\n    width: 41.66666%;\n}\n\n.ui-grid-col-6 {\n    width: 50%;\n}\n\n.ui-grid-col-7 {\n    width: 58.33333%;\n}\n\n.ui-grid-col-8 {\n    width: 66.66666%;\n}\n\n.ui-grid-col-9 {\n    width: 75%;\n}\n\n.ui-grid-col-10 {\n    width: 83.33333%;\n}\n\n.ui-grid-col-11 {\n    width: 91.66666%;\n}\n\n.ui-grid-col-12 {\n    width: 100%;\n}\n\n@media (min-width: 480px) {\n    .ui-grid-fixed {\n        width: 480px;\n    }\n}\n\n@media (min-width: 768px) {\n    .ui-grid-fixed {\n        width: 768px;\n    }\n}\n\n@media (min-width: 960px) {\n    .ui-grid-fixed {\n        width: 960px;\n    }\n}\n\n@media (min-width: 1024px) {\n    .ui-grid-fixed {\n        width: 1024px;\n    }\n}\n\n/* Responsive */\n@media (max-width: 640px) {\n    .ui-grid-responsive .ui-grid-row {\n        display: block;\n    }\n    \n    .ui-grid-responsive .ui-grid-col-1,\n    .ui-grid-responsive .ui-grid-col-2,\n    .ui-grid-responsive .ui-grid-col-3,\n    .ui-grid-responsive .ui-grid-col-4,\n    .ui-grid-responsive .ui-grid-col-5,\n    .ui-grid-responsive .ui-grid-col-6,\n    .ui-grid-responsive .ui-grid-col-7,\n    .ui-grid-responsive .ui-grid-col-8,\n    .ui-grid-responsive .ui-grid-col-9,\n    .ui-grid-responsive .ui-grid-col-10,\n    .ui-grid-responsive .ui-grid-col-11,\n    .ui-grid-responsive .ui-grid-col-12 {\n        width: 100%;\n        float: none;\n    }\n}\n\n.ui-grid.ui-grid-pad > .ui-grid-row > div {\n    padding: .25em .5em;\n}\n\n/* Responsive */\n@media (max-width: 640px) {\n    .ui-grid-responsive .ui-grid-row {\n        display: block;\n    }\n    \n    .ui-grid-responsive .ui-grid-col-1,\n    .ui-grid-responsive .ui-grid-col-2,\n    .ui-grid-responsive .ui-grid-col-3,\n    .ui-grid-responsive .ui-grid-col-4,\n    .ui-grid-responsive .ui-grid-col-5,\n    .ui-grid-responsive .ui-grid-col-6,\n    .ui-grid-responsive .ui-grid-col-7,\n    .ui-grid-responsive .ui-grid-col-8,\n    .ui-grid-responsive .ui-grid-col-9,\n    .ui-grid-responsive .ui-grid-col-10,\n    .ui-grid-responsive .ui-grid-col-11,\n    .ui-grid-responsive .ui-grid-col-12 {\n        width: 100%;\n        float: none;\n    }\n}\n\n/* New Grid CSS */\n.ui-g {\n    display: -webkit-box;\n    display: -moz-box;\n    display: -ms-flexbox;\n    display: -webkit-flex;\n    display: flex;\n    flex-wrap: wrap;\n}\n            \n.ui-g:after {\n    clear: both;\n    content: \"\";\n    display: table;\n}\n            \n.ui-g-1,\n.ui-g-2,\n.ui-g-3,\n.ui-g-4,\n.ui-g-5,\n.ui-g-6,\n.ui-g-7,\n.ui-g-8,\n.ui-g-9,\n.ui-g-10,\n.ui-g-11,\n.ui-g-12 {\n    float: left;\n    box-sizing: border-box;\n    padding: 0.5em;\n}\n\n.ui-g-1 {\n    width: 8.3333%;\n}\n\n.ui-g-2 {\n    width: 16.6667%;\n}\n\n.ui-g-3 {\n    width: 25%;\n}\n\n.ui-g-4 {\n    width: 33.3333%;\n}\n\n.ui-g-5 {\n    width: 41.6667%;\n}\n\n.ui-g-6 {\n    width: 50%;\n}\n\n.ui-g-7 {\n    width: 58.3333%;\n}\n\n.ui-g-8 {\n    width: 66.6667%;\n}\n\n.ui-g-9 {\n    width: 75%;\n}\n\n.ui-g-10 {\n    width: 83.3333%;\n}\n\n.ui-g-11 {\n    width: 91.6667%;\n}\n\n.ui-g-12 {\n    width: 100%;\n}\n\n@media screen and (max-width: 40em) {\n    .ui-sm-1,\n    .ui-sm-2,\n    .ui-sm-3,\n    .ui-sm-4,\n    .ui-sm-5,\n    .ui-sm-6,\n    .ui-sm-7,\n    .ui-sm-8,\n    .ui-sm-9,\n    .ui-sm-10,\n    .ui-sm-11,\n    .ui-sm-12 {\n        padding: 0.5em;\n    }\n\n    .ui-sm-1 {\n        width: 8.3333%;\n    }\n\n    .ui-sm-2 {\n        width: 16.6667%;\n    }\n\n    .ui-sm-3 {\n        width: 25%;\n    }\n\n    .ui-sm-4 {\n        width: 33.3333%;\n    }\n\n    .ui-sm-5 {\n        width: 41.6667%;\n    }\n\n    .ui-sm-6 {\n        width: 50%;\n    }\n\n    .ui-sm-7 {\n        width: 58.3333%;\n    }\n\n    .ui-sm-8 {\n        width: 66.6667%;\n    }\n\n    .ui-sm-9 {\n        width: 75%;\n    }\n\n    .ui-sm-10 {\n        width: 83.3333%;\n    }\n\n    .ui-sm-11 {\n        width: 91.6667%;\n    }\n\n    .ui-sm-12 {\n        width: 100%;\n    }\n}\n\n@media screen and (min-width: 40.063em) {\n    .ui-md-1,\n    .ui-md-2,\n    .ui-md-3,\n    .ui-md-4,\n    .ui-md-5,\n    .ui-md-6,\n    .ui-md-7,\n    .ui-md-8,\n    .ui-md-9,\n    .ui-md-10,\n    .ui-md-11,\n    .ui-md-12 {\n        padding: 0.5em;\n    }\n\n    .ui-md-1 {\n        width: 8.3333%;\n    }\n\n    .ui-md-2 {\n        width: 16.6667%;\n    }\n\n    .ui-md-3 {\n        width: 25%;\n    }\n\n    .ui-md-4 {\n        width: 33.3333%;\n    }\n\n    .ui-md-5 {\n        width: 41.6667%;\n    }\n\n    .ui-md-6 {\n        width: 50%;\n    }\n\n    .ui-md-7 {\n        width: 58.3333%;\n    }\n\n    .ui-md-8 {\n        width: 66.6667%;\n    }\n\n    .ui-md-9 {\n        width: 75%;\n    }\n\n    .ui-md-10 {\n        width: 83.3333%;\n    }\n\n    .ui-md-11 {\n        width: 91.6667%;\n    }\n\n    .ui-md-12 {\n        width: 100%;\n    }\n}\n\n@media screen and (min-width: 64.063em) {\n    .ui-lg-1,\n    .ui-lg-2,\n    .ui-lg-3,\n    .ui-lg-4,\n    .ui-lg-5,\n    .ui-lg-6,\n    .ui-lg-7,\n    .ui-lg-8,\n    .ui-lg-9,\n    .ui-lg-10,\n    .ui-lg-11,\n    .ui-lg-12 {\n        padding: 0.5em;\n    }\n\n    .ui-lg-1 {\n        width: 8.3333%;\n    }\n\n    .ui-lg-2 {\n        width: 16.6667%;\n    }\n\n    .ui-lg-3 {\n        width: 25%;\n    }\n\n    .ui-lg-4 {\n        width: 33.3333%;\n    }\n\n    .ui-lg-5 {\n        width: 41.6667%;\n    }\n\n    .ui-lg-6 {\n        width: 50%;\n    }\n\n    .ui-lg-7 {\n        width: 58.3333%;\n    }\n\n    .ui-lg-8 {\n        width: 66.6667%;\n    }\n\n    .ui-lg-9 {\n        width: 75%;\n    }\n\n    .ui-lg-10 {\n        width: 83.3333%;\n    }\n\n    .ui-lg-11 {\n        width: 91.6667%;\n    }\n\n    .ui-lg-12 {\n        width: 100%;\n    }\n}\n\n@media screen and (min-width: 90.063em) {\n    .ui-xl-1,\n    .ui-xl-2,\n    .ui-xl-3,\n    .ui-xl-4,\n    .ui-xl-5,\n    .ui-xl-6,\n    .ui-xl-7,\n    .ui-xl-8,\n    .ui-xl-9,\n    .ui-xl-10,\n    .ui-xl-11,\n    .ui-xl-12 {\n        padding: 0.5em;\n    }\n\n    .ui-xl-1 {\n        width: 8.3333%;\n    }\n\n    .ui-xl-2 {\n        width: 16.6667%;\n    }\n\n    .ui-xl-3 {\n        width: 25%;\n    }\n\n    .ui-xl-4 {\n        width: 33.3333%;\n    }\n\n    .ui-xl-5 {\n        width: 41.6667%;\n    }\n\n    .ui-xl-6 {\n        width: 50%;\n    }\n\n    .ui-xl-7 {\n        width: 58.3333%;\n    }\n\n    .ui-xl-8 {\n        width: 66.6667%;\n    }\n\n    .ui-xl-9 {\n        width: 75%;\n    }\n\n    .ui-xl-10 {\n        width: 83.3333%;\n    }\n\n    .ui-xl-11 {\n        width: 91.6667%;\n    }\n\n    .ui-xl-12 {\n        width: 100%;\n    }\n}\n\n.ui-g-nopad {\n    padding: 0;\n}\n\n.ui-growl {\n\tposition:fixed;\n\ttop: 20px;\n\tright: 20px;\n\twidth: 20em;\n}\n\n.ui-growl-item-container {\n\tposition:relative;\n\tmargin:0 0 10px 0;\n\topacity:0.95;\n\tfilter:alpha(opacity=95);\n}\n\n.ui-growl-item {\n    position: relative;\n\tdisplay: block;\n\tpadding: .5em 1em;\n}\n\n.ui-growl-item p {\n\tpadding: 0;\n\tmargin: 0;\n}\n\n.ui-growl-icon-close {\n\tposition: absolute;\n\ttop: 4px;\n\tright: 4px;\n\tcursor: pointer;\n}\n\n.ui-growl-title {\n\tfont-weight: bold;\n\tpadding: 0 0 .5em 0;\n\tdisplay: block;\n}\n\n.ui-growl-image {\n    position: absolute;\n    display: inline-block;\n    left: .5em;\n    top: .25em;\n    padding: 0;\n}\n\n.ui-growl-message {\n\tpadding: 0 0 .25em 0;\n    margin-left: 2.5em;\n}\n\n.ui-growl-message p {\n\tfont-weight: normal;\n}\n.ui-inplace .ui-inplace-display {\n    display: inline;\n    cursor: pointer;\n    border: 0 none;\n    padding: .25em;\n    font-weight: normal;\n}\n\n.ui-inplace .ui-inplace-content {\n    display: inline;\n}\n.ui-inputswitch {\n\tdisplay: inline-block;\n\tpadding: 0;\n\tposition: relative;\n\toverflow: hidden;\n\tcursor: pointer;\n\tuser-select: none;\n    -moz-user-select: none;\n    -khtml-user-select: none;\n    -webkit-user-select: none;\n    height: 1.5em;\n}\n\n.ui-inputswitch .ui-inputswitch-on,\n.ui-inputswitch .ui-inputswitch-off {\n\twhite-space: nowrap;\n    display: inline-block;\n    position: absolute;\n\ttop: 0;\n    width: auto;\n    overflow: hidden;\n    user-select: none;\n    -moz-user-select: none;\n    -khtml-user-select: none;\n    -webkit-user-select: none;\n\tfont-weight: bold;\n\theight: 100%;\n    line-height: 1.5em;\n}\n\n.ui-inputswitch .ui-inputswitch-on {\n\tleft: 0;\n    border: 0 none;\n}\n\n.ui-inputswitch .ui-inputswitch-off {\n\tright: 0;\n    text-align: right;\n}\n\n.ui-inputswitch .ui-inputswitch-on span,\n.ui-inputswitch .ui-inputswitch-off span {\n\tdisplay: inline-block;\n\ttext-align: center;\n\theight: 100%;\n    line-height: inherit;\n}\n\n.ui-inputswitch .ui-inputswitch-handle {\n\tdisplay: block;\n\twidth: 0;\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n    height: 100%;\n    border-top: 0 none;\n    border-bottom: 0 none;\n}\n.ui-inputtext {\n    margin: 0;\n    outline: medium none;\n    padding: .25em;\n    font-weight: normal;\n}\n\n.ui-widget-header .ui-inputtext,\n.ui-widget-content .ui-inputtext {\n    font-weight: normal;\n}\n\n.ui-fluid .ui-inputtext {\n    width: 100%;\n    box-sizing: border-box;\n    -webkit-box-sizing:border-box;\n    -moz-box-sizing: border-box;\n}\n.ui-inputtextarea-resizable {\n    overflow: hidden;\n    resize:none;\n}\n\n.ui-fluid .ui-inputtextarea {\n    width: 100%;\n}\n.ui-lightbox {\n    position: fixed;\n}\n\n.ui-lightbox-content-wrapper {\n    position: relative;\n}\n\n.ui-lightbox-content {\n    position: relative;\n    margin: 0;\n    padding: 0;\n    background-color: #000000;\n}\n\n.ui-lightbox-nav-right, .ui-lightbox-nav-left {\n   position: absolute;\n   top: 50%;\n   cursor: pointer;\n}\n\n.ui-lightbox-nav-left {\n   left: 0;\n}\n\n.ui-lightbox-nav-right {\n   right: 0;\n}\n\n.ui-lightbox-loading {\n    background: url(" + __webpack_require__(104) + ") #000000 center center no-repeat;\n}\n\n.ui-lightbox-caption {\n    padding: 0.2em 0.4em;\n    display: none;\n}\n\n.ui-lightbox-caption-text {\n    margin: 0.3em 0 0.1em 0;\n    float:left;\n}\n\n.ui-lightbox-close {\n    float:right;\n    margin: 0;\n    padding: .125em;\n}\n\n.ui-lightbox-close.ui-state-hover {\n    padding: 0;\n}\n\n.ui-lightbox-nav-left, .ui-lightbox-nav-right {\n    opacity: .5;\n}\n\n.ui-lightbox-nav-left:hover, .ui-lightbox-nav-right:hover{\n    opacity: 1;\n}\n.ui-listbox {\n    overflow:auto;\n    padding: .25em;\n    width: 10em;\n}\n\n.ui-listbox .ui-listbox-list {\n    list-style-type: none; \n    margin: 0;\n    padding: 0;\n}\n\n.ui-listbox .ui-listbox-item {\n    padding: .25em;\n    border: 0 none;\n    cursor: pointer;\n    font-weight: normal;\n    margin-bottom: 1px;\n}\n\n.ui-listbox .ui-listbox-item > span {\n    vertical-align: middle;\n}\n\n.ui-listbox .ui-listbox-item:last-child {\n    margin-bottom: 0;\n}\n\n.ui-listbox.ui-state-disabled .ui-listbox-item {\n    cursor: default;\n}\n\n.ui-listbox-header {\n    margin-bottom: 0.3em;\n    padding: .125em .2em;\n    position: relative;\n}\n\n.ui-listbox-header .ui-chkbox {\n    display: inline-block;\n    vertical-align: middle;\n    cursor: pointer;\n}\n\n.ui-listbox-header .ui-listbox-filter-container {\n    display: inline-block;\n    vertical-align: middle;\n    position: relative;\n    width: 7em;\n}\n\n.ui-listbox-header .ui-listbox-filter-container .fa {\n    position: absolute;\n    top: .25em;\n    left: .25em;\n}\n\n.ui-listbox-header .ui-inputtext {\n    padding: .125em .125em .125em 1.25em;\n    width: 100%;\n}\n\n/* Fluid */\n.ui-fluid .ui-listbox .ui-listbox-filter-container,\n.ui-fluid .ui-listbox .ui-listbox-filter-container input {\n    width: calc(100% - 32px);\n}\n.ui-menu {\n    width: 12.5em;\n    padding: .25em;\n    position:relative;\n}\n\n.ui-menu.ui-menu-dynamic {\n    position: absolute;\n    display: none;\n    z-index: 100000;\n}\n\n.ui-menu-list {\n    position: static;\n}\n\n.ui-menu .ui-menu-list .ui-menuitem {\n    border: none;\n}\n\n.ui-menu .ui-menu-list .ui-widget-header {\n    clear:both;\n    float:left;\n    width: 100%;\n    margin: .125em 0;\n    padding: .25em .5em;\n}\n\n.ui-menu .ui-menuitem-parent,\n.ui-menu .ui-menuitem {\n    width: 100%;\n    clear: both;\n    margin: .125em 0;\n    padding: 0;\n}\n\n.ui-menu .ui-menuitem-link {\n    display: block;\n    width: 100%;\n    outline: none;\n    text-decoration: none;\n    font-weight: normal;\n    border: 1px solid transparent;\n    line-height: 1em;\n    padding: .25em;\n    cursor: pointer;\n}\n\n.ui-menu .ui-menuitem-link .ui-menuitem-icon {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-menu .ui-menuitem-text {\n    vertical-align: middle;\n}\n\n.ui-menu .ui-widget-header h1,\n.ui-menu .ui-widget-header h2,\n.ui-menu .ui-widget-header h3,\n.ui-menu .ui-widget-header h4,\n.ui-menu .ui-widget-header h5,\n.ui-menu .ui-widget-header h6 {\n    font-size: 1em;\n    margin: 0 auto;\n}\n\n/* Tiered Menu */\n.ui-menu .ui-menu-parent .ui-menu-child {\n    display: none;\n    width: 12.5em;\n    padding: .25em;\n    position:absolute;\n    margin: 0; \n    outline: 0; \n    text-decoration:none;\n    list-style:none;\n}\n\n.ui-menu .ui-menu-parent {\n    position: relative;\n}\n\n.ui-menu .ui-menu-parent .ui-submenu-icon {\n    float: right;\n    margin-right: -.25em;\n}\n\n/** MenuButton **/\n.ui-menubutton {\n    padding: 0;\n}\n\n.ui-menubutton .ui-button {\n    margin: 0;\n}\n\n/** Menubar **/\n.ui-menu.ui-menubar .ui-menubar-root-list > li > a > .ui-submenu-icon {\n    float: none;\n}\n\n.ui-menubar {\n    width:auto;\n}\n\n.ui-menubar .ui-menubar-root-list {\n    list-style: none;\n    padding: 0;\n    margin: 0;\n}\n\n.ui-menubar .ui-menubar-root-list > .ui-menuitem {\n    display: inline-block;\n    width: auto;\n}\n\n.ui-menubar .ui-menu-child .ui-menuitem {\n    width: 100%;\n}\n\n.ui-menubar .ui-menubar-options {\n    float: right;\n}\n           \n/** SlideMenu **/\n.ui-slidemenu .ui-slidemenu-wrapper {\n    position: relative;\n}\n\n.ui-slidemenu .ui-slidemenu-content {\n    overflow-x: hidden;\n    overflow-y: auto;\n    position: relative;\n}\n\n.ui-slidemenu .ui-menu-list {\n    position: absolute;\n    top: 0;\n}\n\n.ui-slidemenu .ui-menu-parent {\n    position: static;\n}\n\n.ui-slidemenu .ui-menu-child {\n    box-shadow : none;\n    border: 0 none;\n    background: none repeat scroll 0 0 transparent;\n}\n\n.ui-slidemenu-backward {\n    position: absolute;\n    bottom: 0;\n    width: 100%;\n    padding: 0.2em;\n    cursor: pointer;\n    display: none;\n}\n\n.ui-slidemenu-backward .fa {\n    vertical-align: middle;\n}\n\n.ui-slidemenu-backward span {\n    vertical-align: middle;\n}\n\n.ui-slidemenu .ui-slidemenuitem-active > .ui-submenu > ul {\n    display: block !important;\n}\n\n/** MegaMenu **/\n.ui-megamenu .ui-g {\n    flex-wrap: nowrap;\n}\n\n.ui-megamenu .ui-megamenu-panel.ui-menu-child {\n    width: auto;\n}\n\n.ui-megamenu .ui-megamenu-panel .ui-menu-list {\n    width: 12.5em;\n}\n\n.ui-megamenu-vertical {\n    width: 12.5em;\n}\n\n.ui-megamenu-vertical .ui-menuitem-link,\n.ui-megamenu-vertical .ui-menu-list .ui-menuitem {\n    width: 100%;\n    box-sizing: border-box;\n}\n\n/** PanelMenu **/\n.ui-panelmenu {\n    width: auto;\n}\n\n.ui-panelmenu .ui-panelmenu-panel {\n    padding: 0;\n    margin: 0;\n}\n\n.ui-panelmenu .ui-panelmenu-header {\n    cursor: pointer;\n    position: relative;\n    margin: 0;\n    zoom: 1;\n}\n\n.ui-panelmenu .ui-panelmenu-header a {\n    display: block;\n    padding: .25em .5em;\n}\n\n.ui-panelmenu span {\n    vertical-align: middle;\n}\n\n.ui-panelmenu .fa {\n    width: 1em;\n    text-align: center;\n    vertical-align: middle;\n    margin-right: .25em;\n}\n\n.ui-panelmenu .ui-menuitem-text {\n    margin-left: .125em;\n}\n\n.ui-panelmenu span {\n    vertical-align: middle;\n}\n\n.ui-panelmenu .ui-panelmenu-content {\n    padding: 0.2em 0;\n    border-top: 0;\n    overflow: auto;\n    zoom: 1;\n    outline: none;\n    margin-bottom: 1px;\n}\n\n.ui-panelmenu .ui-panelmenu-content-wrapper {\n    box-sizing: border-box;\n}\n\n.ui-panelmenu .ui-panelmenu-content-wrapper-overflown {\n    overflow: hidden;\n}\n\n.ui-panelmenu .ui-panelmenu-header.ui-state-disabled,\n.ui-panelmenu .ui-panelmenu-header.ui-state-disabled a {\n    cursor: default;\n}\n\n.ui-panelmenu .ui-menu-list {\n    position: static;\n}\n\n.ui-panelmenu .ui-menuitem {\n    margin: 1px 0;\n    padding: 0;\n}\n\n.ui-panelmenu .ui-menuitem-link {\n    display: block;\n    outline: none;\n    text-decoration: none;\n    font-weight: normal;\n    border: 1px solid  transparent;\n    line-height: 1em;\n    cursor: pointer;\n    position: relative;\n    padding: .25em .5em;\n}\n\n.ui-panelmenu .ui-menu-parent .ui-menu-list {\n    margin-left: 1.5em;\n}\n\n/** MegaMenu and TieredMenus **/\n.ui-menuitem-active > .ui-submenu > ul,\n.ui-menuitem-active > .ui-megamenu-panel {\n    display: block !important;\n}\n\n.ui-menuitem-outline {\n    outline: 1px dotted;\n    z-index: 1;\n}\n\n/** Fluid **/\n.ui-fluid .ui-menu {\n    width: 100%;\n}\n.ui-messages {\n    border: 1px solid;\n    margin: .5em 0;\n    padding: 1em 1em 1em .5em;\n    display: none;\n    position: relative;\n}\n\n.ui-messages-icon {\n    display:inline-block;\n    padding: 0;\n    vertical-align: middle;\n}\n\n.ui-messages-summary {\n    font-weight: bold;\n    margin-left: .25em;\n}\n\n.ui-messages-detail {\n    margin-left: .25em;\n}\n\n.ui-messages-success {\n    color: #ffffff;\n    background-color: #4CAF50;\n    border-color: #4CAF50;\n}\n\n.ui-messages-info {\n    color: #ffffff;\n    background-color: #2196f3;\n    border-color: #2196f3;\n}\n\n.ui-messages-warn {\n    color: #ffffff;\n    background-color: #FFB300;\n    border-color: #FFB300;\n}\n\n.ui-messages-error {\n    color: #ffffff;\n    background-color: #f44336;\n    border-color: #f44336;\n}\n\n.ui-messages ul {\n    margin: 0;\n    padding: 0;\n    list-style-type: none;\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-messages.ui-messages-noicon ul {\n    margin: 0 1.5em 0 0;\n}\n\n.ui-messages .ui-messages-close {\n    color: #ffffff;\n    cursor: pointer;\n    position: absolute;\n    top: 5px;\n    right: 5px;\n}\n\n/* Message */\n.ui-message {\n    border: 1px solid;\n    margin: 0px .25em;\n    padding: .125em .25em;\n}\n/** MultiSelect **/\n.ui-multiselect {\n    display: inline-block;\n    position: relative;\n    width: auto;\n    cursor: pointer;\n}\n\n.ui-multiselect .ui-multiselect-trigger {\n    border-right: none;\n    border-top: none;\n    border-bottom: none;\n    cursor: pointer;\n    width: 1.5em;\n    height: 100%;\n    position: absolute;\n    right: 0;\n    top: 0;\n    padding: 0 .25em;\n}\n\n.ui-multiselect .ui-multiselect-trigger  .fa {\n    margin-top: .4em;\n    margin-left: -.125em;\n}\n\n.ui-multiselect .ui-multiselect-label-container  {\n    overflow: hidden;\n}\n\n.ui-multiselect .ui-multiselect-label  {\n    display: block;\n    padding: .25em 2em .25em .25em;\n    width: auto;\n    border: none;\n    cursor: pointer;\n    text-overflow: ellipsis;\n    overflow: hidden;\n}\n\n.ui-multiselect.ui-state-disabled .ui-multiselect-trigger,\n.ui-multiselect.ui-state-disabled .ui-multiselect-label {\n    cursor: auto\n}\n\n.ui-multiselect-panel {\n    padding: 0.2em;\n    position: absolute;\n    min-width: 10em;\n}\n\n.ui-multiselect-panel .ui-multiselect-items-wrapper {\n    overflow: auto;\n    position: relative;\n    padding: 0.2em 0;\n}\n\n.ui-multiselect-panel .ui-multiselect-list {\n    border: 0 none;\n}\n\n.ui-multiselect-panel .ui-multiselect-item {\n    border: 0 none;\n    cursor: pointer;\n    font-weight: normal;\n    margin: 1px 0;\n    padding: .125em .25em;\n    text-align: left;\n    white-space: nowrap;\n    display: block;\n    position: relative;\n}\n\n.ui-multiselect-panel .ui-multiselect-item .ui-chkbox {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-multiselect-panel .ui-multiselect-item label {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-multiselect-header {\n    margin-bottom: 0.3em;\n    padding: .25em;\n    position: relative;\n    text-align: left;\n}\n\n.ui-multiselect-header .ui-chkbox {\n    display: inline-block;\n    vertical-align: middle;\n    cursor:pointer;\n}\n\n.ui-multiselect-header .ui-multiselect-filter-container {\n    position: relative;\n    display: inline-block;\n    vertical-align: middle;\n    width: 65%;\n}\n\n.ui-multiselect-header .ui-multiselect-filter-container .fa {\n    position: absolute;\n    top: .25em;\n    left: .125em;\n}\n            \n.ui-multiselect-header .ui-inputtext {\n    padding: .125em .125em .125em 1.25em;\n    width: 100%;\n}\n\n.ui-multiselect-header .ui-multiselect-close {\n    position: absolute;\n    right: .375em;\n    top: .375em;\n    display: block;\n    font-size: 1em;\n    border: 0 none;\n}\n\n.ui-multiselect-header a.ui-multiselect-all,\n.ui-multiselect-header a.ui-multiselect-none {\n    float:left;\n    margin-right: 10px;\n    display: block;\n}\n\n.ui-multiselect-header .ui-multiselect-close.ui-state-hover {\n    padding:0px;\n}\n\n.ui-fluid .ui-multiselect {\n    width: 100%;\n    box-sizing: border-box;\n}\n\n.ui-orderlist {\n    display: table;\n}\n\n.ui-orderlist .ui-orderlist-caption {\n    width: 12.5em;\n}\n\n.ui-orderlist .ui-orderlist-list {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    overflow: auto;\n    height: 12.5em;\n    width: 12.5em;\n}\n\n.ui-orderlist .ui-orderlist-list li {\n    margin: 1px;\n    padding: .125em;\n}\n\n.ui-orderlist .ui-button {\n    display: block;\n    margin-bottom: 0.3em;\n}\n\n.ui-orderlist .ui-orderlist-button.ui-button-text-icon-primary {\n    width: 100%;\n}\n\n.ui-orderlist .ui-orderlist-item {\n    cursor: pointer;\n    border: 0 none;\n    font-weight: inherit;\n}\n\n.ui-orderlist .ui-orderlist-caption {\n    text-align: center;\n\tpadding: .5em .75em;\n    border-bottom: 0 none;\n}\n\n.ui-orderlist table {\n    width: 100%;\n    border-collapse: collapse;\n}\n\n.ui-orderlist.ui-state-disabled .ui-orderlist-item,\n.ui-orderlist.ui-state-disabled .ui-button {\n    cursor: default;\n}\n\n.ui-orderlist.ui-state-disabled .ui-orderlist-list {\n    overflow:hidden;\n}\n\n/* Responsive */\n.ui-orderlist.ui-grid-responsive {\n    display: block;\n    width: 100%;\n}\n\n.ui-orderlist.ui-grid-responsive .ui-orderlist-controls {\n    margin-right: .5em;\n}\n\n.ui-orderlist.ui-grid-responsive .ui-orderlist-list,\n.ui-orderlist.ui-grid-responsive .ui-orderlist-caption {\n    width: 100%;\n}  \n\n.ui-orderlist.ui-grid-responsive .ui-orderlist-controls .ui-button {\n    width: 100%;\n}\n\n@media (max-width: 40em) { \n    .ui-orderlist.ui-grid-responsive .ui-orderlist-controls {\n        text-align: center;\n    }\n\n    .ui-orderlist.ui-grid-responsive .ui-orderlist-controls .ui-button {\n        display: inline;\n        width: 20%;\n    }\n}\n.ui-overlaypanel {\n    padding: 0;\n    margin: 0;\n    position: absolute;\n}\n\n.ui-overlaypanel-content {\n    padding: 0.5em 1em;\n}\n\n.ui-overlaypanel-close {\n    position: absolute;\n    top: -.5em;\n    right: -.5em;\n    -moz-border-radius: 100%;\n    -webkit-border-radius: 100%;\n    border-radius: 100%;\n}\n.ui-paginator {\n    margin: 0;\n    text-align: center;\n    padding: .125em;\n}\n\n.ui-paginator .ui-paginator-top {\n    border-bottom: 0 none;\n}\n\n.ui-paginator .ui-paginator-bottom {\n    border-top:0 none;\n}\n\n.ui-paginator .ui-paginator-page,\n.ui-paginator .ui-paginator-pages,\n.ui-paginator .ui-paginator-next,\n.ui-paginator .ui-paginator-last,\n.ui-paginator .ui-paginator-first,\n.ui-paginator .ui-paginator-prev,\n.ui-paginator .ui-paginator-current {\n\tdisplay: inline-block;\n\tpadding: .125em .375em;\n\tzoom: 1;\n\tmargin-left: .063em;\n\tmargin-right: .063em;\n\ttext-decoration: none;\n}\n\n.ui-paginator .ui-paginator-page,\n.ui-paginator .ui-paginator-next,\n.ui-paginator .ui-paginator-last,\n.ui-paginator .ui-paginator-first,\n.ui-paginator .ui-paginator-prev{\n    cursor: pointer;\n}\n\n.ui-paginator .ui-paginator-current,\n.ui-paginator .ui-paginator-rpp-options {\n\tmargin-left: 1em;\n\tmargin-right: 1em;\n    background-image: none;\n}\n\n.ui-paginator .ui-paginator-jtp-select option,\n.ui-paginator .ui-paginator-rpp-options option {\n    background-image: none;\n    border: 0 none;\n    box-shadow: none;\n    -moz-box-shadow: none;\n    -webkit-box-shadow: none;\n}\n\n.ui-paginator a.ui-state-disabled {\n    outline: 0 none;\n}\n.ui-panel {\n\tpadding: 0.2em;\n}\n\n.ui-panel .ui-panel-titlebar {\n\tpadding: .5em .75em;\n}\n\n.ui-panel .ui-panel-titlebar-icon {\n\tfloat: right;\n    cursor: pointer;\n}\n\n.ui-panel .ui-panel-titlebar-icon {\n\tmargin-left: 0.2em;\n    margin-top: -0.1em;\n}\n\n.ui-panel .ui-panel-content {\n\tborder: 0;\n    background: none;\n    padding: .5em .75em;\n}\n\n.ui-panel .ui-panel-footer {\n\tborder-width: 1px 0 0;\n\tpadding: .25em .5em;\n\ttext-align:left;\n}\n  \n.ui-panel-content-wrapper-overflown {\n    overflow: hidden;\n}     \n.ui-password-panel {\n    padding: .25em .5em;\n    width: 10em;\n    margin-top: 2px;\n}\n\n.ui-password-panel .ui-password-meter { \n    height: 10px; \n    background:transparent url(" + __webpack_require__(105) + ") no-repeat left top; \n    padding: 0;\n    margin: 0;\n}\n\n.ui-password-info { \n    margin-top: .25em;\n}\n\n.ui-password-panel-overlay { \n    position: absolute; \n}\n.ui-picklist > div {\n    float: left;\n}\n\n.ui-picklist .ui-picklist-buttons {\n    height: 12.5em;\n    padding: 0 .25em;\n}\n\n.ui-picklist .ui-picklist-list {\n    list-style-type: none;\n    margin: 0;\n    padding: 0;\n    overflow:auto;\n    height: 12.5em;\n    width: 12.5em;\n}\n\n.ui-picklist .ui-picklist-list li {\n    margin: 1px;\n    padding: .125em;\n}\n\n.ui-picklist .ui-button {\n    display:block;\n    margin-bottom: 0.25em;\n}\n\n.ui-picklist .ui-button-text-icon-left {\n    width: 100%;\n}\n\n.ui-picklist .ui-picklist-item {\n    cursor: pointer;\n    border: 0 none;\n    font-weight: inherit;\n}\n\n.ui-picklist .ui-picklist-caption {\n    text-align: center;\n\tpadding: .5em .75em;\n    border-bottom:0 none;\n}\n\n.ui-picklist table {\n    width: 100%;\n    border-collapse:collapse;\n}\n\n.ui-picklist .ui-picklist-filter {\n    padding-right: 1em;\n    width: 100%;\n    box-sizing: border-box;\n}\n\n.ui-picklist .ui-picklist-filter-container {\n    position: relative;\n    margin: 0;\n    padding: 0;\n}\n\n.ui-picklist .ui-picklist-filter-container .fa {\n    position: absolute;\n    top: .25em;\n    right: .125em;\n}\n\n.ui-picklist {\n    display: table;\n}\n\n.ui-picklist > div {\n    float: none;\n    display: table-cell;\n    vertical-align: top;\n}\n\n.ui-picklist .ui-picklist-buttons {\n    vertical-align: middle;\n}\n\n/* Vertical */\n.ui-picklist.ui-picklist-vertical {\n    display: table;\n}\n\n.ui-picklist.ui-picklist-vertical > div {\n    float: none;\n    display: table-row;\n    vertical-align: top;\n}\n\n.ui-picklist.ui-picklist-vertical .ui-picklist-buttons {\n    text-align:center;\n    height: auto;\n}\n\n.ui-picklist.ui-picklist-vertical .ui-picklist-buttons .ui-button {\n    display: inline-block;\n}\n\n.ui-picklist.ui-picklist-vertical .ui-button {\n    margin-top: 0.25em;\n}\n\n.ui-picklist-outline {\n    outline: 1px dotted black;\n    z-index: 1;\n}\n\n.ui-picklist-list.ui-picklist-source,\n.ui-picklist-list.ui-picklist-target {\n    outline: none;\n}\n\n/* Responsive */\n.ui-picklist.ui-picklist-responsive * {\n    box-sizing: border-box;\n}\n\n.ui-picklist.ui-picklist-responsive {\n    width: 100%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-listwrapper {\n    width: 35%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-listwrapper.ui-picklist-listwrapper-nocontrols {\n    width: 45%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-buttons {\n    width: 10%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-buttons button {\n    width: 100%;\n}\n\n.ui-picklist.ui-picklist-responsive .ui-picklist-list {\n    width: auto;\n}\n        \n/* Responsive */\n@media (max-width: 40em) {\n    .ui-picklist.ui-picklist-responsive {\n        display: block;\n    }\n    \n    .ui-picklist.ui-picklist-responsive > div {\n        display: block;\n        width: 100% !important;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons {\n        text-align: center;\n        height: auto;\n        padding: .4em 0;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons button {\n        display: inline;\n        width: 20%;\n        margin-bottom: 0;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-source-controls.ui-picklist-buttons {\n        padding-bottom: .4em;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-target-controls.ui-picklist-buttons {\n        padding-top: .4em;\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .fa-angle-right:before {\n        content: \"\\F107\";\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .fa-angle-double-right:before {\n        content: \"\\F103\";\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .fa-angle-left:before {\n        content: \"\\F106\";\n    }\n    \n    .ui-picklist.ui-picklist-responsive .ui-picklist-buttons .fa-angle-double-left:before {\n        content: \"\\F102\";\n    }\n}\n\n.ui-progressbar { \n    height: 1.2em; \n    text-align: left; \n    position: relative;\n}\n\n.ui-progressbar .ui-progressbar-value {\n    height: 100%;\n    width: 0%;\n    position: absolute;\n    display: none;\n    border: 0 none;\n}\n\n.ui-progressbar .ui-progressbar-value-animate {\n    -webkit-transition: width 1s ease-in-out;\n    -moz-transition: width 1s ease-in-out;\n    -o-transition: width 1s ease-in-out;\n    transition: width 1s ease-in-out;\n}\n\n.ui-progressbar .ui-progressbar-label {\n    text-align: center;\n    height: 100%;\n    width: 100%;\n    position: absolute;\n    display: none;\n    font-weight: bold;\n}\n.ui-radiobutton {\n    display:inline-block;\n    cursor: pointer;\n    vertical-align: middle;\n    margin-right: .25em;\n}\n\n.ui-radiobutton-box {\n    width: 1.125em;\n    height: 1.125em;\n    line-height: 1.125em;\n    -moz-border-radius: 100%;\n    -webkit-border-radius: 100%;\n    border-radius: 100%;\n    text-align: center;\n}\n\n.ui-radiobutton-icon {\n    display: block;\n    font-size: .6em;\n    line-height: inherit;\n}\n \n.ui-radiobutton, .ui-radiobutton-label {\n    vertical-align: middle;\n    display: inline-block;\n}\n.ui-fluid .fc .ui-button {\n    width: auto;\n}\n.ui-selectbutton{\n    display: inline-block;\n}\n            \n.ui-selectbutton.ui-state-error {\n    padding: 0;\n}\n\n.ui-selectbutton .ui-button.ui-state-focus{\n    outline: none;\n}\n.ui-slider {\n\tposition: relative;\n\ttext-align: left;\n}\n.ui-slider .ui-slider-handle {\n\tposition: absolute;\n\twidth: 1.2em;\n\theight: 1.2em;\n\tcursor: default;\n\t-ms-touch-action: none;\n\ttouch-action: none;\n    z-index: 1;\n}\n.ui-slider .ui-slider-handle.ui-slider-handle-active {\n    z-index: 2;\n}\n.ui-slider .ui-slider-range {\n\tposition: absolute;\n\tfont-size: .7em;\n\tdisplay: block;\n\tborder: 0;\n\tbackground-position: 0 0;\n}\n\n.ui-slider-horizontal {\n\theight: .8em;\n}\n.ui-slider-horizontal .ui-slider-handle {\n\ttop: -.3em;\n\tmargin-left: -.6em;\n}\n.ui-slider-horizontal .ui-slider-range {\n\ttop: 0;\n\theight: 100%;\n}\n.ui-slider-horizontal .ui-slider-range-min {\n\tleft: 0;\n}\n.ui-slider-horizontal .ui-slider-range-max {\n\tright: 0;\n}\n\n.ui-slider-vertical {\n\twidth: .8em;\n\theight: 100px;\n}\n.ui-slider-vertical .ui-slider-handle {\n\tleft: -.3em;\n\tmargin-left: 0;\n\tmargin-bottom: -.6em;\n}\n.ui-slider-vertical .ui-slider-range {\n\tleft: 0;\n\twidth: 100%;\n}\n.ui-slider-vertical .ui-slider-range-min {\n\tbottom: 0;\n}\n.ui-slider-vertical .ui-slider-range-max {\n\ttop: 0;\n}\n\n.ui-slider-animate .ui-slider-handle {\n    transition: left .3s;\n}\n.ui-spinner {\n    display: inline-block;\n    overflow: visible;\n    padding: 0;\n    position: relative;\n    vertical-align: middle;\n}\n\n.ui-spinner-input {\n    vertical-align: middle;\n    padding-right: 1.5em;\n}\n\n.ui-spinner-button {\n    cursor: default;\n    display: block;\n    height: 50%;\n    margin: 0;\n    overflow: hidden;\n    padding: 0;\n    position: absolute;\n    right: 0;\n    text-align: center;\n    vertical-align: middle;\n    width: 1.5em;\n}\n\n.ui-spinner .fa {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    margin-top: -.5em;\n    margin-left: -.5em;\n    width: 1em;\n}\n\n.ui-spinner-up {\n    top: 0;\n}\n\n.ui-spinner-down {\n    bottom: 0;\n}\n\n/* Fluid */\n.ui-fluid .ui-spinner {\n    width: 100%;\n}\n\n.ui-fluid .ui-spinner .ui-spinner-input {\n    padding-right: 2em;\n    width: 100%;\n}\n\n.ui-fluid .ui-spinner .ui-spinner-button {\n    width: 1.5em;\n}\n\n.ui-fluid .ui-spinner .ui-spinner-button .fa {\n    left: .7em;\n}\n.ui-splitbutton {\n    position: relative;\n    display: inline-block;\n    zoom: 1;\n}\n\n.ui-splitbutton .ui-button.ui-splitbutton-menubutton {\n    width: 2em;\n}\n\n.ui-splitbutton.ui-state-disabled button {\n    cursor: default;\n}\n\n.ui-fluid .ui-splitbutton {\n    width: 100%;\n    box-sizing: border-box;\n    -webkit-box-sizing:border-box;\n    -moz-box-sizing: border-box;\n}\n\n.ui-fluid .ui-splitbutton .ui-button:first-child {\n    width: calc(100% - 2em);\n}\n\n.ui-fluid .ui-splitbutton .ui-button.ui-splitbutton-menubutton {\n    width: 2em;\n    box-sizing: border-box;\n    -webkit-box-sizing:border-box;\n    -moz-box-sizing: border-box;\n}\n.ui-steps ul {\n    list-style-type: none;\n    padding: 0;\n    margin: 0;\n}     \n\n.ui-steps .ui-steps-item {\n    float: left;\n    box-sizing: border-box;\n    cursor: pointer;\n}\n\n.ui-steps.ui-steps-readonly .ui-steps-item {\n    cursor: auto;\n}\n\n.ui-steps .ui-steps-item .ui-menuitem-link {\n    text-decoration: none;\n    display: block;\n    padding: 1em;\n    position: relative;\n    text-align: center;\n}\n\n.ui-steps .ui-steps-item.ui-state-highlight .ui-menuitem-link,\n.ui-steps .ui-steps-item.ui-state-disabled .ui-menuitem-link {\n    cursor: default;\n}\n\n.ui-steps .ui-steps-number {\n    font-size: 200%; \n    display: block;\n}\n\n.ui-steps .ui-steps-title {\n    display: block;\n    white-space: nowrap;\n}\n\n/* Responsive */\n@media (max-width: 40em) {    \n    .ui-steps .ui-steps-item .ui-menuitem-link {\n        padding: 0.5em;\n    }\n    \n    .ui-steps .ui-steps-item .ui-steps-title {\n        display: none;\n    }\n}\n/** TabMenu **/\n.ui-tabmenu { \n\n}\n\n.ui-tabmenu .ui-tabmenu-nav { \n    margin: 0;\n    padding: .25em .5em 0 .25em; \n}\n\n.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem { \n    list-style: none; \n    float: left; \n    position: relative; \n    margin: 0 .2em 1px 0;  \n    padding: 0; \n    white-space: nowrap;\n    display: block;\n    border-bottom: 0;\n    top: 1px; \n}\n\n.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem a { \n    float: left; \n    padding: 0.5em 1em;\n    text-decoration: none; \n}\n\n.ui-tabmenu .ui-tabmenu-nav a { \n    padding: 0.5em 1em;\n}\n\n.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem .ui-icon { \n    float: left; \n}\n\n.ui-tabmenu .ui-tabmenu-nav .ui-tabmenuitem.ui-state-disabled a {\n     cursor: default;\n} \n.ui-tabview {\n    padding: .25em; \n}\n\n.ui-tabview .ui-tabview-nav { \n    margin: 0;\n}\n\n.ui-tabview .ui-tabview-nav li { \n    list-style: none; \n    float: left; \n    position: relative; \n    margin: 0 .125em 1px 0;  \n    padding: 0; \n    white-space: nowrap; \n}\n\n.ui-tabview .ui-tabview-nav li a { \n    float: left; \n    padding: .5em 1em; \n    text-decoration: none; \n}\n\n.ui-tabview .ui-tabview-nav li.ui-tabview-selected a, \n.ui-tabview .ui-tabview-nav li.ui-state-disabled a, \n.ui-tabview .ui-tabview-nav li.ui-state-processing a { \n    cursor: text; \n}\n\n.ui-tabview .ui-tabview-nav li a, \n.ui-tabview.ui-tabview-collapsible .ui-tabview-nav li.ui-tabview-selected a { \n    cursor: pointer; \n}\n\n.ui-tabview .ui-tabview-panel { \n    border-width: 0; \n    padding: 1em; \n    background: none; \n}\n\n.ui-tabview .ui-tabview-nav li { \n    display: block; \n}\n\n.ui-tabview .ui-tabview-nav li .ui-tabview-left-icon,\n.ui-tabview .ui-tabview-nav li .ui-tabview-right-icon,\n.ui-tabview .ui-tabview-nav li .ui-tabview-title { \n    vertical-align: middle;\n}\n\n.ui-tabview .ui-tabview-nav li .ui-tabview-close { \n    margin: 0.5em 0.3em 0 0; \n    cursor: pointer; \n}\n\n/* per orientation settings */\n/* top and bottom */\n.ui-tabview.ui-tabview-top > .ui-tabview-nav li { \n    border-bottom: 0;\n    top: 1px; \n}\n\n.ui-tabview.ui-tabview-top > .ui-tabview-nav { \n    padding: .2em .2em 0; \n}\n\n.ui-tabview.ui-tabview-bottom > .ui-tabview-nav { \n    padding: 0 .2em .2em; \n}\n\n.ui-tabview.ui-tabview-bottom > .ui-tabview-nav li { \n    border-top: 0;\n}\n\n/* left and right*/\n.ui-tabview-left:after,\n.ui-tabview-right:after {\n    clear:both;\n    content: \".\";\n    display: block;\n    height: 0;\n    visibility: hidden;\n}\n\n.ui-tabview-left > .ui-tabview-nav {\n    float:left;\n    width: 25%;\n    height: 300px;\n    background-image: none;\n    padding-top: 1px;\n}\n\n.ui-tabview-left > .ui-tabview-panels {\n    float:right;\n    width: 75%;\n}\n\n.ui-tabview.ui-tabview-left > .ui-tabview-nav li,\n.ui-tabview.ui-tabview-right > .ui-tabview-nav li{\n    display: block;\n    float: right;\n    white-space: normal;\n    width: 99%;\n}\n\n.ui-tabview.ui-tabview-left > .ui-tabview-nav li {\n    margin: 0 0 1px 0;\n    border-right:0 none;\n}\n\n.ui-tabview.ui-tabview-right > .ui-tabview-nav {\n    float:right;\n    width: 25%;\n    height: 300px;\n    background-image: none;\n    padding-top: 1px;\n}\n\n.ui-tabview.ui-tabview-right > .ui-tabview-panels {\n    float:left;\n    width: 75%;\n}\n\n.ui-tabview.ui-tabview-right > .ui-tabview-nav li {\n    margin: 0 0 1px 0;\n    border-left:0 none;\n}\n\n.ui-terminal {\n    height: 18em;\n    overflow: auto;\n    padding: .25em;\n}\n\n.ui-terminal-input {\n    border: 0 none;\n    background-color: transparent;\n    color: inherit;\n    padding: 0;\n    margin: 0 0 0 .125em;\n    width: 75%;\n    outline: none;\n    vertical-align: baseline;\n}\n\n.ui-terminal-command {\n    margin-left: .125em;\n    -moz-margin-start: .125em;\n}\n\n.ui-terminal-input::-ms-clear {\n    display: none;\n}\n.ui-toolbar {\n    padding: .25em .5em;\n}\n\n.ui-toolbar-group-left {\n    float:left\n}\n\n.ui-toolbar-group-right {\n    float:right\n}\n.ui-tooltip {\n    position:absolute;\n    display:none;\n    padding: .25em .5em;\n}\n\n.ui-tooltip.ui-tooltip-right,\n.ui-tooltip.ui-tooltip-left {\n    padding: 0 .25em;\n}\n\n.ui-tooltip.ui-tooltip-top,\n.ui-tooltip.ui-tooltip-bottom {\n    padding:.25em 0;\n}\n\n.ui-tooltip .ui-tooltip-text {\n   padding: .125em .5em;\n   background-color: rgb(76, 76, 76);\n   color: #ffffff;\n   white-space: nowrap;\n}\n\n.ui-tooltip-arrow {\n    position: absolute;\n    width: 0;\n    height: 0;\n    border-color: transparent;\n    border-style: solid;\n}\n\n.ui-tooltip-right .ui-tooltip-arrow {\n    top: 50%;\n    left: 0;\n    margin-top: -.25em;\n    border-width: .25em .25em .25em 0;\n    border-right-color: rgb(76, 76, 76);\n}\n\n.ui-tooltip-left .ui-tooltip-arrow {\n    top: 50%;\n    right: 0;\n    margin-top: -.25em;\n    border-width: .25em 0 .25em .25em;\n    border-left-color: rgb(76, 76, 76);\n}\n\n.ui-tooltip.ui-tooltip-top {\n    padding: .25em 0;\n}\n\n.ui-tooltip-top .ui-tooltip-arrow {\n    bottom: 0;\n    left: 50%;\n    margin-left: -.25em;\n    border-width: .25em .25em 0;\n    border-top-color: rgb(76, 76, 76);\n}\n\n.ui-tooltip-bottom .ui-tooltip-arrow {\n    top: 0;\n    left: 50%;\n    margin-left: -.25em;\n    border-width: 0 .25em .25em;\n    border-bottom-color: rgb(76, 76, 76);\n}\n.ui-tree {\n    width: 18em;\n}\n\n.ui-tree.ui-tree-selectable .ui-treenode-content {\n    cursor: pointer;\n}\n\n.ui-tree .ui-tree-container {\n    height: 100%;\n    margin: 0;\n    overflow: auto;\n    padding: .25em;\n    white-space: nowrap;\n}\n\n.ui-tree .ui-treenode-children {\n    margin: 0;\n    padding: 0 0 0 1em;\n}\n\n.ui-tree .ui-treenode {\n    background-attachment: scroll;\n    background-color: transparent;\n    background-image: none;\n    background-position: 0 0;\n    background-repeat: repeat-y;\n    list-style: none outside none;\n    margin: 0;\n    padding: .125em 0 0 0;\n}\n\n.ui-tree .ui-tree-toggler {\n    cursor: pointer;\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-tree .ui-treenode-icon {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-tree .ui-treenode-label {\n    display: inline-block;\n    padding: 0 .25em;\n    vertical-align: middle;\n}\n\n.ui-tree .ui-treenode-label.ui-state-hover,\n.ui-tree .ui-treenode-label.ui-state-highlight {\n    font-weight: normal;\n    border: 0 none;\n}\n\n.ui-tree .ui-treenode.ui-treenode-leaf > .ui-treenode-content > .ui-tree-toggler {\n    visibility: hidden;\n}\n\n.ui-tree .ui-chkbox-box {\n    cursor: pointer;\n}\n\n.ui-tree .ui-chkbox {\n    display: inline-block;\n    vertical-align: middle;\n}\n\n.ui-tree .ui-chkbox .ui-chkbox-icon {\n    margin-left: 1px;\n}\n\n/** Fluid **/\n.ui-fluid .ui-tree {\n    width: 100%;\n}\n\n/** Horizontal Tree **/\n.ui-tree-horizontal {\n    width:auto;\n    padding: .5em 0;\n    overflow:auto;\n}\n\n.ui-tree.ui-tree-horizontal table,\n.ui-tree.ui-tree-horizontal tr,\n.ui-tree.ui-tree-horizontal td {\n    border-collapse: collapse;\n    margin: 0;\n    padding: 0;\n    vertical-align: middle;\n}\n\n.ui-tree.ui-tree-horizontal .ui-tree-toggler {\n    vertical-align: middle;\n    margin: 0;\n}\n\n.ui-tree-horizontal .ui-treenode-content {\n    font-weight: normal;\n    padding: 0.4em 1em 0.4em 0.2em;\n}\n\n.ui-tree.ui-tree-horizontal .ui-tree-node-label {\n    margin: 0;\n}\n\n.ui-tree-horizontal .ui-treenode-parent .ui-treenode-content {\n    font-weight: normal;\n    white-space: nowrap;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode {\n    background: url(" + __webpack_require__(52) + ") repeat-x scroll center center transparent;\n    padding: .25em 2.5em;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode.ui-treenode-leaf,\n.ui-tree.ui-tree-horizontal .ui-treenode.ui-treenode-collapsed {\n    padding-right: 0;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode-children {\n    padding: 0;\n    margin: 0;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode-connector {\n    width: 1px;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode-connector-table {\n    height: 100%;\n    width: 1px;\n}\n\n.ui-tree.ui-tree-horizontal .ui-treenode-connector-line {\n    background: url(" + __webpack_require__(52) + ") repeat-y scroll 0 0 transparent;\n    width: 1px;\n}\n\n.ui-tree.ui-tree-horizontal table {\n\theight: 0;\n}\n\n.ui-tree.ui-tree-horizontal .ui-chkbox {\n    vertical-align: bottom;\n    margin-right: .25em;\n}\n\n.ui-treetable table {\n\tborder-collapse:collapse;\n    width: 100%;\n    table-layout: fixed;\n}\n\n.ui-treetable .ui-treetable-header,\n.ui-treetable .ui-treetable-footer {\n    text-align:center;\n\tpadding: .5em .75em;\n}\n\n.ui-treetable .ui-treetable-header {\n    border-bottom: 0 none;\n}\n\n.ui-treetable .ui-treetable-footer {\n    border-top: 0 none;\n}\n\n.ui-treetable th, .ui-treetable tfoot td {\n    text-align: center;\n}\n\n.ui-treetable thead th,\n.ui-treetable tbody td,\n.ui-treetable tfoot td {\n    padding: .25em .5em;\n    overflow: hidden;\n    white-space: nowrap;\n    border-width: 1px;\n    border-style: solid;\n}\n\n.ui-treetable tbody td {\n    border-color: inherit;\n}\n\n.ui-treetable tbody td:first-child span {\n    vertical-align: middle;\n}\n\n.ui-treetable .ui-treetable-toggler {\n    vertical-align: middle;\n    cursor: pointer;\n    text-decoration: none;\n}\n\n.ui-treetable .ui-treetable-checkbox {\n    margin-right: .5em;\n}\n\n.ui-treetable .ui-treetable-checkbox .ui-chkbox-icon {\n    margin-left: 1px;\n}\n\n.ui-treetable .ui-treetable-row.ui-treetable-row-selectable {\n    cursor: pointer;\n}\n\n.ui-treetable .ui-treetable-row.ui-state-highlight {\n    border: 0 none;\n}\n      \n.ui-treetable tr.ui-state-hover {\n    border-color: inherit;\n    font-weight: inherit;\n}\n\n.ui-treetable .ui-treetable-indent {\n    width: 1em;\n    height: 1em;\n    float: left;\n}\n\n/* PrimeNG */\n.ui-treetable td.ui-treetable-child-table-container {\n    padding: 0;\n    border: 0 none;\n}\n\n.ui-treetable .ui-treetable-row {\n    display: table-row;\n    border-bottom: 0 transparent\n}\n\n.ui-treetable tbody .ui-treetable-row td {\n    border: 0 none;\n}\n\n.ui-treetable tbody .ui-treetable-row td input {\n    outline: 0 none;\n}", ""]);
 
 // exports
 
@@ -12974,13 +12975,10 @@ exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS I
 
 exports = module.exports = __webpack_require__(7)(undefined);
 // imports
-exports.i(__webpack_require__(79), "");
-exports.i(__webpack_require__(78), "");
-exports.i(__webpack_require__(80), "");
-exports.i(__webpack_require__(81), "");
+
 
 // module
-exports.push([module.i, "li {\n  font-size: large; }\n\ndiv.panel-heading {\n  font-size: x-large; }\n\n.navbar-nav {\n  display: inline; }\n\n.container-fluid {\n  width: 100%;\n  border-radius: 0px; }\n\n.heading {\n  margin-left: 0; }\n\n/*links*/\na.foot {\n  color: white;\n  text-decoration: underline; }\n\na.foot:hover {\n  color: gray;\n  text-decoration: underline; }\n\n.horizontal {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start; }\n\n.horizontal-end {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end; }\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -12991,10 +12989,13 @@ exports.push([module.i, "li {\n  font-size: large; }\n\ndiv.panel-heading {\n  f
 
 exports = module.exports = __webpack_require__(7)(undefined);
 // imports
-
+exports.i(__webpack_require__(79), "");
+exports.i(__webpack_require__(78), "");
+exports.i(__webpack_require__(80), "");
+exports.i(__webpack_require__(81), "");
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n.changeinfo {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline;\n  font-size: 3vmin;\n  cursor: pointer; }\n  .changeinfo:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4);\n  margin-bottom: 0px !important; }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.floating {\n  float: right;\n  margin-right: 5%; }\n\n.headchangewidth {\n  width: 30%; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 4vmin; }\n\n.tatootool {\n  font-size: 2vmin;\n  float: right;\n  color: rgba(41, 43, 41, 0.9);\n  margin-right: 1%; }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right;\n  margin-right: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .floating {\n    float: none;\n    margin-right: 0%; }\n  .headchangewidth {\n    width: 15%; }\n  #tatoopanel {\n    font-size: 3vmin; }\n  .tatootool {\n    font-size: 1.5vmin; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n", ""]);
+exports.push([module.i, "li {\n  font-size: large; }\n\ndiv.panel-heading {\n  font-size: x-large; }\n\n.navbar-nav {\n  display: inline; }\n\n.container-fluid {\n  width: 100%;\n  border-radius: 0px; }\n\n.heading {\n  margin-left: 0; }\n\n/*links*/\na.foot {\n  color: white;\n  text-decoration: underline; }\n\na.foot:hover {\n  color: gray;\n  text-decoration: underline; }\n\n.horizontal {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start; }\n\n.horizontal-end {\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end; }\n", ""]);
 
 // exports
 
@@ -13008,7 +13009,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4); }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n.changeinfo {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline;\n  font-size: 3vmin;\n  cursor: pointer; }\n  .changeinfo:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4);\n  margin-bottom: 0px !important; }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.floating {\n  float: right;\n  margin-right: 5%; }\n\n.headchangewidth {\n  width: 30%; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 4vmin; }\n\n.tatootool {\n  font-size: 2vmin;\n  float: right;\n  color: rgba(41, 43, 41, 0.9);\n  margin-right: 1%; }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right;\n  margin-right: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .floating {\n    float: none;\n    margin-right: 0%; }\n  .headchangewidth {\n    width: 15%; }\n  #tatoopanel {\n    font-size: 3vmin; }\n  .tatootool {\n    font-size: 1.5vmin; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n", ""]);
 
 // exports
 
@@ -13022,7 +13023,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4); }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\nagm-map {\n  height: 300px; }\n\n/*links*/\na {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline; }\n\na:hover {\n  color: rgba(41, 43, 41, 0.5);\n  text-decoration: underline; }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4); }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n", ""]);
 
 // exports
 
@@ -13036,7 +13037,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".questions_page {\n  /*text styles*/\n  /*styles*/\n  /*links*/ }\n  .questions_page .text {\n    font-family: 'TEMPUS SANS ITC';\n    font-weight: bold;\n    color: rgba(41, 43, 41, 0.7); }\n  .questions_page .heading {\n    font-size: 7vmin;\n    color: rgba(41, 43, 41, 0.9); }\n  .questions_page .paragraphhead {\n    color: rgba(41, 43, 41, 0.9); }\n  .questions_page .tatooarticle {\n    width: 100%;\n    background-color: rgba(255, 255, 255, 0.4);\n    font-size: 4vmin; }\n    .questions_page .tatooarticle ol li {\n      font-size: 4vmin; }\n  .questions_page .margin2 {\n    margin-left: 3%;\n    margin-right: 3%; }\n  .questions_page a {\n    color: rgba(41, 43, 41, 0.9);\n    text-decoration: underline; }\n  .questions_page a:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4); }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\nagm-map {\n  height: 300px; }\n\n/*links*/\na {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline; }\n\na:hover {\n  color: rgba(41, 43, 41, 0.5);\n  text-decoration: underline; }\n", ""]);
 
 // exports
 
@@ -13050,7 +13051,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC'; }\n\n.whitetext {\n  color: #FFFFFF; }\n\n.arcticleheading {\n  font-size: 6vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.arcticletext {\n  font-size: 4vmin;\n  color: rgba(41, 43, 41, 0.7); }\n\n/*styles*/\n.tatooback {\n  font-weight: bold;\n  font-size: 12vmin; }\n\n.margin2 {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.margin1 {\n  margin-left: 3%; }\n\n.tatooarticle {\n  background-color: rgba(255, 255, 255, 0.4);\n  width: 100%;\n  font-weight: bold; }\n\n.circles {\n  align-self: center;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  margin: 2%; }\n\n.examplesofwork {\n  width: 25%;\n  height: 25%;\n  border-radius: 50%; }\n\n/*links*/\na {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline; }\n\na:hover {\n  color: rgba(41, 43, 41, 0.5);\n  text-decoration: underline; }\n", ""]);
+exports.push([module.i, ".questions_page {\n  /*text styles*/\n  /*styles*/\n  /*links*/ }\n  .questions_page .text {\n    font-family: 'TEMPUS SANS ITC';\n    font-weight: bold;\n    color: rgba(41, 43, 41, 0.7); }\n  .questions_page .heading {\n    font-size: 7vmin;\n    color: rgba(41, 43, 41, 0.9); }\n  .questions_page .paragraphhead {\n    color: rgba(41, 43, 41, 0.9); }\n  .questions_page .tatooarticle {\n    width: 100%;\n    background-color: rgba(255, 255, 255, 0.4);\n    font-size: 4vmin; }\n    .questions_page .tatooarticle ol li {\n      font-size: 4vmin; }\n  .questions_page .margin2 {\n    margin-left: 3%;\n    margin-right: 3%; }\n  .questions_page a {\n    color: rgba(41, 43, 41, 0.9);\n    text-decoration: underline; }\n  .questions_page a:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n", ""]);
 
 // exports
 
@@ -13064,7 +13065,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.bolder {\n  font-weight: bold; }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  color: #FFFFFF; }\n\n.tatoobutton:hover {\n  background-color: #464451 !important;\n  border-color: #D5D5D5 !important;\n  color: #FFFFFF !important; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatootable {\n  color: #000000; }\n\n#tatoodiv {\n  border-color: #000000;\n  font-family: 'comic sans ms';\n  color: #000000 !important;\n  margin: 1%; }\n\n/*stars*/\n.star {\n  position: relative;\n  display: inline-block;\n  font-size: 2rem;\n  color: white;\n  border-color: black; }\n\n.full {\n  color: black; }\n\n.half {\n  position: absolute;\n  display: inline-block;\n  overflow: hidden;\n  color: black; }\n\n.tatooerror {\n  color: red;\n  font-size: 3.5vmin;\n  font-weight: bold; }\n\n.tatoogood {\n  color: #137F25;\n  font-size: 3.5vmin;\n  font-weight: bold; }\n\n.backerror {\n  background-color: #F6D9D9; }\n\n.backgood {\n  background-color: #C7F9CF; }\n\n@media only screen and (min-width: 800px) {\n  .tatooerror {\n    font-size: 2vmin; }\n  .tatoogood {\n    font-size: 2vmin; } }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC'; }\n\n.whitetext {\n  color: #FFFFFF; }\n\n.arcticleheading {\n  font-size: 6vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.arcticletext {\n  font-size: 4vmin;\n  color: rgba(41, 43, 41, 0.7); }\n\n/*styles*/\n.tatooback {\n  font-weight: bold;\n  font-size: 12vmin; }\n\n.margin2 {\n  margin-left: 5%;\n  margin-right: 5%; }\n\n.margin1 {\n  margin-left: 3%; }\n\n.tatooarticle {\n  background-color: rgba(255, 255, 255, 0.4);\n  width: 100%;\n  font-weight: bold; }\n\n.circles {\n  align-self: center;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n  margin: 2%; }\n\n.examplesofwork {\n  width: 25%;\n  height: 25%;\n  border-radius: 50%; }\n\n/*links*/\na {\n  color: rgba(41, 43, 41, 0.9);\n  text-decoration: underline; }\n\na:hover {\n  color: rgba(41, 43, 41, 0.5);\n  text-decoration: underline; }\n", ""]);
 
 // exports
 
@@ -13078,7 +13079,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4); }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.bolder {\n  font-weight: bold; }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  color: #FFFFFF; }\n\n.tatoobutton:hover {\n  background-color: #464451 !important;\n  border-color: #D5D5D5 !important;\n  color: #FFFFFF !important; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatootable {\n  color: #000000; }\n\n#tatoodiv {\n  border-color: #000000;\n  font-family: 'comic sans ms';\n  color: #000000 !important;\n  margin: 1%; }\n\n/*stars*/\n.star {\n  position: relative;\n  display: inline-block;\n  font-size: 2rem;\n  color: white;\n  border-color: black; }\n\n.full {\n  color: black; }\n\n.half {\n  position: absolute;\n  display: inline-block;\n  overflow: hidden;\n  color: black; }\n\n.tatooerror {\n  color: red;\n  font-size: 3.5vmin;\n  font-weight: bold; }\n\n.tatoogood {\n  color: #137F25;\n  font-size: 3.5vmin;\n  font-weight: bold; }\n\n.backerror {\n  background-color: #F6D9D9; }\n\n.backgood {\n  background-color: #C7F9CF; }\n\n@media only screen and (min-width: 800px) {\n  .tatooerror {\n    font-size: 2vmin; }\n  .tatoogood {\n    font-size: 2vmin; } }\n", ""]);
 
 // exports
 
@@ -13092,7 +13093,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".questions-page {\n  /*text styles*/\n  /*styles*/\n  /*links*/\n  /*placeholders*/\n  /* Firefox 19+ */\n  /* Firefox 18- */ }\n  .questions-page .text {\n    font-family: 'TEMPUS SANS ITC';\n    font-weight: bold;\n    color: rgba(41, 43, 41, 0.7); }\n  .questions-page .plaintext {\n    font-size: 4vmin; }\n  .questions-page .heading {\n    font-size: 7vmin;\n    color: rgba(41, 43, 41, 0.9); }\n  .questions-page .bolder {\n    font-weight: bold; }\n  .questions-page .tatooarticle {\n    width: 100%;\n    background-color: rgba(255, 255, 255, 0.4); }\n  .questions-page .margin2 {\n    margin-left: 3%;\n    margin-right: 3%; }\n  .questions-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    color: #FFFFFF;\n    float: right; }\n  .questions-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5;\n    color: #FFFFFF; }\n  .questions-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .questions-page .tatootable {\n    color: #000000; }\n  .questions-page .tatoodiv {\n    border-color: #000000;\n    font-family: 'comic sans ms';\n    color: #000000;\n    margin: 1%; }\n  .questions-page .tatootoolerror {\n    color: red;\n    font-size: 2vmin;\n    float: right; }\n  .questions-page .tatootool {\n    font-size: 2vmin;\n    float: right;\n    color: rgba(41, 43, 41, 0.9); }\n  .questions-page .tatooinputerror {\n    border-color: red;\n    background-color: #F6D9D9;\n    border-width: 1px;\n    border-style: solid; }\n  .questions-page .smallColumn {\n    width: 30px !important;\n    white-space: normal !important; }\n  .questions-page .bigColumn {\n    width: 70px !important;\n    white-space: normal !important; }\n  .questions-page .tatooerror {\n    color: red; }\n  .questions-page .backerror {\n    background-color: #F6D9D9; }\n  .questions-page .tatoogood {\n    color: #137F25; }\n  .questions-page .backgood {\n    background-color: #C7F9CF; }\n  @media only screen and (min-width: 800px) {\n    .questions-page .tatoodiv {\n      width: 40%; }\n    .questions-page .tatootool {\n      font-size: 1.5vmin; }\n    .questions-page .tatootoolerror {\n      font-size: 1.5vmin; }\n    .questions-page .smallColumn {\n      width: 10%; }\n    .questions-page .bigColumn {\n      width: 35%; } }\n  .questions-page .margin2 {\n    margin-left: 3%;\n    margin-right: 3%; }\n  .questions-page .tatoolable {\n    font-family: 'comic sans ms';\n    color: #000000;\n    min-width: 39%;\n    max-width: 39%; }\n  .questions-page .tatooinput {\n    font-family: 'comic sans ms';\n    color: #000000;\n    min-width: 58%;\n    max-width: 58%;\n    margin-right: 1%; }\n  .questions-page .marginbottom {\n    margin-bottom: 1%; }\n  .questions-page a {\n    color: rgba(41, 43, 41, 0.9);\n    text-decoration: underline; }\n  .questions-page a:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n  .questions-page a:visited {\n    color: rgba(41, 43, 41, 0.9) !important;\n    text-decoration: underline; }\n  .questions-page ::-webkit-input-placeholder {\n    color: #808080; }\n  .questions-page ::-moz-placeholder {\n    color: #808080; }\n  .questions-page :-moz-placeholder {\n    color: #808080; }\n  .questions-page :-ms-input-placeholder {\n    color: #808080; }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4); }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n", ""]);
 
 // exports
 
@@ -13106,7 +13107,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n", ""]);
+exports.push([module.i, ".questions-page {\n  /*text styles*/\n  /*styles*/\n  /*links*/\n  /*placeholders*/\n  /* Firefox 19+ */\n  /* Firefox 18- */ }\n  .questions-page .text {\n    font-family: 'TEMPUS SANS ITC';\n    font-weight: bold;\n    color: rgba(41, 43, 41, 0.7); }\n  .questions-page .plaintext {\n    font-size: 4vmin; }\n  .questions-page .heading {\n    font-size: 7vmin;\n    color: rgba(41, 43, 41, 0.9); }\n  .questions-page .bolder {\n    font-weight: bold; }\n  .questions-page .tatooarticle {\n    width: 100%;\n    background-color: rgba(255, 255, 255, 0.4); }\n  .questions-page .margin2 {\n    margin-left: 3%;\n    margin-right: 3%; }\n  .questions-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    color: #FFFFFF;\n    float: right; }\n  .questions-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5;\n    color: #FFFFFF; }\n  .questions-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .questions-page .tatootable {\n    color: #000000; }\n  .questions-page .tatoodiv {\n    border-color: #000000;\n    font-family: 'comic sans ms';\n    color: #000000;\n    margin: 1%; }\n  .questions-page .tatootoolerror {\n    color: red;\n    font-size: 2vmin;\n    float: right; }\n  .questions-page .tatootool {\n    font-size: 2vmin;\n    float: right;\n    color: rgba(41, 43, 41, 0.9); }\n  .questions-page .tatooinputerror {\n    border-color: red;\n    background-color: #F6D9D9;\n    border-width: 1px;\n    border-style: solid; }\n  .questions-page .smallColumn {\n    width: 30px !important;\n    white-space: normal !important; }\n  .questions-page .bigColumn {\n    width: 70px !important;\n    white-space: normal !important; }\n  .questions-page .tatooerror {\n    color: red; }\n  .questions-page .backerror {\n    background-color: #F6D9D9; }\n  .questions-page .tatoogood {\n    color: #137F25; }\n  .questions-page .backgood {\n    background-color: #C7F9CF; }\n  @media only screen and (min-width: 800px) {\n    .questions-page .tatoodiv {\n      width: 40%; }\n    .questions-page .tatootool {\n      font-size: 1.5vmin; }\n    .questions-page .tatootoolerror {\n      font-size: 1.5vmin; }\n    .questions-page .smallColumn {\n      width: 10%; }\n    .questions-page .bigColumn {\n      width: 35%; } }\n  .questions-page .margin2 {\n    margin-left: 3%;\n    margin-right: 3%; }\n  .questions-page .tatoolable {\n    font-family: 'comic sans ms';\n    color: #000000;\n    min-width: 39%;\n    max-width: 39%; }\n  .questions-page .tatooinput {\n    font-family: 'comic sans ms';\n    color: #000000;\n    min-width: 58%;\n    max-width: 58%;\n    margin-right: 1%; }\n  .questions-page .marginbottom {\n    margin-bottom: 1%; }\n  .questions-page a {\n    color: rgba(41, 43, 41, 0.9);\n    text-decoration: underline; }\n  .questions-page a:hover {\n    color: rgba(41, 43, 41, 0.5);\n    text-decoration: underline; }\n  .questions-page a:visited {\n    color: rgba(41, 43, 41, 0.9) !important;\n    text-decoration: underline; }\n  .questions-page ::-webkit-input-placeholder {\n    color: #808080; }\n  .questions-page ::-moz-placeholder {\n    color: #808080; }\n  .questions-page :-moz-placeholder {\n    color: #808080; }\n  .questions-page :-ms-input-placeholder {\n    color: #808080; }\n", ""]);
 
 // exports
 
@@ -13120,7 +13121,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n.tatootool {\n  font-size: 2vmin;\n  float: right;\n  color: rgba(41, 43, 41, 0.9);\n  margin-right: 1%; }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right;\n  margin-right: 1%; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .tatootool {\n    font-size: 1.5vmin; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n", ""]);
+exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n", ""]);
 
 // exports
 
@@ -13134,7 +13135,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.textfordescription {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(255, 255, 255, 0.4); }\n\n.paragraphheaddescription {\n  color: rgba(255, 255, 255, 0.7); }\n\n.paragraphdescription {\n  color: rgba(255, 255, 255, 0.4); }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.tatooarticle {\n  background-color: rgba(255, 255, 255, 0.4);\n  width: 100%; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 56%;\n  max-width: 56%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 50%; }\n  .tatooinput {\n    min-width: 59%;\n    max-width: 59%; } }\n\n.descriptionback {\n  background-color: rgba(41, 43, 41, 0.7);\n  width: 100%; }\n\n.scretch {\n  cursor: pointer; }\n\n.formtext {\n  font-family: 'comic sans ms';\n  color: black; }\n\n.lowborder {\n  border-bottom-style: solid;\n  border-bottom-color: #000000;\n  border-left-width: 1px; }\n\n.inputfile {\n  width: 0.1px;\n  height: 0.1px;\n  opacity: 0;\n  overflow: hidden;\n  position: absolute;\n  z-index: -1; }\n", ""]);
+exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  float: right; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 58%;\n  max-width: 58%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n.tatootool {\n  font-size: 2vmin;\n  float: right;\n  color: rgba(41, 43, 41, 0.9);\n  margin-right: 1%; }\n\n.tatootoolerror {\n  color: red;\n  font-size: 2vmin;\n  float: right;\n  margin-right: 1%; }\n\n.tatooinputerror {\n  border-color: red;\n  background-color: #F6D9D9;\n  border-width: 1px;\n  border-style: solid; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 40%; }\n  .tatootool {\n    font-size: 1.5vmin; }\n  .tatootoolerror {\n    font-size: 1.5vmin; } }\n", ""]);
 
 // exports
 
@@ -13148,7 +13149,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".cart-page {\n  /*styles*/\n  /*links*/\n  /*stars*/ }\n  .cart-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .cart-page .tatootable {\n    color: #000000; }\n  .cart-page .tatoodiv {\n    border-color: #000000;\n    font-family: 'comic sans ms';\n    color: #000000;\n    margin: 1%; }\n  .cart-page a {\n    color: #000000;\n    text-decoration: underline; }\n  .cart-page a:hover {\n    color: rgba(41, 43, 41, 0.8);\n    text-decoration: underline; }\n  .cart-page .star {\n    position: relative;\n    display: inline-block;\n    font-size: 2rem;\n    color: white;\n    border-color: black; }\n  .cart-page .full {\n    color: black; }\n  .cart-page .half {\n    position: absolute;\n    display: inline-block;\n    overflow: hidden;\n    color: black; }\n  .cart-page .tatooerror {\n    color: red;\n    font-size: 3.5vmin; }\n  .cart-page .backerror {\n    background-color: #F6D9D9; }\n  .cart-page .tatoogood {\n    color: #137F25;\n    font-size: 3.5vmin; }\n  .cart-page .backgood {\n    background-color: #C7F9CF; }\n  @media only screen and (min-width: 800px) {\n    .cart-page .remove-row {\n      padding-right: 0%; }\n    .cart-page .tatooerror {\n      font-size: 2vmin; }\n    .cart-page .tatoogood {\n      font-size: 2vmin; } }\n  .cart-page .flexer {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end; }\n", ""]);
+exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphhead {\n  color: rgba(41, 43, 41, 0.9); }\n\n.paragraphtext {\n  color: rgba(41, 43, 41, 0.7); }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n.textfordescription {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(255, 255, 255, 0.4); }\n\n.paragraphheaddescription {\n  color: rgba(255, 255, 255, 0.7); }\n\n.paragraphdescription {\n  color: rgba(255, 255, 255, 0.4); }\n\n/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5; }\n\n#tatoopanel {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  border-color: #000000;\n  font-size: 3vmin; }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n\n.tatooarticle {\n  background-color: rgba(255, 255, 255, 0.4);\n  width: 100%; }\n\n.tatoolable {\n  color: #000000;\n  min-width: 39%;\n  max-width: 39%; }\n\n.tatooinput {\n  color: #000000;\n  min-width: 56%;\n  max-width: 56%;\n  margin-right: 1%; }\n\n.marginbottom {\n  margin-bottom: 1%; }\n\n.tatoodiv {\n  width: 98%;\n  margin: 1%;\n  border-color: #000000;\n  font-family: 'comic sans ms'; }\n\n@media only screen and (min-width: 800px) {\n  .tatoodiv {\n    width: 50%; }\n  .tatooinput {\n    min-width: 59%;\n    max-width: 59%; } }\n\n.descriptionback {\n  background-color: rgba(41, 43, 41, 0.7);\n  width: 100%; }\n\n.scretch {\n  cursor: pointer; }\n\n.formtext {\n  font-family: 'comic sans ms';\n  color: black; }\n\n.lowborder {\n  border-bottom-style: solid;\n  border-bottom-color: #000000;\n  border-left-width: 1px; }\n\n.inputfile {\n  width: 0.1px;\n  height: 0.1px;\n  opacity: 0;\n  overflow: hidden;\n  position: absolute;\n  z-index: -1; }\n", ""]);
 
 // exports
 
@@ -13162,7 +13163,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n  text-decoration: none; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5;\n  color: #FFFFFF;\n  text-decoration: none; }\n", ""]);
+exports.push([module.i, ".cart-page {\n  /*styles*/\n  /*links*/\n  /*stars*/ }\n  .cart-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .cart-page .tatootable {\n    color: #000000; }\n  .cart-page .tatoodiv {\n    border-color: #000000;\n    font-family: 'comic sans ms';\n    color: #000000;\n    margin: 1%; }\n  .cart-page a {\n    color: #000000;\n    text-decoration: underline; }\n  .cart-page a:hover {\n    color: rgba(41, 43, 41, 0.8);\n    text-decoration: underline; }\n  .cart-page .star {\n    position: relative;\n    display: inline-block;\n    font-size: 2rem;\n    color: white;\n    border-color: black; }\n  .cart-page .full {\n    color: black; }\n  .cart-page .half {\n    position: absolute;\n    display: inline-block;\n    overflow: hidden;\n    color: black; }\n  .cart-page .tatooerror {\n    color: red;\n    font-size: 3.5vmin; }\n  .cart-page .backerror {\n    background-color: #F6D9D9; }\n  .cart-page .tatoogood {\n    color: #137F25;\n    font-size: 3.5vmin; }\n  .cart-page .backgood {\n    background-color: #C7F9CF; }\n  @media only screen and (min-width: 800px) {\n    .cart-page .remove-row {\n      padding-right: 0%; }\n    .cart-page .tatooerror {\n      font-size: 2vmin; }\n    .cart-page .tatoogood {\n      font-size: 2vmin; } }\n  .cart-page .flexer {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end; }\n", ""]);
 
 // exports
 
@@ -13171,7 +13172,15 @@ exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000
 /* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "674f50d287a8c48dc19ba404d20fe713.eot";
+exports = module.exports = __webpack_require__(7)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "/*styles*/\n.tatoobutton {\n  background-color: #000000;\n  border-color: #FFFFFF;\n  color: #FFFFFF;\n  text-decoration: none; }\n\n.tatoobutton:hover {\n  background-color: #464451;\n  border-color: #D5D5D5;\n  color: #FFFFFF;\n  text-decoration: none; }\n", ""]);
+
+// exports
+
 
 /***/ }),
 /* 98 */
@@ -13183,154 +13192,160 @@ module.exports = __webpack_require__.p + "674f50d287a8c48dc19ba404d20fe713.eot";
 /* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "acf3dcb7ff752b5296ca23ba2c7c2606.svg";
+module.exports = __webpack_require__.p + "674f50d287a8c48dc19ba404d20fe713.eot";
 
 /***/ }),
 /* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "b06871f281fee6b241d60582ae9369b9.ttf";
+module.exports = __webpack_require__.p + "acf3dcb7ff752b5296ca23ba2c7c2606.svg";
 
 /***/ }),
 /* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "af7ae505a9eed503f8b8e6982036873e.woff2";
+module.exports = __webpack_require__.p + "b06871f281fee6b241d60582ae9369b9.ttf";
 
 /***/ }),
 /* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "fee66e712a8a08eef5805a46892932ad.woff";
+module.exports = __webpack_require__.p + "af7ae505a9eed503f8b8e6982036873e.woff2";
 
 /***/ }),
 /* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "8732a6660b528fadfaeb35bcf568875f.gif";
+module.exports = __webpack_require__.p + "fee66e712a8a08eef5805a46892932ad.woff";
 
 /***/ }),
 /* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "64ca45e5df0f0261431766d0701ac7b3.png";
+module.exports = __webpack_require__.p + "8732a6660b528fadfaeb35bcf568875f.gif";
 
 /***/ }),
 /* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "ad7df5eaf1366bb0506c7e138adfc840.jpg";
+module.exports = __webpack_require__.p + "64ca45e5df0f0261431766d0701ac7b3.png";
 
 /***/ }),
 /* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "aec8fe3d27076bfe480b150efc8a9a59.jpg";
+module.exports = __webpack_require__.p + "ad7df5eaf1366bb0506c7e138adfc840.jpg";
 
 /***/ }),
 /* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "ae96ee403b301359c44e3c1f51a0f7c4.jpg";
+module.exports = __webpack_require__.p + "aec8fe3d27076bfe480b150efc8a9a59.jpg";
 
 /***/ }),
 /* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "2192e7ff89fd8bc18355edae312b34fd.jpg";
+module.exports = __webpack_require__.p + "ae96ee403b301359c44e3c1f51a0f7c4.jpg";
 
 /***/ }),
 /* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "f9e059cc1458a5b75b123e38e2978b07.jpg";
+module.exports = __webpack_require__.p + "2192e7ff89fd8bc18355edae312b34fd.jpg";
 
 /***/ }),
 /* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "160658c4fbfe2e3df300c4a8a438cb1b.jpg";
+module.exports = __webpack_require__.p + "f9e059cc1458a5b75b123e38e2978b07.jpg";
 
 /***/ }),
 /* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "176bbf4713b59f05c5ab272b9c73eef2.jpg";
+module.exports = __webpack_require__.p + "160658c4fbfe2e3df300c4a8a438cb1b.jpg";
 
 /***/ }),
 /* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "91f7078c9b239f4f6192467df07cab90.jpg";
+module.exports = __webpack_require__.p + "176bbf4713b59f05c5ab272b9c73eef2.jpg";
 
 /***/ }),
 /* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "94ca305e6edb85007dacfe900b5ff4c4.jpg";
+module.exports = __webpack_require__.p + "91f7078c9b239f4f6192467df07cab90.jpg";
 
 /***/ }),
 /* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "c7febc266698ef500a7a949aa48f51d0.jpg";
+module.exports = __webpack_require__.p + "94ca305e6edb85007dacfe900b5ff4c4.jpg";
 
 /***/ }),
 /* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "3adaca6a649df6522b11be6d03b8d80b.jpg";
+module.exports = __webpack_require__.p + "c7febc266698ef500a7a949aa48f51d0.jpg";
 
 /***/ }),
 /* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "ac1f72d741dfee22d68bc9d4c47a7c93.jpg";
+module.exports = __webpack_require__.p + "3adaca6a649df6522b11be6d03b8d80b.jpg";
 
 /***/ }),
 /* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "93ad8489895d992e6dbf4e3f824d6171.jpg";
+module.exports = __webpack_require__.p + "ac1f72d741dfee22d68bc9d4c47a7c93.jpg";
 
 /***/ }),
 /* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "79f9fc41a9ae597d2d7de37276a249b1.png";
+module.exports = __webpack_require__.p + "93ad8489895d992e6dbf4e3f824d6171.jpg";
 
 /***/ }),
 /* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "92633415125abb91103d2c6243d41ba1.png";
+module.exports = __webpack_require__.p + "79f9fc41a9ae597d2d7de37276a249b1.png";
 
 /***/ }),
 /* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "dc29b0114d182e08147ffa25617ae933.png";
+module.exports = __webpack_require__.p + "92633415125abb91103d2c6243d41ba1.png";
 
 /***/ }),
 /* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "2991b5a00b30526bab264b1153277602.jpg";
+module.exports = __webpack_require__.p + "dc29b0114d182e08147ffa25617ae933.png";
 
 /***/ }),
 /* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "c910b97a7b177419f57f4d3cd1180651.jpg";
+module.exports = __webpack_require__.p + "2991b5a00b30526bab264b1153277602.jpg";
 
 /***/ }),
 /* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "b373ef6d95b31ea31b838f1c7dd2ee92.jpg";
+module.exports = __webpack_require__.p + "c910b97a7b177419f57f4d3cd1180651.jpg";
 
 /***/ }),
 /* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "b373ef6d95b31ea31b838f1c7dd2ee92.jpg";
+
+/***/ }),
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13406,19 +13421,19 @@ exports.StorageProperty = StorageProperty;
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
-  XmlEntities: __webpack_require__(127),
-  Html4Entities: __webpack_require__(126),
+  XmlEntities: __webpack_require__(128),
+  Html4Entities: __webpack_require__(127),
   Html5Entities: __webpack_require__(55),
   AllHtmlEntities: __webpack_require__(55)
 };
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports) {
 
 var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
@@ -13571,7 +13586,7 @@ module.exports = Html4Entities;
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports) {
 
 var ALPHA_INDEX = {
@@ -13732,97 +13747,103 @@ module.exports = XmlEntities;
 
 
 /***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = "    \r\n    <div class=\"tatooarticle text\">\r\n            <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n            <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n    </div>\r\n    \r\n    <div class=\"circles\">\r\n        <img src=\"" + __webpack_require__(105) + "\" alt=\"example of work #1\" class=\"examplesofwork\">\r\n        <img src=\"" + __webpack_require__(106) + "\" alt=\"example of work #2\" class=\"examplesofwork\">\r\n        <img src=\"" + __webpack_require__(107) + "\" alt=\"example of work #3\" class=\"examplesofwork\">\r\n    </div>\r\n\r\n    <div class=\"backerformaster text plaintext\">\r\n     <div class=\"circles\">\r\n        <div class=\"tatooarticle center\">\r\n            <p class=\"heading\"> {{FirstMaster}} </p>\r\n            <div>\r\n                <label class=\"textheading\"> {{Age}} </label>\r\n                <label> {{FAgeValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Experience}} </label>\r\n                <label> {{FExperienceValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Education}} </label>\r\n                <label> {{FEducationValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{SphereOfDrawings}} </label>\r\n                <label> {{FSphereOfDrawingsValue}} </label>\r\n            </div>\r\n        </div>\r\n        <img src=\"" + __webpack_require__(117) + "\" class=\"rect\" alt=\"Martha's photo\">\r\n     </div>  \r\n    \r\n     <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(113) + "\" alt=\"Mrtha's example pf work #1'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[0]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(114) + "\" alt=\"Mrtha's example pf work #2'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[1]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(115) + "\" alt=\"Mrtha's example pf work #3'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[2]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(116) + "\" alt=\"Mrtha's example pf work #4'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[3]}} </label>\r\n        </div>\r\n     </div>\r\n    </div>\r\n\r\n    <div class=\"backerformaster text plaintext\">\r\n     <div class=\"circles\">\r\n        <div class=\"tatooarticle center\">\r\n            <p class=\"heading\"> {{SecondMaster}} </p>\r\n            <div>\r\n                <label class=\"textheading\"> {{Age}} </label>\r\n                <label> {{FAgeValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Experience}} </label>\r\n                <label> {{FExperienceValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Education}} </label>\r\n                <label> {{FEducationValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{SphereOfDrawings}} </label>\r\n                <label> {{FSphereOfDrawingsValue}} </label>\r\n            </div>\r\n        </div>\r\n        <img src=\"" + __webpack_require__(112) + "\" alt=\"Asya's photo\" class=\"rect\">\r\n     </div>  \r\n    \r\n     <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(108) + "\" alt=\"Asya's example pf work #1\"  class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[0]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(109) + "\" alt=\"Asya's example pf work #2\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[1]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(110) + "\" alt=\"Asya's example pf work #3\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[2]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(111) + "\" alt=\"Asya's example pf work #4\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[3]}} </label>\r\n        </div>\r\n     </div>\r\n</div>";
-
-/***/ }),
 /* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "    <nav class=\"navbar navbar-inverse navbar-fixed-top\" style=\"border-radius:0px\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"navbar-header\">\r\n                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                </button>\r\n                <a class=\"navbar-brand\" href=\"#\"></a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/welcome']\">Home</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/products']\">Online Shop</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/scretches']\">Scretches</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/contacts']\">Contacts</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/aboutus']\">About Us</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/help']\">FAQ</a></li>\r\n                </ul>\r\n\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cart']\" *ngIf=\"authService.IsLoggedIn\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> My Cart</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cabinet']\" *ngIf=\"authService.IsLoggedIn\">Hello, {{authService.CurrentUserEmail}}</a></li>\r\n                    <li [routerLinkActive]=\"['active']\" style=\"cursor: pointer\"><a *ngIf=\"authService.IsLoggedIn\" (click)=\"logOut()\"><span class=\"glyphicon glyphicon-log-in\"></span> Log Out</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/signup']\" *ngIf=\"!authService.IsLoggedIn\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/login']\" *ngIf=\"!authService.IsLoggedIn\"><span class=\"glyphicon glyphicon-log-in\"></span> Log In</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n    <div class='container heading margins' style='width:100%; padding:0%;'>\r\n        <router-outlet class=\"margins\"></router-outlet>\r\n        <p></p>\r\n    </div>\r\n    <footer class=\"footerstyle\">\r\n        <div class=\"containerimage\">\r\n            <div class=\"texter\">\r\n                <a class=\"foot\" [routerLink]=\"['/questions']\">Extra questions?</a>\r\n            </div>\r\n            <a style=\"display: inline\" href=\"https://www.instagram.com/martha_bocharova/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(118) + "' />\r\n            </a>\r\n            <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(119) + "' />\r\n            </a>\r\n            <a href=\"https://vk.com/id20028415\" class=\"footer-link\" style=\"margin-right:1%\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(120) + "' />\r\n            </a>\r\n        </div>\r\n    </footer>";
+module.exports = "    \r\n    <div class=\"tatooarticle text\">\r\n            <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n            <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n    </div>\r\n    \r\n    <div class=\"circles\">\r\n        <img src=\"" + __webpack_require__(106) + "\" alt=\"example of work #1\" class=\"examplesofwork\">\r\n        <img src=\"" + __webpack_require__(107) + "\" alt=\"example of work #2\" class=\"examplesofwork\">\r\n        <img src=\"" + __webpack_require__(108) + "\" alt=\"example of work #3\" class=\"examplesofwork\">\r\n    </div>\r\n\r\n    <div class=\"backerformaster text plaintext\">\r\n     <div class=\"circles\">\r\n        <div class=\"tatooarticle center\">\r\n            <p class=\"heading\"> {{FirstMaster}} </p>\r\n            <div>\r\n                <label class=\"textheading\"> {{Age}} </label>\r\n                <label> {{FAgeValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Experience}} </label>\r\n                <label> {{FExperienceValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Education}} </label>\r\n                <label> {{FEducationValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{SphereOfDrawings}} </label>\r\n                <label> {{FSphereOfDrawingsValue}} </label>\r\n            </div>\r\n        </div>\r\n        <img src=\"" + __webpack_require__(118) + "\" class=\"rect\" alt=\"Martha's photo\">\r\n     </div>  \r\n    \r\n     <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(114) + "\" alt=\"Mrtha's example pf work #1'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[0]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(115) + "\" alt=\"Mrtha's example pf work #2'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[1]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(116) + "\" alt=\"Mrtha's example pf work #3'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[2]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(117) + "\" alt=\"Mrtha's example pf work #4'\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{FDescription[3]}} </label>\r\n        </div>\r\n     </div>\r\n    </div>\r\n\r\n    <div class=\"backerformaster text plaintext\">\r\n     <div class=\"circles\">\r\n        <div class=\"tatooarticle center\">\r\n            <p class=\"heading\"> {{SecondMaster}} </p>\r\n            <div>\r\n                <label class=\"textheading\"> {{Age}} </label>\r\n                <label> {{FAgeValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Experience}} </label>\r\n                <label> {{FExperienceValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{Education}} </label>\r\n                <label> {{FEducationValue}} </label>\r\n            </div>\r\n            <div>\r\n                <label class=\"textheading\"> {{SphereOfDrawings}} </label>\r\n                <label> {{FSphereOfDrawingsValue}} </label>\r\n            </div>\r\n        </div>\r\n        <img src=\"" + __webpack_require__(113) + "\" alt=\"Asya's photo\" class=\"rect\">\r\n     </div>  \r\n    \r\n     <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(109) + "\" alt=\"Asya's example pf work #1\"  class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[0]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(110) + "\" alt=\"Asya's example pf work #2\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[1]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(111) + "\" alt=\"Asya's example pf work #3\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[2]}} </label>\r\n        </div>\r\n     </div>\r\n\r\n      <div class=\"horizontal\"> \r\n        <img src=\"" + __webpack_require__(112) + "\" alt=\"Asya's example pf work #4\" class=\"example\">\r\n        <div class=\"tatooarticle\">\r\n            <label class=\"text\"> {{SDescription[3]}} </label>\r\n        </div>\r\n     </div>\r\n</div>";
 
 /***/ }),
 /* 130 */
 /***/ (function(module, exports) {
 
-module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Subtitle}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n            <label class=\"paragraphhead headchangewidth\">{{FirstnameLabel}} </label>\r\n            <label class=\"paragraphtext\" style=\"width:30%\"> {{FirstName}}</label>\r\n            <label class=\"floating changeinfo\" title={{TitleLinkChangeFirstName}} (click)=\"ToggleChangeFirstName()\"> {{ChangeInfoFirstName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeFirstName\" class='panel panel-primary tatoodiv'>\r\n        <div class='panel-heading' id='tatoopanel'>\r\n            {{TitleChangeFirstName}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n                <input type='text' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" class='tatooinput marginbottom' id=\"firstNameLabel\" placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n                <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n                <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n            </div>\r\n\r\n            <button class=' btn btn-primary tatoobutton' (click)='ChangeFirstName()' title={{TitleButtonChangeFirstName}}> \r\n                <i class='glyphicon glyphicon-ok'></i> {{Change}} \r\n            </button>\r\n            <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeFirstName()' title={{TitleLinkChangeFirstName}} style=\"margin-right: 1%\"> \r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}} \r\n            </button>\r\n        </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{LastnameLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{LastName}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeLastName}} (click)=\"ToggleChangeLastName()\"> {{ChangeInfoLastName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeLastName\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeLastName}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n        \r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeLastName()' title={{TitleButtonChangeLastName}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeLastName()' title={{TitleLinkChangeLastName}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{EmailLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{Email}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEmail}} (click)=\"ToggleChangeEmail()\"> {{ChangeInfoEmail}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEmail\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEmail}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEmail}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmEmailOK==false}\" placeholder=\"{{PlaceHolderConfirmEmail}}\" [(ngModel)]='ConfirmEmail' />\r\n            <label *ngIf=\"!ConfirmEmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmEmail}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEmail()' title={{TitleButtonChangeEmail}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEmail()' title={{TitleLinkChangeEmail}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangePassword}} (click)=\"ToggleChangePassword()\"> {{ChangeInfoPassword}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangePassword\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangePassword}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmPasswordOK==false}\" placeholder=\"{{PlaceHolderConfirmPassword}}\" [(ngModel)]='ConfirmPassword' />\r\n            <label *ngIf=\"!ConfirmPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmPassword}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangePassword()' title={{TitleButtonChangePassword}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangePassword()' title={{TitleLinkChangePassword}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEvery}} (click)=\"ToggleChangeEvery()\"> {{ChangeInfoEvery}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEvery\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEvery}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n            <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n            <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEvery}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmEveryOK==false}\" placeholder=\"{{PlaceHolderConfirmEvery}}\" [(ngModel)]='ConfirmEvery' />\r\n            <label *ngIf=\"!ConfirmEveryOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmEvery}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEvery()' title={{TitleButtonChangeEvery}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEvery()' title={{TitleLinkChangeEvery}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>";
+module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\nadminpage";
 
 /***/ }),
 /* 131 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"true\"> </all-products>";
+module.exports = "    <nav class=\"navbar navbar-inverse navbar-fixed-top\" style=\"border-radius:0px\">\r\n        <div class=\"container-fluid\">\r\n            <div class=\"navbar-header\">\r\n                <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                    <span class=\"icon-bar\"></span>\r\n                </button>\r\n                <a class=\"navbar-brand\" href=\"#\"></a>\r\n            </div>\r\n            <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/welcome']\">Home</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/products']\">Online Shop</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/scretches']\">Scretches</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/contacts']\">Contacts</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/aboutus']\">About Us</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/help']\">FAQ</a></li>\r\n                </ul>\r\n\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cart']\" *ngIf=\"authService.IsLoggedIn\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> My Cart</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/cabinet']\" *ngIf=\"authService.IsLoggedIn\">Hello, {{authService.CurrentUserEmail}}</a></li>\r\n                    <li [routerLinkActive]=\"['active']\" style=\"cursor: pointer\"><a *ngIf=\"authService.IsLoggedIn\" (click)=\"logOut()\"><span class=\"glyphicon glyphicon-log-in\"></span> Log Out</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/signup']\" *ngIf=\"!authService.IsLoggedIn\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>\r\n                    <li [routerLinkActive]=\"['active']\"><a [routerLink]=\"['/login']\" *ngIf=\"!authService.IsLoggedIn\"><span class=\"glyphicon glyphicon-log-in\"></span> Log In</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </nav>\r\n    <div class='container heading margins' style='width:100%; padding:0%;'>\r\n        <router-outlet class=\"margins\"></router-outlet>\r\n        <p></p>\r\n    </div>\r\n    <footer class=\"footerstyle\">\r\n        <div class=\"containerimage\">\r\n            <div class=\"texter\">\r\n                <a class=\"foot\" [routerLink]=\"['/questions']\">Extra questions?</a>\r\n            </div>\r\n            <a style=\"display: inline\" href=\"https://www.instagram.com/martha_bocharova/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(119) + "' />\r\n            </a>\r\n            <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"footer-link\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(120) + "' />\r\n            </a>\r\n            <a href=\"https://vk.com/id20028415\" class=\"footer-link\" style=\"margin-right:1%\">\r\n                <img class=\"footer-image\" src='" + __webpack_require__(121) + "' />\r\n            </a>\r\n        </div>\r\n    </footer>";
 
 /***/ }),
 /* 132 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div> \r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\">\r\n    <p class=\"margin2 paragraphhead\">{{EmailLabel}}\r\n        <label class=\"paragraphtext\"> {{Email}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{PhoneLabel}}\r\n        <label class=\"paragraphtext\"> {{Phone}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{InstagramLabel}}\r\n        <a href=\"https://www.instagram.com/martha_bocharova/\" class=\"paragraphtext\"> {{Instagram}}</a>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{TwitterLabel}}\r\n        <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"paragraphtext\"> {{Twitter}}</a>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{VkLabel}}\r\n        <a href=\"https://vk.com/id20028415\" class=\"paragraphtext\"> {{Vk}}</a>\r\n    </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<agm-map [zoom]=\"15\" [latitude]=\"Lat\" [longitude]=\"Lng\">\r\n    <agm-marker [latitude]=\"Lat\" [longitude]=\"Lng\"></agm-marker>\r\n</agm-map>\r\n";
+module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n    <p class=\"text plaintext margin2\"> {{Subtitle}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n            <label class=\"paragraphhead headchangewidth\">{{FirstnameLabel}} </label>\r\n            <label class=\"paragraphtext\" style=\"width:30%\"> {{FirstName}}</label>\r\n            <label class=\"floating changeinfo\" title={{TitleLinkChangeFirstName}} (click)=\"ToggleChangeFirstName()\"> {{ChangeInfoFirstName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeFirstName\" class='panel panel-primary tatoodiv'>\r\n        <div class='panel-heading' id='tatoopanel'>\r\n            {{TitleChangeFirstName}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n                <input type='text' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" class='tatooinput marginbottom' id=\"firstNameLabel\" placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n                <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n                <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n            </div>\r\n\r\n            <button class=' btn btn-primary tatoobutton' (click)='ChangeFirstName()' title={{TitleButtonChangeFirstName}}> \r\n                <i class='glyphicon glyphicon-ok'></i> {{Change}} \r\n            </button>\r\n            <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeFirstName()' title={{TitleLinkChangeFirstName}} style=\"margin-right: 1%\"> \r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}} \r\n            </button>\r\n        </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{LastnameLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{LastName}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeLastName}} (click)=\"ToggleChangeLastName()\"> {{ChangeInfoLastName}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeLastName\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeLastName}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" class='tatooinput marginbottom' placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n        \r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeLastName()' title={{TitleButtonChangeLastName}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeLastName()' title={{TitleLinkChangeLastName}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\">{{EmailLabel}} </label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"> {{Email}}</label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEmail}} (click)=\"ToggleChangeEmail()\"> {{ChangeInfoEmail}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEmail\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEmail}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEmail}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmEmailOK==false}\" placeholder=\"{{PlaceHolderConfirmEmail}}\" [(ngModel)]='ConfirmEmail' />\r\n            <label *ngIf=\"!ConfirmEmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmEmail}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEmail()' title={{TitleButtonChangeEmail}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEmail()' title={{TitleLinkChangeEmail}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangePassword}} (click)=\"ToggleChangePassword()\"> {{ChangeInfoPassword}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangePassword\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangePassword}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmPasswordOK==false}\" placeholder=\"{{PlaceHolderConfirmPassword}}\" [(ngModel)]='ConfirmPassword' />\r\n            <label *ngIf=\"!ConfirmPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmPassword}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangePassword()' title={{TitleButtonChangePassword}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangePassword()' title={{TitleLinkChangePassword}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>\r\n<div class=\"tatooarticle text plaintext\" style=\"width:100%\">\r\n    <p class=\"margin2\" style=\"width: 100%; margin-bottom: 0px\">\r\n        <label class=\"paragraphhead headchangewidth\"></label>\r\n        <label class=\"paragraphtext\" style=\"width:30%\"></label>\r\n        <label class=\"floating changeinfo\" title={{TitleLinkChangeEvery}} (click)=\"ToggleChangeEvery()\"> {{ChangeInfoEvery}} </label>\r\n    </p>\r\n</div>\r\n<div *ngIf=\"ShowChangeEvery\" class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id='tatoopanel'>\r\n        {{TitleChangeEvery}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" placeholder=\"{{PlaceHolderChangeFirstName}}\" [(ngModel)]='NewFirstName' />\r\n            <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n            <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" placeholder=\"{{PlaceHolderChangeLastName}}\" [(ngModel)]='NewLastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangeEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderChangeEmail}}\" [(ngModel)]='NewEmail' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableChangePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderChangePassword}}\" [(ngModel)]='NewPassword' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword' />\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableConfirmEvery}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ConfirmEveryOK==false}\" placeholder=\"{{PlaceHolderConfirmEvery}}\" [(ngModel)]='ConfirmEvery' />\r\n            <label *ngIf=\"!ConfirmEveryOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorConfirmEvery}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='ChangeEvery()' title={{TitleButtonChangeEvery}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{Change}}\r\n        </button>\r\n        <button class=' btn btn-primary tatoobutton' (click)='ToggleChangeEvery()' title={{TitleLinkChangeEvery}} style=\"margin-right: 1%\">\r\n            <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n        </button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 133 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"questions_page\">\r\n    <div class=\"tatooarticle text\">\r\n        <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n\r\n        <p class=\"text  margin2\"> {{Description}} </p>\r\n        <p></p>\r\n    </div>\r\n\r\n    <br>\r\n\r\n    <div class=\"text tatooarticle\" id=\"menu\">\r\n        <ol class=\"margin2\">\r\n            <li> <a pageScroll href=\"#menu\"> {{Points[0]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme1\"> {{Points[1]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme2\"> {{Points[2]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme3\"> {{Points[3]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme4\"> {{Points[4]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme5\"> {{Points[5]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme6\"> {{Points[6]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme7\"> {{Points[7]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme8\"> {{Points[8]}} </a> </li>\r\n        </ol>\r\n    </div>\r\n\r\n    <p></p>\r\n    <br>\r\n\r\n    <div class=\"text tatooarticle \">\r\n        <ol class=\"text margin2 questiontext\">\r\n            <li>\r\n                <label id=\"theme1\" class=\"paragraphhead\"> {{Points[0]}} </label>\r\n                <p>{{Theme1}} </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme2\" class=\"paragraphhead\"> {{Points[1]}} </label>\r\n                <p>{{Theme2}} </p>\r\n            </li>\r\n\r\n            <li>\r\n                <label id=\"theme3\" class=\"paragraphhead\"> {{Points[2]}} </label>\r\n                <p>{{Theme3}} </p>\r\n                <ul>\r\n                    <li>{{Theme3_item1}}</li>\r\n                    <li>{{Theme3_item2}}</li>\r\n                    <li>{{Theme3_item3}}</li>\r\n                    <li>{{Theme3_item4}}</li>\r\n                    <li>{{Theme3_item5}}</li>\r\n                    <li>{{Theme3_item6}}</li>\r\n                </ul>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme4\" class=\"paragraphhead\"> {{Points[3]}} </label>\r\n                <p>{{Theme4}} </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme5\" class=\"paragraphhead\"> {{Points[4]}} </label>\r\n                <p> {{Theme5}} <a routerLink=\"/scretches\"> {{Here}}</a> . </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme6\" class=\"paragraphhead\"> {{Points[5]}} </label>\r\n                <p> {{Theme6}} </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme7\" class=\"paragraphhead\"> {{Points[6]}} </label>\r\n                <p> {{Theme7}} </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme8\" class=\"paragraphhead\"> {{Points[7]}} </label>\r\n                <p> {{Theme8_part1}} <a routerLink=\"/welcome\"> {{Here}} </a> {{Theme8_part2}} <a routerLink=\"/aboutus\"> {{Here}} </a> {{Theme8_part3}} <a routerLink=\"/aboutus\"> {{Shop}}</a> {{Theme8_part4}} <a routerLink=\"/aboutus\"> {{Scretches}} </a>. </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme9\" class=\"paragraphhead\"> {{Points[8]}} </label>\r\n                <p> {{Theme9}} <a routerLink=\"/questions\"> {{Page}}</a>. </p>\r\n            </li>\r\n        </ol>\r\n    </div>\r\n\r\n</div>";
+module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"true\"> </all-products>";
 
 /***/ }),
 /* 134 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel-body text whitetext margin1\" > \r\n    <div class=\"row\">\r\n        <p class=\"tatooback\"> {{PageTitle}} </p>\r\n    </div>\r\n</div>\r\n    \r\n<div class=\"tatooarticle text\">\r\n    <div class=\"row\">\r\n        <p class=\"arcticleheading margin2\"> {{ArticleTitle}} </p>\r\n        <p class=\"arcticletext margin2\"> {{ArticleText}} <a [routerLink]=\"['/aboutus']\"> here</a>.</p>\r\n    </div>\r\n</div> \r\n   \r\n<div class=\"circles\">\r\n    <img src=\"" + __webpack_require__(121) + "\" alt=\"example of work #1\" class=\"examplesofwork\">\r\n    <img src=\"" + __webpack_require__(122) + "\" alt=\"example of work #2\" class=\"examplesofwork\">\r\n    <img src=\"" + __webpack_require__(123) + "\" alt=\"example of work #3\" class=\"examplesofwork\">\r\n</div>\r\n\r\n <div class=\"tatooarticle text\">\r\n    <div class=\"row\">\r\n        <p class=\"arcticleheading margin2\"> {{StartwithTitle}} </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[0]}} <a [routerLink]=\"['/aboutus']\"> {{Here}} </a>. </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[1]}} <a [routerLink]=\"['/scretches']\"> {{ThisPage}} </a>. {{StartwithText[2]}} <a [routerLink]=\"['/products']\"> {{Shop}}</a>.</p>   \r\n        <p class=\"arcticletext margin2\"> {{StartwithText[3]}} <a [routerLink]=\"['/contacts']\"> {{Here}} </a>. </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[4]}} <a [routerLink]=\"['/help']\"> {{FAQ}} </a>{{StartwithText[5]}} <a [routerLink]=\"['/questions']\"> {{Questions}}</a>.</p>\r\n    </div>\r\n\r\n</div> \r\n\r\n";
+module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div> \r\n\r\n<br />\r\n\r\n<div class=\"tatooarticle text plaintext\">\r\n    <p class=\"margin2 paragraphhead\">{{EmailLabel}}\r\n        <label class=\"paragraphtext\"> {{Email}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{PhoneLabel}}\r\n        <label class=\"paragraphtext\"> {{Phone}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{InstagramLabel}}\r\n        <a href=\"https://www.instagram.com/martha_bocharova/\" class=\"paragraphtext\"> {{Instagram}}</a>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{TwitterLabel}}\r\n        <a href=\"https://www.pinterest.com/pin/542754192577200718/\" class=\"paragraphtext\"> {{Twitter}}</a>\r\n    </p>\r\n    <p class=\"margin2 paragraphhead\">\r\n        {{VkLabel}}\r\n        <a href=\"https://vk.com/id20028415\" class=\"paragraphtext\"> {{Vk}}</a>\r\n    </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<agm-map [zoom]=\"15\" [latitude]=\"Lat\" [longitude]=\"Lng\">\r\n    <agm-marker [latitude]=\"Lat\" [longitude]=\"Lng\"></agm-marker>\r\n</agm-map>\r\n";
 
 /***/ }),
 /* 135 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-top: 50px !important;\r\n    }\r\n\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<!--Template for stars-->\r\n<ng-template #t let-fill=\"fill\">\r\n    <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n    <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n    <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n        <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n    </span>\r\n</ng-template>\r\n\r\n<!--Page-->\r\n<div class='panel panel-primary ' id=\"tatoodiv\" *ngIf='Product'>\r\n    <div class='panel-heading'id=\"tatoopanel\"  style='font-size:large; margin-bottom: 1%'>\r\n        {{PageTitle + ': ' + Product.productName}}\r\n    </div>\r\n\r\n    <div class='panel-body' [ngClass]=\"{'backerror':Product.amountLeft<1, 'backgood':IsInCart}\">\r\n        <div class='row'>\r\n            <div class='col-md-6'>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Name}}</div>\r\n                    <div class='col-md-6'>{{Product.productName}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Description}}</div>\r\n                    <div class='col-md-6'>{{Product.description}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{AmountLeft}}</div>\r\n                    <div class='col-md-6'>{{Product.amountLeft}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Price}}</div>\r\n                    <div class='col-md-6'>{{Product.price|currency:'USD':true}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{StarRating}}</div>\r\n                    <div class='col-md-6'>\r\n                        <ngb-rating title={{Product.starRating}} [(rate)]=\"Product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                    </div>\r\n                </div>\r\n                <div class='row' *ngIf=\"Product.amountLeft<1\">\r\n                    <div class='col-md-3 tatooerror'>{{OutOfStock}}</div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class='col-md-6'>\r\n                <img class='center-block img-responsive' \r\n                     [style.width.px]='200' \r\n                     [style.margin.px]='2' \r\n                     [src]='Product.imageUrl'\r\n                     [title]='Product.productName'>\r\n            </div>\r\n        </div>\r\n\r\n        <div class='row' *ngIf=\"IsInCart\" style=\"float: right; margin-right: 0.5%\">\r\n            <div class='tatoogood'>{{AlreadyInCart}}</div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class='panel-footer'>\r\n        <button class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px' title={{TitleButtonBack}}>\r\n            <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}\r\n        </button>\r\n        <button [disabled]='!IsInCart' class='btn btn-default tatoobutton' (click)='RemoveProduct()' style='float: right' title={{TitleButtonRemove}}>\r\n            <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n        </button>\r\n\r\n        <button [disabled]='IsInCart || Product.amountLeft<1' class='btn btn-default tatoobutton' (click)='addToCart()' style='float: right; margin-right: 0.5%' title={{TitleButtonAdd}}>\r\n            <i class='glyphicon glyphicon-shopping-cart'></i> {{AddToCart}}\r\n        </button>        \r\n    </div>      \r\n</div>";
+module.exports = "<div class=\"questions_page\">\r\n    <div class=\"tatooarticle text\">\r\n        <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n\r\n        <p class=\"text  margin2\"> {{Description}} </p>\r\n        <p></p>\r\n    </div>\r\n\r\n    <br>\r\n\r\n    <div class=\"text tatooarticle\" id=\"menu\">\r\n        <ol class=\"margin2\">\r\n            <li> <a pageScroll href=\"#menu\"> {{Points[0]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme1\"> {{Points[1]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme2\"> {{Points[2]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme3\"> {{Points[3]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme4\"> {{Points[4]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme5\"> {{Points[5]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme6\"> {{Points[6]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme7\"> {{Points[7]}} </a> </li>\r\n            <li> <a pageScroll href=\"#theme8\"> {{Points[8]}} </a> </li>\r\n        </ol>\r\n    </div>\r\n\r\n    <p></p>\r\n    <br>\r\n\r\n    <div class=\"text tatooarticle \">\r\n        <ol class=\"text margin2 questiontext\">\r\n            <li>\r\n                <label id=\"theme1\" class=\"paragraphhead\"> {{Points[0]}} </label>\r\n                <p>{{Theme1}} </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme2\" class=\"paragraphhead\"> {{Points[1]}} </label>\r\n                <p>{{Theme2}} </p>\r\n            </li>\r\n\r\n            <li>\r\n                <label id=\"theme3\" class=\"paragraphhead\"> {{Points[2]}} </label>\r\n                <p>{{Theme3}} </p>\r\n                <ul>\r\n                    <li>{{Theme3_item1}}</li>\r\n                    <li>{{Theme3_item2}}</li>\r\n                    <li>{{Theme3_item3}}</li>\r\n                    <li>{{Theme3_item4}}</li>\r\n                    <li>{{Theme3_item5}}</li>\r\n                    <li>{{Theme3_item6}}</li>\r\n                </ul>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme4\" class=\"paragraphhead\"> {{Points[3]}} </label>\r\n                <p>{{Theme4}} </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme5\" class=\"paragraphhead\"> {{Points[4]}} </label>\r\n                <p> {{Theme5}} <a routerLink=\"/scretches\"> {{Here}}</a> . </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme6\" class=\"paragraphhead\"> {{Points[5]}} </label>\r\n                <p> {{Theme6}} </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme7\" class=\"paragraphhead\"> {{Points[6]}} </label>\r\n                <p> {{Theme7}} </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme8\" class=\"paragraphhead\"> {{Points[7]}} </label>\r\n                <p> {{Theme8_part1}} <a routerLink=\"/welcome\"> {{Here}} </a> {{Theme8_part2}} <a routerLink=\"/aboutus\"> {{Here}} </a> {{Theme8_part3}} <a routerLink=\"/aboutus\"> {{Shop}}</a> {{Theme8_part4}} <a routerLink=\"/aboutus\"> {{Scretches}} </a>. </p>\r\n            </li>\r\n            <li>\r\n                <label id=\"theme9\" class=\"paragraphhead\"> {{Points[8]}} </label>\r\n                <p> {{Theme9}} <a routerLink=\"/questions\"> {{Page}}</a>. </p>\r\n            </li>\r\n        </ol>\r\n    </div>\r\n\r\n</div>";
 
 /***/ }),
 /* 136 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"false\"> </all-products>";
+module.exports = "<div class=\"panel-body text whitetext margin1\" > \r\n    <div class=\"row\">\r\n        <p class=\"tatooback\"> {{PageTitle}} </p>\r\n    </div>\r\n</div>\r\n    \r\n<div class=\"tatooarticle text\">\r\n    <div class=\"row\">\r\n        <p class=\"arcticleheading margin2\"> {{ArticleTitle}} </p>\r\n        <p class=\"arcticletext margin2\"> {{ArticleText}} <a [routerLink]=\"['/aboutus']\"> here</a>.</p>\r\n    </div>\r\n</div> \r\n   \r\n<div class=\"circles\">\r\n    <img src=\"" + __webpack_require__(122) + "\" alt=\"example of work #1\" class=\"examplesofwork\">\r\n    <img src=\"" + __webpack_require__(123) + "\" alt=\"example of work #2\" class=\"examplesofwork\">\r\n    <img src=\"" + __webpack_require__(124) + "\" alt=\"example of work #3\" class=\"examplesofwork\">\r\n</div>\r\n\r\n <div class=\"tatooarticle text\">\r\n    <div class=\"row\">\r\n        <p class=\"arcticleheading margin2\"> {{StartwithTitle}} </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[0]}} <a [routerLink]=\"['/aboutus']\"> {{Here}} </a>. </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[1]}} <a [routerLink]=\"['/scretches']\"> {{ThisPage}} </a>. {{StartwithText[2]}} <a [routerLink]=\"['/products']\"> {{Shop}}</a>.</p>   \r\n        <p class=\"arcticletext margin2\"> {{StartwithText[3]}} <a [routerLink]=\"['/contacts']\"> {{Here}} </a>. </p>\r\n        <p class=\"arcticletext margin2\"> {{StartwithText[4]}} <a [routerLink]=\"['/help']\"> {{FAQ}} </a>{{StartwithText[5]}} <a [routerLink]=\"['/questions']\"> {{Questions}}</a>.</p>\r\n    </div>\r\n\r\n</div> \r\n\r\n";
 
 /***/ }),
 /* 137 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"questions-page\">\r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <div class=\"tatooarticle text\">\r\n        <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n        <p class=\"text plaintext margin2\"> {{Description_part1}} <a routerLink=\"/help\">{{Insert}}</a> {{Description_part2}} </p>\r\n    </div>\r\n\r\n    <div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n        <div class='panel-heading' id=\"tatoopanel\">\r\n            {{Subtitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[0]}}</label>\r\n                <select type=\"number\" class='tatooinput marginbottom' [(ngModel)]=\"Num\">\r\n                    <option [ngValue]=\"0\">{{Themes[0]}}</option>\r\n                    <option [ngValue]=\"1\">{{Themes[1]}}</option>\r\n                    <option [ngValue]=\"2\">{{Themes[2]}}</option>\r\n                    <option [ngValue]=\"3\">{{Themes[3]}}</option>\r\n                    <option [ngValue]=\"4\">{{Themes[4]}}</option>\r\n                </select>\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[1]}}</label>\r\n                <textarea type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ThemeOK==false}\" placeholder=\"{{Point2_placeholder}}\" [(ngModel)]='Theme'></textarea>\r\n                <label *ngIf=\"ThemeOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolTheme}}</label>\r\n                <label *ngIf=\"!ThemeOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorTheme}}</label>\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[2]}}</label>\r\n                <textarea rows=\"5\" type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': MessageOK==false}\" placeholder=\"{{Point3_placeholder}}\" [(ngModel)]='Message'></textarea>\r\n                <label *ngIf=\"MessageOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolMessage}}</label>\r\n                <label *ngIf=\"!MessageOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorMessage}}</label>\r\n            </div>\r\n\r\n            <button class=' btn btn-primary tatoobutton' (click)='SendQuestion()'>\r\n                <i class='glyphicon glyphicon-envelope'></i> {{ButtonName}} \r\n            </button>\r\n        </div>\r\n    </div>\r\n\r\n    <br>\r\n    <div class='panel panel-primary tatoodiv' style=\"width:98%\">\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{TableName}}\r\n        </div>\r\n        <div class='panel-body'>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'\r\n                       *ngIf='Questions && Questions.length'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th class=\"smallColumn\">{{NumName}}</th>\r\n                            <th class=\"smallColumn\">{{CategoryName}}</th>\r\n                            <th class=\"smallColumn\">{{ThemeName}}</th>\r\n                            <th class=\"bigColumn\">{{QuestionName}}</th>\r\n                            <th class=\"bigColumn\">{{AnswerName}}</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr *ngFor='let question of Questions; let i=index' [ngClass]=\"{'backerror': question.answer=='', 'backgood': question.answer!=''}\">\r\n                            <td class=\"smallColumn\">{{i+1}}</td>\r\n                            <td class=\"smallColumn\">{{ question.category }}</td>\r\n                            <td class=\"smallColumn\">{{ question.theme}}</td>\r\n                            <td class=\"bigColumn\">{{ question.questionName}}</td>\r\n                            <td class=\"bigColumn\" [ngClass]=\"{'tatooerror': question.answer=='', 'tatoogood': question.answer!=''}\">{{ Answer(question)}}</td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-top: 50px !important;\r\n    }\r\n\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<!--Template for stars-->\r\n<ng-template #t let-fill=\"fill\">\r\n    <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n    <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n    <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n        <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n    </span>\r\n</ng-template>\r\n\r\n<!--Page-->\r\n<div class='panel panel-primary ' id=\"tatoodiv\" *ngIf='Product'>\r\n    <div class='panel-heading'id=\"tatoopanel\"  style='font-size:large; margin-bottom: 1%'>\r\n        {{PageTitle + ': ' + Product.productName}}\r\n    </div>\r\n\r\n    <div class='panel-body' [ngClass]=\"{'backerror':Product.amountLeft<1, 'backgood':IsInCart}\">\r\n        <div class='row'>\r\n            <div class='col-md-6'>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Name}}</div>\r\n                    <div class='col-md-6'>{{Product.productName}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Description}}</div>\r\n                    <div class='col-md-6'>{{Product.description}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{AmountLeft}}</div>\r\n                    <div class='col-md-6'>{{Product.amountLeft}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{Price}}</div>\r\n                    <div class='col-md-6'>{{Product.price|currency:'USD':true}}</div>\r\n                </div>\r\n                <div class='row'>\r\n                    <div class='col-md-3 bolder'>{{StarRating}}</div>\r\n                    <div class='col-md-6'>\r\n                        <ngb-rating title={{Product.starRating}} [(rate)]=\"Product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                    </div>\r\n                </div>\r\n                <div class='row' *ngIf=\"Product.amountLeft<1\">\r\n                    <div class='col-md-3 tatooerror'>{{OutOfStock}}</div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class='col-md-6'>\r\n                <img class='center-block img-responsive' \r\n                     [style.width.px]='200' \r\n                     [style.margin.px]='2' \r\n                     [src]='Product.imageUrl'\r\n                     [title]='Product.productName'>\r\n            </div>\r\n        </div>\r\n\r\n        <div class='row' *ngIf=\"IsInCart\" style=\"float: right; margin-right: 0.5%\">\r\n            <div class='tatoogood'>{{AlreadyInCart}}</div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class='panel-footer'>\r\n        <button class='btn btn-default tatoobutton' (click)='onBack()' style='width:80px' title={{TitleButtonBack}}>\r\n            <i class='glyphicon glyphicon-chevron-left'></i> {{Back}}\r\n        </button>\r\n        <button [disabled]='!IsInCart' class='btn btn-default tatoobutton' (click)='RemoveProduct()' style='float: right' title={{TitleButtonRemove}}>\r\n            <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n        </button>\r\n\r\n        <button [disabled]='IsInCart || Product.amountLeft<1' class='btn btn-default tatoobutton' (click)='addToCart()' style='float: right; margin-right: 0.5%' title={{TitleButtonAdd}}>\r\n            <i class='glyphicon glyphicon-shopping-cart'></i> {{AddToCart}}\r\n        </button>        \r\n    </div>      \r\n</div>";
 
 /***/ }),
 /* 138 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .ui-growl-item-container{\r\n        margin-top:50px !important;\r\n    }\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <!-- Filter the Products   -->\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOk==false}\" placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n            <label *ngIf=\"!EmailOk\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOk==false}\" placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n            <label *ngIf=\"!PasswordOk\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)= 'logIn()' title={{TitleLogIn}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{ButtonText}} \r\n        </button>\r\n    </div>\r\n</div>";
+module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"false\"> </all-products>";
 
 /***/ }),
 /* 139 */
 /***/ (function(module, exports) {
 
-module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable' >{{LableFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" placeholder=\"{{PlaceHoldeFirstName}}\" [(ngModel)]='FirstName'/>\r\n            <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n            <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" placeholder=\"{{PlaceHoldeLastName}}\" [(ngModel)]='LastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword'/>\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='signUp()' title={{TitleSignUp}}> \r\n            <i class='glyphicon glyphicon-ok'></i> {{ButtonText}} \r\n        </button>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n";
+module.exports = "<div class=\"questions-page\">\r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <div class=\"tatooarticle text\">\r\n        <p class=\"margin2 heading\">{{Maintitle}}</p>\r\n        <p class=\"text plaintext margin2\"> {{Description_part1}} <a routerLink=\"/help\">{{Insert}}</a> {{Description_part2}} </p>\r\n    </div>\r\n\r\n    <div class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n        <div class='panel-heading' id=\"tatoopanel\">\r\n            {{Subtitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[0]}}</label>\r\n                <select type=\"number\" class='tatooinput marginbottom' [(ngModel)]=\"Num\">\r\n                    <option [ngValue]=\"0\">{{Themes[0]}}</option>\r\n                    <option [ngValue]=\"1\">{{Themes[1]}}</option>\r\n                    <option [ngValue]=\"2\">{{Themes[2]}}</option>\r\n                    <option [ngValue]=\"3\">{{Themes[3]}}</option>\r\n                    <option [ngValue]=\"4\">{{Themes[4]}}</option>\r\n                </select>\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[1]}}</label>\r\n                <textarea type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': ThemeOK==false}\" placeholder=\"{{Point2_placeholder}}\" [(ngModel)]='Theme'></textarea>\r\n                <label *ngIf=\"ThemeOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolTheme}}</label>\r\n                <label *ngIf=\"!ThemeOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorTheme}}</label>\r\n            </div>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{Points[2]}}</label>\r\n                <textarea rows=\"5\" type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': MessageOK==false}\" placeholder=\"{{Point3_placeholder}}\" [(ngModel)]='Message'></textarea>\r\n                <label *ngIf=\"MessageOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolMessage}}</label>\r\n                <label *ngIf=\"!MessageOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorMessage}}</label>\r\n            </div>\r\n\r\n            <button class=' btn btn-primary tatoobutton' (click)='SendQuestion()'>\r\n                <i class='glyphicon glyphicon-envelope'></i> {{ButtonName}} \r\n            </button>\r\n        </div>\r\n    </div>\r\n\r\n    <br>\r\n    <div class='panel panel-primary tatoodiv' style=\"width:98%\">\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{TableName}}\r\n        </div>\r\n        <div class='panel-body'>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'\r\n                       *ngIf='Questions && Questions.length'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th class=\"smallColumn\">{{NumName}}</th>\r\n                            <th class=\"smallColumn\">{{CategoryName}}</th>\r\n                            <th class=\"smallColumn\">{{ThemeName}}</th>\r\n                            <th class=\"bigColumn\">{{QuestionName}}</th>\r\n                            <th class=\"bigColumn\">{{AnswerName}}</th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                        <tr *ngFor='let question of Questions; let i=index' [ngClass]=\"{'backerror': question.answer=='', 'backgood': question.answer!=''}\">\r\n                            <td class=\"smallColumn\">{{i+1}}</td>\r\n                            <td class=\"smallColumn\">{{ question.category }}</td>\r\n                            <td class=\"smallColumn\">{{ question.theme}}</td>\r\n                            <td class=\"bigColumn\">{{ question.questionName}}</td>\r\n                            <td class=\"bigColumn\" [ngClass]=\"{'tatooerror': question.answer=='', 'tatoogood': question.answer!=''}\">{{ Answer(question)}}</td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 140 */
 /***/ (function(module, exports) {
 
-module.exports = "  <style>\r\n  .carousel-inner > .item > img,\r\n  .carousel-inner > .item > a > img {\r\n      width: 45%;\r\n      margin: auto;\r\n  }\r\n  </style>\r\n\r\n<div class=\"tatooarticle text plaintext\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n<div class=\"container\" style=\"margin:0%; width:100%; padding:0%\">\r\n    <br>\r\n    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"false\">\r\n        <!-- Indicators -->\r\n        <ol class=\"carousel-indicators\">\r\n            <li data-target=\"#myCarousel\" *ngFor=\"let Scretch of Scretches\" data-slide-to='DescriptionNumber' [ngClass]=\"{active: isActive(Scretch.imageUrl)}\"></li>\r\n        </ol>\r\n\r\n        <!-- Wrapper for slides -->\r\n        <div class=\"carousel-inner\" role=\"listbox\">\r\n            <div *ngFor=\"let Scretch of Scretches\" class=\"item\" [ngClass]=\"{active: isActive(Scretch.imageUrl)}\" style=\"width:100%; margin:0%\">\r\n                <a pageScroll href=\"#form\"> <img class=\"scretch\" src={{Scretch.imageUrl}} alt={{Scretch.scretchName}} (click)='ChoosingScretch()'> </a>\r\n            </div>\r\n        </div>\r\n\r\n        <!-- Left and right controls -->\r\n        <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\" (click)='Left()'>\r\n            <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"false\"></span>\r\n            <span class=\"sr-only\">Previous</span>\r\n        </a>\r\n        <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\" (click)='Right()'>\r\n            <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"false\"></span>\r\n            <span class=\"sr-only\">Next</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"descriptionback textfordescription plaintext\">\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchNameLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchName}}</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\"> {{Scretches !== undefined ? Scretches[0].scretchName : undefined}} </label>\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchDescriptionLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchDescription}}</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\">{{Scretches !== undefined ? Scretches[0].description : undefined}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchPriceLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchPrice | currency:'USD':true:'1.2-2'}}</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\">${{Scretches !== undefined ? Scretches[0].price : undefined }}.00</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchSizeLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchWidth}}cm x {{ScretchHeight}}cm</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\">{{Scretches !== undefined ? Scretches[0].width : undefined }}cm x {{Scretches !== undefined ? Scretches[0].height : undefined }}cm</label>\r\n    </p>\r\n</div>\r\n\r\n<div id=\"form\" class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PanelHeading}}\r\n    </div>\r\n    <div class='panel-body'>    \r\n        <div class=\"ui-g lowborder\" style=\"width:100%; margin-bottom:10px\">\r\n            <div class=\"ui-g-12\"><p-radioButton name=\"typeOfPicture\" value=\"Scretch from gallery\" label={{Scretch}} [(ngModel)]=\"Option\"></p-radioButton></div>\r\n            <div class=\"ui-g-12\"><p-radioButton name=\"typeOfPicture\" value=\"Your own picture\" label={{Picture}} [(ngModel)]=\"Option\"></p-radioButton></div>\r\n        </div>        \r\n        <div *ngIf=\"Option=='Scretch from gallery'\" class=\"lowborder\">\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LabelChoose}}</label>\r\n                <select class='tatooinput marginbottom' [(ngModel)]=\"SelectedName\" (change)=\"OnSelectionChange()\">\r\n                    <option value=\"\" disabled selected>Select scretch name</option>\r\n                    <option *ngFor=\"let Scretch of Scretches\" [value]=\"Scretch.scretchName\">{{Scretch.scretchName}}</option>\r\n                </select>\r\n            </div>\r\n            <div *ngIf=\"SelectedName && Option=='Scretch from gallery'\" class=\"formtext\">\r\n                <p>\r\n                    <label>\r\n                        {{ScretchNameLabel}}\r\n                    </label>\r\n                    {{SelectedName}}\r\n                <p>\r\n                    <label>\r\n                        {{ScretchDescriptionLabel}}\r\n                    </label>\r\n                    {{SelectedNameDescription}}\r\n                </p>\r\n                <p>\r\n                    <label>\r\n                        {{ScretchPriceLabel}}\r\n                    </label>\r\n                    {{ScretchNamePrice | currency:'USD':true:'1.2-2'}}\r\n                </p>\r\n                <p>\r\n                    <label>\r\n                        {{ScretchSizeLabel}}\r\n                    </label>\r\n                    {{ScretchNameWidth}}cm x {{ScretchNameHeight}}cm\r\n                </p>\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"Option=='Your own picture'\" class=\"lowborder\">\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LabelUpload}}</label>\r\n                <input name=\"file\" id=\"file\" class='inputfile' type=\"file\" accept=\".gif,.jpg,.jpeg,.png\" #file (change)=\"onChange(file.files)\">\r\n                <label class='btn btn-primary tatoobutton marginbottom' for=\"file\">Choose a file</label>\r\n                <span *ngIf=\"ChoosedFileName\" style=\"color: black\"> {{ChoosedFileName}} </span>\r\n                <span *ngIf=\"!ChoosedFileName\" style=\"color: black\"> no file </span>\r\n            </div>\r\n        </div>\r\n        <button class='btn btn-primary tatoobutton' style=\"float: right; margin-top: 1%\"> {{ButtonName}} </button>\r\n    </div>\r\n    <div class='panel-footer' id=\"tatoopanel\">\r\n        {{Choosed}} <span *ngIf=\"!Option\">nothing</span>\r\n        <ul *ngIf=\"Option\">\r\n            <li>{{Option}}</li>\r\n            <li *ngIf=\"SelectedName==undefined && Option=='Scretch from gallery'\"> {{ScretchNameLabel}} {{NotChoosed}}</li>\r\n            <li *ngIf=\"SelectedName && Option=='Scretch from gallery'\"> {{ScretchNameLabel}} {{SelectedName}}</li>\r\n        </ul>\r\n    </div>\r\n</div>";
+module.exports = "<style>\r\n    .ui-growl-item-container{\r\n        margin-top:50px !important;\r\n    }\r\n    #growl {\r\n        margin-top: 50px;\r\n    }\r\n</style>\r\n\r\n<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <!-- Filter the Products   -->\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOk==false}\" placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n            <label *ngIf=\"!EmailOk\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOk==false}\" placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n            <label *ngIf=\"!PasswordOk\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)= 'logIn()' title={{TitleLogIn}}>\r\n            <i class='glyphicon glyphicon-ok'></i> {{ButtonText}} \r\n        </button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 141 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .lalala {\r\n        display: flex;\r\n        flex-direction: row;\r\n        justify-content: space-between;\r\n        width: 100%;\r\n    }\r\n\r\n    .cross {\r\n        align-self: flex-end;\r\n    }\r\n\r\n    .header {\r\n        align-self: flex-start;\r\n    }\r\n\r\n    .modal-content {\r\n        margin-top: 100px !important;\r\n    }\r\n\r\n    /*styles*/\r\n    .tatoobutton {\r\n        background-color: #000000;\r\n        border-color: #FFFFFF;\r\n        color: #FFFFFF;\r\n        text-decoration: none;\r\n    }\r\n\r\n    .tatoobutton:hover {\r\n        background-color: #464451;\r\n        border-color: #D5D5D5;\r\n        color: #FFFFFF !important;\r\n        text-decoration: none;\r\n     }\r\n</style>\r\n\r\n<div class=\"cart-page\"> \r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <!--Template for stars-->\r\n    <ng-template #t let-fill=\"fill\">\r\n        <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n        <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n        <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n            <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n        </span>\r\n    </ng-template>\r\n\r\n    <!--Page-->\r\n    <div class='tatoodiv panel panel-primary'>\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{PageTitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <div class='col-md-2 tatootable'>{{Filter}}</div>\r\n                <div class='col-md-2 tatootable'>\r\n                    <input type='text' class='tatootable' [(ngModel)]='ListFilter' />\r\n                </div>\r\n            </div>\r\n\r\n            <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th>{{Image}}</th>\r\n                            <th>{{Name}}</th>\r\n                            <th>{{AmountLeft}}</th>\r\n                            <th>{{Price}}</th>\r\n                            <th>{{StarRating}}</th>\r\n                            <th *ngIf=\"IsCart\">{{Quantity}}</th>\r\n                            <th *ngIf=\"IsCart\"></th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody *ngIf='AllProducts && AllProducts.length'>\r\n                        <tr *ngFor='let product of AllProducts | productFilter:ListFilter' [ngClass]=\"{'backerror': product.amountLeft<1, 'backgood':product.isInCart}\">\r\n                            <td>\r\n                                <img [src]='product.imageUrl'\r\n                                     [title]='product.productName'\r\n                                     [style.width.px]='ImageWidth'\r\n                                     [style.margin.px]='ImageMargin'>\r\n                            </td>\r\n                            <td>\r\n                                <a title={{TitleDetails}} [routerLink]=\"['/product', product.id, CartToSend]\">\r\n                                    {{product.productName}}\r\n                                </a>\r\n                                <div *ngIf=\"product.amountLeft<1\" class=\"tatooerror\">\r\n                                    {{OutOfStock}}\r\n                                </div>\r\n                                <div *ngIf=\"product.isInCart\" class=\"tatoogood\">\r\n                                    {{AlreadyInCart}}\r\n                                </div>\r\n                            </td>\r\n                            <td>{{ product.amountLeft}}</td>\r\n                            <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>\r\n                            <td>\r\n                                <ngb-rating title={{product.starRating}} [(rate)]=\"product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\">\r\n                                <spinnerNum [IncomeVal]=\"product.amount\" (IncreaseAmount)=\"IncreasingAmount(product)\" (DecreaseAmount)=\"DecreasingAmount(product)\"></spinnerNum>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\" class=\"remove-row\">\r\n                                <button title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style=\"float: right\">\r\n                                    <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n                                </button>\r\n                            </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n\r\n            <div *ngIf=\"IsCart\" class='panel-footer' style=\"width:100%; padding-left: 0%; padding-right: 0%;\">\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleClear}} class='btn btn-default tatoobutton' (click)=\"ShowDialogClear(content)\">\r\n                    <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n                </button>\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleBuy}} class='btn btn-default tatoobutton' (click)='ShowDialogByuAll(content)' style=\"float: right; margin-bottom: 1%\">\r\n                    <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n                </button>\r\n                <div style=\"width: 100%\" class=\"flexer\">\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>\r\n                    </p>\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalAmount}}{{TotalAmount}}</label>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ng-template class=\"temp\" #content let-c=\"close\" let-d=\"dismiss\">\r\n        <div class=\"modal-header\">\r\n            <div class=\"lalala\">\r\n                <h4 class=\"modal-title header\">{{Header}}</h4>\r\n                <button type=\"button\" class=\"close cross\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n            <p>{{Content}}</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n            <button class=\"btn btn-secondary tatoobutton\" (click)=\"c('Close click')\">\r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n            </button>\r\n            <button *ngIf=\"Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"BuyAll(); c('Close click')\">\r\n                <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n            </button>\r\n            <button *ngIf=\"!Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"DeleteAll(); c('Close click')\">\r\n                <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n            </button>\r\n        </div>\r\n    </ng-template>\r\n\r\n</div>";
+module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class='panel panel-primary tatoodiv'>\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PageTitle}}\r\n    </div>\r\n\r\n    <div class='panel-body'>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable' >{{LableFirstName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': FirstNameOK==false}\" placeholder=\"{{PlaceHoldeFirstName}}\" [(ngModel)]='FirstName'/>\r\n            <label *ngIf=\"FirstNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolFirstName}}</label>\r\n            <label *ngIf=\"!FirstNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorFirstName}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableLastName}}</label>\r\n            <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': LastNameOK==false}\" placeholder=\"{{PlaceHoldeLastName}}\" [(ngModel)]='LastName' />\r\n            <label *ngIf=\"LastNameOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolLastName}}</label>\r\n            <label *ngIf=\"!LastNameOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorLastName}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableEmail}}</label>\r\n            <input type='email' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': EmailOK==false}\" placeholder=\"{{PlaceHolderEmail}}\" [(ngModel)]='Email' />\r\n            <label *ngIf=\"EmailOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolEmail}}</label>\r\n            <label *ngIf=\"!EmailOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorEmail}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LablePassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': PasswordOK==false}\" placeholder=\"{{PlaceHolderPassword}}\" [(ngModel)]='Password' />\r\n            <label *ngIf=\"PasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPassword}}</label>\r\n            <label *ngIf=\"!PasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPassword}}</label>\r\n        </div>\r\n        <div class='row'>\r\n            <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>\r\n            <input type='password' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': RepeatPasswordOK==false}\" placeholder=\"{{PlaceHolderRepeatPassword}}\" [(ngModel)]='RepeatPassword'/>\r\n            <label *ngIf=\"RepeatPasswordOK\" class='tatootool' style=\"margin-left: 39%\">{{ToolPasswordRepeat}}</label>\r\n            <label *ngIf=\"!RepeatPasswordOK\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorPasswordRepeat}}</label>\r\n        </div>\r\n\r\n        <button class=' btn btn-primary tatoobutton' (click)='signUp()' title={{TitleSignUp}}> \r\n            <i class='glyphicon glyphicon-ok'></i> {{ButtonText}} \r\n        </button>\r\n    </div>\r\n</div>\r\n\r\n\r\n\r\n\r\n";
 
 /***/ }),
 /* 142 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <button title={{TitleDecrease}} class=\"btn btn-default tatoobutton\" (click)=\"Decrease()\">\r\n        <i class='glyphicon glyphicon-chevron-left'></i>\r\n    </button>\r\n    {{IncomeVal}}\r\n    <button title={{TitleIncrease}} class=\"btn btn-default tatoobutton\" (click)=\"Increase()\">\r\n        <i class='glyphicon glyphicon-chevron-right'></i>\r\n    </button>\r\n</div>";
+module.exports = "  <style>\r\n  .carousel-inner > .item > img,\r\n  .carousel-inner > .item > a > img {\r\n      width: 45%;\r\n      margin: auto;\r\n  }\r\n  </style>\r\n\r\n<div class=\"tatooarticle text plaintext\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n<div class=\"container\" style=\"margin:0%; width:100%; padding:0%\">\r\n    <br>\r\n    <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"false\">\r\n        <!-- Indicators -->\r\n        <ol class=\"carousel-indicators\">\r\n            <li data-target=\"#myCarousel\" *ngFor=\"let Scretch of Scretches\" data-slide-to='DescriptionNumber' [ngClass]=\"{active: isActive(Scretch.imageUrl)}\"></li>\r\n        </ol>\r\n\r\n        <!-- Wrapper for slides -->\r\n        <div class=\"carousel-inner\" role=\"listbox\">\r\n            <div *ngFor=\"let Scretch of Scretches\" class=\"item\" [ngClass]=\"{active: isActive(Scretch.imageUrl)}\" style=\"width:100%; margin:0%\">\r\n                <a pageScroll href=\"#form\"> <img class=\"scretch\" src={{Scretch.imageUrl}} alt={{Scretch.scretchName}} (click)='ChoosingScretch()'> </a>\r\n            </div>\r\n        </div>\r\n\r\n        <!-- Left and right controls -->\r\n        <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\" (click)='Left()'>\r\n            <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"false\"></span>\r\n            <span class=\"sr-only\">Previous</span>\r\n        </a>\r\n        <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\" (click)='Right()'>\r\n            <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"false\"></span>\r\n            <span class=\"sr-only\">Next</span>\r\n        </a>\r\n    </div>\r\n</div>\r\n\r\n<br />\r\n\r\n<div class=\"descriptionback textfordescription plaintext\">\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchNameLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchName}}</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\"> {{Scretches !== undefined ? Scretches[0].scretchName : undefined}} </label>\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchDescriptionLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchDescription}}</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\">{{Scretches !== undefined ? Scretches[0].description : undefined}}</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchPriceLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchPrice | currency:'USD':true:'1.2-2'}}</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\">${{Scretches !== undefined ? Scretches[0].price : undefined }}.00</label>\r\n    </p>\r\n    <p class=\"margin2 paragraphheaddescription\">\r\n        {{ScretchSizeLabel}}\r\n        <label *ngIf='!IsFirst' class=\"paragraphdescription\">{{ScretchWidth}}cm x {{ScretchHeight}}cm</label>\r\n        <label *ngIf='IsFirst' class=\"paragraphdescription\">{{Scretches !== undefined ? Scretches[0].width : undefined }}cm x {{Scretches !== undefined ? Scretches[0].height : undefined }}cm</label>\r\n    </p>\r\n</div>\r\n\r\n<div id=\"form\" class='panel panel-primary tatoodiv' style=\"margin-top:2%\">\r\n    <div class='panel-heading' id=\"tatoopanel\">\r\n        {{PanelHeading}}\r\n    </div>\r\n    <div class='panel-body'>    \r\n        <div class=\"ui-g lowborder\" style=\"width:100%; margin-bottom:10px\">\r\n            <div class=\"ui-g-12\"><p-radioButton name=\"typeOfPicture\" value=\"Scretch from gallery\" label={{Scretch}} [(ngModel)]=\"Option\"></p-radioButton></div>\r\n            <div class=\"ui-g-12\"><p-radioButton name=\"typeOfPicture\" value=\"Your own picture\" label={{Picture}} [(ngModel)]=\"Option\"></p-radioButton></div>\r\n        </div>        \r\n        <div *ngIf=\"Option=='Scretch from gallery'\" class=\"lowborder\">\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LabelChoose}}</label>\r\n                <select class='tatooinput marginbottom' [(ngModel)]=\"SelectedName\" (change)=\"OnSelectionChange()\">\r\n                    <option value=\"\" disabled selected>Select scretch name</option>\r\n                    <option *ngFor=\"let Scretch of Scretches\" [value]=\"Scretch.scretchName\">{{Scretch.scretchName}}</option>\r\n                </select>\r\n            </div>\r\n            <div *ngIf=\"SelectedName && Option=='Scretch from gallery'\" class=\"formtext\">\r\n                <p>\r\n                    <label>\r\n                        {{ScretchNameLabel}}\r\n                    </label>\r\n                    {{SelectedName}}\r\n                <p>\r\n                    <label>\r\n                        {{ScretchDescriptionLabel}}\r\n                    </label>\r\n                    {{SelectedNameDescription}}\r\n                </p>\r\n                <p>\r\n                    <label>\r\n                        {{ScretchPriceLabel}}\r\n                    </label>\r\n                    {{ScretchNamePrice | currency:'USD':true:'1.2-2'}}\r\n                </p>\r\n                <p>\r\n                    <label>\r\n                        {{ScretchSizeLabel}}\r\n                    </label>\r\n                    {{ScretchNameWidth}}cm x {{ScretchNameHeight}}cm\r\n                </p>\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"Option=='Your own picture'\" class=\"lowborder\">\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{LabelUpload}}</label>\r\n                <input name=\"file\" id=\"file\" class='inputfile' type=\"file\" accept=\".gif,.jpg,.jpeg,.png\" #file (change)=\"onChange(file.files)\">\r\n                <label class='btn btn-primary tatoobutton marginbottom' for=\"file\">Choose a file</label>\r\n                <span *ngIf=\"ChoosedFileName\" style=\"color: black\"> {{ChoosedFileName}} </span>\r\n                <span *ngIf=\"!ChoosedFileName\" style=\"color: black\"> no file </span>\r\n            </div>\r\n        </div>\r\n        <button class='btn btn-primary tatoobutton' style=\"float: right; margin-top: 1%\"> {{ButtonName}} </button>\r\n    </div>\r\n    <div class='panel-footer' id=\"tatoopanel\">\r\n        {{Choosed}} <span *ngIf=\"!Option\">nothing</span>\r\n        <ul *ngIf=\"Option\">\r\n            <li>{{Option}}</li>\r\n            <li *ngIf=\"SelectedName==undefined && Option=='Scretch from gallery'\"> {{ScretchNameLabel}} {{NotChoosed}}</li>\r\n            <li *ngIf=\"SelectedName && Option=='Scretch from gallery'\"> {{ScretchNameLabel}} {{SelectedName}}</li>\r\n        </ul>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 143 */
+/***/ (function(module, exports) {
+
+module.exports = "<style>\r\n    .lalala {\r\n        display: flex;\r\n        flex-direction: row;\r\n        justify-content: space-between;\r\n        width: 100%;\r\n    }\r\n\r\n    .cross {\r\n        align-self: flex-end;\r\n    }\r\n\r\n    .header {\r\n        align-self: flex-start;\r\n    }\r\n\r\n    .modal-content {\r\n        margin-top: 100px !important;\r\n    }\r\n\r\n    /*styles*/\r\n    .tatoobutton {\r\n        background-color: #000000;\r\n        border-color: #FFFFFF;\r\n        color: #FFFFFF;\r\n        text-decoration: none;\r\n    }\r\n\r\n    .tatoobutton:hover {\r\n        background-color: #464451;\r\n        border-color: #D5D5D5;\r\n        color: #FFFFFF !important;\r\n        text-decoration: none;\r\n     }\r\n</style>\r\n\r\n<div class=\"cart-page\"> \r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <!--Template for stars-->\r\n    <ng-template #t let-fill=\"fill\">\r\n        <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n        <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n        <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n            <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n        </span>\r\n    </ng-template>\r\n\r\n    <!--Page-->\r\n    <div class='tatoodiv panel panel-primary'>\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{PageTitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <div class='col-md-2 tatootable'>{{Filter}}</div>\r\n                <div class='col-md-2 tatootable'>\r\n                    <input type='text' class='tatootable' [(ngModel)]='ListFilter' />\r\n                </div>\r\n            </div>\r\n\r\n            <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th>{{Image}}</th>\r\n                            <th>{{Name}}</th>\r\n                            <th>{{AmountLeft}}</th>\r\n                            <th>{{Price}}</th>\r\n                            <th>{{StarRating}}</th>\r\n                            <th *ngIf=\"IsCart\">{{Quantity}}</th>\r\n                            <th *ngIf=\"IsCart\"></th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody *ngIf='AllProducts && AllProducts.length'>\r\n                        <tr *ngFor='let product of AllProducts | productFilter:ListFilter' [ngClass]=\"{'backerror': product.amountLeft<1, 'backgood':product.isInCart}\">\r\n                            <td>\r\n                                <img [src]='product.imageUrl'\r\n                                     [title]='product.productName'\r\n                                     [style.width.px]='ImageWidth'\r\n                                     [style.margin.px]='ImageMargin'>\r\n                            </td>\r\n                            <td>\r\n                                <a title={{TitleDetails}} [routerLink]=\"['/product', product.id, CartToSend]\">\r\n                                    {{product.productName}}\r\n                                </a>\r\n                                <div *ngIf=\"product.amountLeft<1\" class=\"tatooerror\">\r\n                                    {{OutOfStock}}\r\n                                </div>\r\n                                <div *ngIf=\"product.isInCart\" class=\"tatoogood\">\r\n                                    {{AlreadyInCart}}\r\n                                </div>\r\n                            </td>\r\n                            <td>{{ product.amountLeft}}</td>\r\n                            <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>\r\n                            <td>\r\n                                <ngb-rating title={{product.starRating}} [(rate)]=\"product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\">\r\n                                <spinnerNum [IncomeVal]=\"product.amount\" (IncreaseAmount)=\"IncreasingAmount(product)\" (DecreaseAmount)=\"DecreasingAmount(product)\"></spinnerNum>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\" class=\"remove-row\">\r\n                                <button title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style=\"float: right\">\r\n                                    <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n                                </button>\r\n                            </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n\r\n            <div *ngIf=\"IsCart\" class='panel-footer' style=\"width:100%; padding-left: 0%; padding-right: 0%;\">\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleClear}} class='btn btn-default tatoobutton' (click)=\"ShowDialogClear(content)\">\r\n                    <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n                </button>\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleBuy}} class='btn btn-default tatoobutton' (click)='ShowDialogByuAll(content)' style=\"float: right; margin-bottom: 1%\">\r\n                    <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n                </button>\r\n                <div style=\"width: 100%\" class=\"flexer\">\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>\r\n                    </p>\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalAmount}}{{TotalAmount}}</label>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ng-template class=\"temp\" #content let-c=\"close\" let-d=\"dismiss\">\r\n        <div class=\"modal-header\">\r\n            <div class=\"lalala\">\r\n                <h4 class=\"modal-title header\">{{Header}}</h4>\r\n                <button type=\"button\" class=\"close cross\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n            <p>{{Content}}</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n            <button class=\"btn btn-secondary tatoobutton\" (click)=\"c('Close click')\">\r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n            </button>\r\n            <button *ngIf=\"Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"BuyAll(); c('Close click')\">\r\n                <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n            </button>\r\n            <button *ngIf=\"!Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"DeleteAll(); c('Close click')\">\r\n                <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n            </button>\r\n        </div>\r\n    </ng-template>\r\n\r\n</div>";
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\r\n    <button title={{TitleDecrease}} class=\"btn btn-default tatoobutton\" (click)=\"Decrease()\">\r\n        <i class='glyphicon glyphicon-chevron-left'></i>\r\n    </button>\r\n    {{IncomeVal}}\r\n    <button title={{TitleIncrease}} class=\"btn btn-default tatoobutton\" (click)=\"Increase()\">\r\n        <i class='glyphicon glyphicon-chevron-right'></i>\r\n    </button>\r\n</div>";
+
+/***/ }),
+/* 145 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -13912,7 +13933,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 144 */
+/* 146 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -13923,7 +13944,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 145 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13966,15 +13987,48 @@ var AboutusComponent = (function () {
 }());
 AboutusComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(128),
-        styles: [__webpack_require__(233)]
+        template: __webpack_require__(129),
+        styles: [__webpack_require__(237)]
     })
 ], AboutusComponent);
 exports.AboutusComponent = AboutusComponent;
 
 
 /***/ }),
-/* 146 */
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(3);
+var core_1 = __webpack_require__(0);
+var auth_service_1 = __webpack_require__(12);
+var router_1 = __webpack_require__(4);
+var AdminpageComponent = (function () {
+    function AdminpageComponent(_authService, _router) {
+        this._authService = _authService;
+        this._router = _router;
+    }
+    ;
+    /*Executes on initialisation of page*/
+    AdminpageComponent.prototype.ngOnInit = function () {
+    };
+    return AdminpageComponent;
+}());
+AdminpageComponent = tslib_1.__decorate([
+    core_1.Component({
+        template: __webpack_require__(130),
+        styles: [__webpack_require__(238)]
+    }),
+    tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService,
+        router_1.Router])
+], AdminpageComponent);
+exports.AdminpageComponent = AdminpageComponent;
+
+
+/***/ }),
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13983,7 +14037,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var h5webstorage_1 = __webpack_require__(18);
-var auth_service_1 = __webpack_require__(13);
+var auth_service_1 = __webpack_require__(12);
 var AppComponent = (function () {
     function AppComponent(localStorage, sessionStorage, authService) {
         var _this = this;
@@ -13997,6 +14051,7 @@ var AppComponent = (function () {
             _this.authService.logOut().subscribe(function (data) {
                 _this.authService.IsLoggedIn = false;
                 _this.authService.CurrentUserEmail = "";
+                _this.authService.IsAdmin = false;
             });
         });
     }
@@ -14010,9 +14065,11 @@ var AppComponent = (function () {
         this.authService.getUser().subscribe(function (data) {
             _this.authService.IsLoggedIn = true;
             _this.authService.CurrentUserEmail = data.email;
+            _this.authService.IsAdmin = data.isAdmin;
         }, function (err) {
             _this.authService.IsLoggedIn = false;
             _this.authService.CurrentUserEmail = "";
+            _this.authService.IsAdmin = false;
         });
     };
     return AppComponent;
@@ -14028,8 +14085,8 @@ tslib_1.__decorate([
 AppComponent = tslib_1.__decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: __webpack_require__(129),
-        styles: [__webpack_require__(234)],
+        template: __webpack_require__(131),
+        styles: [__webpack_require__(239)],
         encapsulation: core_1.ViewEncapsulation.None
     }),
     tslib_1.__metadata("design:paramtypes", [h5webstorage_1.LocalStorage, h5webstorage_1.SessionStorage, auth_service_1.AuthService])
@@ -14038,7 +14095,7 @@ exports.AppComponent = AppComponent;
 
 
 /***/ }),
-/* 147 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14048,29 +14105,31 @@ var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(24);
 var http_1 = __webpack_require__(14);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var forms_1 = __webpack_require__(6);
 var ng2_page_scroll_1 = __webpack_require__(58);
 var primeng_1 = __webpack_require__(15);
 var core_2 = __webpack_require__(69);
 var ng_bootstrap_1 = __webpack_require__(39);
-var app_component_1 = __webpack_require__(146);
-var welcome_component_1 = __webpack_require__(153);
-var aboutus_component_1 = __webpack_require__(145);
-var singup_component_1 = __webpack_require__(161);
-var login_component_1 = __webpack_require__(160);
+var app_component_1 = __webpack_require__(149);
+var welcome_component_1 = __webpack_require__(156);
+var aboutus_component_1 = __webpack_require__(147);
+var singup_component_1 = __webpack_require__(164);
+var login_component_1 = __webpack_require__(163);
 var primeng_2 = __webpack_require__(15);
 var h5webstorage_1 = __webpack_require__(18);
-var questions_component_1 = __webpack_require__(159);
-var help_component_1 = __webpack_require__(152);
-var contacts_component_1 = __webpack_require__(151);
+var questions_component_1 = __webpack_require__(162);
+var help_component_1 = __webpack_require__(155);
+var contacts_component_1 = __webpack_require__(154);
 var question_service_1 = __webpack_require__(57);
-var cabinet_component_1 = __webpack_require__(148);
+var cabinet_component_1 = __webpack_require__(151);
+var adminpage_component_1 = __webpack_require__(148);
+var isAdmin_guard_1 = __webpack_require__(168);
 /* Feature Modules */
-var product_module_1 = __webpack_require__(158);
-var scretches_module_1 = __webpack_require__(163);
+var product_module_1 = __webpack_require__(161);
+var scretches_module_1 = __webpack_require__(166);
 var shared_module_1 = __webpack_require__(20);
-var cart_module_1 = __webpack_require__(150);
+var cart_module_1 = __webpack_require__(153);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -14091,6 +14150,11 @@ AppModule = tslib_1.__decorate([
                 apiKey: 'AIzaSyA6u-3Ld8-xS_7-43bMde1u_WY6i_rtzBA'
             }),
             router_1.RouterModule.forRoot([
+                {
+                    path: 'adminpage',
+                    canActivate: [isAdmin_guard_1.isAdminGuard],
+                    component: adminpage_component_1.AdminpageComponent,
+                },
                 { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                 { path: 'aboutus', component: aboutus_component_1.AboutusComponent },
                 { path: 'signup', component: singup_component_1.SignUpComponent },
@@ -14100,14 +14164,14 @@ AppModule = tslib_1.__decorate([
                 { path: 'contacts', component: contacts_component_1.ContactsComponent },
                 { path: 'cabinet', component: cabinet_component_1.CabinetComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-                { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+                { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
             ]),
             product_module_1.ProductModule,
             scretches_module_1.ScretchesModule,
             shared_module_1.SharedModule,
             cart_module_1.CartModule
         ],
-        providers: [h5webstorage_1.BROWSER_STORAGE_PROVIDERS, question_service_1.QuestionService],
+        providers: [h5webstorage_1.BROWSER_STORAGE_PROVIDERS, question_service_1.QuestionService, isAdmin_guard_1.isAdminGuard],
         declarations: [
             app_component_1.AppComponent,
             welcome_component_1.WelcomeComponent,
@@ -14118,6 +14182,7 @@ AppModule = tslib_1.__decorate([
             help_component_1.HelpComponent,
             contacts_component_1.ContactsComponent,
             cabinet_component_1.CabinetComponent,
+            adminpage_component_1.AdminpageComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     })
@@ -14126,7 +14191,7 @@ exports.AppModule = AppModule;
 
 
 /***/ }),
-/* 148 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14134,8 +14199,8 @@ exports.AppModule = AppModule;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var auth_service_1 = __webpack_require__(13);
-var router_1 = __webpack_require__(5);
+var auth_service_1 = __webpack_require__(12);
+var router_1 = __webpack_require__(4);
 var CabinetComponent = (function () {
     function CabinetComponent(_authService, _router) {
         this._authService = _authService;
@@ -14786,8 +14851,8 @@ var CabinetComponent = (function () {
 }());
 CabinetComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(130),
-        styles: [__webpack_require__(235)]
+        template: __webpack_require__(132),
+        styles: [__webpack_require__(240)]
     }),
     tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService,
         router_1.Router])
@@ -14796,7 +14861,7 @@ exports.CabinetComponent = CabinetComponent;
 
 
 /***/ }),
-/* 149 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14821,8 +14886,8 @@ var CartComponent = (function () {
 }());
 CartComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(131),
-        styles: [__webpack_require__(236)]
+        template: __webpack_require__(133),
+        styles: [__webpack_require__(241)]
     }),
     tslib_1.__metadata("design:paramtypes", [cart_service_1.CartService])
 ], CartComponent);
@@ -14830,7 +14895,7 @@ exports.CartComponent = CartComponent;
 
 
 /***/ }),
-/* 150 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14838,9 +14903,9 @@ exports.CartComponent = CartComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var shared_module_1 = __webpack_require__(20);
-var cart_component_1 = __webpack_require__(149);
+var cart_component_1 = __webpack_require__(152);
 var cart_service_1 = __webpack_require__(19);
 var CartModule = (function () {
     function CartModule() {
@@ -14867,7 +14932,7 @@ exports.CartModule = CartModule;
 
 
 /***/ }),
-/* 151 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14896,15 +14961,15 @@ var ContactsComponent = (function () {
 }());
 ContactsComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(132),
-        styles: [__webpack_require__(237)]
+        template: __webpack_require__(134),
+        styles: [__webpack_require__(242)]
     })
 ], ContactsComponent);
 exports.ContactsComponent = ContactsComponent;
 
 
 /***/ }),
-/* 152 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14954,15 +15019,15 @@ var HelpComponent = (function () {
 }());
 HelpComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(133),
-        styles: [__webpack_require__(238)]
+        template: __webpack_require__(135),
+        styles: [__webpack_require__(243)]
     })
 ], HelpComponent);
 exports.HelpComponent = HelpComponent;
 
 
 /***/ }),
-/* 153 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14994,15 +15059,15 @@ var WelcomeComponent = (function () {
 }());
 WelcomeComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(134),
-        styles: [__webpack_require__(239)]
+        template: __webpack_require__(136),
+        styles: [__webpack_require__(244)]
     })
 ], WelcomeComponent);
 exports.WelcomeComponent = WelcomeComponent;
 
 
 /***/ }),
-/* 154 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15010,7 +15075,7 @@ exports.WelcomeComponent = WelcomeComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var product_service_1 = __webpack_require__(35);
 var cart_service_1 = __webpack_require__(19);
 var ProductDetailComponent = (function () {
@@ -15081,8 +15146,8 @@ var ProductDetailComponent = (function () {
 }());
 ProductDetailComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(135),
-        styles: [__webpack_require__(240)]
+        template: __webpack_require__(137),
+        styles: [__webpack_require__(245)]
     }),
     tslib_1.__metadata("design:paramtypes", [router_1.ActivatedRoute,
         router_1.Router,
@@ -15093,7 +15158,7 @@ exports.ProductDetailComponent = ProductDetailComponent;
 
 
 /***/ }),
-/* 155 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15121,7 +15186,7 @@ exports.ProductFilterPipe = ProductFilterPipe;
 
 
 /***/ }),
-/* 156 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15129,7 +15194,7 @@ exports.ProductFilterPipe = ProductFilterPipe;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var ProductDetailGuard = (function () {
     function ProductDetailGuard(_router) {
         this._router = _router;
@@ -15156,7 +15221,7 @@ exports.ProductDetailGuard = ProductDetailGuard;
 
 
 /***/ }),
-/* 157 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15182,8 +15247,8 @@ var ProductListComponent = (function () {
 }());
 ProductListComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(136),
-        styles: [__webpack_require__(241)]
+        template: __webpack_require__(138),
+        styles: [__webpack_require__(246)]
     }),
     tslib_1.__metadata("design:paramtypes", [product_service_1.ProductService])
 ], ProductListComponent);
@@ -15191,7 +15256,7 @@ exports.ProductListComponent = ProductListComponent;
 
 
 /***/ }),
-/* 158 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15199,11 +15264,11 @@ exports.ProductListComponent = ProductListComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var primeng_1 = __webpack_require__(15);
-var product_list_component_1 = __webpack_require__(157);
-var product_detail_component_1 = __webpack_require__(154);
-var product_guard_service_1 = __webpack_require__(156);
+var product_list_component_1 = __webpack_require__(160);
+var product_detail_component_1 = __webpack_require__(157);
+var product_guard_service_1 = __webpack_require__(159);
 var product_service_1 = __webpack_require__(35);
 var shared_module_1 = __webpack_require__(20);
 var ProductModule = (function () {
@@ -15238,7 +15303,7 @@ exports.ProductModule = ProductModule;
 
 
 /***/ }),
-/* 159 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15247,7 +15312,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var question_service_1 = __webpack_require__(57);
-var auth_service_1 = __webpack_require__(13);
+var auth_service_1 = __webpack_require__(12);
 var QuestionsComponent = (function () {
     function QuestionsComponent(_questionService, _authService) {
         this._questionService = _questionService;
@@ -15349,8 +15414,8 @@ var QuestionsComponent = (function () {
 }());
 QuestionsComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(137),
-        styles: [__webpack_require__(242)],
+        template: __webpack_require__(139),
+        styles: [__webpack_require__(247)],
         encapsulation: core_1.ViewEncapsulation.None
     }),
     tslib_1.__metadata("design:paramtypes", [question_service_1.QuestionService, auth_service_1.AuthService])
@@ -15359,7 +15424,7 @@ exports.QuestionsComponent = QuestionsComponent;
 
 
 /***/ }),
-/* 160 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15367,8 +15432,8 @@ exports.QuestionsComponent = QuestionsComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var auth_service_1 = __webpack_require__(13);
-var router_1 = __webpack_require__(5);
+var auth_service_1 = __webpack_require__(12);
+var router_1 = __webpack_require__(4);
 var LogInComponent = (function () {
     function LogInComponent(_authService, router) {
         this._authService = _authService;
@@ -15407,6 +15472,7 @@ var LogInComponent = (function () {
                 _this._authService.getUser().subscribe(function (data) {
                     _this._authService.IsLoggedIn = true;
                     _this._authService.CurrentUserEmail = data.email;
+                    _this._authService.IsAdmin = data.isAdmin;
                 }, function (err) {
                     _this._authService.IsLoggedIn = false;
                     _this._authService.CurrentUserEmail = "";
@@ -15432,8 +15498,8 @@ var LogInComponent = (function () {
 }());
 LogInComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(138),
-        styles: [__webpack_require__(243)]
+        template: __webpack_require__(140),
+        styles: [__webpack_require__(248)]
     }),
     tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])
 ], LogInComponent);
@@ -15441,7 +15507,7 @@ exports.LogInComponent = LogInComponent;
 
 
 /***/ }),
-/* 161 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15449,8 +15515,8 @@ exports.LogInComponent = LogInComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var auth_service_1 = __webpack_require__(13);
-var router_1 = __webpack_require__(5);
+var auth_service_1 = __webpack_require__(12);
+var router_1 = __webpack_require__(4);
 var SignUpComponent = (function () {
     function SignUpComponent(_authService, router) {
         this._authService = _authService;
@@ -15603,8 +15669,8 @@ var SignUpComponent = (function () {
 }());
 SignUpComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(139),
-        styles: [__webpack_require__(244)]
+        template: __webpack_require__(141),
+        styles: [__webpack_require__(249)]
     }),
     tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])
 ], SignUpComponent);
@@ -15612,7 +15678,7 @@ exports.SignUpComponent = SignUpComponent;
 
 
 /***/ }),
-/* 162 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15725,8 +15791,8 @@ var ScretchesComponent = (function () {
 }());
 ScretchesComponent = tslib_1.__decorate([
     core_1.Component({
-        template: __webpack_require__(140),
-        styles: [__webpack_require__(245)]
+        template: __webpack_require__(142),
+        styles: [__webpack_require__(250)]
     }),
     tslib_1.__metadata("design:paramtypes", [scretch_service_1.ScretchService])
 ], ScretchesComponent);
@@ -15734,7 +15800,7 @@ exports.ScretchesComponent = ScretchesComponent;
 
 
 /***/ }),
-/* 163 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15742,10 +15808,10 @@ exports.ScretchesComponent = ScretchesComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var primeng_1 = __webpack_require__(15);
 var ng2_page_scroll_1 = __webpack_require__(58);
-var scretches_component_1 = __webpack_require__(162);
+var scretches_component_1 = __webpack_require__(165);
 var scretch_service_1 = __webpack_require__(56);
 var shared_module_1 = __webpack_require__(20);
 var ScretchesModule = (function () {
@@ -15775,7 +15841,7 @@ exports.ScretchesModule = ScretchesModule;
 
 
 /***/ }),
-/* 164 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15926,9 +15992,9 @@ tslib_1.__decorate([
 AllProductsComponent = tslib_1.__decorate([
     core_1.Component({
         selector: 'all-products',
-        template: __webpack_require__(141),
+        template: __webpack_require__(143),
         encapsulation: core_1.ViewEncapsulation.None,
-        styles: [__webpack_require__(246)]
+        styles: [__webpack_require__(251)]
     }),
     tslib_1.__metadata("design:paramtypes", [cart_service_1.CartService, ng_bootstrap_1.NgbModal])
 ], AllProductsComponent);
@@ -15936,7 +16002,38 @@ exports.AllProductsComponent = AllProductsComponent;
 
 
 /***/ }),
-/* 165 */
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(3);
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(4);
+var auth_service_1 = __webpack_require__(12);
+var isAdminGuard = (function () {
+    function isAdminGuard(_authService, _router) {
+        this._authService = _authService;
+        this._router = _router;
+    }
+    isAdminGuard.prototype.canActivate = function () {
+        if (!this._authService.IsAdmin) {
+            this._router.navigate(['/welcome']);
+        }
+        return this._authService.IsAdmin;
+    };
+    return isAdminGuard;
+}());
+isAdminGuard = tslib_1.__decorate([
+    core_1.Injectable(),
+    tslib_1.__metadata("design:paramtypes", [auth_service_1.AuthService, router_1.Router])
+], isAdminGuard);
+exports.isAdminGuard = isAdminGuard;
+
+
+/***/ }),
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15976,15 +16073,15 @@ tslib_1.__decorate([
 SpinnerComponent = tslib_1.__decorate([
     core_1.Component({
         selector: 'spinnerNum',
-        template: __webpack_require__(142),
-        styles: [__webpack_require__(247)]
+        template: __webpack_require__(144),
+        styles: [__webpack_require__(252)]
     })
 ], SpinnerComponent);
 exports.SpinnerComponent = SpinnerComponent;
 
 
 /***/ }),
-/* 166 */
+/* 170 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16026,7 +16123,7 @@ Ng2PageScrollModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 167 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16043,7 +16140,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var Accordion = (function () {
     function Accordion(el) {
         this.el = el;
@@ -16207,7 +16304,7 @@ exports.AccordionModule = AccordionModule;
 //# sourceMappingURL=accordion.js.map
 
 /***/ }),
-/* 168 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16224,9 +16321,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var inputtext_1 = __webpack_require__(12);
+var inputtext_1 = __webpack_require__(13);
 var button_1 = __webpack_require__(11);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var ObjectUtils_1 = __webpack_require__(23);
 var forms_1 = __webpack_require__(6);
@@ -16667,7 +16764,7 @@ exports.AutoCompleteModule = AutoCompleteModule;
 //# sourceMappingURL=autocomplete.js.map
 
 /***/ }),
-/* 169 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16765,7 +16862,7 @@ exports.BlockUIModule = BlockUIModule;
 //# sourceMappingURL=blockui.js.map
 
 /***/ }),
-/* 170 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16782,7 +16879,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var Breadcrumb = (function () {
     function Breadcrumb(router) {
         this.router = router;
@@ -16866,7 +16963,7 @@ exports.BreadcrumbModule = BreadcrumbModule;
 //# sourceMappingURL=breadcrumb.js.map
 
 /***/ }),
-/* 171 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16884,7 +16981,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var button_1 = __webpack_require__(11);
-var inputtext_1 = __webpack_require__(12);
+var inputtext_1 = __webpack_require__(13);
 var domhandler_1 = __webpack_require__(2);
 var forms_1 = __webpack_require__(6);
 exports.CALENDAR_VALUE_ACCESSOR = {
@@ -17887,7 +17984,7 @@ exports.CalendarModule = CalendarModule;
 //# sourceMappingURL=calendar.js.map
 
 /***/ }),
-/* 172 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18023,7 +18120,7 @@ exports.CaptchaModule = CaptchaModule;
 //# sourceMappingURL=captcha.js.map
 
 /***/ }),
-/* 173 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18040,7 +18137,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var domhandler_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(1);
 var Carousel = (function () {
     function Carousel(el, domHandler, differs, renderer) {
@@ -18341,7 +18438,7 @@ exports.CarouselModule = CarouselModule;
 //# sourceMappingURL=carousel.js.map
 
 /***/ }),
-/* 174 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18458,7 +18555,7 @@ exports.ChartModule = ChartModule;
 //# sourceMappingURL=chart.js.map
 
 /***/ }),
-/* 175 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18621,7 +18718,7 @@ exports.CheckboxModule = CheckboxModule;
 //# sourceMappingURL=checkbox.js.map
 
 /***/ }),
-/* 176 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18638,8 +18735,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
-var inputtext_1 = __webpack_require__(12);
+var shared_1 = __webpack_require__(5);
+var inputtext_1 = __webpack_require__(13);
 var domhandler_1 = __webpack_require__(2);
 var forms_1 = __webpack_require__(6);
 exports.CHIPS_VALUE_ACCESSOR = {
@@ -18825,7 +18922,7 @@ exports.ChipsModule = ChipsModule;
 //# sourceMappingURL=chips.js.map
 
 /***/ }),
-/* 177 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18874,7 +18971,7 @@ exports.CodeHighlighterModule = CodeHighlighterModule;
 //# sourceMappingURL=codehighlighter.js.map
 
 /***/ }),
-/* 178 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18892,7 +18989,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var button_1 = __webpack_require__(11);
 var api_1 = __webpack_require__(61);
 var ConfirmDialog = (function () {
@@ -19161,7 +19258,7 @@ exports.ConfirmDialogModule = ConfirmDialogModule;
 //# sourceMappingURL=confirmdialog.js.map
 
 /***/ }),
-/* 179 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19182,7 +19279,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var ContextMenuSub = (function () {
     function ContextMenuSub(domHandler, router, contextMenu) {
         this.domHandler = domHandler;
@@ -19418,7 +19515,7 @@ exports.ContextMenuModule = ContextMenuModule;
 //# sourceMappingURL=contextmenu.js.map
 
 /***/ }),
-/* 180 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19435,7 +19532,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var paginator_1 = __webpack_require__(22);
 var DataGrid = (function () {
     function DataGrid(el, differs) {
@@ -19614,7 +19711,7 @@ exports.DataGridModule = DataGridModule;
 //# sourceMappingURL=datagrid.js.map
 
 /***/ }),
-/* 181 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19631,7 +19728,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var paginator_1 = __webpack_require__(22);
 var DataList = (function () {
     function DataList(el, differs) {
@@ -19815,7 +19912,7 @@ exports.DataListModule = DataListModule;
 //# sourceMappingURL=datalist.js.map
 
 /***/ }),
-/* 182 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19832,7 +19929,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var DataScroller = (function () {
     function DataScroller(el, differs, renderer, domHandler) {
@@ -20028,7 +20125,7 @@ exports.DataScrollerModule = DataScrollerModule;
 //# sourceMappingURL=datascroller.js.map
 
 /***/ }),
-/* 183 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20049,10 +20146,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var forms_1 = __webpack_require__(6);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var paginator_1 = __webpack_require__(22);
-var inputtext_1 = __webpack_require__(12);
-var shared_2 = __webpack_require__(4);
+var inputtext_1 = __webpack_require__(13);
+var shared_2 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var ObjectUtils_1 = __webpack_require__(23);
 var DTRadioButton = (function () {
@@ -21905,7 +22002,7 @@ exports.DataTableModule = DataTableModule;
 //# sourceMappingURL=datatable.js.map
 
 /***/ }),
-/* 184 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21923,7 +22020,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var Dialog = (function () {
     function Dialog(el, domHandler, renderer) {
         this.el = el;
@@ -22284,7 +22381,7 @@ exports.DialogModule = DialogModule;
 //# sourceMappingURL=dialog.js.map
 
 /***/ }),
-/* 185 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22525,7 +22622,7 @@ exports.DragDropModule = DragDropModule;
 //# sourceMappingURL=dragdrop.js.map
 
 /***/ }),
-/* 186 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22542,7 +22639,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var ObjectUtils_1 = __webpack_require__(23);
 var forms_1 = __webpack_require__(6);
@@ -23006,7 +23103,7 @@ exports.DropdownModule = DropdownModule;
 //# sourceMappingURL=dropdown.js.map
 
 /***/ }),
-/* 187 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23023,7 +23120,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var forms_1 = __webpack_require__(6);
 exports.EDITOR_VALUE_ACCESSOR = {
@@ -23152,7 +23249,7 @@ exports.EditorModule = EditorModule;
 //# sourceMappingURL=editor.js.map
 
 /***/ }),
-/* 188 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23267,7 +23364,7 @@ exports.FieldsetModule = FieldsetModule;
 //# sourceMappingURL=fieldset.js.map
 
 /***/ }),
-/* 189 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23288,7 +23385,7 @@ var platform_browser_1 = __webpack_require__(24);
 var button_1 = __webpack_require__(11);
 var messages_1 = __webpack_require__(62);
 var progressbar_1 = __webpack_require__(63);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var FileUpload = (function () {
     function FileUpload(sanitizer) {
         this.sanitizer = sanitizer;
@@ -23559,7 +23656,7 @@ exports.FileUploadModule = FileUploadModule;
 //# sourceMappingURL=fileupload.js.map
 
 /***/ }),
-/* 190 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23784,7 +23881,7 @@ exports.GalleriaModule = GalleriaModule;
 //# sourceMappingURL=galleria.js.map
 
 /***/ }),
-/* 191 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23961,7 +24058,7 @@ exports.GMapModule = GMapModule;
 //# sourceMappingURL=gmap.js.map
 
 /***/ }),
-/* 192 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24098,7 +24195,7 @@ exports.GrowlModule = GrowlModule;
 //# sourceMappingURL=growl.js.map
 
 /***/ }),
-/* 193 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24211,7 +24308,7 @@ exports.InplaceModule = InplaceModule;
 //# sourceMappingURL=inplace.js.map
 
 /***/ }),
-/* 194 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24256,7 +24353,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var inputtext_1 = __webpack_require__(12);
+var inputtext_1 = __webpack_require__(13);
 var forms_1 = __webpack_require__(6);
 exports.INPUTMASK_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
@@ -24774,7 +24871,7 @@ exports.InputMaskModule = InputMaskModule;
 //# sourceMappingURL=inputmask.js.map
 
 /***/ }),
-/* 195 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24959,7 +25056,7 @@ exports.InputSwitchModule = InputSwitchModule;
 //# sourceMappingURL=inputswitch.js.map
 
 /***/ }),
-/* 196 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25077,7 +25174,7 @@ exports.InputTextareaModule = InputTextareaModule;
 //# sourceMappingURL=inputtextarea.js.map
 
 /***/ }),
-/* 197 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25293,7 +25390,7 @@ exports.LightboxModule = LightboxModule;
 //# sourceMappingURL=lightbox.js.map
 
 /***/ }),
-/* 198 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25310,7 +25407,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var ObjectUtils_1 = __webpack_require__(23);
 var forms_1 = __webpack_require__(6);
@@ -25639,7 +25736,7 @@ exports.ListboxModule = ListboxModule;
 //# sourceMappingURL=listbox.js.map
 
 /***/ }),
-/* 199 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25657,7 +25754,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var MegaMenu = (function () {
     function MegaMenu(el, domHandler, renderer, router) {
         this.el = el;
@@ -25794,7 +25891,7 @@ exports.MegaMenuModule = MegaMenuModule;
 //# sourceMappingURL=megamenu.js.map
 
 /***/ }),
-/* 200 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25812,7 +25909,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var Menu = (function () {
     function Menu(el, domHandler, renderer, router) {
         this.el = el;
@@ -25975,7 +26072,7 @@ exports.MenuModule = MenuModule;
 //# sourceMappingURL=menu.js.map
 
 /***/ }),
-/* 201 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25993,7 +26090,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var MenubarSub = (function () {
     function MenubarSub(domHandler, router) {
         this.domHandler = domHandler;
@@ -26130,7 +26227,7 @@ exports.MenubarModule = MenubarModule;
 //# sourceMappingURL=menubar.js.map
 
 /***/ }),
-/* 202 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26450,7 +26547,7 @@ exports.MultiSelectModule = MultiSelectModule;
 //# sourceMappingURL=multiselect.js.map
 
 /***/ }),
-/* 203 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26468,7 +26565,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var button_1 = __webpack_require__(11);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var OrderList = (function () {
     function OrderList(el, domHandler) {
@@ -26685,7 +26782,7 @@ exports.OrderListModule = OrderListModule;
 //# sourceMappingURL=orderlist.js.map
 
 /***/ }),
-/* 204 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26860,7 +26957,7 @@ exports.OverlayPanelModule = OverlayPanelModule;
 //# sourceMappingURL=overlaypanel.js.map
 
 /***/ }),
-/* 205 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26877,7 +26974,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var Panel = (function () {
     function Panel(el) {
         this.el = el;
@@ -26984,7 +27081,7 @@ exports.PanelModule = PanelModule;
 //# sourceMappingURL=panel.js.map
 
 /***/ }),
-/* 206 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27011,7 +27108,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var BasePanelMenuItem = (function () {
     function BasePanelMenuItem(router) {
         this.router = router;
@@ -27148,7 +27245,7 @@ exports.PanelMenuModule = PanelMenuModule;
 //# sourceMappingURL=panelmenu.js.map
 
 /***/ }),
-/* 207 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27329,7 +27426,7 @@ exports.PasswordModule = PasswordModule;
 //# sourceMappingURL=password.js.map
 
 /***/ }),
-/* 208 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27347,7 +27444,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var button_1 = __webpack_require__(11);
-var shared_1 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var PickList = (function () {
     function PickList(el, domHandler) {
@@ -27658,7 +27755,7 @@ exports.PickListModule = PickListModule;
 //# sourceMappingURL=picklist.js.map
 
 /***/ }),
-/* 209 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27785,7 +27882,7 @@ exports.RadioButtonModule = RadioButtonModule;
 //# sourceMappingURL=radiobutton.js.map
 
 /***/ }),
-/* 210 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27906,7 +28003,7 @@ exports.RatingModule = RatingModule;
 //# sourceMappingURL=rating.js.map
 
 /***/ }),
-/* 211 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28410,7 +28507,7 @@ exports.ScheduleModule = ScheduleModule;
 //# sourceMappingURL=schedule.js.map
 
 /***/ }),
-/* 212 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28543,7 +28640,7 @@ exports.SelectButtonModule = SelectButtonModule;
 //# sourceMappingURL=selectbutton.js.map
 
 /***/ }),
-/* 213 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28564,7 +28661,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var SlideMenuSub = (function () {
     function SlideMenuSub(slideMenu, router) {
         this.slideMenu = slideMenu;
@@ -28780,7 +28877,7 @@ exports.SlideMenuModule = SlideMenuModule;
 //# sourceMappingURL=slidemenu.js.map
 
 /***/ }),
-/* 214 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29055,7 +29152,7 @@ exports.SliderModule = SliderModule;
 //# sourceMappingURL=slider.js.map
 
 /***/ }),
-/* 215 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29072,7 +29169,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var inputtext_1 = __webpack_require__(12);
+var inputtext_1 = __webpack_require__(13);
 var domhandler_1 = __webpack_require__(2);
 var forms_1 = __webpack_require__(6);
 exports.SPINNER_VALUE_ACCESSOR = {
@@ -29345,7 +29442,7 @@ exports.SpinnerModule = SpinnerModule;
 //# sourceMappingURL=spinner.js.map
 
 /***/ }),
-/* 216 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29364,7 +29461,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
 var button_1 = __webpack_require__(11);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var SplitButton = (function () {
     function SplitButton(el, domHandler, renderer, router) {
         this.el = el;
@@ -29487,7 +29584,7 @@ exports.SplitButtonModule = SplitButtonModule;
 //# sourceMappingURL=splitbutton.js.map
 
 /***/ }),
-/* 217 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29504,7 +29601,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var Steps = (function () {
     function Steps(router) {
         this.router = router;
@@ -29589,7 +29686,7 @@ exports.StepsModule = StepsModule;
 //# sourceMappingURL=steps.js.map
 
 /***/ }),
-/* 218 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29607,7 +29704,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var TabMenu = (function () {
     function TabMenu(router) {
         this.router = router;
@@ -29706,7 +29803,7 @@ exports.TabMenuModule = TabMenuModule;
 //# sourceMappingURL=tabmenu.js.map
 
 /***/ }),
-/* 219 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29976,7 +30073,7 @@ exports.TabViewModule = TabViewModule;
 //# sourceMappingURL=tabview.js.map
 
 /***/ }),
-/* 220 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30088,7 +30185,7 @@ exports.TerminalModule = TerminalModule;
 //# sourceMappingURL=terminal.js.map
 
 /***/ }),
-/* 221 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30107,7 +30204,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
 var common_2 = __webpack_require__(1);
-var router_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(4);
 var TieredMenuSub = (function () {
     function TieredMenuSub(domHandler, router, location) {
         this.domHandler = domHandler;
@@ -30272,7 +30369,7 @@ exports.TieredMenuModule = TieredMenuModule;
 //# sourceMappingURL=tieredmenu.js.map
 
 /***/ }),
-/* 222 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30409,7 +30506,7 @@ exports.ToggleButtonModule = ToggleButtonModule;
 //# sourceMappingURL=togglebutton.js.map
 
 /***/ }),
-/* 223 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30462,7 +30559,7 @@ exports.ToolbarModule = ToolbarModule;
 //# sourceMappingURL=toolbar.js.map
 
 /***/ }),
-/* 224 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30659,7 +30756,7 @@ exports.TooltipModule = TooltipModule;
 //# sourceMappingURL=tooltip.js.map
 
 /***/ }),
-/* 225 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30679,8 +30776,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
-var shared_2 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
+var shared_2 = __webpack_require__(5);
 var TreeNodeTemplateLoader = (function () {
     function TreeNodeTemplateLoader(viewContainer) {
         this.viewContainer = viewContainer;
@@ -31084,7 +31181,7 @@ var UITreeNode_1;
 //# sourceMappingURL=tree.js.map
 
 /***/ }),
-/* 226 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31104,8 +31201,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var shared_1 = __webpack_require__(4);
-var shared_2 = __webpack_require__(4);
+var shared_1 = __webpack_require__(5);
+var shared_2 = __webpack_require__(5);
 var UITreeRow = (function () {
     function UITreeRow(treeTable) {
         this.treeTable = treeTable;
@@ -31461,7 +31558,7 @@ exports.TreeTableModule = TreeTableModule;
 //# sourceMappingURL=treetable.js.map
 
 /***/ }),
-/* 227 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31585,7 +31682,7 @@ exports.TriStateCheckboxModule = TriStateCheckboxModule;
 //# sourceMappingURL=tristatecheckbox.js.map
 
 /***/ }),
-/* 228 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31676,7 +31773,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 229 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31768,18 +31865,18 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 230 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(228);
-exports.encode = exports.stringify = __webpack_require__(229);
+exports.decode = exports.parse = __webpack_require__(232);
+exports.encode = exports.stringify = __webpack_require__(233);
 
 
 /***/ }),
-/* 231 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process, global) {/*! *****************************************************************************
@@ -32907,10 +33004,10 @@ var Reflect;
             Function("return this;")());
 })(Reflect || (Reflect = {}));
 //# sourceMappingURL=Reflect.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(252), __webpack_require__(64)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(257), __webpack_require__(64)))
 
 /***/ }),
-/* 232 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -32923,7 +33020,7 @@ module.exports = function (str) {
 
 
 /***/ }),
-/* 233 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -32937,7 +33034,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 234 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -32951,7 +33048,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 235 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -32965,7 +33062,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 236 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -32979,7 +33076,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 237 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -32993,7 +33090,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 238 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33007,7 +33104,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 239 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33021,7 +33118,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 240 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33035,7 +33132,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 241 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33049,7 +33146,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 242 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33063,7 +33160,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 243 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33077,7 +33174,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 244 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33091,7 +33188,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 245 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33105,7 +33202,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 246 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33119,7 +33216,7 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 247 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -33133,7 +33230,21 @@ module.exports = function (str) {
     
 
 /***/ }),
-/* 248 */
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(97);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*eslint-env browser*/
@@ -33177,7 +33288,7 @@ var colors = {
 };
 ansiHTML.setColors(colors);
 
-var Entities = __webpack_require__(125).AllHtmlEntities;
+var Entities = __webpack_require__(126).AllHtmlEntities;
 var entities = new Entities();
 
 exports.showProblems =
@@ -33218,7 +33329,7 @@ function problemType (type) {
 
 
 /***/ }),
-/* 249 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -33356,7 +33467,7 @@ module.exports = function(hash, moduleMap, options) {
 
 
 /***/ }),
-/* 250 */
+/* 255 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -33384,37 +33495,37 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 251 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(8))(13)
 
 /***/ }),
-/* 252 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(43))(161)
 
 /***/ }),
-/* 253 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(8))(312)
 
 /***/ }),
-/* 254 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(8))(313)
 
 /***/ }),
-/* 255 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(43))(322)
 
 /***/ }),
-/* 256 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(66);

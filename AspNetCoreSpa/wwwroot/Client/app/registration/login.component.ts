@@ -58,6 +58,7 @@ export class LogInComponent {
                     data => {
                         this._authService.IsLoggedIn = true;
                         this._authService.CurrentUserEmail = data.email;
+                        this._authService.IsAdmin = data.isAdmin;
                     },
 
                     err => {

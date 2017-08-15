@@ -37,7 +37,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 var user = await _userManager.FindByEmailAsync(HttpContext.User.Identity.Name);
                 if (user != null)
                 {
-                    return Ok(new { FirstName = user.FirstName, LastName = user.LastName, Email = user.Email });
+                    return Ok(new { FirstName = user.FirstName, LastName = user.LastName, Email = user.Email, IsAdmin = HttpContext.User.IsInRole("Admin") });
                 }
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 return Json(ModelState.GetModelErrors());

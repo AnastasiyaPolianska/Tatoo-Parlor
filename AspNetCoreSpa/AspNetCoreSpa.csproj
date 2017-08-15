@@ -33,6 +33,14 @@
   </Target>
 
   <ItemGroup>
+    <Content Include="wwwroot\Client\app\adminpage\adminpage.component.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\Client\app\adminpage\adminpage.component.ts" />
+    <Content Include="wwwroot\Client\app\adminpage\adminpage.component.scss">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\Client\app\adminpage\userpage.component.ts" />
     <Content Include="wwwroot\Client\app\assets\images\Footer\instagram.png" />
     <Content Include="wwwroot\Client\app\assets\images\Footer\twitter-logo-silhouette.png" />
     <Content Include="wwwroot\Client\app\assets\images\Footer\vk.png" />
@@ -41,7 +49,6 @@
     <Content Include="wwwroot\Client\app\cabinet\cabinet.component.css" />
     <Content Include="wwwroot\Client\app\cabinet\cabinet.component.html" />
     <Content Include="wwwroot\Client\app\cabinet\cabinet.component.ts" />
-    <Content Include="wwwroot\Client\app\cart\cart.component.css" />
     <Content Include="wwwroot\Client\app\cart\cart.component.html" />
     <Content Include="wwwroot\Client\app\cart\cart.component.js" />
     <Content Include="wwwroot\Client\app\cart\cart.component.js.map" />
@@ -76,7 +83,6 @@
     </Content>
     <Content Include="wwwroot\Client\app\registration\login.component.html" />
     <Content Include="wwwroot\Client\app\registration\login.component.js" />
-    <Content Include="wwwroot\Client\app\registration\login.component.js.map" />
     <Content Include="wwwroot\Client\app\registration\login.component.ts" />
     <Content Include="wwwroot\Client\app\scretches\scretch.js" />
     <Content Include="wwwroot\Client\app\scretches\scretch.js.map" />
@@ -88,6 +94,11 @@
     <Content Include="wwwroot\Client\app\scretches\scretch.ts">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="wwwroot\Client\app\shared\isAdmin.guard.js" />
+    <Content Include="wwwroot\Client\app\shared\isAdmin.guard.ts" />
+    <Content Include="wwwroot\Client\app\shared\isAdminGuard.js" />
+    <Content Include="wwwroot\Client\app\shared\isAdminGuard.ts" />
+    <Content Include="wwwroot\Client\app\shared\login.component.ts" />
     <Content Include="wwwroot\Client\app\shared\spinner.component.html">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
