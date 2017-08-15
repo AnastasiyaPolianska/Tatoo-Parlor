@@ -44,6 +44,13 @@ namespace AspNetCoreSpa.Server.Controllers.api
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody]LoginViewModel model)
         {
+
+            if (!_context.Users.Any(x => (x.Email == model.Email)))
+            {
+                ModelState.AddModelError(string.Empty, "Error while logging in: user with such email does not exist");
+                return BadRequest(ModelState.GetModelErrors());
+            }
+            
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, set lockoutOnFailure: true
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
@@ -65,7 +72,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
             }
             else
             {
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                ModelState.AddModelError(string.Empty, "Error while logging in: incorect password.");
                 return BadRequest(ModelState.GetModelErrors());
             }
         }

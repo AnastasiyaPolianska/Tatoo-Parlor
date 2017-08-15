@@ -1,4 +1,6 @@
-﻿<div class='panel panel-primary tatoodiv'>
+﻿<p-growl [value]="Msgs" id="growl"></p-growl>
+
+<div class='panel panel-primary tatoodiv'>
     <div class='panel-heading' id="tatoopanel">
         {{PageTitle}}
     </div>
@@ -6,26 +8,38 @@
     <div class='panel-body'>
         <div class='row'>
             <label class='col-md-2 tatoolable' >{{LableFirstName}}</label>
-            <input type='text' class='tatooinput marginbottom' placeholder="{{PlaceHoldeFirstName}}" [(ngModel)]='FirstName'/>
+            <input type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': FirstNameOK==false}" placeholder="{{PlaceHoldeFirstName}}" [(ngModel)]='FirstName'/>
+            <label *ngIf="FirstNameOK" class='tatootool' style="margin-left: 39%">{{ToolFirstName}}</label>
+            <label *ngIf="!FirstNameOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorFirstName}}</label>
         </div>
         <div class='row'>
             <label class='col-md-2 tatoolable'>{{LableLastName}}</label>
-            <input type='text' class='tatooinput marginbottom' placeholder="{{PlaceHoldeLastName}}" [(ngModel)]='LastName' />
+            <input type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': LastNameOK==false}" placeholder="{{PlaceHoldeLastName}}" [(ngModel)]='LastName' />
+            <label *ngIf="LastNameOK" class='tatootool' style="margin-left: 39%">{{ToolLastName}}</label>
+            <label *ngIf="!LastNameOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorLastName}}</label>
         </div>
         <div class='row'>
             <label class='col-md-2 tatoolable'>{{LableEmail}}</label>
-            <input type='email' class='tatooinput marginbottom' placeholder="{{PlaceHolderEmail}}" [(ngModel)]='Email' />
+            <input type='email' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': EmailOK==false}" placeholder="{{PlaceHolderEmail}}" [(ngModel)]='Email' />
+            <label *ngIf="EmailOK" class='tatootool' style="margin-left: 39%">{{ToolEmail}}</label>
+            <label *ngIf="!EmailOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorEmail}}</label>
         </div>
         <div class='row'>
             <label class='col-md-2 tatoolable'>{{LablePassword}}</label>
-            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderPassword}}" [(ngModel)]='Password' />
+            <input type='password' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': PasswordOK==false}" placeholder="{{PlaceHolderPassword}}" [(ngModel)]='Password' />
+            <label *ngIf="PasswordOK" class='tatootool' style="margin-left: 39%">{{ToolPassword}}</label>
+            <label *ngIf="!PasswordOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorPassword}}</label>
         </div>
         <div class='row'>
             <label class='col-md-2 tatoolable'>{{LableRepeatPassword}}</label>
-            <input type='password' class='tatooinput marginbottom' placeholder="{{PlaceHolderRepeatPassword}}" />
+            <input type='password' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': RepeatPasswordOK==false}" placeholder="{{PlaceHolderRepeatPassword}}" [(ngModel)]='RepeatPassword'/>
+            <label *ngIf="RepeatPasswordOK" class='tatootool' style="margin-left: 39%">{{ToolPasswordRepeat}}</label>
+            <label *ngIf="!RepeatPasswordOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorPasswordRepeat}}</label>
         </div>
 
-        <button class=' btn btn-primary tatoobutton' (click)='signUp()'> {{ButtonText}} </button>
+        <button class=' btn btn-primary tatoobutton' (click)='signUp()' title={{TitleSignUp}}> 
+            <i class='glyphicon glyphicon-ok'></i> {{ButtonText}} 
+        </button>
     </div>
 </div>
 
