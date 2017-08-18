@@ -1,0 +1,22 @@
+﻿<p-growl [value]="Msgs" id="growl"></p-growl>
+
+<div class="tatooarticle text">
+    <p class="margin2 heading">{{Maintitle}}</p>
+    <p class="text plaintext margin2"> {{Subtitle}} </p>
+</div>
+
+<br />
+
+<div class="tatooarticle text plaintext" style="width:100%">
+    <p class="margin2" style="width: 100%; margin-bottom: 0px">
+        <label class="paragraphhead headchangewidth">{{ProductsLable}} </label>
+        <label class="floating changeinfo" title={{TitleChangeProducts}} (click)="ChangeProducts()"> {{ChangeInfoProducts}} </label>
+    </p>
+</div>
+<div class="tatooarticle text plaintext" style="width:100%">
+    <p class="margin2" style="width: 100%; margin-bottom: 0px">
+        <label class="paragraphhead headchangewidth">{{QuestionsLable}} </label>
+        <label class="floating changeinfo" title={{TitleChangeQuestions}} (click)="AnswerQuestions()"> {{ChangeInfoQuestions}} </label>
+    </p>
+</div>
+

@@ -1,5 +1,9 @@
 ﻿
 .questions-page {
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
     /*text styles*/
     .text {
         font-family: 'TEMPUS SANS ITC';
@@ -90,6 +94,22 @@
         white-space: normal !important;
     }
 
+    .tatooerror {
+        color: red;
+    }
+
+    .backerror {
+        background-color: #F6D9D9;
+    }
+
+    .tatoogood {
+        color: #137F25;
+    }
+
+    .backgood {
+        background-color: #C7F9CF;
+    }
+
     @media only screen and (min-width: 800px) {
         .tatoodiv {
             width: 40%;
@@ -129,6 +149,14 @@
         color: #000000;
         min-width: 58%;
         max-width: 58%;
+        margin-right: 1%;
+    }
+
+    .newtatooinput {
+        font-family: 'comic sans ms';
+        color: #000000;
+        min-width: 100%;
+        max-width: 100%;
         margin-right: 1%;
     }
 

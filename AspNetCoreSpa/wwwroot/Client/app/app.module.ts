@@ -20,6 +20,8 @@ import { HelpComponent } from './help/help.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { QuestionService } from './shared/question.service';
 import { CabinetComponent } from './cabinet/cabinet.component';
+import { AdminpageComponent } from './adminpage/adminpage.component';
+import { isAdminGuard } from './shared/isAdmin.guard';
 
 /* Feature Modules */
 import { ProductModule } from './products/product.module';
@@ -41,6 +43,11 @@ import { CartModule } from './cart/cart.module';
           apiKey: 'AIzaSyA6u-3Ld8-xS_7-43bMde1u_WY6i_rtzBA'
       }),
     RouterModule.forRoot([
+      {
+          path: 'adminpage',
+          canActivate: [isAdminGuard],
+          component: AdminpageComponent,
+      },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'aboutus', component: AboutusComponent },
       { path: 'signup', component: SignUpComponent },
@@ -48,16 +55,17 @@ import { CartModule } from './cart/cart.module';
       { path: 'questions', component: QuestionsComponent },
       { path: 'help', component: HelpComponent },
       { path: 'contacts', component: ContactsComponent },
-      { path: 'cabinet', component: CabinetComponent },
+      { path: 'cabinet', component: CabinetComponent },   
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
+      
     ]),
     ProductModule,
       ScretchesModule,
       SharedModule,
       CartModule
     ],
-  providers: [BROWSER_STORAGE_PROVIDERS, QuestionService],
+  providers: [BROWSER_STORAGE_PROVIDERS, QuestionService, isAdminGuard],
   declarations: [
     AppComponent,
     WelcomeComponent,
@@ -68,6 +76,7 @@ import { CartModule } from './cart/cart.module';
       HelpComponent,
       ContactsComponent,
       CabinetComponent,
+      AdminpageComponent
   ],
   bootstrap: [ AppComponent ]
 })
