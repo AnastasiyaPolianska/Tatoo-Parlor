@@ -63,6 +63,7 @@ export class QuestionsComponent implements OnInit {
     public TitleLableForCategory = "Click to switch to all questions and start answering";
 
     public isAdminPage = false;
+    public Checked: boolean = true;
 
     public TitleSendAnswer: string = "Click to send answer";
     public AnswersOK: boolean[];
@@ -127,7 +128,15 @@ export class QuestionsComponent implements OnInit {
     ngOnInit(): void {
         this.AnswersOK = [];
         this.Initializer();
+
+        if (this._authService.IsAdmin) {
+            this.Checked = true;
+            this.OnChange();
+        }
+
+        else this.Checked = false;
     };
+
 
     Initializer(): void {
         this._questionService.getQuestions().subscribe(

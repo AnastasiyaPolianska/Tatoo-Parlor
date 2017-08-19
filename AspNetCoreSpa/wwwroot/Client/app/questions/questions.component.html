@@ -127,7 +127,7 @@
         <div class='tatoopanel panel-heading ' id="tatoopanel">
             {{TableName}}
             <label *ngIf="_authService.IsAdmin" class="switch" style="float:right" title={{TitleLableForCategory}}>
-                <input type="checkbox" (change)="OnChange()">
+                <input type="checkbox" (change)="OnChange()" [(ngModel)]="Checked">
                 <span class="slider round"></span>
             </label>
             <span *ngIf="_authService.IsAdmin" style="float:right; margin-right: 1%">{{LableForCategory}} </span>
