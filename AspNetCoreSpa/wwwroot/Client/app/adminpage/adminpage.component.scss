@@ -18,10 +18,6 @@
     color: rgba(41, 43, 41, 0.9);
 }
 
-.paragraphtext {
-    color: rgba(41, 43, 41, 0.7);
-}
-
 .changeinfo {
     color: rgba(41, 43, 41, 0.9);
     text-decoration: underline;
@@ -63,32 +59,7 @@
     font-size: 4vmin;
 }
 
-.tatootool {
-    font-size: 2vmin;
-    float: right;
-    color: rgba(41, 43, 41, 0.9);
-    margin-right: 1%;
-}
-
-.tatootoolerror {
-    color: red;
-    font-size: 2vmin;
-    float: right;
-    margin-right: 1%;
-}
-
-.tatoodiv {
-    width: 98%;
-    margin: 1%;
-    border-color: #000000;
-    font-family: 'comic sans ms';
-}
-
 @media only screen and (min-width: 800px) {
-    .tatoodiv {
-        width: 40%;
-    }
-
     .floating {
         float: none;
         margin-right: 0%;
@@ -98,52 +69,4 @@
     .headchangewidth {
         width: 15%;
     }
-
-    #tatoopanel {
-        font-size: 3vmin;
-    }
-
-    .tatootool {
-        font-size: 1.5vmin;
-    }
-
-    .tatootoolerror {
-        font-size: 1.5vmin;
-    }
-}
-
-/*styles*/
-.tatoobutton {
-    background-color: #000000;
-    border-color: #FFFFFF;
-    float: right;
-}
-
-.tatoobutton:hover {
-    background-color: #464451;
-    border-color: #D5D5D5;
-}
-
-.tatoolable {
-    color: #000000;
-    min-width: 39%;
-    max-width: 39%;
-}
-
-.tatooinput {
-    color: #000000;
-    min-width: 58%;
-    max-width: 58%;
-    margin-right: 1%;
-}
-
-.tatooinputerror {
-    border-color: red;
-    background-color: #F6D9D9;
-    border-width: 1px;
-    border-style: solid;
-} 
-
-.marginbottom {
-    margin-bottom: 1%;
 }

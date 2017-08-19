@@ -96,6 +96,9 @@ export class CabinetComponent
     public TitleButtonChangePassword: string = "Click to change your password";
     public TitleButtonChangeEvery: string = "Click to change all information";
 
+    public TitleLinkAdminPage: string = "Click to switch to admin panel";
+    public AdminPage: string = "Admin panel";
+
     public FirstName: string;
     public LastName: string;
     public Email: string;
@@ -779,5 +782,9 @@ export class CabinetComponent
                     validEmail = false;
                 })           
         }        
+    }
+
+    public MoveToAdminPage(): void {
+        if (this._authService.IsAdmin) this._router.navigate(['/adminpage']);
     }
 }

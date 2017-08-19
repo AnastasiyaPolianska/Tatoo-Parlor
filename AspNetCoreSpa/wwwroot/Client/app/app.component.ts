@@ -1,6 +1,7 @@
 import { Component,  ViewEncapsulation, OnInit } from '@angular/core';
 import { LocalStorage, SessionStorage, StorageProperty } from 'h5webstorage';
 import { AuthService } from './shared/auth.service';
+import { Router } from '@angular/router';
 @Component({
     selector: 'pm-app',
     templateUrl: './app.component.html',
@@ -8,7 +9,7 @@ import { AuthService } from './shared/auth.service';
     encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-    constructor(private localStorage: LocalStorage, private sessionStorage: SessionStorage, private authService: AuthService) {
+    constructor(private localStorage: LocalStorage, private sessionStorage: SessionStorage, private authService: AuthService, private _router: Router) {
     }
     public pageTitle: string = 'Tatooed Youth';
 
@@ -25,11 +26,13 @@ export class AppComponent implements OnInit {
             data => {
                 this.authService.IsLoggedIn = true;
                 this.authService.CurrentUserEmail = data.email;
+                this.authService.IsAdmin = data.isAdmin;
             },
 
             err => {
                 this.authService.IsLoggedIn = false;
                 this.authService.CurrentUserEmail = "";
+                this.authService.IsAdmin = false;
             })
     }
 
@@ -38,6 +41,8 @@ export class AppComponent implements OnInit {
             data => {
                 this.authService.IsLoggedIn = false;
                 this.authService.CurrentUserEmail = "";
+                this.authService.IsAdmin = false;
+                this._router.navigate(['/login']);
             }
         );
     });

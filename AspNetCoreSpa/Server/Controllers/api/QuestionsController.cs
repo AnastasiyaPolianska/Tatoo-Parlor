@@ -9,6 +9,7 @@ using AspNetCoreSpa.DAL;
 using AspNetCoreSpa.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -30,11 +31,10 @@ namespace AspNetCoreSpa.Server.Controllers.api
         [HttpGet]
         public IEnumerable<Question> GetQuestions()
         {
-            var test = _context.Questions.ToList();
-            return _context.Questions;
+            return _context.Questions.Where(x => x.Answer == "").ToList();
         }
 
-        // GET: api/Questions
+        // GET: api/GetQuestionsForUser
         [HttpGet("GetQuestionsForUser")]
         public async Task<IEnumerable<Question>> GetQuestionsForUserAsync()
         {
@@ -112,6 +112,23 @@ namespace AspNetCoreSpa.Server.Controllers.api
             return CreatedAtAction("GetQuestion", new { id = question.Id }, question);
         }
 
+        // POST: api/Questions/answer
+        [HttpPost("answer")]
+        public async Task<IActionResult> AnswerQuestion([FromBody] AddAnswerModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var toChange = _context.Questions.FirstOrDefault(x => x.Id == model.id);
+            toChange.Answer = model.answer;
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
         // DELETE: api/Questions/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuestion([FromRoute] int id)
@@ -137,5 +154,13 @@ namespace AspNetCoreSpa.Server.Controllers.api
         {
             return _context.Questions.Any(e => e.Id == id);
         }
+    }
+
+    public class AddAnswerModel
+    {
+        [Required]
+        public string answer { get; set; }
+        [Required]
+        public int id { get; set; }
     }
 }

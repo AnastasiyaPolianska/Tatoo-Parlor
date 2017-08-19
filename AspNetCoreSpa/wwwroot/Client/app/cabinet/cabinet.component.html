@@ -200,3 +200,10 @@
         </button>
     </div>
 </div>
+<div *ngIf="_authService.IsAdmin" class="tatooarticle text plaintext" style="width:100%">
+    <p class="margin2" style="width: 100%; margin-bottom: 0px">
+        <label class="paragraphhead headchangewidth"></label>
+        <label class="paragraphtext" style="width:30%"></label>
+        <label class="floating changeinfo" title={{TitleLinkAdminPage}} (click)="MoveToAdminPage()"> {{AdminPage}} </label>
+    </p>
+</div>

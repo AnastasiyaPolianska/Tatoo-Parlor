@@ -6,7 +6,7 @@ import { LocalStorage, SessionStorage } from 'h5webstorage';
 import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()
-export  class AuthService {
+export class AuthService {
 
     private _signUpUrl = 'api/Account/register';
     private _logInUrl = 'api/Account/login';
@@ -21,6 +21,7 @@ export  class AuthService {
 
     public IsLoggedIn: boolean = false;
     public CurrentUserEmail: string;
+    public IsAdmin: boolean = false;
 
     constructor(private _http: Http, private localStorage: LocalStorage, private sessionStorage: SessionStorage) { }
 

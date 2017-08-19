@@ -1,4 +1,86 @@
-﻿<div class="questions-page">
+﻿<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 17px;
+        margin-top: 0.5%;
+    }
+
+        .switch input {
+            display: none;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #808080;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 13px;
+            width: 13px;
+            left: 2px;
+            bottom: 2px;
+            background-color: #ffffff;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input:checked + .slider {
+        background-color: #3f3e3e;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #3f3e3e;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(13px);
+        -ms-transform: translateX(13px);
+        transform: translateX(13px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+    @media only screen and (min-width: 800px) {
+        .switch {
+            width: 60px;
+            height: 34px;
+            margin-top: 0%;
+        }
+
+        .slider:before {
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+    }
+</style>
+
+<div class="questions-page">
     <p-growl [value]="Msgs" id="growl"></p-growl>
 
     <div class="tatooarticle text">
@@ -41,19 +123,23 @@
         </div>
     </div>
 
-    <br>
     <div class='panel panel-primary tatoodiv' style="width:98%">
         <div class='tatoopanel panel-heading ' id="tatoopanel">
             {{TableName}}
+            <label *ngIf="_authService.IsAdmin" class="switch" style="float:right" title={{TitleLableForCategory}}>
+                <input type="checkbox" (change)="OnChange()" [(ngModel)]="Checked">
+                <span class="slider round"></span>
+            </label>
+            <span *ngIf="_authService.IsAdmin" style="float:right; margin-right: 1%">{{LableForCategory}} </span>
         </div>
-        <div class='panel-body'>
 
+        <div *ngIf="!isAdminPage" class='panel-body'>
             <div class='table-responsive'>
                 <table class='table tatootable'
                        *ngIf='Questions && Questions.length'>
                     <thead>
                         <tr>
-                            <th class="smallColumn">{{NumName}}</th>
+                            <th class="smallColumn">#</th>
                             <th class="smallColumn">{{CategoryName}}</th>
                             <th class="smallColumn">{{ThemeName}}</th>
                             <th class="bigColumn">{{QuestionName}}</th>
@@ -67,6 +153,45 @@
                             <td class="smallColumn">{{ question.theme}}</td>
                             <td class="bigColumn">{{ question.questionName}}</td>
                             <td class="bigColumn" [ngClass]="{'tatooerror': question.answer=='', 'tatoogood': question.answer!=''}">{{ Answer(question)}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div *ngIf="isAdminPage" class='panel-body'>
+            <div class='table-responsive'>
+                <table class='table tatootable'
+                       *ngIf='AllQuestions && AllQuestions.length'>
+                    <thead>
+                        <tr>
+                            <th class="smallColumn">#</th>
+                            <th class="smallColumn">{{CategoryName}}</th>
+                            <th class="smallColumn">{{ThemeName}}</th>
+                            <th class="bigColumn">{{QuestionName}}</th>
+                            <th class="bigColumn">{{AnswerName}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let question of AllQuestions; let i=index'>
+                            <td class="smallColumn">{{i+1}}</td>
+                            <td class="smallColumn">{{ question.category }}</td>
+                            <td class="smallColumn">{{ question.theme}}</td>
+                            <td class="bigColumn">{{ question.questionName}}</td>
+                            <td class="bigColumn">
+                                <div>
+                                    <textarea rows="5" type='text' class='newtatooinput marginbottom' [ngClass]="{'tatooinputerror': AnswersOK[i]==false}" placeholder="{{AnswerPlaceholder}}" [(ngModel)]='question.answer'></textarea>
+                                </div>
+                                <div class="column">
+                                    <label *ngIf="AnswersOK[i]" class='tatootool'>{{ToolAnswer}}</label>
+                                    <label *ngIf="!AnswersOK[i]" class='tatootoolerror'>{{ToolErrorAnswer}}</label>
+                                    <div>
+                                        <button title={{TitleSendAnswer}} class='btn btn-default tatoobutton' style="float: right" (click)="AnswerQuestion(question.id)">
+                                            <i class='glyphicon glyphicon-envelope'></i> {{ButtonName}}
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
