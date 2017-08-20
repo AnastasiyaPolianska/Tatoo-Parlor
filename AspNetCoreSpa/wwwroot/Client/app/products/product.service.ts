@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
@@ -27,6 +27,17 @@ export class ProductService {
             .map((response: Response) => response.json())
             .do(data => console.log(data))
             .catch(this.handleError);
+    }
+
+    deleteProduct(idProduct: number): Observable<any> {
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this._http.post(this._productUrl + "delete", idProduct, { headers: headers });
+    }
+
+    addProduct(model: IProduct): Observable<any> {
+        return this._http.post(this._productUrl, model);
     }
 
     private handleError(error: Response) {

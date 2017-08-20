@@ -102,8 +102,13 @@
                             <td *ngIf="IsCart">
                                 <spinnerNum [IncomeVal]="product.amount" (IncreaseAmount)="IncreasingAmount(product)" (DecreaseAmount)="DecreasingAmount(product)"></spinnerNum>
                             </td>
-                            <td *ngIf="IsCart" class="remove-row">
+                            <td *ngIf="IsCart" class="remove-row-cart">
                                 <button title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style="float: right">
+                                    <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}
+                                </button>
+                            </td>
+                            <td *ngIf="_authService.IsAdmin && !IsCart" class="remove-row">
+                                <button title={{TitleRemoveAtAll}} class='btn btn-default tatoobutton' (click)='ShowDialogRemoveAtAll(content, product.id)' style="float: right">
                                     <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}
                                 </button>
                             </td>
@@ -150,8 +155,11 @@
             <button *ngIf="Buying" class="btn btn-secondary tatoobutton" (click)="BuyAll(); c('Close click')">
                 <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}
             </button>
-            <button *ngIf="!Buying" class="btn btn-secondary tatoobutton" (click)="DeleteAll(); c('Close click')">
+            <button *ngIf="Removing" class="btn btn-secondary tatoobutton" (click)="DeleteAll(); c('Close click')">
                 <i class="fa fa-trash" aria-hidden="true"></i> {{Delete}}
+            </button>
+            <button *ngIf="Deleting" class="btn btn-secondary tatoobutton" (click)="RemoveProductAtAll(); c('Close click')">
+                <i class="fa fa-trash" aria-hidden="true"></i> {{DeleteAtAlll}}
             </button>
         </div>
     </ng-template>

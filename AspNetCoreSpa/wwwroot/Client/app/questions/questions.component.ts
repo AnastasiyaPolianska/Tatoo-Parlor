@@ -34,11 +34,11 @@ export class QuestionsComponent implements OnInit {
         "Other"];
 
     public ThemeOK: boolean = true;
-    public ToolTheme: string = "*Use from 10 to 200 symbols.";
+    public ToolTheme: string = "*Use from 10 to 200 characters.";
     public ToolErrorTheme: string;
 
     public MessageOK: boolean = true;
-    public ToolMessage: string = "*Use from 50 to 300 symbols.";
+    public ToolMessage: string = "*Use from 50 to 300 characters.";
     public ToolErrorMessage: string;
 
     public Num: number = 0;
@@ -69,8 +69,8 @@ export class QuestionsComponent implements OnInit {
     public AnswersOK: boolean[];
     public AllQuestionsLength: number;
     public AnswerPlaceholder: string = "Enter your answer...";
-    public ToolAnswer: string = "*Use from 50 to 300 symbols.";
-    public ToolErrorAnswer: string = "*Invalid length: use from 50 to 300 symbols.";
+    public ToolAnswer: string = "*Use from 50 to 300 characters.";
+    public ToolErrorAnswer: string = "*Invalid length: use from 50 to 300 characters.";
 
     /*Sending the question to store in database*/
     SendQuestion(): void {

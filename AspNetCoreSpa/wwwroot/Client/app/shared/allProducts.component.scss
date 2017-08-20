@@ -80,8 +80,12 @@
     }
 
     @media only screen and (min-width: 800px) {
-        .remove-row {
+        .remove-row-cart {
             padding-right: 0%;
+        }
+
+        .remove-row {
+            padding-right: 1%;
         }
 
         .tatooerror {

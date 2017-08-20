@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "7dfc3874403220853b8d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fd7fd40ae58b268d15cd"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1792,6 +1792,99 @@ module.exports = (__webpack_require__(8))(0)
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(3);
+var core_1 = __webpack_require__(0);
+var Observable_1 = __webpack_require__(9);
+var h5webstorage_1 = __webpack_require__(18);
+var http_1 = __webpack_require__(14);
+var AuthService = (function () {
+    function AuthService(_http, localStorage, sessionStorage) {
+        this._http = _http;
+        this.localStorage = localStorage;
+        this.sessionStorage = sessionStorage;
+        this._signUpUrl = 'api/Account/register';
+        this._logInUrl = 'api/Account/login';
+        this._logOutUrl = 'api/Account/logout';
+        this._changeFirstNameUrl = 'api/Profile/changefirstname';
+        this._changeLastNameUrl = 'api/Profile/changelastname';
+        this._changeEmailUrl = 'api/Profile/changeemail';
+        this._changePasswordUrl = 'api/Profile/changepassword';
+        this._idUrl = 'api/Profile/id';
+        this._userUrl = 'api/Profile/username';
+        this._userExist = 'api/Profile/userexist';
+        this.IsLoggedIn = false;
+        this.IsAdmin = false;
+    }
+    AuthService.prototype.signUp = function (model) {
+        return this._http.post(this._signUpUrl, model).catch(function (err) {
+            console.error(err);
+            return Observable_1.Observable.throw(err.json()[0] || ' error');
+        });
+    };
+    AuthService.prototype.logIn = function (model) {
+        return this._http.post(this._logInUrl, model)
+            .catch(function (err) {
+            console.error(err);
+            return Observable_1.Observable.throw(err.json()[0] || ' error');
+        });
+    };
+    AuthService.prototype.getId = function () {
+        return this._http.get(this._idUrl).map(function (response) { return response.json(); });
+    };
+    AuthService.prototype.getUser = function () {
+        return this._http.get(this._userUrl).map(function (response) { return response.json(); });
+    };
+    AuthService.prototype.logOut = function () {
+        this.IsLoggedIn = false;
+        this.CurrentUserEmail = "";
+        return this._http.post(this._logOutUrl, {});
+    };
+    AuthService.prototype.changeFirstName = function (newFirstName) {
+        return this._http.get(this._changeFirstNameUrl + "/" + newFirstName);
+    };
+    AuthService.prototype.changeLastName = function (newLastName) {
+        return this._http.get(this._changeLastNameUrl + "/" + newLastName);
+    };
+    AuthService.prototype.changeEmail = function (newEmail, password) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post(this._changeEmailUrl, { newEmail: newEmail, password: password }, { headers: headers })
+            .map(function (response) { console.log(response); return response._body; })
+            .catch(function (err) {
+            console.error(err);
+            return Observable_1.Observable.throw(err.json()[0] || ' error');
+        });
+    };
+    AuthService.prototype.changePassword = function (newPasword, password, emailToFind) {
+        if (emailToFind === void 0) { emailToFind = ""; }
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post(this._changePasswordUrl, { newPassword: newPasword, password: password, emailToFind: emailToFind }, { headers: headers })
+            .map(function (response) { console.log(response); return response._body; })
+            .catch(function (err) {
+            console.error(err);
+            return Observable_1.Observable.throw(err.json()[0] || ' error');
+        });
+    };
+    AuthService.prototype.userExist = function (email) {
+        return this._http.get(this._userExist + "/" + email);
+    };
+    return AuthService;
+}());
+AuthService = tslib_1.__decorate([
+    core_1.Injectable(),
+    tslib_1.__metadata("design:paramtypes", [http_1.Http, h5webstorage_1.LocalStorage, h5webstorage_1.SessionStorage])
+], AuthService);
+exports.AuthService = AuthService;
+
+
+/***/ }),
+/* 11 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1922,7 +2015,7 @@ GoogleMapsAPIWrapper.ctorParameters = function () { return [
 //# sourceMappingURL=google-maps-api-wrapper.js.map
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2056,99 +2149,6 @@ exports.ButtonModule = ButtonModule;
 //# sourceMappingURL=button.js.map
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(3);
-var core_1 = __webpack_require__(0);
-var Observable_1 = __webpack_require__(9);
-var h5webstorage_1 = __webpack_require__(18);
-var http_1 = __webpack_require__(14);
-var AuthService = (function () {
-    function AuthService(_http, localStorage, sessionStorage) {
-        this._http = _http;
-        this.localStorage = localStorage;
-        this.sessionStorage = sessionStorage;
-        this._signUpUrl = 'api/Account/register';
-        this._logInUrl = 'api/Account/login';
-        this._logOutUrl = 'api/Account/logout';
-        this._changeFirstNameUrl = 'api/Profile/changefirstname';
-        this._changeLastNameUrl = 'api/Profile/changelastname';
-        this._changeEmailUrl = 'api/Profile/changeemail';
-        this._changePasswordUrl = 'api/Profile/changepassword';
-        this._idUrl = 'api/Profile/id';
-        this._userUrl = 'api/Profile/username';
-        this._userExist = 'api/Profile/userexist';
-        this.IsLoggedIn = false;
-        this.IsAdmin = false;
-    }
-    AuthService.prototype.signUp = function (model) {
-        return this._http.post(this._signUpUrl, model).catch(function (err) {
-            console.error(err);
-            return Observable_1.Observable.throw(err.json()[0] || ' error');
-        });
-    };
-    AuthService.prototype.logIn = function (model) {
-        return this._http.post(this._logInUrl, model)
-            .catch(function (err) {
-            console.error(err);
-            return Observable_1.Observable.throw(err.json()[0] || ' error');
-        });
-    };
-    AuthService.prototype.getId = function () {
-        return this._http.get(this._idUrl).map(function (response) { return response.json(); });
-    };
-    AuthService.prototype.getUser = function () {
-        return this._http.get(this._userUrl).map(function (response) { return response.json(); });
-    };
-    AuthService.prototype.logOut = function () {
-        this.IsLoggedIn = false;
-        this.CurrentUserEmail = "";
-        return this._http.post(this._logOutUrl, {});
-    };
-    AuthService.prototype.changeFirstName = function (newFirstName) {
-        return this._http.get(this._changeFirstNameUrl + "/" + newFirstName);
-    };
-    AuthService.prototype.changeLastName = function (newLastName) {
-        return this._http.get(this._changeLastNameUrl + "/" + newLastName);
-    };
-    AuthService.prototype.changeEmail = function (newEmail, password) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        return this._http.post(this._changeEmailUrl, { newEmail: newEmail, password: password }, { headers: headers })
-            .map(function (response) { console.log(response); return response._body; })
-            .catch(function (err) {
-            console.error(err);
-            return Observable_1.Observable.throw(err.json()[0] || ' error');
-        });
-    };
-    AuthService.prototype.changePassword = function (newPasword, password, emailToFind) {
-        if (emailToFind === void 0) { emailToFind = ""; }
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        return this._http.post(this._changePasswordUrl, { newPassword: newPasword, password: password, emailToFind: emailToFind }, { headers: headers })
-            .map(function (response) { console.log(response); return response._body; })
-            .catch(function (err) {
-            console.error(err);
-            return Observable_1.Observable.throw(err.json()[0] || ' error');
-        });
-    };
-    AuthService.prototype.userExist = function (email) {
-        return this._http.get(this._userExist + "/" + email);
-    };
-    return AuthService;
-}());
-AuthService = tslib_1.__decorate([
-    core_1.Injectable(),
-    tslib_1.__metadata("design:paramtypes", [http_1.Http, h5webstorage_1.LocalStorage, h5webstorage_1.SessionStorage])
-], AuthService);
-exports.AuthService = AuthService;
-
-
-/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2239,7 +2239,7 @@ __export(__webpack_require__(171));
 __export(__webpack_require__(172));
 __export(__webpack_require__(173));
 __export(__webpack_require__(174));
-__export(__webpack_require__(11));
+__export(__webpack_require__(12));
 __export(__webpack_require__(176));
 __export(__webpack_require__(175));
 __export(__webpack_require__(177));
@@ -2276,7 +2276,7 @@ __export(__webpack_require__(62));
 __export(__webpack_require__(206));
 __export(__webpack_require__(207));
 __export(__webpack_require__(208));
-__export(__webpack_require__(22));
+__export(__webpack_require__(23));
 __export(__webpack_require__(209));
 __export(__webpack_require__(210));
 __export(__webpack_require__(211));
@@ -2311,7 +2311,7 @@ __export(__webpack_require__(231));
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarkerManager; });
 
 
@@ -2434,7 +2434,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var basestorage_1 = __webpack_require__(34);
+var basestorage_1 = __webpack_require__(35);
 var localstorage_1 = __webpack_require__(53);
 exports.LocalStorage = localstorage_1.LocalStorage;
 var sessionstorage_1 = __webpack_require__(54);
@@ -2563,11 +2563,66 @@ exports.CartService = CartService;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(14);
+var Observable_1 = __webpack_require__(9);
+__webpack_require__(42);
+__webpack_require__(41);
+__webpack_require__(38);
+__webpack_require__(40);
+var ProductService = (function () {
+    function ProductService(_http) {
+        this._http = _http;
+        this._productUrl = 'api/Products/';
+    }
+    ProductService.prototype.getProducts = function () {
+        return this._http.get(this._productUrl)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
+            .catch(this.handleError);
+    };
+    ProductService.prototype.getProduct = function (id) {
+        return this._http.get(this._productUrl + id)
+            .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log(data); })
+            .catch(this.handleError);
+    };
+    ProductService.prototype.deleteProduct = function (idProduct) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this._http.post(this._productUrl + "delete", idProduct, { headers: headers });
+    };
+    ProductService.prototype.addProduct = function (model) {
+        return this._http.post(this._productUrl, model);
+    };
+    ProductService.prototype.handleError = function (error) {
+        // in a real world app, we may send the server to some remote logging infrastructure
+        // instead of just logging it to the console
+        console.error(error);
+        return Observable_1.Observable.throw(error.json().error || 'Server error');
+    };
+    return ProductService;
+}());
+ProductService = tslib_1.__decorate([
+    core_1.Injectable(),
+    tslib_1.__metadata("design:paramtypes", [http_1.Http])
+], ProductService);
+exports.ProductService = ProductService;
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = __webpack_require__(3);
+var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var forms_1 = __webpack_require__(6);
 var router_1 = __webpack_require__(4);
 var ng_bootstrap_1 = __webpack_require__(39);
-var auth_service_1 = __webpack_require__(12);
+var auth_service_1 = __webpack_require__(10);
 var product_filter_pipe_1 = __webpack_require__(158);
 var animations_1 = __webpack_require__(73);
 var primeng_1 = __webpack_require__(15);
@@ -2598,7 +2653,7 @@ exports.SharedModule = SharedModule;
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2641,7 +2696,7 @@ var PageScrollUtilService = (function () {
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2820,7 +2875,7 @@ exports.PaginatorModule = PaginatorModule;
 //# sourceMappingURL=paginator.js.map
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2909,18 +2964,18 @@ exports.ObjectUtils = ObjectUtils;
 //# sourceMappingURL=ObjectUtils.js.map
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(8))(70)
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_info_window_manager__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_info_window_manager__ = __webpack_require__(30);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmInfoWindow; });
 
 
@@ -3043,7 +3098,7 @@ AgmInfoWindow.ctorParameters = function () { return [
 //# sourceMappingURL=info-window.js.map
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3086,14 +3141,14 @@ AgmPolylinePoint.propDecorators = {
 //# sourceMappingURL=polyline-point.js.map
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CircleManager; });
 
 
@@ -3195,14 +3250,14 @@ CircleManager.ctorParameters = function () { return [
 //# sourceMappingURL=circle-manager.js.map
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataLayerManager; });
 
 
@@ -3284,14 +3339,14 @@ DataLayerManager.ctorParameters = function () { return [
 //# sourceMappingURL=data-layer-manager.js.map
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__marker_manager__ = __webpack_require__(16);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InfoWindowManager; });
 
@@ -3384,14 +3439,14 @@ InfoWindowManager.ctorParameters = function () { return [
 //# sourceMappingURL=info-window-manager.js.map
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return KmlLayerManager; });
 
 
@@ -3457,14 +3512,14 @@ KmlLayerManager.ctorParameters = function () { return [
 //# sourceMappingURL=kml-layer-manager.js.map
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PolygonManager; });
 
 
@@ -3538,14 +3593,14 @@ PolygonManager.ctorParameters = function () { return [
 //# sourceMappingURL=polygon-manager.js.map
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__google_maps_api_wrapper__ = __webpack_require__(11);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PolylineManager; });
 
 
@@ -3625,7 +3680,7 @@ PolylineManager.ctorParameters = function () { return [
 //# sourceMappingURL=polyline-manager.js.map
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3745,7 +3800,7 @@ LazyMapsAPILoader.ctorParameters = function () { return [
 //# sourceMappingURL=lazy-maps-api-loader.js.map
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3950,53 +4005,6 @@ exports.BaseStorage = BaseStorage;
 
 
 /***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var tslib_1 = __webpack_require__(3);
-var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(14);
-var Observable_1 = __webpack_require__(9);
-__webpack_require__(42);
-__webpack_require__(41);
-__webpack_require__(38);
-__webpack_require__(40);
-var ProductService = (function () {
-    function ProductService(_http) {
-        this._http = _http;
-        this._productUrl = 'api/Products/';
-    }
-    ProductService.prototype.getProducts = function () {
-        return this._http.get(this._productUrl)
-            .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
-            .catch(this.handleError);
-    };
-    ProductService.prototype.getProduct = function (id) {
-        return this._http.get(this._productUrl + id)
-            .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log(data); })
-            .catch(this.handleError);
-    };
-    ProductService.prototype.handleError = function (error) {
-        // in a real world app, we may send the server to some remote logging infrastructure
-        // instead of just logging it to the console
-        console.error(error);
-        return Observable_1.Observable.throw(error.json().error || 'Server error');
-    };
-    return ProductService;
-}());
-ProductService = tslib_1.__decorate([
-    core_1.Injectable(),
-    tslib_1.__metadata("design:paramtypes", [http_1.Http])
-], ProductService);
-exports.ProductService = ProductService;
-
-
-/***/ }),
 /* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -4119,7 +4127,7 @@ PageScrollConfig._easingLogic = {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng2_page_scroll_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_util_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_util_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageScrollService; });
 
 
@@ -4375,7 +4383,7 @@ module.exports = polyfills_lib;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__ = __webpack_require__(28);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmCircle; });
 
 
@@ -4580,7 +4588,7 @@ AgmCircle.ctorParameters = function () { return [
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_data_layer_manager__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_data_layer_manager__ = __webpack_require__(29);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmDataLayer; });
 
 
@@ -4855,7 +4863,7 @@ AgmDataLayer.ctorParameters = function () { return [
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_kml_layer_manager__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_kml_layer_manager__ = __webpack_require__(31);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmKmlLayer; });
 
 
@@ -4978,14 +4986,14 @@ AgmKmlLayer.ctorParameters = function () { return [
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_google_maps_api_wrapper__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_circle_manager__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_managers_info_window_manager__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_google_maps_api_wrapper__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_circle_manager__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_managers_info_window_manager__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_managers_marker_manager__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_managers_polygon_manager__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_managers_polyline_manager__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_managers_kml_layer_manager__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_managers_data_layer_manager__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_managers_polygon_manager__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_managers_polyline_manager__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_managers_kml_layer_manager__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_managers_data_layer_manager__ = __webpack_require__(29);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmMap; });
 
 
@@ -5370,7 +5378,7 @@ AgmMap.ctorParameters = function () { return [
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_marker_manager__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_window__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__info_window__ = __webpack_require__(26);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmMarker; });
 
 
@@ -5563,7 +5571,7 @@ AgmMarker.propDecorators = {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_polygon_manager__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_polygon_manager__ = __webpack_require__(32);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmPolygon; });
 
 
@@ -5797,8 +5805,8 @@ AgmPolygon.ctorParameters = function () { return [
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_polyline_manager__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__polyline_point__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_polyline_manager__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__polyline_point__ = __webpack_require__(27);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgmPolyline; });
 
 
@@ -6057,7 +6065,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = __webpack_require__(0);
-var basestorage_1 = __webpack_require__(34);
+var basestorage_1 = __webpack_require__(35);
 /**
  * Token used to inject an object as the storage backend of the SessionStorage object. By default, the storage
  * backend is the native localStorage object but can be substituted to allow for testing or customized storage
@@ -6110,7 +6118,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 var core_1 = __webpack_require__(0);
-var basestorage_1 = __webpack_require__(34);
+var basestorage_1 = __webpack_require__(35);
 /**
  * Token used to inject an object as the storage backend of the SessionStorage object. By default, the storage
  * backend is the native sessionStorage object but can be substituted to allow for testing or customized storage
@@ -6446,7 +6454,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollConfig", function() { return __WEBPACK_IMPORTED_MODULE_2__src_ng2_page_scroll_config__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_ng2_page_scroll_instance__ = __webpack_require__(59);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollInstance", function() { return __WEBPACK_IMPORTED_MODULE_3__src_ng2_page_scroll_instance__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_ng2_page_scroll_util_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_ng2_page_scroll_util_service__ = __webpack_require__(22);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "PageScrollUtilService", function() { return __WEBPACK_IMPORTED_MODULE_4__src_ng2_page_scroll_util_service__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_ng2_page_scroll_module__ = __webpack_require__(170);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Ng2PageScrollModule", function() { return __WEBPACK_IMPORTED_MODULE_5__src_ng2_page_scroll_module__["a"]; });
@@ -6465,7 +6473,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ng2_page_scroll_config__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_util_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng2_page_scroll_util_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageScrollInstance; });
 /**
  * Created by sebastianfuss on 29.08.16.
@@ -6960,10 +6968,10 @@ var PageScrollInstance = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng2_page_scroll_service__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ng2_page_scroll_instance__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ng2_page_scroll_util_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ng2_page_scroll_util_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageScroll; });
 
 
@@ -7572,14 +7580,14 @@ if (module) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_map__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_circle__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_info_window__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_info_window__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__directives_marker__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives_polygon__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__directives_polyline__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_polyline_point__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_polyline_point__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_kml_layer__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_data_layer__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_lazy_maps_api_loader__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_maps_api_loader_lazy_maps_api_loader__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_maps_api_loader_maps_api_loader__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils_browser_globals__ = __webpack_require__(51);
 /* unused harmony export coreDirectives */
@@ -7647,7 +7655,7 @@ AgmCoreModule.ctorParameters = function () { return []; };
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__directives_map__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__directives_circle__ = __webpack_require__(44);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__directives_circle__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_info_window__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__directives_info_window__ = __webpack_require__(26);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__directives_info_window__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__directives_kml_layer__ = __webpack_require__(46);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__directives_kml_layer__["a"]; });
@@ -7659,7 +7667,7 @@ AgmCoreModule.ctorParameters = function () { return []; };
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_6__directives_polygon__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__directives_polyline__ = __webpack_require__(50);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_7__directives_polyline__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_polyline_point__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__directives_polyline_point__ = __webpack_require__(27);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_8__directives_polyline_point__["a"]; });
 
 
@@ -7718,23 +7726,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_google_maps_api_wrapper__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_google_maps_api_wrapper__ = __webpack_require__(11);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__services_google_maps_api_wrapper__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__ = __webpack_require__(28);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__services_managers_circle_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_info_window_manager__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_managers_info_window_manager__ = __webpack_require__(30);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__services_managers_info_window_manager__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_managers_marker_manager__ = __webpack_require__(16);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__services_managers_marker_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_managers_polygon_manager__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_managers_polygon_manager__ = __webpack_require__(32);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_4__services_managers_polygon_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_managers_polyline_manager__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_managers_polyline_manager__ = __webpack_require__(33);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_5__services_managers_polyline_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_managers_kml_layer_manager__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_managers_kml_layer_manager__ = __webpack_require__(31);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_6__services_managers_kml_layer_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_managers_data_layer_manager__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_managers_data_layer_manager__ = __webpack_require__(29);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_7__services_managers_data_layer_manager__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__ = __webpack_require__(34);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__["c"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_8__services_maps_api_loader_lazy_maps_api_loader__["a"]; });
@@ -10325,7 +10333,7 @@ function supportsWebAnimations() {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations_browser__ = __webpack_require__(72);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserAnimationsModule", function() { return BrowserAnimationsModule; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoopAnimationsModule", function() { return NoopAnimationsModule; });
@@ -13111,7 +13119,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "/*text styles*/\n.text {\n  font-family: 'TEMPUS SANS ITC';\n  font-weight: bold;\n  color: rgba(41, 43, 41, 0.7); }\n\n.plaintext {\n  font-size: 4vmin; }\n\n.heading {\n  font-size: 7vmin;\n  color: rgba(41, 43, 41, 0.9); }\n\n/*styles*/\n.tatooarticle {\n  width: 100%;\n  background-color: rgba(255, 255, 255, 0.4); }\n\n.margin2 {\n  margin-left: 3%;\n  margin-right: 3%; }\n", ""]);
+exports.push([module.i, ".product-list-page {\n  /*text styles*/\n  /*styles*/ }\n  .product-list-page .text {\n    font-family: 'TEMPUS SANS ITC';\n    font-weight: bold;\n    color: rgba(41, 43, 41, 0.7); }\n  .product-list-page .plaintext {\n    font-size: 4vmin; }\n  .product-list-page .heading {\n    font-size: 7vmin;\n    color: rgba(41, 43, 41, 0.9); }\n  .product-list-page .tatoolable {\n    color: #000000;\n    min-width: 39%;\n    max-width: 39%; }\n  .product-list-page .tatooinput {\n    color: #000000;\n    min-width: 58%;\n    max-width: 58%;\n    margin-right: 1%; }\n  .product-list-page .tatooinputval {\n    color: #000000;\n    min-width: 38%;\n    max-width: 38%;\n    margin-right: 1%;\n    margin-top: 0.5%; }\n  .product-list-page .marginbottom {\n    margin-bottom: 1%; }\n  .product-list-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    float: right;\n    color: white; }\n  .product-list-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5; }\n  .product-list-page .tatoobuttonval {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    float: right;\n    color: white;\n    width: 8.7%;\n    height: 35px; }\n  .product-list-page .tatoobuttonval:hover {\n    background-color: #464451;\n    border-color: #D5D5D5; }\n  .product-list-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .product-list-page .tatoodiv {\n    width: 98%;\n    margin: 1%;\n    border-color: #000000;\n    font-family: 'comic sans ms'; }\n  .product-list-page .tatooarticle {\n    width: 100%;\n    background-color: rgba(255, 255, 255, 0.4); }\n  .product-list-page .margin2 {\n    margin-left: 3%;\n    margin-right: 3%; }\n  .product-list-page .tatootool {\n    font-size: 2vmin;\n    float: right;\n    color: rgba(41, 43, 41, 0.9);\n    margin-right: 1%; }\n  .product-list-page .tatootoolerror {\n    color: red;\n    font-size: 2vmin;\n    float: right;\n    margin-right: 1%; }\n  .product-list-page .tatooinputerror {\n    border-color: red;\n    background-color: #F6D9D9;\n    border-width: 1px;\n    border-style: solid; }\n  @media only screen and (min-width: 800px) {\n    .product-list-page .tatoodiv {\n      width: 40%; }\n    .product-list-page .tatootool {\n      font-size: 1.5vmin; }\n    .product-list-page .tatootoolerror {\n      font-size: 1.5vmin; } }\n", ""]);
 
 // exports
 
@@ -13181,7 +13189,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, ".cart-page {\n  /*styles*/\n  /*links*/\n  /*stars*/ }\n  .cart-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .cart-page .tatootable {\n    color: #000000; }\n  .cart-page .tatoodiv {\n    border-color: #000000;\n    font-family: 'comic sans ms';\n    color: #000000;\n    margin: 1%; }\n  .cart-page a {\n    color: #000000;\n    text-decoration: underline; }\n  .cart-page a:hover {\n    color: rgba(41, 43, 41, 0.8);\n    text-decoration: underline; }\n  .cart-page .star {\n    position: relative;\n    display: inline-block;\n    font-size: 2rem;\n    color: white;\n    border-color: black; }\n  .cart-page .full {\n    color: black; }\n  .cart-page .half {\n    position: absolute;\n    display: inline-block;\n    overflow: hidden;\n    color: black; }\n  .cart-page .tatooerror {\n    color: red;\n    font-size: 3.5vmin; }\n  .cart-page .backerror {\n    background-color: #F6D9D9; }\n  .cart-page .tatoogood {\n    color: #137F25;\n    font-size: 3.5vmin; }\n  .cart-page .backgood {\n    background-color: #C7F9CF; }\n  @media only screen and (min-width: 800px) {\n    .cart-page .remove-row {\n      padding-right: 0%; }\n    .cart-page .tatooerror {\n      font-size: 2vmin; }\n    .cart-page .tatoogood {\n      font-size: 2vmin; } }\n  .cart-page .flexer {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end; }\n", ""]);
+exports.push([module.i, ".cart-page {\n  /*styles*/\n  /*links*/\n  /*stars*/ }\n  .cart-page .tatoobutton {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page .tatoobutton:hover {\n    background-color: #464451;\n    border-color: #D5D5D5;\n    color: #FFFFFF;\n    text-decoration: none; }\n  .cart-page #tatoopanel {\n    background-color: #000000;\n    border-color: #FFFFFF;\n    border-color: #000000;\n    font-size: 3vmin; }\n  .cart-page .tatootable {\n    color: #000000; }\n  .cart-page .tatoodiv {\n    border-color: #000000;\n    font-family: 'comic sans ms';\n    color: #000000;\n    margin: 1%; }\n  .cart-page a {\n    color: #000000;\n    text-decoration: underline; }\n  .cart-page a:hover {\n    color: rgba(41, 43, 41, 0.8);\n    text-decoration: underline; }\n  .cart-page .star {\n    position: relative;\n    display: inline-block;\n    font-size: 2rem;\n    color: white;\n    border-color: black; }\n  .cart-page .full {\n    color: black; }\n  .cart-page .half {\n    position: absolute;\n    display: inline-block;\n    overflow: hidden;\n    color: black; }\n  .cart-page .tatooerror {\n    color: red;\n    font-size: 3.5vmin; }\n  .cart-page .backerror {\n    background-color: #F6D9D9; }\n  .cart-page .tatoogood {\n    color: #137F25;\n    font-size: 3.5vmin; }\n  .cart-page .backgood {\n    background-color: #C7F9CF; }\n  @media only screen and (min-width: 800px) {\n    .cart-page .remove-row-cart {\n      padding-right: 0%; }\n    .cart-page .remove-row {\n      padding-right: 1%; }\n    .cart-page .tatooerror {\n      font-size: 2vmin; }\n    .cart-page .tatoogood {\n      font-size: 2vmin; } }\n  .cart-page .flexer {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-end; }\n", ""]);
 
 // exports
 
@@ -13822,7 +13830,7 @@ module.exports = "<style>\r\n    .ui-growl-item-container {\r\n        margin-to
 /* 138 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"tatooarticle text\">\r\n    <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n    <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n</div>\r\n\r\n<br />\r\n\r\n<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"false\"> </all-products>";
+module.exports = "<p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n<div class=\"product-list-page\">\r\n    <div class=\"tatooarticle text\">\r\n        <p class=\"margin2 heading\"> {{ArticleTitle}} </p>\r\n        <p class=\"text plaintext margin2\"> {{ArticleText}} </p>\r\n    </div>\r\n\r\n    <br />\r\n\r\n    <all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]=\"false\"> </all-products>\r\n\r\n    <div *ngIf=\"_authService.IsAdmin\" class='panel panel-primary tatoodiv'>\r\n        <div class='panel-heading' id='tatoopanel'>\r\n            {{TitleProduct}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{AddName}}</label>\r\n                <input type='text' [ngClass]=\"{'tatooinputerror': NameOk==false}\" class='tatooinput marginbottom' placeholder=\"{{PlaceHolderName}}\" [(ngModel)]='Name' />\r\n                <label *ngIf=\"NameOk\" class='tatootool' style=\"margin-left: 39%\">{{ToolName}}</label>\r\n                <label *ngIf=\"!NameOk\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorName}}</label>\r\n            </div>\r\n\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{AddDescription}}</label>\r\n                <textarea rows=\"3\" type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': DescriptionOk==false}\" placeholder=\"{{PlaceHolderDescription}}\" [(ngModel)]='Description'></textarea>\r\n                <label *ngIf=\"DescriptionOk\" class='tatootool' style=\"margin-left: 39%\">{{ToolDescription}}</label>\r\n                <label *ngIf=\"!DescriptionOk\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorDescription}}</label>\r\n            </div>\r\n\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{AddUrl}}</label>\r\n                <input type='text' class='tatooinput marginbottom' [ngClass]=\"{'tatooinputerror': UrlOk==false}\" placeholder=\"{{PlaceHolderUrl}}\" [(ngModel)]='Url'/>\r\n                <label *ngIf=\"UrlOk\" class='tatootool' style=\"margin-left: 39%\">{{ToolUrl}}</label>\r\n                <label *ngIf=\"!UrlOk\" class='tatootoolerror' style=\"margin-left: 39%\">{{ToolErrorUrl}}</label>\r\n            </div>\r\n\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{AddPrice}}</label>\r\n                <button title={{TitleDecreasePrice}} class=\"btn btn-default tatoobuttonval\" (click)=\"DecreasePrice()\" style=\"margin-right: 1%\">\r\n                    <i class='glyphicon glyphicon-chevron-left'></i>\r\n                </button>\r\n                <input type='range' min=\"1\" max=\"10000\" step=\"1\" value=\"1\" class='tatooinputval marginbottom' [(ngModel)]='Price' />\r\n                <button title={{TitleIncreasePrice}} class=\"btn btn-default tatoobuttonval\" (click)=\"IncreasePrice()\" style=\"margin-left: 1%\">\r\n                    <i class='glyphicon glyphicon-chevron-right'></i>\r\n                </button>\r\n                <label class='tatootool' style=\"margin-left: 39%\">{{ProductPrice}}{{Price}}</label>\r\n            </div>\r\n\r\n            <div class='row'>\r\n                <label class='col-md-2 tatoolable'>{{AddQuantity}}</label>\r\n                <button title={{TitleDecreaseQuantity}} class=\"btn btn-default tatoobuttonval\" (click)=\"DecreaseQuantity()\" style=\"margin-right: 1%\">\r\n                    <i class='glyphicon glyphicon-chevron-left'></i>\r\n                </button>\r\n                <input type='range' min=\"1\" max=\"10000\" step=\"1\" value=\"1\" class='tatooinputval marginbottom' [(ngModel)]='Quantity' />\r\n                <button title={{TitleIncreaseQuantity}} class=\"btn btn-default tatoobuttonval\" (click)=\"IncreaseQuantity()\" style=\"margin-left: 1%\">\r\n                    <i class='glyphicon glyphicon-chevron-right'></i>\r\n                </button>\r\n                <label class='tatootool' style=\"margin-left: 39%\">{{ProductQuantity}}{{Quantity}}</label>\r\n            </div>\r\n\r\n            <button class=' btn btn-primary tatoobutton' (click)='AddProduct()' title={{TitleButtonAdd}}>\r\n                <i class='glyphicon glyphicon-ok'></i> {{Add}}\r\n            </button>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 139 */
@@ -13852,7 +13860,7 @@ module.exports = "  <style>\r\n  .carousel-inner > .item > img,\r\n  .carousel-i
 /* 143 */
 /***/ (function(module, exports) {
 
-module.exports = "<style>\r\n    .lalala {\r\n        display: flex;\r\n        flex-direction: row;\r\n        justify-content: space-between;\r\n        width: 100%;\r\n    }\r\n\r\n    .cross {\r\n        align-self: flex-end;\r\n    }\r\n\r\n    .header {\r\n        align-self: flex-start;\r\n    }\r\n\r\n    .modal-content {\r\n        margin-top: 100px !important;\r\n    }\r\n\r\n    /*styles*/\r\n    .tatoobutton {\r\n        background-color: #000000;\r\n        border-color: #FFFFFF;\r\n        color: #FFFFFF;\r\n        text-decoration: none;\r\n    }\r\n\r\n    .tatoobutton:hover {\r\n        background-color: #464451;\r\n        border-color: #D5D5D5;\r\n        color: #FFFFFF !important;\r\n        text-decoration: none;\r\n     }\r\n</style>\r\n\r\n<div class=\"cart-page\"> \r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <!--Template for stars-->\r\n    <ng-template #t let-fill=\"fill\">\r\n        <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n        <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n        <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n            <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n        </span>\r\n    </ng-template>\r\n\r\n    <!--Page-->\r\n    <div class='tatoodiv panel panel-primary'>\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{PageTitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <div class='col-md-2 tatootable'>{{Filter}}</div>\r\n                <div class='col-md-2 tatootable'>\r\n                    <input type='text' class='tatootable' [(ngModel)]='ListFilter' />\r\n                </div>\r\n            </div>\r\n\r\n            <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th>{{Image}}</th>\r\n                            <th>{{Name}}</th>\r\n                            <th>{{AmountLeft}}</th>\r\n                            <th>{{Price}}</th>\r\n                            <th>{{StarRating}}</th>\r\n                            <th *ngIf=\"IsCart\">{{Quantity}}</th>\r\n                            <th *ngIf=\"IsCart\"></th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody *ngIf='AllProducts && AllProducts.length'>\r\n                        <tr *ngFor='let product of AllProducts | productFilter:ListFilter' [ngClass]=\"{'backerror': product.amountLeft<1, 'backgood':product.isInCart}\">\r\n                            <td>\r\n                                <img [src]='product.imageUrl'\r\n                                     [title]='product.productName'\r\n                                     [style.width.px]='ImageWidth'\r\n                                     [style.margin.px]='ImageMargin'>\r\n                            </td>\r\n                            <td>\r\n                                <a title={{TitleDetails}} [routerLink]=\"['/product', product.id, CartToSend]\">\r\n                                    {{product.productName}}\r\n                                </a>\r\n                                <div *ngIf=\"product.amountLeft<1\" class=\"tatooerror\">\r\n                                    {{OutOfStock}}\r\n                                </div>\r\n                                <div *ngIf=\"product.isInCart\" class=\"tatoogood\">\r\n                                    {{AlreadyInCart}}\r\n                                </div>\r\n                            </td>\r\n                            <td>{{ product.amountLeft}}</td>\r\n                            <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>\r\n                            <td>\r\n                                <ngb-rating title={{product.starRating}} [(rate)]=\"product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\">\r\n                                <spinnerNum [IncomeVal]=\"product.amount\" (IncreaseAmount)=\"IncreasingAmount(product)\" (DecreaseAmount)=\"DecreasingAmount(product)\"></spinnerNum>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\" class=\"remove-row\">\r\n                                <button title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style=\"float: right\">\r\n                                    <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n                                </button>\r\n                            </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n\r\n            <div *ngIf=\"IsCart\" class='panel-footer' style=\"width:100%; padding-left: 0%; padding-right: 0%;\">\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleClear}} class='btn btn-default tatoobutton' (click)=\"ShowDialogClear(content)\">\r\n                    <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n                </button>\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleBuy}} class='btn btn-default tatoobutton' (click)='ShowDialogByuAll(content)' style=\"float: right; margin-bottom: 1%\">\r\n                    <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n                </button>\r\n                <div style=\"width: 100%\" class=\"flexer\">\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>\r\n                    </p>\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalAmount}}{{TotalAmount}}</label>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ng-template class=\"temp\" #content let-c=\"close\" let-d=\"dismiss\">\r\n        <div class=\"modal-header\">\r\n            <div class=\"lalala\">\r\n                <h4 class=\"modal-title header\">{{Header}}</h4>\r\n                <button type=\"button\" class=\"close cross\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n            <p>{{Content}}</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n            <button class=\"btn btn-secondary tatoobutton\" (click)=\"c('Close click')\">\r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n            </button>\r\n            <button *ngIf=\"Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"BuyAll(); c('Close click')\">\r\n                <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n            </button>\r\n            <button *ngIf=\"!Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"DeleteAll(); c('Close click')\">\r\n                <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n            </button>\r\n        </div>\r\n    </ng-template>\r\n</div>\r\n\r\n";
+module.exports = "<style>\r\n    .lalala {\r\n        display: flex;\r\n        flex-direction: row;\r\n        justify-content: space-between;\r\n        width: 100%;\r\n    }\r\n\r\n    .cross {\r\n        align-self: flex-end;\r\n    }\r\n\r\n    .header {\r\n        align-self: flex-start;\r\n    }\r\n\r\n    .modal-content {\r\n        margin-top: 100px !important;\r\n    }\r\n\r\n    /*styles*/\r\n    .tatoobutton {\r\n        background-color: #000000;\r\n        border-color: #FFFFFF;\r\n        color: #FFFFFF;\r\n        text-decoration: none;\r\n    }\r\n\r\n    .tatoobutton:hover {\r\n        background-color: #464451;\r\n        border-color: #D5D5D5;\r\n        color: #FFFFFF !important;\r\n        text-decoration: none;\r\n     }\r\n</style>\r\n\r\n<div class=\"cart-page\"> \r\n    <p-growl [value]=\"Msgs\" id=\"growl\"></p-growl>\r\n\r\n    <!--Template for stars-->\r\n    <ng-template #t let-fill=\"fill\">\r\n        <span *ngIf=\"fill === 100\" class=\"star full\">&#9733;</span>\r\n        <span *ngIf=\"fill === 0\" class=\"star\">&#9733;</span>\r\n        <span *ngIf=\"fill < 100 && fill > 0\" class=\"star\">\r\n            <span class=\"half\" [style.width.%]=\"fill\">&#9733;</span>&#9733;\r\n        </span>\r\n    </ng-template>\r\n\r\n    <!--Page-->\r\n    <div class='tatoodiv panel panel-primary'>\r\n        <div class='tatoopanel panel-heading ' id=\"tatoopanel\">\r\n            {{PageTitle}}\r\n        </div>\r\n\r\n        <div class='panel-body'>\r\n            <div class='row'>\r\n                <div class='col-md-2 tatootable'>{{Filter}}</div>\r\n                <div class='col-md-2 tatootable'>\r\n                    <input type='text' class='tatootable' [(ngModel)]='ListFilter' />\r\n                </div>\r\n            </div>\r\n\r\n            <div class='has-error' *ngIf='ErrorMessage'>{{ErrorMessage}}</div>\r\n\r\n            <div class='table-responsive'>\r\n                <table class='table tatootable'>\r\n                    <thead>\r\n                        <tr>\r\n                            <th>{{Image}}</th>\r\n                            <th>{{Name}}</th>\r\n                            <th>{{AmountLeft}}</th>\r\n                            <th>{{Price}}</th>\r\n                            <th>{{StarRating}}</th>\r\n                            <th *ngIf=\"IsCart\">{{Quantity}}</th>\r\n                            <th *ngIf=\"IsCart\"></th>\r\n                        </tr>\r\n                    </thead>\r\n                    <tbody *ngIf='AllProducts && AllProducts.length'>\r\n                        <tr *ngFor='let product of AllProducts | productFilter:ListFilter' [ngClass]=\"{'backerror': product.amountLeft<1, 'backgood':product.isInCart}\">\r\n                            <td>\r\n                                <img [src]='product.imageUrl'\r\n                                     [title]='product.productName'\r\n                                     [style.width.px]='ImageWidth'\r\n                                     [style.margin.px]='ImageMargin'>\r\n                            </td>\r\n                            <td>\r\n                                <a title={{TitleDetails}} [routerLink]=\"['/product', product.id, CartToSend]\">\r\n                                    {{product.productName}}\r\n                                </a>\r\n                                <div *ngIf=\"product.amountLeft<1\" class=\"tatooerror\">\r\n                                    {{OutOfStock}}\r\n                                </div>\r\n                                <div *ngIf=\"product.isInCart\" class=\"tatoogood\">\r\n                                    {{AlreadyInCart}}\r\n                                </div>\r\n                            </td>\r\n                            <td>{{ product.amountLeft}}</td>\r\n                            <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>\r\n                            <td>\r\n                                <ngb-rating title={{product.starRating}} [(rate)]=\"product.starRating\" [starTemplate]=\"t\" [readonly]=\"true\" max=\"5\"></ngb-rating>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\">\r\n                                <spinnerNum [IncomeVal]=\"product.amount\" (IncreaseAmount)=\"IncreasingAmount(product)\" (DecreaseAmount)=\"DecreasingAmount(product)\"></spinnerNum>\r\n                            </td>\r\n                            <td *ngIf=\"IsCart\" class=\"remove-row-cart\">\r\n                                <button title={{TitleRemove}} class='btn btn-default tatoobutton' (click)='RemoveProduct(product.id)' style=\"float: right\">\r\n                                    <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n                                </button>\r\n                            </td>\r\n                            <td *ngIf=\"_authService.IsAdmin && !IsCart\" class=\"remove-row\">\r\n                                <button title={{TitleRemoveAtAll}} class='btn btn-default tatoobutton' (click)='ShowDialogRemoveAtAll(content, product.id)' style=\"float: right\">\r\n                                    <i class='glyphicon glyphicon-remove-circle'></i> {{Remove}}\r\n                                </button>\r\n                            </td>\r\n                        </tr>\r\n                    </tbody>\r\n                </table>\r\n            </div>\r\n\r\n            <div *ngIf=\"IsCart\" class='panel-footer' style=\"width:100%; padding-left: 0%; padding-right: 0%;\">\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleClear}} class='btn btn-default tatoobutton' (click)=\"ShowDialogClear(content)\">\r\n                    <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n                </button>\r\n                <button [disabled]='!AllProducts || AllProducts.length==0' title={{TitleBuy}} class='btn btn-default tatoobutton' (click)='ShowDialogByuAll(content)' style=\"float: right; margin-bottom: 1%\">\r\n                    <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n                </button>\r\n                <div style=\"width: 100%\" class=\"flexer\">\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalPrice}}{{TotalPrice| currency:'USD':true:'1.2-2'}}</label>\r\n                    </p>\r\n                    <p>\r\n                        <label style=\"float: right\">{{LabelTotalAmount}}{{TotalAmount}}</label>\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ng-template class=\"temp\" #content let-c=\"close\" let-d=\"dismiss\">\r\n        <div class=\"modal-header\">\r\n            <div class=\"lalala\">\r\n                <h4 class=\"modal-title header\">{{Header}}</h4>\r\n                <button type=\"button\" class=\"close cross\" aria-label=\"Close\" (click)=\"d('Cross click')\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n            <p>{{Content}}</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n            <button class=\"btn btn-secondary tatoobutton\" (click)=\"c('Close click')\">\r\n                <i class='glyphicon glyphicon-remove'></i> {{Cancel}}\r\n            </button>\r\n            <button *ngIf=\"Buying\" class=\"btn btn-secondary tatoobutton\" (click)=\"BuyAll(); c('Close click')\">\r\n                <i class='glyphicon glyphicon-shopping-cart'></i> {{Buy}}\r\n            </button>\r\n            <button *ngIf=\"Removing\" class=\"btn btn-secondary tatoobutton\" (click)=\"DeleteAll(); c('Close click')\">\r\n                <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{Delete}}\r\n            </button>\r\n            <button *ngIf=\"Deleting\" class=\"btn btn-secondary tatoobutton\" (click)=\"RemoveProductAtAll(); c('Close click')\">\r\n                <i class=\"fa fa-trash\" aria-hidden=\"true\"></i> {{DeleteAtAlll}}\r\n            </button>\r\n        </div>\r\n    </ng-template>\r\n</div>\r\n\r\n";
 
 /***/ }),
 /* 144 */
@@ -14021,7 +14029,7 @@ exports.AboutusComponent = AboutusComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var auth_service_1 = __webpack_require__(12);
+var auth_service_1 = __webpack_require__(10);
 var router_1 = __webpack_require__(4);
 var AdminpageComponent = (function () {
     function AdminpageComponent(_authService, _router) {
@@ -14065,7 +14073,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var h5webstorage_1 = __webpack_require__(18);
-var auth_service_1 = __webpack_require__(12);
+var auth_service_1 = __webpack_require__(10);
 var router_1 = __webpack_require__(4);
 var AppComponent = (function () {
     function AppComponent(localStorage, sessionStorage, authService, _router) {
@@ -14134,7 +14142,7 @@ exports.AppComponent = AppComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var platform_browser_1 = __webpack_require__(24);
+var platform_browser_1 = __webpack_require__(25);
 var http_1 = __webpack_require__(14);
 var router_1 = __webpack_require__(4);
 var forms_1 = __webpack_require__(6);
@@ -14159,7 +14167,7 @@ var isAdmin_guard_1 = __webpack_require__(168);
 /* Feature Modules */
 var product_module_1 = __webpack_require__(161);
 var scretches_module_1 = __webpack_require__(166);
-var shared_module_1 = __webpack_require__(20);
+var shared_module_1 = __webpack_require__(21);
 var cart_module_1 = __webpack_require__(153);
 var AppModule = (function () {
     function AppModule() {
@@ -14230,7 +14238,7 @@ exports.AppModule = AppModule;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var auth_service_1 = __webpack_require__(12);
+var auth_service_1 = __webpack_require__(10);
 var router_1 = __webpack_require__(4);
 var CabinetComponent = (function () {
     function CabinetComponent(_authService, _router) {
@@ -14941,7 +14949,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(4);
-var shared_module_1 = __webpack_require__(20);
+var shared_module_1 = __webpack_require__(21);
 var cart_component_1 = __webpack_require__(152);
 var cart_service_1 = __webpack_require__(19);
 var CartModule = (function () {
@@ -15113,7 +15121,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(4);
-var product_service_1 = __webpack_require__(35);
+var product_service_1 = __webpack_require__(20);
 var cart_service_1 = __webpack_require__(19);
 var ProductDetailComponent = (function () {
     function ProductDetailComponent(_route, _router, _productService, _cartService) {
@@ -15266,19 +15274,114 @@ exports.ProductDetailGuard = ProductDetailGuard;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var product_service_1 = __webpack_require__(35);
+var product_service_1 = __webpack_require__(20);
+var auth_service_1 = __webpack_require__(10);
 var ProductListComponent = (function () {
-    function ProductListComponent(_productService) {
+    function ProductListComponent(_productService, _authService) {
         this._productService = _productService;
+        this._authService = _authService;
         this.ErrorMessage = "";
         this.ArticleTitle = "Product-list";
         this.ArticleText = "You can buy different tatoo products on this page. Simply find the products you need using filters below and click on their names to look at product details.";
+        this.TitleProduct = "Add Product";
+        this.AddName = "Enter product name:";
+        this.PlaceHolderName = "Enter product name...";
+        this.ToolName = "*Use any letters, numbers and symbols: -,',_ . From 4 to 20 characters.";
+        this.NameOk = true;
+        this.AddDescription = "Enter product description:";
+        this.PlaceHolderDescription = "Enter product description...";
+        this.ToolDescription = "*Use from 10 to 200 characters.";
+        this.DescriptionOk = true;
+        this.AddPrice = "Choose product price:";
+        this.ProductPrice = "Product price: ";
+        this.TitleIncreasePrice = "Click to increase price";
+        this.TitleDecreasePrice = "Click to decrease price";
+        this.AddQuantity = "Choose product quantity:";
+        this.ProductQuantity = "Product quantity: ";
+        this.TitleIncreaseQuantity = "Click to increase quantity";
+        this.TitleDecreaseQuantity = "Click to decrease quantity";
+        this.AddUrl = "Enter product image url:";
+        this.PlaceHolderUrl = "Enter product image url...";
+        this.ToolUrl = "*Enter valid image url.";
+        this.UrlOk = true;
+        this.Name = "";
+        this.Description = "";
+        this.Price = 1;
+        this.Quantity = 1;
+        this.Url = "";
+        this.Add = "Add";
+        this.TitleButtonAdd = "Click to add product to the list";
+        this.Msgs = [];
     }
     /*Executes on initialisation of page*/
     ProductListComponent.prototype.ngOnInit = function () {
+        this.Initializer();
+    };
+    ProductListComponent.prototype.Initializer = function () {
         var _this = this;
         this._productService.getProducts()
             .subscribe(function (products) { return _this.Products = products; }, function (error) { return _this.ErrorMessage = error; });
+    };
+    ProductListComponent.prototype.AddProduct = function () {
+        var _this = this;
+        this.NameOk = true;
+        this.DescriptionOk = true;
+        this.UrlOk = true;
+        if (this.Name.length < 4 || this.Name.length > 20) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while adding the product: check the length" });
+            this.NameOk = false;
+            this.ToolErrorName = "*Check the length: it should be between 4 and 20 characters.";
+        }
+        else {
+            var reg = new RegExp("[^a-zA-Z0-9_'-]");
+            var containError = reg.test(this.Name);
+            if (containError) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while adding the product: unacceptable character" });
+                this.NameOk = false;
+                this.ToolErrorName = "*Check the characters: use only letters, numbers and symbols: -,',_ .";
+            }
+        }
+        if (this.Description.length < 10 || this.Description.length > 200) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while adding the product: check the length" });
+            this.DescriptionOk = false;
+            this.ToolErrorDescription = "*Check the length: it should be between 10 and 200 characters.";
+        }
+        if (this.Url.length < 8) {
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while adding the product: check the url" });
+            this.UrlOk = false;
+            this.ToolErrorUrl = "*Check the url: enter valid image url.";
+        }
+        else {
+            var reg = new RegExp("^https:\\/\\/");
+            var EveryOk = reg.test(this.Url);
+            if (!EveryOk) {
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while adding the product: check the url" });
+                this.UrlOk = false;
+                this.ToolErrorUrl = "*Check the url: enter valid image url.";
+            }
+        }
+        if (this.NameOk && this.DescriptionOk && this.UrlOk) {
+            var tempModel = { productName: this.Name, amountLeft: this.Quantity, price: this.Price, description: this.Description, starRating: 2.5, imageUrl: this.Url };
+            this._productService.addProduct(tempModel).subscribe(function (data) {
+                _this.Initializer();
+            });
+        }
+    };
+    ProductListComponent.prototype.DecreasePrice = function () {
+        if (this.Price > 1)
+            this.Price--;
+    };
+    ProductListComponent.prototype.IncreasePrice = function () {
+        if (this.Price < 10000)
+            this.Price++;
+    };
+    ProductListComponent.prototype.DecreaseQuantity = function () {
+        if (this.Quantity > 1)
+            this.Quantity--;
+    };
+    ProductListComponent.prototype.IncreaseQuantity = function () {
+        if (this.Quantity < 10000)
+            this.Quantity++;
     };
     return ProductListComponent;
 }());
@@ -15287,7 +15390,7 @@ ProductListComponent = tslib_1.__decorate([
         template: __webpack_require__(138),
         styles: [__webpack_require__(246)]
     }),
-    tslib_1.__metadata("design:paramtypes", [product_service_1.ProductService])
+    tslib_1.__metadata("design:paramtypes", [product_service_1.ProductService, auth_service_1.AuthService])
 ], ProductListComponent);
 exports.ProductListComponent = ProductListComponent;
 
@@ -15306,8 +15409,8 @@ var primeng_1 = __webpack_require__(15);
 var product_list_component_1 = __webpack_require__(160);
 var product_detail_component_1 = __webpack_require__(157);
 var product_guard_service_1 = __webpack_require__(159);
-var product_service_1 = __webpack_require__(35);
-var shared_module_1 = __webpack_require__(20);
+var product_service_1 = __webpack_require__(20);
+var shared_module_1 = __webpack_require__(21);
 var ProductModule = (function () {
     function ProductModule() {
     }
@@ -15349,7 +15452,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var question_service_1 = __webpack_require__(57);
-var auth_service_1 = __webpack_require__(12);
+var auth_service_1 = __webpack_require__(10);
 var QuestionsComponent = (function () {
     function QuestionsComponent(_questionService, _authService) {
         this._questionService = _questionService;
@@ -15371,9 +15474,9 @@ var QuestionsComponent = (function () {
             "Your fresh idea",
             "Other"];
         this.ThemeOK = true;
-        this.ToolTheme = "*Use from 10 to 200 symbols.";
+        this.ToolTheme = "*Use from 10 to 200 characters.";
         this.MessageOK = true;
-        this.ToolMessage = "*Use from 50 to 300 symbols.";
+        this.ToolMessage = "*Use from 50 to 300 characters.";
         this.Num = 0;
         this.Theme = "";
         this.Message = "";
@@ -15389,8 +15492,8 @@ var QuestionsComponent = (function () {
         this.Checked = true;
         this.TitleSendAnswer = "Click to send answer";
         this.AnswerPlaceholder = "Enter your answer...";
-        this.ToolAnswer = "*Use from 50 to 300 symbols.";
-        this.ToolErrorAnswer = "*Invalid length: use from 50 to 300 symbols.";
+        this.ToolAnswer = "*Use from 50 to 300 characters.";
+        this.ToolErrorAnswer = "*Invalid length: use from 50 to 300 characters.";
     }
     ;
     /*Sending the question to store in database*/
@@ -15523,7 +15626,7 @@ exports.QuestionsComponent = QuestionsComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var auth_service_1 = __webpack_require__(12);
+var auth_service_1 = __webpack_require__(10);
 var router_1 = __webpack_require__(4);
 var LogInComponent = (function () {
     function LogInComponent(_authService, router) {
@@ -15606,7 +15709,7 @@ exports.LogInComponent = LogInComponent;
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
-var auth_service_1 = __webpack_require__(12);
+var auth_service_1 = __webpack_require__(10);
 var router_1 = __webpack_require__(4);
 var SignUpComponent = (function () {
     function SignUpComponent(_authService, router) {
@@ -15904,7 +16007,7 @@ var primeng_1 = __webpack_require__(15);
 var ng2_page_scroll_1 = __webpack_require__(58);
 var scretches_component_1 = __webpack_require__(165);
 var scretch_service_1 = __webpack_require__(56);
-var shared_module_1 = __webpack_require__(20);
+var shared_module_1 = __webpack_require__(21);
 var ScretchesModule = (function () {
     function ScretchesModule() {
     }
@@ -15942,10 +16045,14 @@ var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var cart_service_1 = __webpack_require__(19);
 var ng_bootstrap_1 = __webpack_require__(39);
+var auth_service_1 = __webpack_require__(10);
+var product_service_1 = __webpack_require__(20);
 var AllProductsComponent = (function () {
-    function AllProductsComponent(_cartService, modalService) {
+    function AllProductsComponent(_cartService, modalService, _authService, _productService) {
         this._cartService = _cartService;
         this.modalService = modalService;
+        this._authService = _authService;
+        this._productService = _productService;
         this.PageTitle = 'Product List';
         this.ImageWidth = 50;
         this.ImageMargin = 2;
@@ -15973,6 +16080,10 @@ var AllProductsComponent = (function () {
         this.Content = "";
         this.OutOfStock = "Out of stock";
         this.AlreadyInCart = "Product is already in cart";
+        this.TitleRemoveAtAll = "Click to remove product from the list";
+        this.Deleting = false;
+        this.DeleteAtAlll = "Delete";
+        this.ToDelete = 0;
         this.Msgs = [];
     }
     /*Executes on initialisation*/
@@ -15994,7 +16105,7 @@ var AllProductsComponent = (function () {
         this.TotalAmount = this.TotalAmount - this.AllProducts[idx].amount;
         this.TotalPrice = this.TotalPrice - this.AllProducts[idx].price * this.AllProducts[idx].amount;
         this.AllProducts.splice(idx, 1);
-        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Removed from cart." });
+        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Removed from cart." });
         this._cartService.deleteProduct(productId)
             .subscribe();
     };
@@ -16016,6 +16127,15 @@ var AllProductsComponent = (function () {
         this.TotalAmount = 0;
         this.TotalPrice = 0;
         this._cartService.deleteAll()
+            .subscribe();
+    };
+    /*Removing product*/
+    AllProductsComponent.prototype.RemoveProductAtAll = function () {
+        var _this = this;
+        var idx = this.AllProducts.findIndex(function (x) { return x.id == _this.ToDelete; });
+        this.AllProducts.splice(idx, 1);
+        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Removed from the list." });
+        this._productService.deleteProduct(this.ToDelete)
             .subscribe();
     };
     /*Increasing amount of product in cart*/
@@ -16049,7 +16169,7 @@ var AllProductsComponent = (function () {
         }
     };
     AllProductsComponent.prototype.ShowDialogByuAll = function (content) {
-        this.Content = "Are you sure, you want to byu ";
+        this.Content = "Are you sure, you want to buy ";
         this.Content += this.TotalAmount;
         if (this.TotalAmount > 1)
             this.Content += " products ";
@@ -16058,12 +16178,24 @@ var AllProductsComponent = (function () {
         this.Content += "for ";
         this.Content += this.TotalPrice;
         this.Content += "$ ?";
+        this.Removing = false;
+        this.Deleting = false;
         this.Buying = true;
         this.modalService.open(content);
     };
     AllProductsComponent.prototype.ShowDialogClear = function (content) {
         this.Content = "Are you sure you want to clear the cart?";
         this.Buying = false;
+        this.Deleting = false;
+        this.Removing = true;
+        this.modalService.open(content);
+    };
+    AllProductsComponent.prototype.ShowDialogRemoveAtAll = function (content, productId) {
+        this.Content = "Are you sure you want to remove this product from the list?";
+        this.Buying = false;
+        this.Removing = false;
+        this.Deleting = true;
+        this.ToDelete = productId;
         this.modalService.open(content);
     };
     return AllProductsComponent;
@@ -16087,7 +16219,7 @@ AllProductsComponent = tslib_1.__decorate([
         encapsulation: core_1.ViewEncapsulation.None,
         styles: [__webpack_require__(251)]
     }),
-    tslib_1.__metadata("design:paramtypes", [cart_service_1.CartService, ng_bootstrap_1.NgbModal])
+    tslib_1.__metadata("design:paramtypes", [cart_service_1.CartService, ng_bootstrap_1.NgbModal, auth_service_1.AuthService, product_service_1.ProductService])
 ], AllProductsComponent);
 exports.AllProductsComponent = AllProductsComponent;
 
@@ -16102,7 +16234,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = __webpack_require__(3);
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(4);
-var auth_service_1 = __webpack_require__(12);
+var auth_service_1 = __webpack_require__(10);
 var isAdminGuard = (function () {
     function isAdminGuard(_authService, _router) {
         this._authService = _authService;
@@ -16413,10 +16545,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var inputtext_1 = __webpack_require__(13);
-var button_1 = __webpack_require__(11);
+var button_1 = __webpack_require__(12);
 var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
-var ObjectUtils_1 = __webpack_require__(23);
+var ObjectUtils_1 = __webpack_require__(24);
 var forms_1 = __webpack_require__(6);
 exports.AUTOCOMPLETE_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
@@ -17071,7 +17203,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var button_1 = __webpack_require__(11);
+var button_1 = __webpack_require__(12);
 var inputtext_1 = __webpack_require__(13);
 var domhandler_1 = __webpack_require__(2);
 var forms_1 = __webpack_require__(6);
@@ -19081,7 +19213,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
 var shared_1 = __webpack_require__(5);
-var button_1 = __webpack_require__(11);
+var button_1 = __webpack_require__(12);
 var api_1 = __webpack_require__(61);
 var ConfirmDialog = (function () {
     function ConfirmDialog(el, domHandler, renderer, confirmationService) {
@@ -19624,7 +19756,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(5);
-var paginator_1 = __webpack_require__(22);
+var paginator_1 = __webpack_require__(23);
 var DataGrid = (function () {
     function DataGrid(el, differs) {
         this.el = el;
@@ -19820,7 +19952,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(5);
-var paginator_1 = __webpack_require__(22);
+var paginator_1 = __webpack_require__(23);
 var DataList = (function () {
     function DataList(el, differs) {
         this.el = el;
@@ -20238,11 +20370,11 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var forms_1 = __webpack_require__(6);
 var shared_1 = __webpack_require__(5);
-var paginator_1 = __webpack_require__(22);
+var paginator_1 = __webpack_require__(23);
 var inputtext_1 = __webpack_require__(13);
 var shared_2 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
-var ObjectUtils_1 = __webpack_require__(23);
+var ObjectUtils_1 = __webpack_require__(24);
 var DTRadioButton = (function () {
     function DTRadioButton() {
         this.onClick = new core_1.EventEmitter();
@@ -22732,7 +22864,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
-var ObjectUtils_1 = __webpack_require__(23);
+var ObjectUtils_1 = __webpack_require__(24);
 var forms_1 = __webpack_require__(6);
 exports.DROPDOWN_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
@@ -23472,8 +23604,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var platform_browser_1 = __webpack_require__(24);
-var button_1 = __webpack_require__(11);
+var platform_browser_1 = __webpack_require__(25);
+var button_1 = __webpack_require__(12);
 var messages_1 = __webpack_require__(62);
 var progressbar_1 = __webpack_require__(63);
 var shared_1 = __webpack_require__(5);
@@ -24303,7 +24435,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var button_1 = __webpack_require__(11);
+var button_1 = __webpack_require__(12);
 var InplaceDisplay = (function () {
     function InplaceDisplay() {
     }
@@ -25500,7 +25632,7 @@ var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
-var ObjectUtils_1 = __webpack_require__(23);
+var ObjectUtils_1 = __webpack_require__(24);
 var forms_1 = __webpack_require__(6);
 exports.LISTBOX_VALUE_ACCESSOR = {
     provide: forms_1.NG_VALUE_ACCESSOR,
@@ -26655,7 +26787,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var button_1 = __webpack_require__(11);
+var button_1 = __webpack_require__(12);
 var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var OrderList = (function () {
@@ -27534,7 +27666,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
-var button_1 = __webpack_require__(11);
+var button_1 = __webpack_require__(12);
 var shared_1 = __webpack_require__(5);
 var domhandler_1 = __webpack_require__(2);
 var PickList = (function () {
@@ -29551,7 +29683,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(1);
 var domhandler_1 = __webpack_require__(2);
-var button_1 = __webpack_require__(11);
+var button_1 = __webpack_require__(12);
 var router_1 = __webpack_require__(4);
 var SplitButton = (function () {
     function SplitButton(el, domHandler, renderer, router) {

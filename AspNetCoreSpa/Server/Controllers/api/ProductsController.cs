@@ -108,25 +108,16 @@ namespace AspNetCoreSpa.Server.Controllers.api
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
         }
 
-        // DELETE: api/Products/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct([FromRoute] int id)
+        //GET: api/Products/delete
+        [HttpPost("delete")]
+        public async Task<IActionResult> DeleteProduct([FromBody] int idProduct)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            var toDelete = _context.Product.FirstOrDefault(x => x.Id == idProduct);
+            _context.Product.Remove(toDelete);
 
-            var product = await _context.Product.SingleOrDefaultAsync(m => m.Id == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            _context.Product.Remove(product);
             await _context.SaveChangesAsync();
 
-            return Ok(product);
+            return Ok();
         }
 
         private bool ProductExists(int id)

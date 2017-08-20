@@ -1,26 +1,127 @@
-/*text styles*/
-.text {
-    font-family: 'TEMPUS SANS ITC';
-    font-weight: bold;
-    color: rgba(41, 43, 41, 0.7);
-}
+.product-list-page {
+    /*text styles*/
+    .text {
+        font-family: 'TEMPUS SANS ITC';
+        font-weight: bold;
+        color: rgba(41, 43, 41, 0.7);
+    }
 
-.plaintext {
-    font-size: 4vmin;
-}
+    .plaintext {
+        font-size: 4vmin;
+    }
 
-.heading {
-    font-size: 7vmin;
-    color: rgba(41, 43, 41, 0.9);
-}
+    .heading {
+        font-size: 7vmin;
+        color: rgba(41, 43, 41, 0.9);
+    }
+    /*styles*/
+    .tatoolable {
+        color: #000000;
+        min-width: 39%;
+        max-width: 39%;
+    }
 
-/*styles*/
-.tatooarticle {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.4);
-}
+    .tatooinput {
+        color: #000000;
+        min-width: 58%;
+        max-width: 58%;
+        margin-right: 1%;
+    }
 
-.margin2 {
-    margin-left: 3%;
-    margin-right: 3%;
+    .tatooinputval {
+        color: #000000;
+        min-width: 38%;
+        max-width: 38%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+    }
+
+    .marginbottom {
+        margin-bottom: 1%;
+    }
+
+    .tatoobutton {
+        background-color: #000000;
+        border-color: #FFFFFF;
+        float: right;
+        color: white;
+    }
+
+    .tatoobutton:hover {
+        background-color: #464451;
+        border-color: #D5D5D5;
+    }
+
+    .tatoobuttonval {
+        background-color: #000000;
+        border-color: #FFFFFF;
+        float: right;
+        color: white;
+        width: 8.7%;
+        height: 35px;
+    }
+
+    .tatoobuttonval:hover {
+        background-color: #464451;
+        border-color: #D5D5D5;
+    }
+
+    #tatoopanel {
+        background-color: #000000;
+        border-color: #FFFFFF;
+        border-color: #000000;
+        font-size: 3vmin;
+    }
+
+    .tatoodiv {
+        width: 98%;
+        margin: 1%;
+        border-color: #000000;
+        font-family: 'comic sans ms';
+    }
+
+    .tatooarticle {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .margin2 {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .tatootool {
+        font-size: 2vmin;
+        float: right;
+        color: rgba(41, 43, 41, 0.9);
+        margin-right: 1%;
+    }
+
+    .tatootoolerror {
+        color: red;
+        font-size: 2vmin;
+        float: right;
+        margin-right: 1%;
+    }
+
+    .tatooinputerror {
+        border-color: red;
+        background-color: #F6D9D9;
+        border-width: 1px;
+        border-style: solid;
+    }
+
+    @media only screen and (min-width: 800px) {
+        .tatoodiv {
+            width: 40%;
+        }
+
+        .tatootool {
+            font-size: 1.5vmin;
+        }
+
+        .tatootoolerror {
+            font-size: 1.5vmin;
+        }
+    }
 }
