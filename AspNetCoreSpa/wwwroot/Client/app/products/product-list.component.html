@@ -8,9 +8,9 @@
 
     <br />
 
-    <all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]="false"> </all-products>
+    <all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]="false" (ChangeProduct)="StartChangeProduct($event)"> </all-products>
 
-    <div *ngIf="_authService.IsAdmin" class='panel panel-primary tatoodiv'>
+    <div *ngIf="_authService.IsAdmin" class='panel panel-primary tatoodiv' id="form">
         <div class='panel-heading' id='tatoopanel'>
             {{TitleProduct}}
         </div>
@@ -54,7 +54,7 @@
                 <button title={{TitleDecreaseQuantity}} class="btn btn-default tatoobuttonval" (click)="DecreaseQuantity()" style="margin-right: 1%">
                     <i class='glyphicon glyphicon-chevron-left'></i>
                 </button>
-                <input type='range' min="1" max="10000" step="1" value="1" class='tatooinputval marginbottom' [(ngModel)]='Quantity' />
+                <input type='range' min="0" max="10000" step="1" value="1" class='tatooinputval marginbottom' [(ngModel)]='Quantity' />
                 <button title={{TitleIncreaseQuantity}} class="btn btn-default tatoobuttonval" (click)="IncreaseQuantity()" style="margin-left: 1%">
                     <i class='glyphicon glyphicon-chevron-right'></i>
                 </button>
@@ -63,6 +63,9 @@
 
             <button class=' btn btn-primary tatoobutton' (click)='AddProduct()' title={{TitleButtonAdd}}>
                 <i class='glyphicon glyphicon-ok'></i> {{Add}}
+            </button>
+            <button class=' btn btn-primary tatoobutton' (click)='CancelClick()' title={{TitleCancel}} style="margin-right: 1%">
+                <i class='glyphicon glyphicon-remove'></i> {{Cancel}}
             </button>
         </div>
     </div>

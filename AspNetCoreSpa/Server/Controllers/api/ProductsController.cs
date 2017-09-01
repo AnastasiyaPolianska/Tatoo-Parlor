@@ -108,6 +108,32 @@ namespace AspNetCoreSpa.Server.Controllers.api
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
         }
 
+        // POST: api/Products/change
+        [HttpPost("change")]
+        public async Task<IActionResult> ChangeProduct([FromBody] Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var toChange = _context.Product.FirstOrDefault(x => x.Id == product.Id);
+            toChange.ProductName = product.ProductName;
+            toChange.Description = product.Description;
+            toChange.ImageUrl = product.ImageUrl;
+            toChange.Price = product.Price;
+            toChange.AmountLeft = product.AmountLeft;
+
+            var toChangeAmount = _context.UserProducts.Where(x => x.ProductId== product.Id);
+
+            foreach (UserProduct item in toChangeAmount)
+                if (item.Amount > item.ProductInCart.AmountLeft) item.Amount = item.ProductInCart.AmountLeft;
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
+
         //GET: api/Products/delete
         [HttpPost("delete")]
         public async Task<IActionResult> DeleteProduct([FromBody] int idProduct)

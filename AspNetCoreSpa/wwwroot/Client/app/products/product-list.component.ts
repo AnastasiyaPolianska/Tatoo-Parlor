@@ -12,6 +12,8 @@ export class ProductListComponent implements OnInit {
     public ErrorMessage ="";
     public Products: IProduct[];
 
+    public isChanging = false;
+
     public ArticleTitle = "Product-list";
     public ArticleText = "You can buy different tatoo products on this page. Simply find the products you need using filters below and click on their names to look at product details.";
 
@@ -50,9 +52,13 @@ export class ProductListComponent implements OnInit {
     public Price: number = 1;
     public Quantity: number = 1;
     public Url: string = "";
+    public idChanging: number;
 
     public Add: string = "Add";
     public TitleButtonAdd: string = "Click to add product to the list";
+
+    public TitleCancel: string = "Click to clear all the fields";
+    public Cancel: string = "Cancel";
 
     public Msgs: Message[] = [];
 
@@ -106,7 +112,7 @@ export class ProductListComponent implements OnInit {
         }
         else
         {
-            var reg = new RegExp("^https:\\/\\/");
+            var reg = new RegExp("^https?:\\/\\/");
             var EveryOk = reg.test(this.Url);
 
             if (!EveryOk)
@@ -118,12 +124,34 @@ export class ProductListComponent implements OnInit {
         }
 
         if (this.NameOk && this.DescriptionOk && this.UrlOk) {
-            let tempModel: IProduct = { productName: this.Name, amountLeft: this.Quantity, price: this.Price, description: this.Description, starRating: 2.5, imageUrl: this.Url };
 
-            this._productService.addProduct(tempModel).subscribe(data => {
+            if (!this.isChanging) {
+                let tempModel: IProduct = { productName: this.Name, amountLeft: this.Quantity, price: this.Price, description: this.Description, starRating: 2.5, imageUrl: this.Url };
+
+                this._productService.addProduct(tempModel).subscribe(data => {
                 this.Initializer();
-            })
-            
+                this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Product added successfully" });
+                this.Name = "";
+                this.Description = "";
+                this.Price = 1;
+                this.Quantity = 1;
+                this.Url = "";
+                })
+            }
+
+            else {
+                let tempModel: IProduct = { id: this.idChanging, productName: this.Name, amountLeft: this.Quantity, price: this.Price, description: this.Description, imageUrl: this.Url };
+
+                this._productService.changeProduct(tempModel).subscribe(data => {
+                    this.Initializer();
+                    this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Product changed successfully" });
+                    this.Name = "";
+                    this.Description = "";
+                    this.Price = 1;
+                    this.Quantity = 1;
+                    this.Url = "";
+                })
+            }         
         }
     }
 
@@ -141,5 +169,56 @@ export class ProductListComponent implements OnInit {
 
     public IncreaseQuantity(): void {
         if (this.Quantity < 10000) this.Quantity++;
+    }
+
+    public StartChangeProduct(productId: number): void {
+        this.isChanging = true;
+        this.TitleCancel = "Click to cancel changing";
+        this.TitleProduct = "Change Product";
+        this.Add = "Change";
+        this.idChanging = productId;
+
+        var idx = this.Products.findIndex(x => x.id == productId);
+
+        this.Name = this.Products[idx].productName;
+        this.Description = this.Products[idx].description;
+        this.Price = this.Products[idx].price;
+        this.Quantity = this.Products[idx].amountLeft;
+        this.Url = this.Products[idx].imageUrl;
+
+        this.NameOk = true;
+        this.DescriptionOk = true;
+        this.UrlOk = true;        
+    }
+
+    public CancelClick(): void {
+        if (this.isChanging)
+        {
+            this.isChanging = false;
+            this.TitleCancel = "Click to clear all the fields";
+            this.TitleProduct = "Add Product";
+            this.Add = "Add";
+
+            this.Name = "";
+            this.Description = "";
+            this.Price = 1;
+            this.Quantity = 1;
+            this.Url = "";
+
+            this.NameOk = true;
+            this.DescriptionOk = true;
+            this.UrlOk = true;
+        }
+        else {
+            this.Name = "";
+            this.Description = "";
+            this.Price = 1;
+            this.Quantity = 1;
+            this.Url = "";
+
+            this.NameOk = true;
+            this.DescriptionOk = true;
+            this.UrlOk = true;
+        }
     }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation}  from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter, ViewEncapsulation}  from '@angular/core';
 import { IProduct } from '../products/product';
 import { CartService } from '../cart/cart.service';
 import { Message } from 'primeng/primeng';
@@ -20,7 +20,9 @@ export class AllProductsComponent{
     public ImageMargin: number = 2;
     public ListFilter: string;
     @Input() public ErrorMessage: string;
-    @Input() public IsCart: boolean; 
+    @Input() public IsCart: boolean;
+
+    @Output() public ChangeProduct: EventEmitter<number> = new EventEmitter(); 
 
     public BuyAllDisabled: boolean = false;
     public ClearCartDisabled: boolean = false;
@@ -36,11 +38,13 @@ export class AllProductsComponent{
     public Buy = "Buy all";
     public Remove = "Remove";
     public Delete = "Clear cart";
+    public Change = "Change";
 
     public TitleRemove = "Click to remove product from cart";
     public TitleClear = "Click to clear the cart";
     public TitleBuy = "Click to buy all products in cart";
     public TitleDetails = "Click to find out more info about product";
+    public TitleChange = "Click to change product";
 
     public CartToSend: number;
 
@@ -211,5 +215,9 @@ export class AllProductsComponent{
         this.ToDelete = productId;
 
         this.modalService.open(content);
+    }
+
+    public ChangeProd(productId: number): void {
+        this.ChangeProduct.emit(productId);
     }
 }

@@ -40,6 +40,10 @@ export class ProductService {
         return this._http.post(this._productUrl, model);
     }
 
+    changeProduct(model: IProduct): Observable<any> {
+        return this._http.post(this._productUrl + "change", model);
+    }
+
     private handleError(error: Response) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console
