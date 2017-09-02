@@ -1,8 +1,72 @@
-<div class="tatooarticle text">
-    <p class="margin2 heading"> {{ArticleTitle}} </p>
-    <p class="text plaintext margin2"> {{ArticleText}} </p>
+<p-growl [value]="Msgs" id="growl"></p-growl>
+
+<div class="product-list-page">
+    <div class="tatooarticle text">
+        <p class="margin2 heading"> {{ArticleTitle}} </p>
+        <p class="text plaintext margin2"> {{ArticleText}} </p>
+    </div>
+
+    <br />
+
+    <all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]="false" (ChangeProduct)="StartChangeProduct($event)"> </all-products>
+
+    <div *ngIf="_authService.IsAdmin" class='panel panel-primary tatoodiv' id="form">
+        <div class='panel-heading' id='tatoopanel'>
+            {{TitleProduct}}
+        </div>
+
+        <div class='panel-body'>
+            <div class='row'>
+                <label class='col-md-2 tatoolable'>{{AddName}}</label>
+                <input type='text' [ngClass]="{'tatooinputerror': NameOk==false}" class='tatooinput marginbottom' placeholder="{{PlaceHolderName}}" [(ngModel)]='Name' />
+                <label *ngIf="NameOk" class='tatootool' style="margin-left: 39%">{{ToolName}}</label>
+                <label *ngIf="!NameOk" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorName}}</label>
+            </div>
+
+            <div class='row'>
+                <label class='col-md-2 tatoolable'>{{AddDescription}}</label>
+                <textarea rows="3" type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': DescriptionOk==false}" placeholder="{{PlaceHolderDescription}}" [(ngModel)]='Description'></textarea>
+                <label *ngIf="DescriptionOk" class='tatootool' style="margin-left: 39%">{{ToolDescription}}</label>
+                <label *ngIf="!DescriptionOk" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorDescription}}</label>
+            </div>
+
+            <div class='row'>
+                <label class='col-md-2 tatoolable'>{{AddUrl}}</label>
+                <input type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': UrlOk==false}" placeholder="{{PlaceHolderUrl}}" [(ngModel)]='Url'/>
+                <label *ngIf="UrlOk" class='tatootool' style="margin-left: 39%">{{ToolUrl}}</label>
+                <label *ngIf="!UrlOk" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorUrl}}</label>
+            </div>
+
+            <div class='row'>
+                <label class='col-md-2 tatoolable'>{{AddPrice}}</label>
+                <button title={{TitleDecreasePrice}} class="btn btn-default tatoobuttonval" (click)="DecreasePrice()" style="margin-right: 1%">
+                    <i class='glyphicon glyphicon-chevron-left'></i>
+                </button>
+                <input type='range' min="1" max="10000" step="1" value="1" class='tatooinputval marginbottom' [(ngModel)]='Price' />
+                <button title={{TitleIncreasePrice}} class="btn btn-default tatoobuttonval" (click)="IncreasePrice()" style="margin-left: 1%">
+                    <i class='glyphicon glyphicon-chevron-right'></i>
+                </button>
+                <label class='tatootool' style="margin-left: 39%">{{ProductPrice}}{{Price}}</label>
+            </div>
+
+            <div class='row'>
+                <label class='col-md-2 tatoolable'>{{AddQuantity}}</label>
+                <button title={{TitleDecreaseQuantity}} class="btn btn-default tatoobuttonval" (click)="DecreaseQuantity()" style="margin-right: 1%">
+                    <i class='glyphicon glyphicon-chevron-left'></i>
+                </button>
+                <input type='range' min="0" max="10000" step="1" value="1" class='tatooinputval marginbottom' [(ngModel)]='Quantity' />
+                <button title={{TitleIncreaseQuantity}} class="btn btn-default tatoobuttonval" (click)="IncreaseQuantity()" style="margin-left: 1%">
+                    <i class='glyphicon glyphicon-chevron-right'></i>
+                </button>
+                <label class='tatootool' style="margin-left: 39%">{{ProductQuantity}}{{Quantity}}</label>
+            </div>
+
+            <button class=' btn btn-primary tatoobutton' (click)='AddProduct()' title={{TitleButtonAdd}}>
+                <i class='glyphicon glyphicon-ok'></i> {{Add}}
+            </button>
+            <button class=' btn btn-primary tatoobutton' (click)='CancelClick()' title={{TitleCancel}} style="margin-right: 1%">
+                <i class='glyphicon glyphicon-remove'></i> {{Cancel}}
+            </button>
+        </div>
+    </div>
 </div>
-
-<br />
-
-<all-products [AllProducts]='Products' [ErrorMessage]='ErrorMessage' [IsCart]="false"> </all-products>

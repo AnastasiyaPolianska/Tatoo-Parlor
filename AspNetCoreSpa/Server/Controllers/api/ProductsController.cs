@@ -108,25 +108,42 @@ namespace AspNetCoreSpa.Server.Controllers.api
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
         }
 
-        // DELETE: api/Products/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct([FromRoute] int id)
+        // POST: api/Products/change
+        [HttpPost("change")]
+        public async Task<IActionResult> ChangeProduct([FromBody] Product product)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var product = await _context.Product.SingleOrDefaultAsync(m => m.Id == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
+            var toChange = _context.Product.FirstOrDefault(x => x.Id == product.Id);
+            toChange.ProductName = product.ProductName;
+            toChange.Description = product.Description;
+            toChange.ImageUrl = product.ImageUrl;
+            toChange.Price = product.Price;
+            toChange.AmountLeft = product.AmountLeft;
 
-            _context.Product.Remove(product);
+            var toChangeAmount = _context.UserProducts.Where(x => x.ProductId== product.Id);
+
+            foreach (UserProduct item in toChangeAmount)
+                if (item.Amount > item.ProductInCart.AmountLeft) item.Amount = item.ProductInCart.AmountLeft;
+
             await _context.SaveChangesAsync();
 
-            return Ok(product);
+            return Ok();
+        }
+
+        //GET: api/Products/delete
+        [HttpPost("delete")]
+        public async Task<IActionResult> DeleteProduct([FromBody] int idProduct)
+        {
+            var toDelete = _context.Product.FirstOrDefault(x => x.Id == idProduct);
+            _context.Product.Remove(toDelete);
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
 
         private bool ProductExists(int id)

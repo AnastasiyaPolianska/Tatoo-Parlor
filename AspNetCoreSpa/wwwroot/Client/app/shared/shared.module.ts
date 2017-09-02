@@ -7,12 +7,13 @@ import { AuthService } from './auth.service';
 import { ProductFilterPipe } from '../products/product-filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GrowlModule } from 'primeng/primeng';
+import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 import { AllProductsComponent } from './allProducts.component';
 import { SpinnerComponent } from './spinner.component';
 
 @NgModule({
-    imports: [CommonModule, FormsModule, RouterModule, NgbModule.forRoot(), BrowserAnimationsModule, GrowlModule],
+    imports: [CommonModule, FormsModule, RouterModule, NgbModule.forRoot(), BrowserAnimationsModule, GrowlModule, Ng2PageScrollModule.forRoot(),],
   exports : [
     CommonModule,
     FormsModule,

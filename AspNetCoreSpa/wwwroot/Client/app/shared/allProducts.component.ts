@@ -1,8 +1,10 @@
-import { Component, Input, OnInit, ViewEncapsulation}  from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter, ViewEncapsulation}  from '@angular/core';
 import { IProduct } from '../products/product';
 import { CartService } from '../cart/cart.service';
 import { Message } from 'primeng/primeng';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from '../shared/auth.service';
+import { ProductService } from '../products/product.service';
 
 @Component({
     selector: 'all-products',
@@ -18,7 +20,9 @@ export class AllProductsComponent{
     public ImageMargin: number = 2;
     public ListFilter: string;
     @Input() public ErrorMessage: string;
-    @Input() public IsCart: boolean; 
+    @Input() public IsCart: boolean;
+
+    @Output() public ChangeProduct: EventEmitter<number> = new EventEmitter(); 
 
     public BuyAllDisabled: boolean = false;
     public ClearCartDisabled: boolean = false;
@@ -34,11 +38,13 @@ export class AllProductsComponent{
     public Buy = "Buy all";
     public Remove = "Remove";
     public Delete = "Clear cart";
+    public Change = "Change";
 
     public TitleRemove = "Click to remove product from cart";
     public TitleClear = "Click to clear the cart";
     public TitleBuy = "Click to buy all products in cart";
     public TitleDetails = "Click to find out more info about product";
+    public TitleChange = "Click to change product";
 
     public CartToSend: number;
 
@@ -48,6 +54,7 @@ export class AllProductsComponent{
     public TotalAmount: number;
     public Cancel: string = "Cancel";
     public Buying: boolean;
+    public Removing: boolean;
 
     public Header: string = "Confirm your action";
     public Content: string = "";
@@ -55,9 +62,14 @@ export class AllProductsComponent{
     public OutOfStock = "Out of stock";
     public AlreadyInCart = "Product is already in cart";
 
+    public TitleRemoveAtAll: string = "Click to remove product from the list";
+    public Deleting: boolean = false;
+    public DeleteAtAlll: string = "Delete";
+    public ToDelete: number = 0;
+
     public Msgs: Message[] = [];
 
-    constructor(private _cartService: CartService, private modalService: NgbModal) { }
+    constructor(private _cartService: CartService, private modalService: NgbModal, private _authService: AuthService, private _productService: ProductService) { }
 
     /*Executes on initialisation*/
     ngOnInit(): void {
@@ -83,7 +95,7 @@ export class AllProductsComponent{
 
         this.AllProducts.splice(idx, 1);
 
-        this.Msgs.push({ severity: 'error', summary: 'Success', detail: "Removed from cart." });
+        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Removed from cart." });
 
         this._cartService.deleteProduct(productId)
             .subscribe();
@@ -116,6 +128,18 @@ export class AllProductsComponent{
         this.TotalPrice = 0;
 
         this._cartService.deleteAll()
+            .subscribe();
+    }
+
+    /*Removing product*/
+    public RemoveProductAtAll(): void {
+        var idx = this.AllProducts.findIndex(x => x.id == this.ToDelete);
+
+        this.AllProducts.splice(idx, 1);
+
+        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Removed from the list." });
+
+        this._productService.deleteProduct(this.ToDelete)
             .subscribe();
     }
 
@@ -154,7 +178,7 @@ export class AllProductsComponent{
     }
 
     public ShowDialogByuAll(content) {
-        this.Content = "Are you sure, you want to byu ";
+        this.Content = "Are you sure, you want to buy ";
         this.Content += this.TotalAmount;
 
         if (this.TotalAmount > 1) this.Content += " products ";
@@ -164,6 +188,8 @@ export class AllProductsComponent{
         this.Content += this.TotalPrice;
         this.Content += "$ ?";
 
+        this.Removing = false;
+        this.Deleting = false;
         this.Buying = true;
 
         this.modalService.open(content);
@@ -173,7 +199,25 @@ export class AllProductsComponent{
         this.Content = "Are you sure you want to clear the cart?";
 
         this.Buying = false;
+        this.Deleting = false;
+        this.Removing = true;
 
         this.modalService.open(content);
+    }
+
+    public ShowDialogRemoveAtAll(content, productId: number) {
+        this.Content = "Are you sure you want to remove this product from the list?";
+
+        this.Buying = false;
+        this.Removing = false;
+        this.Deleting = true;
+
+        this.ToDelete = productId;
+
+        this.modalService.open(content);
+    }
+
+    public ChangeProd(productId: number): void {
+        this.ChangeProduct.emit(productId);
     }
 }
