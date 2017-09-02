@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
 import { Message } from 'primeng/primeng';
@@ -7,7 +7,7 @@ import { Message } from 'primeng/primeng';
     templateUrl: './cabinet.component.html',
     styleUrls: ['./cabinet.component.scss']
 })
-export class CabinetComponent 
+export class CabinetComponent implements OnInit
 {
     constructor(private _authService: AuthService,
                 private _router: Router) { };
@@ -128,6 +128,8 @@ export class CabinetComponent
     /*Executes on initialisation of page*/
     public ngOnInit() {
         this.GetUser();
+
+        window.scroll(0, 0);
     }
 
     public ToggleChangeFirstName() : void{

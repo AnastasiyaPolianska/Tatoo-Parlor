@@ -67,7 +67,9 @@ export class ProductListComponent implements OnInit {
 
     /*Executes on initialisation of page*/
     ngOnInit(): void {
-        this.Initializer();
+        window.scroll(0, 0);
+
+        this.Initializer();      
     }
 
     public Initializer(): void {

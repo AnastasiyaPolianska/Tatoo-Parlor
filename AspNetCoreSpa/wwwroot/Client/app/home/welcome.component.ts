@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     templateUrl: './welcome.component.html',
     styleUrls: ['./welcome.component.scss']
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements OnInit {
     public PageTitle: string = 'Tatooed youth';
     
     public ArticleTitle: string = 'About us...';
@@ -24,4 +24,8 @@ export class WelcomeComponent {
         ' All our contacts are available just ',
         ' Frequently asked questions are already answered for you in ',
         ', but if you have extra ones, welcome to our '];
+
+    public ngOnInit(): void {
+        window.scroll(0, 0);
+    }
 }

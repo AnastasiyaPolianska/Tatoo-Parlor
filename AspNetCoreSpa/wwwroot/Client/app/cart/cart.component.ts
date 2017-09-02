@@ -20,5 +20,7 @@ export class CartComponent implements OnInit {
         this._cartService.getProductsInCart()
             .subscribe(products => this.Products = products,
             error => this.ErrorMessage = <any>error);
+
+        window.scroll(0, 0);
     }
 }

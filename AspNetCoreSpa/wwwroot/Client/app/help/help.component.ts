@@ -1,10 +1,10 @@
-﻿import { Component} from '@angular/core';
+﻿import { Component, OnInit} from '@angular/core';
 
 @Component({
     templateUrl: './help.component.html',
     styleUrls: ['./help.component.scss']
 })
-export class HelpComponent {
+export class HelpComponent implements OnInit {
     public Maintitle: string = 'Frequently Asked Questions';
 
     public Description: string = 'If you have any questions about the tatoos or making them, if you are new to this sphere and do not imagine what to start with - find answers on this page, dispel myths and learn info about tatoos!';
@@ -44,4 +44,8 @@ export class HelpComponent {
     public Theme8_part3: string = '. You have a chance to buy cool tatoo products at our ';
     public Theme8_part4: string = ' and get familiar with available ';
     public Theme9: string = 'You can write us and ask them just now! Write us a massage on ';
+
+    public ngOnInit(): void {
+        window.scroll(0, 0);
+    }
 }
