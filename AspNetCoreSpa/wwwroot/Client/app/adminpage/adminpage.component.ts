@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
 import { Message } from 'primeng/primeng';
@@ -7,7 +7,7 @@ import { Message } from 'primeng/primeng';
     templateUrl: './adminpage.component.html',
     styleUrls: ['./adminpage.component.scss']
 })
-export class AdminpageComponent 
+export class AdminpageComponent implements OnInit
 {
     constructor(private _authService: AuthService, private _router: Router) { };
 
@@ -28,5 +28,9 @@ export class AdminpageComponent
 
     public AnswerQuestions(): void {
         this._router.navigate(['\questions']);
+    }
+
+    public ngOnInit(): void {
+        window.scroll(0, 0);
     }
 }

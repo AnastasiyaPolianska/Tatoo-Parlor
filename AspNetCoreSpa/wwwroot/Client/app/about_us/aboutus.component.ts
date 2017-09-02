@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     templateUrl: './aboutus.component.html',
     styleUrls: ['./aboutus.component.scss']
 })
-export class AboutusComponent {
+export class AboutusComponent implements OnInit {
     public ArticleTitle: string = 'About us...';
     public ArticleText: string= 'Small, but cozy and inspiring place in the centre of city with its own atmosphere, friendly workers and attention to every client. Our tatoo parlor has something for everyone. The policy of "Tatooed Youth" is to make tatoos that will suite everyone. Get familiar with our personnel and their works!';
     
@@ -35,5 +35,9 @@ export class AboutusComponent {
         'A re you afraid of spiders? This client obviously was not. Dark graphics makes sense if used originally. A bit scary, but still geniously fulfilled tatoo now decorates one shoulder and inspires someone.',
         'Leafs, drawn as if you are in a real bush of them - why not? Pretty and gripping tatoo that will not leave anyone undifferent. Fulfilled two years ago in five sessions and was corrected one time since then. The scretch was done by Asya and the client together. Cooperative work makes sense!',
         'Light and easy lines make a perfect tatoo for a young lady. A scretch for this one was made in summer which is not too unexpected. Asya and her love to nature did their job well. Was fulfilled during one long session.'
-        ]
+    ]
+
+    public ngOnInit(): void {
+        window.scroll(0, 0);
+    }
 }

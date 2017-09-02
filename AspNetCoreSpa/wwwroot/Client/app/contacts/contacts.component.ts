@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     templateUrl: './contacts.component.html',
     styleUrls: ['./contacts.component.scss']
 })
-export class ContactsComponent {
+export class ContactsComponent implements OnInit{
 
     public ArticleTitle: string = "Our contacts";
     public ArticleText: string = "You can contact us on email, phone, whatsapp or social netwotks' accounts. Always ready to answer your questions and help!";
@@ -23,4 +23,8 @@ export class ContactsComponent {
 
     public Lat: number = 49.8401751;
     public Lng: number = 24.0237981;
+
+    public ngOnInit(): void {
+        window.scroll(0, 0);
+    }
 }

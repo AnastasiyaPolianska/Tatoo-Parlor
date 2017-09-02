@@ -126,6 +126,8 @@ export class QuestionsComponent implements OnInit {
 
     /*Executes on initialisation*/
     ngOnInit(): void {
+        window.scroll(0, 0);
+
         this.AnswersOK = [];
         this.Initializer();
 

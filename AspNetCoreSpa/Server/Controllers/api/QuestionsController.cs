@@ -31,7 +31,15 @@ namespace AspNetCoreSpa.Server.Controllers.api
         [HttpGet]
         public IEnumerable<Question> GetQuestions()
         {
-            return _context.Questions.Where(x => x.Answer == "").ToList();
+            var a = _context.Questions.Where(x => x.Answer == "" && x.Category == "Problems with account/web site").ToList();
+            var b = _context.Questions.Where(x => x.Answer == "" && x.Category == "Need additional info").ToList();
+            var c = _context.Questions.Where(x => x.Answer == "" && x.Category == "Errors on the page").ToList();
+            var d = _context.Questions.Where(x => x.Answer == "" && x.Category == "Your fresh idea").ToList();
+            var e = _context.Questions.Where(x => x.Answer == "" && x.Category == "Other").ToList();
+
+            var list = a.Concat(b).Concat(c).Concat(d).Concat(e);
+
+            return list;
         }
 
         // GET: api/GetQuestionsForUser

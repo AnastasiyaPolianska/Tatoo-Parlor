@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "fc955257641b7294af83"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "aa025bddb060501531c8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -14013,6 +14013,9 @@ var AboutusComponent = (function () {
             'Light and easy lines make a perfect tatoo for a young lady. A scretch for this one was made in summer which is not too unexpected. Asya and her love to nature did their job well. Was fulfilled during one long session.'
         ];
     }
+    AboutusComponent.prototype.ngOnInit = function () {
+        window.scroll(0, 0);
+    };
     return AboutusComponent;
 }());
 AboutusComponent = tslib_1.__decorate([
@@ -14054,6 +14057,9 @@ var AdminpageComponent = (function () {
     };
     AdminpageComponent.prototype.AnswerQuestions = function () {
         this._router.navigate(['\questions']);
+    };
+    AdminpageComponent.prototype.ngOnInit = function () {
+        window.scroll(0, 0);
     };
     return AdminpageComponent;
 }());
@@ -14331,6 +14337,7 @@ var CabinetComponent = (function () {
     /*Executes on initialisation of page*/
     CabinetComponent.prototype.ngOnInit = function () {
         this.GetUser();
+        window.scroll(0, 0);
     };
     CabinetComponent.prototype.ToggleChangeFirstName = function () {
         this.ShowChangeFirstName = !this.ShowChangeFirstName;
@@ -14930,6 +14937,7 @@ var CartComponent = (function () {
         var _this = this;
         this._cartService.getProductsInCart()
             .subscribe(function (products) { return _this.Products = products; }, function (error) { return _this.ErrorMessage = error; });
+        window.scroll(0, 0);
     };
     return CartComponent;
 }());
@@ -15006,6 +15014,9 @@ var ContactsComponent = (function () {
         this.Lat = 49.8401751;
         this.Lng = 24.0237981;
     }
+    ContactsComponent.prototype.ngOnInit = function () {
+        window.scroll(0, 0);
+    };
     return ContactsComponent;
 }());
 ContactsComponent = tslib_1.__decorate([
@@ -15064,6 +15075,9 @@ var HelpComponent = (function () {
         this.Theme8_part4 = ' and get familiar with available ';
         this.Theme9 = 'You can write us and ask them just now! Write us a massage on ';
     }
+    HelpComponent.prototype.ngOnInit = function () {
+        window.scroll(0, 0);
+    };
     return HelpComponent;
 }());
 HelpComponent = tslib_1.__decorate([
@@ -15104,6 +15118,9 @@ var WelcomeComponent = (function () {
             ', but if you have extra ones, welcome to our '
         ];
     }
+    WelcomeComponent.prototype.ngOnInit = function () {
+        window.scroll(0, 0);
+    };
     return WelcomeComponent;
 }());
 WelcomeComponent = tslib_1.__decorate([
@@ -15152,6 +15169,7 @@ var ProductDetailComponent = (function () {
     /*Executes on initialisation of page*/
     ProductDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
+        window.scroll(0, 0);
         this.sub = this._route.params.subscribe(function (params) {
             var id = +params['id'];
             _this.getProduct(id);
@@ -15322,6 +15340,7 @@ var ProductListComponent = (function () {
     }
     /*Executes on initialisation of page*/
     ProductListComponent.prototype.ngOnInit = function () {
+        window.scroll(0, 0);
         this.Initializer();
     };
     ProductListComponent.prototype.Initializer = function () {
@@ -15619,6 +15638,7 @@ var QuestionsComponent = (function () {
     };
     /*Executes on initialisation*/
     QuestionsComponent.prototype.ngOnInit = function () {
+        window.scroll(0, 0);
         this.AnswersOK = [];
         this.Initializer();
         if (this._authService.IsAdmin) {
@@ -15977,6 +15997,7 @@ var ScretchesComponent = (function () {
     /*Executes on initialisation of page*/
     ScretchesComponent.prototype.ngOnInit = function () {
         var _this = this;
+        window.scroll(0, 0);
         this._scretchService.getScretches()
             .subscribe(function (scretches) { return _this.Scretches = scretches; }, function (error) { return _this.ErrorMessage = error; });
     };

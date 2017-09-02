@@ -7,7 +7,7 @@ import { IScretch } from './scretch';
     templateUrl: './scretches.component.html',
     styleUrls: ['./scretches.component.scss']
 })
-export class ScretchesComponent {
+export class ScretchesComponent implements OnInit{
     public ArticleTitle: string = 'Scretches...';
     public ArticleText: string = 'If you are ready to have a cool picture on your body, choose one scretch from below (just click on it!) or upload your own picture in a field at the bottom of this page and fill in the form to make an appointment. We will phone or email you in a couple of days after receiving your order. There is a name, price, size and short description of each model beneath the picture. Have fun!';
 
@@ -50,6 +50,8 @@ export class ScretchesComponent {
 
     /*Executes on initialisation of page*/
     ngOnInit(): void {
+        window.scroll(0, 0);
+
         this._scretchService.getScretches()
             .subscribe(scretches => this.Scretches = scretches,
             error => this.ErrorMessage = <any>error)       
