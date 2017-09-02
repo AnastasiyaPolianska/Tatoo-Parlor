@@ -9,6 +9,8 @@ using AspNetCoreSpa.DAL.Repositories.Abstract;
 using AspNetCoreSpa.DAL.Entities;
 using AspNetCoreSpa.DAL.Repositories;
 using AspNetCoreSpa.DAL;
+using AspNetCoreSpa.Server.Services.Abstract;
+using AspNetCoreSpa.Server.Services;
 
 namespace AspNetCoreSpa
 {
@@ -68,6 +70,7 @@ namespace AspNetCoreSpa
 
             services.AddScoped<IEntityBaseRepository<Product>, EntityBaseRepository<Product>>();
             services.AddScoped<IEntityBaseRepository<ArtistInfo>, EntityBaseRepository<ArtistInfo>>();
+            services.AddScoped<IFileDownloader, FileDownloader>();
             services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
 
             services.AddCustomizedMvc();

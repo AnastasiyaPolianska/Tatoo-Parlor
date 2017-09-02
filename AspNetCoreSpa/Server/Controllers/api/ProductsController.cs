@@ -9,6 +9,7 @@ using AspNetCoreSpa.DAL;
 using AspNetCoreSpa.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using AspNetCoreSpa.Server.Services.Abstract;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -18,11 +19,13 @@ namespace AspNetCoreSpa.Server.Controllers.api
     {
         private readonly ApplicationDbContext _context;
         private UserManager<ApplicationUser> _userManager;
+        private readonly IFileDownloader fileDownloader;
 
-        public ProductsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public ProductsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, IFileDownloader fileDownloader)
         {
             _context = context;
             _userManager = userManager;
+            this.fileDownloader = fileDownloader;
         }
 
         // GET: api/Products
@@ -104,6 +107,20 @@ namespace AspNetCoreSpa.Server.Controllers.api
 
             _context.Product.Add(product);
             await _context.SaveChangesAsync();
+            try
+            {
+                product.ImageUrl = await this.fileDownloader.DownloadImage(product.ImageUrl, product.Id, "Products");
+                _context.Product.Update(product);
+
+                await _context.SaveChangesAsync();
+            }
+
+            catch(Exception e)
+            {
+                _context.Product.Remove(product);
+                await _context.SaveChangesAsync();
+                return BadRequest(e.Message);
+            }
 
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
         }
