@@ -8,8 +8,8 @@ using AspNetCoreSpa.DAL;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170712094152_2")]
-    partial class _2
+    [Migration("20170903142431_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -200,6 +200,8 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Answer");
+
                     b.Property<string>("Category")
                         .IsRequired();
 
@@ -221,7 +223,13 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("Busy");
+
+                    b.Property<DateTime>("Date");
+
                     b.Property<string>("Description");
+
+                    b.Property<double>("Height");
 
                     b.Property<string>("ImageUrl");
 
@@ -231,7 +239,15 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
+                    b.Property<int?>("UserId");
+
+                    b.Property<int>("UserIdentifier");
+
+                    b.Property<double>("Width");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Scretches");
                 });
@@ -420,6 +436,13 @@ namespace DAL.Migrations
                         .WithMany("ContentTexts")
                         .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.Scretch", b =>
+                {
+                    b.HasOne("AspNetCoreSpa.DAL.Entities.ApplicationUser", "User")
+                        .WithMany("UserScretches")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.UserProduct", b =>

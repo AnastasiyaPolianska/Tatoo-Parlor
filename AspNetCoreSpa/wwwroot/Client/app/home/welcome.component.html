@@ -7,7 +7,7 @@
 <div class="tatooarticle text">
     <div class="row">
         <p class="arcticleheading margin2"> {{ArticleTitle}} </p>
-        <p class="arcticletext margin2"> {{ArticleText}} <a [routerLink]="['/aboutus']"> here</a>.</p>
+        <p class="arcticletext margin2"> {{ArticleText}} <a title="Click to switch to page about the parlor" [routerLink]="['/aboutus']"> here</a>.</p>
     </div>
 </div> 
    
@@ -20,10 +20,11 @@
  <div class="tatooarticle text">
     <div class="row">
         <p class="arcticleheading margin2"> {{StartwithTitle}} </p>
-        <p class="arcticletext margin2"> {{StartwithText[0]}} <a [routerLink]="['/aboutus']"> {{Here}} </a>. </p>
-        <p class="arcticletext margin2"> {{StartwithText[1]}} <a [routerLink]="['/scretches']"> {{ThisPage}} </a>. {{StartwithText[2]}} <a [routerLink]="['/products']"> {{Shop}}</a>.</p>   
-        <p class="arcticletext margin2"> {{StartwithText[3]}} <a [routerLink]="['/contacts']"> {{Here}} </a>. </p>
-        <p class="arcticletext margin2"> {{StartwithText[4]}} <a [routerLink]="['/help']"> {{FAQ}} </a>{{StartwithText[5]}} <a [routerLink]="['/questions']"> {{Questions}}</a>.</p>
+        <p class="arcticletext margin2"> {{StartwithText[0]}} <a title="Click to switch to page about the parlor" [routerLink]="['/aboutus']"> {{Here}}</a>. </p>
+        <p class="arcticletext margin2"> {{StartwithText[1]}} <a title="Click to switch to scretches page" [routerLink]="['/scretches']"> {{ThisPage}}</a>. {{StartwithText[2]}} <a title="Click to switch to online shop page" [routerLink]="['/products']"> {{Shop}}</a>.</p>   
+        <p class="arcticletext margin2"> {{StartwithText[3]}} <a title="Click to switch to contacts page" [routerLink]="['/contacts']"> {{Here}}</a>. </p>
+        <p class="arcticletext margin2"> {{StartwithText[4]}} <a title="Click to switch to FAQ page" [routerLink]="['/help']"> {{FAQ}}</a>{{StartwithText[5]}} <a title="Click to ask additional question" [routerLink]="['/questions']"> {{Questions}}</a>.</p>
+        <p class="arcticletext margin2"> {{StartwithText[6]}} <a title="Click to switch to cabinet page" [routerLink]="['/cabinet']"> {{Cabinet}}</a>{{StartwithText[7]}} <a title="Click to switch to my cart page" [routerLink]="['/cart']"> {{Cart}}</a>.</p>
     </div>
 
 </div> 

@@ -18,7 +18,7 @@ export class ContactsComponent implements OnInit{
     public Email: string = "tatooedyouth@gmail.com";
     public Phone: string = "+ 380958268932";
     public Instagram: string = "https://www.instagram.com/martha_bocharova";
-    public Twitter: string = "https://www.pinterest.com/pin/542754192577200718";
+    public Twitter: string = "https://twitter.com/tatooroze";
     public Vk: string = "https://vk.com/id20028415";
 
     public Lat: number = 49.8401751;

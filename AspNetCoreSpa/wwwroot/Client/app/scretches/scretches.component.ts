@@ -35,7 +35,8 @@ export class ScretchesComponent implements OnInit{
     public Picture: string = 'Your own picture';
     public LabelChoose: string = 'Choose one of the scretches:';
     public LabelUpload: string = 'Upload your own picture:';
-    public ButtonName: string = 'Confirm'
+    public ButtonName: string = 'Confirm';
+    public DateOfAppointment: string = "Date of appointment: ";
 
     public SelectedName: any;
     public SelectedNameDescription: string;
@@ -45,12 +46,32 @@ export class ScretchesComponent implements OnInit{
     public NotChoosed: string = "not choosed";
     public ChoosedFileName: string;
 
+    public AddUrl: string = "Enter product image url:";
+    public PlaceHolderUrl: string = "Enter product image url...";
+    public ToolUrl: string = "*Enter valid image url.";
+    public ToolErrorUrl: string;
+    public UrlOk: boolean = true;
+    public Url: string = "";
+
+    public ScretchUrlLabel: string = "Url: ";
+    public NotEntered: string = "not entered";
+
+    public value: Date;
+    public minimumDate: Date = new Date();
+    public DateToShow: string = "";
+
     constructor(private _scretchService: ScretchService) {
     }
 
     /*Executes on initialisation of page*/
     ngOnInit(): void {
         window.scroll(0, 0);
+
+        var day = this.minimumDate.getDate();
+        var month = this.minimumDate.getMonth();
+        var year = this.minimumDate.getFullYear();
+
+        this.DateToShow = day.toString() + "/" + month.toString() + "/" + year.toString();
 
         this._scretchService.getScretches()
             .subscribe(scretches => this.Scretches = scretches,
@@ -130,14 +151,15 @@ export class ScretchesComponent implements OnInit{
         }
     }
 
-    onChange(files : any) {
-        var l = files.length;
-        var namesArr = [];
+    SelectingNewDate(): void {
+        var day = this.value.getDate();
+        var month = this.value.getMonth();
+        var year = this.value.getFullYear();
 
-        for (var i = 0; i < l; i++) {
-            namesArr.push(files[i].name);
-        }
+        this.DateToShow = day.toString() + "/" + month.toString() + "/" + year.toString();
+    }
 
-        this.ChoosedFileName = namesArr[0];
-  }
+    SendScretch(): void {
+        alert(this.DateToShow);
+    }
 }

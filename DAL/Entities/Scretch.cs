@@ -22,6 +22,14 @@ namespace AspNetCoreSpa.DAL.Entities
 
         public string ImageUrl { get; set; }
 
+        public bool Busy { get; set; }
+
+        public ApplicationUser User { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public int UserIdentifier { get; set; }
+
         [Key]
         public int Id { get; set; }
     }

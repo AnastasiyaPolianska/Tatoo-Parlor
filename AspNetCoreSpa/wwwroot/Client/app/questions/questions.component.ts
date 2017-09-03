@@ -65,6 +65,7 @@ export class QuestionsComponent implements OnInit {
     public isAdminPage = false;
     public Checked: boolean = true;
 
+    public TitleSendQuestion: string = "Click to send question";
     public TitleSendAnswer: string = "Click to send answer";
     public AnswersOK: boolean[];
     public AllQuestionsLength: number;
