@@ -8,9 +8,10 @@ using AspNetCoreSpa.DAL;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170903151601_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1")
@@ -230,8 +231,6 @@ namespace DAL.Migrations
 
                     b.Property<double>("Height");
 
-                    b.Property<int>("IdentifierOfUser");
-
                     b.Property<string>("ImageUrl");
 
                     b.Property<double>("Price");
@@ -239,6 +238,8 @@ namespace DAL.Migrations
                     b.Property<string>("ScretchName")
                         .IsRequired()
                         .HasMaxLength(100);
+
+                    b.Property<int>("UserIdentifier");
 
                     b.Property<double>("Width");
 

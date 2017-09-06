@@ -6,6 +6,8 @@
   }
   </style>
 
+<p-growl [value]="Msgs" id="growl"></p-growl>
+
 <div class="scretches-page">
     <div class="tatooarticle text plaintext">
         <p class="margin2 heading"> {{ArticleTitle}} </p>
@@ -105,7 +107,7 @@
                 </div>
             </div>
             <div *ngIf="Option=='Your own picture'" class="lowborder">
-                <div class='row' style="margin-bottom: 1%">
+                <div class='row'>
                     <div class='row' style="width: 100%">
                         <label class='col-md-2 tatoolable' style="margin-left: 3%">{{AddUrl}}</label>
                         <input type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': UrlOk==false}" placeholder="{{PlaceHolderUrl}}" [(ngModel)]='Url' />
@@ -113,13 +115,46 @@
                         <label *ngIf="!UrlOk" class='tatootoolerror' style="margin-left: 42%">{{ToolErrorUrl}}</label>
                     </div>
                 </div>
+                <div class='row'>
+                    <label class='col-md-2 tatoolable margleft'>{{AddDescription}}</label>
+                    <textarea rows="3" type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': DescriptionOk==false}" placeholder="{{PlaceHolderDescription}}" [(ngModel)]='Description'></textarea>
+                    <label *ngIf="DescriptionOk" class='tatootool marginer'>{{ToolDescription}}</label>
+                    <label *ngIf="!DescriptionOk" class='tatootoolerror marginer'>{{ToolErrorDescription}}</label>
+                </div>
+                <div class='row' style="width: 100%">
+                    <label class='col-md-2 tatoolable margleft'>{{WidthName}}</label>
+                    <button title={{TitleDecreaseWidth}} class="btn btn-default tatoobuttonval" (click)="DecreaseWidth()" style="margin-right: 1%; margin-left:2%">
+                        <i class='glyphicon glyphicon-chevron-left'></i>
+                    </button>
+                    <input type='range' min="1" max="1000" step="1" value="1" class='tatooinputval marginbottom' [(ngModel)]='Width' />
+                    <button title={{TitleIncreaseWidth}} class="btn btn-default tatoobuttonval" (click)="IncreaseWidth()" style="margin-left: 1%">
+                        <i class='glyphicon glyphicon-chevron-right'></i>
+                    </button>
+                    <label class='tatootool' style="margin-left: 42%">{{WidthName}}{{Width}}</label>
+                </div>                
+                <div class='row' style="width: 100%">
+                    <label class='col-md-2 tatoolable margleft'>{{HeightName}}</label>
+                    <button title={{TitleDecreaseHeight}} class="btn btn-default tatoobuttonval" (click)="DecreaseHeight()" style="margin-right: 1%; margin-left:2%">
+                        <i class='glyphicon glyphicon-chevron-left'></i>
+                    </button>
+                    <input type='range' min="1" max="1000" step="1" value="1" class='tatooinputval marginbottom' [(ngModel)]='Height' />
+                    <button title={{TitleIncreaseHeight}} class="btn btn-default tatoobuttonval" (click)="IncreaseHeight()" style="margin-left: 1%">
+                        <i class='glyphicon glyphicon-chevron-right'></i>
+                    </button>
+                    <label class='tatootool' style="margin-left: 42%">{{HeightName}}{{Height}}</label>
+                </div>
+                <div class='row' style="margin-bottom: 1%">
+                    <div class='row' style="width: 100%">
+                        <label class='col-md-2 tatoolable' style="margin-left: 3%">{{PriceName}}</label>
+                        <span class='col-md-2 tatoolable' style="padding: 0%; margin-left: 0.5%">{{Height * Width| currency:'USD':true:'1.2-2'}}</span>
+                    </div>
+                </div>     
             </div>
             <div *ngIf="Option=='Your own picture' || Option=='Scretch from gallery'" class="ui-g lowborder flexer" style="width:100%; margin-bottom:10px; padding:2%">
                 <p-calendar [(ngModel)]="value" margin="1%" [inline]="true" [minDate]="minimumDate" [defaultDate]="minimumDate" (onSelect)="SelectingNewDate()"></p-calendar>
             </div>
-                <button class='btn btn-primary tatoobutton' style="float: right; margin-top: 1%" (click)="SendScretch()"> 
-                    <i class='glyphicon glyphicon-ok'></i>
-                    {{ButtonName}} 
+                <button class='btn btn-primary tatoobutton' style="float: right; margin-top: 1%" (click)="SendScretch()" title={{TitleSend}}> 
+                    <i class='glyphicon glyphicon-envelope'></i> {{ButtonName}}                    
                 </button>
             </div>
         <div class='panel-footer' id="tatoopanel">
@@ -130,6 +165,7 @@
                 <li *ngIf="SelectedName && Option=='Scretch from gallery'"> {{ScretchNameLabel}} {{SelectedName}}</li>
                 <li *ngIf="Url=='' && Option=='Your own picture'"> {{ScretchUrlLabel}} {{NotEntered}}</li>
                 <li *ngIf="Url!='' && Option=='Your own picture'"> {{ScretchUrlLabel}} {{Url}}</li>
+                <li *ngIf="Option=='Your own picture'"> {{TatooSize}} {{Width}} x {{Height}}</li>
                 <li *ngIf="Option=='Scretch from gallery' || Option=='Your own picture'"> {{DateOfAppointment}} {{DateToShow}}</li>
             </ul>
         </div>

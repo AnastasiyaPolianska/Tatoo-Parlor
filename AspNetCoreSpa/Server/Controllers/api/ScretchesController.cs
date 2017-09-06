@@ -32,6 +32,16 @@ namespace AspNetCoreSpa.Server.Controllers.api
             return test;
         }
 
+        // GET: api/Scretches/ForUser
+        [HttpGet("ForUser")]
+        public async Task<IEnumerable<Scretch>> GetScretchesForUserAsync()
+        {
+            var user = await _userManager.FindByEmailAsync(User.Identity.Name);
+
+            var test = _context.Scretches.Where(x => x.IdentifierOfUser == user.Id).ToList();
+            return test;
+        }
+
         // GET: api/Scretches/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetScretch([FromRoute] int id)
@@ -95,13 +105,17 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 return BadRequest(ModelState);
             }
 
+            var user = await _userManager.FindByEmailAsync(User.Identity.Name);
+            scretch.ScretchName = "Scretch for user " + user.Email;
+            scretch.IdentifierOfUser = user.Id;
+
             _context.Scretches.Add(scretch);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetScretch", new { id = scretch.Id }, scretch);
         }
 
-        // POST: api/Scretches
+        // POST: api/Scretches/SetId
         [HttpPost("SetId")]
         public async Task<IActionResult> PostScretchWithId([FromBody] Scretch scretch)
         {
@@ -113,14 +127,10 @@ namespace AspNetCoreSpa.Server.Controllers.api
             var temp = _context.Scretches.FirstOrDefault(x => x.Id == scretch.Id);
             temp.Date = scretch.Date;
             temp.Busy = scretch.Busy;
-            temp.UserIdentifier = scretch.UserIdentifier;
 
-            await _context.SaveChangesAsync();
+            var user = await _userManager.FindByEmailAsync(User.Identity.Name);
+            temp.IdentifierOfUser = user.Id;
 
-            var user = _context.ApplicationUsers.Include(x => x.UserScretches).FirstOrDefault(x => x.Email == User.Identity.Name);
-            user.UserScretches.Add(temp);
-
-            _context.Scretches.Add(scretch);
             await _context.SaveChangesAsync();
 
             return Ok();

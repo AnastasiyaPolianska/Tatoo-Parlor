@@ -22,6 +22,21 @@ export class ScretchService {
             .catch(this.handleError);
     }
 
+    addScretch(model: IScretch): Observable<any> {
+        return this._http.post(this._scretchUrl, model);
+    }
+
+    setUserId(model: IScretch): Observable<any> {
+        return this._http.post(this._scretchUrl + "SetId", model);
+    }
+
+    getScretchesForUser(): Observable<IScretch[]> {
+        return this._http.get(this._scretchUrl +"ForUser")
+            .map((response: Response) => <IScretch[]>response.json())
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
+
     private handleError(error: Response) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console

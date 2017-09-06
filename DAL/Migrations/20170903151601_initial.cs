@@ -8,12 +8,18 @@ namespace DAL.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
+            migrationBuilder.RenameColumn(
+                name: "UserId",
+                table: "Scretches",
+                newName: "UserIdentifier");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-
+            migrationBuilder.RenameColumn(
+                name: "UserIdentifier",
+                table: "Scretches",
+                newName: "UserId");
         }
     }
 }

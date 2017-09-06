@@ -1,13 +1,12 @@
 /* Defines the product entity */
 export interface IScretch {
-    Id: number;
+    id: number;
     scretchName: string;
     price: number;
     width: number;
     height: number;
     description: string;
     imageUrl: string;
-    userIdentifier: number;
     date: string;
     busy: false;
 }

@@ -28,8 +28,6 @@ namespace AspNetCoreSpa.DAL
             modelBuilder.Entity<UserProduct>().HasOne(x => x.ProductInCart).WithMany(y => y.Clients).HasForeignKey(k => k.ProductId);
 
             modelBuilder.Entity<UserProduct>().HasKey(x => new { x.ProductId, x.UserId });
-
-            modelBuilder.Entity<Scretch>().HasOne(x => x.User).WithMany(y => y.UserScretches);
             // Customize the ASP.NET Identity model and override the defaults if needed.
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);

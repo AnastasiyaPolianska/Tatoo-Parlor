@@ -30,7 +30,5 @@ namespace AspNetCoreSpa.DAL.Entities
         }
 
         public List<UserProduct> ProductsInCart { get; set; }
-
-        public List<Scretch> UserScretches { get; set; }
     }
 }

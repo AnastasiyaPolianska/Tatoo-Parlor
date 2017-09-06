@@ -12,6 +12,8 @@ namespace AspNetCoreSpa.DAL.Entities
         [Required, MaxLength(100)]
         public string ScretchName { get; set; }
 
+        public int IdentifierOfUser { get; set; }
+
         public double Price { get; set; }
 
         public double Width { get; set; }
@@ -24,11 +26,7 @@ namespace AspNetCoreSpa.DAL.Entities
 
         public bool Busy { get; set; }
 
-        public ApplicationUser User { get; set; }
-
         public DateTime Date { get; set; }
-
-        public int UserIdentifier { get; set; }
 
         [Key]
         public int Id { get; set; }

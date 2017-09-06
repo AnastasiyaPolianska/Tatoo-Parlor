@@ -52,7 +52,7 @@ export class LogInComponent {
 
             this._authService.logIn(tempModel).subscribe(data => {
 
-                this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have logged in successfully. Now you will be rerouted to your cabinet." });
+                this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have logged in successfully. Now you will be rerouted to your cabinet" });
 
                 this._authService.getUser().subscribe(
                     data => {

@@ -8,8 +8,8 @@ using AspNetCoreSpa.DAL;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170903142431_initial")]
-    partial class initial
+    [Migration("20170903151658_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -239,15 +239,9 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<int?>("UserId");
-
-                    b.Property<int>("UserIdentifier");
-
                     b.Property<double>("Width");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Scretches");
                 });
@@ -436,13 +430,6 @@ namespace DAL.Migrations
                         .WithMany("ContentTexts")
                         .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.Scretch", b =>
-                {
-                    b.HasOne("AspNetCoreSpa.DAL.Entities.ApplicationUser", "User")
-                        .WithMany("UserScretches")
-                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.UserProduct", b =>

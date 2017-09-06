@@ -149,6 +149,36 @@
         justify-content: center;
     }
 
+    .tatoobuttonval {
+        background-color: #000000;
+        border-color: #FFFFFF;
+        float: right;
+        color: white;
+        width: 8%;
+        height: 35px;
+    }
+
+    .tatoobuttonval:hover {
+        background-color: #464451;
+        border-color: #D5D5D5;
+    }
+
+    .tatooinputval {
+        color: #000000;
+        min-width: 39%;
+        max-width: 39%;
+        margin-right: 1%;
+        margin-top: 0.5%;
+    }
+
+    .margleft {
+        margin-left: 0%;
+    }
+
+    .marginer {
+        margin-left: 39%
+    }
+
     @media only screen and (min-width: 800px) {
         .tatoodiv {
             width: 50%;
@@ -160,6 +190,14 @@
 
         .tatootoolerror {
             font-size: 1.5vmin;
+        }
+
+        .margleft {
+            margin-left: 1%;
+        }
+
+        .marginer {
+            margin-left: 40.5%
         }
     }
 }
