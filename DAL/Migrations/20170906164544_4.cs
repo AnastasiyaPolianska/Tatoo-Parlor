@@ -8,17 +8,18 @@ namespace DAL.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Answer",
-                table: "Questions",
-                nullable: true);
+            migrationBuilder.DropColumn(
+                name: "Balance",
+                table: "AspNetUsers");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Answer",
-                table: "Questions");
+            migrationBuilder.AddColumn<int>(
+                name: "Balance",
+                table: "AspNetUsers",
+                nullable: false,
+                defaultValue: 0);
         }
     }
 }

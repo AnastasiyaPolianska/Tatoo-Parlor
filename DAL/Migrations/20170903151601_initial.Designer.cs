@@ -8,8 +8,8 @@ using AspNetCoreSpa.DAL;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170708200017_1")]
-    partial class _1
+    [Migration("20170903151601_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -200,6 +200,8 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Answer");
+
                     b.Property<string>("Category")
                         .IsRequired();
 
@@ -214,6 +216,36 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Questions");
+                });
+
+            modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.Scretch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Busy");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("Description");
+
+                    b.Property<double>("Height");
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<double>("Price");
+
+                    b.Property<string>("ScretchName")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<int>("UserIdentifier");
+
+                    b.Property<double>("Width");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Scretches");
                 });
 
             modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.UserProduct", b =>

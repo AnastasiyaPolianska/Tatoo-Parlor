@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
 import { RadioButtonModule } from 'primeng/primeng';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
+import { CalendarModule } from 'primeng/primeng';
+import { GrowlModule } from 'primeng/primeng';
 
 import { ScretchesComponent } from './scretches.component';
 
@@ -13,7 +15,9 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
       SharedModule,
       RadioButtonModule,
+      GrowlModule,
       Ng2PageScrollModule.forRoot(),
+      CalendarModule,
     RouterModule.forChild([
       { path: 'scretches', component: ScretchesComponent },
     ])
