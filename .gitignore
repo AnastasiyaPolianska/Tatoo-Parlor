@@ -303,3 +303,5 @@ $RECYCLE.BIN/
 *.lnk
 /AspNetCoreSpa/logs/log-20170808.txt
 /AspNetCoreSpa/logs
+/AspNetCoreSpa/wwwroot/Images/Products
+/AspNetCoreSpa/wwwroot/Images/Products
