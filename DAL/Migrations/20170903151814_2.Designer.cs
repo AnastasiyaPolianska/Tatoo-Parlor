@@ -8,8 +8,8 @@ using AspNetCoreSpa.DAL;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170621230350_initial")]
-    partial class initial
+    [Migration("20170903151814_2")]
+    partial class _2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -176,21 +176,19 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("description");
+                    b.Property<int>("AmountLeft");
 
-                    b.Property<string>("imageUrl");
+                    b.Property<string>("Description");
 
-                    b.Property<double>("price");
+                    b.Property<string>("ImageUrl");
 
-                    b.Property<int>("productCode");
+                    b.Property<double>("Price");
 
-                    b.Property<string>("productName")
+                    b.Property<string>("ProductName")
                         .IsRequired()
                         .HasMaxLength(100);
 
-                    b.Property<DateTime>("releaseDate");
-
-                    b.Property<double>("starRating");
+                    b.Property<double>("StarRating");
 
                     b.HasKey("Id");
 
@@ -201,6 +199,8 @@ namespace DAL.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Answer");
 
                     b.Property<string>("Category")
                         .IsRequired();
@@ -216,6 +216,51 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Questions");
+                });
+
+            modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.Scretch", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("Busy");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("Description");
+
+                    b.Property<double>("Height");
+
+                    b.Property<int>("IdentifierOfUser");
+
+                    b.Property<string>("ImageUrl");
+
+                    b.Property<double>("Price");
+
+                    b.Property<string>("ScretchName")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<double>("Width");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Scretches");
+                });
+
+            modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.UserProduct", b =>
+                {
+                    b.Property<int>("ProductId");
+
+                    b.Property<int>("UserId");
+
+                    b.Property<long>("Amount");
+
+                    b.HasKey("ProductId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserProducts");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<int>", b =>
@@ -386,6 +431,19 @@ namespace DAL.Migrations
                     b.HasOne("AspNetCoreSpa.DAL.Entities.Language", "Language")
                         .WithMany("ContentTexts")
                         .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("AspNetCoreSpa.DAL.Entities.UserProduct", b =>
+                {
+                    b.HasOne("AspNetCoreSpa.DAL.Entities.Product", "ProductInCart")
+                        .WithMany("Clients")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("AspNetCoreSpa.DAL.Entities.ApplicationUser", "User")
+                        .WithMany("ProductsInCart")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

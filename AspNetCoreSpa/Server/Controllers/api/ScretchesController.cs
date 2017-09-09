@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AspNetCoreSpa.DAL;
 using AspNetCoreSpa.DAL.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -15,18 +16,30 @@ namespace AspNetCoreSpa.Server.Controllers.api
     public class ScretchesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private UserManager<ApplicationUser> _userManager;
 
-        public ScretchesController(ApplicationDbContext context)
+        public ScretchesController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: api/Scretches
         [HttpGet]
         public IEnumerable<Scretch> GetScretches()
         {
-            var test = _context.Scretches.ToList();
-            return _context.Scretches;
+            var test = _context.Scretches.Where(x => x.Busy == false).ToList();
+            return test;
+        }
+
+        // GET: api/Scretches/ForUser
+        [HttpGet("ForUser")]
+        public async Task<IEnumerable<Scretch>> GetScretchesForUserAsync()
+        {
+            var user = await _userManager.FindByEmailAsync(User.Identity.Name);
+
+            var test = _context.Scretches.Where(x => x.IdentifierOfUser == user.Id).ToList();
+            return test;
         }
 
         // GET: api/Scretches/5
@@ -92,10 +105,35 @@ namespace AspNetCoreSpa.Server.Controllers.api
                 return BadRequest(ModelState);
             }
 
+            var user = await _userManager.FindByEmailAsync(User.Identity.Name);
+            scretch.ScretchName = "Scretch for user " + user.Email;
+            scretch.IdentifierOfUser = user.Id;
+
             _context.Scretches.Add(scretch);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetScretch", new { id = scretch.Id }, scretch);
+        }
+
+        // POST: api/Scretches/SetId
+        [HttpPost("SetId")]
+        public async Task<IActionResult> PostScretchWithId([FromBody] Scretch scretch)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var temp = _context.Scretches.FirstOrDefault(x => x.Id == scretch.Id);
+            temp.Date = scretch.Date;
+            temp.Busy = scretch.Busy;
+
+            var user = await _userManager.FindByEmailAsync(User.Identity.Name);
+            temp.IdentifierOfUser = user.Id;
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
 
         // DELETE: api/Scretches/5

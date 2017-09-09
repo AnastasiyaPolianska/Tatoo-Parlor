@@ -8,7 +8,7 @@ using AspNetCoreSpa.DAL;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170808211944_4")]
+    [Migration("20170906164544_4")]
     partial class _4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -223,9 +223,15 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("Busy");
+
+                    b.Property<DateTime>("Date");
+
                     b.Property<string>("Description");
 
                     b.Property<double>("Height");
+
+                    b.Property<int>("IdentifierOfUser");
 
                     b.Property<string>("ImageUrl");
 

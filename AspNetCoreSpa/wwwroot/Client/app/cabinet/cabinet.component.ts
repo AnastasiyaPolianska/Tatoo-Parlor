@@ -3,6 +3,9 @@ import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
 import { Message } from 'primeng/primeng';
 
+import { ScretchService } from '../scretches/scretch.service';
+import { IScretch } from '../scretches/scretch';
+
 @Component({
     templateUrl: './cabinet.component.html',
     styleUrls: ['./cabinet.component.scss']
@@ -10,7 +13,8 @@ import { Message } from 'primeng/primeng';
 export class CabinetComponent implements OnInit
 {
     constructor(private _authService: AuthService,
-                private _router: Router) { };
+        private _router: Router,
+        private _scretchService: ScretchService) { };
 
     public Maintitle: string = 'My cabinet';
     public Subtitle: string = 'Feel yourself at home.';
@@ -114,7 +118,19 @@ export class CabinetComponent implements OnInit
     public ConfirmEvery: string;
 
     public Msgs: Message[] = [];
+    public Scretches: IScretch[];
     public error: string;
+    public ErrorMessage = "";
+
+    public PanelSubtitle = "Your scretches";
+    public Image = "Image";
+    public ScretchName = "Scretch Name";
+    public Price = "Price";
+    public Size = "Size";
+    public Date = "Date";
+
+    public ImageWidth: number = 50;
+    public ImageMargin: number = 2;
 
     /*Getting user info from database on server side*/
     public GetUser(): void {
@@ -128,6 +144,10 @@ export class CabinetComponent implements OnInit
     /*Executes on initialisation of page*/
     public ngOnInit() {
         this.GetUser();
+
+        this._scretchService.getScretchesForUser()
+            .subscribe(scretches => this.Scretches = scretches,
+            error => this.ErrorMessage = <any>error)
 
         window.scroll(0, 0);
     }
@@ -788,5 +808,12 @@ export class CabinetComponent implements OnInit
 
     public MoveToAdminPage(): void {
         if (this._authService.IsAdmin) this._router.navigate(['/adminpage']);
+    }
+
+    public Dater(date: string): string {
+
+        var DateToShow = date.substr(0, 10);
+
+        return DateToShow;
     }
 }

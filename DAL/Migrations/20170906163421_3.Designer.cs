@@ -8,7 +8,7 @@ using AspNetCoreSpa.DAL;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170713192307_3")]
+    [Migration("20170906163421_3")]
     partial class _3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,6 +49,8 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("AccessFailedCount");
+
+                    b.Property<int>("Balance");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -200,6 +202,8 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Answer");
+
                     b.Property<string>("Category")
                         .IsRequired();
 
@@ -221,9 +225,15 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("Busy");
+
+                    b.Property<DateTime>("Date");
+
                     b.Property<string>("Description");
 
                     b.Property<double>("Height");
+
+                    b.Property<int>("IdentifierOfUser");
 
                     b.Property<string>("ImageUrl");
 

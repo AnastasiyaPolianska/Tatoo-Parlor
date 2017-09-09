@@ -85,7 +85,7 @@
 
     <div class="tatooarticle text">
         <p class="margin2 heading">{{Maintitle}}</p>
-        <p class="text plaintext margin2"> {{Description_part1}} <a routerLink="/help">{{Insert}}</a> {{Description_part2}} </p>
+        <p class="text plaintext margin2"> {{Description_part1}} <a title="Click to switch to FAQ page" routerLink="/help">{{Insert}}</a> {{Description_part2}} </p>
     </div>
 
     <div class='panel panel-primary tatoodiv' style="margin-top:2%">
@@ -117,7 +117,7 @@
                 <label *ngIf="!MessageOK" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorMessage}}</label>
             </div>
 
-            <button class=' btn btn-primary tatoobutton' (click)='SendQuestion()'>
+            <button title={{TitleSendQuestion}} class=' btn btn-primary tatoobutton' (click)='SendQuestion()'>
                 <i class='glyphicon glyphicon-envelope'></i> {{ButtonName}} 
             </button>
         </div>

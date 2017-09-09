@@ -271,6 +271,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Images\Misc\" />
+    <Folder Include="Images\Scratches\" />
+    <Folder Include="Images\Products\" />
     <Folder Include="wwwroot\dist\" />
   </ItemGroup>
 

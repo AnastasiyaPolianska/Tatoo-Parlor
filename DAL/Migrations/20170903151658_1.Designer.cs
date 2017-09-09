@@ -8,8 +8,8 @@ using AspNetCoreSpa.DAL;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170712094152_2")]
-    partial class _2
+    [Migration("20170903151658_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -200,6 +200,8 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Answer");
+
                     b.Property<string>("Category")
                         .IsRequired();
 
@@ -221,7 +223,13 @@ namespace DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<bool>("Busy");
+
+                    b.Property<DateTime>("Date");
+
                     b.Property<string>("Description");
+
+                    b.Property<double>("Height");
 
                     b.Property<string>("ImageUrl");
 
@@ -230,6 +238,8 @@ namespace DAL.Migrations
                     b.Property<string>("ScretchName")
                         .IsRequired()
                         .HasMaxLength(100);
+
+                    b.Property<double>("Width");
 
                     b.HasKey("Id");
 

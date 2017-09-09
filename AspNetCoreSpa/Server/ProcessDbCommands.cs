@@ -27,7 +27,7 @@ namespace AspNetCoreSpa.Server
                 // if (args.Contains("migratedb"))
                 // {
                 Console.WriteLine("Migrating database");
-                db.Database.Migrate();
+               // db.Database.Migrate();
                 // }
 
                 // if (args.Contains("seeddb"))
