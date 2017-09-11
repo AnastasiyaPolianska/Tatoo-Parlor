@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Message } from 'primeng/primeng';
+import { FileUpload } from 'primeng/components/fileupload/fileupload';
 import { Router } from '@angular/router';
 
 import { ScretchService } from './scretch.service';
@@ -91,6 +92,9 @@ export class ScretchesComponent implements OnInit{
 
     public Msgs: Message[] = [];
 
+    @ViewChild('upload') fileUpload: FileUpload; 
+    public uploadUrl = "api/stretches/addphoto/"
+
     /*Executes on initialisation of page*/
     ngOnInit(): void {
         window.scroll(0, 0);
@@ -105,7 +109,7 @@ export class ScretchesComponent implements OnInit{
 
         this._scretchService.getScretches()
             .subscribe(scretches => this.Scretches = scretches,
-            error => this.ErrorMessage = <any>error)       
+            error => this.ErrorMessage = <any>error)
     }
 
     isActive(url: string) {
@@ -194,27 +198,18 @@ export class ScretchesComponent implements OnInit{
         this.DateToShow = year.toString() + "-" + month.toString() + "-" + day.toString();
     }
 
+    UploadFile(id: Number): void {
+        this.fileUpload.url = "api/scretches/addphoto/" + id;
+        this.fileUpload.upload();
+    }
+
     SendScretch(): void {
         this.UrlOk = true;
         this.DescriptionOk = true;
 
         if (this.Option == 'Your own picture')
         {
-            if (this.Url.length < 8) {
-                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while sending your own picture: check the url" });
-                this.UrlOk = false;
-                this.ToolErrorUrl = "*Check the url: enter valid image url.";
-            }
-            else {
-                var reg = new RegExp("^https?:\\/\\/");
-                var EveryOk = reg.test(this.Url);
-
-                if (!EveryOk) {
-                    this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while sending your own picture: check the url" });
-                    this.UrlOk = false;
-                    this.ToolErrorUrl = "*Check the url: enter valid image url.";
-                }
-            }
+            if (this.fileUpload.hasFiles())this.UrlOk = true;
 
             if (this.Description.length > 200) {
                 this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while adding a message: check the length" });
@@ -226,10 +221,11 @@ export class ScretchesComponent implements OnInit{
             {
                 var temp = this.Height * this.Width;
 
-                let tempModel: IScretch = { scretchName: "User scretch", price: temp, width: this.Width, height: this.Height, description: this.Description, imageUrl: this.Url, date: this.value, busy: true };
+                let tempModel: any = { scretchName: "User scretch", price: temp, width: this.Width, height: this.Height, description: this.Description, imageUrl: this.Url, date: this.value, busy: true };
                 this._scretchService.addScretch(tempModel).subscribe(data => {
                     this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have loaded the scretch successfully. Now you will be rerouted to your cabinet, where you can change details of appointment" });
-
+                    this.uploadUrl = "api/scretches/addphoto/" + data;
+                    this.UploadFile(data);
                     setTimeout((router: Router) => {
                         this.router.navigate(['/cabinet'])
                     }, 2000);
@@ -243,7 +239,7 @@ export class ScretchesComponent implements OnInit{
             }
 
             else {
-                let tempModel: IScretch = { id: this.ScretchNameId, scretchName: this.SelectedName, date: this.value, busy: true };
+                let tempModel: any = { id: this.ScretchNameId, scretchName: this.SelectedName, date: this.value, busy: true };
                 this._scretchService.setUserId(tempModel).subscribe(data => {
                     this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have choosed the scretch successfully. Now you will be rerouted to your cabinet, where you can change details of appointment" });
 

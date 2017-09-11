@@ -8,8 +8,8 @@ using AspNetCoreSpa.DAL;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170903151658_1")]
-    partial class _1
+    [Migration("20170909133420_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -231,6 +231,8 @@ namespace DAL.Migrations
 
                     b.Property<double>("Height");
 
+                    b.Property<int>("IdentifierOfUser");
+
                     b.Property<string>("ImageUrl");
 
                     b.Property<double>("Price");
@@ -376,6 +378,8 @@ namespace DAL.Migrations
 
                     b.Property<string>("Scope");
 
+                    b.Property<string>("Status");
+
                     b.Property<string>("Subject");
 
                     b.HasKey("Id");
@@ -406,6 +410,16 @@ namespace DAL.Migrations
 
                     b.Property<string>("AuthorizationId");
 
+                    b.Property<string>("Ciphertext");
+
+                    b.Property<DateTimeOffset?>("End");
+
+                    b.Property<string>("Hash");
+
+                    b.Property<DateTimeOffset?>("Start");
+
+                    b.Property<string>("Status");
+
                     b.Property<string>("Subject");
 
                     b.Property<string>("Type");
@@ -415,6 +429,9 @@ namespace DAL.Migrations
                     b.HasIndex("ApplicationId");
 
                     b.HasIndex("AuthorizationId");
+
+                    b.HasIndex("Hash")
+                        .IsUnique();
 
                     b.ToTable("OpenIddictTokens");
                 });

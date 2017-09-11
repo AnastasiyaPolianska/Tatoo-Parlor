@@ -36,8 +36,8 @@ export class ProductService {
         return this._http.post(this._productUrl + "delete", idProduct, { headers: headers });
     }
 
-    addProduct(model: IProduct): Observable<any> {
-        return this._http.post(this._productUrl, model);
+    addProduct(model: IProduct): Observable<Number> {
+        return this._http.post(this._productUrl, model).map(responce => responce.json().id);
     }
 
     changeProduct(model: IProduct): Observable<any> {

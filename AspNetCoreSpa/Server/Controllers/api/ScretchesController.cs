@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using AspNetCoreSpa.DAL;
 using AspNetCoreSpa.DAL.Entities;
 using Microsoft.AspNetCore.Identity;
+using AspNetCoreSpa.Server.Services.Abstract;
+using System.IO;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -17,11 +19,13 @@ namespace AspNetCoreSpa.Server.Controllers.api
     {
         private readonly ApplicationDbContext _context;
         private UserManager<ApplicationUser> _userManager;
+        private readonly IFileUploader fileUploader;
 
-        public ScretchesController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public ScretchesController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, IFileUploader fileUploader)
         {
             _context = context;
             _userManager = userManager;
+            this.fileUploader = fileUploader;
         }
 
         // GET: api/Scretches
@@ -112,7 +116,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
             _context.Scretches.Add(scretch);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetScretch", new { id = scretch.Id }, scretch);
+            return Ok(scretch.Id);
         }
 
         // POST: api/Scretches/SetId
@@ -134,6 +138,18 @@ namespace AspNetCoreSpa.Server.Controllers.api
             await _context.SaveChangesAsync();
 
             return Ok();
+        }
+
+        [HttpPost("AddPhoto/{scretchId}")]
+        public async Task AddScretchPhoto([FromRoute] long scretchId)
+        {
+            var scretch = _context.Scretches.First(x => x.Id == scretchId);
+            using (Stream fs = Request.Form.Files[0].OpenReadStream())
+            {
+               scretch.ImageUrl = await this.fileUploader.UploadImage(fs, scretchId, "scratches");
+            }
+            _context.Update(scretch);
+            await _context.SaveChangesAsync();
         }
 
         // DELETE: api/Scretches/5

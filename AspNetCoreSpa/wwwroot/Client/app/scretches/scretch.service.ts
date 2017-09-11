@@ -23,7 +23,7 @@ export class ScretchService {
     }
 
     addScretch(model: IScretch): Observable<any> {
-        return this._http.post(this._scretchUrl, model);
+        return this._http.post(this._scretchUrl, model).map(responce => responce.json());
     }
 
     setUserId(model: IScretch): Observable<any> {

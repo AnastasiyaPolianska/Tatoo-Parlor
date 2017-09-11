@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using AspNetCoreSpa.DAL;
+using System;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -102,7 +103,14 @@ namespace AspNetCoreSpa.Server.Controllers.api
                     var callbackUrl = host + "?userId=" + currentUser.Id + "&emailConfirmCode=" + code;
                     var confirmationLink = "<a class='btn-primary' href=\"" + callbackUrl + "\">Confirm email address</a>";
                     _logger.LogInformation(3, "User created a new account with password.");
-                    //await _emailSender.SendEmailAsync(MailType.Register, new EmailModel { To = model.Email }, confirmationLink);
+                    try
+                    {
+                        await _emailSender.SendEmailAsync(MailType.Register, new EmailModel { To = model.Email }, confirmationLink);
+                    }
+                    catch (Exception e)
+                    {
+                        throw;
+                    }
                     return Json(new { });
                 }
             }

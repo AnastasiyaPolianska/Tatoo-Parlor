@@ -70,7 +70,7 @@ namespace AspNetCoreSpa
 
             services.AddScoped<IEntityBaseRepository<Product>, EntityBaseRepository<Product>>();
             services.AddScoped<IEntityBaseRepository<ArtistInfo>, EntityBaseRepository<ArtistInfo>>();
-            services.AddScoped<IFileDownloader, FileDownloader>();
+            services.AddScoped<IFileUploader, FileUploader>();
             services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
 
             services.AddCustomizedMvc();

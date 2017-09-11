@@ -377,6 +377,8 @@ namespace DAL.Migrations
 
                     b.Property<string>("Scope");
 
+                    b.Property<string>("Status");
+
                     b.Property<string>("Subject");
 
                     b.HasKey("Id");
@@ -407,6 +409,16 @@ namespace DAL.Migrations
 
                     b.Property<string>("AuthorizationId");
 
+                    b.Property<string>("Ciphertext");
+
+                    b.Property<DateTimeOffset?>("End");
+
+                    b.Property<string>("Hash");
+
+                    b.Property<DateTimeOffset?>("Start");
+
+                    b.Property<string>("Status");
+
                     b.Property<string>("Subject");
 
                     b.Property<string>("Type");
@@ -416,6 +428,9 @@ namespace DAL.Migrations
                     b.HasIndex("ApplicationId");
 
                     b.HasIndex("AuthorizationId");
+
+                    b.HasIndex("Hash")
+                        .IsUnique();
 
                     b.ToTable("OpenIddictTokens");
                 });

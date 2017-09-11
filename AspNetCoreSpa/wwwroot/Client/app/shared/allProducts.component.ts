@@ -1,8 +1,8 @@
-import { Component, Input, Output, OnInit, EventEmitter, ViewEncapsulation}  from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation}  from '@angular/core';
 import { IProduct } from '../products/product';
 import { CartService } from '../cart/cart.service';
 import { Message } from 'primeng/primeng';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../shared/auth.service';
 import { ProductService } from '../products/product.service';
 
@@ -89,9 +89,9 @@ export class AllProductsComponent{
     /*Removing product from cart*/
     public RemoveProduct(productId : number): void {
         var idx = this.AllProducts.findIndex(x => x.id == productId);
-
-        this.TotalAmount = this.TotalAmount - this.AllProducts[idx].amount;
-        this.TotalPrice = this.TotalPrice - this.AllProducts[idx].price * this.AllProducts[idx].amount;
+            this.TotalAmount = this.TotalAmount - this.AllProducts[idx].amount;
+            this.TotalPrice = this.TotalPrice - this.AllProducts[idx].price * this.AllProducts[idx].amount;
+        
 
         this.AllProducts.splice(idx, 1);
 
@@ -145,7 +145,7 @@ export class AllProductsComponent{
 
     /*Increasing amount of product in cart*/
     public IncreasingAmount(product: IProduct): void {
-        if (product.amount < product.amountLeft) {
+        if (product.amount && product.amount < product.amountLeft) {
             product.amount++;
             this.TotalAmount++;
             this.TotalPrice = this.TotalPrice + product.price;
@@ -162,7 +162,7 @@ export class AllProductsComponent{
 
     /*Decreasing amount of product in cart*/
     public DecreasingAmount(product: IProduct): void {
-        if (product.amount > 1) {
+        if (product.amount && product.amount > 1) {
             product.amount--;
             this.TotalAmount--;
             this.TotalPrice = this.TotalPrice - product.price;
@@ -177,7 +177,7 @@ export class AllProductsComponent{
         }       
     }
 
-    public ShowDialogByuAll(content) {
+    public ShowDialogByuAll(content:any) {
         this.Content = "Are you sure, you want to buy ";
         this.Content += this.TotalAmount;
 
@@ -195,7 +195,7 @@ export class AllProductsComponent{
         this.modalService.open(content);
     }
 
-    public ShowDialogClear(content) {
+    public ShowDialogClear(content:any) {
         this.Content = "Are you sure you want to clear the cart?";
 
         this.Buying = false;
@@ -205,7 +205,7 @@ export class AllProductsComponent{
         this.modalService.open(content);
     }
 
-    public ShowDialogRemoveAtAll(content, productId: number) {
+    public ShowDialogRemoveAtAll(content:any, productId: number) {
         this.Content = "Are you sure you want to remove this product from the list?";
 
         this.Buying = false;

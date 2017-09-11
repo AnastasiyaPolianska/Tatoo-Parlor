@@ -14,10 +14,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\**" />
     <Compile Remove="node_modules\**\*;wwwroot\Client\**\*" />
     <Compile Remove="wwwroot\Client\styles\trontastic\**" />
+    <Content Remove="Images\**" />
     <Content Remove="wwwroot\Client\styles\trontastic\**" />
+    <EmbeddedResource Remove="Images\**" />
     <EmbeddedResource Remove="wwwroot\Client\styles\trontastic\**" />
+    <None Remove="Images\**" />
     <None Remove="wwwroot\Client\styles\trontastic\**" />
   </ItemGroup>
 
@@ -65,15 +69,9 @@
     <Content Include="wwwroot\Client\app\questions\question.service.js" />
     <Content Include="wwwroot\Client\app\questions\question.service.js.map" />
     <Content Include="wwwroot\Client\app\questions\question.ts" />
-    <Content Include="wwwroot\Client\app\registration\singup.component.css">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="wwwroot\Client\app\registration\singup.component.html" />
     <Content Include="wwwroot\Client\app\registration\singup.component.js" />
     <Content Include="wwwroot\Client\app\registration\singup.component.ts" />
-    <Content Include="wwwroot\Client\app\registration\login.component.css">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="wwwroot\Client\app\registration\login.component.html" />
     <Content Include="wwwroot\Client\app\registration\login.component.js" />
     <Content Include="wwwroot\Client\app\registration\login.component.js.map" />
@@ -271,9 +269,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Images\Misc\" />
-    <Folder Include="Images\Scratches\" />
-    <Folder Include="Images\Products\" />
+    <Folder Include="wwwroot\dist\" />
+    <Folder Include="wwwroot\dist\" />
+    <Folder Include="wwwroot\dist\" />
+    <Folder Include="wwwroot\dist\" />
     <Folder Include="wwwroot\dist\" />
   </ItemGroup>
 

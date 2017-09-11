@@ -1,7 +1,8 @@
-import { Component, OnInit }  from '@angular/core';
+import { Component, OnInit, ViewChild }  from '@angular/core';
 import { IProduct } from './product';
 import { ProductService } from './product.service';
 import { Message } from 'primeng/primeng';
+import { FileUpload } from 'primeng/components/fileupload/fileupload';
 import { AuthService } from '../shared/auth.service';
 
 @Component({
@@ -60,16 +61,23 @@ export class ProductListComponent implements OnInit {
     public TitleCancel: string = "Click to clear all the fields";
     public Cancel: string = "Cancel";
 
+    @ViewChild('upload') fileUpload: FileUpload; 
+
     public Msgs: Message[] = [];
 
-    constructor(private _productService: ProductService, private _authService: AuthService) {
+    constructor(private _productService: ProductService, private _authService:AuthService,) {
     }
 
     /*Executes on initialisation of page*/
     ngOnInit(): void {
         window.scroll(0, 0);
-
+        console.log(this._authService.IsLoggedIn);
         this.Initializer();      
+    }
+
+    uploadFile(id: Number): void {
+        this.fileUpload.url = "api/products/addphoto/" + id;
+        this.fileUpload.upload();
     }
 
     public Initializer(): void {
@@ -106,31 +114,17 @@ export class ProductListComponent implements OnInit {
             this.DescriptionOk = false;
             this.ToolErrorDescription = "*Check the length: it should be between 10 and 200 characters.";
         }
-
-        if (this.Url.length < 8) {
-            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while adding the product: check the url" });
+        if (!this.fileUpload.hasFiles()) {
             this.UrlOk = false;
-            this.ToolErrorUrl = "*Check the url: enter valid image url.";
-        }
-        else
-        {
-            var reg = new RegExp("^https?:\\/\\/");
-            var EveryOk = reg.test(this.Url);
-
-            if (!EveryOk)
-            {
-                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while adding the product: check the url" });
-                this.UrlOk = false;
-                this.ToolErrorUrl = "*Check the url: enter valid image url.";
-            }
         }
 
         if (this.NameOk && this.DescriptionOk && this.UrlOk) {
 
             if (!this.isChanging) {
-                let tempModel: IProduct = { productName: this.Name, amountLeft: this.Quantity, price: this.Price, description: this.Description, starRating: 2.5, imageUrl: this.Url };
+                let tempModel: any = { productName: this.Name, amountLeft: this.Quantity, price: this.Price, description: this.Description, starRating: 2.5, imageUrl: this.Url };
 
                 this._productService.addProduct(tempModel).subscribe(data => {
+                    this.uploadFile(data);
                 this.Initializer();
                 this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Product added successfully" });
                 this.Name = "";
@@ -142,7 +136,7 @@ export class ProductListComponent implements OnInit {
             }
 
             else {
-                let tempModel: IProduct = { id: this.idChanging, productName: this.Name, amountLeft: this.Quantity, price: this.Price, description: this.Description, imageUrl: this.Url };
+                let tempModel: any = { id: this.idChanging, productName: this.Name, amountLeft: this.Quantity, price: this.Price, description: this.Description, imageUrl: this.Url };
 
                 this._productService.changeProduct(tempModel).subscribe(data => {
                     this.Initializer();
