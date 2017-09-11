@@ -8,6 +8,7 @@ using AspNetCoreSpa.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using AspNetCoreSpa.Server.Services.Abstract;
+using System.IO;
 
 namespace AspNetCoreSpa.Server.Controllers.api
 {
@@ -17,13 +18,13 @@ namespace AspNetCoreSpa.Server.Controllers.api
     {
         private readonly ApplicationDbContext _context;
         private UserManager<ApplicationUser> _userManager;
-        private readonly IFileDownloader fileDownloader;
+        private readonly IFileUploader fileUploader;
 
-        public ProductsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, IFileDownloader fileDownloader)
+        public ProductsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, IFileUploader fileDownloader)
         {
             _context = context;
             _userManager = userManager;
-            this.fileDownloader = fileDownloader;
+            this.fileUploader = fileDownloader;
         }
 
         // GET: api/Products
@@ -105,22 +106,20 @@ namespace AspNetCoreSpa.Server.Controllers.api
 
             _context.Product.Add(product);
             await _context.SaveChangesAsync();
-            try
-            {
-                product.ImageUrl = await this.fileDownloader.DownloadImage(product.ImageUrl, product.Id, "Products");
-                _context.Product.Update(product);
-
-                await _context.SaveChangesAsync();
-            }
-
-            catch(Exception e)
-            {
-                _context.Product.Remove(product);
-                await _context.SaveChangesAsync();
-                return BadRequest(e.Message);
-            }
 
             return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+        }
+
+        [HttpPost("AddPhoto/{productId}")]
+        public async Task AddScretchPhoto([FromRoute] long productId)
+        {
+            var product = _context.Product.First(x => x.Id == productId);
+            using (Stream fs = Request.Form.Files[0].OpenReadStream())
+            {
+                product.ImageUrl = await this.fileUploader.UploadImage(fs, productId, "products");
+            }
+            _context.Update(product);
+            await _context.SaveChangesAsync();
         }
 
         // POST: api/Products/change

@@ -107,14 +107,7 @@
                 </div>
             </div>
             <div *ngIf="Option=='Your own picture'" class="lowborder">
-                <div class='row'>
-                    <div class='row' style="width: 100%">
-                        <label class='col-md-2 tatoolable' style="margin-left: 3%">{{AddUrl}}</label>
-                        <input type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': UrlOk==false}" placeholder="{{PlaceHolderUrl}}" [(ngModel)]='Url' />
-                        <label *ngIf="UrlOk" class='tatootool' style="margin-left: 42%">{{ToolUrl}}</label>
-                        <label *ngIf="!UrlOk" class='tatootoolerror' style="margin-left: 42%">{{ToolErrorUrl}}</label>
-                    </div>
-                </div>
+                
                 <div class='row'>
                     <label class='col-md-2 tatoolable margleft'>{{AddDescription}}</label>
                     <textarea rows="3" type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': DescriptionOk==false}" placeholder="{{PlaceHolderDescription}}" [(ngModel)]='Description'></textarea>
@@ -148,7 +141,8 @@
                         <label class='col-md-2 tatoolable' style="margin-left: 3%">{{PriceName}}</label>
                         <span class='col-md-2 tatoolable' style="padding: 0%; margin-left: 0.5%">{{Height * Width| currency:'USD':true:'1.2-2'}}</span>
                     </div>
-                </div>     
+                </div>
+                <p-fileUpload #upload name="demo[]" [url]="uploadUrl" accept="image/*" maxFileSize="25000000" showUploadButton="" showCancelButton=""></p-fileUpload>
             </div>
             <div *ngIf="Option=='Your own picture' || Option=='Scretch from gallery'" class="ui-g lowborder flexer" style="width:100%; margin-bottom:10px; padding:2%">
                 <p-calendar [(ngModel)]="value" margin="1%" [inline]="true" [minDate]="minimumDate" [defaultDate]="minimumDate" (onSelect)="SelectingNewDate()"></p-calendar>

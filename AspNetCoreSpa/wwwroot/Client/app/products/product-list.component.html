@@ -31,13 +31,6 @@
             </div>
 
             <div class='row'>
-                <label class='col-md-2 tatoolable'>{{AddUrl}}</label>
-                <input type='text' class='tatooinput marginbottom' [ngClass]="{'tatooinputerror': UrlOk==false}" placeholder="{{PlaceHolderUrl}}" [(ngModel)]='Url'/>
-                <label *ngIf="UrlOk" class='tatootool' style="margin-left: 39%">{{ToolUrl}}</label>
-                <label *ngIf="!UrlOk" class='tatootoolerror' style="margin-left: 39%">{{ToolErrorUrl}}</label>
-            </div>
-
-            <div class='row'>
                 <label class='col-md-2 tatoolable'>{{AddPrice}}</label>
                 <button title={{TitleDecreasePrice}} class="btn btn-default tatoobuttonval" (click)="DecreasePrice()" style="margin-right: 1%">
                     <i class='glyphicon glyphicon-chevron-left'></i>
@@ -60,6 +53,8 @@
                 </button>
                 <label class='tatootool' style="margin-left: 39%">{{ProductQuantity}}{{Quantity}}</label>
             </div>
+
+            <p-fileUpload #upload name="demo[]" [url]="uploadUrl" accept="image/*" maxFileSize="25000000" showUploadButton="" showCancelButton=""></p-fileUpload>
 
             <button class=' btn btn-primary tatoobutton' (click)='AddProduct()' title={{TitleButtonAdd}}>
                 <i class='glyphicon glyphicon-ok'></i> {{Add}}

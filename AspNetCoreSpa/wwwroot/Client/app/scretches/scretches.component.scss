@@ -201,3 +201,12 @@
         }
     }
 }
+
+suppastyle ::ng-deep .ui-fileupload-row {
+    div {
+        background-color: gray;
+        max-width:30em;
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+}

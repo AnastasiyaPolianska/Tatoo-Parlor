@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { GrowlModule } from 'primeng/primeng';
+import { GrowlModule, FileUploadModule } from 'primeng/primeng';
 import { Ng2PageScrollModule } from 'ng2-page-scroll';
 
 import { ProductListComponent } from './product-list.component';
@@ -16,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
       SharedModule,
       Ng2PageScrollModule.forRoot(),
       GrowlModule,
+      FileUploadModule,
     RouterModule.forChild([
       { path: 'products', component: ProductListComponent },
       { path: 'product/:id/:cartToSend',

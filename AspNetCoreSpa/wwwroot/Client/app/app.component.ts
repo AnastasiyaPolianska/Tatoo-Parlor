@@ -1,5 +1,4 @@
 import { Component,  ViewEncapsulation, OnInit } from '@angular/core';
-import { LocalStorage, SessionStorage, StorageProperty } from 'h5webstorage';
 import { AuthService } from './shared/auth.service';
 import { Router } from '@angular/router';
 @Component({
@@ -9,12 +8,9 @@ import { Router } from '@angular/router';
     encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-    constructor(private localStorage: LocalStorage, private sessionStorage: SessionStorage, private authService: AuthService, private _router: Router) {
+    constructor( private authService: AuthService, private _router: Router) {
     }
     public pageTitle: string = 'Tatooed Youth';
-
-    @StorageProperty({ storageKey: 'localAuthData', storage:"Local" }) public LocalAuth: string = "";
-    @StorageProperty({ storageKey: 'sessionAuthData', storage: "Session" }) public SessionAuth: string = "";
      
     /*Executes on initialisation*/
     ngOnInit(): void {

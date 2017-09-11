@@ -39,8 +39,14 @@ namespace AspNetCoreSpa.Server.Services
             emailModel.TextBody = extraData;
 
             SendEmailAsync(emailModel).Wait();
-
-            return await Task.Run(() => true);
+            try
+            {
+                return await Task.Run(() => true);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
 
         public Task SendEmailAsync(EmailModel model)

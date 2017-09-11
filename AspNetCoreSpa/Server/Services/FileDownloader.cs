@@ -3,70 +3,39 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using System.Net.Http;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace AspNetCoreSpa.Server.Services
 {
     /// <summary>
     /// The implementation of IFileDownloader interface
     /// </summary>
-    public class FileDownloader : IFileDownloader
+    public class FileUploader : IFileUploader
     {
-        /// <summary>
-        /// The path of images directory, is used to download files.
-        /// </summary>
-        private readonly string imagesDirectoryPath = Directory.GetCurrentDirectory() + "/wwwroot/Images";
+        CloudStorageAccount storageAccount = new CloudStorageAccount(
+    new Microsoft.WindowsAzure.Storage.Auth.StorageCredentials(
+    "tattoedyouth",
+    "xSvietWd0ZgmThMAFD3gUod5QH8HN/qOqTfub10778lw8qIaDh0d3HcYwm71SolXmmapspwqf/XyErLvGkn+Jw=="), true);
+
 
         ///<inheritdoc />
-        public async Task<string> DownloadImage(string imageUrl, long imageId, string directoryName = "Misc", string fileName=null)
+        public async Task<string> UploadImage(Stream fileStream, long imageId, string containerName = "Misc", string fileName = null)
         {
-            using (HttpClient client = new HttpClient())
+            var storageClient = storageAccount.CreateCloudBlobClient();
+            var container = storageClient.GetContainerReference(containerName);
+
+            var cloudBlob = container.GetBlockBlobReference(fileName != null ? fileName :"image"+ imageId+".png");
+            try
             {
-                var responce = await client.GetAsync(imageUrl);
-                if (!responce.IsSuccessStatusCode)
-                {
-                    throw new FileNotFoundException("The file doesn`t exist");
-                }
-
-                if (!responce.Content.Headers.ContentType.MediaType.Contains("image"))
-                {
-                    throw new UnsupportedMediaTypeException("The file is not an image", responce.Content.Headers.ContentType);
-                }
-
-                var folderPath = $"{this.imagesDirectoryPath}/{directoryName}";
-                var imageExtension = this.GetFileExtension(imageUrl);
-                if(string.IsNullOrWhiteSpace(imageExtension))
-                {
-                    imageExtension = ".png";
-                }
-
-                var path = "";
-                if (fileName !=null)
-                {
-                    path = $"{folderPath}/{fileName}{imageExtension}";
-                }
-                else
-                {
-                    path = $"{folderPath}/{imageId}{imageExtension}";
-                }
-
-                using (Stream targetStream = File.Create(path))
-                {
-                    await responce.Content.CopyToAsync(targetStream);
-                    targetStream.Close();
-                }
-
-                return $"./Images/{directoryName}/{imageId}{imageExtension}";
+                await cloudBlob.UploadFromStreamAsync(fileStream);
             }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return cloudBlob.Uri.AbsoluteUri;
         }
 
-        /// <summary>
-        /// Gets the file extension from its url.
-        /// </summary>
-        /// <param name="fileUrl">The file's url.</param>
-        /// <returns>The extension of file or empty string if it doesn`t exist.</returns>
-        private string GetFileExtension(string fileUrl)
-        {
-            return Path.GetExtension(fileUrl);
-        }
     }
 }

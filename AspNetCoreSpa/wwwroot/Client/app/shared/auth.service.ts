@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { ISingUpModel } from './singUpModel';
 import { ILogInModel } from './logInModel';
 import { Observable } from 'rxjs/Observable';
-import { LocalStorage, SessionStorage } from 'h5webstorage';
 import { Http, Response, Headers } from '@angular/http';
 
 @Injectable()
@@ -23,7 +22,7 @@ export class AuthService {
     public CurrentUserEmail: string;
     public IsAdmin: boolean = false;
 
-    constructor(private _http: Http, private localStorage: LocalStorage, private sessionStorage: SessionStorage) { }
+    constructor(private _http: Http) { }
 
     signUp(model: ISingUpModel): Observable<any> {
         return this._http.post(this._signUpUrl, model).catch(err => {
@@ -67,7 +66,7 @@ export class AuthService {
         headers.append('Content-Type', 'application/json');
 
         return this._http.post(this._changeEmailUrl, { newEmail: newEmail, password: password }, { headers: headers })
-            .map((response: Response) => { console.log(response); return <string>response._body; })
+            .map((response: any) => { console.log(response); return <string>response._body; })
             .catch(err => {
                 console.error(err);
                 return Observable.throw(err.json()[0] || ' error');
@@ -79,7 +78,7 @@ export class AuthService {
         headers.append('Content-Type', 'application/json');
 
         return this._http.post(this._changePasswordUrl, { newPassword: newPasword, password: password, emailToFind: emailToFind }, { headers: headers })
-            .map((response: Response) => { console.log(response); return <string>response._body; })
+            .map((response: any) => { console.log(response); return <string>response._body; })
             .catch(err => {
                 console.error(err);
                 return Observable.throw(err.json()[0] || ' error');

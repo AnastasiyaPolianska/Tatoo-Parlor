@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { IQuestionModel } from '../shared/questionModel';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { LocalStorage, SessionStorage } from 'h5webstorage';
 import { IQuestion } from '../questions/question';
 import { Message } from 'primeng/primeng';
 
@@ -14,7 +13,7 @@ export  class QuestionService {
     private _getQuestionsForUserUrl = 'api/Questions/GetQuestionsForUser/';
     private _getAllQuestions = 'api/Questions';
 
-    constructor(private _http: Http, private localStorage: LocalStorage, private sessionStorage: SessionStorage) { }
+    constructor(private _http: Http) { }
 
     public tempId: number;
     public msgs: Message[] = [];
