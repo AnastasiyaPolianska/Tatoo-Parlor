@@ -14,13 +14,13 @@ export class ScretchesComponent implements OnInit{
 
     constructor(private router: Router, private _scretchService: ScretchService) { };
 
-    public ArticleTitle: string = 'Scretches...';
-    public ArticleText: string = 'If you are ready to have a cool picture on your body, choose one scretch from below (just click on it!) or upload your own picture in a field at the bottom of this page and fill in the form to make an appointment. We will phone or email you in a couple of days after receiving your order. There is a name, price, size and short description of each model beneath the picture. Have fun!';
+    public ArticleTitle: string = 'Scratches...';
+    public ArticleText: string = 'If you are ready to have a cool picture on your body, choose one scratch from below (just click on it!) or upload your own picture in a field at the bottom of this page and fill in the form to make an appointment. We will phone or email you in a couple of days after receiving your order. There is a name, price, size and short description of each model beneath the picture. Have fun!';
 
     public ErrorMessage = "";
     public Scretches: IScretch[];
 
-    public ScretchNameLabel: string = "Scretch name: ";
+    public ScretchNameLabel: string = "Scratch name: ";
     public ScretchDescriptionLabel: string = "Description: ";
     public ScretchPriceLabel: string = "Price: ";
     public ScretchSizeLabel: string = "Size: ";
@@ -35,12 +35,12 @@ export class ScretchesComponent implements OnInit{
     public IsFirst = true;
     public AllowMove = true;
 
-    public PanelHeading: string = 'Fill in the form to book a scretch and make an appointment'
+    public PanelHeading: string = 'Fill in the form to book a scratch and make an appointment'
     public Choosed: string = 'Choosed: ';
     public Option: string = "";
-    public Scretch: string = 'Scretch from gallery';
+    public Scretch: string = 'Scratch from gallery';
     public Picture: string = 'Your own picture';
-    public LabelChoose: string = 'Choose one of the scretches:';
+    public LabelChoose: string = 'Choose one of the scratches:';
     public LabelUpload: string = 'Upload your own picture:';
     public ButtonName: string = 'Send';
     public DateOfAppointment: string = "Date of appointment: ";
@@ -54,8 +54,8 @@ export class ScretchesComponent implements OnInit{
     public NotChoosed: string = "not choosed";
     public ChoosedFileName: string;
 
-    public AddUrl: string = "Enter scretch image url:";
-    public PlaceHolderUrl: string = "Enter scretch image url...";
+    public AddUrl: string = "Enter scratch image url:";
+    public PlaceHolderUrl: string = "Enter scratch image url...";
     public ToolUrl: string = "*Enter valid image url.";
     public ToolErrorUrl: string;
     public UrlOk: boolean = true;
@@ -88,7 +88,7 @@ export class ScretchesComponent implements OnInit{
     public Description: string = "";
 
     public PriceName: string = "Tatoo price: ";
-    public TitleSend: string = "Click to choose this scretch";
+    public TitleSend: string = "Click to choose this scratch";
 
     public Msgs: Message[] = [];
 
@@ -221,9 +221,9 @@ export class ScretchesComponent implements OnInit{
             {
                 var temp = this.Height * this.Width;
 
-                let tempModel: any = { scretchName: "User scretch", price: temp, width: this.Width, height: this.Height, description: this.Description, imageUrl: this.Url, date: this.value, busy: true };
+                let tempModel: any = { scretchName: "User scratch", price: temp, width: this.Width, height: this.Height, description: this.Description, imageUrl: this.Url, date: this.value, busy: true };
                 this._scretchService.addScretch(tempModel).subscribe(data => {
-                    this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have loaded the scretch successfully. Now you will be rerouted to your cabinet, where you can change details of appointment" });
+                    this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have loaded the scratch successfully. Now you will be rerouted to your cabinet, where you can change details of appointment" });
                     this.uploadUrl = "api/scretches/addphoto/" + data;
                     this.UploadFile(data);
                     setTimeout((router: Router) => {
@@ -235,13 +235,13 @@ export class ScretchesComponent implements OnInit{
 
         if (this.Option == 'Scretch from gallery') {
             if (!this.SelectedName) {
-                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while choosing the scretch: choose one scretch from the list or click on it in gallery" });
+                this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while choosing the scratch: choose one scratch from the list or click on it in gallery" });
             }
 
             else {
                 let tempModel: any = { id: this.ScretchNameId, scretchName: this.SelectedName, date: this.value, busy: true };
                 this._scretchService.setUserId(tempModel).subscribe(data => {
-                    this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have choosed the scretch successfully. Now you will be rerouted to your cabinet, where you can change details of appointment" });
+                    this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have choosed the scratch successfully. Now you will be rerouted to your cabinet, where you can change details of appointment" });
 
                     setTimeout((router: Router) => {
                         this.router.navigate(['/cabinet'])
@@ -253,7 +253,7 @@ export class ScretchesComponent implements OnInit{
 
         if (this.Option=="")
         {
-            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while choosing the scretch: choose option first" });
+            this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while choosing the scratch: choose option first" });
         }
     }
 

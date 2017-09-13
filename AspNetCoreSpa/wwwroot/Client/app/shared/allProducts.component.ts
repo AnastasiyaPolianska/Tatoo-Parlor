@@ -107,7 +107,7 @@ export class AllProductsComponent{
 
         this.AllProducts.splice(0, len);
 
-        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Products bought" });
+        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Order in progress, our consultant will contact you on the phone" });
 
         this.TotalAmount = 0;
         this.TotalPrice = 0;

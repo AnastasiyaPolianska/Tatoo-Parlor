@@ -12,7 +12,7 @@
         <p class="margin2" style="width: 100%; margin-bottom: 0px">
             <label class="paragraphhead headchangewidth">{{FirstnameLabel}} </label>
             <label class="paragraphtext" style="width:30%"> {{FirstName}}</label>
-            <label class="floating changeinfo" title={{TitleLinkChangeFirstName}} (click)="ToggleChangeFirstName()"> {{ChangeInfoFirstName}} </label>
+            <label class="floatingRight changeinfo" title={{TitleLinkChangeFirstName}} (click)="ToggleChangeFirstName()"> {{ChangeInfoFirstName}} </label>
         </p>
     </div>
     <div *ngIf="ShowChangeFirstName" class='panel panel-primary tatoodiv'>
@@ -40,7 +40,7 @@
         <p class="margin2" style="width: 100%; margin-bottom: 0px">
             <label class="paragraphhead headchangewidth">{{LastnameLabel}} </label>
             <label class="paragraphtext" style="width:30%"> {{LastName}}</label>
-            <label class="floating changeinfo" title={{TitleLinkChangeLastName}} (click)="ToggleChangeLastName()"> {{ChangeInfoLastName}} </label>
+            <label class="floatingRight changeinfo" title={{TitleLinkChangeLastName}} (click)="ToggleChangeLastName()"> {{ChangeInfoLastName}} </label>
         </p>
     </div>
     <div *ngIf="ShowChangeLastName" class='panel panel-primary tatoodiv'>
@@ -68,7 +68,7 @@
         <p class="margin2" style="width: 100%; margin-bottom: 0px">
             <label class="paragraphhead headchangewidth">{{EmailLabel}} </label>
             <label class="paragraphtext" style="width:30%"> {{Email}}</label>
-            <label class="floating changeinfo" title={{TitleLinkChangeEmail}} (click)="ToggleChangeEmail()"> {{ChangeInfoEmail}} </label>
+            <label class="floatingRight changeinfo" title={{TitleLinkChangeEmail}} (click)="ToggleChangeEmail()"> {{ChangeInfoEmail}} </label>
         </p>
     </div>
     <div *ngIf="ShowChangeEmail" class='panel panel-primary tatoodiv'>

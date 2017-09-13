@@ -23,7 +23,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div *ngFor="let Scretch of Scretches" class="item" [ngClass]="{active: isActive(Scretch.imageUrl)}" style="width:100%; margin:0%">
-                    <a pageScroll href="#form"> <img title="Click to choose this scretch" class="scretch" src={{Scretch.imageUrl}} alt={{Scretch.scretchName}} (click)='ChoosingScretch()'> </a>
+                    <a pageScroll href="#form"> <img title="Click to choose this scratch" class="scretch" src={{Scretch.imageUrl}} alt={{Scretch.scretchName}} (click)='ChoosingScretch()'> </a>
                 </div>
             </div>
 
@@ -106,7 +106,7 @@
                     </p>
                 </div>
             </div>
-            <div *ngIf="Option=='Your own picture'" class="lowborder">
+            <div *ngIf="Option=='Your own picture'" class="lowborder" style="padding-bottom: 1%">
                 
                 <div class='row'>
                     <label class='col-md-2 tatoolable margleft'>{{AddDescription}}</label>

@@ -8,7 +8,7 @@ export class WelcomeComponent implements OnInit {
     public PageTitle: string = 'Tatooed youth';
     
     public ArticleTitle: string = 'About us...';
-    public ArticleText: string= 'We are ready to offer you a lot of great tatoos made from individual scretches by our talented artists. Read more about "Tatooed youth" and get familiar with artists and their works ';
+    public ArticleText: string= 'We are ready to offer you a lot of great tatoos made from individual scratches by our talented artists. Read more about "Tatooed youth" and get familiar with artists and their works ';
 
     public Shop: string = "online shop";
     public ThisPage: string = "this page";

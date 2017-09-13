@@ -158,7 +158,7 @@ export class SignUpComponent {
                     let tempModel: ISingUpModel = { email: this.Email, firstName: this.FirstName, lastName: this.LastName, password: this.Password };
                     this._authService.signUp(tempModel).subscribe(data => {
 
-                        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have signed up successfully. Now you will be rerouted to log in." });
+                        this.Msgs.push({ severity: 'success', summary: 'Success', detail: "You have signed up successfully. Now you will be rerouted to log in. A letter was sent to your emai address, click the link in it to confirm email." });
 
                         setTimeout((router: Router) => {
                             this.router.navigate(['/login']);

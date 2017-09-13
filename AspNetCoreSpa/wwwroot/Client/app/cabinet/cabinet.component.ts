@@ -122,9 +122,9 @@ export class CabinetComponent implements OnInit
     public error: string;
     public ErrorMessage = "";
 
-    public PanelSubtitle = "Your scretches";
+    public PanelSubtitle = "Your scratches";
     public Image = "Image";
-    public ScretchName = "Scretch Name";
+    public ScretchName = "Scratch Name";
     public Price = "Price";
     public Size = "Size";
     public Date = "Date";
