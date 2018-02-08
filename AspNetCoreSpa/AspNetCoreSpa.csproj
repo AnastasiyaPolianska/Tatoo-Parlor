@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <PackageId>AspNetCoreSpa</PackageId>
     <UserSecretsId>aspnetcorespa-c23d27a4-eb88-4b18-9b77-2a93f3b15119</UserSecretsId>
-    <RuntimeFrameworkVersion>1.1.1</RuntimeFrameworkVersion>
+    <RuntimeFrameworkVersion>1.1.2</RuntimeFrameworkVersion>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <PackageTargetFallback>$(PackageTargetFallback);dotnet5.6;portable-net45+win8</PackageTargetFallback>
   </PropertyGroup>
@@ -37,75 +37,6 @@
   </Target>
 
   <ItemGroup>
-    <Content Include="wwwroot\Client\app\assets\images\Footer\instagram.png" />
-    <Content Include="wwwroot\Client\app\assets\images\Footer\twitter-logo-silhouette.png" />
-    <Content Include="wwwroot\Client\app\assets\images\Footer\vk.png" />
-    <Content Include="wwwroot\Client\app\assets\images\images\star-rating.icons.svg" />
-    <Content Include="wwwroot\Client\app\assets\images\star-rating.icons.svg" />
-    <Content Include="wwwroot\Client\app\cabinet\cabinet.component.css" />
-    <Content Include="wwwroot\Client\app\cabinet\cabinet.component.html" />
-    <Content Include="wwwroot\Client\app\cabinet\cabinet.component.ts" />
-    <Content Include="wwwroot\Client\app\cart\cart.component.css" />
-    <Content Include="wwwroot\Client\app\cart\cart.component.html" />
-    <Content Include="wwwroot\Client\app\cart\cart.component.js" />
-    <Content Include="wwwroot\Client\app\cart\cart.component.js.map" />
-    <Content Include="wwwroot\Client\app\cart\cart.component.ts" />
-    <Content Include="wwwroot\Client\app\cart\cart.service.ts" />
-    <Content Include="wwwroot\Client\app\cart\cart.module.ts">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\Client\app\contacts\contacts.component.css" />
-    <Content Include="wwwroot\Client\app\contacts\contacts.component.html" />
-    <Content Include="wwwroot\Client\app\contacts\contacts.component.js" />
-    <Content Include="wwwroot\Client\app\contacts\contacts.component.js.map" />
-    <Content Include="wwwroot\Client\app\contacts\contacts.component.ts" />
-    <Content Include="wwwroot\Client\app\help\help.component.css" />
-    <Content Include="wwwroot\Client\app\help\help.component.html" />
-    <Content Include="wwwroot\Client\app\help\help.component.ts" />
-    <Content Include="wwwroot\Client\app\questions\question.js" />
-    <Content Include="wwwroot\Client\app\questions\question.js.map" />
-    <Content Include="wwwroot\Client\app\questions\question.module.js" />
-    <Content Include="wwwroot\Client\app\questions\question.module.js.map" />
-    <Content Include="wwwroot\Client\app\questions\question.service.js" />
-    <Content Include="wwwroot\Client\app\questions\question.service.js.map" />
-    <Content Include="wwwroot\Client\app\questions\question.ts" />
-    <Content Include="wwwroot\Client\app\registration\singup.component.html" />
-    <Content Include="wwwroot\Client\app\registration\singup.component.js" />
-    <Content Include="wwwroot\Client\app\registration\singup.component.ts" />
-    <Content Include="wwwroot\Client\app\registration\login.component.html" />
-    <Content Include="wwwroot\Client\app\registration\login.component.js" />
-    <Content Include="wwwroot\Client\app\registration\login.component.js.map" />
-    <Content Include="wwwroot\Client\app\registration\login.component.ts" />
-    <Content Include="wwwroot\Client\app\scretches\scretch.js" />
-    <Content Include="wwwroot\Client\app\scretches\scretch.js.map" />
-    <Content Include="wwwroot\Client\app\scretches\scretch.module.js" />
-    <Content Include="wwwroot\Client\app\scretches\scretch.module.js.map" />
-    <Content Include="wwwroot\Client\app\scretches\scretch.service.js" />
-    <Content Include="wwwroot\Client\app\scretches\scretch.service.js.map" />
-    <Content Include="wwwroot\Client\app\scretches\scretch.service.ts" />
-    <Content Include="wwwroot\Client\app\scretches\scretch.ts">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\Client\app\shared\spinner.component.html">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
-    <Content Include="wwwroot\Client\app\shared\allProducts.component.css" />
-    <Content Include="wwwroot\Client\app\shared\allProducts.component.html" />
-    <Content Include="wwwroot\Client\app\shared\allProducts.component.js" />
-    <Content Include="wwwroot\Client\app\shared\allProducts.component.js.map" />
-    <Content Include="wwwroot\Client\app\shared\allProducts.component.ts" />
-    <Content Include="wwwroot\Client\app\shared\question.service.js" />
-    <Content Include="wwwroot\Client\app\shared\question.service.js.map" />
-    <Content Include="wwwroot\Client\app\shared\question.service.ts" />
-    <Content Include="wwwroot\Client\app\shared\auth.service.js" />
-    <Content Include="wwwroot\Client\app\shared\auth.service.js.map" />
-    <Content Include="wwwroot\Client\app\shared\auth.service.ts" />
-    <Content Include="wwwroot\Client\app\shared\logInModel.ts" />
-    <Content Include="wwwroot\Client\app\shared\questionModel.ts" />
-    <Content Include="wwwroot\Client\app\shared\singUpModel.ts" />
-    <Content Include="wwwroot\Client\app\shared\spinner.component.js" />
-    <Content Include="wwwroot\Client\app\shared\spinner.component.js.map" />
-    <Content Include="wwwroot\Client\app\shared\spinner.component.ts" />
   </ItemGroup>
   
   <ItemGroup>
