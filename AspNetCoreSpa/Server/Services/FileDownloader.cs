@@ -14,9 +14,7 @@ namespace AspNetCoreSpa.Server.Services
     public class FileUploader : IFileUploader
     {
         CloudStorageAccount storageAccount = new CloudStorageAccount(
-    new Microsoft.WindowsAzure.Storage.Auth.StorageCredentials(
-    "tattoedyouth",
-    "xSvietWd0ZgmThMAFD3gUod5QH8HN/qOqTfub10778lw8qIaDh0d3HcYwm71SolXmmapspwqf/XyErLvGkn+Jw=="), true);
+    new Microsoft.WindowsAzure.Storage.Auth.StorageCredentials("tatoostorage", "Yt2q1jNUDUPVl/IkJ991V6MhKW4Fghy9QV5qLK3LGGz5ODi9mMbrGOYbAT5Zp6mND/oypUyLoGMRdkoPrp027w=="), true);
 
 
         ///<inheritdoc />

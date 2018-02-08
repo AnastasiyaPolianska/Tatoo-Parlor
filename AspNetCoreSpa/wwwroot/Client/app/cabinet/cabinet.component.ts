@@ -360,7 +360,7 @@ export class CabinetComponent implements OnInit
                     this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Email changed. Now you will be rerouted to log in." });
 
                     setTimeout((router: Router) => {
-                        this._authService.logOut();
+                        this._authService.logOut().subscribe();
                         this._router.navigate(['/login']);
                     }, 2500);
                 }
@@ -482,9 +482,9 @@ export class CabinetComponent implements OnInit
                     var changePassword = data;
                     if (changePassword == "good") {
                         this.Msgs.push({ severity: 'success', summary: 'Success', detail: "Password changed. Now you will be rerouted to log in." });
-
+                        this._authService.logOut().subscribe();
                         setTimeout((router: Router) => {
-                            this._authService.logOut();
+                         
                             this._router.navigate(['/login']);
                         }, 2500);
                     }
@@ -702,9 +702,9 @@ export class CabinetComponent implements OnInit
                                             this.FirstName = this.NewFirstName;
                                             this.LastName = this.NewLastName;
                                             this.Email = this.NewEmail;
-
+                                            this._authService.logOut().subscribe();
                                             setTimeout((router: Router) => {
-                                                this._authService.logOut();
+                                                
                                                 this._router.navigate(['/login']);
                                             }, 2500);
                                         }

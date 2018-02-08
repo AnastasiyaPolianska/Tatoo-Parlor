@@ -30,13 +30,12 @@
     <Exec Command="npm run build:prod" />
     <ItemGroup>
       <DistFiles Include="wwwroot\dist\**\*" />
-      <Content Include="@(DistFiles)" CopytoPublishDirectory="Always" />
-      <Content Include="app.yaml" CopyToOutputDirectory="Always" />
       <ContentWithTargetPath Include="@(DistFiles)" TargetPath="%(Identity)" CopyToPublishDirectory="Always" />
     </ItemGroup>
   </Target>
 
   <ItemGroup>
+    <Folder Include="wwwroot\dist\" />
   </ItemGroup>
   
   <ItemGroup>
@@ -106,93 +105,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Client\app\about_us\aboutus.component.css" />
-    <None Include="wwwroot\Client\app\about_us\aboutus.component.html" />
-    <None Include="wwwroot\Client\app\about_us\aboutus.component.js" />
-    <None Include="wwwroot\Client\app\about_us\aboutus.component.js.map" />
-    <None Include="wwwroot\Client\app\about_us\aboutus.component.ts" />
-    <None Include="wwwroot\Client\app\app.component.css" />
-    <None Include="wwwroot\Client\app\app.component.html" />
-    <None Include="wwwroot\Client\app\app.component.js" />
-    <None Include="wwwroot\Client\app\app.component.js.map" />
-    <None Include="wwwroot\Client\app\app.component.ts" />
-    <None Include="wwwroot\Client\app\app.module.js" />
-    <None Include="wwwroot\Client\app\app.module.js.map" />
-    <None Include="wwwroot\Client\app\app.module.ts" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\1st.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\2nd.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\3rd.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\A1.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\A2.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\A3.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\A4.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\Asya.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\M1.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\M2.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\M3.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\M4.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\AboutUs\Martha.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\Home\1st.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\Home\2nd.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\Home\3rd.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\mainBack.jpeg" />
-    <None Include="wwwroot\Client\app\assets\images\mainBackMin.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\Scretches\Scretch1.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\Scretches\Scretch2.jpg" />
-    <None Include="wwwroot\Client\app\assets\images\Scretches\Scretch3.jpg" />
-    <None Include="wwwroot\Client\app\home\welcome.component.css" />
-    <None Include="wwwroot\Client\app\home\welcome.component.html" />
-    <None Include="wwwroot\Client\app\home\welcome.component.js" />
-    <None Include="wwwroot\Client\app\home\welcome.component.js.map" />
-    <None Include="wwwroot\Client\app\home\welcome.component.ts" />
-    <None Include="wwwroot\Client\app\main.js" />
-    <None Include="wwwroot\Client\app\main.js.map" />
-    <None Include="wwwroot\Client\app\main.ts" />
-    <None Include="wwwroot\Client\app\products\product-detail.component.css" />
-    <None Include="wwwroot\Client\app\products\product-detail.component.html" />
-    <None Include="wwwroot\Client\app\products\product-detail.component.js" />
-    <None Include="wwwroot\Client\app\products\product-detail.component.js.map" />
-    <None Include="wwwroot\Client\app\products\product-detail.component.ts" />
-    <None Include="wwwroot\Client\app\products\product-filter.pipe.js" />
-    <None Include="wwwroot\Client\app\products\product-filter.pipe.js.map" />
-    <None Include="wwwroot\Client\app\products\product-filter.pipe.ts" />
-    <None Include="wwwroot\Client\app\products\product-guard.service.js" />
-    <None Include="wwwroot\Client\app\products\product-guard.service.js.map" />
-    <None Include="wwwroot\Client\app\products\product-guard.service.ts" />
-    <None Include="wwwroot\Client\app\products\product-list.component.css" />
-    <None Include="wwwroot\Client\app\products\product-list.component.html" />
-    <None Include="wwwroot\Client\app\products\product-list.component.js" />
-    <None Include="wwwroot\Client\app\products\product-list.component.js.map" />
-    <None Include="wwwroot\Client\app\products\product-list.component.ts" />
-    <None Include="wwwroot\Client\app\products\product.js" />
-    <None Include="wwwroot\Client\app\products\product.js.map" />
-    <None Include="wwwroot\Client\app\products\product.module.js" />
-    <None Include="wwwroot\Client\app\products\product.module.js.map" />
-    <None Include="wwwroot\Client\app\products\product.module.ts" />
-    <None Include="wwwroot\Client\app\products\product.service.js" />
-    <None Include="wwwroot\Client\app\products\product.service.js.map" />
-    <None Include="wwwroot\Client\app\products\product.service.ts" />
-    <None Include="wwwroot\Client\app\products\product.ts" />
-    <None Include="wwwroot\Client\app\scretches\scretches.component.css" />
-    <None Include="wwwroot\Client\app\scretches\scretches.component.html" />
-    <None Include="wwwroot\Client\app\scretches\scretches.component.js" />
-    <None Include="wwwroot\Client\app\scretches\scretches.component.js.map" />
-    <None Include="wwwroot\Client\app\scretches\scretches.component.ts" />
-    <None Include="wwwroot\Client\app\scretches\scretches.module.js" />
-    <None Include="wwwroot\Client\app\scretches\scretches.module.js.map" />
-    <None Include="wwwroot\Client\app\scretches\scretches.module.ts" />
-    <None Include="wwwroot\Client\app\shared\shared.module.js" />
-    <None Include="wwwroot\Client\app\shared\shared.module.js.map" />
-    <None Include="wwwroot\Client\app\shared\shared.module.ts" />
-    <None Include="wwwroot\Client\environment.ts" />
-    <None Include="wwwroot\Client\main.aot.ts" />
-    <None Include="wwwroot\Client\main.ts" />
-    <None Include="wwwroot\Client\polyfills.ts" />
-    <None Include="wwwroot\Client\styles\heading.css" />
-    <None Include="wwwroot\Client\styles\vendor.css" />
-    <None Include="wwwroot\Client\styles\_variables.scss" />
-    <None Include="wwwroot\product-list.component.css" />
-    <None Include="wwwroot\styles.css" />
+
   </ItemGroup>
 
   <ItemGroup>
@@ -200,12 +113,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\dist\" />
-    <Folder Include="wwwroot\dist\" />
-    <Folder Include="wwwroot\dist\" />
-    <Folder Include="wwwroot\dist\" />
-    <Folder Include="wwwroot\dist\" />
-    <Folder Include="wwwroot\dist\" />
   </ItemGroup>
 
 </Project>
