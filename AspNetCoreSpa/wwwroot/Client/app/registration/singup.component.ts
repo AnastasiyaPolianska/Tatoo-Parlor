@@ -112,7 +112,7 @@ export class SignUpComponent {
         if (this.Password.length < 6 || this.Password.length > 100) {
             this.Msgs.push({ severity: 'error', summary: 'Error', detail: "Error while singing up: check the length of password" });
             this.PasswordOK = false;
-            this.ToolErrorPassword = "*Check the length: it should be between 6 and 100 characters.";
+            this.ToolErrorPassword = "*Check the length: it should be between 8 and 100 characters.";
             validPassword = false;
         }
 
