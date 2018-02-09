@@ -105,7 +105,7 @@ namespace AspNetCoreSpa.Server.Controllers.api
                     _logger.LogInformation(3, "User created a new account with password.");
                     try
                     {
-                        await _emailSender.SendEmailAsync(MailType.Register, new EmailModel { To = model.Email }, confirmationLink);
+                        //await _emailSender.SendEmailAsync(MailType.Register, new EmailModel { To = model.Email }, confirmationLink);
                     }
                     catch (Exception e)
                     {
